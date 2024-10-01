@@ -2,6 +2,17 @@
 	"name": "@twin.org/ui-components-svelte",
 	"version": "0.0.1-next.1",
 	"description": "UI component for svelte",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/twinfoundation/ui.git",
+		"directory": "packages/ui-components-svelte"
+	},
+	"author": "martyn.janes@iota.org",
+	"license": "Apache-2.0",
+	"type": "module",
+	"engines": {
+		"node": ">=20.0.0"
+	},
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
@@ -39,7 +50,6 @@
 		"vite": "^5.4.6",
 		"vitest": "^2.1.1"
 	},
-	"type": "module",
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
@@ -50,7 +60,6 @@
 	},
 	"files": [
 		"dist",
-		"docs",
-		"config"
+		"docs"
 	]
 }
