@@ -1,0 +1,16 @@
+node_modules
+.updatable-packages
+**/dist/es
+**/dist/esm
+**/dist/cjs
+**/dist/types
+**/dist/locales
+coverage
+*.tgz
+**/.tmp
+**/.local-data
+vitest.config.ts.timestamp*
+**/.svelte-kit
+**/test-results
+.vercel
+.env

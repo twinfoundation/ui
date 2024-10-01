@@ -1,0 +1,48 @@
+{
+	"name": "@twin.org/ui",
+	"version": "0.0.1-next.1",
+	"description": "UI",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/twinfoundation/ui.git"
+	},
+	"author": "martyn.janes@iota.org",
+	"license": "Apache-2.0",
+	"private": true,
+	"engines": {
+		"node": ">=20.0.0"
+	},
+	"scripts": {
+		"dist": "node ./scripts/workspaces.mjs dist",
+		"format": "prettier --config .prettierrc --write .",
+		"lint:format": "prettier --config .prettierrc --check .",
+		"lint:code": "eslint . --ext .js,.mjs,.ts,.svelte",
+		"lint:markdown": "markdownlint **/*.md --ignore **/node_modules/** --ignore **/docs/reference/**",
+		"lint:spell": "cspell ** --no-progress",
+		"lint": "npm run lint:format && npm run lint:code && npm run lint:markdown && npm run lint:spell"
+	},
+	"devDependencies": {
+		"@typescript-eslint/eslint-plugin": "^7.13.1",
+		"cspell": "^8.14.4",
+		"eslint": "^8.57.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-plugin-header": "^3.1.1",
+		"eslint-plugin-import": "^2.30.0",
+		"eslint-plugin-jsdoc": "^50.2.4",
+		"eslint-plugin-prettier": "^5.2.1",
+		"eslint-plugin-promise": "^7.1.0",
+		"eslint-plugin-svelte": "^2.44.0",
+		"eslint-plugin-unicorn": "^55.0.0",
+		"eslint-plugin-unused-imports": "^3.2.0",
+		"fast-glob": "^3.3.2",
+		"markdownlint-cli": "^0.41.0",
+		"prettier": "^3.3.3",
+		"prettier-plugin-svelte": "^3.2.6",
+		"prettier-plugin-tailwindcss": "^0.6.6"
+	},
+	"workspaces": [
+		"packages/ui-components-svelte",
+		"apps/ui-playground-svelte"
+	],
+	"type": "module"
+}

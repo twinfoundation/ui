@@ -1,0 +1,25 @@
+{
+	"app": {
+		"name": "UI Components Svelte"
+	},
+	"navigation": {
+		"home": "Home"
+	},
+	"footer": {
+		"copyrightOrg": "TWIN",
+		"language": "Language",
+		"colorTheme": "Color theme",
+		"selectLanguage": "Select language"
+	},
+	"pages": {
+		"error": {
+			"title": "Error",
+			"notFound": "The requested page could not be found"
+		}
+	},
+	"actions": {
+		"save": "Save",
+		"saving": "Saving...",
+		"saveSuccess": "Saved successfully"
+	}
+}
