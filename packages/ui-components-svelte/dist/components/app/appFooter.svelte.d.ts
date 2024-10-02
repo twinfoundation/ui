@@ -1,11 +1,16 @@
 import { SvelteComponent } from "svelte";
 declare const __propDef: {
-    props: Record<string, never>;
+    props: {
+        showColorTheme?: boolean;
+        showLanguageSelector?: boolean;
+    };
     events: {
         [evt: string]: CustomEvent<any>;
     };
     slots: {
         start: {};
+        middle: {};
+        end: {};
     };
     exports?: {} | undefined;
     bindings?: string | undefined;

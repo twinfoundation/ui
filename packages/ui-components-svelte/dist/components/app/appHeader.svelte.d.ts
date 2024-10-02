@@ -2,13 +2,18 @@ import { SvelteComponent } from "svelte";
 declare const __propDef: {
     props: {
         initials?: string;
-        navRoute?: string;
-        isAuthenticated?: boolean;
+        profileNavRoute?: string;
+        appNameResource?: string;
+        isAuthenticated?: boolean | undefined;
     };
     events: {
         [evt: string]: CustomEvent<any>;
     };
-    slots: {};
+    slots: {
+        start: {};
+        middle: {};
+        end: {};
+    };
     exports?: {} | undefined;
     bindings?: string | undefined;
 };
