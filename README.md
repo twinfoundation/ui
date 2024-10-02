@@ -8,7 +8,7 @@ This mono-repository contains the UI components for building TWIN apps.
 
 ## Apps
 
-- [ui-playground-svelte](apps/ui-playground-svelte/README.md) - A web UI for testing the svelte components.
+- [ui-playground-svelte](apps/ui-playground-svelte/README.md) - A web UI for testing the svelte components [https://playground-svelte.twindev.org/](https://playground-svelte.twindev.org/).
 
 ## Contributing
 
