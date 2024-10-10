@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/ui-playground-svelte",
-	"version": "0.0.1-next.4",
+	"version": "0.0.1-next.5",
 	"description": "UI to demonstrate the APIs",
 	"repository": {
 		"type": "git",
@@ -22,13 +22,13 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"test:integration": "playwright test",
 		"test:unit": "vitest --run",
-		"merge-locales": "merge-locales --config ./locales/merge-locales-config.json",
+		"merge-locales": "merge-locales --config ./merge-locales-config.json",
 		"docs:clean": "echo Nothing to clean",
 		"docs": "npm run docs:clean",
 		"dist": "npm run build && npm run check && npm run merge-locales && npm run test && npm run docs"
 	},
 	"dependencies": {
-		"@twin.org/ui-components-svelte": "0.0.1-next.4"
+		"@twin.org/ui-components-svelte": "0.0.1-next.5"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.48.0",

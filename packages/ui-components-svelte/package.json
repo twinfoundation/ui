@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/ui-components-svelte",
-	"version": "0.0.1-next.4",
+	"version": "0.0.1-next.5",
 	"description": "UI component for svelte",
 	"repository": {
 		"type": "git",
@@ -19,7 +19,7 @@
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"merge-locales": "merge-locales --config ./locales/merge-locales-config.json",
+		"merge-locales": "merge-locales --config ./merge-locales-config.json",
 		"docs:clean": "echo Nothing to clean",
 		"docs": "npm run docs:clean",
 		"package": "svelte-package",
@@ -60,6 +60,7 @@
 	},
 	"files": [
 		"dist",
-		"docs"
+		"docs",
+		"locales"
 	]
 }
