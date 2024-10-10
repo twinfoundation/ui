@@ -4,10 +4,11 @@ declare const __propDef: {
     props: {
         titleResource: string;
         actionButtonResource?: string;
-        actionButtonBusyResource?: string;
         actionSuccessResource?: string;
+        closeButtonResource?: string;
         validationMethod: ((validationFailures: IValidationFailure[]) => Promise<void>) | undefined;
-        actionMethod: (() => Promise<string | undefined>) | undefined;
+        actionMethod?: (() => Promise<string | undefined>) | undefined;
+        closeMethod?: (() => Promise<void>) | undefined;
         validationErrors: {
             [id: string]: IValidationFailure[] | undefined;
         };

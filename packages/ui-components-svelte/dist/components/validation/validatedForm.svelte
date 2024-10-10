@@ -2,10 +2,11 @@
 import { Button, Card, Heading, P, Spinner, i18n } from "../..";
 export let titleResource;
 export let actionButtonResource = "actions.save";
-export let actionButtonBusyResource = "actions.saving";
 export let actionSuccessResource = "actions.saveSuccess";
+export let closeButtonResource = "actions.close";
 export let validationMethod;
-export let actionMethod;
+export let actionMethod = void 0;
+export let closeMethod = void 0;
 export let validationErrors;
 export let isBusy = false;
 let submitResult = "";
@@ -54,9 +55,16 @@ async function showResult() {
 			{/if}
 		</div>
 		<slot name="fields"></slot>
-		<Button type="button" class="w-full" on:click={async () => handleSubmit()} disabled={isBusy}
-			>{$i18n(isBusy ? actionButtonBusyResource : actionButtonResource)}
-		</Button>
+		<div class="flex flex-row gap-2">
+			{#if !Is.empty(closeMethod)}
+				<Button type="button" class="w-full" on:click={async () => closeMethod()} disabled={isBusy}
+					>{$i18n(closeButtonResource)}
+				</Button>
+			{/if}
+			<Button type="button" class="w-full" on:click={async () => handleSubmit()} disabled={isBusy}
+				>{$i18n(actionButtonResource)}
+			</Button>
+		</div>
 		<slot name="after-action"></slot>
 		<P
 			class={`whitespace-pre-line text-sm ${submitResultIsError ? 'text-red-500 dark:text-red-400' : 'text-green-500 dark:text-green-400'}`}

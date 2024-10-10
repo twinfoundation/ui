@@ -148,11 +148,7 @@
   },
   "actions": {
     "save": "Save",
-    "saving": "Saving...",
-    "saveSuccess": "Saved successfully"
-  },
-  "serverStatus": {
-    "api": "API",
-    "notConnected": "Not connected"
+    "saveSuccess": "Saved successfully",
+    "close": "Close"
   }
 }

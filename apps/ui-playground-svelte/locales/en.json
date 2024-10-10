@@ -9,23 +9,13 @@
 		"forms": "Forms",
 		"qr": "QR",
 		"spinner": "Spinner",
-		"cards": "Cards"
-	},
-	"footer": {
-		"copyrightOrg": "TWIN",
-		"language": "Language",
-		"colorTheme": "Color theme",
-		"selectLanguage": "Select language"
+		"cards": "Cards",
+		"validatedForm": "Validated Form"
 	},
 	"pages": {
-		"error": {
-			"title": "Error",
-			"notFound": "The requested page could not be found"
+		"validatedForm": {
+			"title": "My Form",
+			"firstName": "First Name"
 		}
-	},
-	"actions": {
-		"save": "Save",
-		"saving": "Saving...",
-		"saveSuccess": "Saved successfully"
 	}
 }

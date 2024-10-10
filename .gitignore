@@ -1,10 +1,6 @@
 node_modules
 .updatable-packages
-**/dist/es
-**/dist/esm
-**/dist/cjs
-**/dist/types
-**/dist/locales
+**/dist/
 coverage
 *.tgz
 **/.tmp

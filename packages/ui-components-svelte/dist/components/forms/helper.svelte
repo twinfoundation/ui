@@ -1,6 +1,6 @@
 <script>import { Helper } from "flowbite-svelte";
 </script>
 
-<Helper {...$$props} class={`font-light text-neutral-900 ${$$props.class ?? ''}`}>
+<Helper {...$$props} class={`font-light ${$$props.class ?? ''}`}>
 	<slot></slot>
 </Helper>

@@ -6,12 +6,13 @@
 
 	export let titleResource: string;
 	export let actionButtonResource: string = 'actions.save';
-	export let actionButtonBusyResource: string = 'actions.saving';
 	export let actionSuccessResource: string = 'actions.saveSuccess';
+	export let closeButtonResource: string = 'actions.close';
 	export let validationMethod:
 		| ((validationFailures: IValidationFailure[]) => Promise<void>)
 		| undefined;
-	export let actionMethod: (() => Promise<string | undefined>) | undefined;
+	export let actionMethod: (() => Promise<string | undefined>) | undefined = undefined;
+	export let closeMethod: (() => Promise<void>) | undefined = undefined;
 	export let validationErrors: { [id: string]: IValidationFailure[] | undefined };
 	export let isBusy: boolean = false;
 
@@ -67,9 +68,16 @@
 			{/if}
 		</div>
 		<slot name="fields"></slot>
-		<Button type="button" class="w-full" on:click={async () => handleSubmit()} disabled={isBusy}
-			>{$i18n(isBusy ? actionButtonBusyResource : actionButtonResource)}
-		</Button>
+		<div class="flex flex-row gap-2">
+			{#if !Is.empty(closeMethod)}
+				<Button type="button" class="w-full" on:click={async () => closeMethod()} disabled={isBusy}
+					>{$i18n(closeButtonResource)}
+				</Button>
+			{/if}
+			<Button type="button" class="w-full" on:click={async () => handleSubmit()} disabled={isBusy}
+				>{$i18n(actionButtonResource)}
+			</Button>
+		</div>
 		<slot name="after-action"></slot>
 		<P
 			class={`whitespace-pre-line text-sm ${submitResultIsError ? 'text-red-500 dark:text-red-400' : 'text-green-500 dark:text-green-400'}`}

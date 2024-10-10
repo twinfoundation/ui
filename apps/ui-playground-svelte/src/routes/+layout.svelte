@@ -42,6 +42,11 @@
 					label: 'navigation.cards',
 					route: '/cards',
 					icon: HomeSolid
+				},
+				{
+					label: 'navigation.validatedForm',
+					route: '/validatedForm',
+					icon: HomeSolid
 				}
 			]
 		}

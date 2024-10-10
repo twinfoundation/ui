@@ -9,7 +9,8 @@
     "forms": "Forms",
     "qr": "QR",
     "spinner": "Spinner",
-    "cards": "Cards"
+    "cards": "Cards",
+    "validatedForm": "Validated Form"
   },
   "footer": {
     "copyrightOrg": "TWIN",
@@ -21,16 +22,16 @@
     "error": {
       "title": "Error",
       "notFound": "The requested page could not be found"
+    },
+    "validatedForm": {
+      "title": "My Form",
+      "firstName": "First Name"
     }
   },
   "actions": {
     "save": "Save",
-    "saving": "Saving...",
-    "saveSuccess": "Saved successfully"
-  },
-  "serverStatus": {
-    "api": "API",
-    "notConnected": "Not connected"
+    "saveSuccess": "Saved successfully",
+    "close": "Close"
   },
   "error": {
     "qr": {
