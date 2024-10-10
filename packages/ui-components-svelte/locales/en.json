@@ -5,12 +5,6 @@
 	"navigation": {
 		"home": "Home"
 	},
-	"footer": {
-		"copyrightOrg": "TWIN",
-		"language": "Language",
-		"colorTheme": "Color theme",
-		"selectLanguage": "Select language"
-	},
 	"pages": {
 		"error": {
 			"title": "Error",
@@ -21,5 +15,16 @@
 		"save": "Save",
 		"saveSuccess": "Saved successfully",
 		"close": "Close"
+	},
+	"components": {
+		"serverStatus": {
+			"api": "API",
+			"notConnected": "Not connected"
+		},
+		"appFooter": {
+			"language": "Language",
+			"colorTheme": "Color theme",
+			"selectLanguage": "Select language"
+		}
 	}
 }
