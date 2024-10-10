@@ -21,5 +21,9 @@
 		"save": "Save",
 		"saving": "Saving...",
 		"saveSuccess": "Saved successfully"
+	},
+	"serverStatus": {
+		"api": "API",
+		"notConnected": "Not connected"
 	}
 }

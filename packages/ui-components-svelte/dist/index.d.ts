@@ -1,9 +1,11 @@
 export { default as AppFooter } from "./components/app/appFooter.svelte";
 export { default as AppHeader } from "./components/app/appHeader.svelte";
+export { default as AppLayout } from "./components/app/appLayout.svelte";
 export { default as AppSidebar } from "./components/app/appSidebar.svelte";
 export { default as Avatar } from "./components/feedback/avatar.svelte";
 export { default as Badge } from "./components/feedback/badge.svelte";
 export { default as QR } from "./components/feedback/qr.svelte";
+export { default as ServerStatus } from "./components/feedback/serverStatus.svelte";
 export { default as Spinner } from "./components/feedback/spinner.svelte";
 export { default as Checkbox } from "./components/forms/checkbox.svelte";
 export { default as Fileupload } from "./components/forms/fileUpload.svelte";

@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { Radio } from 'flowbite-svelte';
 	export let value: string | number;
-	// eslint-disable-next-line no-undef-init, unicorn/no-useless-undefined
 	export let group: number | string | undefined = undefined;
 </script>
 

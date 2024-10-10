@@ -3,15 +3,14 @@ declare const __propDef: {
     props: {
         showColorTheme?: boolean;
         showLanguageSelector?: boolean;
+        serverHealthStatus: "error" | "warning" | "ok" | undefined;
+        serverName: string | undefined;
+        serverVersion: string | undefined;
     };
     events: {
         [evt: string]: CustomEvent<any>;
     };
-    slots: {
-        start: {};
-        middle: {};
-        end: {};
-    };
+    slots: {};
     exports?: {} | undefined;
     bindings?: string | undefined;
 };

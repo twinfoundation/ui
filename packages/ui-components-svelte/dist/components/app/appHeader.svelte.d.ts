@@ -9,11 +9,7 @@ declare const __propDef: {
     events: {
         [evt: string]: CustomEvent<any>;
     };
-    slots: {
-        start: {};
-        middle: {};
-        end: {};
-    };
+    slots: {};
     exports?: {} | undefined;
     bindings?: string | undefined;
 };

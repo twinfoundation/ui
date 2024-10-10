@@ -763,6 +763,13 @@ module.exports = {
 			rules: {
 				'unicorn/no-useless-undefined': ['off']
 			}
+		},
+		{
+			files: ['*.svelte'],
+			rules: {
+				'no-undef-init': ['off'],
+				'unicorn/no-useless-undefined': ['off']
+			}
 		}
 	]
 };

@@ -28,6 +28,10 @@
     "saving": "Saving...",
     "saveSuccess": "Saved successfully"
   },
+  "serverStatus": {
+    "api": "API",
+    "notConnected": "Not connected"
+  },
   "error": {
     "qr": {
       "typeNumberRange": "The typeNumber parameter should be a number >= 0 and <= 40, it is {typeNumber}",

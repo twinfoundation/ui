@@ -1,16 +1,29 @@
 <script lang="ts">
 	// Copyright 2024 IOTA Stiftung.
 	// SPDX-License-Identifier: Apache-2.0.
-	import { currentLocale, DarkMode, Footer, i18n, Label, locales, Select } from '$lib';
+	import {
+		currentLocale,
+		DarkMode,
+		Footer,
+		i18n,
+		Label,
+		locales,
+		Select,
+		ServerStatus
+	} from '$lib';
+
 	export let showColorTheme = true;
 	export let showLanguageSelector = true;
+	export let serverHealthStatus: 'error' | 'warning' | 'ok' | undefined;
+	export let serverName: string | undefined;
+	export let serverVersion: string | undefined;
 </script>
 
 <Footer
 	class="dark:bg-cosmic-indigo-600 border-t border-neutral-200 bg-white px-4 py-2 dark:border-neutral-900"
 >
 	<div class="flex flex-col items-center justify-between gap-2 md:flex-row">
-		<slot name="start"></slot>
+		<ServerStatus {serverHealthStatus} {serverName} {serverVersion} />
 		{#if showLanguageSelector}
 			<div class="flex flex-row flex-wrap items-center gap-2">
 				<Label>{$i18n('footer.language')}</Label>
@@ -27,7 +40,6 @@
 				></Select>
 			</div>
 		{/if}
-		<slot name="middle"></slot>
 		{#if showColorTheme}
 			<div class="flex flex-row items-center gap-2">
 				<Label>{$i18n('footer.colorTheme')}</Label>
@@ -36,6 +48,5 @@
 				/>
 			</div>
 		{/if}
-		<slot name="end"></slot>
 	</div>
 </Footer>

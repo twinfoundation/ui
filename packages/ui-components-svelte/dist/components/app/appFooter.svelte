@@ -1,13 +1,25 @@
-<script>import { currentLocale, DarkMode, Footer, i18n, Label, locales, Select } from "../..";
+<script>import {
+  currentLocale,
+  DarkMode,
+  Footer,
+  i18n,
+  Label,
+  locales,
+  Select,
+  ServerStatus
+} from "../..";
 export let showColorTheme = true;
 export let showLanguageSelector = true;
+export let serverHealthStatus;
+export let serverName;
+export let serverVersion;
 </script>
 
 <Footer
 	class="dark:bg-cosmic-indigo-600 border-t border-neutral-200 bg-white px-4 py-2 dark:border-neutral-900"
 >
 	<div class="flex flex-col items-center justify-between gap-2 md:flex-row">
-		<slot name="start"></slot>
+		<ServerStatus {serverHealthStatus} {serverName} {serverVersion} />
 		{#if showLanguageSelector}
 			<div class="flex flex-row flex-wrap items-center gap-2">
 				<Label>{$i18n('footer.language')}</Label>
@@ -24,7 +36,6 @@ export let showLanguageSelector = true;
 				></Select>
 			</div>
 		{/if}
-		<slot name="middle"></slot>
 		{#if showColorTheme}
 			<div class="flex flex-row items-center gap-2">
 				<Label>{$i18n('footer.colorTheme')}</Label>
@@ -33,6 +44,5 @@ export let showLanguageSelector = true;
 				/>
 			</div>
 		{/if}
-		<slot name="end"></slot>
 	</div>
 </Footer>

@@ -1,6 +1,10 @@
 @import './font-face.css';
 
 @layer base {
+	body {
+		@apply overflow-y-hidden;
+		@apply overflow-x-auto;
+	}
 	::-webkit-scrollbar-track {
 		@apply bg-gray-200;
 		@apply rounded-lg;
