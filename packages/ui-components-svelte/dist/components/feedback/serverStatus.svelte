@@ -8,11 +8,13 @@ export let serverVersion = "0.0";
 {#if !Is.empty(serverHealthStatus)}
 	{#if serverHealthStatus !== 'error'}
 		<Badge color={serverHealthStatus === 'ok' ? 'green' : 'yellow'} large
-			>{$i18n('serverStatus.api')}: {serverName} v{serverVersion}</Badge
+			>{$i18n('components.serverStatus.api')}: {serverName} v{serverVersion}</Badge
 		>
 	{:else}
 		<Badge color="red" large
-			>{$i18n('serverStatus.api')}: {$i18n('serverStatus.notConnected')}</Badge
+			>{$i18n('components.serverStatus.api')}: {$i18n(
+				'components.serverStatus.notConnected'
+			)}</Badge
 		>
 	{/if}
 {/if}

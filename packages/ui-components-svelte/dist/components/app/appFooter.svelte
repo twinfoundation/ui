@@ -22,12 +22,12 @@ export let serverVersion;
 		<ServerStatus {serverHealthStatus} {serverName} {serverVersion} />
 		{#if showLanguageSelector}
 			<div class="flex flex-row flex-wrap items-center gap-2">
-				<Label>{$i18n('footer.language')}</Label>
+				<Label>{$i18n('components.appFooter.language')}</Label>
 				<Select
 					class="w-48"
 					size="sm"
 					name="language"
-					placeholder={$i18n('footer.selectLanguage')}
+					placeholder={$i18n('components.appFooter.selectLanguage')}
 					items={$locales.map(locale => ({
 						value: locale.code,
 						name: locale.label
@@ -38,7 +38,7 @@ export let serverVersion;
 		{/if}
 		{#if showColorTheme}
 			<div class="flex flex-row items-center gap-2">
-				<Label>{$i18n('footer.colorTheme')}</Label>
+				<Label>{$i18n('components.appFooter.colorTheme')}</Label>
 				<DarkMode
 					btnClass="text-neutral-500 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-700 rounded-lg text-xl p-2"
 				/>
