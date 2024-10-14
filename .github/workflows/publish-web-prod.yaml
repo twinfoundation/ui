@@ -1,4 +1,4 @@
-name: Publish Production
+name: Publish Production Web Site
 
 env:
   gha-branch: main
@@ -27,6 +27,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+
+      # Install older version of Vercel CLI until this issue is fixed
+      # https://github.com/BetaHuhn/deploy-to-vercel-action/issues/393
+      - name: Install Vercel CLI
+        run: npm install -g vercel@22.0.1          
 
       - name: Deploy to Vercel
         uses: BetaHuhn/deploy-to-vercel-action@v1.10.0
