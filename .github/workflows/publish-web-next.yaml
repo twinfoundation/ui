@@ -3,7 +3,7 @@ name: Publish Next Web Site
 env:
   gha-branch: next
   gha-production: false
-  gha-domain: ${{ secrets.DOMAIN_PROD_PLAYGROUND_SVELTE }}
+  gha-domain: ${{ secrets.DOMAIN_NEXT_PLAYGROUND_SVELTE }}
 
 on:
   workflow_dispatch:
