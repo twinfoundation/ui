@@ -44,6 +44,16 @@
 					icon: HomeSolid
 				},
 				{
+					label: 'navigation.tables',
+					route: '/tables',
+					icon: HomeSolid
+				},
+				{
+					label: 'navigation.modals',
+					route: '/modals',
+					icon: HomeSolid
+				},
+				{
 					label: 'navigation.validatedForm',
 					route: '/validatedForm',
 					icon: HomeSolid

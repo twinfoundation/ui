@@ -3,6 +3,7 @@ declare const __propDef: {
     props: {
         [x: string]: any;
         outline?: boolean | undefined;
+        color?: ("red" | "yellow" | "green" | "primary") | undefined;
     };
     events: {
         click: any;

@@ -143,7 +143,13 @@
   "actions": {
     "save": "Save",
     "saveSuccess": "Saved successfully",
-    "close": "Close"
+    "open": "Open",
+    "close": "Close",
+    "back": "Back",
+    "yes": "Yes",
+    "no": "No",
+    "ok": "OK",
+    "cancel": "Cancel"
   },
   "components": {
     "serverStatus": {

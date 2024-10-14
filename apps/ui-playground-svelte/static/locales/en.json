@@ -10,7 +10,9 @@
     "qr": "QR",
     "spinner": "Spinner",
     "cards": "Cards",
-    "validatedForm": "Validated Form"
+    "validatedForm": "Validated Form",
+    "tables": "Tables",
+    "modals": "Modals"
   },
   "pages": {
     "error": {
@@ -20,12 +22,24 @@
     "validatedForm": {
       "title": "My Form",
       "firstName": "First Name"
+    },
+    "modals": {
+      "title": "My Modal",
+      "message": "This is the content of the modal",
+      "titleConfirmation": "Question",
+      "messageConfirmation": "Are you sure you want to delete everything?"
     }
   },
   "actions": {
     "save": "Save",
     "saveSuccess": "Saved successfully",
-    "close": "Close"
+    "open": "Open",
+    "close": "Close",
+    "back": "Back",
+    "yes": "Yes",
+    "no": "No",
+    "ok": "OK",
+    "cancel": "Cancel"
   },
   "components": {
     "serverStatus": {

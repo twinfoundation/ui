@@ -10,12 +10,20 @@
 		"qr": "QR",
 		"spinner": "Spinner",
 		"cards": "Cards",
-		"validatedForm": "Validated Form"
+		"validatedForm": "Validated Form",
+		"tables": "Tables",
+		"modals": "Modals"
 	},
 	"pages": {
 		"validatedForm": {
 			"title": "My Form",
 			"firstName": "First Name"
+		},
+		"modals": {
+			"title": "My Modal",
+			"message": "This is the content of the modal",
+			"titleConfirmation": "Question",
+			"messageConfirmation": "Are you sure you want to delete everything?"
 		}
 	}
 }
