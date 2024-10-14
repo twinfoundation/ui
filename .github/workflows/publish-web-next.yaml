@@ -43,3 +43,4 @@ jobs:
           VERCEL_SCOPE: ${{ secrets.VERCEL_SCOPE }}
           ALIAS_DOMAINS: ${{ env.gha-domain }}
           PRODUCTION: ${{ env.gha-production }}
+          WORKING_DIRECTORY: apps/ui-playground-svelte
