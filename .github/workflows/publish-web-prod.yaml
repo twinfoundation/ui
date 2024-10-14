@@ -3,7 +3,7 @@ name: Publish Production Web Site
 env:
   gha-branch: main
   gha-production: true
-  gha-domain: ${{ secrets.DOMAIN_PROD_PLAYGROUND_SVELTE} }}
+  gha-domain: ${{ secrets.DOMAIN_PROD_PLAYGROUND_SVELTE }}
 
 on:
   workflow_dispatch:
