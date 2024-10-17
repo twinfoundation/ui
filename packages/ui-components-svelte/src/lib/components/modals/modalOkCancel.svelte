@@ -6,9 +6,9 @@
 	export let statusMessage: string | undefined = undefined;
 	export let statusIsError: boolean = false;
 	export let isBusy: boolean = false;
-	export let yesColor: 'red' | 'yellow' | 'green' | 'primary' = 'primary';
-	export let yesAction: () => Promise<void>;
-	export let noAction: () => Promise<void>;
+	export let okColor: 'red' | 'yellow' | 'green' | 'primary' = 'primary';
+	export let okAction: () => Promise<void>;
+	export let cancelAction: () => Promise<void>;
 </script>
 
 <ModalWithButtons
@@ -20,16 +20,16 @@
 	{...$$props}
 	buttons={[
 		{
-			label: $i18n('actions.yes'),
-			color: yesColor,
+			label: $i18n('actions.ok'),
+			color: okColor,
 			outline: false,
-			action: yesAction
+			action: okAction
 		},
 		{
-			label: $i18n('actions.no'),
+			label: $i18n('actions.cancel'),
 			color: 'primary',
 			outline: true,
-			action: noAction
+			action: cancelAction
 		}
 	]}
 />

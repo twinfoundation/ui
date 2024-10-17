@@ -23,7 +23,8 @@
 			"title": "My Modal",
 			"message": "This is the content of the modal",
 			"titleConfirmation": "Question",
-			"messageConfirmation": "Are you sure you want to delete everything?"
+			"messageConfirmation": "Are you sure you want to delete everything?",
+			"isBusy": "Busy Modal"
 		}
 	}
 }
