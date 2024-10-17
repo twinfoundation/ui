@@ -26,5 +26,13 @@
 			"messageConfirmation": "Are you sure you want to delete everything?",
 			"isBusy": "Busy Modal"
 		}
+	},
+	"common": {
+		"labels": {
+			"description": "Description",
+			"dateCreated": "Date Created",
+			"dateModified": "Date Modified",
+			"actions": "Actions"
+		}
 	}
 }

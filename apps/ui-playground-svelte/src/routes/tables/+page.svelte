@@ -53,9 +53,9 @@
 
 	<Table>
 		<TableHead>
-			<TableHeadCell>Description</TableHeadCell>
-			<TableHeadCell>Date Created</TableHeadCell>
-			<TableHeadCell>Actions</TableHeadCell>
+			<TableHeadCell>{$i18n('common.labels.description')}</TableHeadCell>
+			<TableHeadCell>{$i18n('common.labels.dateCreated')}</TableHeadCell>
+			<TableHeadCell>{$i18n('common.labels.actions')}</TableHeadCell>
 		</TableHead>
 		<TableBody>
 			{#each data as item}

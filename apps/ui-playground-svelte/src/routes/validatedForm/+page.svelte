@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { goto } from '$app/navigation';
 	// Copyright 2024 IOTA Stiftung.
 	// SPDX-License-Identifier: Apache-2.0.
+	import { goto } from '$app/navigation';
 	import { Is, type IValidationFailure, Validation } from '@twin.org/core';
 	import {
 		Heading,

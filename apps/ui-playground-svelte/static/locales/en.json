@@ -181,5 +181,13 @@
   },
   "validation": {
     "defaultFieldName": "The field"
+  },
+  "common": {
+    "labels": {
+      "description": "Description",
+      "dateCreated": "Date Created",
+      "dateModified": "Date Modified",
+      "actions": "Actions"
+    }
   }
 }

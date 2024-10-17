@@ -1,6 +1,6 @@
 <script lang="ts">
+	import { AngleLeftOutline, AngleRightOutline } from 'flowbite-svelte-icons';
 	import { Button } from '$lib';
-
 	export let canGoBackwards = false;
 	export let canGoForwards = false;
 	export let disabled = false;
@@ -13,9 +13,9 @@
 		outline
 		size="xs"
 		disabled={!canGoBackwards || disabled}
-		on:click={async () => loadPrevious()}>Previous</Button
+		on:click={async () => loadPrevious()}><AngleLeftOutline /></Button
 	>
 	<Button outline size="xs" disabled={!canGoForwards || disabled} on:click={async () => loadNext()}
-		>Next</Button
+		><AngleRightOutline /></Button
 	>
 </div>
