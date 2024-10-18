@@ -3,7 +3,7 @@ declare const __propDef: {
     props: {
         [x: string]: any;
         qrData: string;
-        labelResource: string;
+        label: string;
         dimensions: number;
         foreground?: string | undefined;
         background?: string | undefined;

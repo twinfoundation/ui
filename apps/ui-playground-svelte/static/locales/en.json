@@ -28,7 +28,7 @@
       "message": "This is the content of the modal",
       "titleConfirmation": "Question",
       "messageConfirmation": "Are you sure you want to delete everything?",
-      "isBusy": "Busy Modal"
+      "busy": "Busy Modal"
     }
   },
   "actions": {
@@ -40,7 +40,10 @@
     "yes": "Yes",
     "no": "No",
     "ok": "OK",
-    "cancel": "Cancel"
+    "cancel": "Cancel",
+    "modify": "Modify",
+    "delete": "Delete",
+    "view": "View"
   },
   "components": {
     "serverStatus": {

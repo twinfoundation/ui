@@ -4,10 +4,10 @@
 	import { Converter } from '@twin.org/core';
 	import { PngRenderer, QR } from '@twin.org/qr';
 	import { onMount } from 'svelte';
-	import { Link, i18n } from '$lib';
+	import { Link } from '$lib';
 
 	export let qrData: string;
-	export let labelResource: string;
+	export let label: string;
 	export let dimensions: number;
 	export let foreground: string = '#000000';
 	export let background: string = '#FFFFFF';
@@ -35,7 +35,7 @@
 		>
 			<img
 				src={pngBase64}
-				alt={$i18n(labelResource)}
+				alt={label}
 				class="rounded-sm"
 				style="width:{`${dimensions - 2}px`};height:{`${dimensions - 2}px`};min-width:{`${dimensions - 2}px`};min-height:{`${dimensions - 2}px`}"
 			/>
@@ -43,7 +43,7 @@
 	{:else}
 		<img
 			src={pngBase64}
-			alt={$i18n(labelResource)}
+			alt={label}
 			class="rounded-sm"
 			style="width:{`${dimensions - 2}px`};height:{`${dimensions - 2}px`};min-width:{`${dimensions - 2}px`};min-height:{`${dimensions - 2}px`}"
 		/>

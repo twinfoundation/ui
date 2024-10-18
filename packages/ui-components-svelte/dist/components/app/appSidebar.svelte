@@ -1,5 +1,5 @@
 <script>import { page } from "$app/stores";
-import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper, i18n } from "../..";
+import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper } from "../..";
 $: activeUrl = $page.url.pathname;
 export let groups = [];
 </script>
@@ -9,7 +9,7 @@ export let groups = [];
 		{#each groups as group}
 			<SidebarGroup>
 				{#each group.items as item}
-					<SidebarItem label={$i18n(item.label)} href={item.route}>
+					<SidebarItem label={item.label} href={item.route}>
 						<svelte:fragment slot="icon">
 							<svelte:component
 								this={item.icon}

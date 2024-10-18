@@ -1,12 +1,12 @@
-<script>import { Avatar, i18n, Link, Navbar, NavBrand, Span } from "../..";
+<script>import { Avatar, Link, Navbar, NavBrand, Span } from "../..";
 export let initials = "";
 export let profileNavRoute = "";
-export let appNameResource = "app.name";
-export let isAuthenticated = false;
+export let title = "";
+export let authenticated = false;
 </script>
 
 <svelte:head>
-	<title>{$i18n(appNameResource)}</title>
+	<title>{title}</title>
 </svelte:head>
 
 <Navbar
@@ -15,13 +15,13 @@ export let isAuthenticated = false;
 >
 	<div class="flex w-full flex-row justify-between gap-10">
 		<NavBrand href="/" class="p-2">
-			<img src="/images/logo-primary.svg" class="me-3 h-6 sm:h-9" alt={$i18n(appNameResource)} />
+			<img src="/images/logo-primary.svg" class="me-3 h-6 sm:h-9" alt={title} />
 			<Span
 				class="font-hdcoltonwidesemibold self-center whitespace-nowrap text-xl font-semibold dark:text-white"
-				>{$i18n(appNameResource)}</Span
+				>{title}</Span
 			>
 		</NavBrand>
-		{#if isAuthenticated}
+		{#if authenticated}
 			<Link href={profileNavRoute} class="rounded-full"
 				><Avatar class="cursor-pointer">{initials}</Avatar></Link
 			>

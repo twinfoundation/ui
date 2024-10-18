@@ -1,8 +1,8 @@
 import { SvelteComponent } from "svelte";
 declare const __propDef: {
     props: {
-        titleResource: string;
-        isBusy?: boolean;
+        title: string;
+        busy?: boolean;
     };
     events: {
         [evt: string]: CustomEvent<any>;

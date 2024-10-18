@@ -13,7 +13,7 @@
 	} from '@twin.org/ui-components-svelte';
 	import { onMount } from 'svelte';
 
-	let isBusy = false;
+	let busy = false;
 	let validationErrors: {
 		[field in 'firstName']?: IValidationFailure[] | undefined;
 	} = {};
@@ -42,10 +42,10 @@
 	}
 
 	onMount(async () => {
-		isBusy = true;
+		busy = true;
 		// Do loading of data here
 		await new Promise(resolve => setTimeout(resolve, 1500));
-		isBusy = false;
+		busy = false;
 	});
 </script>
 
@@ -53,12 +53,12 @@
 	<Heading tag="h3">{$i18n('navigation.validatedForm')}</Heading>
 
 	<ValidatedForm
-		titleResource="pages.validatedForm.title"
+		title={$i18n('pages.validatedForm.title')}
 		validationMethod={validate}
 		actionMethod={action}
 		closeMethod={close}
 		bind:validationErrors
-		bind:isBusy
+		bind:busy
 	>
 		<svelte:fragment slot="fields">
 			<Label>
@@ -68,7 +68,7 @@
 					name="filename"
 					color={Is.arrayValue(validationErrors.firstName) ? 'red' : 'base'}
 					bind:value={firstName}
-					disabled={isBusy}
+					disabled={busy}
 				/>
 				<ValidationError validationErrors={validationErrors.firstName} />
 			</Label>

@@ -1,13 +1,13 @@
 <script lang="ts">
-	import { Heading, i18n, Spinner } from '$lib';
+	import { Heading, Spinner } from '$lib';
 
-	export let titleResource: string;
-	export let isBusy: boolean = false;
+	export let title: string;
+	export let busy: boolean = false;
 </script>
 
 <header class="flex flex-row justify-between gap-5 border-b pb-2">
-	<Heading tag="h5">{$i18n(titleResource)}</Heading>
-	{#if isBusy}
+	<Heading tag="h5">{title}</Heading>
+	{#if busy}
 		<Spinner />
 	{/if}
 </header>

@@ -19,6 +19,6 @@
 	];
 </script>
 
-<AppLayout {sidebarGroups} isAuthenticated={true} initials="TW" serverHealthStatus="ok">
+<AppLayout {sidebarGroups} authenticated={true} initials="TW" serverHealthStatus="ok">
 	<slot></slot>
 </AppLayout>

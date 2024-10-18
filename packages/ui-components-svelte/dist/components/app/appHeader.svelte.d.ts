@@ -3,8 +3,8 @@ declare const __propDef: {
     props: {
         initials?: string;
         profileNavRoute?: string;
-        appNameResource?: string;
-        isAuthenticated?: boolean | undefined;
+        title?: string;
+        authenticated?: boolean | undefined;
     };
     events: {
         [evt: string]: CustomEvent<any>;

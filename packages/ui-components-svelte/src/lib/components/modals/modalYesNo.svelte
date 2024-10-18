@@ -5,7 +5,7 @@
 	export let message: string;
 	export let statusMessage: string | undefined = undefined;
 	export let statusIsError: boolean = false;
-	export let isBusy: boolean = false;
+	export let busy: boolean = false;
 	export let yesColor: 'red' | 'yellow' | 'green' | 'primary' = 'primary';
 	export let yesAction: () => Promise<void>;
 	export let noAction: () => Promise<void>;
@@ -16,7 +16,7 @@
 	{message}
 	{statusMessage}
 	{statusIsError}
-	{isBusy}
+	{busy}
 	{...$$props}
 	buttons={[
 		{

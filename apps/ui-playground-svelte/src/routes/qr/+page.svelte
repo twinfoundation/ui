@@ -6,5 +6,5 @@
 
 <section class="flex flex-col items-start gap-5">
 	<Heading tag="h3">{$i18n('navigation.qr')}</Heading>
-	<QR qrData="https://twindev.org" labelResource="navigation.qr" dimensions={128} />
+	<QR qrData="https://twindev.org" label={$i18n('navigation.qr')} dimensions={128} />
 </section>

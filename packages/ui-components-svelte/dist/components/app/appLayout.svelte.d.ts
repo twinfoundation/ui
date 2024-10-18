@@ -3,10 +3,10 @@ import type { ISideBarGroup } from '../../models';
 declare const __propDef: {
     props: {
         sidebarGroups?: ISideBarGroup[] | undefined;
+        title?: string;
         initials?: string;
         profileNavRoute?: string;
-        appNameResource?: string;
-        isAuthenticated?: boolean | undefined;
+        authenticated?: boolean | undefined;
         serverHealthStatus?: "error" | "warning" | "ok" | undefined;
         serverName?: string | undefined;
         serverVersion?: string | undefined;

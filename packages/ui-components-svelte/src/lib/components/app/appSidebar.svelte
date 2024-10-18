@@ -3,7 +3,7 @@
 	// SPDX-License-Identifier: Apache-2.0.
 	import { page } from '$app/stores';
 	import type { ISideBarGroup } from '../../models/ISideBarGroup';
-	import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper, i18n } from '$lib';
+	import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper } from '$lib';
 	$: activeUrl = $page.url.pathname;
 
 	export let groups: ISideBarGroup[] = [];
@@ -14,7 +14,7 @@
 		{#each groups as group}
 			<SidebarGroup>
 				{#each group.items as item}
-					<SidebarItem label={$i18n(item.label)} href={item.route}>
+					<SidebarItem label={item.label} href={item.route}>
 						<svelte:fragment slot="icon">
 							<svelte:component
 								this={item.icon}

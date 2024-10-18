@@ -20,7 +20,10 @@
 		"yes": "Yes",
 		"no": "No",
 		"ok": "OK",
-		"cancel": "Cancel"
+		"cancel": "Cancel",
+		"modify": "Modify",
+		"delete": "Delete",
+		"view": "View"
 	},
 	"components": {
 		"serverStatus": {

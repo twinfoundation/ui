@@ -33,7 +33,7 @@
 	<Button on:click={() => (modalYesNoIsOpen = true)}
 		>{$i18n('actions.yes')} / {$i18n('actions.no')}</Button
 	>
-	<Button on:click={() => (modalErrorIsOpen = true)}>{$i18n('pages.modals.isBusy')}</Button>
+	<Button on:click={() => (modalErrorIsOpen = true)}>{$i18n('pages.modals.busy')}</Button>
 
 	<Modal title={$i18n('pages.modals.title')} open={modalFullIsOpen}>
 		<P>{$i18n('pages.modals.message')}</P>
@@ -93,7 +93,7 @@
 		title={$i18n('pages.modals.titleConfirmation')}
 		open={modalErrorIsOpen}
 		message={$i18n('pages.modals.messageConfirmation')}
-		isBusy={modalErrorIsBusy}
+		busy={modalErrorIsBusy}
 		statusMessage={modalErrorStatusMessage}
 		statusIsError={modalErrorStatusIsError}
 		yesColor="red"
@@ -107,6 +107,8 @@
 			}, 2000);
 		}}
 		noAction={async () => {
+			modalErrorStatusMessage = '';
+			modalErrorStatusIsError = false;
 			modalErrorIsOpen = false;
 		}}
 	/>

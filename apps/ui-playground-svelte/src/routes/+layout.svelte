@@ -1,7 +1,7 @@
 <script lang="ts">
 	// Copyright 2024 IOTA Stiftung.
 	// SPDX-License-Identifier: Apache-2.0.
-	import { AppLayout, type ISideBarGroup } from '@twin.org/ui-components-svelte';
+	import { AppLayout, i18n, type ISideBarGroup } from '@twin.org/ui-components-svelte';
 	import { HomeSolid } from 'flowbite-svelte-icons';
 	import '../app.css';
 
@@ -9,52 +9,52 @@
 		{
 			items: [
 				{
-					label: 'navigation.home',
+					label: $i18n('navigation.home'),
 					route: '/',
 					icon: HomeSolid
 				},
 				{
-					label: 'navigation.typography',
+					label: $i18n('navigation.typography'),
 					route: '/typography',
 					icon: HomeSolid
 				},
 				{
-					label: 'navigation.buttons',
+					label: $i18n('navigation.buttons'),
 					route: '/buttons',
 					icon: HomeSolid
 				},
 				{
-					label: 'navigation.forms',
+					label: $i18n('navigation.forms'),
 					route: '/forms',
 					icon: HomeSolid
 				},
 				{
-					label: 'navigation.qr',
+					label: $i18n('navigation.qr'),
 					route: '/qr',
 					icon: HomeSolid
 				},
 				{
-					label: 'navigation.spinner',
+					label: $i18n('navigation.spinner'),
 					route: '/spinner',
 					icon: HomeSolid
 				},
 				{
-					label: 'navigation.cards',
+					label: $i18n('navigation.cards'),
 					route: '/cards',
 					icon: HomeSolid
 				},
 				{
-					label: 'navigation.tables',
+					label: $i18n('navigation.tables'),
 					route: '/tables',
 					icon: HomeSolid
 				},
 				{
-					label: 'navigation.modals',
+					label: $i18n('navigation.modals'),
 					route: '/modals',
 					icon: HomeSolid
 				},
 				{
-					label: 'navigation.validatedForm',
+					label: $i18n('navigation.validatedForm'),
 					route: '/validatedForm',
 					icon: HomeSolid
 				}
@@ -63,6 +63,6 @@
 	];
 </script>
 
-<AppLayout {sidebarGroups}>
+<AppLayout title={$i18n('app.name')} {sidebarGroups}>
 	<slot></slot>
 </AppLayout>

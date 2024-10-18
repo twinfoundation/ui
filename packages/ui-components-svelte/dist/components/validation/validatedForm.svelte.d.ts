@@ -2,17 +2,20 @@ import { SvelteComponent } from "svelte";
 import { type IValidationFailure } from '@twin.org/core';
 declare const __propDef: {
     props: {
-        titleResource: string;
-        actionButtonResource?: string;
-        actionSuccessResource?: string;
-        closeButtonResource?: string;
+        title: string;
+        actionButtonLabel?: string;
+        actionSuccessLabel?: string;
+        closeButtonLabel?: string;
         validationMethod: ((validationFailures: IValidationFailure[]) => Promise<void>) | undefined;
         actionMethod?: (() => Promise<string | undefined>) | undefined;
         closeMethod?: (() => Promise<void>) | undefined;
         validationErrors: {
             [id: string]: IValidationFailure[] | undefined;
         };
-        isBusy?: boolean;
+        busy?: boolean;
+        result?: string;
+        resultIsError?: boolean;
+        resultTimeout?: number;
     };
     events: {
         [evt: string]: CustomEvent<any>;

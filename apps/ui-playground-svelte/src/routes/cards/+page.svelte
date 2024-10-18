@@ -15,7 +15,7 @@
 <section class="flex flex-col items-start gap-5">
 	<Heading tag="h3">{$i18n('navigation.cards')}</Heading>
 	<Card class="h-64">
-		<CardHeader titleResource="navigation.cards" isBusy={true} />
+		<CardHeader title={$i18n('navigation.cards')} busy={true} />
 		<CardBody>
 			<P>This is some content</P>
 		</CardBody>
