@@ -2,7 +2,6 @@ import { SvelteComponent } from "svelte";
 declare const __propDef: {
     props: {
         [x: string]: any;
-        value: string;
         files: FileList | undefined;
     };
     events: {

@@ -72,8 +72,8 @@
 
 		<Label>
 			File Upload
-			<Fileupload value="value" bind:files></Fileupload>
-			<Fileupload value="value" bind:files disabled></Fileupload>
+			<Fileupload bind:files></Fileupload>
+			<Fileupload bind:files disabled></Fileupload>
 		</Label>
 	</div>
 </section>
