@@ -25,7 +25,7 @@
 	<P>{message}</P>
 	{#if Is.stringValue(statusMessage)}
 		<P
-			class={`whitespace-pre-line text-sm ${statusIsError ? 'text-red-500 dark:text-red-400' : 'text-green-500 dark:text-green-400'}`}
+			class={`whitespace-pre-line break-all text-sm ${statusIsError ? 'text-red-500 dark:text-red-400' : 'text-green-500 dark:text-green-400'}`}
 		>
 			{statusMessage}
 		</P>

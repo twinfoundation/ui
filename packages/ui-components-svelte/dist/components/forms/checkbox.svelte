@@ -1,8 +1,9 @@
 <script>import { Checkbox } from "flowbite-svelte";
-export let value;
+export let checked;
+export let disabled = false;
 </script>
 
-<Checkbox {...$$props} class={$$props.class ?? ''} bind:value><slot /></Checkbox>
+<Checkbox {...$$props} class={$$props.class ?? ''} bind:checked {disabled}><slot /></Checkbox>
 
 <style>
 	:global(input[type='checkbox']) {
@@ -26,6 +27,7 @@ export let value;
     box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)
 }
 	:global(input[type='checkbox']:disabled) {
-    cursor: not-allowed
+    cursor: not-allowed;
+    opacity: 0.5
 }
 </style>

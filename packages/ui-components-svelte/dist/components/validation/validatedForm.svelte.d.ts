@@ -23,7 +23,6 @@ declare const __propDef: {
     slots: {
         fields: {};
         'after-action': {};
-        'after-result': {};
     };
     exports?: {} | undefined;
     bindings?: string | undefined;

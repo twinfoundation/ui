@@ -4,6 +4,7 @@
 	import { goto } from '$app/navigation';
 	import { Is, type IValidationFailure, Validation } from '@twin.org/core';
 	import {
+		Checkbox,
 		Heading,
 		ValidatedForm,
 		i18n,
@@ -19,6 +20,7 @@
 	} = {};
 
 	let firstName: string;
+	let showErrorResult: boolean = false;
 
 	async function validate(validationFailures: IValidationFailure[]): Promise<void> {
 		Validation.notEmpty(
@@ -30,7 +32,13 @@
 	}
 
 	async function action(): Promise<string | undefined> {
-		await new Promise(resolve => setTimeout(resolve, 3000));
+		for (let i = 0; i < 1000; i++) {
+			await new Promise(resolve => setTimeout(resolve, 3));
+		}
+
+		if (showErrorResult) {
+			return 'There was an error';
+		}
 		// Do saving of data here, return error as string if there was one
 		return undefined;
 	}
@@ -71,6 +79,11 @@
 					disabled={busy}
 				/>
 				<ValidationError validationErrors={validationErrors.firstName} />
+			</Label>
+			<Label>
+				<Checkbox bind:checked={showErrorResult} disabled={busy}
+					>{$i18n('pages.validatedForm.showErrorResult')}</Checkbox
+				>
 			</Label>
 		</svelte:fragment>
 	</ValidatedForm>

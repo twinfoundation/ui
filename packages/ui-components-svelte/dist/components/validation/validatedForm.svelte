@@ -13,11 +13,15 @@ export let result = "";
 export let resultIsError = false;
 export let resultTimeout = 5e3;
 let submitResultTimeout;
-async function handleSubmit() {
+function resetState() {
   result = "";
   resultIsError = false;
   clearTimeout(submitResultTimeout);
   validationErrors = {};
+  busy = false;
+}
+async function handleSubmit() {
+  resetState();
   if (Is.function(validationMethod)) {
     const validationFailures = [];
     const newErrors = {};
@@ -27,36 +31,25 @@ async function handleSubmit() {
   }
   if (Object.keys(validationErrors).length === 0 && Is.function(actionMethod)) {
     busy = true;
-    const timeStart = Date.now();
-    result = await actionMethod() ?? "";
-    resultIsError = Is.stringValue(result);
-    if (Date.now() - timeStart > 1e3) {
-      await showResult();
-    } else {
-      setTimeout(showResult, 1e3);
+    const actionResult = await actionMethod();
+    busy = false;
+    if (Is.stringValue(actionResult)) {
+      result = actionResult;
+      resultIsError = true;
+    } else if (Is.stringValue(actionSuccessLabel)) {
+      result = actionSuccessLabel;
+    }
+    if (resultTimeout > 0) {
+      submitResultTimeout = setTimeout(resetState, resultTimeout);
     }
   }
 }
 async function handleClose() {
-  result = "";
-  resultIsError = false;
-  clearTimeout(submitResultTimeout);
-  validationErrors = {};
+  resetState();
   if (Is.function(closeMethod)) {
     busy = true;
     await closeMethod();
     busy = false;
-  }
-}
-async function showResult() {
-  busy = false;
-  if (!resultIsError && Is.stringValue(actionSuccessLabel)) {
-    result = actionSuccessLabel;
-  }
-  if (resultTimeout > 0) {
-    submitResultTimeout = setTimeout(() => {
-      result = "";
-    }, resultTimeout);
   }
 }
 </script>
@@ -70,6 +63,13 @@ async function showResult() {
 			{/if}
 		</div>
 		<slot name="fields"></slot>
+		{#if result.length > 0}
+			<P
+				class={`whitespace-pre-line break-all text-sm ${resultIsError ? 'text-red-500 dark:text-red-400' : 'text-green-500 dark:text-green-400'}`}
+			>
+				{result}
+			</P>
+		{/if}
 		<div class="flex flex-row gap-2">
 			{#if Is.function(closeMethod)}
 				<Button
@@ -88,11 +88,5 @@ async function showResult() {
 			{/if}
 		</div>
 		<slot name="after-action"></slot>
-		<P
-			class={`whitespace-pre-line text-sm ${resultIsError ? 'text-red-500 dark:text-red-400' : 'text-green-500 dark:text-green-400'}`}
-		>
-			{result}
-		</P>
-		<slot name="after-result"></slot>
 	</form>
 </Card>

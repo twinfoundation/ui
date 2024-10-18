@@ -21,7 +21,8 @@
     },
     "validatedForm": {
       "title": "My Form",
-      "firstName": "First Name"
+      "firstName": "First Name",
+      "showErrorResult": "Show Error Result"
     },
     "modals": {
       "title": "My Modal",

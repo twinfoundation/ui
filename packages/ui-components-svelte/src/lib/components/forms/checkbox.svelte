@@ -1,9 +1,10 @@
 <script lang="ts">
 	import { Checkbox } from 'flowbite-svelte';
-	export let value: string | number;
+	export let checked: boolean;
+	export let disabled: boolean = false;
 </script>
 
-<Checkbox {...$$props} class={$$props.class ?? ''} bind:value><slot /></Checkbox>
+<Checkbox {...$$props} class={$$props.class ?? ''} bind:checked {disabled}><slot /></Checkbox>
 
 <style lang="postcss">
 	:global(input[type='checkbox']) {
@@ -18,5 +19,6 @@
 	}
 	:global(input[type='checkbox']:disabled) {
 		@apply cursor-not-allowed;
+		@apply opacity-50;
 	}
 </style>
