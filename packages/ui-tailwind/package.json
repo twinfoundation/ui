@@ -34,6 +34,7 @@
 		"@rollup/plugin-json": "^6.1.0",
 		"autoprefixer": "^10.4.20",
 		"postcss": "^8.4.47",
+		"rimraf": "6.0.1",
 		"rollup": "4.24.0",
 		"rollup-plugin-copy": "3.5.0",
 		"rollup-plugin-typescript2": "0.36.0",
