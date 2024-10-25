@@ -1,20 +1,9 @@
-import { SvelteComponent } from "svelte";
-declare const __propDef: {
-    props: {
-        [x: string]: any;
-    };
-    events: {
-        [evt: string]: CustomEvent<any>;
-    };
-    slots: {
-        default: {};
-    };
-    exports?: undefined;
-    bindings?: undefined;
-};
-export type BadgeProps = typeof __propDef.props;
-export type BadgeEvents = typeof __propDef.events;
-export type BadgeSlots = typeof __propDef.slots;
-export default class Badge extends SvelteComponent<BadgeProps, BadgeEvents, BadgeSlots> {
-}
-export {};
+import { Badge } from 'flowbite-svelte';
+import type { Snippet } from 'svelte';
+declare const Badge: import("svelte").Component<{
+    color?: "error" | "warning" | "info" | "success" | "primary" | "secondary" | "plain";
+    large?: boolean;
+    class?: string;
+    children?: Snippet;
+}, {}, "">;
+export default Badge;

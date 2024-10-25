@@ -1,0 +1,92 @@
+@import 'tailwindcss/tailwind';
+
+@import './font-face.css';
+
+@layer base {
+	body {
+		@apply overflow-y-hidden;
+		@apply overflow-x-auto;
+	}
+	::-webkit-scrollbar-track {
+		@apply bg-gray-200;
+		@apply rounded-lg;
+		@apply dark:bg-gray-800;
+	}
+
+	::-webkit-scrollbar {
+		@apply bg-gray-200;
+		@apply dark:bg-gray-800;
+		@apply w-3;
+		@apply h-3;
+		@apply rounded-lg;
+	}
+
+	::-webkit-scrollbar-thumb {
+		@apply bg-gray-400;
+		@apply dark:bg-gray-600;
+		@apply rounded-lg;
+	}
+
+	::-webkit-scrollbar-corner {
+		background: transparent;
+	}
+
+	/* This is a hack to stop Chrome from applying a background color to the autofill we just set the transition to a really long time */
+	input:-webkit-autofill,
+	input:-webkit-autofill:focus {
+		transition:
+			background-color 600000s 0s,
+			color 600000s 0s;
+	}
+
+	input[type='file']::file-selector-button {
+		@apply bg-surface-button;
+		@apply dark:bg-surface-button-dark;
+	}
+	input[type='file']::file-selector-button:hover {
+		@apply bg-surface-button-hover;
+		@apply dark:bg-surface-button-hover-dark;
+	}
+	input[type='file']:disabled::file-selector-button {
+		@apply bg-surface-button;
+		@apply dark:bg-surface-button-dark;
+		cursor: not-allowed;
+	}
+	input[type='file']::file-selector-button:focus {
+		@apply ring;
+		@apply ring-surface-button-pressed;
+	}
+
+	label:disabled {
+		@apply contrast-100;
+	}
+
+	input[type='radio'] {
+		@apply text-brand-primary;
+		@apply border-surface-primary;
+		@apply cursor-pointer;
+		background-size: 1.7em 1.7em !important;
+	}
+	input[type='radio']:focus {
+		@apply ring;
+		@apply ring-surface-button-pressed;
+	}
+	input[type='radio']:disabled {
+		@apply cursor-not-allowed;
+	}
+
+	input[type='checkbox'] {
+		@apply text-brand-primary;
+		@apply border-surface-primary;
+		@apply cursor-pointer;
+		background-size: 0.8em 0.8em !important;
+	}
+	input[type='checkbox']:focus {
+		@apply ring;
+		@apply ring-surface-button-pressed;
+	}
+	input[type='checkbox']:disabled {
+		@apply cursor-not-allowed;
+		@apply opacity-50;
+	}
+}

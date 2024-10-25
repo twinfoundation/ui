@@ -1,20 +1,8 @@
-import { SvelteComponent } from "svelte";
-declare const __propDef: {
-    props: {
-        [x: string]: any;
-    };
-    events: {
-        [evt: string]: CustomEvent<any>;
-    };
-    slots: {
-        default: {};
-    };
-    exports?: undefined;
-    bindings?: undefined;
-};
-export type HeadingProps = typeof __propDef.props;
-export type HeadingEvents = typeof __propDef.events;
-export type HeadingSlots = typeof __propDef.slots;
-export default class Heading extends SvelteComponent<HeadingProps, HeadingEvents, HeadingSlots> {
-}
-export {};
+import { Heading } from 'flowbite-svelte';
+import type { Snippet } from 'svelte';
+declare const Heading: import("svelte").Component<{
+    tag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+    class?: string;
+    children?: Snippet;
+}, {}, "">;
+export default Heading;

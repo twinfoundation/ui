@@ -1,29 +1,6 @@
-/** @typedef {typeof __propDef.props}  CodeProps */
-/** @typedef {typeof __propDef.events}  CodeEvents */
-/** @typedef {typeof __propDef.slots}  CodeSlots */
-export default class Code extends SvelteComponent<{
-    [x: string]: never;
-}, {
-    [evt: string]: CustomEvent<any>;
-}, {
-    default: {};
-}> {
-}
-export type CodeProps = typeof __propDef.props;
-export type CodeEvents = typeof __propDef.events;
-export type CodeSlots = typeof __propDef.slots;
-import { SvelteComponent } from "svelte";
-declare const __propDef: {
-    props: {
-        [x: string]: never;
-    };
-    events: {
-        [evt: string]: CustomEvent<any>;
-    };
-    slots: {
-        default: {};
-    };
-    exports?: undefined;
-    bindings?: undefined;
-};
-export {};
+import type { Snippet } from 'svelte';
+declare const Code: import("svelte").Component<{
+    class?: string;
+    children?: Snippet;
+}, {}, "">;
+export default Code;

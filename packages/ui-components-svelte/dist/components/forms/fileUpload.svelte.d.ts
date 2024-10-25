@@ -1,19 +1,8 @@
-import { SvelteComponent } from "svelte";
-declare const __propDef: {
-    props: {
-        [x: string]: any;
-        files: FileList | undefined;
-    };
-    events: {
-        [evt: string]: CustomEvent<any>;
-    };
-    slots: {};
-    exports?: undefined;
-    bindings?: undefined;
-};
-export type FileUploadProps = typeof __propDef.props;
-export type FileUploadEvents = typeof __propDef.events;
-export type FileUploadSlots = typeof __propDef.slots;
-export default class FileUpload extends SvelteComponent<FileUploadProps, FileUploadEvents, FileUploadSlots> {
-}
-export {};
+declare const FileUpload: import("svelte").Component<{
+    files?: FileList;
+    name?: string;
+    color?: "default" | "error" | "success";
+    disabled?: boolean;
+    class?: string;
+}, {}, "files">;
+export default FileUpload;

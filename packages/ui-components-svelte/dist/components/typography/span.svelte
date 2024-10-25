@@ -1,6 +1,17 @@
-<script>import { Span } from "flowbite-svelte";
+<script lang="ts">
+	// Copyright 2024 IOTA Stiftung.
+	// SPDX-License-Identifier: Apache-2.0.
+	import { Span } from 'flowbite-svelte';
+	import type { Snippet } from 'svelte';
+
+	interface Props {
+		class?: string;
+		children?: Snippet;
+	}
+
+	let props: Props = $props();
 </script>
 
-<Span {...$$props} class={`${$$props.class ?? ''}`}>
-	<slot></slot>
+<Span {...props} class={`text-primary dark:text-primary-dark ${props.class ?? ''}`}>
+	{@render props.children?.()}
 </Span>

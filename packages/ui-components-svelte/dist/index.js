@@ -11,9 +11,7 @@ export { default as ServerStatus } from "./components/feedback/serverStatus.svel
 export { default as Spinner } from "./components/feedback/spinner.svelte";
 export { default as Checkbox } from "./components/forms/checkbox.svelte";
 export { default as Fileupload } from "./components/forms/fileUpload.svelte";
-export { default as Helper } from "./components/forms/helper.svelte";
 export { default as Input } from "./components/forms/input.svelte";
-export { default as LabelledValue } from "./components/forms/labelledValue.svelte";
 export { default as Radio } from "./components/forms/radio.svelte";
 export { default as Select } from "./components/forms/select.svelte";
 export { default as Textarea } from "./components/forms/textarea.svelte";
@@ -45,6 +43,7 @@ export { default as TableHead } from "./components/tables/tableHead.svelte";
 export { default as TableHeadCell } from "./components/tables/tableHeadCell.svelte";
 export { default as Code } from "./components/typography/code.svelte";
 export { default as Heading } from "./components/typography/heading.svelte";
+export { default as Helper } from "./components/typography/helper.svelte";
 export { default as Label } from "./components/typography/label.svelte";
 export { default as P } from "./components/typography/p.svelte";
 export { default as Span } from "./components/typography/span.svelte";

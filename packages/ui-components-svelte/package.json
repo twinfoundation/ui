@@ -1,7 +1,7 @@
 {
 	"name": "@twin.org/ui-components-svelte",
-	"version": "0.0.1-next.13",
-	"description": "UI component for svelte",
+	"version": "0.0.1-next.15",
+	"description": "UI components for svelte",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/twinfoundation/ui.git",
@@ -14,6 +14,7 @@
 		"node": ">=20.0.0"
 	},
 	"scripts": {
+		"clean": "rimraf dist",
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
@@ -23,32 +24,34 @@
 		"docs:clean": "echo Nothing to clean",
 		"docs": "npm run docs:clean",
 		"package": "svelte-package",
-		"dist": "npm run build && npm run check && npm run merge-locales && npm run docs && npm run package"
+		"dist": "npm run clean && npm run build && npm run check && npm run merge-locales && npm run docs && npm run package"
 	},
 	"dependencies": {
 		"@twin.org/core": "next",
 		"@twin.org/qr": "next",
+		"@twin.org/ui-tailwind": "0.0.1-next.15",
 		"flowbite-svelte": "^0.47.1",
 		"flowbite-svelte-blocks": "^1.1.4",
 		"flowbite-svelte-icons": "^1.6.2",
 		"flowbite-typography": "^1.0.4"
 	},
 	"peerDependencies": {
-		"@sveltejs/kit": "^2.5.28",
-		"svelte": "^4.2.19"
+		"@sveltejs/kit": "^2.7.2",
+		"svelte": "^5.0.5"
 	},
 	"devDependencies": {
-		"@sveltejs/package": "^2.3.5",
-		"@sveltejs/adapter-auto": "^3.2.5",
+		"@sveltejs/package": "^2.3.6",
+		"@sveltejs/adapter-auto": "^3.3.0",
 		"@tailwindcss/typography": "^0.5.15",
 		"@twin.org/merge-locales": "next",
 		"autoprefixer": "^10.4.20",
 		"globals": "^15.11.0",
 		"postcss": "^8.4.47",
+		"rollup-plugin-copy": "3.5.0",
 		"svelte-check": "^4.0.5",
 		"tailwindcss": "^3.4.14",
 		"typescript": "^5.6.3",
-		"vite": "^5.4.9",
+		"vite": "^5.4.10",
 		"vitest": "^2.1.3"
 	},
 	"exports": {
@@ -56,8 +59,9 @@
 			"types": "./dist/index.d.ts",
 			"svelte": "./dist/index.js"
 		},
-		"./config/*.cjs": "./dist/config/*.cjs",
-		"./css/*.css": "./dist/css/*.css"
+		"./css/*.css": "./dist/css/*.css",
+		"./fonts/*.otf": "./dist/fonts/*.otf",
+		"./config/*.mjs": "./dist/config/*.js"
 	},
 	"files": [
 		"dist",

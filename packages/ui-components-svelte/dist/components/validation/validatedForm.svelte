@@ -1,57 +1,94 @@
-<script>import { Is, Validation } from "@twin.org/core";
-import { Button, Card, Heading, P, Spinner, i18n } from "../..";
-export let title;
-export let actionButtonLabel = $i18n("actions.save");
-export let actionSuccessLabel = $i18n("actions.saveSuccess");
-export let closeButtonLabel = $i18n("actions.close");
-export let validationMethod;
-export let actionMethod = void 0;
-export let closeMethod = void 0;
-export let validationErrors;
-export let busy = false;
-export let result = "";
-export let resultIsError = false;
-export let resultTimeout = 5e3;
-let submitResultTimeout;
-function resetState() {
-  result = "";
-  resultIsError = false;
-  clearTimeout(submitResultTimeout);
-  validationErrors = {};
-  busy = false;
-}
-async function handleSubmit() {
-  resetState();
-  if (Is.function(validationMethod)) {
-    const validationFailures = [];
-    const newErrors = {};
-    await validationMethod(validationFailures);
-    Validation.toPropertyMap(validationFailures, newErrors);
-    validationErrors = newErrors;
-  }
-  if (Object.keys(validationErrors).length === 0 && Is.function(actionMethod)) {
-    busy = true;
-    const actionResult = await actionMethod();
-    busy = false;
-    if (Is.stringValue(actionResult)) {
-      result = actionResult;
-      resultIsError = true;
-    } else if (Is.stringValue(actionSuccessLabel)) {
-      result = actionSuccessLabel;
-    }
-    if (resultTimeout > 0) {
-      submitResultTimeout = setTimeout(resetState, resultTimeout);
-    }
-  }
-}
-async function handleClose() {
-  resetState();
-  if (Is.function(closeMethod)) {
-    busy = true;
-    await closeMethod();
-    busy = false;
-  }
-}
+<script lang="ts">
+	// Copyright 2024 IOTA Stiftung.
+	// SPDX-License-Identifier: Apache-2.0.
+	import { Is, Validation, type IValidationFailure } from '@twin.org/core';
+	import type { Snippet } from 'svelte';
+	import { Button, Card, Heading, Helper, Spinner, i18n } from '../..';
+
+	interface Props {
+		title: string;
+		actionButtonLabel?: string;
+		actionSuccessLabel?: string;
+		closeButtonLabel?: string;
+		validationMethod?: (validationFailures: IValidationFailure[]) => Promise<void>;
+		actionMethod?: () => Promise<string | undefined>;
+		closeMethod?: (() => Promise<void>) | undefined;
+		validationErrors: { [id: string]: IValidationFailure[] | undefined };
+		busy?: boolean;
+		result?: string;
+		resultIsError?: boolean;
+		resultTimeout?: number;
+		fields?: Snippet;
+		afterAction?: Snippet;
+	}
+
+	let {
+		title,
+		actionButtonLabel = $i18n('actions.save'),
+		actionSuccessLabel = $i18n('actions.saveSuccess'),
+		closeButtonLabel = $i18n('actions.close'),
+		validationMethod,
+		actionMethod,
+		closeMethod,
+		validationErrors = $bindable(),
+		busy = $bindable(false),
+		result = '',
+		resultIsError = false,
+		resultTimeout = 5000,
+		fields,
+		afterAction
+	}: Props = $props();
+
+	let timerId: NodeJS.Timeout | undefined;
+
+	function resetState(): void {
+		if (Is.notEmpty(timerId)) {
+			clearTimeout(timerId);
+		}
+		timerId = undefined;
+		result = '';
+		resultIsError = false;
+		validationErrors = {};
+		busy = false;
+	}
+
+	async function handleSubmit(): Promise<void> {
+		resetState();
+
+		if (Is.function(validationMethod)) {
+			const validationFailures: IValidationFailure[] = [];
+			const newErrors: { [id: string]: IValidationFailure[] } = {};
+			await validationMethod(validationFailures);
+			Validation.toPropertyMap(validationFailures, newErrors);
+			validationErrors = newErrors;
+		}
+
+		if (Object.keys(validationErrors).length === 0 && Is.function(actionMethod)) {
+			busy = true;
+			const actionResult = await actionMethod();
+			busy = false;
+
+			if (Is.stringValue(actionResult)) {
+				result = actionResult;
+				resultIsError = true;
+			} else if (Is.stringValue(actionSuccessLabel)) {
+				result = actionSuccessLabel;
+			}
+			if (resultTimeout > 0) {
+				timerId = setTimeout(resetState, resultTimeout);
+			}
+		}
+	}
+
+	async function handleClose(): Promise<void> {
+		resetState();
+
+		if (Is.function(closeMethod)) {
+			busy = true;
+			await closeMethod();
+			busy = false;
+		}
+	}
 </script>
 
 <Card class="w-96">
@@ -62,20 +99,19 @@ async function handleClose() {
 				<Spinner />
 			{/if}
 		</div>
-		<slot name="fields"></slot>
-		{#if result.length > 0}
-			<P
-				class={`whitespace-pre-line break-all text-sm ${resultIsError ? 'text-red-500 dark:text-red-400' : 'text-green-500 dark:text-green-400'}`}
+		{@render fields?.()}
+		{#if Is.stringValue(result)}
+			<Helper
+				color={resultIsError ? 'error' : 'success'}
+				class="whitespace-pre-line break-all text-sm">{result}</Helper
 			>
-				{result}
-			</P>
 		{/if}
 		<div class="flex flex-row gap-2">
 			{#if Is.function(closeMethod)}
 				<Button
 					type="button"
 					class="w-full"
-					outline
+					color="plain"
 					on:click={async () => handleClose()}
 					disabled={busy}
 					>{closeButtonLabel}
@@ -87,6 +123,6 @@ async function handleClose() {
 				</Button>
 			{/if}
 		</div>
-		<slot name="after-action"></slot>
+		{@render afterAction?.()}
 	</form>
 </Card>

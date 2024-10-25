@@ -6,13 +6,25 @@
 	import { onMount } from 'svelte';
 	import { Link } from '$lib';
 
-	export let qrData: string;
-	export let label: string;
-	export let dimensions: number;
-	export let foreground: string = '#000000';
-	export let background: string = '#FFFFFF';
+	interface Props {
+		qrData: string;
+		label: string;
+		dimensions: number;
+		foreground?: string;
+		background?: string;
+		class?: string;
+	}
 
-	let pngBase64: string;
+	const {
+		qrData,
+		label,
+		dimensions,
+		foreground = '#000000',
+		background = '#FFFFFF',
+		...rest
+	}: Props = $props();
+
+	let pngBase64: string | undefined = $state();
 	const linkItem: boolean = qrData.startsWith('http');
 
 	onMount(async () => {
@@ -26,26 +38,24 @@
 	});
 </script>
 
-<div class={$$restProps.class ?? ''} style="width:{`${dimensions}px`};height:{`${dimensions}px`}">
-	{#if linkItem}
-		<Link
-			href={qrData}
-			target="_blank"
-			class="focus:border-primary-500 block border border-transparent"
-		>
-			<img
-				src={pngBase64}
-				alt={label}
-				class="rounded-sm"
-				style="width:{`${dimensions - 2}px`};height:{`${dimensions - 2}px`};min-width:{`${dimensions - 2}px`};min-height:{`${dimensions - 2}px`}"
-			/>
-		</Link>
-	{:else}
+<div class={rest.class ?? ''} style="width:{`${dimensions}px`};height:{`${dimensions}px`}">
+	{#snippet image()}
 		<img
 			src={pngBase64}
 			alt={label}
 			class="rounded-sm"
 			style="width:{`${dimensions - 2}px`};height:{`${dimensions - 2}px`};min-width:{`${dimensions - 2}px`};min-height:{`${dimensions - 2}px`}"
 		/>
+	{/snippet}
+	{#if linkItem}
+		<Link
+			href={qrData}
+			target="_blank"
+			class="focus:border-primary-500 block border border-transparent"
+		>
+			{@render image()}
+		</Link>
+	{:else}
+		{@render image()}
 	{/if}
 </div>

@@ -1,22 +1,36 @@
-<script>import {
-  currentLocale,
-  DarkMode,
-  Footer,
-  i18n,
-  Label,
-  locales,
-  Select,
-  ServerStatus
-} from "../..";
-export let showColorTheme = true;
-export let showLanguageSelector = true;
-export let serverHealthStatus;
-export let serverName;
-export let serverVersion;
+<script lang="ts">
+	// Copyright 2024 IOTA Stiftung.
+	// SPDX-License-Identifier: Apache-2.0.
+	import {
+		currentLocale,
+		DarkMode,
+		Footer,
+		i18n,
+		Label,
+		locales,
+		Select,
+		ServerStatus
+	} from '../..';
+
+	interface Props {
+		showColorTheme?: boolean;
+		showLanguageSelector?: boolean;
+		serverHealthStatus?: 'error' | 'warning' | 'success';
+		serverName?: string;
+		serverVersion?: string;
+	}
+
+	const {
+		showColorTheme = true,
+		showLanguageSelector = true,
+		serverHealthStatus,
+		serverName,
+		serverVersion
+	}: Props = $props();
 </script>
 
 <Footer
-	class="dark:bg-cosmic-indigo-600 border-t border-neutral-200 bg-white px-4 py-2 dark:border-neutral-900"
+	class="bg-surface-main border-surface-primary dark:bg-surface-main-dark dark:border-surface-primary-dark border-t px-4 py-2"
 >
 	<div class="flex flex-col items-center justify-between gap-2 md:flex-row">
 		<ServerStatus {serverHealthStatus} {serverName} {serverVersion} />
@@ -39,9 +53,7 @@ export let serverVersion;
 		{#if showColorTheme}
 			<div class="flex flex-row items-center gap-2">
 				<Label>{$i18n('components.appFooter.colorTheme')}</Label>
-				<DarkMode
-					btnClass="text-neutral-500 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-700 rounded-lg text-xl p-2"
-				/>
+				<DarkMode />
 			</div>
 		{/if}
 	</div>

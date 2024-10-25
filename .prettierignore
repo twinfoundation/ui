@@ -4,3 +4,5 @@ package-lock.json
 **/docs/open-api
 **/static/locales
 **/dist
+**/storybook-static
+*.otf

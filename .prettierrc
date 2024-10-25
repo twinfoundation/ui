@@ -17,7 +17,7 @@
 			}
 		},
 		{
-			"files": ["*.ts"],
+			"files": ["*.ts*"],
 			"options": {
 				"singleQuote": false
 			}

@@ -1,15 +1,27 @@
-<script>import { SidebarItem } from "flowbite-svelte";
-const activeClass = "flex items-center p-2 text-base font-normal text-white bg-primary-500 dark:bg-primary-600 rounded-lg dark:text-white hover:bg-primary-600 dark:hover:bg-neutral-700";
-const nonActiveClass = "flex items-center p-2 text-base font-normal text-neutral-900 rounded-lg dark:text-white hover:bg-neutral-100 dark:hover:bg-neutral-700";
+<script lang="ts">
+	// Copyright 2024 IOTA Stiftung.
+	// SPDX-License-Identifier: Apache-2.0.
+	import { SidebarItem } from 'flowbite-svelte';
+	import type { Snippet } from 'svelte';
+
+	interface Props {
+		label: string;
+		href: string;
+		icon?: Snippet;
+		class?: string;
+	}
+
+	let props: Props = $props();
+
+	const activeClass =
+		'flex items-center p-2 text-base font-normal rounded-lg outline-none focus:ring focus:ring-surface-button-pressed text-primary dark:text-primary-dark bg-surface-second dark:bg-surface-second-dark';
+	const nonActiveClass =
+		'flex items-center p-2 text-base font-normal rounded-lg outline-none focus:ring focus:ring-surface-button-pressed text-primary dark:text-primary-dark';
 </script>
 
-<SidebarItem
-	{...$$props}
-	{activeClass}
-	{nonActiveClass}
-	class={`focus:ring-primary-100 focus:border-primary-500 dark:focus:ring-primary-900 outline-none focus:ring-4 ${$$props.class ?? ''}`}
-	spanClass="hidden md:block ms-3"
->
-	<slot name="icon" slot="icon"></slot>
-	<slot name="subtext" slot="subtext"></slot>
+<SidebarItem {...props} {activeClass} {nonActiveClass}>
+	{props.label}
+	<svelte:fragment slot="icon">
+		{@render props.icon?.()}
+	</svelte:fragment>
 </SidebarItem>

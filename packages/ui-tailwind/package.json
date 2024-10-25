@@ -1,0 +1,59 @@
+{
+	"name": "@twin.org/ui-tailwind",
+	"version": "0.0.1-next.15",
+	"description": "UI package for tailwind",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/twinfoundation/ui.git",
+		"directory": "packages/ui-twilwind"
+	},
+	"author": "martyn.janes@iota.org",
+	"license": "Apache-2.0",
+	"type": "module",
+	"engines": {
+		"node": ">=20.0.0"
+	},
+	"scripts": {
+		"clean": "rimraf dist coverage",
+		"build": "tsc",
+		"build:watch": "tsc-watch --onSuccess \"npm run bundle:esm\"",
+		"test": "vitest --run --config ./vitest.config.ts --no-cache",
+		"coverage": "vitest --run --coverage --config ./vitest.config.ts --no-cache",
+		"bundle:esm": "rollup --config rollup.config.mjs --environment MODULE:esm",
+		"bundle:cjs": "rollup --config rollup.config.mjs --environment MODULE:cjs",
+		"bundle": "npm run bundle:esm && npm run bundle:cjs",
+		"docs:clean": "rimraf docs/reference",
+		"docs:generate": "typedoc",
+		"docs": "npm run docs:clean && npm run docs:generate",
+		"dist": "npm run clean && npm run build && npm run test && npm run bundle && npm run docs"
+	},
+	"dependencies": {
+		"@twin.org/core": "next"
+	},
+	"devDependencies": {
+		"@rollup/plugin-json": "^6.1.0",
+		"autoprefixer": "^10.4.20",
+		"postcss": "^8.4.47",
+		"rollup": "4.24.0",
+		"rollup-plugin-copy": "3.5.0",
+		"rollup-plugin-typescript2": "0.36.0",
+		"tailwindcss": "^3.4.14",
+		"typedoc": "0.26.10",
+		"typedoc-plugin-markdown": "4.2.9",
+		"typescript": "^5.6.3"
+	},
+	"exports": {
+		".": {
+			"require": "./dist/cjs/index.cjs",
+			"import": "./dist/esm/index.mjs",
+			"types": "./dist/types/index.d.ts"
+		},
+		"./css/*.css": "./dist/css/*.css",
+		"./fonts/*.otf": "./dist/fonts/*.otf"
+	},
+	"files": [
+		"dist",
+		"docs",
+		"locales"
+	]
+}

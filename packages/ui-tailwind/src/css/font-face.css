@@ -1,0 +1,14 @@
+@layer base {
+	@font-face {
+		font-family: 'Aeonik';
+		src: local('Aeonik'), url('/fonts/Aeonik-Regular.otf');
+		font-weight: normal;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'HD Colton Wide Semibold';
+		src: local('HD Colton Wide Semibold'), url('/fonts/HDColton-WideSemibold.otf');
+		font-weight: normal;
+		font-display: swap;
+	}
+}

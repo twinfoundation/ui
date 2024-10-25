@@ -1,11 +1,26 @@
-<script>export let disabled = false;
+<script lang="ts">
+	// Copyright 2024 IOTA Stiftung.
+	// SPDX-License-Identifier: Apache-2.0.
+	import type { Snippet } from 'svelte';
+
+	interface Props {
+		disabled?: boolean;
+		children?: Snippet;
+		href: string;
+		target?: string;
+		class?: string;
+	}
+
+	let { href, target, disabled = false, children, ...rest }: Props = $props();
 </script>
 
 <a
-	{...$$restProps}
-	href={$$restProps.href}
+	{...rest}
+	{href}
+	{target}
 	aria-disabled={disabled}
-	class={`text-primary-500 focus:ring-primary-100 focus:border-primary-500 dark:focus:ring-primary-900 rounded outline-none focus:ring-4 ${$$restProps.class ?? ''} ${disabled ? 'cursor-not-allowed opacity-50 hover:no-underline' : 'cursor-pointer hover:underline'}`}
+	tabindex={disabled ? -1 : 0}
+	class={`text-primary dark:text-primary-dark outline-none ${rest.class ?? ''} ${disabled ? 'cursor-not-allowed opacity-50 hover:no-underline' : 'hover:decoration-surface-button-pressed focus:decoration-surface-button-pressed cursor-pointer hover:underline hover:decoration-2 focus:underline focus:decoration-2'}`}
 >
-	<slot />
+	{@render children?.()}
 </a>

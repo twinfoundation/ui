@@ -11,3 +11,5 @@ vitest.config.ts.timestamp*
 .vercel
 .env
 .vercel
+**/storybook-static
+*storybook.log

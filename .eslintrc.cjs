@@ -44,35 +44,7 @@ const typeScriptRules = {
 	'@typescript-eslint/member-delimiter-style': ['error'],
 	'@typescript-eslint/member-ordering': ['error'],
 	'@typescript-eslint/method-signature-style': ['off'],
-	'@typescript-eslint/naming-convention': [
-		'error',
-		{
-			selector: 'variable',
-			format: ['camelCase', 'UPPER_CASE']
-		},
-		{
-			selector: 'enumMember',
-			format: ['PascalCase']
-		},
-		{
-			selector: 'property',
-			modifiers: ['static'],
-			leadingUnderscore: 'forbid',
-			format: ['UPPER_CASE']
-		},
-		{
-			selector: 'property',
-			modifiers: ['private'],
-			leadingUnderscore: 'require',
-			format: ['camelCase']
-		},
-		{
-			selector: 'property',
-			modifiers: ['static', 'private'],
-			leadingUnderscore: 'require',
-			format: ['UPPER_CASE', 'camelCase']
-		}
-	],
+	'@typescript-eslint/naming-convention': ['off'],
 	'@typescript-eslint/no-array-constructor': ['error'],
 	'@typescript-eslint/no-base-to-string': ['error'],
 	'@typescript-eslint/no-dupe-class-members': ['error'],
@@ -196,7 +168,14 @@ module.exports = {
 		'plugin:svelte/recommended',
 		'plugin:svelte/prettier'
 	],
-	ignorePatterns: ['dist', 'coverage', 'rollup.config.mjs', 'vitest.config.ts.timestamp*'],
+	ignorePatterns: [
+		'dist',
+		'coverage',
+		'rollup.config.mjs',
+		'vitest.config.ts.timestamp*',
+		'*.d.ts',
+		'**/storybook-static/**'
+	],
 	parserOptions: {
 		ecmaVersion: 2022,
 		project: './tsconfig.eslint.json',
@@ -755,7 +734,7 @@ module.exports = {
 				'plugin:@typescript-eslint/recommended-requiring-type-checking',
 				'plugin:@typescript-eslint/strict'
 			],
-			files: ['*.ts'],
+			files: ['*.ts', '*.tsx'],
 			rules: typeScriptRules
 		},
 		{
@@ -768,7 +747,14 @@ module.exports = {
 			files: ['*.svelte'],
 			rules: {
 				'no-undef-init': ['off'],
-				'unicorn/no-useless-undefined': ['off']
+				'unicorn/no-useless-undefined': ['off'],
+				'prefer-const': ['off']
+			}
+		},
+		{
+			files: ['*.stories.ts'],
+			rules: {
+				'jsdoc/require-jsdoc': ['off']
 			}
 		}
 	]

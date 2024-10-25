@@ -16,15 +16,19 @@
 		"tsconfig.json",
 		"typedoc.json",
 		".eslintrc.cjs",
-		"**/wordlists/**"
+		"**/wordlists/**",
+		"**/storybook-static/**",
+		"figma.json"
 	],
 	"words": [
 		"Aeonik",
 		"bech",
+		"bindable",
 		"certbot",
 		"color",
 		"creepeth",
 		"dismissable",
+		"dribbble",
 		"Fastify",
 		"faucet",
 		"Fileupload",
@@ -41,6 +45,7 @@
 		"Stiftung",
 		"Swatchbook",
 		"tailwindcss",
+		"tseslint",
 		"TWIN",
 		"unrevoke",
 		"Unrevoking",

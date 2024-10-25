@@ -2,7 +2,7 @@
 	// Copyright 2024 IOTA Stiftung.
 	// SPDX-License-Identifier: Apache-2.0.
 	import { page } from '$app/stores';
-	import { Card, Heading, P, i18n } from '$lib';
+	import { Card, Heading, i18n, P } from '$lib';
 </script>
 
 <Card class="h-full w-full max-w-full">

@@ -1,35 +1,21 @@
-import { SvelteComponent } from "svelte";
 import { type IValidationFailure } from '@twin.org/core';
-declare const __propDef: {
-    props: {
-        title: string;
-        actionButtonLabel?: string;
-        actionSuccessLabel?: string;
-        closeButtonLabel?: string;
-        validationMethod: ((validationFailures: IValidationFailure[]) => Promise<void>) | undefined;
-        actionMethod?: (() => Promise<string | undefined>) | undefined;
-        closeMethod?: (() => Promise<void>) | undefined;
-        validationErrors: {
-            [id: string]: IValidationFailure[] | undefined;
-        };
-        busy?: boolean;
-        result?: string;
-        resultIsError?: boolean;
-        resultTimeout?: number;
+import type { Snippet } from 'svelte';
+declare const ValidatedForm: import("svelte").Component<{
+    title: string;
+    actionButtonLabel?: string;
+    actionSuccessLabel?: string;
+    closeButtonLabel?: string;
+    validationMethod?: (validationFailures: IValidationFailure[]) => Promise<void>;
+    actionMethod?: () => Promise<string | undefined>;
+    closeMethod?: (() => Promise<void>) | undefined;
+    validationErrors: {
+        [id: string]: IValidationFailure[] | undefined;
     };
-    events: {
-        [evt: string]: CustomEvent<any>;
-    };
-    slots: {
-        fields: {};
-        'after-action': {};
-    };
-    exports?: {} | undefined;
-    bindings?: string | undefined;
-};
-export type ValidatedFormProps = typeof __propDef.props;
-export type ValidatedFormEvents = typeof __propDef.events;
-export type ValidatedFormSlots = typeof __propDef.slots;
-export default class ValidatedForm extends SvelteComponent<ValidatedFormProps, ValidatedFormEvents, ValidatedFormSlots> {
-}
-export {};
+    busy?: boolean;
+    result?: string;
+    resultIsError?: boolean;
+    resultTimeout?: number;
+    fields?: Snippet;
+    afterAction?: Snippet;
+}, {}, "busy" | "validationErrors">;
+export default ValidatedForm;

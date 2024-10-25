@@ -4,11 +4,15 @@
 	import { Is } from '@twin.org/core';
 	import { Helper } from '$lib';
 
-	export let error: string | undefined;
+	interface Props {
+		error?: string;
+	}
+
+	let { error }: Props = $props();
 </script>
 
 {#if Is.stringValue(error)}
-	<Helper color="red" class="whitespace-pre-line">
+	<Helper color="error" class="whitespace-pre-line break-all">
 		{error}
 	</Helper>
 {/if}

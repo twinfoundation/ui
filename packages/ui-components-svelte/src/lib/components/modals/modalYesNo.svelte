@@ -1,34 +1,51 @@
 <script lang="ts">
+	// Copyright 2024 IOTA Stiftung.
+	// SPDX-License-Identifier: Apache-2.0.
 	import { i18n, ModalWithButtons } from '$lib';
 
-	export let title: string;
-	export let message: string;
-	export let statusMessage: string | undefined = undefined;
-	export let statusIsError: boolean = false;
-	export let busy: boolean = false;
-	export let yesColor: 'red' | 'yellow' | 'green' | 'primary' = 'primary';
-	export let yesAction: () => Promise<void>;
-	export let noAction: () => Promise<void>;
+	interface Props {
+		open: boolean;
+		title: string;
+		message: string;
+		statusMessage?: string;
+		statusIsError?: boolean;
+		busy?: boolean;
+		yesColor?: 'error' | 'warning' | 'success' | 'info' | 'primary' | 'secondary' | 'plain';
+		yesAction: () => Promise<void>;
+		noAction: () => Promise<void>;
+	}
+
+	let {
+		open,
+		title,
+		message,
+		statusMessage,
+		statusIsError = false,
+		busy = false,
+		yesColor = 'secondary',
+		yesAction,
+		noAction,
+		...rest
+	}: Props = $props();
 </script>
 
 <ModalWithButtons
+	{open}
 	{title}
 	{message}
 	{statusMessage}
 	{statusIsError}
 	{busy}
-	{...$$props}
+	{...rest}
 	buttons={[
 		{
 			label: $i18n('actions.yes'),
 			color: yesColor,
-			outline: false,
 			action: yesAction
 		},
 		{
 			label: $i18n('actions.no'),
-			color: 'primary',
-			outline: true,
+			color: 'plain',
 			action: noAction
 		}
 	]}

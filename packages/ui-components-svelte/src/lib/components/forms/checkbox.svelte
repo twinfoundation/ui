@@ -1,24 +1,21 @@
 <script lang="ts">
+	// Copyright 2024 IOTA Stiftung.
+	// SPDX-License-Identifier: Apache-2.0.
 	import { Checkbox } from 'flowbite-svelte';
-	export let checked: boolean;
-	export let disabled: boolean = false;
+	import type { Snippet } from 'svelte';
+
+	interface Props {
+		checked: boolean;
+		value?: string | number;
+		disabled?: boolean;
+		children?: Snippet;
+	}
+
+	let { checked = $bindable(), value, disabled = false, children, ...rest }: Props = $props();
 </script>
 
-<Checkbox {...$$props} class={$$props.class ?? ''} bind:checked {disabled}><slot /></Checkbox>
-
-<style lang="postcss">
-	:global(input[type='checkbox']) {
-		@apply cursor-pointer;
-		@apply border-neutral-300;
-	}
-	:global(input[type='checkbox']:focus) {
-		@apply border-primary-500;
-		@apply dark:ring-primary-900;
-		@apply ring-primary-100;
-		@apply ring-4;
-	}
-	:global(input[type='checkbox']:disabled) {
-		@apply cursor-not-allowed;
-		@apply opacity-50;
-	}
-</style>
+<Checkbox {...rest} bind:checked {value} {disabled}>
+	<span class={disabled ? 'opacity-50' : ''}>
+		{@render children?.()}
+	</span>
+</Checkbox>

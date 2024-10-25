@@ -1,19 +1,10 @@
-import { SvelteComponent } from "svelte";
-declare const __propDef: {
-    props: {
-        [x: string]: any;
-        value: unknown;
-    };
-    events: {
-        [evt: string]: CustomEvent<any>;
-    };
-    slots: {};
-    exports?: undefined;
-    bindings?: undefined;
-};
-export type InputProps = typeof __propDef.props;
-export type InputEvents = typeof __propDef.events;
-export type InputSlots = typeof __propDef.slots;
-export default class Input extends SvelteComponent<InputProps, InputEvents, InputSlots> {
-}
-export {};
+import { Input } from 'flowbite-svelte';
+declare const Input: import("svelte").Component<{
+    type?: "color" | "date" | "datetime-local" | "email" | "file" | "hidden" | "image" | "month" | "number" | "password" | "reset" | "submit" | "tel" | "text" | "time" | "url" | "week" | "search";
+    value: unknown;
+    name?: string;
+    color?: "primary" | "error" | "success";
+    disabled?: boolean;
+    class?: string;
+}, {}, "value">;
+export default Input;

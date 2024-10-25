@@ -1,23 +1,21 @@
 <script lang="ts">
+	// Copyright 2024 IOTA Stiftung.
+	// SPDX-License-Identifier: Apache-2.0.
 	import { Radio } from 'flowbite-svelte';
-	export let value: string | number;
-	export let group: number | string | undefined = undefined;
+	import type { Snippet } from 'svelte';
+
+	interface Props {
+		checked: boolean;
+		value?: string | number;
+		group?: string | number;
+		disabled?: boolean;
+		class?: string;
+		children?: Snippet;
+	}
+
+	let { checked = $bindable(), value, disabled, group, children, ...rest }: Props = $props();
 </script>
 
-<Radio {...$$props} class={$$props.class ?? ''} bind:value {group}><slot /></Radio>
-
-<style lang="postcss">
-	:global(input[type='radio']) {
-		@apply cursor-pointer;
-		@apply border-neutral-300;
-	}
-	:global(input[type='radio']:focus) {
-		@apply border-primary-500;
-		@apply dark:ring-primary-900;
-		@apply ring-primary-100;
-		@apply ring-4;
-	}
-	:global(input[type='radio']:disabled) {
-		@apply cursor-not-allowed;
-	}
-</style>
+<Radio {...rest} bind:checked {disabled} {value} {group}>
+	{@render children?.()}
+</Radio>

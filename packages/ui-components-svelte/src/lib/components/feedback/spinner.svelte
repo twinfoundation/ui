@@ -1,7 +1,13 @@
 <script lang="ts">
+	// Copyright 2024 IOTA Stiftung.
+	// SPDX-License-Identifier: Apache-2.0.
 	import { Spinner } from 'flowbite-svelte';
 
-	export let size: number = 7;
+	interface Props {
+		size?: number;
+	}
+
+	let { size = 7, ...rest }: Props = $props();
 </script>
 
-<Spinner {size} {...$$props} class={`${$$props.class ?? ''}`} color="primary" />
+<Spinner {size} {...rest} color="custom" customColor="fill-surface-brand-primary-1" />

@@ -1,22 +1,9 @@
-import { SvelteComponent } from "svelte";
-declare const __propDef: {
-    props: {
-        [x: string]: any;
-        checked: boolean;
-        disabled?: boolean | undefined;
-    };
-    events: {
-        [evt: string]: CustomEvent<any>;
-    };
-    slots: {
-        default: {};
-    };
-    exports?: undefined;
-    bindings?: undefined;
-};
-export type CheckboxProps = typeof __propDef.props;
-export type CheckboxEvents = typeof __propDef.events;
-export type CheckboxSlots = typeof __propDef.slots;
-export default class Checkbox extends SvelteComponent<CheckboxProps, CheckboxEvents, CheckboxSlots> {
-}
-export {};
+import { Checkbox } from 'flowbite-svelte';
+import type { Snippet } from 'svelte';
+declare const Checkbox: import("svelte").Component<{
+    checked: boolean;
+    value?: string | number;
+    disabled?: boolean;
+    children?: Snippet;
+}, {}, "checked">;
+export default Checkbox;

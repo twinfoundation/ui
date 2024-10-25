@@ -1,44 +1,57 @@
 <script lang="ts">
+	// Copyright 2024 IOTA Stiftung.
+	// SPDX-License-Identifier: Apache-2.0.
 	import { Is } from '@twin.org/core';
 	import { Modal } from 'flowbite-svelte';
-	import { Button, P, Spinner } from '$lib';
+	import { Button, Helper, P, Spinner } from '$lib';
 
-	export let title: string;
-	export let message: string;
-	export let statusMessage: string | undefined = undefined;
-	export let statusIsError: boolean = false;
-	export let busy: boolean = false;
-	export let buttons: {
-		label: string;
-		color?: 'red' | 'yellow' | 'green' | 'primary';
-		outline?: boolean;
-		action: () => Promise<void>;
-	}[];
+	interface Props {
+		open: boolean;
+		title: string;
+		message: string;
+		statusMessage?: string;
+		statusIsError?: boolean;
+		busy?: boolean;
+		buttons: {
+			label: string;
+			color?: 'error' | 'warning' | 'success' | 'info' | 'primary' | 'secondary' | 'plain';
+			action: () => Promise<void>;
+		}[];
+	}
+
+	let {
+		open,
+		title,
+		message,
+		statusMessage,
+		statusIsError = false,
+		busy = false,
+		buttons,
+		...rest
+	}: Props = $props();
 </script>
 
 <Modal
+	{open}
 	{title}
-	{...$$props}
-	classFooter={busy ? 'justify-between' : 'justify-end'}
+	{...rest}
+	classHeader="text-primary dark:text-primary-dark bg-transparent dark:bg-transparent"
+	classBody="text-primary dark:text-primary-dark bg-transparent dark:bg-transparent"
+	classFooter={'text-primary dark:text-primary-dark bg-transparent dark:bg-transparent justify-between'}
 	dismissable={false}
 >
 	<P>{message}</P>
 	{#if Is.stringValue(statusMessage)}
-		<P
-			class={`whitespace-pre-line break-all text-sm ${statusIsError ? 'text-red-500 dark:text-red-400' : 'text-green-500 dark:text-green-400'}`}
+		<Helper
+			color={statusIsError ? 'error' : 'success'}
+			class="whitespace-pre-line break-all text-sm">{statusMessage}</Helper
 		>
-			{statusMessage}
-		</P>
 	{/if}
 	<svelte:fragment slot="footer">
-		{#if busy}
-			<Spinner />
-		{/if}
 		<div class="flex flex-row gap-2">
 			{#each buttons as button}
 				<Button
-					color={button.color ?? 'primary'}
-					outline={button.outline ?? true}
+					color={button.color ?? 'plain'}
 					on:click={async () => button.action()}
 					disabled={busy}
 				>
@@ -46,5 +59,8 @@
 				</Button>
 			{/each}
 		</div>
+		{#if busy}
+			<Spinner />
+		{/if}
 	</svelte:fragment>
 </Modal>

@@ -1,11 +1,17 @@
 <script lang="ts">
+	// Copyright 2024 IOTA Stiftung.
+	// SPDX-License-Identifier: Apache-2.0.
 	import { Heading, Spinner } from '$lib';
 
-	export let title: string;
-	export let busy: boolean = false;
+	interface Props {
+		title: string;
+		busy?: boolean;
+	}
+
+	const { title, busy = false }: Props = $props();
 </script>
 
-<header class="flex flex-row justify-between gap-5 border-b pb-2">
+<header class="flex flex-row justify-between gap-5">
 	<Heading tag="h5">{title}</Heading>
 	{#if busy}
 		<Spinner />

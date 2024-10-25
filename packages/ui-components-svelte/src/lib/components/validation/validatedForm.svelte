@@ -2,29 +2,52 @@
 	// Copyright 2024 IOTA Stiftung.
 	// SPDX-License-Identifier: Apache-2.0.
 	import { Is, Validation, type IValidationFailure } from '@twin.org/core';
-	import { Button, Card, Heading, P, Spinner, i18n } from '$lib';
+	import type { Snippet } from 'svelte';
+	import { Button, Card, Heading, Helper, Spinner, i18n } from '$lib';
 
-	export let title: string;
-	export let actionButtonLabel: string = $i18n('actions.save');
-	export let actionSuccessLabel: string = $i18n('actions.saveSuccess');
-	export let closeButtonLabel: string = $i18n('actions.close');
-	export let validationMethod:
-		| ((validationFailures: IValidationFailure[]) => Promise<void>)
-		| undefined;
-	export let actionMethod: (() => Promise<string | undefined>) | undefined = undefined;
-	export let closeMethod: (() => Promise<void>) | undefined = undefined;
-	export let validationErrors: { [id: string]: IValidationFailure[] | undefined };
-	export let busy: boolean = false;
-	export let result: string = '';
-	export let resultIsError: boolean = false;
-	export let resultTimeout: number = 5000;
+	interface Props {
+		title: string;
+		actionButtonLabel?: string;
+		actionSuccessLabel?: string;
+		closeButtonLabel?: string;
+		validationMethod?: (validationFailures: IValidationFailure[]) => Promise<void>;
+		actionMethod?: () => Promise<string | undefined>;
+		closeMethod?: (() => Promise<void>) | undefined;
+		validationErrors: { [id: string]: IValidationFailure[] | undefined };
+		busy?: boolean;
+		result?: string;
+		resultIsError?: boolean;
+		resultTimeout?: number;
+		fields?: Snippet;
+		afterAction?: Snippet;
+	}
 
-	let submitResultTimeout: number | undefined;
+	let {
+		title,
+		actionButtonLabel = $i18n('actions.save'),
+		actionSuccessLabel = $i18n('actions.saveSuccess'),
+		closeButtonLabel = $i18n('actions.close'),
+		validationMethod,
+		actionMethod,
+		closeMethod,
+		validationErrors = $bindable(),
+		busy = $bindable(false),
+		result = '',
+		resultIsError = false,
+		resultTimeout = 5000,
+		fields,
+		afterAction
+	}: Props = $props();
+
+	let timerId: NodeJS.Timeout | undefined;
 
 	function resetState(): void {
+		if (Is.notEmpty(timerId)) {
+			clearTimeout(timerId);
+		}
+		timerId = undefined;
 		result = '';
 		resultIsError = false;
-		clearTimeout(submitResultTimeout);
 		validationErrors = {};
 		busy = false;
 	}
@@ -52,7 +75,7 @@
 				result = actionSuccessLabel;
 			}
 			if (resultTimeout > 0) {
-				submitResultTimeout = setTimeout(resetState, resultTimeout);
+				timerId = setTimeout(resetState, resultTimeout);
 			}
 		}
 	}
@@ -76,20 +99,19 @@
 				<Spinner />
 			{/if}
 		</div>
-		<slot name="fields"></slot>
-		{#if result.length > 0}
-			<P
-				class={`whitespace-pre-line break-all text-sm ${resultIsError ? 'text-red-500 dark:text-red-400' : 'text-green-500 dark:text-green-400'}`}
+		{@render fields?.()}
+		{#if Is.stringValue(result)}
+			<Helper
+				color={resultIsError ? 'error' : 'success'}
+				class="whitespace-pre-line break-all text-sm">{result}</Helper
 			>
-				{result}
-			</P>
 		{/if}
 		<div class="flex flex-row gap-2">
 			{#if Is.function(closeMethod)}
 				<Button
 					type="button"
 					class="w-full"
-					outline
+					color="plain"
 					on:click={async () => handleClose()}
 					disabled={busy}
 					>{closeButtonLabel}
@@ -101,6 +123,6 @@
 				</Button>
 			{/if}
 		</div>
-		<slot name="after-action"></slot>
+		{@render afterAction?.()}
 	</form>
 </Card>
