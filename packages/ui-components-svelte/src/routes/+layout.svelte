@@ -2,9 +2,8 @@
 	// Copyright 2024 IOTA Stiftung.
 	// SPDX-License-Identifier: Apache-2.0.
 	import '$lib/css/index.css';
-	import { HomeSolid } from 'flowbite-svelte-icons';
 	import type { Snippet } from 'svelte';
-	import { AppLayout, type ISideBarGroup } from '$lib';
+	import { Icons, AppLayout, type ISideBarGroup } from '$lib';
 
 	interface Props {
 		children?: Snippet;
@@ -18,62 +17,67 @@
 				{
 					label: 'Home',
 					route: '/',
-					icon: HomeSolid
+					icon: Icons.HomeSolid
+				},
+				{
+					label: 'Theme',
+					route: '/theme',
+					icon: Icons.HomeSolid
 				},
 				{
 					label: 'Typography',
 					route: '/typography',
-					icon: HomeSolid
+					icon: Icons.HomeSolid
 				},
 				{
 					label: 'Buttons',
 					route: '/buttons',
-					icon: HomeSolid
+					icon: Icons.HomeSolid
 				},
 				{
 					label: 'Links',
 					route: '/links',
-					icon: HomeSolid
+					icon: Icons.HomeSolid
 				},
 				{
 					label: 'Forms',
 					route: '/forms',
-					icon: HomeSolid
+					icon: Icons.HomeSolid
 				},
 				{
 					label: 'QR',
 					route: '/qr',
-					icon: HomeSolid
+					icon: Icons.HomeSolid
 				},
 				{
 					label: 'Spinner',
 					route: '/spinner',
-					icon: HomeSolid
+					icon: Icons.HomeSolid
 				},
 				{
 					label: 'Cards',
 					route: '/cards',
-					icon: HomeSolid
+					icon: Icons.HomeSolid
 				},
 				{
 					label: 'Tables',
 					route: '/tables',
-					icon: HomeSolid
+					icon: Icons.HomeSolid
 				},
 				{
 					label: 'Modals',
 					route: '/modals',
-					icon: HomeSolid
+					icon: Icons.HomeSolid
 				},
 				{
 					label: 'Validated Form',
 					route: '/validatedForm',
-					icon: HomeSolid
+					icon: Icons.HomeSolid
 				},
 				{
 					label: 'Badges',
 					route: '/badges',
-					icon: HomeSolid
+					icon: Icons.HomeSolid
 				}
 			]
 		}

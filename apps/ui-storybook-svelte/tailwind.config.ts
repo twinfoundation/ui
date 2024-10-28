@@ -6,7 +6,11 @@ import { TailwindConfig } from "@twin.org/ui-components-svelte/config/tailwindCo
 const npmRoot = execSync("npm root").toString().trim().replace(/\\/g, "/");
 
 export default {
-	content: ["./src/**/*.{html,js,svelte,ts}", ...TailwindConfig.getContentPaths(npmRoot, false)],
+	content: [
+		"./src/**/*.{js,ts,svelte}",
+		"./.storybook/**/*.html",
+		...TailwindConfig.getContentPaths(npmRoot)
+	],
 	plugins: TailwindConfig.getPlugins(),
 	darkMode: "class",
 	theme: {

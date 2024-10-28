@@ -1,5 +1,7 @@
 # TWIN UI Svelte Components
 
+> **This is experimental until the Storybook components catch up with Svelte 5**
+
 This web front-end demonstrates the svelte UI components in storybook format.
 
 A deployment of this app can be found here [https://storybook-svelte.twindev.org](https://storybook-svelte.twindev.org)

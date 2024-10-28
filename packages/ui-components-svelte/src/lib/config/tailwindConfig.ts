@@ -47,7 +47,8 @@ export class TailwindConfig {
 				npmRoot,
 				"flowbite-svelte-svelte-blocks",
 				contentExtensions
-			)
+			),
+			TailwindConfigTwinOrg.buildContentPath(npmRoot, "flowbite-svelte-icons", contentExtensions)
 		];
 
 		if (includePackage) {

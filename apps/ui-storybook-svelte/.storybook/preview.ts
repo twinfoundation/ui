@@ -1,3 +1,4 @@
+import { withThemeByClassName } from "@storybook/addon-themes";
 import type { Preview } from "@storybook/svelte";
 
 const preview: Preview = {
@@ -9,8 +10,15 @@ const preview: Preview = {
 			}
 		}
 	},
-
-	tags: ["autodocs"]
+	decorators: [
+		withThemeByClassName({
+			themes: {
+				light: "light",
+				dark: "dark"
+			},
+			defaultTheme: "light"
+		})
+	]
 };
 
 export default preview;

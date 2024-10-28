@@ -1,5 +1,6 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
+export * as Icons from "flowbite-svelte-icons";
 export { default as AppFooter } from "./components/app/appFooter.svelte";
 export { default as AppHeader } from "./components/app/appHeader.svelte";
 export { default as AppLayout } from "./components/app/appLayout.svelte";
@@ -50,7 +51,9 @@ export { default as Span } from "./components/typography/span.svelte";
 export { default as Error } from "./components/validation/error.svelte";
 export { default as ValidatedForm } from "./components/validation/validatedForm.svelte";
 export { default as ValidationError } from "./components/validation/validationError.svelte";
+export * from "./config/tailwindConfig";
 export * from "./models/ISideBarGroup";
 export * from "./models/ISideBarItem";
 export * from "./stores/i18n";
+export * from "./utils/clipboard";
 export * from "./utils/persistent";

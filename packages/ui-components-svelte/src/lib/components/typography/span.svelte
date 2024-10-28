@@ -12,6 +12,6 @@
 	let props: Props = $props();
 </script>
 
-<Span {...props} class={`text-primary dark:text-primary-dark ${props.class ?? ''}`}>
+<Span {...props} class={`text-primary dark:text-primary-dark font-normal ${props.class ?? ''}`}>
 	{@render props.children?.()}
 </Span>

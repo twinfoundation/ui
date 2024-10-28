@@ -1,4 +1,4 @@
-import { withThemeByDataAttribute } from "@storybook/addon-themes";
+import { withThemeByClassName } from "@storybook/addon-themes";
 import { Preview } from "@storybook/react";
 import "../src/index.css";
 
@@ -12,13 +12,12 @@ const preview: Preview = {
 		}
 	},
 	decorators: [
-		withThemeByDataAttribute({
+		withThemeByClassName({
 			themes: {
 				light: "light",
 				dark: "dark"
 			},
-			defaultTheme: "light",
-			attributeName: "data-theme"
+			defaultTheme: "light"
 		})
 	]
 };

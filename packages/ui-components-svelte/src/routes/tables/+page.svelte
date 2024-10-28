@@ -1,10 +1,10 @@
 <script lang="ts">
 	// Copyright 2024 IOTA Stiftung.
 	// SPDX-License-Identifier: Apache-2.0.
-	import { EyeSolid, TrashBinSolid } from 'flowbite-svelte-icons';
 	import {
 		Button,
 		Heading,
+		Icons,
 		Pagination,
 		Table,
 		TableBody,
@@ -53,7 +53,7 @@
 	<Table>
 		<TableHead>
 			<TableHeadCell>Description</TableHeadCell>
-			<TableHeadCell>DateCreated</TableHeadCell>
+			<TableHeadCell>Date Created</TableHeadCell>
 			<TableHeadCell>Actions</TableHeadCell>
 		</TableHead>
 		<TableBody>
@@ -62,8 +62,9 @@
 					<TableBodyCell wrap>{item.description}</TableBodyCell>
 					<TableBodyCell>{new Date(item.dateCreated).toLocaleString()}</TableBodyCell>
 					<TableBodyCell actions
-						><Button size="xs" color="plain"><EyeSolid /></Button><Button size="xs" color="plain"
-							><TrashBinSolid /></Button
+						><Button size="xs" color="plain"><Icons.EyeSolid /></Button><Button
+							size="xs"
+							color="plain"><Icons.TrashBinSolid /></Button
 						></TableBodyCell
 					>
 				</TableBodyRow>

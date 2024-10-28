@@ -6,7 +6,11 @@ import { TailwindConfig } from "@twin.org/ui-components-react";
 const npmRoot = execSync("npm root").toString().trim().replace(/\\/g, "/");
 
 export default {
-	content: ["./src/**/*.{js,ts,jsx,tsx}", ...TailwindConfig.getContentPaths(npmRoot)],
+	content: [
+		"./src/**/*.{js,ts,jsx,tsx}",
+		"./.storybook/**/*.html",
+		...TailwindConfig.getContentPaths(npmRoot)
+	],
 	plugins: TailwindConfig.getPlugins(),
 	darkMode: "class",
 	theme: {

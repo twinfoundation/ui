@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/ui-components-svelte",
-	"version": "0.0.1-next.15",
+	"version": "0.0.1-next.16",
 	"description": "UI components for svelte",
 	"repository": {
 		"type": "git",
@@ -29,10 +29,10 @@
 	"dependencies": {
 		"@twin.org/core": "next",
 		"@twin.org/qr": "next",
-		"@twin.org/ui-tailwind": "0.0.1-next.15",
-		"flowbite-svelte": "^0.47.1",
+		"@twin.org/ui-tailwind": "0.0.1-next.16",
+		"flowbite-svelte": "^0.47.2",
 		"flowbite-svelte-blocks": "^1.1.4",
-		"flowbite-svelte-icons": "^1.6.2",
+		"flowbite-svelte-icons": "^2.0.2",
 		"flowbite-typography": "^1.0.4"
 	},
 	"peerDependencies": {
@@ -40,8 +40,8 @@
 		"svelte": "^5.0.5"
 	},
 	"devDependencies": {
-		"@sveltejs/package": "^2.3.6",
-		"@sveltejs/adapter-auto": "^3.3.0",
+		"@sveltejs/package": "^2.3.7",
+		"@sveltejs/adapter-auto": "^3.3.1",
 		"@tailwindcss/typography": "^0.5.15",
 		"@twin.org/merge-locales": "next",
 		"autoprefixer": "^10.4.20",

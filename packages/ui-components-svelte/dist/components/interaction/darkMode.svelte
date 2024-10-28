@@ -1,8 +1,7 @@
 <script lang="ts">
 	// Copyright 2024 IOTA Stiftung.
 	// SPDX-License-Identifier: Apache-2.0.
-	import { MoonOutline, SunOutline } from 'flowbite-svelte-icons';
-	import { Button } from '../..';
+	import { Button, Icons } from '../..';
 
 	function toggleTheme(ev: MouseEvent): void {
 		const target = ev.target as HTMLElement;
@@ -30,6 +29,6 @@
 </svelte:head>
 
 <Button size="xs" color="plain" on:click={toggleTheme} class="p-2">
-	<span class="hidden dark:block"><MoonOutline /></span>
-	<span class="block dark:hidden"><SunOutline /></span>
+	<span class="hidden dark:block"><Icons.MoonOutline /></span>
+	<span class="block dark:hidden"><Icons.SunOutline /></span>
 </Button>

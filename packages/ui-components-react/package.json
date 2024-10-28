@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/ui-components-react",
-	"version": "0.0.1-next.15",
+	"version": "0.0.1-next.16",
 	"description": "UI components for react",
 	"repository": {
 		"type": "git",
@@ -22,7 +22,7 @@
 		"dist": "npm run clean && npm run build && npm run bundle"
 	},
 	"dependencies": {
-		"@twin.org/ui-tailwind": "0.0.1-next.15",
+		"@twin.org/ui-tailwind": "0.0.1-next.16",
 		"prop-types": "^15.8.1"
 	},
 	"devDependencies": {
@@ -31,7 +31,7 @@
 		"autoprefixer": "^10.4.20",
 		"postcss": "^8.4.47",
 		"rimraf": "6.0.1",
-		"rollup": "4.24.0",
+		"rollup": "4.24.2",
 		"rollup-plugin-copy": "3.5.0",
 		"rollup-plugin-typescript2": "0.36.0",
 		"tailwindcss": "^3.4.14",

@@ -1,8 +1,8 @@
 <script lang="ts">
 	// Copyright 2024 IOTA Stiftung.
 	// SPDX-License-Identifier: Apache-2.0.
-	import { AngleLeftOutline, AngleRightOutline } from 'flowbite-svelte-icons';
-	import { Button } from '$lib';
+	import { Button, Icons } from '$lib';
+
 	interface Props {
 		canGoBackwards?: boolean;
 		canGoForwards?: boolean;
@@ -25,12 +25,12 @@
 		size="xs"
 		color="plain"
 		disabled={!canGoBackwards || disabled}
-		on:click={async () => loadPrevious()}><AngleLeftOutline /></Button
+		on:click={async () => loadPrevious()}><Icons.AngleLeftOutline /></Button
 	>
 	<Button
 		size="xs"
 		color="plain"
 		disabled={!canGoForwards || disabled}
-		on:click={async () => loadNext()}><AngleRightOutline /></Button
+		on:click={async () => loadNext()}><Icons.AngleRightOutline /></Button
 	>
 </div>
