@@ -23,7 +23,7 @@ const npmRoot = execSync("npm root").toString().trim().replace(/\\/g, "/");
 
 export default {
    content: [
-   ...your content paths, 
+   ...your content paths,
    ...TailwindConfig.getContentPaths(npmRoot)
    ],
    plugins: TailwindConfig.getPlugins(),
