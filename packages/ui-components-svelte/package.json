@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/ui-components-svelte",
-	"version": "0.0.1-next.17",
+	"version": "0.0.1-next.18",
 	"description": "UI components for svelte",
 	"repository": {
 		"type": "git",
@@ -29,7 +29,7 @@
 	"dependencies": {
 		"@twin.org/core": "next",
 		"@twin.org/qr": "next",
-		"@twin.org/ui-tailwind": "0.0.1-next.17",
+		"@twin.org/ui-tailwind": "0.0.1-next.18",
 		"flowbite-svelte": "0.47.2",
 		"flowbite-svelte-blocks": "1.1.4",
 		"flowbite-svelte-icons": "2.0.2",

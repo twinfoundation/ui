@@ -32,9 +32,9 @@
 		closeMethod,
 		validationErrors = $bindable(),
 		busy = $bindable(false),
-		result = '',
-		resultIsError = false,
-		resultTimeout = 5000,
+		result = $bindable(''),
+		resultIsError = $bindable(false),
+		resultTimeout = $bindable(5000),
 		fields,
 		afterAction
 	}: Props = $props();

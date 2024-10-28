@@ -1,30 +1,15 @@
 <script lang="ts">
 	// Copyright 2024 IOTA Stiftung.
 	// SPDX-License-Identifier: Apache-2.0.
-	import { Input } from 'flowbite-svelte';
+	import { Input, type InputType } from 'flowbite-svelte';
+	import type { FullAutoFill } from 'svelte/elements';
 
 	interface Props {
-		type?:
-			| 'color'
-			| 'date'
-			| 'datetime-local'
-			| 'email'
-			| 'file'
-			| 'hidden'
-			| 'image'
-			| 'month'
-			| 'number'
-			| 'password'
-			| 'reset'
-			| 'submit'
-			| 'tel'
-			| 'text'
-			| 'time'
-			| 'url'
-			| 'week'
-			| 'search';
+		type?: InputType;
 		value: unknown;
 		name?: string;
+		placeholder?: string;
+		autocomplete?: FullAutoFill | undefined | null;
 		color?: 'primary' | 'error' | 'success';
 		disabled?: boolean;
 		class?: string;
@@ -35,6 +20,8 @@
 		name,
 		value = $bindable(),
 		color = 'primary',
+		placeholder,
+		autocomplete,
 		disabled,
 		...rest
 	}: Props = $props();
@@ -59,7 +46,9 @@
 	{...rest}
 	{type}
 	{name}
+	{placeholder}
 	{disabled}
+	{autocomplete}
 	color={flowbiteMap[color]}
 	class="{`focus:ring ${colorMap[color]} focus:ring-surface-button-pressed focus:border-surface-brand-primary-1 dark:focus:ring-surface-button-pressed-dark dark:focus:border-surface-brand-primary-1-dark ${rest.class ?? ''}`}}"
 	bind:value
