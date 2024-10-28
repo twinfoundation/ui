@@ -1,11 +1,11 @@
 {
 	"name": "@twin.org/ui-tailwind",
-	"version": "0.0.1-next.16",
+	"version": "0.0.1-next.17",
 	"description": "UI package for tailwind",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/twinfoundation/ui.git",
-		"directory": "packages/ui-twilwind"
+		"directory": "packages/ui-tailwind"
 	},
 	"author": "martyn.janes@iota.org",
 	"license": "Apache-2.0",

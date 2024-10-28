@@ -1,11 +1,11 @@
-# TWIN TypeScript to OpenApi
+# TWIN Tailwind Components
 
-This tool is used to read the REST route definitions from `@twin.org` packages and convert them into an OpenAPI specification in JSON format.
+A package which contains Tailwind plugins for configuring the TWIN themes.
 
 ## Installation
 
 ```shell
-npm install @twin.org/ts-to-openapi
+npm install @twin.org/ui-tailwind
 ```
 
 ## Examples

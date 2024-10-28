@@ -1,11 +1,11 @@
-# TWIN UI Component Svelte
+# TWIN UI Component React
 
-This package contains the svelte UI components.
+This package contains the react UI components.
 
 ## Installation
 
 ```shell
-npm install @twin.org/ui-components.svelte
+npm install @twin.org/ui-components-react
 ```
 
 ## Examples
