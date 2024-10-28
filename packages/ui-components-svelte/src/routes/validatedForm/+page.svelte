@@ -66,7 +66,7 @@
 				<Input
 					type="text"
 					name="filename"
-					color={Is.arrayValue(validationErrors.firstName) ? 'error' : 'primary'}
+					color={Is.arrayValue(validationErrors.firstName) ? 'error' : 'default'}
 					bind:value={firstName}
 					disabled={busy}
 				/>
