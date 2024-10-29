@@ -44,3 +44,4 @@ jobs:
           ALIAS_DOMAINS: ${{ env.gha-domain }}
           PRODUCTION: ${{ env.gha-production }}
           WORKING_DIRECTORY: apps/ui-storybook-react
+          FORCE: true
