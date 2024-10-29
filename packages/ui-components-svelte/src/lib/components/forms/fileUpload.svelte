@@ -34,6 +34,6 @@
 	{name}
 	{disabled}
 	color={flowbiteMap[color]}
-	class="{`focus:ring ${colorMap[color]} focus:ring-surface-button-pressed focus:border-surface-brand-primary-1 dark:focus:ring-surface-button-pressed-dark dark:focus:border-surface-brand-primary-1-dark disabled:cursor-not-allowed ${rest.class ?? ''}`}}"
+	class="{`outline-none focus:ring ${colorMap[color]} focus:ring-surface-button-pressed focus:border-surface-brand-primary-1 dark:focus:ring-surface-button-pressed-dark dark:focus:border-surface-brand-primary-1-dark disabled:cursor-not-allowed ${rest.class ?? ''}`}}"
 	bind:files
 ></Fileupload>

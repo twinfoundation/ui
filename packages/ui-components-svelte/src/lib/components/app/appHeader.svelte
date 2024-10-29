@@ -1,7 +1,7 @@
 <script lang="ts">
 	// Copyright 2024 IOTA Stiftung.
 	// SPDX-License-Identifier: Apache-2.0.
-	import { Avatar, Link, Navbar, NavBrand, Span } from '$lib';
+	import { Avatar, Navbar, NavBrand, Span } from '$lib';
 
 	interface Props {
 		initials?: string;
@@ -35,9 +35,7 @@
 			>
 		</NavBrand>
 		{#if authenticated}
-			<Link href={profileNavRoute} class="rounded-full"
-				><Avatar class="cursor-pointer">{initials}</Avatar></Link
-			>
+			<Avatar class="cursor-pointer" href={profileNavRoute}>{initials}</Avatar>
 		{/if}
 	</div>
 </Navbar>

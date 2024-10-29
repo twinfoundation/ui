@@ -38,6 +38,7 @@
 	classHeader="text-primary dark:text-primary-dark bg-transparent dark:bg-transparent"
 	classBody="text-primary dark:text-primary-dark bg-transparent dark:bg-transparent"
 	classFooter={'text-primary dark:text-primary-dark bg-transparent dark:bg-transparent justify-between'}
+	class="bg-surface-main border-surface-primary dark:bg-surface-main-dark dark:border-surface-primary-dark text-primary min-w-96"
 	dismissable={false}
 >
 	<P>{message}</P>

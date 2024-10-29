@@ -8,7 +8,7 @@
 	<Heading tag="h3">Buttons</Heading>
 	<Button>Button</Button>
 	<Button disabled>disabled</Button>
-	<div class="flex flex-row items-center gap-2">
+	<div class="flex flex-col gap-2 md:flex-row md:items-center">
 		<Button size="xs">size=xs</Button>
 		<Button size="sm">size=sm</Button>
 		<Button size="md">size=md</Button>

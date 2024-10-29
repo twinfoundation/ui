@@ -49,10 +49,10 @@
 		<Heading tag="h5">{StringHelper.titleCase(colorCollectionKey)}</Heading>
 
 		{#each Object.keys(colors[colorCollectionKey]) as colorKey}
-			<div class="flex flex-row items-center gap-5">
+			<div class="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-5">
 				<P class="min-w-64 text-sm">{mapKeyName(colorCollectionKey, colorKey)}</P>
 				{#if Is.object(colors[colorCollectionKey][colorKey])}
-					<div class="flex min-w-40 flex-row gap-2">
+					<div class="item-center flex min-w-40 flex-row gap-2">
 						{#each Object.keys(colors[colorCollectionKey][colorKey]) as colorVariantKey}
 							<div
 								class="h-5 w-5 rounded-md border border-neutral-300"

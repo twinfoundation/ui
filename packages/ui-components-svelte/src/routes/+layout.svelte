@@ -1,9 +1,9 @@
 <script lang="ts">
 	// Copyright 2024 IOTA Stiftung.
 	// SPDX-License-Identifier: Apache-2.0.
-	import '$lib/css/index.css';
 	import type { Snippet } from 'svelte';
-	import { Icons, AppLayout, type ISideBarGroup } from '$lib';
+	import { AppLayout, Icons, type ISideBarGroup } from '$lib';
+	import '$lib/css/index.css';
 
 	interface Props {
 		children?: Snippet;
@@ -84,6 +84,12 @@
 	];
 </script>
 
-<AppLayout title="TWIN UI Svelte Components" {sidebarGroups}>
+<AppLayout
+	title="TWIN UI Svelte Components"
+	{sidebarGroups}
+	authenticated={true}
+	initials="TW"
+	profileNavRoute="/"
+>
 	{@render children?.()}
 </AppLayout>
