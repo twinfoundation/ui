@@ -8,7 +8,7 @@ npm install @twin.org/ui-components-svelte
 
 ## Configuring
 
-To you Tailwind config add the following settings:
+To your Tailwind config add the following settings:
 
 ```js
 import { execSync } from "node:child_process";
