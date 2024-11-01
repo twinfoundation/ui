@@ -19,7 +19,7 @@ export class TailwindConfig {
 	 * @returns The tailwind config theme.
 	 */
 	public static getTheme(
-		collections: string[] = ["Twin Brand Color", "Twin Tokens"]
+		collections: string[] = ["Twin Tokens", "Twin Brand Color"]
 	): Config["theme"] {
 		const defaultFigmaVariables = FigmaVariables.loadDefaultVariables();
 

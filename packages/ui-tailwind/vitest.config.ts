@@ -22,11 +22,6 @@ export default defineConfig({
 			reporter: ["text", "lcov"],
 			exclude: ["**/index.ts", "**/models/**/*.ts", "**/tests/**/*.ts"]
 		},
-		poolOptions: {
-			threads: {
-				minThreads: 1,
-				maxThreads: 1
-			}
-		}
+		fileParallelism: false
 	}
 });
