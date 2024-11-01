@@ -1,13 +1,14 @@
 <script lang="ts">
 	// Copyright 2024 IOTA Stiftung.
 	// SPDX-License-Identifier: Apache-2.0.
-	import { Converter } from '@twin.org/core';
+	import { Converter, Is } from '@twin.org/core';
 	import { PngRenderer, QR } from '@twin.org/qr';
 	import { onMount } from 'svelte';
 	import { Link } from '$lib';
 
 	interface Props {
 		qrData: string;
+		href?: string;
 		label: string;
 		dimensions: number;
 		foreground?: string;
@@ -21,11 +22,11 @@
 		dimensions,
 		foreground = '#000000',
 		background = '#FFFFFF',
+		href,
 		...rest
 	}: Props = $props();
 
 	let pngBase64: string | undefined = $state();
-	const linkItem: boolean = qrData.startsWith('http');
 
 	onMount(async () => {
 		const qr = new QR(0);
@@ -47,12 +48,8 @@
 			style="width:{`${dimensions - 2}px`};height:{`${dimensions - 2}px`};min-width:{`${dimensions - 2}px`};min-height:{`${dimensions - 2}px`}"
 		/>
 	{/snippet}
-	{#if linkItem}
-		<Link
-			href={qrData}
-			target="_blank"
-			class="focus:border-primary-500 block border border-transparent"
-		>
+	{#if Is.stringValue(href)}
+		<Link {href} target="_blank" class="focus:border-primary-500 block border border-transparent">
 			{@render image()}
 		</Link>
 	{:else}
