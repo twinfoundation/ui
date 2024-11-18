@@ -1,5 +1,5 @@
 # @twin.org/ui-tailwind - Changelog
 
-## v0.0.1-next.24
+## v0.0.1-next.25
 
 - Initial Release
