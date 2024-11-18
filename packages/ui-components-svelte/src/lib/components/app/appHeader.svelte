@@ -1,6 +1,7 @@
 <script lang="ts">
 	// Copyright 2024 IOTA Stiftung.
 	// SPDX-License-Identifier: Apache-2.0.
+	import { Is } from '@twin.org/core';
 	import { Avatar, Navbar, NavBrand, Span } from '$lib';
 
 	interface Props {
@@ -8,6 +9,8 @@
 		homeNavRoute?: string;
 		profileNavRoute?: string;
 		title?: string;
+		titleImage?: string;
+		logoImage?: string;
 		authenticated?: boolean;
 	}
 
@@ -16,6 +19,8 @@
 		profileNavRoute = '',
 		homeNavRoute,
 		title = '',
+		titleImage,
+		logoImage,
 		authenticated = false
 	}: Props = $props();
 </script>
@@ -30,11 +35,15 @@
 >
 	<div class="flex w-full flex-row justify-between gap-10">
 		<NavBrand href={homeNavRoute} class="p-2">
-			<img src="/images/logo-primary.svg" class="me-3 h-6 sm:h-9" alt={title} />
-			<Span
-				class="font-hdcoltonwidesemibold text-primary dark:text-primary-dark self-center whitespace-nowrap text-xl font-semibold"
-				>{title}</Span
-			>
+			<img src={logoImage ?? '/images/logo-primary.svg'} class="me-3 h-6 sm:h-9" alt={title} />
+			{#if Is.stringValue(titleImage)}
+				<img src="/images/logo-primary.svg" class="me-3 h-6 sm:h-9" alt={title} />
+			{:else}
+				<Span
+					class="font-inter text-primary dark:text-primary-dark self-center whitespace-nowrap text-xl font-extrabold"
+					>{title}</Span
+				>
+			{/if}
 		</NavBrand>
 		{#if authenticated}
 			<Avatar class="cursor-pointer" href={profileNavRoute}>{initials}</Avatar>

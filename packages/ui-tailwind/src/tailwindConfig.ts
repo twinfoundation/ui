@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0.
 import { Is, StringHelper } from "@twin.org/core";
 import type { Config } from "tailwindcss";
+import * as defaultTheme from "tailwindcss/defaultTheme";
 import type { IFigmaVariableCollection } from "./models/IFigmaVariableCollection";
 
 /**
@@ -65,18 +66,8 @@ export class TailwindConfig {
 		return {
 			colors,
 			fontFamily: {
-				sans: [
-					"Aeonik",
-					"ui-sans-serif",
-					"system-ui",
-					"sans-serif",
-					"Apple Color Emoji",
-					"Segoe UI Emoji",
-					"Segoe UI Symbol",
-					"Noto Color Emoji"
-				],
-				aeonik: ["Aeonik"],
-				hdcoltonwidesemibold: ["HD Colton Wide Semibold"]
+				sans: ["Inter", ...defaultTheme.fontFamily.sans],
+				inter: ["Inter", "sans-serif"]
 			}
 		};
 	}

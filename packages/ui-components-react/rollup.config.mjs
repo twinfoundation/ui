@@ -5,17 +5,10 @@ import packageDetails from './package.json' with { type: 'json' };
 import copy from 'rollup-plugin-copy';
 
 const isEsm = process.env.MODULE === 'esm';
-const npmRoot = execSync('npm root').toString().trim().replace(/\\/g, '/');
 
 const plugins = [
 	copy({
-		targets: [
-			{
-				src: `${npmRoot}/@twin.org/ui-tailwind/dist/fonts/**/*.otf`,
-				dest: ['dist/fonts']
-			},
-			{ src: 'src/css', dest: 'dist/' }
-		]
+		targets: [{ src: 'src/css', dest: 'dist/' }]
 	})
 ];
 
