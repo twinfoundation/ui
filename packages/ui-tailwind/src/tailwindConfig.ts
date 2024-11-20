@@ -66,7 +66,7 @@ export class TailwindConfig {
 			colors,
 			fontFamily: {
 				sans: [
-					"Aeonik",
+					"Inter",
 					"ui-sans-serif",
 					"system-ui",
 					"sans-serif",
@@ -75,8 +75,7 @@ export class TailwindConfig {
 					"Segoe UI Symbol",
 					"Noto Color Emoji"
 				],
-				aeonik: ["Aeonik"],
-				hdcoltonwidesemibold: ["HD Colton Wide Semibold"]
+				inter: ["Inter", "sans-serif"]
 			}
 		};
 	}
