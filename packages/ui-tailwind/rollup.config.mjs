@@ -8,10 +8,7 @@ const isEsm = process.env.MODULE === 'esm';
 
 const plugins = [
 	copy({
-		targets: [
-			{ src: 'src/css', dest: 'dist/' },
-			{ src: 'src/fonts', dest: 'dist/' }
-		]
+		targets: [{ src: 'src/css', dest: 'dist/' }]
 	}),
 	json()
 ];
@@ -43,7 +40,7 @@ export default {
 			.map(p => p[0].toUpperCase() + p.slice(1))
 			.join(''),
 		compact: false,
-		exports: 'auto',
+		exports: 'named',
 		globals: globs
 	},
 	external: [/^node:.*/].concat(Object.keys(globs).map(g => new RegExp(`^${g}`))),

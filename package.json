@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/ui",
-	"version": "0.0.1-next.25",
+	"version": "0.0.1-next.26",
 	"description": "UI",
 	"repository": {
 		"type": "git",
@@ -23,23 +23,23 @@
 	},
 	"devDependencies": {
 		"@typescript-eslint/eslint-plugin": "7.13.1",
-		"cspell": "8.15.4",
+		"cspell": "8.16.0",
 		"eslint": "8.57.0",
 		"eslint-config-prettier": "9.1.0",
 		"eslint-plugin-header": "3.1.1",
 		"eslint-plugin-import": "2.31.0",
-		"eslint-plugin-jsdoc": "50.4.3",
+		"eslint-plugin-jsdoc": "50.5.0",
 		"eslint-plugin-prettier": "5.2.1",
 		"eslint-plugin-promise": "7.1.0",
 		"eslint-plugin-react": "7.37.2",
 		"eslint-plugin-svelte": "2.46.0",
-		"eslint-plugin-unicorn": "56.0.0",
+		"eslint-plugin-unicorn": "56.0.1",
 		"eslint-plugin-unused-imports": "3.2.0",
 		"fast-glob": "3.3.2",
 		"markdownlint-cli": "0.42.0",
 		"prettier": "3.3.3",
-		"prettier-plugin-svelte": "3.2.7",
-		"prettier-plugin-tailwindcss": "0.6.8"
+		"prettier-plugin-svelte": "3.2.8",
+		"prettier-plugin-tailwindcss": "0.6.9"
 	},
 	"workspaces": [
 		"packages/ui-tailwind",
