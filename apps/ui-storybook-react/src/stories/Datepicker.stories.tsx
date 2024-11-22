@@ -24,7 +24,7 @@ export function DateRangeSelector() {
 				onChange={date => setStartDate(date)}
 				labelTodayButton="Ok"
 				labelClearButton="Clear"
-				className="text-gray-50"
+				className="text-primary"
 			/>
 
 			{/* <Datepicker

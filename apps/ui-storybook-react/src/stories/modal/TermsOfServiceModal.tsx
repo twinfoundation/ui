@@ -1,33 +1,47 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Button, Modal } from "flowbite-react";
 
-export const TermsOfServiceModal = () => {
-	const [openModal, setOpenModal] = useState(false);
+interface TermsOfServiceModalProps {
+  buttonText: string;
+  modalTitle: string;
+  modalContent: string[];
+  onAccept: () => void;
+  onClose: () => void;
+}
 
-	return (
-		<>
-			<Button onClick={() => setOpenModal(true)}>Show Terms of Service</Button>
-			<Modal show={openModal} onClose={() => setOpenModal(false)}>
-				<Modal.Header>Terms of Service</Modal.Header>
-				<Modal.Body>
-					<div className="space-y-6">
-						<p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-							With less than a month to go before the European Union enacts new consumer privacy
-							laws...
-						</p>
-						<p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-							The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on
-							May 25...
-						</p>
-					</div>
-				</Modal.Body>
-				<Modal.Footer>
-					<Button onClick={() => setOpenModal(false)}>I accept</Button>
-					<Button color="gray" onClick={() => setOpenModal(false)}>
-						Decline
-					</Button>
-				</Modal.Footer>
-			</Modal>
-		</>
-	);
+export const TermsOfServiceModal: React.FC<TermsOfServiceModalProps> = ({
+  buttonText,
+  modalTitle,
+  modalContent,
+  onAccept,
+  onClose,
+}) => {
+  const [openModal, setOpenModal] = useState(false);
+
+  const handleOpen = () => setOpenModal(true);
+  const handleClose = () => {
+    setOpenModal(false);
+    onClose();
+  };
+
+  return (
+    <>
+      <Button onClick={handleOpen}>{buttonText}</Button>
+      <Modal show={openModal} size="md" onClose={handleClose}>
+        <Modal.Header>{modalTitle}</Modal.Header>
+        <Modal.Body>
+          <div className="space-y-6">
+            {modalContent.map((content, index) => (
+              <p key={index} className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                {content}
+              </p>
+            ))}
+          </div>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button onClick={() => { handleClose(); onAccept(); }}>I accept</Button>
+        </Modal.Footer>
+      </Modal>
+    </>
+  );
 };

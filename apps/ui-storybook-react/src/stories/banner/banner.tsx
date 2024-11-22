@@ -1,8 +1,10 @@
 import React from "react";
-import { Banner, Button, Label, TextInput } from "flowbite-react";
+import { Banner, Label, TextInput } from "flowbite-react";
 import { HiX, HiSpeakerphone } from "react-icons/hi";
+import { Button } from "@twin.org/ui-components-react";
 
 interface BannerProps {
+	logo?: string;
 	text?: string;
 	textlink?: string;
 	showButton?: boolean;
@@ -30,21 +32,21 @@ export const BannerComponent: React.FC<BannerProps> = ({
               
 							<Label
 								htmlFor="email"
-								className="mb-2 mr-auto shrink-0 text-sm font-medium text-gray-500 md:m-0 md:mb-0 dark:text-gray-400"
+								className="mb-2 mr-auto shrink-0 text-sm font-medium text-tertiary md:m-0 md:mb-0"
 							>
 								{text}
 							</Label>
 							<TextInput id="email" placeholder="Enter your email" required type="email" />
 							{showButton && (
-								<Button type="submit" onClick={onSubscribe}>
+								<Button type="submit" onClick={onSubscribe} color={"secondary"}>
 									Subscribe
 								</Button>
 							)}
 						</form>
 					) : (
 						<div className="flex w-full items-center gap-1 text-center">
-							<HiSpeakerphone className="h-6 w-6" /> {text}{" "}
-							<span className="ml-1 text-blue-500">{textlink}</span>
+							<HiSpeakerphone className="h-6 w-6 text-tertiary" /> {text}{" "}
+							<span className="ml-1 text-link-main">{textlink}</span>
 						</div>
 					)}
 				</div>

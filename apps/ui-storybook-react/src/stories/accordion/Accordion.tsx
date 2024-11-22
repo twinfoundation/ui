@@ -16,15 +16,14 @@ export const AccordionComponent: React.FC<AccordionComponentProps> = ({ panels }
 	return (
 		<Accordion>
 			{panels.map((panel, index) => (
-				<Accordion.Panel key={index}>
-					<Accordion.Title>
+				<Accordion.Panel className="surface-secondary-light" key={index}>
+					<Accordion.Title className="text-primary">
 						{panel.icon && <panel.icon className="mr-2 inline-block" />}
 						{panel.title}
 					</Accordion.Title>
 					<Accordion.Content>
-						<p className="text-gray-500 dark:text-gray-400">{panel.content}</p>
+						<p className="text-tertiary">{panel.content}</p>
 					</Accordion.Content>
-					<hr className="my-2 border-gray-200 dark:border-gray-700" />
 				</Accordion.Panel>
 			))}
 		</Accordion>

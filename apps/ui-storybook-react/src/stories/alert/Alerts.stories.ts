@@ -38,10 +38,10 @@ export const Warning: StoryObj<typeof DynamicAlert> = {
 		icon: HiCheckCircle
 	}
 };
-export const Danger: StoryObj<typeof DynamicAlert> = {
+export const Error: StoryObj<typeof DynamicAlert> = {
 	args: {
 		color: "error",
-		message: "Danger alert!",
+		message: "Error alert!",
 		onDismiss: fn(),
 		icon: HiCheckCircle
 	}
