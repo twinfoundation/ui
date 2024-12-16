@@ -4,4 +4,8 @@ export * from "./button/button";
 export * from "./button/buttonColors";
 export * from "./button/buttonProps";
 export * from "./button/buttonSizes";
+export * from "./alert/alert";
+export * from "./alert/alertColors";
+export * from "./alert/alertProps";
+export * from "./alert/alertIcons";
 export * from "./config/tailwindConfig";
