@@ -11,20 +11,41 @@ export const AlertIcons = {
 	/**
 	 * Information.
 	 */
-	Information: HiInformationCircle,
+	Information: "information",
 
 	/**
 	 * Check.
 	 */
-	Check: HiCheckCircle,
+	Check: "check",
 
 	/**
 	 * Error.
 	 */
-	Error: IoIosCloseCircle
+	Error: "error"
 } as const;
 
 /**
  * Alert icons.
  */
 export type AlertIcons = (typeof AlertIcons)[keyof typeof AlertIcons];
+
+/**
+ * Alert icons.
+ */
+// eslint-disable-next-line @typescript-eslint/naming-convention
+export const AlertIconsMap = {
+	/**
+	 * Information.
+	 */
+	information: HiInformationCircle,
+
+	/**
+	 * Check.
+	 */
+	check: HiCheckCircle,
+
+	/**
+	 * Error.
+	 */
+	error: IoIosCloseCircle
+} as const;

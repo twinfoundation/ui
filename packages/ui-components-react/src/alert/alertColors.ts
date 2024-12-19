@@ -24,7 +24,12 @@ export const AlertColors = {
 	/**
 	 * Success.
 	 */
-	Success: "success"
+	Success: "success",
+
+	/**
+	 * Gray.
+	 */
+	Gray: "gray"
 } as const;
 
 /**

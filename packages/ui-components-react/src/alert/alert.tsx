@@ -3,13 +3,15 @@
 import { Alert as FlowbiteAlert } from "flowbite-react";
 import React, { type ReactNode } from "react";
 import { HiEye } from "react-icons/hi";
+import { AlertIconsMap } from "./alertIcons";
 import { AlertPropTypes, type AlertProps } from "./alertProps";
 
 const colorClasses = {
-	primary: "border-blue-500 bg-blue-100 text-blue-700 dark:bg-blue-200 dark:text-blue-800",
-	error: "alert-error --rounded-2xl",
-	warning: "alert-warn --rounded-2xl",
-	success: "alert-success --rounded-2xl"
+	primary: "border-current bg-blue-100 text-blue-700 dark:bg-blue-200 dark:text-blue-800",
+	error: "alert-error --rounded-2xl border-current",
+	warning: "alert-warn --rounded-2xl border-current",
+	success: "alert-success --rounded-2xl border-current",
+	gray: "border-current bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300"
 };
 
 /**
@@ -45,11 +47,13 @@ export class Alert extends React.Component<AlertProps> {
 			<FlowbiteAlert
 				{...rest}
 				additionalContent={this.additionalContent(this._props.content, this._props.action ?? undefined)}
-				icon={this._props.icon ?? undefined}
+				icon={(this._props.icon && AlertIconsMap[this._props.icon as keyof typeof AlertIconsMap]) ??
+					undefined}
 				onDismiss={this.handleDismiss}
 				rounded
 				className={`${colorClasses[this._props.color ?? "primary"]} ${this._props.className ?? ""}`}
 				color="primary"
+				withBorderAccent={this._props.borderAccent ?? false}
 			>
 				{(this._props.content) && <span className="block font-bold">{children}</span>}
 				{!(this._props.content) && <span>{children}</span>}

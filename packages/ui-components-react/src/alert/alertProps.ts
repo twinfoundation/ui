@@ -10,7 +10,8 @@ export const AlertPropTypes = {
 	color: PropTypes.oneOf(Object.values(AlertColors)),
 	content: PropTypes.node,
 	icon: PropTypes.oneOf(Object.values(AlertIcons)),
-	action: PropTypes.string
+	action: PropTypes.string,
+	borderAccent: PropTypes.bool
 };
 
 /**
@@ -19,3 +20,4 @@ export const AlertPropTypes = {
 export type AlertProps = PropsWithChildren<
 	InferProps<typeof AlertPropTypes> & Omit<FlowbiteAlertProps, "color" | "label">
 >;
+

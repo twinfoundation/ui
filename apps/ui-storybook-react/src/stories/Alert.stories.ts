@@ -8,13 +8,18 @@ const meta = {
 	title: "Components/Alert",
 	component: Alert,
 	argTypes: {
-		title: { control: { type: "text" } },
+		content: { control: { type: "text" } },
 		color: {
 			options: Object.values(AlertColors),
 			control: { type: "inline-radio" }
 		},
-		icon: { 
-			options: Object.values(AlertIcons)
+		icon: {
+			options: Object.values(AlertIcons),
+			control: { type: "inline-radio" }
+		},
+		borderAccent: {
+			options: Object.values([true, false]),
+			control: { type: "inline-radio" }
 		}
 	},
 	args: { onClick: fn() }
@@ -33,9 +38,9 @@ export const Default: Story = {
 export const Success: Story = {
 	args: {
 		children: "Alert",
-		icon: AlertIcons.Check,
 		color: "success",
-		content: "This is an success alert"
+		content: "This is an success alert",
+		icon: AlertIcons.Check
 	}
 };
 
@@ -44,7 +49,8 @@ export const Warn: Story = {
 		children: "Alert",
 		icon: AlertIcons.Information,
 		color: "warning",
-		content: "This is an warn alert"
+		content: "This is an warn alert",
+		action: "Algo"
 	}
 };
 
@@ -57,6 +63,24 @@ export const Error: Story = {
 	}
 };
 
+export const Gray: Story = {
+	args: {
+		children: "Alert",
+		color: "gray",
+		content: "This is a gray alert",
+		borderAccent: true
+	}
+};
+
+export const GrayBordered: Story = {
+	args: {
+		children: "Alert",
+		color: "gray",
+		content: "This is a gray alert with border accent",
+		borderAccent: true
+	}
+};
+
 export const Action: Story = {
 	args: {
 		children: "Alert",
@@ -66,5 +90,3 @@ export const Action: Story = {
 		action: "url.com"
 	}
 };
-
-
