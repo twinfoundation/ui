@@ -46,17 +46,22 @@ export class Alert extends React.Component<AlertProps> {
 		return (
 			<FlowbiteAlert
 				{...rest}
-				additionalContent={this.additionalContent(this._props.content, this._props.action ?? undefined)}
-				icon={(this._props.icon && AlertIconsMap[this._props.icon as keyof typeof AlertIconsMap]) ??
-					undefined}
+				additionalContent={this.additionalContent(
+					this._props.content,
+					this._props.action ?? undefined
+				)}
+				icon={
+					(this._props.icon && AlertIconsMap[this._props.icon as keyof typeof AlertIconsMap]) ??
+					undefined
+				}
 				onDismiss={this.handleDismiss}
 				rounded
 				className={`${colorClasses[this._props.color ?? "primary"]} ${this._props.className ?? ""}`}
 				color="primary"
 				withBorderAccent={this._props.borderAccent ?? false}
 			>
-				{(this._props.content) && <span className="block font-bold">{children}</span>}
-				{!(this._props.content) && <span>{children}</span>}
+				{this._props.content && <span className="block font-bold">{children}</span>}
+				{!this._props.content && <span>{children}</span>}
 			</FlowbiteAlert>
 		);
 	}
@@ -69,29 +74,29 @@ export class Alert extends React.Component<AlertProps> {
 	 */
 	public additionalContent(content: ReactNode, action?: string): ReactNode {
 		if (!content && !action) {
-		  return undefined;
+			return undefined;
 		}
 		return (
-		  <>
-			<div className="mb-2 mt-2 text-sm">
-			  {content}
-			</div>
-			{action && (
-				<div className="flex">
-				<button
-					type="button"
-					className="mr-2 rounded-lg font-medium bg-current"
-				>
-					<a href={action} target="_blank" rel="noopener noreferrer" className="flex items-center p-2 text-sm text-white">
-						<HiEye className="-ml-0.5 mr-2 h-4 w-4" />
-						View more
-					</a>
-				</button>
-				</div>
-			)}
-		  </>
+			<>
+				<div className="mb-2 mt-2 text-sm">{content}</div>
+				{action && (
+					<div className="flex">
+						<button type="button" className="mr-2 rounded-lg bg-current font-medium">
+							<a
+								href={action}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="flex items-center p-2 text-sm text-white"
+							>
+								<HiEye className="-ml-0.5 mr-2 h-4 w-4" />
+								View more
+							</a>
+						</button>
+					</div>
+				)}
+			</>
 		);
-	  }
+	}
 
 	/**
 	 * Handle the dismiss action.

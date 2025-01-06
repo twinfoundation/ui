@@ -1,12 +1,12 @@
 .alert-success {
-    background-color: #E7F8E5;
-    color: #23BD12;
+	background-color: #e7f8e5;
+	color: #23bd12;
 }
-.alert-warn{
-    background-color: #FFF2D6;
-    color: #F5A623;
+.alert-warn {
+	background-color: #fff2d6;
+	color: #f5a623;
 }
-.alert-error{
-    background-color: #FBE7E3;
-    color: #DB3614;
+.alert-error {
+	background-color: #fbe7e3;
+	color: #db3614;
 }

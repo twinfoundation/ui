@@ -8,4 +8,6 @@ export * from "./alert/alert";
 export * from "./alert/alertColors";
 export * from "./alert/alertProps";
 export * from "./alert/alertIcons";
+export * from "./accordion/accordion";
+export * from "./accordion/accordionProps";
 export * from "./config/tailwindConfig";

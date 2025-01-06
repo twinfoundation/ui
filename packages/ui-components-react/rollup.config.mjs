@@ -42,9 +42,13 @@ export default {
 		exports: 'named',
 		globals: globs
 	},
-	external: [/^node:.*/, 'react/jsx-runtime', 'flowbite-react/tailwind', 'react-icons/hi', 'react-icons/io'].concat(
-		Object.keys(globs)
-	),
+	external: [
+		/^node:.*/,
+		'react/jsx-runtime',
+		'flowbite-react/tailwind',
+		'react-icons/hi',
+		'react-icons/io'
+	].concat(Object.keys(globs)),
 	onwarn: message => {
 		if (!['EMPTY_BUNDLE', 'CIRCULAR_DEPENDENCY'].includes(message.code)) {
 			process.stderr.write(`${message}\n`);

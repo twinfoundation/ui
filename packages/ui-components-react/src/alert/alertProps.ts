@@ -20,4 +20,3 @@ export const AlertPropTypes = {
 export type AlertProps = PropsWithChildren<
 	InferProps<typeof AlertPropTypes> & Omit<FlowbiteAlertProps, "color" | "label">
 >;
-
