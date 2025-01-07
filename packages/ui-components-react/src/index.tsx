@@ -12,4 +12,8 @@ export * from "./accordion/accordion";
 export * from "./accordion/accordionProps";
 export * from "./banner/banner";
 export * from "./banner/bannerProps";
+export * from "./badge/badge";
+export * from "./badge/badgeColors";
+export * from "./badge/badgeProps";
+export * from "./badge/badgeSizes";
 export * from "./config/tailwindConfig";
