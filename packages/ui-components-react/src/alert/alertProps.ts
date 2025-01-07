@@ -4,12 +4,10 @@ import type { AlertProps as FlowbiteAlertProps } from "flowbite-react";
 import PropTypes, { type InferProps } from "prop-types";
 import type { PropsWithChildren } from "react";
 import { AlertColors } from "./alertColors";
-import { AlertIcons } from "./alertIcons";
 
 export const AlertPropTypes = {
 	color: PropTypes.oneOf(Object.values(AlertColors)),
 	content: PropTypes.node,
-	icon: PropTypes.oneOf(Object.values(AlertIcons)),
 	action: PropTypes.string,
 	borderAccent: PropTypes.bool
 };

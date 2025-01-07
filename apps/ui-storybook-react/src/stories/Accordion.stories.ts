@@ -42,14 +42,14 @@ export const MultipleContent: Story = {
 		accordions: [
 			{
 				title: "Accordion 1",
-				content: "Text 2"
+				content: "Text 1"
 			},
 			{
 				title: "Accordion 2",
-				content: "Text 3"
+				content: "Text 2"
 			},
 			{
-				title: "Accordion 4",
+				title: "Accordion 3",
 				content:
 					"<p class='text-gray-500 dark:text-gray-400'>Check out this guide to learn how to&nbsp;<a href='https://flowbite.com/docs/getting-started/introduction/' class='text-cyan-600 hover:underline dark:text-cyan-500'>get started&nbsp;</a>and start developing websites even faster with components on top of Tailwind CSS.</p>"
 			}
@@ -64,14 +64,14 @@ export const AlwaysOpen: Story = {
 		accordions: [
 			{
 				title: "Accordion 1",
-				content: "Text 2"
+				content: "Text 1"
 			},
 			{
 				title: "Accordion 2",
-				content: "Text 3"
+				content: "Text 2"
 			},
 			{
-				title: "Accordion 4",
+				title: "Accordion 3",
 				content:
 					"<p class='text-gray-500 dark:text-gray-400'>Check out this guide to learn how to&nbsp;<a href='https://flowbite.com/docs/getting-started/introduction/' class='text-cyan-600 hover:underline dark:text-cyan-500'>get started&nbsp;</a>and start developing websites even faster with components on top of Tailwind CSS.</p>"
 			}
@@ -86,14 +86,14 @@ export const CollapseAll: Story = {
 		accordions: [
 			{
 				title: "Accordion 1",
-				content: "Text 2"
+				content: "Text 1"
 			},
 			{
 				title: "Accordion 2",
-				content: "Text 3"
+				content: "Text 2"
 			},
 			{
-				title: "Accordion 4",
+				title: "Accordion 3",
 				content:
 					"<p class='text-gray-500 dark:text-gray-400'>Check out this guide to learn how to&nbsp;<a href='https://flowbite.com/docs/getting-started/introduction/' class='text-cyan-600 hover:underline dark:text-cyan-500'>get started&nbsp;</a>and start developing websites even faster with components on top of Tailwind CSS.</p>"
 			}
@@ -108,14 +108,14 @@ export const Flush: Story = {
 		accordions: [
 			{
 				title: "Accordion 1",
-				content: "Text 2"
+				content: "Text 1"
 			},
 			{
 				title: "Accordion 2",
-				content: "Text 3"
+				content: "Text 2"
 			},
 			{
-				title: "Accordion 4",
+				title: "Accordion 3",
 				content:
 					"<p class='text-gray-500 dark:text-gray-400'>Check out this guide to learn how to&nbsp;<a href='https://flowbite.com/docs/getting-started/introduction/' class='text-cyan-600 hover:underline dark:text-cyan-500'>get started&nbsp;</a>and start developing websites even faster with components on top of Tailwind CSS.</p>"
 			}

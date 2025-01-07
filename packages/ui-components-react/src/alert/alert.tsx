@@ -3,7 +3,6 @@
 import { Alert as FlowbiteAlert } from "flowbite-react";
 import React, { type ReactNode } from "react";
 import { HiEye } from "react-icons/hi";
-import { AlertIconsMap } from "./alertIcons";
 import { AlertPropTypes, type AlertProps } from "./alertProps";
 
 const colorClasses = {
@@ -50,10 +49,7 @@ export class Alert extends React.Component<AlertProps> {
 					this._props.content,
 					this._props.action ?? undefined
 				)}
-				icon={
-					(this._props.icon && AlertIconsMap[this._props.icon as keyof typeof AlertIconsMap]) ??
-					undefined
-				}
+				icon={typeof rest.icon === "function" ? rest.icon : undefined}
 				onDismiss={this.handleDismiss}
 				rounded
 				className={`${colorClasses[this._props.color ?? "primary"]} ${this._props.className ?? ""}`}
