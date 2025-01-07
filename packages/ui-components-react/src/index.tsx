@@ -10,4 +10,6 @@ export * from "./alert/alertProps";
 export * from "./alert/alertIcons";
 export * from "./accordion/accordion";
 export * from "./accordion/accordionProps";
+export * from "./banner/banner";
+export * from "./banner/bannerProps";
 export * from "./config/tailwindConfig";
