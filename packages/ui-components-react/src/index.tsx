@@ -17,4 +17,6 @@ export * from "./badge/badgeProps";
 export * from "./badge/badgeSizes";
 export * from "./breadcrumb/breadcrumb";
 export * from "./breadcrumb/breadcrumbProps";
+export * from "./card/card";
+export * from "./card/cardProps";
 export * from "./config/tailwindConfig";
