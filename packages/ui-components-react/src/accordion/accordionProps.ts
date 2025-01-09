@@ -9,10 +9,12 @@ export const AccordionPropTypes = {
 	flush: PropTypes.bool,
 	collapseAll: PropTypes.bool,
 	content: PropTypes.node,
-	accordions: PropTypes.arrayOf(PropTypes.shape({
-		title: PropTypes.string.isRequired,
-		content: PropTypes.string
-	}))
+	accordions: PropTypes.arrayOf(
+		PropTypes.shape({
+			title: PropTypes.string.isRequired,
+			content: PropTypes.string
+		})
+	)
 };
 
 /**

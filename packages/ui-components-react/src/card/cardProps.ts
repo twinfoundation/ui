@@ -45,17 +45,19 @@ export const CardPropTypes = {
 		price: PropTypes.string.isRequired
 	}),
 	list: PropTypes.shape({
-		items: PropTypes.arrayOf(PropTypes.shape({
-			label: PropTypes.string.isRequired,
-			description: PropTypes.string,
-			info: PropTypes.string,
-			image: PropTypes.shape({
-				alt: PropTypes.string,
-				src: PropTypes.string.isRequired,
-				width: PropTypes.number,
-				height: PropTypes.number
+		items: PropTypes.arrayOf(
+			PropTypes.shape({
+				label: PropTypes.string.isRequired,
+				description: PropTypes.string,
+				info: PropTypes.string,
+				image: PropTypes.shape({
+					alt: PropTypes.string,
+					src: PropTypes.string.isRequired,
+					width: PropTypes.number,
+					height: PropTypes.number
+				})
 			})
-		})),
+		),
 		actions: PropTypes.arrayOf(
 			PropTypes.shape({
 				href: PropTypes.string,
