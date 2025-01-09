@@ -7,12 +7,16 @@ import { ButtonColors } from "./../button/buttonColors";
 import { CardTypes } from "./cardTypes";
 
 export const CardPropTypes = {
-	button: PropTypes.shape({
-		href: PropTypes.string,
-		label: PropTypes.string.isRequired,
-		icon: PropTypes.func,
-		color: PropTypes.oneOf(Object.values(ButtonColors))
-	}),
+	buttons: PropTypes.arrayOf(
+		PropTypes.shape({
+			href: PropTypes.string,
+			label: PropTypes.string.isRequired,
+			description: PropTypes.string,
+			icon: PropTypes.func,
+			svg: PropTypes.string,
+			color: PropTypes.oneOf(Object.values(ButtonColors))
+		})
+	),
 	image: PropTypes.shape({
 		imgAlt: PropTypes.string,
 		imgSrc: PropTypes.string.isRequired
@@ -34,25 +38,30 @@ export const CardPropTypes = {
 				icon: PropTypes.func,
 				color: PropTypes.string
 			})
-		),
-		buttons: PropTypes.arrayOf(
-			PropTypes.shape({
-				href: PropTypes.string,
-				label: PropTypes.string.isRequired,
-				icon: PropTypes.func,
-				color: PropTypes.oneOf(Object.values(ButtonColors))
-			})
 		)
 	}),
 	eCommerce: PropTypes.shape({
 		stars: PropTypes.number.isRequired,
-		price: PropTypes.string.isRequired,
-		buttons: PropTypes.arrayOf(
+		price: PropTypes.string.isRequired
+	}),
+	list: PropTypes.shape({
+		items: PropTypes.arrayOf(PropTypes.shape({
+			label: PropTypes.string.isRequired,
+			description: PropTypes.string,
+			info: PropTypes.string,
+			image: PropTypes.shape({
+				alt: PropTypes.string,
+				src: PropTypes.string.isRequired,
+				width: PropTypes.number,
+				height: PropTypes.number
+			})
+		})),
+		actions: PropTypes.arrayOf(
 			PropTypes.shape({
 				href: PropTypes.string,
 				label: PropTypes.string.isRequired,
 				icon: PropTypes.func,
-				color: PropTypes.oneOf(Object.values(ButtonColors))
+				color: PropTypes.string
 			})
 		)
 	}),

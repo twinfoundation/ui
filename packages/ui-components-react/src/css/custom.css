@@ -1,38 +1,17 @@
 :root {
-	--text-success: #23bd12;
-	--SystemSuccessTints-50: #e7f8e5;
 	--text-warn: #f5a623;
 	--SystemWarningTints-50: #fff2d6;
-	--text-error: #db3614;
-	--SystemErrorTints-50: #fbe7e3;
 	--text-information: #1780c1;
 	--SystemInformationTints-50: #dceef8;
-}
-
-.alert-success {
-	background-color: var(--SystemSuccessTints-50);
-	color: var(--text-success);
 }
 .alert-warn {
 	background-color: var(--SystemWarningTints-50);
 	color: var(--text-warn);
 }
-.alert-error {
-	background-color: var(--SystemErrorTints-50);
-	color: var(--text-error);
-}
 
-.badge-success {
-	background-color: var(--SystemSuccessTints-50);
-	color: var(--text-success);
-}
 .badge-warn {
 	background-color: var(--SystemWarningTints-50);
 	color: var(--text-warn);
-}
-.badge-error {
-	background-color: var(--SystemErrorTints-50);
-	color: var(--text-error);
 }
 .badge-info {
 	background-color: var(--SystemInformationTints-50);

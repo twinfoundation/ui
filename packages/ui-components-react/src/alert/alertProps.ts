@@ -7,7 +7,7 @@ import { AlertColors } from "./alertColors";
 
 export const AlertPropTypes = {
 	color: PropTypes.oneOf(Object.values(AlertColors)),
-	content: PropTypes.node,
+	content: PropTypes.string,
 	action: PropTypes.string,
 	borderAccent: PropTypes.bool
 };

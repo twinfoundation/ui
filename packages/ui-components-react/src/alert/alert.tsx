@@ -7,9 +7,9 @@ import { AlertPropTypes, type AlertProps } from "./alertProps";
 
 const colorClasses = {
 	primary: "border-current bg-blue-100 text-blue-700 dark:bg-blue-200 dark:text-blue-800",
-	error: "alert-error --rounded-2xl border-current",
+	error: "border-current bg-red-100 text-red-700 dark:bg-red-200 dark:text-red-800",
 	warning: "alert-warn --rounded-2xl border-current",
-	success: "alert-success --rounded-2xl border-current",
+	success: "border-current bg-system-success-tints-100 text-system-success-tints-700 dark:bg-system-success-tints-200 dark:text-system-success-tints-800",
 	gray: "border-current bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300"
 };
 

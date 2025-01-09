@@ -5,10 +5,10 @@ import React, { type ReactNode } from "react";
 import { BadgePropTypes, type BadgeProps } from "./badgeProps";
 
 const colorClasses = {
-	gray: "badge-gray",
-	failure: "badge-error",
+	gray: "border-current bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300",
+	failure: "border-current bg-red-100 text-red-700 dark:bg-red-200 dark:text-red-800",
 	warning: "badge-warn",
-	success: "badge-success",
+	success: "border-current bg-system-success-tints-100 text-system-success-tints-700 dark:bg-system-success-tints-200 dark:text-system-success-tints-800",
 	info: "badge-info"
 };
 

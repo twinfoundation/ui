@@ -8,8 +8,11 @@ export const AccordionPropTypes = {
 	alwaysOpen: PropTypes.bool,
 	flush: PropTypes.bool,
 	collapseAll: PropTypes.bool,
-	content: PropTypes.string,
-	accordions: PropTypes.array
+	content: PropTypes.node,
+	accordions: PropTypes.arrayOf(PropTypes.shape({
+		title: PropTypes.string.isRequired,
+		content: PropTypes.string
+	}))
 };
 
 /**

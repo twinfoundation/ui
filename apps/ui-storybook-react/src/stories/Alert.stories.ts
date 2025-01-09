@@ -56,7 +56,8 @@ export const Error: Story = {
 		children: "Alert",
 		icon: IoIosCloseCircle,
 		color: "error",
-		content: "This is an error alert"
+		content: "This is an error alert",
+		action: "url.com"
 	}
 };
 

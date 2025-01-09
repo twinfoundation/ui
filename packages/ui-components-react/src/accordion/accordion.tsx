@@ -39,9 +39,9 @@ export class Accordion extends React.Component<AccordionProps> {
 				{accordions && accordions?.length > 0 ? (
 					accordions.map((accordion, index) => (
 						<FlowbiteAccordion.Panel key={index}>
-							<FlowbiteAccordion.Title>{accordion.title}</FlowbiteAccordion.Title>
+							<FlowbiteAccordion.Title>{accordion?.title}</FlowbiteAccordion.Title>
 							<FlowbiteAccordion.Content>
-								<div dangerouslySetInnerHTML={{ __html: accordion.content || "" }} />
+								<div dangerouslySetInnerHTML={{ __html: accordion?.content || "" }} />
 							</FlowbiteAccordion.Content>
 						</FlowbiteAccordion.Panel>
 					))
