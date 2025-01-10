@@ -3,15 +3,13 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 import { Breadcrumb } from "@twin.org/ui-components-react";
-import { HiHome } from "react-icons/hi";
 
 const meta = {
 	title: "Components/Breadcrumb",
 	component: Breadcrumb,
 	argTypes: {
-		background: {
-			options: Object.values([true, false]),
-			control: { type: "inline-radio" }
+		className: {
+			control: { type: "text" }
 		}
 	},
 	args: { onClick: fn() }
@@ -22,23 +20,13 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
 	args: {
-		children: "Breadcrumb",
-		items: [
-			{ label: "Home", href: "/", icon: HiHome },
-			{ label: "Library", href: "/library" },
-			{ label: "Data", href: "/library/data" }
-		]
+		children: "Breadcrumb"
 	}
 };
 
-export const Background: Story = {
+export const CustomClass: Story = {
 	args: {
 		children: "Breadcrumb",
-		items: [
-			{ label: "Home", href: "/", icon: HiHome },
-			{ label: "Library", href: "/library" },
-			{ label: "Data", href: "/library/data" }
-		],
-		background: true
+		className: "bg-gray-50 py-2 px-2 dark:bg-gray-800"
 	}
 };

@@ -15,7 +15,11 @@ const meta = {
 			options: Object.values(AlertColors),
 			control: { type: "inline-radio" }
 		},
-		borderAccent: {
+		withBorderAccent: {
+			options: Object.values([true, false]),
+			control: { type: "inline-radio" }
+		},
+		additionalContent: {
 			options: Object.values([true, false]),
 			control: { type: "inline-radio" }
 		}
@@ -37,7 +41,6 @@ export const Success: Story = {
 	args: {
 		children: "Alert",
 		color: "success",
-		content: "This is an success alert",
 		icon: HiCheckCircle
 	}
 };
@@ -46,8 +49,7 @@ export const Warn: Story = {
 	args: {
 		children: "Alert",
 		icon: HiInformationCircle,
-		color: "warning",
-		content: "This is an warn alert"
+		color: "warning"
 	}
 };
 
@@ -55,9 +57,7 @@ export const Error: Story = {
 	args: {
 		children: "Alert",
 		icon: IoIosCloseCircle,
-		color: "error",
-		content: "This is an error alert",
-		action: "url.com"
+		color: "error"
 	}
 };
 
@@ -73,17 +73,15 @@ export const GrayBordered: Story = {
 	args: {
 		children: "Alert",
 		color: "gray",
-		content: "This is a gray alert with border accent",
-		borderAccent: true
+		withBorderAccent: true
 	}
 };
 
-export const Action: Story = {
+export const AdditionalContent: Story = {
 	args: {
 		children: "Alert",
 		icon: HiInformationCircle,
-		color: "warning",
-		content: "This is an alert with an action",
-		action: "url.com"
+		color: "primary",
+		additionalContent: true
 	}
 };

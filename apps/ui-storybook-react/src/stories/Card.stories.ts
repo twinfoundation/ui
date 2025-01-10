@@ -242,25 +242,20 @@ export const List: Story = {
 export const Pricing: Story = {
 	args: {
 		children: "Card",
-		type: "pricing",
-		list: {
-			items: [
-				{
-					label: "Thomas Lean",
-					description: "email@windster.com",
-					info: "$2367",
-					image: {
-						src: "https://flowbite-react.com/_next/image?url=%2Fimages%2Fpeople%2Fprofile-picture-5.jpg&w=64&q=75",
-						alt: "Thomas image",
-						height: 32,
-						width: 32
-					}
-				}
-			],
-			actions: [
-				{ label: "View all", href: "/" },
-				{ label: "Export Data", href: "/", color: "gray" }
-			]
-		}
+		type: "pricing"
+	}
+};
+
+export const Crypto: Story = {
+	args: {
+		children: "Card",
+		type: "crypto"
+	}
+};
+
+export const Form: Story = {
+	args: {
+		children: "Card",
+		type: "form"
 	}
 };

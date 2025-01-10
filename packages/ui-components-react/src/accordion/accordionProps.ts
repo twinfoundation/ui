@@ -7,14 +7,7 @@ import type { PropsWithChildren } from "react";
 export const AccordionPropTypes = {
 	alwaysOpen: PropTypes.bool,
 	flush: PropTypes.bool,
-	collapseAll: PropTypes.bool,
-	content: PropTypes.node,
-	accordions: PropTypes.arrayOf(
-		PropTypes.shape({
-			title: PropTypes.string.isRequired,
-			content: PropTypes.string
-		})
-	)
+	collapseAll: PropTypes.bool
 };
 
 /**

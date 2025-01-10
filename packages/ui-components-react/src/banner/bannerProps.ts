@@ -5,8 +5,7 @@ import PropTypes, { type InferProps } from "prop-types";
 import type { PropsWithChildren } from "react";
 
 export const BannerPropTypes = {
-	bottom: PropTypes.bool,
-	content: PropTypes.string
+	bottom: PropTypes.bool
 };
 
 /**
