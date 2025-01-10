@@ -41,7 +41,7 @@ export class Banner extends React.Component<BannerProps> {
 					className={`flex w-full justify-between border-gray-200 bg-gray-50 p-4 dark:border-gray-600 dark:bg-gray-700 ${bottom ? "border-t" : "border-b"}`}
 				>
 					<div className="mx-auto flex items-center">
-          				<p className="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
+						<p className="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
 							<span className="[&_p]:inline">
 								New brand identity has been launched for the&nbsp;
 								<a

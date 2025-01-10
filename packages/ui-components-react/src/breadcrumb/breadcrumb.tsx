@@ -36,10 +36,7 @@ export class Breadcrumb extends React.Component<BreadcrumbProps> {
 		const { children, className } = this._props;
 
 		return (
-			<FlowbiteBreadcrumb
-				aria-label="Default breadcrumb example"
-				className={className ?? ""}
-			>
+			<FlowbiteBreadcrumb aria-label="Default breadcrumb example" className={className ?? ""}>
 				<FlowbiteBreadcrumb.Item href="#" icon={HiHome}>
 					Home
 				</FlowbiteBreadcrumb.Item>
