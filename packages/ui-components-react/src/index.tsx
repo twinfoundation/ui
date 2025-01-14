@@ -19,4 +19,7 @@ export * from "./breadcrumb/breadcrumb";
 export * from "./breadcrumb/breadcrumbProps";
 export * from "./card/card";
 export * from "./card/cardProps";
+export * from "./card/cardTypes";
+export * from "./carousel/carousel";
+export * from "./carousel/carouselProps";
 export * from "./config/tailwindConfig";
