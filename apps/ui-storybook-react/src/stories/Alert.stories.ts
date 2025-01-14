@@ -2,9 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
-import { Alert, AlertColors } from "@twin.org/ui-components-react";
-import { HiInformationCircle, HiCheckCircle } from "react-icons/hi";
-import { IoIosCloseCircle } from "react-icons/io";
+import { Alert, AlertColors, Icons } from "@twin.org/ui-components-react";
 
 const meta = {
 	title: "Components/Alert",
@@ -22,6 +20,10 @@ const meta = {
 		additionalContent: {
 			options: Object.values([true, false]),
 			control: { type: "inline-radio" }
+		},
+		icon: {
+			options: Object.values(Icons),
+			control: { type: "inline-radio" }
 		}
 	},
 	args: { onClick: fn() }
@@ -33,7 +35,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
 	args: {
 		children: "Alert",
-		color: "primary"
+		color: "info"
 	}
 };
 
@@ -41,14 +43,14 @@ export const Success: Story = {
 	args: {
 		children: "Alert",
 		color: "success",
-		icon: HiCheckCircle
+		icon: Icons.CheckCircle
 	}
 };
 
 export const Warn: Story = {
 	args: {
 		children: "Alert",
-		icon: HiInformationCircle,
+		icon: Icons.InfoCircle,
 		color: "warning"
 	}
 };
@@ -56,7 +58,7 @@ export const Warn: Story = {
 export const Error: Story = {
 	args: {
 		children: "Alert",
-		icon: IoIosCloseCircle,
+		icon: Icons.CloseCircle,
 		color: "error"
 	}
 };
@@ -80,8 +82,8 @@ export const GrayBordered: Story = {
 export const AdditionalContent: Story = {
 	args: {
 		children: "Alert",
-		icon: HiInformationCircle,
-		color: "primary",
+		icon: Icons.ExclamationCircle,
+		color: "info",
 		additionalContent: true
 	}
 };

@@ -1,8 +1,8 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import { Banner as FlowbiteBanner } from "flowbite-react";
+import { Close } from "flowbite-react-icons/outline";
 import React, { type ReactNode } from "react";
-import { HiX } from "react-icons/hi";
 import { BannerPropTypes, type BannerProps } from "./bannerProps";
 
 /**
@@ -40,24 +40,15 @@ export class Banner extends React.Component<BannerProps> {
 				<div
 					className={`flex w-full justify-between border-gray-200 bg-gray-50 p-4 dark:border-gray-600 dark:bg-gray-700 ${bottom ? "border-t" : "border-b"}`}
 				>
-					<div className="mx-auto flex items-center">
-						<p className="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
-							<span className="[&_p]:inline">
-								New brand identity has been launched for the&nbsp;
-								<a
-									href="https://flowbite.com"
-									className="inline font-medium text-cyan-600 underline decoration-solid underline-offset-2 hover:no-underline dark:text-cyan-500"
-								>
-									{children}
-								</a>
-							</span>
-						</p>
-					</div>
+					<div
+						className="mx-auto flex items-center"
+						dangerouslySetInnerHTML={{ __html: children ?? "" }}
+					></div>
 					<FlowbiteBanner.CollapseButton
 						color="gray"
 						className="border-0 bg-transparent text-gray-500 dark:text-gray-400"
 					>
-						<HiX className="h-4 w-4" />
+						<Close className="h-4 w-4" />
 					</FlowbiteBanner.CollapseButton>
 				</div>
 			</FlowbiteBanner>

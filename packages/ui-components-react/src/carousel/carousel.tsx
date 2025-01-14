@@ -32,17 +32,20 @@ export class Carousel extends React.Component<CarouselProps> {
 	 * @returns The component to render.
 	 */
 	public render(): ReactNode {
-		const { children, ...rest } = this._props;
+		const { content, className, ...rest } = this._props;
 		return (
 			<div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
 				<FlowbiteCarousel {...rest} onSlideChange={index => this.handleOnChange(index)}>
-					<div className="flex h-full items-center justify-center bg-gray-400 dark:bg-gray-700 dark:text-white">
-						{children}
-					</div>
-					<img src="https://flowbite.com/docs/images/carousel/carousel-2.svg" alt="..." />
-					<img src="https://flowbite.com/docs/images/carousel/carousel-3.svg" alt="..." />
-					<img src="https://flowbite.com/docs/images/carousel/carousel-4.svg" alt="..." />
-					<img src="https://flowbite.com/docs/images/carousel/carousel-5.svg" alt="..." />
+					{content && content?.length > 0 ? (
+						content.map(item => (
+							<div
+								className={`flex h-full items-center justify-center ${className ?? "bg-gray-400 dark:bg-gray-700 dark:text-white"}`}
+								dangerouslySetInnerHTML={{ __html: item ?? "" }}
+							></div>
+						))
+					) : (
+						<></>
+					)}
 				</FlowbiteCarousel>
 			</div>
 		);

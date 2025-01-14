@@ -2,7 +2,6 @@
 // SPDX-License-Identifier: Apache-2.0.
 import { Breadcrumb as FlowbiteBreadcrumb } from "flowbite-react";
 import React, { type ReactNode } from "react";
-import { HiHome } from "react-icons/hi";
 import { BreadcrumbPropTypes, type BreadcrumbProps } from "./breadcrumbProps";
 
 /**
@@ -33,15 +32,19 @@ export class Breadcrumb extends React.Component<BreadcrumbProps> {
 	 * @returns The component to render.
 	 */
 	public render(): ReactNode {
-		const { children, className } = this._props;
+		const { content, className } = this._props;
 
 		return (
 			<FlowbiteBreadcrumb aria-label="Default breadcrumb example" className={className ?? ""}>
-				<FlowbiteBreadcrumb.Item href="#" icon={HiHome}>
-					Home
-				</FlowbiteBreadcrumb.Item>
-				<FlowbiteBreadcrumb.Item href="#">Projects</FlowbiteBreadcrumb.Item>
-				<FlowbiteBreadcrumb.Item>{children}</FlowbiteBreadcrumb.Item>
+				{content && content?.length > 0 ? (
+					content.map(item => (
+						<FlowbiteBreadcrumb.Item href={item?.href ?? "#"} icon={item?.icon ?? undefined}>
+							{item?.label}
+						</FlowbiteBreadcrumb.Item>
+					))
+				) : (
+					<></>
+				)}
 			</FlowbiteBreadcrumb>
 		);
 	}

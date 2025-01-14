@@ -32,21 +32,56 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
 	args: {
-		children: "Carousel"
+		children: "Carousel",
+		content: [
+			"<div>Content</div>",
+			"<img src='https://flowbite.com/docs/images/carousel/carousel-2.svg' />",
+			"<img src='https://flowbite.com/docs/images/carousel/carousel-3.svg' />",
+			"<img src='https://flowbite.com/docs/images/carousel/carousel-4.svg' />",
+			"<img src='https://flowbite.com/docs/images/carousel/carousel-5.svg' />"
+		]
+	}
+};
+
+export const WithStyle: Story = {
+	args: {
+		children: "Carousel",
+		className: "bg-gray-300 dark:bg-gray-800",
+		content: [
+			"<div>Content</div>",
+			"<img src='https://flowbite.com/docs/images/carousel/carousel-2.svg' />",
+			"<img src='https://flowbite.com/docs/images/carousel/carousel-3.svg' />",
+			"<img src='https://flowbite.com/docs/images/carousel/carousel-4.svg' />",
+			"<img src='https://flowbite.com/docs/images/carousel/carousel-5.svg' />"
+		]
 	}
 };
 
 export const Static: Story = {
 	args: {
 		children: "Carousel",
-		slide: false
+		slide: false,
+		content: [
+			"<div>Content</div>",
+			"<img src='https://flowbite.com/docs/images/carousel/carousel-2.svg' />",
+			"<img src='https://flowbite.com/docs/images/carousel/carousel-3.svg' />",
+			"<img src='https://flowbite.com/docs/images/carousel/carousel-4.svg' />",
+			"<img src='https://flowbite.com/docs/images/carousel/carousel-5.svg' />"
+		]
 	}
 };
 
 export const FastSlide: Story = {
 	args: {
 		children: "Carousel",
-		slideInterval: 500
+		slideInterval: 500,
+		content: [
+			"<div>Content</div>",
+			"<img src='https://flowbite.com/docs/images/carousel/carousel-2.svg' />",
+			"<img src='https://flowbite.com/docs/images/carousel/carousel-3.svg' />",
+			"<img src='https://flowbite.com/docs/images/carousel/carousel-4.svg' />",
+			"<img src='https://flowbite.com/docs/images/carousel/carousel-5.svg' />"
+		]
 	}
 };
 
@@ -54,20 +89,41 @@ export const CustomControls: Story = {
 	args: {
 		children: "Carousel",
 		leftControl: "Previous",
-		rightControl: "Next"
+		rightControl: "Next",
+		content: [
+			"<div>Content</div>",
+			"<img src='https://flowbite.com/docs/images/carousel/carousel-2.svg' />",
+			"<img src='https://flowbite.com/docs/images/carousel/carousel-3.svg' />",
+			"<img src='https://flowbite.com/docs/images/carousel/carousel-4.svg' />",
+			"<img src='https://flowbite.com/docs/images/carousel/carousel-5.svg' />"
+		]
 	}
 };
 
 export const WithoutIndicators: Story = {
 	args: {
 		children: "Carousel",
-		indicators: false
+		indicators: false,
+		content: [
+			"<div>Content</div>",
+			"<img src='https://flowbite.com/docs/images/carousel/carousel-2.svg' />",
+			"<img src='https://flowbite.com/docs/images/carousel/carousel-3.svg' />",
+			"<img src='https://flowbite.com/docs/images/carousel/carousel-4.svg' />",
+			"<img src='https://flowbite.com/docs/images/carousel/carousel-5.svg' />"
+		]
 	}
 };
 
 export const PauseOnHover: Story = {
 	args: {
 		children: "Carousel",
-		pauseOnHover: true
+		pauseOnHover: true,
+		content: [
+			"<div>Content</div>",
+			"<img src='https://flowbite.com/docs/images/carousel/carousel-2.svg' />",
+			"<img src='https://flowbite.com/docs/images/carousel/carousel-3.svg' />",
+			"<img src='https://flowbite.com/docs/images/carousel/carousel-4.svg' />",
+			"<img src='https://flowbite.com/docs/images/carousel/carousel-5.svg' />"
+		]
 	}
 };

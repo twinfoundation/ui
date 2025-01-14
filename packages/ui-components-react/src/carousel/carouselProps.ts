@@ -10,7 +10,9 @@ export const CarouselPropTypes = {
 	leftControl: PropTypes.node,
 	rightControl: PropTypes.node,
 	indicators: PropTypes.bool,
-	pauseOnHover: PropTypes.bool
+	pauseOnHover: PropTypes.bool,
+	content: PropTypes.arrayOf(PropTypes.string),
+	className: PropTypes.string
 };
 
 /**

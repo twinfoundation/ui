@@ -5,7 +5,14 @@ import PropTypes, { type InferProps } from "prop-types";
 import type { PropsWithChildren } from "react";
 
 export const BreadcrumbPropTypes = {
-	className: PropTypes.string
+	className: PropTypes.string,
+	content: PropTypes.arrayOf(
+		PropTypes.shape({
+			label: PropTypes.string.isRequired,
+			href: PropTypes.string,
+			icon: PropTypes.func
+		})
+	)
 };
 
 /**

@@ -1,12 +1,12 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import { Alert as FlowbiteAlert } from "flowbite-react";
+import { Eye } from "flowbite-react-icons/outline";
 import React, { type ReactNode } from "react";
-import { HiEye } from "react-icons/hi";
 import { AlertPropTypes, type AlertProps } from "./alertProps";
 
 const colorClasses = {
-	primary: "border-current bg-blue-100 text-blue-700 dark:bg-blue-200 dark:text-blue-800",
+	info: "border-current bg-blue-100 text-blue-700 dark:bg-blue-200 dark:text-blue-800",
 	error: "border-current bg-red-100 text-red-700 dark:bg-red-200 dark:text-red-800",
 	warning: "border-current bg-system-warning-tints-50 dark:bg-system-warning-tints-50 text-warning",
 	success:
@@ -48,8 +48,8 @@ export class Alert extends React.Component<AlertProps> {
 				{...rest}
 				additionalContent={additionalContent && this.additionalContent()}
 				onDismiss={dismissable ? this.handleDismiss : undefined}
-				className={`${colorClasses[this._props.color ?? "primary"]} ${this._props.className ?? ""}`}
-				color="primary"
+				className={`${colorClasses[this._props.color ?? "info"]} ${this._props.className ?? ""}`}
+				color="info"
 			>
 				<span>{children}</span>
 			</FlowbiteAlert>
@@ -72,7 +72,7 @@ export class Alert extends React.Component<AlertProps> {
 						type="button"
 						className="mr-2 inline-flex items-center rounded-lg bg-cyan-700 px-3 py-1.5 text-center text-xs font-medium text-white hover:bg-cyan-800 focus:ring-4 focus:ring-cyan-300 dark:bg-cyan-800 dark:hover:bg-cyan-900"
 					>
-						<HiEye className="-ml-0.5 mr-2 h-4 w-4" />
+						<Eye className="-ml-0.5 mr-2 h-4 w-4" />
 						View more
 					</button>
 					<button
