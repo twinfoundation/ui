@@ -18,9 +18,12 @@ export const Drawer: React.FC<DrawerProps> = (props: DrawerProps) => {
 	const { title, items, ...rest } = props;
 
 	return (
-		<div className="block align-center">
+		<>
 			<div className="block text-center">
-				<FlowbiteButton className="m-auto focus:ring text-invert border-2 border-transparent bg-surface-button hover:enabled:bg-surface-button-hover focus:ring-surface-button-pressed" onClick={() => setIsOpen(true)}>
+				<FlowbiteButton
+					className="text-invert bg-surface-button hover:enabled:bg-surface-button-hover focus:ring-surface-button-pressed m-auto border-2 border-transparent focus:ring"
+					onClick={() => setIsOpen(true)}
+				>
 					Show drawer
 				</FlowbiteButton>
 			</div>
@@ -30,7 +33,7 @@ export const Drawer: React.FC<DrawerProps> = (props: DrawerProps) => {
 				onClose={handleClose}
 				onClick={() => setIsOpen(!isOpen)}
 			>
-				<FlowbiteDrawer.Header title={title} closeIcon={Bars}/>
+				<FlowbiteDrawer.Header title={title} closeIcon={Bars} />
 				{items && items?.length > 0 ? (
 					items.map(item => (
 						<FlowbiteDrawer.Items
@@ -41,7 +44,7 @@ export const Drawer: React.FC<DrawerProps> = (props: DrawerProps) => {
 					<></>
 				)}
 			</FlowbiteDrawer>
-		</div>
+		</>
 	);
 };
 

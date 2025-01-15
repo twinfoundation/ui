@@ -26,4 +26,8 @@ export * from "./carousel/carouselProps";
 export * from "./drawer/drawer";
 export * from "./drawer/drawerProps";
 export * from "./drawer/drawerPositions";
+export * from "./dropdown/dropdown";
+export * from "./dropdown/dropdownProps";
+export * from "./dropdown/dropdownPositions";
+export * from "./dropdown/dropdownSizes";
 export * from "./config/tailwindConfig";
