@@ -126,9 +126,15 @@ export const OnClick: Story = {
 	args: {
 		title: "Dropdown",
 		items: [
-			{ label: "Dashboard", onClick: () => alert("Dashboard clicked") },
-			{ label: "Settings", onClick: () => alert("Settings clicked") },
-			{ label: "Earnings", onClick: () => alert("Earnings clicked") },
+			{
+				label: "Dashboard",
+				onClick: () => {
+					// eslint-disable-next-line no-console
+					console.log("Dashboard clicked");
+				}
+			},
+			{ label: "Settings" },
+			{ label: "Earnings" },
 			{ divider: true },
 			{ label: "Sign out", icon: Icons.CloseCircle }
 		]
@@ -152,9 +158,9 @@ export const RightPlacement: Story = {
 	args: {
 		title: "Dropdown",
 		items: [
-			{ label: "Dashboard", onClick: () => alert("Dashboard clicked") },
-			{ label: "Settings", onClick: () => alert("Settings clicked") },
-			{ label: "Earnings", onClick: () => alert("Earnings clicked") },
+			{ label: "Dashboard" },
+			{ label: "Settings" },
+			{ label: "Earnings" },
 			{ divider: true },
 			{ label: "Sign out", icon: Icons.CloseCircle }
 		],
@@ -166,9 +172,9 @@ export const LeftPlacement: Story = {
 	args: {
 		title: "Dropdown",
 		items: [
-			{ label: "Dashboard", onClick: () => alert("Dashboard clicked") },
-			{ label: "Settings", onClick: () => alert("Settings clicked") },
-			{ label: "Earnings", onClick: () => alert("Earnings clicked") },
+			{ label: "Dashboard" },
+			{ label: "Settings" },
+			{ label: "Earnings" },
 			{ divider: true },
 			{ label: "Sign out", icon: Icons.CloseCircle }
 		],
@@ -180,9 +186,9 @@ export const TopPlacement: Story = {
 	args: {
 		title: "Dropdown",
 		items: [
-			{ label: "Dashboard", onClick: () => alert("Dashboard clicked") },
-			{ label: "Settings", onClick: () => alert("Settings clicked") },
-			{ label: "Earnings", onClick: () => alert("Earnings clicked") },
+			{ label: "Dashboard" },
+			{ label: "Settings" },
+			{ label: "Earnings" },
 			{ divider: true },
 			{ label: "Sign out", icon: Icons.CloseCircle }
 		],

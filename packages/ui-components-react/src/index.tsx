@@ -30,4 +30,7 @@ export * from "./dropdown/dropdown";
 export * from "./dropdown/dropdownProps";
 export * from "./dropdown/dropdownPositions";
 export * from "./dropdown/dropdownSizes";
+export * from "./datepicker/datepicker";
+export * from "./datepicker/datepickerProps";
+export * from "./datepicker/datepickerDays";
 export * from "./config/tailwindConfig";
