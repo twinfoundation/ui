@@ -23,4 +23,7 @@ export * from "./card/cardProps";
 export * from "./card/cardTypes";
 export * from "./carousel/carousel";
 export * from "./carousel/carouselProps";
+export * from "./drawer/drawer";
+export * from "./drawer/drawerProps";
+export * from "./drawer/drawerPositions";
 export * from "./config/tailwindConfig";
