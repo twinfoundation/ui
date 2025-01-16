@@ -46,4 +46,8 @@ export * from "./modal/modalPositions";
 export * from "./modal/modalSizes";
 export * from "./navbar/navbar";
 export * from "./navbar/navbarProps";
+export * from "./popover/popover";
+export * from "./popover/popoverProps";
+export * from "./popover/popoverPositions";
+export * from "./popover/popoverTriggers";
 export * from "./config/tailwindConfig";
