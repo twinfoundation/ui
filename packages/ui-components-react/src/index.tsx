@@ -33,4 +33,7 @@ export * from "./dropdown/dropdownSizes";
 export * from "./datepicker/datepicker";
 export * from "./datepicker/datepickerProps";
 export * from "./datepicker/datepickerDays";
+export * from "./form/form";
+export * from "./form/formProps";
+export * from "./form/formSizes";
 export * from "./config/tailwindConfig";
