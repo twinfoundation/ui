@@ -50,4 +50,7 @@ export * from "./popover/popover";
 export * from "./popover/popoverProps";
 export * from "./popover/popoverPositions";
 export * from "./popover/popoverTriggers";
+export * from "./pagination/pagination";
+export * from "./pagination/paginationProps";
+export * from "./pagination/paginationLayouts";
 export * from "./config/tailwindConfig";
