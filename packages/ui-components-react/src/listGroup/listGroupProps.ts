@@ -3,10 +3,10 @@
 import type { InferProps } from "prop-types";
 import type { PropsWithChildren } from "react";
 
-export const FooterPropTypes = {
+export const ListGroupPropTypes = {
 };
 
 /**
- * Footer props.
+ * ListGroup props.
  */
-export type FooterProps = PropsWithChildren<InferProps<typeof FooterPropTypes>>;
+export type ListGroupProps = PropsWithChildren<InferProps<typeof ListGroupPropTypes>>;

@@ -38,4 +38,6 @@ export * from "./form/formProps";
 export * from "./form/formSizes";
 export * from "./footer/footer";
 export * from "./footer/footerProps";
+export * from "./listGroup/listGroup";
+export * from "./listGroup/listGroupProps";
 export * from "./config/tailwindConfig";
