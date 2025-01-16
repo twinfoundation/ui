@@ -36,4 +36,6 @@ export * from "./datepicker/datepickerDays";
 export * from "./form/form";
 export * from "./form/formProps";
 export * from "./form/formSizes";
+export * from "./footer/footer";
+export * from "./footer/footerProps";
 export * from "./config/tailwindConfig";
