@@ -44,4 +44,6 @@ export * from "./modal/modal";
 export * from "./modal/modalProps";
 export * from "./modal/modalPositions";
 export * from "./modal/modalSizes";
+export * from "./navbar/navbar";
+export * from "./navbar/navbarProps";
 export * from "./config/tailwindConfig";
