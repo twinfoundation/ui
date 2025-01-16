@@ -6,8 +6,7 @@ import { ListGroup } from "@twin.org/ui-components-react";
 const meta = {
 	title: "Components/ListGroup",
 	component: ListGroup,
-	argTypes: {
-	},
+	argTypes: {},
 	args: {}
 } satisfies Meta<typeof ListGroup>;
 

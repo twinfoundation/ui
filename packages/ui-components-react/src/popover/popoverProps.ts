@@ -15,6 +15,6 @@ export const PopoverPropTypes = {
 /**
  * Popover props.
  */
- export type PopoverProps = PropsWithChildren<
+export type PopoverProps = PropsWithChildren<
 	InferProps<typeof PopoverPropTypes> & Omit<FlowbitePopoverProps, "color" | "label">
- >;
+>;

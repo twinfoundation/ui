@@ -6,8 +6,7 @@ import { Footer } from "@twin.org/ui-components-react";
 const meta = {
 	title: "Components/Footer",
 	component: Footer,
-	argTypes: {
-	},
+	argTypes: {},
 	args: {}
 } satisfies Meta<typeof Footer>;
 

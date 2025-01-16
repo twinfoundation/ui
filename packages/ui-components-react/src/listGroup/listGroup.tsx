@@ -35,10 +35,12 @@ export class ListGroup extends React.Component<ListGroupProps> {
 	public render(): ReactNode {
 		return (
 			<div className="flex justify-center">
-				<FlowbiteListGroup className="w-48 ">
+				<FlowbiteListGroup className="w-48">
 					<FlowbiteListGroup.Item icon={User}>Profile</FlowbiteListGroup.Item>
 					<FlowbiteListGroup.Item>Settings</FlowbiteListGroup.Item>
-					<FlowbiteListGroup.Item icon={Inbox} active>Messages</FlowbiteListGroup.Item>
+					<FlowbiteListGroup.Item icon={Inbox} active>
+						Messages
+					</FlowbiteListGroup.Item>
 					<FlowbiteListGroup.Item disabled>Download</FlowbiteListGroup.Item>
 				</FlowbiteListGroup>
 			</div>

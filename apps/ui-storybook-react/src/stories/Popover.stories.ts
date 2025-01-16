@@ -18,7 +18,7 @@ const meta = {
 		arrow: {
 			options: Object.values([true, false]),
 			control: { type: "inline-radio" }
-		},
+		}
 	},
 	args: {}
 } satisfies Meta<typeof Popover>;
@@ -32,18 +32,18 @@ export const Default: Story = {
 
 export const RightPlacement: Story = {
 	args: {
-        placement: PopoverPositions.Right
-    }
+		placement: PopoverPositions.Right
+	}
 };
 
 export const PopOnHover: Story = {
 	args: {
-        trigger: PopoverTriggers.Hover
-    }
+		trigger: PopoverTriggers.Hover
+	}
 };
 
 export const WithoutArrow: Story = {
 	args: {
-        arrow: false
-    }
+		arrow: false
+	}
 };

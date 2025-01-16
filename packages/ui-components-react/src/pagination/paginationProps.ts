@@ -15,6 +15,6 @@ export const PaginationPropTypes = {
 /**
  * Pagination props.
  */
- export type PaginationProps = PropsWithChildren<
+export type PaginationProps = PropsWithChildren<
 	InferProps<typeof PaginationPropTypes> & Omit<FlowbitePaginationProps, "color" | "label">
- >;
+>;

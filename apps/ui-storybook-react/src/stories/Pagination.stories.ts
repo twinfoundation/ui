@@ -14,7 +14,7 @@ const meta = {
 		showIcons: {
 			options: Object.values([true, false]),
 			control: { type: "inline-radio" }
-		},
+		}
 	},
 	args: {}
 } satisfies Meta<typeof Pagination>;
@@ -28,25 +28,25 @@ export const Default: Story = {
 
 export const NavigationLayout: Story = {
 	args: {
-        layout: PaginationLayouts.Navigation
-    }
+		layout: PaginationLayouts.Navigation
+	}
 };
 
 export const TableLayout: Story = {
 	args: {
-        layout: PaginationLayouts.Table
-    }
+		layout: PaginationLayouts.Table
+	}
 };
 
 export const ShowIcons: Story = {
 	args: {
-        showIcons: true
-    }
+		showIcons: true
+	}
 };
 
 export const CustomLabels: Story = {
 	args: {
-        previousLabel: "Go back",
-        nextLabel: "Go forward"
-    }
+		previousLabel: "Go back",
+		nextLabel: "Go forward"
+	}
 };

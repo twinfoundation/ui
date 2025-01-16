@@ -40,18 +40,18 @@ export const Default: Story = {
 
 export const PopUp: Story = {
 	args: {
-        popup: true
-    }
+		popup: true
+	}
 };
 
 export const BottomLeft: Story = {
 	args: {
-        position: ModalPositions.BottomLeft
-    }
+		position: ModalPositions.BottomLeft
+	}
 };
 
 export const ExtraLarge: Story = {
 	args: {
-        size: ModalSizes.ExtraLarge
-    }
+		size: ModalSizes.ExtraLarge
+	}
 };

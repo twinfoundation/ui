@@ -6,8 +6,7 @@ import { Navbar } from "@twin.org/ui-components-react";
 const meta = {
 	title: "Components/Navbar",
 	component: Navbar,
-	argTypes: {
-	},
+	argTypes: {},
 	args: {}
 } satisfies Meta<typeof Navbar>;
 

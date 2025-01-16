@@ -17,6 +17,6 @@ export const ModalPropTypes = {
 /**
  * Modal props.
  */
- export type ModalProps = PropsWithChildren<
+export type ModalProps = PropsWithChildren<
 	InferProps<typeof ModalPropTypes> & Omit<FlowbiteModalProps, "color" | "label">
- >;
+>;

@@ -3,8 +3,7 @@
 import type { InferProps } from "prop-types";
 import type { PropsWithChildren } from "react";
 
-export const FooterPropTypes = {
-};
+export const FooterPropTypes = {};
 
 /**
  * Footer props.
