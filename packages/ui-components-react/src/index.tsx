@@ -40,4 +40,8 @@ export * from "./footer/footer";
 export * from "./footer/footerProps";
 export * from "./listGroup/listGroup";
 export * from "./listGroup/listGroupProps";
+export * from "./modal/modal";
+export * from "./modal/modalProps";
+export * from "./modal/modalPositions";
+export * from "./modal/modalSizes";
 export * from "./config/tailwindConfig";
