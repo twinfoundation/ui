@@ -59,4 +59,7 @@ export * from "./progress/progressPositions";
 export * from "./progress/progressSizes";
 export * from "./sidebar/sidebar";
 export * from "./sidebar/sidebarProps";
+export * from "./spinner/spinner";
+export * from "./spinner/spinnerProps";
+export * from "./spinner/spinnerSizes";
 export * from "./config/tailwindConfig";
