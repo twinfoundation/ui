@@ -57,4 +57,6 @@ export * from "./progress/progress";
 export * from "./progress/progressProps";
 export * from "./progress/progressPositions";
 export * from "./progress/progressSizes";
+export * from "./sidebar/sidebar";
+export * from "./sidebar/sidebarProps";
 export * from "./config/tailwindConfig";
