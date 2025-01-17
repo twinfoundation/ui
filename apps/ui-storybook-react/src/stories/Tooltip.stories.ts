@@ -34,9 +34,7 @@ const meta = {
 			control: { type: "inline-radio" }
 		}
 	},
-	args: {
-		content: "Tooltip content"
-	}
+	args: {}
 } satisfies Meta<typeof Tooltip>;
 
 export default meta;

@@ -67,6 +67,8 @@ export * from "./table/tableProps";
 export * from "./tabs/tabs";
 export * from "./tabs/tabsProps";
 export * from "./tabs/tabsVariants";
+export * from "./toast/toast";
+export * from "./toast/toastProps";
 export * from "./tooltip/tooltip";
 export * from "./tooltip/tooltipProps";
 export * from "./tooltip/tooltipAnimations";
