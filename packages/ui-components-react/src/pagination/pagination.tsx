@@ -33,8 +33,6 @@ export class Pagination extends React.Component<PaginationProps> {
 	 */
 	public render(): ReactNode {
 		const { ...rest } = this._props;
-		return (
-			<FlowbitePagination {...rest} currentPage={2} totalPages={100} onPageChange={() => {}} />
-		);
+		return <FlowbitePagination {...rest} />;
 	}
 }

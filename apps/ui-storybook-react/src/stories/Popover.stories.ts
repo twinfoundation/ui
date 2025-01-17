@@ -27,23 +27,28 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-	args: {}
+	args: {
+		content: "Popover content"
+	}
 };
 
 export const RightPlacement: Story = {
 	args: {
+		content: "Popover content to the right",
 		placement: PopoverPositions.Right
 	}
 };
 
 export const PopOnHover: Story = {
 	args: {
+		content: "Popover content triggered on hover",
 		trigger: PopoverTriggers.Hover
 	}
 };
 
 export const WithoutArrow: Story = {
 	args: {
+		content: "Popover content without the arrow",
 		arrow: false
 	}
 };

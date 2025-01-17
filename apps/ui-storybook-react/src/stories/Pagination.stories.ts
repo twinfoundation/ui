@@ -23,29 +23,45 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-	args: {}
+	args: {
+		currentPage: 1,
+		onPageChange: () => {},
+		totalPages: 10
+	}
 };
 
 export const NavigationLayout: Story = {
 	args: {
+		currentPage: 1,
+		onPageChange: () => {},
+		totalPages: 10,
 		layout: PaginationLayouts.Navigation
 	}
 };
 
 export const TableLayout: Story = {
 	args: {
+		currentPage: 1,
+		onPageChange: () => {},
+		totalPages: 10,
 		layout: PaginationLayouts.Table
 	}
 };
 
 export const ShowIcons: Story = {
 	args: {
+		currentPage: 1,
+		onPageChange: () => {},
+		totalPages: 10,
 		showIcons: true
 	}
 };
 
 export const CustomLabels: Story = {
 	args: {
+		currentPage: 1,
+		onPageChange: () => {},
+		totalPages: 10,
 		previousLabel: "Go back",
 		nextLabel: "Go forward"
 	}

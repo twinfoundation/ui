@@ -9,7 +9,10 @@ export const PaginationPropTypes = {
 	layout: PropTypes.oneOf(Object.values(PaginationLayouts)),
 	showIcons: PropTypes.bool,
 	previousLabel: PropTypes.string,
-	nextLabel: PropTypes.string
+	nextLabel: PropTypes.string,
+	currentPage: PropTypes.number.isRequired,
+	totalPages: PropTypes.number.isRequired,
+	onPageChange: PropTypes.func.isRequired
 };
 
 /**

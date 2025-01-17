@@ -13,7 +13,8 @@ export const ProgressPropTypes = {
 	labelProgress: PropTypes.bool,
 	labelText: PropTypes.bool,
 	textLabel: PropTypes.string,
-	color: PropTypes.string
+	color: PropTypes.string,
+	progress: PropTypes.number.isRequired
 };
 
 /**

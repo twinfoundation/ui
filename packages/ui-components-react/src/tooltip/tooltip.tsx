@@ -1,28 +1,28 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
-import { Popover as FlowbitePopover, Button as FlowbiteButton } from "flowbite-react";
+import { Tooltip as FlowbiteTooltip, Button as FlowbiteButton } from "flowbite-react";
 import React, { type ReactNode } from "react";
-import { PopoverPropTypes, type PopoverProps } from "./popoverProps";
+import { TooltipPropTypes, type TooltipProps } from "./tooltipProps";
 
 /**
- * Popover component.
+ * Tooltip component.
  */
-export class Popover extends React.Component<PopoverProps> {
+export class Tooltip extends React.Component<TooltipProps> {
 	/**
 	 * The prop types of the component.
 	 */
-	public static propTypes = PopoverPropTypes;
+	public static propTypes = TooltipPropTypes;
 
 	/**
 	 * The props of the component.
 	 */
-	private readonly _props: PopoverProps;
+	private readonly _props: TooltipProps;
 
 	/**
-	 * Create a new instance of Popover.
+	 * Create a new instance of Tooltip.
 	 * @param props The props of the component.
 	 */
-	constructor(props: PopoverProps) {
+	constructor(props: TooltipProps) {
 		super(props);
 		this._props = props;
 	}
@@ -34,11 +34,11 @@ export class Popover extends React.Component<PopoverProps> {
 	public render(): ReactNode {
 		const { ...rest } = this._props;
 		return (
-			<FlowbitePopover aria-labelledby="default-popover" {...rest}>
+			<FlowbiteTooltip {...rest}>
 				<FlowbiteButton className="text-invert bg-surface-button hover:enabled:bg-surface-button-hover focus:ring-surface-button-pressed border-2 border-transparent focus:ring">
-					Activate popover
+					Tooltip
 				</FlowbiteButton>
-			</FlowbitePopover>
+			</FlowbiteTooltip>
 		);
 	}
 }

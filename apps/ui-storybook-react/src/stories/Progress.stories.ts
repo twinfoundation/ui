@@ -35,17 +35,21 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-	args: {}
+	args: {
+		progress: 46
+	}
 };
 
 export const WithProgress: Story = {
 	args: {
+		progress: 46,
 		labelProgress: true
 	}
 };
 
 export const WithLabel: Story = {
 	args: {
+		progress: 46,
 		labelProgress: true,
 		labelText: true,
 		textLabel: "Progress"
@@ -54,6 +58,7 @@ export const WithLabel: Story = {
 
 export const OutsidePlacement: Story = {
 	args: {
+		progress: 46,
 		labelProgress: true,
 		labelText: true,
 		textLabel: "Progress",
@@ -64,6 +69,7 @@ export const OutsidePlacement: Story = {
 
 export const Small: Story = {
 	args: {
+		progress: 46,
 		labelProgress: true,
 		size: ProgressSizes.Small
 	}
@@ -71,6 +77,7 @@ export const Small: Story = {
 
 export const Large: Story = {
 	args: {
+		progress: 46,
 		labelProgress: true,
 		size: ProgressSizes.Large
 	}
@@ -78,6 +85,7 @@ export const Large: Story = {
 
 export const ExtraLarge: Story = {
 	args: {
+		progress: 46,
 		labelProgress: true,
 		size: ProgressSizes.ExtraLarge
 	}
@@ -85,6 +93,7 @@ export const ExtraLarge: Story = {
 
 export const ColorGreen: Story = {
 	args: {
+		progress: 46,
 		labelProgress: true,
 		color: "green"
 	}

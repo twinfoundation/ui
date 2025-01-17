@@ -9,7 +9,8 @@ import { PopoverTriggers } from "./popoverTriggers";
 export const PopoverPropTypes = {
 	placement: PropTypes.oneOf(Object.values(PopoverPositions)),
 	trigger: PropTypes.oneOf(Object.values(PopoverTriggers)),
-	arrow: PropTypes.bool
+	arrow: PropTypes.bool,
+	content: PropTypes.string
 };
 
 /**

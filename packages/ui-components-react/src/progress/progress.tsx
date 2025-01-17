@@ -33,6 +33,6 @@ export class Progress extends React.Component<ProgressProps> {
 	 */
 	public render(): ReactNode {
 		const { ...rest } = this._props;
-		return <FlowbiteProgress {...rest} progress={45} />;
+		return <FlowbiteProgress {...rest} />;
 	}
 }
