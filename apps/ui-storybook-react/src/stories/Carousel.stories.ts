@@ -127,3 +127,26 @@ export const PauseOnHover: Story = {
 		]
 	}
 };
+
+export const HandleChange: Story = {
+	args: {
+		children: "Carousel",
+		content: [
+			"<div>Content</div>",
+			"<img src='https://flowbite.com/docs/images/carousel/carousel-2.svg' />",
+			"<img src='https://flowbite.com/docs/images/carousel/carousel-3.svg' />",
+			"<img src='https://flowbite.com/docs/images/carousel/carousel-4.svg' />",
+			"<img src='https://flowbite.com/docs/images/carousel/carousel-5.svg' />"
+		],
+		onSlideChange: handleOnChange
+	}
+};
+
+/**
+ * Handle the onChange action.
+ */
+function handleOnChange(index: number): void {
+	// Custom onChange logic here
+	// eslint-disable-next-line no-console
+	console.log("Index changed to ", index);
+};

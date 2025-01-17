@@ -7,9 +7,9 @@ import { AlertColors } from "./alertColors";
 
 export const AlertPropTypes = {
 	color: PropTypes.oneOf(Object.values(AlertColors)),
-	dismissable: PropTypes.bool,
+	onDismiss: PropTypes.func,
 	rounded: PropTypes.bool,
-	additionalContent: PropTypes.bool,
+	additionalContent: PropTypes.node,
 	withBorderAccent: PropTypes.bool
 };
 

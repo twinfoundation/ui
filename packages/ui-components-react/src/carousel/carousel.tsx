@@ -35,7 +35,7 @@ export class Carousel extends React.Component<CarouselProps> {
 		const { content, className, ...rest } = this._props;
 		return (
 			<div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
-				<FlowbiteCarousel {...rest} onSlideChange={index => this.handleOnChange(index)}>
+				<FlowbiteCarousel {...rest}>
 					{content && content?.length > 0 ? (
 						content.map(item => (
 							<div
@@ -50,12 +50,4 @@ export class Carousel extends React.Component<CarouselProps> {
 			</div>
 		);
 	}
-
-	/**
-	 * Handle the onChange action.
-	 */
-	// eslint-disable-next-line no-restricted-syntax
-	private readonly handleOnChange = (index: number): void => {
-		// Custom onChange logic here
-	};
 }

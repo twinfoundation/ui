@@ -11,7 +11,14 @@ export const ModalPropTypes = {
 	size: PropTypes.oneOf(Object.values(ModalSizes)),
 	dismissible: PropTypes.bool,
 	popup: PropTypes.bool,
-	initialFocus: PropTypes.bool
+	initialFocus: PropTypes.bool,
+	header: PropTypes.node,
+	body: PropTypes.node,
+	footerButtons: PropTypes.arrayOf(PropTypes.shape({
+		label: PropTypes.string.isRequired,
+		className: PropTypes.string,
+		onClick: PropTypes.func
+	}))
 };
 
 /**
