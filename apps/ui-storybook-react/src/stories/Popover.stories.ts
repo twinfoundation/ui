@@ -20,7 +20,9 @@ const meta = {
 			control: { type: "inline-radio" }
 		}
 	},
-	args: {}
+	args: {
+		children: "Activate Popover"
+	}
 } satisfies Meta<typeof Popover>;
 
 export default meta;

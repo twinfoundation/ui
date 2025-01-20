@@ -1,6 +1,6 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
-import { Table as FlowbiteTable, Checkbox as FlowbiteCheckbox } from "flowbite-react";
+import { Table as FlowbiteTable } from "flowbite-react";
 import React, { type ReactNode } from "react";
 import { TablePropTypes, type TableProps } from "./tableProps";
 
@@ -32,80 +32,35 @@ export class Table extends React.Component<TableProps> {
 	 * @returns The component to render.
 	 */
 	public render(): ReactNode {
-		const { ...rest } = this._props;
+		const { head, body, ...rest } = this._props;
 		return (
 			<div className="overflow-x-auto">
 				<FlowbiteTable {...rest}>
 					<FlowbiteTable.Head>
-						<FlowbiteTable.HeadCell className="p-4">
-							<FlowbiteCheckbox />
-						</FlowbiteTable.HeadCell>
-						<FlowbiteTable.HeadCell>Product name</FlowbiteTable.HeadCell>
-						<FlowbiteTable.HeadCell>Color</FlowbiteTable.HeadCell>
-						<FlowbiteTable.HeadCell>Category</FlowbiteTable.HeadCell>
-						<FlowbiteTable.HeadCell>Price</FlowbiteTable.HeadCell>
-						<FlowbiteTable.HeadCell>
-							<span className="sr-only">Edit</span>
-						</FlowbiteTable.HeadCell>
+						{head && head.length > 0 ? (
+							head.map(item => (
+								<FlowbiteTable.HeadCell className={item?.className ?? ""}>
+									{item?.content}
+								</FlowbiteTable.HeadCell>
+							))
+						) : (
+							<></>
+						)}
 					</FlowbiteTable.Head>
 					<FlowbiteTable.Body className="divide-y">
-						<FlowbiteTable.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-							<FlowbiteTable.Cell className="p-4">
-								<FlowbiteCheckbox />
-							</FlowbiteTable.Cell>
-							<FlowbiteTable.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-								{'Apple MacBook Pro 17"'}
-							</FlowbiteTable.Cell>
-							<FlowbiteTable.Cell>Sliver</FlowbiteTable.Cell>
-							<FlowbiteTable.Cell>Laptop</FlowbiteTable.Cell>
-							<FlowbiteTable.Cell>$2999</FlowbiteTable.Cell>
-							<FlowbiteTable.Cell>
-								<a
-									href="#"
-									className="font-medium text-cyan-600 hover:underline dark:text-cyan-500"
-								>
-									Edit
-								</a>
-							</FlowbiteTable.Cell>
-						</FlowbiteTable.Row>
-						<FlowbiteTable.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-							<FlowbiteTable.Cell className="p-4">
-								<FlowbiteCheckbox />
-							</FlowbiteTable.Cell>
-							<FlowbiteTable.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-								Microsoft Surface Pro
-							</FlowbiteTable.Cell>
-							<FlowbiteTable.Cell>White</FlowbiteTable.Cell>
-							<FlowbiteTable.Cell>Laptop PC</FlowbiteTable.Cell>
-							<FlowbiteTable.Cell>$1999</FlowbiteTable.Cell>
-							<FlowbiteTable.Cell>
-								<a
-									href="#"
-									className="font-medium text-cyan-600 hover:underline dark:text-cyan-500"
-								>
-									Edit
-								</a>
-							</FlowbiteTable.Cell>
-						</FlowbiteTable.Row>
-						<FlowbiteTable.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-							<FlowbiteTable.Cell className="p-4">
-								<FlowbiteCheckbox />
-							</FlowbiteTable.Cell>
-							<FlowbiteTable.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-								Magic Mouse 2
-							</FlowbiteTable.Cell>
-							<FlowbiteTable.Cell>Black</FlowbiteTable.Cell>
-							<FlowbiteTable.Cell>Accessories</FlowbiteTable.Cell>
-							<FlowbiteTable.Cell>$99</FlowbiteTable.Cell>
-							<FlowbiteTable.Cell>
-								<a
-									href="#"
-									className="font-medium text-cyan-600 hover:underline dark:text-cyan-500"
-								>
-									Edit
-								</a>
-							</FlowbiteTable.Cell>
-						</FlowbiteTable.Row>
+						{body && body.length > 0 ? (
+							body.map(row => (
+								<FlowbiteTable.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+									{row?.map(cell => (
+										<FlowbiteTable.Cell className={cell?.className ?? ""}>
+											{cell?.content}
+										</FlowbiteTable.Cell>
+									))}
+								</FlowbiteTable.Row>
+							))
+						) : (
+							<></>
+						)}
 					</FlowbiteTable.Body>
 				</FlowbiteTable>
 			</div>

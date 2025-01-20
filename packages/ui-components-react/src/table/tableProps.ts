@@ -6,7 +6,21 @@ import type { PropsWithChildren } from "react";
 
 export const TablePropTypes = {
 	striped: PropTypes.bool,
-	hoverable: PropTypes.bool
+	hoverable: PropTypes.bool,
+	head: PropTypes.arrayOf(
+		PropTypes.shape({
+			content: PropTypes.node.isRequired,
+			className: PropTypes.string
+		})
+	),
+	body: PropTypes.arrayOf(
+		PropTypes.arrayOf(
+			PropTypes.shape({
+				content: PropTypes.node.isRequired,
+				className: PropTypes.string
+			})
+		)
+	)
 };
 
 /**

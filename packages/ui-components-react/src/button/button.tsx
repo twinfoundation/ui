@@ -6,7 +6,7 @@ import { ButtonPropTypes, type ButtonProps } from "./buttonProps";
 
 const colorClasses = {
 	primary:
-		"focus:ring text-invert border-2 border-transparent bg-surface-button hover:enabled:bg-surface-button-hover focus:ring-surface-button-pressed",
+		"focus:ring text-invert border-2 border-transparent bg-surface-button hover:enabled:bg-surface-button-hover dark:bg-surface-button dark:hover:enabled:bg-surface-button-hover focus:ring-surface-button-pressed",
 	secondary:
 		"focus:ring text-invert border-2 border-transparent bg-surface-button-alt hover:enabled:bg-surface-button-alt-hover focus:ring-surface-button-alt-pressed",
 	error:

@@ -441,7 +441,7 @@ export class Form extends React.Component<FormProps> {
 				<div className="flex max-w-md flex-col gap-4">
 					<FlowbiteButton
 						disabled={disabled ?? undefined}
-						className="text-invert bg-surface-button hover:enabled:bg-surface-button-hover focus:ring-surface-button-pressed border-2 border-transparent focus:ring"
+						className="text-invert bg-surface-button hover:enabled:bg-surface-button-hover dark:bg-surface-button dark:hover:enabled:bg-surface-button-hover focus:ring-surface-button-pressed border-2 border-transparent focus:ring"
 						type="submit"
 					>
 						Submit

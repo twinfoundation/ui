@@ -35,7 +35,7 @@ export class Tooltip extends React.Component<TooltipProps> {
 		const { ...rest } = this._props;
 		return (
 			<FlowbiteTooltip {...rest}>
-				<FlowbiteButton className="text-invert bg-surface-button hover:enabled:bg-surface-button-hover focus:ring-surface-button-pressed border-2 border-transparent focus:ring">
+				<FlowbiteButton className="text-invert bg-surface-button hover:enabled:bg-surface-button-hover dark:bg-surface-button dark:hover:enabled:bg-surface-button-hover focus:ring-surface-button-pressed border-2 border-transparent focus:ring">
 					Tooltip
 				</FlowbiteButton>
 			</FlowbiteTooltip>

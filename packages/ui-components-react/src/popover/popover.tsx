@@ -32,11 +32,11 @@ export class Popover extends React.Component<PopoverProps> {
 	 * @returns The component to render.
 	 */
 	public render(): ReactNode {
-		const { ...rest } = this._props;
+		const { children, ...rest } = this._props;
 		return (
 			<FlowbitePopover aria-labelledby="default-popover" {...rest}>
-				<FlowbiteButton className="text-invert bg-surface-button hover:enabled:bg-surface-button-hover focus:ring-surface-button-pressed border-2 border-transparent focus:ring">
-					Activate popover
+				<FlowbiteButton className="text-invert bg-surface-button hover:enabled:bg-surface-button-hover dark:bg-surface-button dark:hover:enabled:bg-surface-button-hover focus:ring-surface-button-pressed border-2 border-transparent focus:ring">
+					{children}
 				</FlowbiteButton>
 			</FlowbitePopover>
 		);

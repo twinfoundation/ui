@@ -45,7 +45,7 @@ export class Dropdown extends React.Component<DropdownProps> {
 					renderTrigger={() => (
 						<FlowbiteButton
 							size={size ?? "md"}
-							className="text-invert bg-surface-button hover:enabled:bg-surface-button-hover focus:ring-surface-button-pressed m-auto mt-5 border-2 border-transparent focus:ring"
+							className="text-invert bg-surface-button hover:enabled:bg-surface-button-hover dark:bg-surface-button dark:hover:enabled:bg-surface-button-hover focus:ring-surface-button-pressed m-auto mt-5 border-2 border-transparent focus:ring"
 						>
 							Dropdown
 							{placement === "top" && <ArrowUp className="ml-2 h-5 w-5" />}

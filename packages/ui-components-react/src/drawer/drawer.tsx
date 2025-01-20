@@ -21,7 +21,7 @@ export const Drawer: React.FC<DrawerProps> = (props: DrawerProps) => {
 		<>
 			<div className="block text-center">
 				<FlowbiteButton
-					className="text-invert bg-surface-button hover:enabled:bg-surface-button-hover focus:ring-surface-button-pressed m-auto border-2 border-transparent focus:ring"
+					className="text-invert bg-surface-button hover:enabled:bg-surface-button-hover dark:bg-surface-button dark:hover:enabled:bg-surface-button-hover focus:ring-surface-button-pressed m-auto border-2 border-transparent focus:ring"
 					onClick={() => setIsOpen(true)}
 				>
 					Show drawer

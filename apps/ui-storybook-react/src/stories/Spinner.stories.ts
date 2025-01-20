@@ -22,6 +22,12 @@ export const Default: Story = {
 	args: {}
 };
 
+export const CustomLabel: Story = {
+	args: {
+		children: "Loading content..."
+	}
+};
+
 export const ExtraSmall: Story = {
 	args: {
 		size: SpinnerSizes.ExtraSmall
