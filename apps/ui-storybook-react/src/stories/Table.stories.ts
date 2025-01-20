@@ -17,142 +17,64 @@ const meta = {
 			control: { type: "inline-radio" }
 		}
 	},
-	args: {}
+	args: {
+		head: [
+			{ className: "text-center pl-4", content: "ID" },
+			{ className: "text-left", content: "Name" },
+			{ className: "text-left", content: "Age" },
+			{ className: "text-center", content: "Signed" },
+			{ className: "text-left", content: "Actions" }
+		],
+		body: [
+			[
+				{ className: "text-center pl-4", content: "1" },
+				{ className: "text-left", content: "John Doe" },
+				{ className: "text-left", content: "28" },
+				{
+					className: "text-center",
+					content: createElement("input", { type: "checkbox", checked: true })
+				},
+				{ className: "text-center", content: createElement(Button, { children: "Edit" }) }
+			],
+			[
+				{ className: "text-center pl-4", content: "2" },
+				{ className: "text-left", content: "Jane Doe" },
+				{ className: "text-left", content: "25" },
+				{
+					className: "text-center",
+					content: createElement("input", { type: "checkbox", checked: false })
+				},
+				{ className: "text-center", content: createElement(Button, { children: "Edit" }) }
+			],
+			[
+				{ className: "text-center pl-4", content: "3" },
+				{ className: "text-left", content: "John Smith" },
+				{ className: "text-left", content: "30" },
+				{
+					className: "text-center",
+					content: createElement("input", { type: "checkbox", checked: true })
+				},
+				{ className: "text-center", content: createElement(Button, { children: "Edit" }) }
+			]
+		]
+	}
 } satisfies Meta<typeof Table>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-	args: {
-		head: [
-			{ className: "text-center pl-4", content: "ID" },
-			{ className: "text-left", content: "Name" },
-			{ className: "text-left", content: "Age" },
-			{ className: "text-center", content: "Signed" },
-			{ className: "text-left", content: "Actions" }
-		],
-		body: [
-			[
-				{ className: "text-center pl-4", content: "1" },
-				{ className: "text-left", content: "John Doe" },
-				{ className: "text-left", content: "28" },
-				{
-					className: "text-center",
-					content: createElement("input", { type: "checkbox", checked: true })
-				},
-				{ className: "text-center", content: createElement(Button, { children: "Edit" }) }
-			],
-			[
-				{ className: "text-center pl-4", content: "2" },
-				{ className: "text-left", content: "Jane Doe" },
-				{ className: "text-left", content: "25" },
-				{
-					className: "text-center",
-					content: createElement("input", { type: "checkbox", checked: false })
-				},
-				{ className: "text-center", content: createElement(Button, { children: "Edit" }) }
-			],
-			[
-				{ className: "text-center pl-4", content: "3" },
-				{ className: "text-left", content: "John Smith" },
-				{ className: "text-left", content: "30" },
-				{
-					className: "text-center",
-					content: createElement("input", { type: "checkbox", checked: true })
-				},
-				{ className: "text-center", content: createElement(Button, { children: "Edit" }) }
-			]
-		]
-	}
+	args: {}
 };
 
 export const Striped: Story = {
 	args: {
-		striped: true,
-		head: [
-			{ className: "text-center pl-4", content: "ID" },
-			{ className: "text-left", content: "Name" },
-			{ className: "text-left", content: "Age" },
-			{ className: "text-center", content: "Signed" },
-			{ className: "text-left", content: "Actions" }
-		],
-		body: [
-			[
-				{ className: "text-center pl-4", content: "1" },
-				{ className: "text-left", content: "John Doe" },
-				{ className: "text-left", content: "28" },
-				{
-					className: "text-center",
-					content: createElement("input", { type: "checkbox", checked: true })
-				},
-				{ className: "text-center", content: createElement(Button, { children: "Edit" }) }
-			],
-			[
-				{ className: "text-center pl-4", content: "2" },
-				{ className: "text-left", content: "Jane Doe" },
-				{ className: "text-left", content: "25" },
-				{
-					className: "text-center",
-					content: createElement("input", { type: "checkbox", checked: false })
-				},
-				{ className: "text-center", content: createElement(Button, { children: "Edit" }) }
-			],
-			[
-				{ className: "text-center pl-4", content: "3" },
-				{ className: "text-left", content: "John Smith" },
-				{ className: "text-left", content: "30" },
-				{
-					className: "text-center",
-					content: createElement("input", { type: "checkbox", checked: true })
-				},
-				{ className: "text-center", content: createElement(Button, { children: "Edit" }) }
-			]
-		]
+		striped: true
 	}
 };
 
 export const Hoverable: Story = {
 	args: {
-		hoverable: true,
-		head: [
-			{ className: "text-center pl-4", content: "ID" },
-			{ className: "text-left", content: "Name" },
-			{ className: "text-left", content: "Age" },
-			{ className: "text-center", content: "Signed" },
-			{ className: "text-left", content: "Actions" }
-		],
-		body: [
-			[
-				{ className: "text-center pl-4", content: "1" },
-				{ className: "text-left", content: "John Doe" },
-				{ className: "text-left", content: "28" },
-				{
-					className: "text-center",
-					content: createElement("input", { type: "checkbox", checked: true })
-				},
-				{ className: "text-center", content: createElement(Button, { children: "Edit" }) }
-			],
-			[
-				{ className: "text-center pl-4", content: "2" },
-				{ className: "text-left", content: "Jane Doe" },
-				{ className: "text-left", content: "25" },
-				{
-					className: "text-center",
-					content: createElement("input", { type: "checkbox", checked: false })
-				},
-				{ className: "text-center", content: createElement(Button, { children: "Edit" }) }
-			],
-			[
-				{ className: "text-center pl-4", content: "3" },
-				{ className: "text-left", content: "John Smith" },
-				{ className: "text-left", content: "30" },
-				{
-					className: "text-center",
-					content: createElement("input", { type: "checkbox", checked: true })
-				},
-				{ className: "text-center", content: createElement(Button, { children: "Edit" }) }
-			]
-		]
+		hoverable: true
 	}
 };

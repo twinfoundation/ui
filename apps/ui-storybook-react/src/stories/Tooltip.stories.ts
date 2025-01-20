@@ -34,7 +34,9 @@ const meta = {
 			control: { type: "inline-radio" }
 		}
 	},
-	args: {}
+	args: {
+		children: "Activate Tooltip"
+	}
 } satisfies Meta<typeof Tooltip>;
 
 export default meta;
@@ -43,6 +45,13 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
 	args: {
 		content: "Tooltip content"
+	}
+};
+
+export const CustomText: Story = {
+	args: {
+		children: "Custom Tooltip text",
+		content: "Custom Tooltip content"
 	}
 };
 
