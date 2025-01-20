@@ -9,7 +9,7 @@ const meta = {
 	argTypes: {},
 	args: {
 		items: [
-			{ title: "Item 1", icon: Icons.User},
+			{ title: "Item 1", icon: Icons.User },
 			{ title: "Item 2", icon: Icons.Database, active: true },
 			{ title: "Item 3", disabled: true },
 			{ title: "Item 4" }

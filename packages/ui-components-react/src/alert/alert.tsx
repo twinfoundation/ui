@@ -47,7 +47,7 @@ export class Alert extends React.Component<AlertProps> {
 				{...rest}
 				className={`${colorClasses[this._props.color ?? "info"]} ${this._props.className ?? ""}`}
 				color={this._props.color ?? "info"}
-				theme={{ "closeButton": { "color": colorClasses } }}
+				theme={{ closeButton: { color: colorClasses } }}
 			>
 				<span>{children}</span>
 			</FlowbiteAlert>

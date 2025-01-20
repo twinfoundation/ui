@@ -35,25 +35,24 @@ export class Modal extends React.Component<ModalProps> {
 		const { header, body, footerButtons, ...rest } = this._props;
 		return (
 			<FlowbiteModal {...rest} show={true}>
-				{header && (
-					<FlowbiteModal.Header>{header}</FlowbiteModal.Header>
-				)}
+				{header && <FlowbiteModal.Header>{header}</FlowbiteModal.Header>}
 
-				{body && (
-					<FlowbiteModal.Body>{body}</FlowbiteModal.Body>
-				)}
+				{body && <FlowbiteModal.Body>{body}</FlowbiteModal.Body>}
 
 				{footerButtons && (
 					<FlowbiteModal.Footer>
-					{footerButtons && footerButtons?.length > 0 ? (
-						footerButtons.map(button => (
-							<FlowbiteButton className={button?.className ?? ""} onClick={button?.onClick ?? undefined}>
-								{button?.label}
-							</FlowbiteButton>
-						))
-					) : (
-						<></>
-					)}
+						{footerButtons && footerButtons?.length > 0 ? (
+							footerButtons.map(button => (
+								<FlowbiteButton
+									className={button?.className ?? ""}
+									onClick={button?.onClick ?? undefined}
+								>
+									{button?.label}
+								</FlowbiteButton>
+							))
+						) : (
+							<></>
+						)}
 					</FlowbiteModal.Footer>
 				)}
 			</FlowbiteModal>

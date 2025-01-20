@@ -51,8 +51,12 @@ export const Default: Story = {
 			)
 		),
 		footerButtons: [
-			{ label: "Cancel"},
-			{ label: "Save", className: "text-invert bg-surface-button hover:enabled:bg-surface-button-hover focus:ring-surface-button-pressed border-2 border-transparent focus:ring" }
+			{ label: "Cancel" },
+			{
+				label: "Save",
+				className:
+					"text-invert bg-surface-button hover:enabled:bg-surface-button-hover focus:ring-surface-button-pressed border-2 border-transparent focus:ring"
+			}
 		]
 	}
 };
@@ -103,8 +107,12 @@ export const ExtraLarge: Story = {
 	args: {
 		size: ModalSizes.ExtraLarge,
 		footerButtons: [
-			{ label: "Cancel"},
-			{ label: "Save", className: "text-invert bg-surface-button hover:enabled:bg-surface-button-hover focus:ring-surface-button-pressed border-2 border-transparent focus:ring" }
+			{ label: "Cancel" },
+			{
+				label: "Save",
+				className:
+					"text-invert bg-surface-button hover:enabled:bg-surface-button-hover focus:ring-surface-button-pressed border-2 border-transparent focus:ring"
+			}
 		]
 	}
 };

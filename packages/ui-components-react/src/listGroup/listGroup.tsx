@@ -42,7 +42,9 @@ export class ListGroup extends React.Component<ListGroupProps> {
 								icon={item?.icon ?? undefined}
 								disabled={item?.disabled ?? false}
 								active={item?.active ?? false}
-							>{item?.title}</FlowbiteListGroup.Item>
+							>
+								{item?.title}
+							</FlowbiteListGroup.Item>
 						))
 					) : (
 						<></>

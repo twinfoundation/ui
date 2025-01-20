@@ -144,9 +144,10 @@ export const HandleChange: Story = {
 
 /**
  * Handle the onChange action.
+ * @param index - The index of the current slide.
  */
 function handleOnChange(index: number): void {
 	// Custom onChange logic here
 	// eslint-disable-next-line no-console
-	console.log("Index changed to ", index);
-};
+	console.log("Index changed to", index);
+}
