@@ -2,10 +2,10 @@
 // SPDX-License-Identifier: Apache-2.0.
 
 /**
- * Form sizes.
+ * TextInput sizes.
  */
 // eslint-disable-next-line @typescript-eslint/naming-convention
-export const FormSizes = {
+export const TextInputSizes = {
 	/**
 	 * Small.
 	 */
@@ -23,6 +23,6 @@ export const FormSizes = {
 } as const;
 
 /**
- * Form sizes.
+ * TextInput sizes.
  */
-export type FormSizes = (typeof FormSizes)[keyof typeof FormSizes];
+export type TextInputSizes = (typeof TextInputSizes)[keyof typeof TextInputSizes];

@@ -1,27 +1,28 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
+import { Label as FlowbiteLabel } from "flowbite-react";
 import React, { type ReactNode } from "react";
-import { FormPropTypes, type FormProps } from "./formProps";
+import { LabelPropTypes, type LabelProps } from "./labelProps";
 
 /**
- * Form component.
+ * Label component.
  */
-export class Form extends React.Component<FormProps> {
+export class Label extends React.Component<LabelProps> {
 	/**
 	 * The prop types of the component.
 	 */
-	public static propTypes = FormPropTypes;
+	public static propTypes = LabelPropTypes;
 
 	/**
 	 * The props of the component.
 	 */
-	private readonly _props: FormProps;
+	private readonly _props: LabelProps;
 
 	/**
-	 * Create a new instance of Form.
+	 * Create a new instance of Label.
 	 * @param props The props of the component.
 	 */
-	constructor(props: FormProps) {
+	constructor(props: LabelProps) {
 		super(props);
 		this._props = props;
 	}
@@ -31,7 +32,7 @@ export class Form extends React.Component<FormProps> {
 	 * @returns The component to render.
 	 */
 	public render(): ReactNode {
-		const { className, content } = this._props;
-		return <form className={className ?? ""}>{content}</form>;
+		const { ...rest } = this._props;
+		return <FlowbiteLabel {...rest} />;
 	}
 }

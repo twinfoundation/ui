@@ -1,7 +1,7 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
-import { Table, Button } from "@twin.org/ui-components-react";
+import { Table, Button, Checkbox } from "@twin.org/ui-components-react";
 import { createElement } from "react";
 
 const meta = {
@@ -32,7 +32,7 @@ const meta = {
 				{ className: "text-left", content: "28" },
 				{
 					className: "text-center",
-					content: createElement("input", { type: "checkbox", checked: true })
+					content: createElement(Checkbox, { checked: true })
 				},
 				{ className: "text-center", content: createElement(Button, { children: "Edit" }) }
 			],
@@ -42,7 +42,7 @@ const meta = {
 				{ className: "text-left", content: "25" },
 				{
 					className: "text-center",
-					content: createElement("input", { type: "checkbox", checked: false })
+					content: createElement(Checkbox, { checked: false })
 				},
 				{ className: "text-center", content: createElement(Button, { children: "Edit" }) }
 			],
@@ -52,7 +52,7 @@ const meta = {
 				{ className: "text-left", content: "30" },
 				{
 					className: "text-center",
-					content: createElement("input", { type: "checkbox", checked: true })
+					content: createElement(Checkbox, { checked: true })
 				},
 				{ className: "text-center", content: createElement(Button, { children: "Edit" }) }
 			]
