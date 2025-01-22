@@ -16,7 +16,8 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        package: ['packages/ui-tailwind', 'packages/ui-components-svelte', 'packages/ui-components-react']
+        package:
+          ['packages/ui-tailwind', 'packages/ui-components-svelte', 'packages/ui-components-react']
 
     steps:
       - name: Checkout
