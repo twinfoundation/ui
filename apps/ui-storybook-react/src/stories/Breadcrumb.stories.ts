@@ -34,7 +34,7 @@ export const CustomClass: Story = {
 		children: "Breadcrumb",
 		className: "bg-gray-50 py-2 px-2 dark:bg-gray-800",
 		content: [
-			{ label: "Home", href: "/", icon: Icons.Home },
+			{ label: "Home", href: "/", icon: IconsSolid.Home },
 			{ label: "Library", href: "/library" },
 			{ label: "Data", href: "/library/data" }
 		]
