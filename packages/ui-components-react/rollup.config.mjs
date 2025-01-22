@@ -48,7 +48,8 @@ export default {
 		/^node:.*/,
 		'react/jsx-runtime',
 		'flowbite-react/tailwind',
-		'flowbite-react-icons/outline'
+		'flowbite-react-icons/outline',
+		'flowbite-react-icons/solid'
 	].concat(Object.keys(globs)),
 	onwarn: message => {
 		if (!['EMPTY_BUNDLE', 'CIRCULAR_DEPENDENCY'].includes(message.code)) {

@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
-import { Breadcrumb, Icons } from "@twin.org/ui-components-react";
+import { Breadcrumb, IconsSolid } from "@twin.org/ui-components-react";
 
 const meta = {
 	title: "Components/Breadcrumb",
@@ -22,7 +22,7 @@ export const Default: Story = {
 	args: {
 		children: "Breadcrumb",
 		content: [
-			{ label: "Home", href: "/", icon: Icons.Home },
+			{ label: "Home", href: "/", icon: IconsSolid.Home },
 			{ label: "Library", href: "/library" },
 			{ label: "Data", href: "/library/data" }
 		]

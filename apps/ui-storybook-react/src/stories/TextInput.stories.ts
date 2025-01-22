@@ -1,7 +1,12 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
-import { TextInput, TextInputColors, TextInputSizes, Icons } from "@twin.org/ui-components-react";
+import {
+	TextInput,
+	TextInputColors,
+	TextInputSizes,
+	IconsSolid
+} from "@twin.org/ui-components-react";
 import { createElement } from "react";
 
 const meta = {
@@ -136,13 +141,13 @@ export const ReadOnly: Story = {
 
 export const WithIcon: Story = {
 	args: {
-		icon: Icons.Search
+		icon: IconsSolid.Search
 	}
 };
 
 export const WithRightIcon: Story = {
 	args: {
-		rightIcon: Icons.Search
+		rightIcon: IconsSolid.Search
 	}
 };
 
@@ -163,7 +168,7 @@ export const Email: Story = {
 	args: {
 		type: "email",
 		placeholder: "Enter your email",
-		icon: Icons.Envelope,
+		icon: IconsSolid.Envelope,
 		required: true
 	}
 };

@@ -36,11 +36,15 @@ Get the specified figma variables collection.
 
 #### Parameters
 
-• **figmaVariables**: [`IFigmaVariableCollections`](../interfaces/IFigmaVariableCollections.md)
+##### figmaVariables
+
+[`IFigmaVariableCollections`](../interfaces/IFigmaVariableCollections.md)
 
 A complete figma variables object.
 
-• **collectionName**: `string`
+##### collectionName
+
+`string`
 
 The name of the collection to get.
 
@@ -60,15 +64,19 @@ Get the specified variable from the collection.
 
 #### Parameters
 
-• **collections**
+##### collections
 
 A complete figma variables object.
 
-• **collectionName**: `string`
+##### collectionName
+
+`string`
 
 The name of the collection to get.
 
-• **variableName**: `string`
+##### variableName
+
+`string`
 
 The name of the variable to get.
 

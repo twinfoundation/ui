@@ -102,6 +102,7 @@ export const HandleChange: Story = {
  */
 function handleOnChange(index: number): void {
 	// Custom onChange logic here
+
 	// eslint-disable-next-line no-console
 	console.log("Index changed to", index);
 }

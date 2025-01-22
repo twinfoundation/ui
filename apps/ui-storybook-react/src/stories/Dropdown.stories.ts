@@ -2,7 +2,12 @@
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
-import { Dropdown, DropdownPositions, DropdownSizes, Icons } from "@twin.org/ui-components-react";
+import {
+	Dropdown,
+	DropdownPositions,
+	DropdownSizes,
+	IconsSolid
+} from "@twin.org/ui-components-react";
 import { createElement } from "react";
 
 const meta = {
@@ -130,7 +135,7 @@ export const WithIcon: Story = {
 			{ label: "Settings" },
 			{ label: "Earnings" },
 			{ divider: true },
-			{ label: "Sign out", icon: Icons.CloseCircle }
+			{ label: "Sign out", icon: IconsSolid.CloseCircle }
 		]
 	}
 };
@@ -149,7 +154,7 @@ export const OnClick: Story = {
 			{ label: "Settings" },
 			{ label: "Earnings" },
 			{ divider: true },
-			{ label: "Sign out", icon: Icons.CloseCircle }
+			{ label: "Sign out", icon: IconsSolid.CloseCircle }
 		]
 	}
 };
@@ -162,7 +167,7 @@ export const CustomItem: Story = {
 			{ label: "Settings", className: "text-gray-800 bg-gray-100" },
 			{ label: "Earnings" },
 			{ divider: true },
-			{ label: "Sign out", icon: Icons.CloseCircle }
+			{ label: "Sign out", icon: IconsSolid.CloseCircle }
 		]
 	}
 };
@@ -175,7 +180,7 @@ export const RightPlacement: Story = {
 			{ label: "Settings" },
 			{ label: "Earnings" },
 			{ divider: true },
-			{ label: "Sign out", icon: Icons.CloseCircle }
+			{ label: "Sign out", icon: IconsSolid.CloseCircle }
 		],
 		placement: DropdownPositions.Right
 	}
@@ -189,7 +194,7 @@ export const LeftPlacement: Story = {
 			{ label: "Settings" },
 			{ label: "Earnings" },
 			{ divider: true },
-			{ label: "Sign out", icon: Icons.CloseCircle }
+			{ label: "Sign out", icon: IconsSolid.CloseCircle }
 		],
 		placement: DropdownPositions.Left
 	}
@@ -203,7 +208,7 @@ export const TopPlacement: Story = {
 			{ label: "Settings" },
 			{ label: "Earnings" },
 			{ divider: true },
-			{ label: "Sign out", icon: Icons.CloseCircle }
+			{ label: "Sign out", icon: IconsSolid.CloseCircle }
 		],
 		placement: DropdownPositions.Top
 	}

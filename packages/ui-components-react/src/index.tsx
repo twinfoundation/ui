@@ -1,6 +1,7 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
-export * as Icons from "flowbite-react-icons/outline";
+export * as IconsOutline from "flowbite-react-icons/outline";
+export * as IconsSolid from "flowbite-react-icons/solid";
 export * from "./button/button";
 export * from "./button/buttonColors";
 export * from "./button/buttonProps";

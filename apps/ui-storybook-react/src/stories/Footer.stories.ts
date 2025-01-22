@@ -1,7 +1,7 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
-import { Footer, Icons } from "@twin.org/ui-components-react";
+import { Footer, IconsSolid } from "@twin.org/ui-components-react";
 import { Footer as FlowbiteFooter } from "flowbite-react";
 import { createElement } from "react";
 
@@ -84,10 +84,10 @@ export const Default: Story = {
 				createElement(
 					"div",
 					{ className: "mt-4 flex space-x-6 sm:mt-0 sm:justify-center" },
-					createElement(FlowbiteFooter.Icon, { href: "#", icon: Icons.Home }),
-					createElement(FlowbiteFooter.Icon, { href: "#", icon: Icons.MailBox }),
-					createElement(FlowbiteFooter.Icon, { href: "#", icon: Icons.Music }),
-					createElement(FlowbiteFooter.Icon, { href: "#", icon: Icons.File })
+					createElement(FlowbiteFooter.Icon, { href: "#", icon: IconsSolid.Home }),
+					createElement(FlowbiteFooter.Icon, { href: "#", icon: IconsSolid.MailBox }),
+					createElement(FlowbiteFooter.Icon, { href: "#", icon: IconsSolid.Music }),
+					createElement(FlowbiteFooter.Icon, { href: "#", icon: IconsSolid.File })
 				)
 			)
 		)

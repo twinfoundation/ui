@@ -22,19 +22,27 @@ Generate the tailwind config theme from the figma variables.
 
 #### Parameters
 
-• **figmaVariablesCollections**: [`IFigmaVariableCollection`](../interfaces/IFigmaVariableCollection.md)[]
+##### figmaVariablesCollections
+
+[`IFigmaVariableCollection`](../interfaces/IFigmaVariableCollection.md)[]
 
 The figma variables collection.
 
-• **replacements**: `object`[] = `...`
+##### replacements
+
+`object`[] = `...`
 
 The replacements to apply to the theme.
 
-• **flattenSections**: `string`[] = `...`
+##### flattenSections
+
+`string`[] = `...`
 
 The sections to flatten from the variables.
 
-• **removeSections**: `string`[] = `...`
+##### removeSections
+
+`string`[] = `...`
 
 The sections to remove from the variables.
 
@@ -54,15 +62,21 @@ Build a content path.
 
 #### Parameters
 
-• **npmRoot**: `string`
+##### npmRoot
+
+`string`
 
 The root for the node modules.
 
-• **pkg**: `string`
+##### pkg
+
+`string`
 
 The package to get the content from.
 
-• **extensions**: `string`[]
+##### extensions
+
+`string`[]
 
 The extensions to use for content processing.
 
@@ -76,13 +90,13 @@ The content path.
 
 ### getPlugins()
 
-> `static` **getPlugins**(): `undefined` \| (`undefined` \| `PluginCreator` \| `object` \| (`options`) => `object`)[]
+> `static` **getPlugins**(): `undefined` \| (`undefined` \| `PluginCreator` \| \{\} \| (`options`) => `object`)[]
 
 Get the plugins.
 
 #### Returns
 
-`undefined` \| (`undefined` \| `PluginCreator` \| `object` \| (`options`) => `object`)[]
+`undefined` \| (`undefined` \| `PluginCreator` \| \{\} \| (`options`) => `object`)[]
 
 The plugins.
 

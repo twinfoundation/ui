@@ -1,7 +1,7 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
-import { Sidebar, Icons, Badge } from "@twin.org/ui-components-react";
+import { Sidebar, IconsSolid, Badge } from "@twin.org/ui-components-react";
 import { createElement } from "react";
 
 const meta = {
@@ -24,10 +24,10 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
 	args: {
 		items: [
-			{ label: "Dashboard", icon: Icons.Home, href: "#" },
-			{ label: "Projects", icon: Icons.Chart, href: "#", active: true },
-			{ label: "Team", icon: Icons.User, href: "#" },
-			{ label: "Settings", icon: Icons.UserSettings, href: "#" }
+			{ label: "Dashboard", icon: IconsSolid.Home, href: "#" },
+			{ label: "Projects", icon: IconsSolid.ChartPie, href: "#", active: true },
+			{ label: "Team", icon: IconsSolid.User, href: "#" },
+			{ label: "Settings", icon: IconsSolid.UserSettings, href: "#" }
 		]
 	}
 };
@@ -35,10 +35,10 @@ export const Default: Story = {
 export const WithCTA: Story = {
 	args: {
 		items: [
-			{ label: "Dashboard", icon: Icons.Home, href: "#" },
-			{ label: "Projects", icon: Icons.Chart, href: "#", active: true },
-			{ label: "Team", icon: Icons.User, href: "#" },
-			{ label: "Settings", icon: Icons.UserSettings, href: "#" }
+			{ label: "Dashboard", icon: IconsSolid.Home, href: "#" },
+			{ label: "Projects", icon: IconsSolid.ChartPie, href: "#", active: true },
+			{ label: "Team", icon: IconsSolid.User, href: "#" },
+			{ label: "Settings", icon: IconsSolid.UserSettings, href: "#" }
 		],
 		CTA: createElement(
 			"div",
