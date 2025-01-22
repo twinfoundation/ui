@@ -9,7 +9,7 @@ import { DropdownSizes } from "./dropdownSizes";
 export const DropdownPropTypes = {
 	placement: PropTypes.oneOf(Object.values(DropdownPositions)),
 	size: PropTypes.oneOf(Object.values(DropdownSizes)),
-	header: PropTypes.string,
+	header: PropTypes.node,
 	inline: PropTypes.bool,
 	items: PropTypes.arrayOf(
 		PropTypes.shape({

@@ -55,11 +55,7 @@ export class Dropdown extends React.Component<DropdownProps> {
 						</FlowbiteButton>
 					)}
 				>
-					{header && (
-						<FlowbiteDropdown.Header
-							dangerouslySetInnerHTML={{ __html: header ?? "" }}
-						></FlowbiteDropdown.Header>
-					)}
+					{header && <FlowbiteDropdown.Header>{header}</FlowbiteDropdown.Header>}
 					{items && items?.length > 0 ? (
 						items.map(item => {
 							if (item?.divider) {

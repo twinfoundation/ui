@@ -40,10 +40,7 @@ export class Banner extends React.Component<BannerProps> {
 				<div
 					className={`flex w-full justify-between border-gray-200 bg-gray-50 p-4 dark:border-gray-600 dark:bg-gray-700 ${bottom ? "border-t" : "border-b"}`}
 				>
-					<div
-						className="mx-auto flex items-center"
-						dangerouslySetInnerHTML={{ __html: children ?? "" }}
-					></div>
+					{children}
 					<FlowbiteBanner.CollapseButton
 						color="gray"
 						className="border-0 bg-transparent text-gray-500 dark:text-gray-400"

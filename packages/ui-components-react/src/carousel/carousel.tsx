@@ -32,16 +32,17 @@ export class Carousel extends React.Component<CarouselProps> {
 	 * @returns The component to render.
 	 */
 	public render(): ReactNode {
-		const { content, className, ...rest } = this._props;
+		const { items, className, ...rest } = this._props;
 		return (
 			<div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
 				<FlowbiteCarousel {...rest}>
-					{content && content?.length > 0 ? (
-						content.map(item => (
+					{items && items?.length > 0 ? (
+						items.map(item => (
 							<div
 								className={`flex h-full items-center justify-center ${className ?? "bg-gray-400 dark:bg-gray-700 dark:text-white"}`}
-								dangerouslySetInnerHTML={{ __html: item ?? "" }}
-							></div>
+							>
+								{item}
+							</div>
 						))
 					) : (
 						<></>

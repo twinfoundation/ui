@@ -32,17 +32,15 @@ export class Accordion extends React.Component<AccordionProps> {
 	 * @returns The component to render.
 	 */
 	public render(): ReactNode {
-		const { content, ...rest } = this._props;
+		const { items, ...rest } = this._props;
 
 		return (
 			<FlowbiteAccordion {...rest}>
-				{content && content?.length > 0 ? (
-					content.map((item, index) => (
+				{items && items?.length > 0 ? (
+					items.map((item, index) => (
 						<FlowbiteAccordion.Panel key={index}>
 							<FlowbiteAccordion.Title>{item?.title}</FlowbiteAccordion.Title>
-							<FlowbiteAccordion.Content>
-								<div dangerouslySetInnerHTML={{ __html: item?.html || "" }}></div>
-							</FlowbiteAccordion.Content>
+							<FlowbiteAccordion.Content>{item?.content}</FlowbiteAccordion.Content>
 						</FlowbiteAccordion.Panel>
 					))
 				) : (

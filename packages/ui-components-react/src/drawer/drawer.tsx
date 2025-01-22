@@ -35,11 +35,7 @@ export const Drawer: React.FC<DrawerProps> = (props: DrawerProps) => {
 			>
 				<FlowbiteDrawer.Header title={title} closeIcon={Bars} />
 				{items && items?.length > 0 ? (
-					items.map(item => (
-						<FlowbiteDrawer.Items
-							dangerouslySetInnerHTML={{ __html: item ?? "" }}
-						></FlowbiteDrawer.Items>
-					))
+					items.map(item => <FlowbiteDrawer.Items>{item}</FlowbiteDrawer.Items>)
 				) : (
 					<></>
 				)}

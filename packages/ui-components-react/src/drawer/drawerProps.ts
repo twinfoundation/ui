@@ -11,7 +11,7 @@ export const DrawerPropTypes = {
 	backdrop: PropTypes.bool,
 	edge: PropTypes.bool,
 	position: PropTypes.oneOf(Object.values(DrawerPositions)),
-	items: PropTypes.arrayOf(PropTypes.string)
+	items: PropTypes.arrayOf(PropTypes.node)
 };
 
 /**

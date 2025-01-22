@@ -3,6 +3,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 import { Dropdown, DropdownPositions, DropdownSizes, Icons } from "@twin.org/ui-components-react";
+import { createElement } from "react";
 
 const meta = {
 	title: "Components/Dropdown",
@@ -62,8 +63,20 @@ export const WithHeader: Story = {
 			{ divider: true },
 			{ label: "Sign out" }
 		],
-		header:
-			"<span class='block text-sm'>Bonnie Green</span><span class='block truncate text-sm font-medium'>bonnie@flowbite.com</span>"
+		header: createElement(
+			"div",
+			null,
+			createElement(
+				"span",
+				{ className: "block text-sm font-medium text-gray-500" },
+				"Account settings"
+			),
+			createElement(
+				"span",
+				{ className: "block text-xs text-gray-400" },
+				"Manage your account settings"
+			)
+		)
 	}
 };
 

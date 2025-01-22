@@ -11,7 +11,7 @@ export const CarouselPropTypes = {
 	rightControl: PropTypes.node,
 	indicators: PropTypes.bool,
 	pauseOnHover: PropTypes.bool,
-	content: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.node])).isRequired,
+	items: PropTypes.arrayOf(PropTypes.node),
 	className: PropTypes.string,
 	onSlideChange: PropTypes.func
 };
