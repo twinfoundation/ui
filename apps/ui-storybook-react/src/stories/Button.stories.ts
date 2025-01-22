@@ -94,3 +94,11 @@ export const Success: Story = {
 		color: "success"
 	}
 };
+
+export const Dark: Story = {
+	args: {
+		children: "Button",
+		size: "sm",
+		color: "dark"
+	}
+};

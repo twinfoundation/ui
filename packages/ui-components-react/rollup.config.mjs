@@ -3,13 +3,15 @@
 import { execSync } from 'node:child_process';
 import packageDetails from './package.json' with { type: 'json' };
 import copy from 'rollup-plugin-copy';
+import json from '@rollup/plugin-json';
 
 const isEsm = process.env.MODULE === 'esm';
 
 const plugins = [
 	copy({
 		targets: [{ src: 'src/css', dest: 'dist/' }]
-	})
+	}),
+	json()
 ];
 
 const globs = {};
@@ -42,7 +44,13 @@ export default {
 		exports: 'named',
 		globals: globs
 	},
-	external: [/^node:.*/, 'react/jsx-runtime', 'flowbite-react/tailwind'].concat(Object.keys(globs)),
+	external: [
+		/^node:.*/,
+		'react/jsx-runtime',
+		'flowbite-react/tailwind',
+		'flowbite-react-icons/outline',
+		'flowbite-react-icons/solid'
+	].concat(Object.keys(globs)),
 	onwarn: message => {
 		if (!['EMPTY_BUNDLE', 'CIRCULAR_DEPENDENCY'].includes(message.code)) {
 			process.stderr.write(`${message}\n`);

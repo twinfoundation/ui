@@ -39,7 +39,12 @@ export const ButtonColors = {
 	/**
 	 * Info.
 	 */
-	Info: "info"
+	Info: "info",
+
+	/**
+	 * Dark.
+	 */
+	Dark: "dark"
 } as const;
 
 /**

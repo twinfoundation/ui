@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/ui-components-react",
-	"version": "0.0.1-next.26",
+	"version": "0.0.1-next.27",
 	"description": "UI components for react",
 	"repository": {
 		"type": "git",
@@ -22,19 +22,22 @@
 		"dist": "npm run clean && npm run build && npm run bundle"
 	},
 	"dependencies": {
-		"@twin.org/ui-tailwind": "0.0.1-next.26",
+		"@twin.org/ui-tailwind": "0.0.1-next.27",
+		"flowbite-react-icons": "^1.2.0",
 		"prop-types": "^15.8.1"
 	},
 	"devDependencies": {
-		"@types/react": "^18.3.12",
-		"@types/react-dom": "^18.3.1",
+		"@rollup/plugin-json": "^6.1.0",
+		"@types/prop-types": "^15.7.14",
+		"@types/react": "^19.0.7",
+		"@types/react-dom": "^19.0.3",
 		"autoprefixer": "^10.4.20",
-		"postcss": "^8.4.49",
+		"postcss": "^8.5.1",
 		"rimraf": "^6.0.1",
-		"rollup": "^4.27.3",
+		"rollup": "^4.31.0",
 		"rollup-plugin-copy": "^3.5.0",
-		"tailwindcss": "^3.4.15",
-		"typescript": "^5.6.3"
+		"tailwindcss": "^3.4.17",
+		"typescript": "^5.7.3"
 	},
 	"peerDependencies": {
 		"flowbite": "^2.5.2",
@@ -45,9 +48,9 @@
 	},
 	"exports": {
 		".": {
+			"types": "./dist/types/index.d.ts",
 			"require": "./dist/cjs/index.cjs",
-			"import": "./dist/esm/index.mjs",
-			"types": "./dist/types/index.d.ts"
+			"import": "./dist/esm/index.mjs"
 		},
 		"./css/*.css": "./dist/css/*.css",
 		"./config/*.mjs": "./dist/config/*.js"
