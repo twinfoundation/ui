@@ -6,7 +6,7 @@ import type { PropsWithChildren } from "react";
 
 export const BreadcrumbPropTypes = {
 	className: PropTypes.string,
-	content: PropTypes.arrayOf(
+	items: PropTypes.arrayOf(
 		PropTypes.shape({
 			label: PropTypes.string.isRequired,
 			href: PropTypes.string,

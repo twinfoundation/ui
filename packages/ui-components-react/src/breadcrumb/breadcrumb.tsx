@@ -32,12 +32,12 @@ export class Breadcrumb extends React.Component<BreadcrumbProps> {
 	 * @returns The component to render.
 	 */
 	public render(): ReactNode {
-		const { content, className } = this._props;
+		const { items, className } = this._props;
 
 		return (
 			<FlowbiteBreadcrumb aria-label="Default breadcrumb example" className={className ?? ""}>
-				{content && content?.length > 0 ? (
-					content.map(item => (
+				{items && items?.length > 0 ? (
+					items.map(item => (
 						<FlowbiteBreadcrumb.Item href={item?.href ?? "#"} icon={item?.icon ?? undefined}>
 							{item?.label}
 						</FlowbiteBreadcrumb.Item>

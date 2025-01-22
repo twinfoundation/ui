@@ -21,7 +21,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
 	args: {
 		children: "Breadcrumb",
-		content: [
+		items: [
 			{ label: "Home", href: "/", icon: IconsSolid.Home },
 			{ label: "Library", href: "/library" },
 			{ label: "Data", href: "/library/data" }
@@ -33,7 +33,7 @@ export const CustomClass: Story = {
 	args: {
 		children: "Breadcrumb",
 		className: "bg-gray-50 py-2 px-2 dark:bg-gray-800",
-		content: [
+		items: [
 			{ label: "Home", href: "/", icon: IconsSolid.Home },
 			{ label: "Library", href: "/library" },
 			{ label: "Data", href: "/library/data" }
