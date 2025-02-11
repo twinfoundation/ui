@@ -8,7 +8,18 @@ import { ButtonSizes } from "./buttonSizes";
 
 export const ButtonPropTypes = {
 	color: PropTypes.oneOf(Object.values(ButtonColors)),
-	size: PropTypes.oneOf(Object.values(ButtonSizes))
+	size: PropTypes.oneOf(Object.values(ButtonSizes)),
+	outline: PropTypes.bool,
+	iconOnly: PropTypes.bool,
+	showButtonText: PropTypes.bool,
+	buttonText: PropTypes.string,
+	showLeftIcon: PropTypes.bool,
+	leftIcon: PropTypes.elementType,
+	rightIcon: PropTypes.elementType,
+	showRightIcon: PropTypes.bool,
+	icon: PropTypes.elementType,
+	disabled: PropTypes.bool,
+	className: PropTypes.string
 };
 
 /**

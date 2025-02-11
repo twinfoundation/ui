@@ -21,6 +21,22 @@ const colorClasses = {
 	dark: "focus:ring text-invert border-2 border-transparent bg-gray-800 hover:enabled:bg-gray-600 focus:ring-gray-200"
 };
 
+const buttonSizes = {
+	xs: "!h-7 !w-7",
+	sm: "!h-9 !w-9",
+	md: "!h-11 !w-11",
+	lg: "!h-14 !w-14",
+	xl: "!h-16 !w-16"
+} as const;
+
+const iconSizes = {
+	xs: "h-3.5 w-3.5",
+	sm: "h-4 w-4",
+	md: "h-5 w-5",
+	lg: "h-6 w-6",
+	xl: "h-7 w-7"
+} as const;
+
 /**
  * Button component.
  */
@@ -31,32 +47,66 @@ export class Button extends React.Component<ButtonProps> {
 	public static propTypes = ButtonPropTypes;
 
 	/**
-	 * The props of the component.
-	 */
-	private readonly _props: ButtonProps;
-
-	/**
-	 * Create a new instance of Button.
-	 * @param props The props of the component.
-	 */
-	constructor(props: ButtonProps) {
-		super(props);
-		this._props = props;
-	}
-
-	/**
 	 * Render the component.
 	 * @returns The component to render.
 	 */
 	public render(): ReactNode {
-		const { children, ...rest } = this._props;
+		const {
+			color = "primary",
+			size = "md",
+			outline = false,
+			iconOnly = false,
+			showButtonText = true,
+			buttonText = "",
+			showLeftIcon = true,
+			leftIcon: LeftIcon,
+			rightIcon: RightIcon,
+			showRightIcon = true,
+			icon: Icon,
+			disabled = false,
+			className,
+			children,
+			...rest
+		} = this.props;
+
+		const iconSize = iconSizes[size];
+
+		const buttonContent = (
+			<div className="inline-flex items-center justify-center">
+				{showLeftIcon && LeftIcon && (
+					<div className="flex items-center">
+						<LeftIcon className={`mr-1.5 ${iconSize}`} />
+					</div>
+				)}
+				{showButtonText && <span>{buttonText || children}</span>}
+				{showRightIcon && RightIcon && (
+					<div className="flex items-center">
+						<RightIcon className={`ml-1.5 ${iconSize}`} />
+					</div>
+				)}
+			</div>
+		);
+
+		const iconContent = Icon && (
+			<div className="flex h-full w-full items-center justify-center">
+				<Icon className={iconSize} />
+			</div>
+		);
+
+		const iconOnlyClasses = iconOnly
+			? `!aspect-square !rounded-full !p-0 ${buttonSizes[size]} [&>span]:!p-0 [&>span]:!m-0`
+			: "rounded-lg";
+
 		return (
 			<FlowbiteButton
-				{...rest}
-				className={`${colorClasses[this._props.color ?? "primary"]} ${this._props.className ?? ""}`}
 				color="primary"
+				size={size}
+				outline={outline}
+				disabled={disabled}
+				className={`${colorClasses[color ?? "primary"]} ${iconOnlyClasses} ${className ?? ""}`}
+				{...rest}
 			>
-				{children}
+				{iconOnly ? iconContent : buttonContent}
 			</FlowbiteButton>
 		);
 	}

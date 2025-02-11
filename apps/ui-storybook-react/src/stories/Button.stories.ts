@@ -3,6 +3,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 import { Button, ButtonColors, ButtonSizes } from "@twin.org/ui-components-react";
+import { HiOutlinePlus, HiArrowCircleRight, HiShoppingBag } from "react-icons/hi";
 
 const meta = {
 	title: "Components/Button",
@@ -15,6 +16,36 @@ const meta = {
 		size: {
 			options: Object.values(ButtonSizes),
 			control: { type: "inline-radio" }
+		},
+		outline: {
+			control: "boolean"
+		},
+		iconOnly: {
+			control: "boolean"
+		},
+		showButtonText: {
+			control: "boolean"
+		},
+		buttonText: {
+			control: "text"
+		},
+		showLeftIcon: {
+			control: "boolean"
+		},
+		leftIcon: {
+			control: "object"
+		},
+		rightIcon: {
+			control: "object"
+		},
+		showRightIcon: {
+			control: "boolean"
+		},
+		icon: {
+			control: "object"
+		},
+		disabled: {
+			control: "boolean"
 		}
 	},
 	args: { onClick: fn() }
@@ -23,82 +54,113 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const PrimarySm: Story = {
+export const Default: Story = {
 	args: {
-		children: "Button",
-		size: "sm",
-		color: "primary"
-	}
-};
-
-export const PrimaryXs: Story = {
-	args: {
-		children: "Button",
+		children: "Button text",
 		size: "xs",
-		color: "primary"
+		color: ButtonColors.Primary,
+		outline: false,
+		showButtonText: true,
+		showLeftIcon: true,
+		leftIcon: HiShoppingBag,
+		showRightIcon: true,
+		rightIcon: HiArrowCircleRight,
+		disabled: false
 	}
 };
 
-export const PrimaryLg: Story = {
+export const Primary: Story = {
 	args: {
-		children: "Button",
-		size: "lg",
-		color: "primary"
-	}
-};
-
-export const PrimaryXl: Story = {
-	args: {
-		children: "Button",
-		size: "xl",
-		color: "primary"
+		children: "Primary Button",
+		color: ButtonColors.Primary
 	}
 };
 
 export const Secondary: Story = {
 	args: {
-		children: "Button",
-		size: "sm",
-		color: "secondary"
+		children: "Secondary Button",
+		color: ButtonColors.Secondary
 	}
 };
 
 export const Plain: Story = {
 	args: {
-		children: "Button",
-		size: "sm",
-		color: "plain"
+		children: "Plain Button",
+		color: ButtonColors.Plain
 	}
 };
 
 export const Error: Story = {
 	args: {
-		children: "Button",
-		size: "sm",
-		color: "error"
+		children: "Error Button",
+		color: ButtonColors.Error
 	}
 };
 
 export const Warning: Story = {
 	args: {
-		children: "Button",
-		size: "sm",
-		color: "warning"
+		children: "Warning Button",
+		color: ButtonColors.Warning
 	}
 };
 
 export const Success: Story = {
 	args: {
-		children: "Button",
-		size: "sm",
-		color: "success"
+		children: "Success Button",
+		color: ButtonColors.Success
+	}
+};
+
+export const Info: Story = {
+	args: {
+		children: "Info Button",
+		color: ButtonColors.Info
 	}
 };
 
 export const Dark: Story = {
 	args: {
-		children: "Button",
-		size: "sm",
-		color: "dark"
+		children: "Dark Button",
+		color: ButtonColors.Dark
+	}
+};
+
+export const IconOnly: Story = {
+	args: {
+		size: "xs",
+		color: ButtonColors.Primary,
+		iconOnly: true,
+		icon: HiOutlinePlus
+	}
+};
+
+export const WithLeftIcon: Story = {
+	args: {
+		children: "Add to cart",
+		size: "xs",
+		color: ButtonColors.Primary,
+		showLeftIcon: true,
+		leftIcon: HiShoppingBag,
+		showRightIcon: false
+	}
+};
+
+export const WithRightIcon: Story = {
+	args: {
+		children: "Next",
+		size: "xs",
+		color: ButtonColors.Primary,
+		showLeftIcon: false,
+		showRightIcon: true,
+		rightIcon: HiArrowCircleRight
+	}
+};
+
+export const DisabledState: Story = {
+	args: {
+		children: "Disabled button",
+		size: "xs",
+		color: ButtonColors.Primary,
+		disabled: true
 	}
 };
