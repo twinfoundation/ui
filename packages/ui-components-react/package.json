@@ -19,7 +19,9 @@
 		"bundle:esm": "rollup --config rollup.config.mjs --environment MODULE:esm",
 		"bundle:cjs": "rollup --config rollup.config.mjs --environment MODULE:cjs",
 		"bundle": "npm run bundle:esm && npm run bundle:cjs",
-		"dist": "npm run clean && npm run build && npm run bundle"
+		"dist": "npm run clean && npm run build && npm run bundle",
+		"dev:watch": "concurrently \"npm run build -- --watch\" \"nodemon --watch dist/es --exec \\\"npm run bundle\\\"\"",
+		"dev": "npm run clean && npm run build && npm run dev:watch"
 	},
 	"dependencies": {
 		"@twin.org/ui-tailwind": "0.0.1-next.28",
@@ -32,6 +34,8 @@
 		"@types/react": "^19.0.7",
 		"@types/react-dom": "^19.0.3",
 		"autoprefixer": "^10.4.20",
+		"concurrently": "^7.6.0",
+		"nodemon": "^2.0.22",
 		"postcss": "^8.5.1",
 		"rimraf": "^6.0.1",
 		"rollup": "^4.31.0",
