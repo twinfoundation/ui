@@ -19,6 +19,7 @@ export { default as Textarea } from "./components/forms/textarea.svelte";
 export { default as Button } from "./components/interaction/button.svelte";
 export { default as DarkMode } from "./components/interaction/darkMode.svelte";
 export { default as Link } from "./components/interaction/link.svelte";
+export { default as Tooltip } from "./components/interaction/tooltip.svelte";
 export { default as Card } from "./components/layout/card.svelte";
 export { default as CardBody } from "./components/layout/cardBody.svelte";
 export { default as CardFooter } from "./components/layout/cardFooter.svelte";
