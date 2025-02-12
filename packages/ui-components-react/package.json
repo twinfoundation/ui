@@ -19,7 +19,8 @@
 		"bundle:esm": "rollup --config rollup.config.mjs --environment MODULE:esm",
 		"bundle:cjs": "rollup --config rollup.config.mjs --environment MODULE:cjs",
 		"bundle": "npm run bundle:esm && npm run bundle:cjs",
-		"dist": "npm run clean && npm run build && npm run bundle"
+		"dist": "npm run clean && npm run build && npm run bundle",
+		"dist:no-test": "npm run clean && npm run build && npm run bundle"
 	},
 	"dependencies": {
 		"@twin.org/ui-tailwind": "0.0.1-next.29",
