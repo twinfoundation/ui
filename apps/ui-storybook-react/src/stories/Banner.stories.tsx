@@ -4,6 +4,10 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Banner } from "@twin.org/ui-components-react";
 import { MdAnnouncement } from "react-icons/md";
 
+/**
+ * Storybook component configuration for the Banner component.
+ * @type {Meta<typeof Banner>}
+ */
 const meta = {
 	title: "Components/Banner",
 	component: Banner,
@@ -17,8 +21,16 @@ const meta = {
 } satisfies Meta<typeof Banner>;
 
 export default meta;
+
+/**
+ * Type for Banner component stories.
+ */
 type Story = StoryObj<typeof meta>;
 
+/**
+ * Story for the Banner component.
+ * Displays a banner that can be positioned at the top or bottom of the viewport.
+ */
 export const Default: Story = {
 	args: {
 		children: (
@@ -40,6 +52,10 @@ export const Default: Story = {
 	}
 };
 
+/**
+ * Story for the Banner component.
+ * Displays a banner that can be positioned at the top or bottom of the viewport.
+ */
 export const Bottom: Story = {
 	args: {
 		children: (
