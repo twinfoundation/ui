@@ -24,18 +24,16 @@ This mono-repository contains the UI components for building TWIN apps.
 
 1. Clone the repository:
 
-   
-   ```bash
-   git clone https://github.com/twinfoundation/ui.git
-   cd ui
-   ```
+```bash
+git clone https://github.com/twinfoundation/ui.git
+cd ui
+```
 
 2. Install dependencies:
 
-   
-   ```bash
-   npm install
-   ```
+```bash
+npm install
+```
 
 ### Development Workflow
 
@@ -45,27 +43,25 @@ To work on React components with hot reloading:
 
 1. Build the Tailwind package first:
 
-   
-   ```bash
-   cd packages/ui-tailwind
-   npm run dist
-   cd ../..
-   ```
+```bash
+cd packages/ui-tailwind
+npm run dist
+cd ../..
+```
 
 2. Start the React components in development mode (in a separate terminal):
 
-   
-   ```bash
-   cd packages/ui-components-react
-   npm run dev
-   ```
+```bash
+cd packages/ui-components-react
+npm run dev
+```
 
 3. Run Storybook for React (in another terminal):
-   
-   ```bash
-   cd apps/ui-storybook-react
-   npm run storybook
-   ```
+
+```bash
+cd apps/ui-storybook-react
+npm run storybook
+```
 
 The Storybook will be available at [http://localhost:6006](http://localhost:6006). Any changes you make to the components in `packages/ui-components-react/src` will automatically trigger a rebuild and refresh the browser.
 
@@ -75,18 +71,17 @@ Follow similar steps in the Svelte packages:
 
 1. Start the Svelte components build:
 
-   
-   ```bash
-   cd packages/ui-components-svelte
-   npm run dev
-   ```
+```bash
+cd packages/ui-components-svelte
+npm run dev
+```
 
 2. Run Storybook for Svelte (in another terminal):
-   
-   ```bash
-   cd apps/ui-storybook-svelte
-   npm run storybook
-   ```
+
+```bash
+cd apps/ui-storybook-svelte
+npm run storybook
+```
 
 ## Contributing
 
