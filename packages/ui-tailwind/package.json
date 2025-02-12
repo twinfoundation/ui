@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/ui-tailwind",
-	"version": "0.0.1-next.28",
+	"version": "0.0.1-next.29",
 	"description": "UI package for tailwind",
 	"repository": {
 		"type": "git",
@@ -34,15 +34,15 @@
 		"@rollup/plugin-json": "^6.1.0",
 		"@twin.org/nameof-vitest-plugin": "next",
 		"autoprefixer": "^10.4.20",
-		"postcss": "^8.5.1",
+		"postcss": "^8.5.2",
 		"rimraf": "^6.0.1",
-		"rollup": "^4.31.0",
+		"rollup": "^4.34.6",
 		"rollup-plugin-copy": "^3.5.0",
 		"tailwindcss": "^3.4.17",
-		"typedoc": "^0.27.6",
-		"typedoc-plugin-markdown": "^4.4.1",
+		"typedoc": "^0.27.7",
+		"typedoc-plugin-markdown": "^4.4.2",
 		"typescript": "^5.7.3",
-		"vitest": "^3.0.3"
+		"vitest": "^3.0.5"
 	},
 	"exports": {
 		".": {
