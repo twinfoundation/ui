@@ -50,9 +50,7 @@
 		"typescriptreact": "javascript"
 	},
 	"tailwindCSS.experimental.configFile": {
-		"/Users/albertolive/Repos/iota/ui/packages/ui-components-react/tailwind.config.ts": [
-			"/Users/albertolive/Repos/iota/ui/packages/ui-components-react/**"
-		]
+		"./packages/ui-components-react/tailwind.config.ts": ["./packages/ui-components-react/**"]
 	},
 	"tailwindCSS.classAttributes": ["class", "className", "ngClass", ".*Classes.*"]
 }
