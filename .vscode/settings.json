@@ -37,5 +37,22 @@
 		"**/*.{md,mkd,mdwn,mdown,markdown,markdn,mdtxt,mdtext,workbook}",
 		"!**/node_modules",
 		"**/docs/reference/**"
-	]
+	],
+	"files.associations": {
+		"*.css": "tailwindcss",
+		"*.tsx": "typescriptreact"
+	},
+	"editor.quickSuggestions": {
+		"strings": "on"
+	},
+	"tailwindCSS.includeLanguages": {
+		"typescript": "javascript",
+		"typescriptreact": "javascript"
+	},
+	"tailwindCSS.experimental.configFile": {
+		"/Users/albertolive/Repos/iota/ui/packages/ui-components-react/tailwind.config.ts": [
+			"/Users/albertolive/Repos/iota/ui/packages/ui-components-react/**"
+		]
+	},
+	"tailwindCSS.classAttributes": ["class", "className", "ngClass", ".*Classes.*"]
 }
