@@ -5,12 +5,12 @@ import React, { type ReactNode } from "react";
 import { BadgePropTypes, type BadgeProps } from "./badgeProps";
 
 const colorClasses = {
-	gray: "border-current bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300",
-	failure: "border-current bg-red-100 text-red-700 dark:bg-red-200 dark:text-red-800",
-	warning: "border-current bg-system-warning-tints-50 dark:bg-system-warning-tints-50 text-warning",
+	gray: "border-current bg-neutral-200 text-primary dark:bg-gray-700 dark:text-gray-300",
+	failure: "border-current bg-surface-error text-error dark:bg-red-200 dark:text-red-800",
+	warning: "border-current bg-surface-warning dark:bg-system-warning-tints-50 text-warning",
 	success:
-		"border-current bg-system-success-tints-100 text-system-success-tints-700 dark:bg-system-success-tints-200 dark:text-system-success-tints-800",
-	info: "border-transparent Surface/surface-bg-information"
+		"border-current bg-surface-success text-success dark:bg-system-success-tints-200 dark:text-system-success-tints-800",
+	info: "border-transparent bg-surface-information text-information"
 };
 
 /**
