@@ -4,21 +4,17 @@ import { Button as FlowbiteButton } from "flowbite-react";
 import React, { type ReactNode } from "react";
 import { ButtonPropTypes, type ButtonProps } from "./buttonProps";
 
+const BASE_CLASSES = "border-2 border-transparent focus:outline-none focus:ring-2";
+
 const colorClasses = {
-	primary:
-		"focus:ring text-invert border-2 border-transparent bg-surface-button hover:enabled:bg-surface-button-hover dark:bg-surface-button dark:hover:enabled:bg-surface-button-hover focus:ring-surface-button-pressed",
-	secondary:
-		"focus:ring text-invert border-2 border-transparent bg-surface-button-alt hover:enabled:bg-surface-button-alt-hover focus:ring-surface-button-alt-pressed",
-	error:
-		"focus:ring text-invert border-2 border-transparent bg-error hover:enabled:bg-system-error-tints-600 focus:ring-system-error-tints-200",
-	warning:
-		"focus:ring text-invert border-2 border-transparent bg-warning hover:enabled:bg-system-warning-tints-600 focus:ring-system-warning-tints-200",
-	success:
-		"focus:ring text-invert border-2 border-transparent bg-success hover:enabled:bg-system-success-tints-600 focus:ring-system-success-tints-200",
-	info: "focus:ring text-invert border-2 border-transparent bg-information hover:enabled:bg-system-information-tints-600 focus:ring-system-information-tints-200",
-	plain:
-		"focus:ring text-primary border-2 border-transparent bg-surface-second hover:enabled:bg-surface-third focus:ring-surface-button-pressed dark:text-invert dark:bg-surface-third-dark dark:hover:enabled:bg-surface-second-dark dark:focus:ring-surface-button-pressed",
-	dark: "focus:ring text-invert border-2 border-transparent bg-gray-800 hover:enabled:bg-gray-600 focus:ring-gray-200"
+	primary: `${BASE_CLASSES} bg-surface-button hover:enabled:bg-surface-button-hover focus:ring-surface-button-pressed text-invert`,
+	secondary: `${BASE_CLASSES} bg-surface-button-alt hover:enabled:bg-surface-button-alt-hover focus:ring-surface-button-alt-pressed text-invert`,
+	error: `${BASE_CLASSES} bg-error hover:enabled:bg-system-error-tints-600 focus:ring-system-error-tints-200 text-invert`,
+	warning: `${BASE_CLASSES} bg-warning hover:enabled:bg-system-warning-tints-600 focus:ring-system-warning-tints-200 text-invert`,
+	success: `${BASE_CLASSES} bg-success hover:enabled:bg-system-success-tints-600 focus:ring-system-success-tints-200 text-invert`,
+	info: `${BASE_CLASSES} bg-information hover:enabled:bg-system-information-tints-600 focus:ring-system-information-tints-200 text-invert`,
+	plain: `${BASE_CLASSES} bg-surface-second hover:enabled:bg-surface-third focus:ring-gray-300 dark:text-invert dark:bg-surface-third-dark dark:hover:enabled:bg-surface-second-dark dark:focus:ring-gray-300`,
+	dark: `${BASE_CLASSES} bg-gray-800 hover:enabled:bg-gray-600 focus:ring-gray-200 text-invert`
 };
 
 const buttonSizes = {
