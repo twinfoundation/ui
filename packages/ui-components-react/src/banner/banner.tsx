@@ -38,7 +38,7 @@ export class Banner extends React.Component<BannerProps> {
 		return (
 			<FlowbiteBanner>
 				<div
-					className={`flex w-full justify-between border-gray-200 bg-gray-50 p-4 dark:border-gray-600 dark:bg-gray-700 ${bottom ? "border-t" : "border-b"}`}
+					className={`fixed ${bottom ? "bottom-0" : "top-0"} left-0 z-50 flex w-full justify-between border-gray-200 bg-gray-50 p-4 dark:border-gray-600 dark:bg-gray-700 ${bottom ? "border-t" : "border-b"}`}
 				>
 					{children}
 					<FlowbiteBanner.CollapseButton

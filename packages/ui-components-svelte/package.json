@@ -24,7 +24,8 @@
 		"docs:clean": "echo Nothing to clean",
 		"docs": "npm run docs:clean",
 		"package": "svelte-package",
-		"dist": "npm run clean && npm run build && npm run check && npm run merge-locales && npm run docs && npm run package"
+		"dist": "npm run clean && npm run build && npm run check && npm run merge-locales && npm run docs && npm run package",
+		"dist:no-test": "npm run clean && npm run build && npm run check && npm run merge-locales && npm run docs && npm run package"
 	},
 	"dependencies": {
 		"@twin.org/core": "next",

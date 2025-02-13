@@ -25,7 +25,8 @@
 		"docs:clean": "rimraf docs/reference",
 		"docs:generate": "typedoc",
 		"docs": "npm run docs:clean && npm run docs:generate",
-		"dist": "npm run clean && npm run build && npm run test && npm run bundle && npm run docs"
+		"dist": "npm run clean && npm run build && npm run test && npm run bundle && npm run docs",
+		"dist:no-test": "npm run clean && npm run build && npm run bundle && npm run docs"
 	},
 	"dependencies": {
 		"@twin.org/core": "next"
