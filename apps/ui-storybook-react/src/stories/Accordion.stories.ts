@@ -136,23 +136,28 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-	args: {}
+	args: {
+		children: []
+	}
 };
 
 export const AlwaysOpen: Story = {
 	args: {
+		children: [],
 		alwaysOpen: true
 	}
 };
 
 export const CollapseAll: Story = {
 	args: {
-		collapseAll: true
+		collapseAll: true,
+		children: []
 	}
 };
 
 export const Flush: Story = {
 	args: {
-		flush: true
+		flush: true,
+		children: []
 	}
 };

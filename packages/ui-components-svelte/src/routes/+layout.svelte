@@ -78,6 +78,11 @@
 					label: 'Badges',
 					route: '/badges',
 					icon: Icons.HomeSolid
+				},
+				{
+					label: 'Tooltip',
+					route: '/tooltip',
+					icon: Icons.MessageCaptionOutline
 				}
 			]
 		}
