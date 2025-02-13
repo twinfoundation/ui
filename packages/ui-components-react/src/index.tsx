@@ -9,6 +9,8 @@ export * from "./button/buttonSizes";
 export * from "./alert/alert";
 export * from "./alert/alertColors";
 export * from "./alert/alertProps";
+export * from "./avatar/avatar";
+export * from "./avatar/avatarProps";
 export * from "./accordion/accordion";
 export * from "./accordion/accordionProps";
 export * from "./banner/banner";
