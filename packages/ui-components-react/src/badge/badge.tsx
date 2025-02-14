@@ -5,12 +5,12 @@ import React, { type ReactNode } from "react";
 import { BadgePropTypes, type BadgeProps } from "./badgeProps";
 
 const colorClasses = {
-	gray: "border-current bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300",
-	failure: "border-current bg-red-100 text-red-700 dark:bg-red-200 dark:text-red-800",
-	warning: "border-current bg-system-warning-tints-50 dark:bg-system-warning-tints-50 text-warning",
+	gray: "border-current bg-neutral-200 text-primary dark:bg-gray-700 dark:text-gray-300",
+	failure: "border-current bg-surface-error text-error dark:bg-red-200 dark:text-red-800",
+	warning: "border-current bg-surface-warning dark:bg-system-warning-tints-50 text-warning",
 	success:
-		"border-current bg-system-success-tints-100 text-system-success-tints-700 dark:bg-system-success-tints-200 dark:text-system-success-tints-800",
-	info: "text-invert border-2 border-transparent bg-information"
+		"border-current bg-surface-success text-success dark:bg-system-success-tints-200 dark:text-system-success-tints-800",
+	info: "border-transparent bg-surface-information text-information"
 };
 
 /**
@@ -47,21 +47,27 @@ export class Badge extends React.Component<BadgeProps> {
 			<div className="flex flex-wrap gap-2">
 				<FlowbiteBadge
 					id={badgeId}
-					className={`${colorClasses[this._props.color ?? "info"]} ${this._props.className ?? ""} ${!onlyIcon ? "px-4 py-1" : ""}`}
+					className={`${colorClasses[this._props.color ?? "info"]} ${this._props.className ?? ""} ${
+						onlyIcon ? "rounded-full" : "rounded-md"
+					} ${
+						onlyIcon
+							? "flex aspect-square !h-8 items-center justify-center gap-0 [&>span:empty]:hidden [&>svg]:!h-5 [&>svg]:!w-5"
+							: "px-4 py-1"
+					}`}
 					color={rest.color || "info"}
 					size={rest.size || ""}
 					icon={typeof rest.icon === "function" ? rest.icon : undefined}
 				>
-					{!onlyIcon && children}
+					{!onlyIcon && <span className={`font-medium ${rest.icon ? "" : ""}`}>{children}</span>}
 					{dismiss && (
 						<button
 							type="button"
-							className="ms-2 inline-flex items-center rounded-sm bg-transparent p-1 text-sm"
+							className={`ms-2 inline-flex items-center bg-transparent align-middle ${rest.size}`}
 							onClick={() => document.querySelector(`#${badgeId}`)?.remove()}
 							aria-label="Remove"
 						>
 							<svg
-								className="h-2 w-2"
+								className="h-3 w-3"
 								aria-hidden="true"
 								xmlns="http://www.w3.org/2000/svg"
 								fill="none"
