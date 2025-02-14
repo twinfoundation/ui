@@ -2,8 +2,13 @@
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
-import { Button, ButtonColors, ButtonSizes } from "@twin.org/ui-components-react";
-import { HiOutlinePlus, HiArrowCircleRight, HiShoppingBag } from "react-icons/hi";
+import {
+	Button,
+	ButtonColors,
+	ButtonSizes,
+	IconsSolid,
+	IconsOutline
+} from "@twin.org/ui-components-react";
 
 const meta = {
 	title: "Components/Button",
@@ -62,9 +67,9 @@ export const Default: Story = {
 		outline: false,
 		showButtonText: true,
 		showLeftIcon: true,
-		leftIcon: HiShoppingBag,
+		leftIcon: IconsSolid.ShoppingBag,
 		showRightIcon: true,
-		rightIcon: HiArrowCircleRight,
+		rightIcon: IconsSolid.ArrowRightAlt,
 		disabled: false
 	}
 };
@@ -130,7 +135,7 @@ export const IconOnly: Story = {
 		size: "xs",
 		color: ButtonColors.Primary,
 		iconOnly: true,
-		icon: HiOutlinePlus
+		icon: IconsOutline.Plus
 	}
 };
 
@@ -140,7 +145,7 @@ export const WithLeftIcon: Story = {
 		size: "xs",
 		color: ButtonColors.Primary,
 		showLeftIcon: true,
-		leftIcon: HiShoppingBag,
+		leftIcon: IconsSolid.ShoppingBag,
 		showRightIcon: false
 	}
 };
@@ -152,7 +157,7 @@ export const WithRightIcon: Story = {
 		color: ButtonColors.Primary,
 		showLeftIcon: false,
 		showRightIcon: true,
-		rightIcon: HiArrowCircleRight
+		rightIcon: IconsSolid.ArrowRightAlt
 	}
 };
 
