@@ -7,7 +7,7 @@
 // eslint-disable-next-line @typescript-eslint/naming-convention
 export const ButtonSizes = {
 	/**
-	 * Extras Small.
+	 * Extra Small.
 	 */
 	ExtraSmall: "xs",
 
@@ -15,6 +15,11 @@ export const ButtonSizes = {
 	 * Small.
 	 */
 	Small: "sm",
+
+	/**
+	 * Medium.
+	 */
+	Medium: "md",
 
 	/**
 	 * Large.
@@ -28,6 +33,6 @@ export const ButtonSizes = {
 } as const;
 
 /**
- * Button sizes.
+ * Button sizes type.
  */
-export type ButtonSizes = (typeof ButtonSizes)[keyof typeof ButtonSizes];
+export type ButtonSize = (typeof ButtonSizes)[keyof typeof ButtonSizes];
