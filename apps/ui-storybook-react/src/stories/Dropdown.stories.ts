@@ -147,7 +147,6 @@ export const OnClick: Story = {
 			{
 				label: "Dashboard",
 				onClick: () => {
-					// eslint-disable-next-line no-console
 					console.log("Dashboard clicked");
 				}
 			},

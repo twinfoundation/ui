@@ -141,6 +141,5 @@ function additionalContent(): ReactNode {
 function handleDismiss(): void {
 	// Custom dismiss logic here
 
-	// eslint-disable-next-line no-console
 	console.log("Dismissed");
 }
