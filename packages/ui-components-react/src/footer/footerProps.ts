@@ -12,5 +12,5 @@ export const FooterPropTypes = {
  * Footer props.
  */
 export type FooterProps = PropsWithChildren<
-	InferProps<typeof FooterPropTypes> & Omit<FlowbiteFooterProps, "color" | "label">
+	InferProps<typeof FooterPropTypes> & Pick<FlowbiteFooterProps, "container">
 >;
