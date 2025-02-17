@@ -12,7 +12,8 @@ const meta = {
 			{ title: "Item 1", icon: IconsSolid.User },
 			{ title: "Item 2", icon: IconsSolid.Database, active: true },
 			{ title: "Item 3", disabled: true },
-			{ title: "Item 4" }
+			{ title: "Item 4" },
+			{ title: "Item 5", href: "#" }
 		]
 	}
 } satisfies Meta<typeof ListGroup>;

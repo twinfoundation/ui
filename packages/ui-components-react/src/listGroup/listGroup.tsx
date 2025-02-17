@@ -32,25 +32,22 @@ export class ListGroup extends React.Component<ListGroupProps> {
 	 * @returns The component to render.
 	 */
 	public render(): ReactNode {
-		const { items } = this._props;
+		const { items, className } = this._props;
+
 		return (
-			<div className="flex justify-center">
-				<FlowbiteListGroup className="w-48">
-					{items && items?.length > 0 ? (
-						items.map(item => (
-							<FlowbiteListGroup.Item
-								icon={item?.icon ?? undefined}
-								disabled={item?.disabled ?? false}
-								active={item?.active ?? false}
-							>
-								{item?.title}
-							</FlowbiteListGroup.Item>
-						))
-					) : (
-						<></>
-					)}
-				</FlowbiteListGroup>
-			</div>
+			<FlowbiteListGroup className={className}>
+				{items.map((item, index) => (
+					<FlowbiteListGroup.Item
+						key={`${item.title}-${index}`}
+						icon={item.icon}
+						disabled={item.disabled}
+						active={item.active}
+						href={item.href}
+					>
+						{item.title}
+					</FlowbiteListGroup.Item>
+				))}
+			</FlowbiteListGroup>
 		);
 	}
 }
