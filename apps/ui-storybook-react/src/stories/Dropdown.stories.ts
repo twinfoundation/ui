@@ -167,7 +167,7 @@ export const CustomItem: Story = {
 			{ label: "Settings", className: "text-gray-800 bg-gray-100" },
 			{ label: "Earnings" },
 			{ divider: true },
-			{ label: "Sign out", icon: IconsSolid.CloseCircle }
+			{ label: "Sign out", icon: IconsSolid.CloseCircle, className: "text-red-500" }
 		]
 	}
 };
@@ -211,5 +211,30 @@ export const TopPlacement: Story = {
 			{ label: "Sign out", icon: IconsSolid.CloseCircle }
 		],
 		placement: DropdownPositions.Top
+	}
+};
+
+export const WithCheckboxItems: Story = {
+	args: {
+		title: "Options",
+		items: [
+			{
+				label: "Unchecked and label",
+				checkbox: true,
+				checked: false
+			},
+			{
+				label: "Checked and label",
+				checkbox: true,
+				checked: true,
+				className: "text-primary"
+			},
+			{ divider: true },
+			{
+				label: "Default checkbox",
+				checkbox: true,
+				checked: false
+			}
+		]
 	}
 };
