@@ -25,7 +25,7 @@
 			"base": "mt-2 flex space-x-2",
 			"button": {
 				"base": "w-full rounded-lg px-5 py-2 text-center text-sm font-medium focus:ring-4 focus:ring-cyan-300",
-				"today": "bg-surface-button text-white hover:bg-surface-button-700 dark:bg-surface-button dark:hover:bg-surface-button-700",
+				"today": "bg-surface-button-alt text-white hover:bg-surface-button-alt-hover dark:bg-surface-button dark:hover:bg-surface-button-700",
 				"clear": "border border-gray-300 bg-white text-gray-900 hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600"
 			}
 		}
@@ -40,7 +40,7 @@
 				"base": "grid w-64 grid-cols-7",
 				"item": {
 					"base": "block flex-1 cursor-pointer rounded-lg border-0 text-center text-sm font-semibold leading-9 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-600",
-					"selected": "bg-surface-button text-white hover:bg-surface-button",
+					"selected": "bg-surface-button text-white hover:bg-surface-button-700",
 					"disabled": "text-gray-500"
 				}
 			}

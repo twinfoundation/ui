@@ -3,10 +3,9 @@
 import type { DatepickerProps as FlowbiteDatepickerProps } from "flowbite-react";
 import PropTypes, { type InferProps } from "prop-types";
 import type { PropsWithChildren } from "react";
-import { DatepickerDays } from "./datepickerDays";
 
 export const DatepickerPropTypes = {
-	weekStart: PropTypes.oneOf(Object.values(DatepickerDays)),
+	weekStart: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
 	localization: PropTypes.shape({
 		language: PropTypes.string,
 		labelTodayButton: PropTypes.string,
