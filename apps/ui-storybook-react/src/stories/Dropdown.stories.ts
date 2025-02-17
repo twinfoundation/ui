@@ -218,19 +218,19 @@ export const WithCheckboxItems: Story = {
 	args: {
 		title: "Options",
 		items: [
-			{ 
+			{
 				label: "Unchecked and label",
 				checkbox: true,
 				checked: false
 			},
-			{ 
+			{
 				label: "Checked and label",
 				checkbox: true,
 				checked: true,
 				className: "text-primary"
 			},
 			{ divider: true },
-			{ 
+			{
 				label: "Default checkbox",
 				checkbox: true,
 				checked: false
