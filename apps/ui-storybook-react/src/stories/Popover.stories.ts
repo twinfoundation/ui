@@ -121,32 +121,31 @@ export const ProfileCard: Story = {
 			children: [
 				React.createElement("div", {
 					key: "header",
-					className: "flex items-start justify-between p-3",
+					className: "flex items-center justify-between p-4",
 					children: [
 						React.createElement("div", {
 							key: "profile",
-							className: "flex items-start",
+							className: "flex items-center",
 							children: [
 								React.createElement(Avatar, {
 									key: "avatar",
 									img: "https://flowbite.com/docs/images/people/profile-picture-5.jpg",
-									alt: "Jese Leos",
-									size: "md"
+									alt: "John Smith",
+									size: "lg"
 								}),
 								React.createElement("div", {
 									key: "info",
-									className: "ml-2",
+									className: "ml-3",
 									children: [
 										React.createElement("p", {
 											key: "name",
-											className:
-												"text-base font-medium leading-tight text-gray-900 dark:text-white",
-											children: "Jese Leos"
+											className: "text-lg font-semibold text-gray-900 dark:text-white",
+											children: "John Smith"
 										}),
 										React.createElement("p", {
 											key: "username",
-											className: "text-sm text-gray-500 leading-tight",
-											children: "@jeseleos"
+											className: "text-sm text-gray-500 dark:text-gray-400",
+											children: "@johnsmith"
 										})
 									]
 								})
@@ -219,17 +218,16 @@ export const ProfileCard: Story = {
 		placement: PopoverPositions.Right,
 		trigger: PopoverTriggers.Click,
 		arrow: true,
-		className:
-			"p-0 border border-gray-200 rounded-lg shadow-lg dark:border-gray-600 [&>div>div:first-child]:border-gray-200 [&>div>div:first-child]:dark:border-gray-600 [&>div>div:first-child]:border-l [&>div>div:first-child]:border-t-0 [&>div>div:first-child]:border-r-0 [&>div>div:first-child]:border-b-0 [&>div>div:first-child]:bg-white [&>div>div:first-child]:dark:bg-gray-900",
+		className: "p-0 border border-gray-200 rounded-lg shadow-lg dark:border-gray-600",
 		customTrigger: React.createElement("div", {
-			className: "inline-block cursor-pointer",
+			className: "inline-block",
 			children: React.createElement(Avatar, {
 				img: "https://flowbite.com/docs/images/people/profile-picture-5.jpg",
-				alt: "Jese Leos",
+				alt: "John Smith",
 				size: "md"
 			})
 		}),
 		ariaLabel: "Profile card",
-		ariaDescription: "View profile information for Jese Leos"
+		ariaDescription: "View profile information for John Smith"
 	}
 };
