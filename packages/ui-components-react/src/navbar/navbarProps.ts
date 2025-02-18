@@ -1,26 +1,19 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
-import PropTypes, { type InferProps } from "prop-types";
-import type { PropsWithChildren } from "react";
-
-export const NavbarPropTypes = {
-	content: PropTypes.node,
-	brand: PropTypes.shape({
-		content: PropTypes.node.isRequired,
-		href: PropTypes.string
-	}).isRequired,
-	links: PropTypes.arrayOf(
-		PropTypes.shape({
-			label: PropTypes.string.isRequired,
-			href: PropTypes.string.isRequired,
-			active: PropTypes.bool
-		})
-	),
-	fluid: PropTypes.bool,
-	rounded: PropTypes.bool
-};
+import type { Navbar as FlowbiteNavbar } from "flowbite-react";
+import type { ComponentProps, PropsWithChildren } from "react";
 
 /**
- * Navbar props.
+ * Props for the Navbar component.
  */
-export type NavbarProps = PropsWithChildren<InferProps<typeof NavbarPropTypes>>;
+export interface NavbarProps extends PropsWithChildren<ComponentProps<typeof FlowbiteNavbar>> {
+	/**
+	 * Make the navbar full width.
+	 */
+	fluid?: boolean;
+
+	/**
+	 * Apply rounded corners to the navbar.
+	 */
+	rounded?: boolean;
+}
