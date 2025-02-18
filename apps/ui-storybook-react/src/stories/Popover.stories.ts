@@ -145,7 +145,7 @@ export const ProfileCard: Story = {
 										React.createElement("p", {
 											key: "username",
 											className: "text-sm text-gray-500 dark:text-gray-400",
-											children: "@johnsmith"
+											children: "@john.smith"
 										})
 									]
 								})
