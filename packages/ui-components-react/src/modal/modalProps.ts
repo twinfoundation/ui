@@ -40,7 +40,7 @@ export const ModalPropTypes = {
 	initialFocus: PropTypes.oneOfType([
 		PropTypes.number,
 		PropTypes.shape({
-			current: PropTypes.instanceOf(Element)
+			current: PropTypes.object
 		})
 	]),
 	show: PropTypes.bool,
