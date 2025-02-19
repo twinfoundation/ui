@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
 import { Sidebar, IconsSolid, Badge, Button } from "@twin.org/ui-components-react";
-import { createElement } from "react";
 import { Sidebar as FlowbiteSidebar } from "flowbite-react";
+import { createElement } from "react";
 
 const meta = {
 	title: "Components/Sidebar",
