@@ -3,6 +3,7 @@
 import type { ProgressProps as FlowbiteProgressProps } from "flowbite-react";
 import PropTypes, { type InferProps } from "prop-types";
 import type { PropsWithChildren } from "react";
+import { ProgressColors } from "./progressColors";
 import { ProgressPositions } from "./progressPositions";
 import { ProgressSizes } from "./progressSizes";
 
@@ -13,7 +14,7 @@ export const ProgressPropTypes = {
 	labelProgress: PropTypes.bool,
 	labelText: PropTypes.bool,
 	textLabel: PropTypes.string,
-	color: PropTypes.string,
+	color: PropTypes.oneOf(Object.values(ProgressColors)),
 	progress: PropTypes.number.isRequired
 };
 
