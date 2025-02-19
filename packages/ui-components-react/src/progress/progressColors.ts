@@ -55,4 +55,4 @@ export const ProgressColors = {
 /**
  * Progress colors.
  */
-export type ProgressColors = typeof ProgressColors[keyof typeof ProgressColors];
+export type ProgressColors = (typeof ProgressColors)[keyof typeof ProgressColors];
