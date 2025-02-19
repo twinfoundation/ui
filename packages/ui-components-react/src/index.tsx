@@ -66,6 +66,7 @@ export * from "./progress/progress";
 export * from "./progress/progressProps";
 export * from "./progress/progressPositions";
 export * from "./progress/progressSizes";
+export * from "./progress/progressColors";
 export * from "./radio/radio";
 export * from "./radio/radioProps";
 export * from "./rangeSlider/rangeSlider";
