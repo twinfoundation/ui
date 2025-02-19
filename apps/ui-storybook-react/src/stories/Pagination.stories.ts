@@ -66,3 +66,14 @@ export const CustomLabels: Story = {
 		nextLabel: "Go forward"
 	}
 };
+
+export const IconsOnly: Story = {
+	args: {
+		currentPage: 1,
+		onPageChange: () => {},
+		totalPages: 10,
+		previousLabel: "",
+		nextLabel: "",
+		showIcons: true
+	}
+};
