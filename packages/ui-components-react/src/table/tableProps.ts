@@ -20,6 +20,17 @@ export const TablePropTypes = {
 				className: PropTypes.string
 			})
 		)
+	),
+	footer: PropTypes.arrayOf(
+		PropTypes.shape({
+			className: PropTypes.string,
+			cells: PropTypes.arrayOf(
+				PropTypes.shape({
+					content: PropTypes.node.isRequired,
+					className: PropTypes.string
+				})
+			)
+		})
 	)
 };
 
@@ -53,6 +64,28 @@ export interface TableProps extends FlowbiteTableProps {
 		 */
 		className?: string;
 	}[][];
+	/**
+	 * Configuration for table footer
+	 */
+	footer?: {
+		/**
+		 * Optional CSS class for styling the footer row
+		 */
+		className?: string;
+		/**
+		 * Footer row cells
+		 */
+		cells: {
+			/**
+			 * The content to display in the footer cell
+			 */
+			content: ReactNode;
+			/**
+			 * Optional CSS class for styling the cell
+			 */
+			className?: string;
+		}[];
+	}[];
 }
 
 /**

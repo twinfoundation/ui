@@ -32,7 +32,7 @@ export class Table extends React.Component<TableProps> {
 	 * @returns The component to render.
 	 */
 	public render(): ReactNode {
-		const { header, body, ...rest } = this._props;
+		const { header, body, footer, ...rest } = this._props;
 		return (
 			<div className="overflow-x-auto">
 				<FlowbiteTable {...rest}>
@@ -47,7 +47,7 @@ export class Table extends React.Component<TableProps> {
 								</FlowbiteTable.HeadCell>
 							))
 						) : (
-							<></>
+							<FlowbiteTable.HeadCell>No header data</FlowbiteTable.HeadCell>
 						)}
 					</FlowbiteTable.Head>
 					<FlowbiteTable.Body className="divide-y">
@@ -65,9 +65,27 @@ export class Table extends React.Component<TableProps> {
 								</FlowbiteTable.Row>
 							))
 						) : (
-							<></>
+							<FlowbiteTable.Row>
+								<FlowbiteTable.Cell>No data available</FlowbiteTable.Cell>
+							</FlowbiteTable.Row>
 						)}
 					</FlowbiteTable.Body>
+					{footer && footer.length > 0 && (
+						<FlowbiteTable.Body>
+							{footer.map((row, rowIndex) => (
+								<FlowbiteTable.Row key={`footer-row-${rowIndex}`} className={row.className ?? ""}>
+									{row.cells.map((cell, cellIndex) => (
+										<FlowbiteTable.Cell
+											key={`footer-cell-${rowIndex}-${cellIndex}`}
+											className={`font-medium ${cell?.className ?? ""}`}
+										>
+											{cell.content}
+										</FlowbiteTable.Cell>
+									))}
+								</FlowbiteTable.Row>
+							))}
+						</FlowbiteTable.Body>
+					)}
 				</FlowbiteTable>
 			</div>
 		);
