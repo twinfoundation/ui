@@ -3,7 +3,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Navbar } from "@twin.org/ui-components-react";
 import { Dropdown as FlowbiteDropdown, Avatar as FlowbiteAvatar } from "flowbite-react";
-import { createElement } from "react";
+import { createElement, JSX } from "react";
 
 const meta = {
 	title: "Components/Navbar",
@@ -41,7 +41,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof Navbar>;
 
-const createBrand = () =>
+const createBrand = (): JSX.Element =>
 	createElement(
 		Navbar.Brand,
 		{ href: "https://www.twin.org" },
@@ -57,7 +57,7 @@ const createBrand = () =>
 		)
 	);
 
-const createUserDropdown = () =>
+const createUserDropdown = (): JSX.Element =>
 	createElement(
 		"div",
 		{ className: "flex md:order-2" },
@@ -90,7 +90,7 @@ const createUserDropdown = () =>
 		)
 	);
 
-const createNavLinks = () =>
+const createNavLinks = (): JSX.Element =>
 	createElement(
 		Navbar.Collapse,
 		null,
