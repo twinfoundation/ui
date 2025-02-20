@@ -9,7 +9,6 @@ import type { JSX } from "react";
 const meta = {
 	title: "Components/Navbar",
 	component: Navbar,
-	tags: ["autodocs"],
 	parameters: {
 		layout: "fullscreen",
 		docs: {
