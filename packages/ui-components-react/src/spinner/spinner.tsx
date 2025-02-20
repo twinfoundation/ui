@@ -1,8 +1,18 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
-import { Spinner as FlowbiteSpinner, Button as FlowbiteButton } from "flowbite-react";
+import { Spinner as FlowbiteSpinner } from "flowbite-react";
 import React, { type ReactNode } from "react";
 import { SpinnerPropTypes, type SpinnerProps } from "./spinnerProps";
+
+const theme = {
+	color: {
+		primary: "fill-surface-brand-secondary-1",
+		success: "fill-success",
+		warning: "fill-warning",
+		error: "fill-error",
+		information: "fill-information"
+	}
+};
 
 /**
  * Spinner component.
@@ -32,19 +42,7 @@ export class Spinner extends React.Component<SpinnerProps> {
 	 * @returns The component to render.
 	 */
 	public render(): ReactNode {
-		const { children, ...rest } = this._props;
-		return (
-			<div className="flex flex-row gap-3">
-				<FlowbiteSpinner {...rest} aria-label="Default status example" />
-				<FlowbiteButton className="text-invert bg-surface-button hover:enabled:bg-surface-button-hover dark:bg-surface-button dark:hover:enabled:bg-surface-button-hover focus:ring-surface-button-pressed border-2 border-transparent focus:ring">
-					<FlowbiteSpinner aria-label="Spinner button example" {...rest} />
-					<span className="pl-3">{children ?? "Loading..."}</span>
-				</FlowbiteButton>
-				<FlowbiteButton color="gray">
-					<FlowbiteSpinner aria-label="Alternate spinner button example" {...rest} />
-					<span className="pl-3">{children ?? "Loading..."}</span>
-				</FlowbiteButton>
-			</div>
-		);
+		const { color = "primary", ...rest } = this._props;
+		return <FlowbiteSpinner {...rest} theme={theme} color={color} aria-label="Loading spinner" />;
 	}
 }
