@@ -10,24 +10,22 @@ const meta = {
 		size: {
 			options: Object.values(SpinnerSizes),
 			control: { type: "inline-radio" }
+		},
+		color: {
+			options: ["primary", "success", "warning", "error", "information"],
+			control: { type: "inline-radio" }
 		}
 	},
-	args: {}
+	args: {
+		color: "primary",
+		size: SpinnerSizes.Medium
+	}
 } satisfies Meta<typeof Spinner>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
-	args: {}
-};
-
-export const CustomLabel: Story = {
-	args: {
-		children: "Loading content..."
-	}
-};
-
+// Different sizes
 export const ExtraSmall: Story = {
 	args: {
 		size: SpinnerSizes.ExtraSmall
@@ -37,6 +35,12 @@ export const ExtraSmall: Story = {
 export const Small: Story = {
 	args: {
 		size: SpinnerSizes.Small
+	}
+};
+
+export const Medium: Story = {
+	args: {
+		size: SpinnerSizes.Medium
 	}
 };
 
@@ -52,30 +56,33 @@ export const ExtraLarge: Story = {
 	}
 };
 
-export const Success: Story = {
+// Different colors
+export const Primary: Story = {
 	args: {
-		color: "success",
-		size: SpinnerSizes.Large
+		color: "primary"
 	}
 };
 
-export const Info: Story = {
+export const Success: Story = {
 	args: {
-		color: "info",
-		size: SpinnerSizes.Large
+		color: "success"
 	}
 };
 
 export const Warning: Story = {
 	args: {
-		color: "warning",
-		size: SpinnerSizes.Large
+		color: "warning"
 	}
 };
 
-export const Failure: Story = {
+export const Error: Story = {
 	args: {
-		color: "failure",
-		size: SpinnerSizes.Large
+		color: "error"
+	}
+};
+
+export const Information: Story = {
+	args: {
+		color: "information"
 	}
 };
