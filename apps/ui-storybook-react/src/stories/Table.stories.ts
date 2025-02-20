@@ -18,7 +18,7 @@ const meta = {
 		}
 	},
 	args: {
-		head: [
+		header: [
 			{ className: "text-center pl-4", content: "ID" },
 			{ className: "text-left", content: "Name" },
 			{ className: "text-left", content: "Age" },
