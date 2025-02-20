@@ -3,7 +3,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Navbar } from "@twin.org/ui-components-react";
 import { Dropdown as FlowbiteDropdown, Avatar as FlowbiteAvatar } from "flowbite-react";
-import { createElement, JSX } from "react";
+import { createElement } from "react";
+import type { JSX } from "react";
 
 const meta = {
 	title: "Components/Navbar",
