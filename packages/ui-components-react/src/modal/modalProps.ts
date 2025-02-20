@@ -11,15 +11,18 @@ import { ModalSizes } from "./modalSizes";
  */
 export interface FooterButton {
 	/**
-	 *
+	 * The text to display on the button.
+	 * This will be rendered as the button's content.
 	 */
 	label: string;
 	/**
-	 *
+	 * Optional CSS class name(s) to apply to the button.
+	 * Use this to customize the button's appearance.
 	 */
 	className?: string;
 	/**
-	 *
+	 * Optional callback function triggered when the button is clicked.
+	 * The function takes no parameters and returns void.
 	 */
 	onClick?: () => void;
 }
@@ -40,7 +43,7 @@ export const ModalPropTypes = {
 	initialFocus: PropTypes.oneOfType([
 		PropTypes.number,
 		PropTypes.shape({
-			current: PropTypes.instanceOf(Element)
+			current: PropTypes.object
 		})
 	]),
 	show: PropTypes.bool,

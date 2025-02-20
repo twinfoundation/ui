@@ -1,7 +1,12 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
-import { Progress, ProgressPositions, ProgressSizes } from "@twin.org/ui-components-react";
+import {
+	Progress,
+	ProgressPositions,
+	ProgressSizes,
+	ProgressColors
+} from "@twin.org/ui-components-react";
 
 const meta = {
 	title: "Components/Progress",
@@ -18,6 +23,10 @@ const meta = {
 		size: {
 			options: Object.values(ProgressSizes),
 			control: { type: "inline-radio" }
+		},
+		color: {
+			options: Object.values(ProgressColors),
+			control: { type: "select" }
 		},
 		labelProgress: {
 			options: Object.values([true, false]),

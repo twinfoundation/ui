@@ -1,21 +1,15 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
-import { Sidebar, IconsSolid, Badge } from "@twin.org/ui-components-react";
+import { Sidebar, IconsSolid, Badge, Button } from "@twin.org/ui-components-react";
+import { Sidebar as FlowbiteSidebar } from "flowbite-react";
 import { createElement } from "react";
 
 const meta = {
 	title: "Components/Sidebar",
 	component: Sidebar,
 	argTypes: {},
-	args: {
-		logo: {
-			img: "https://assets.weforum.org/sites/a0eTG000008PHKPYA4/3LI3Z9COsps.jpg",
-			imgAlt: "Twin Logo",
-			label: "TWIN",
-			href: "https://www.twin.org"
-		}
-	}
+	args: {}
 } satisfies Meta<typeof Sidebar>;
 
 export default meta;
@@ -24,10 +18,136 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
 	args: {
 		items: [
-			{ label: "Dashboard", icon: IconsSolid.Home, href: "#" },
+			{ label: "Dashboard", icon: IconsSolid.ChartPie, href: "#" },
 			{ label: "Projects", icon: IconsSolid.ChartPie, href: "#", active: true },
 			{ label: "Team", icon: IconsSolid.User, href: "#" },
 			{ label: "Settings", icon: IconsSolid.UserSettings, href: "#" }
+		]
+	}
+};
+
+export const MultiLevelDropdown: Story = {
+	args: {
+		items: [
+			{ label: "Dashboard", icon: IconsSolid.Home, href: "#" },
+			{
+				label: "E-commerce",
+				icon: IconsSolid.ShoppingBag,
+				href: "#",
+				items: [
+					{ label: "Products", href: "#" },
+					{ label: "Sales", href: "#" }
+				]
+			},
+			{
+				label: "Users",
+				icon: IconsSolid.User,
+				href: "#",
+				items: [
+					{ label: "Add user", href: "#" },
+					{ label: "List", href: "#" }
+				]
+			}
+		]
+	}
+};
+
+export const WithCustomChevron: Story = {
+	args: {
+		items: [
+			{ label: "Dashboard", icon: IconsSolid.Home, href: "#" },
+			{
+				label: "E-commerce",
+				icon: IconsSolid.ShoppingBag,
+				href: "#",
+				items: [
+					{ label: "Products", href: "#" },
+					{ label: "Sales", href: "#" }
+				]
+			}
+		]
+	}
+};
+
+export const WithContentSeparator: Story = {
+	args: {
+		items: [
+			{ label: "Dashboard", icon: IconsSolid.ChartPie, href: "#" },
+			{ label: "Kanban", icon: IconsSolid.VideoCamera, href: "#" },
+			{ label: "Inbox", icon: IconsSolid.Image, href: "#" },
+			{ label: "Users", icon: IconsSolid.User, href: "#" },
+			{ label: "Products", icon: IconsSolid.ShoppingBag, href: "#" },
+			{ label: "Sign In", icon: IconsSolid.ArrowRightAlt, href: "#" },
+			{ label: "Sign Up", icon: IconsSolid.UserCircle, href: "#" }
+		],
+		CTA: createElement(
+			"div",
+			null,
+			createElement("hr", { className: "my-3 border-gray-200 dark:border-gray-700" }),
+			createElement(
+				FlowbiteSidebar.Items,
+				null,
+				createElement(FlowbiteSidebar.ItemGroup, { className: "space-y-2" }, [
+					createElement(
+						FlowbiteSidebar.Item,
+						{
+							key: "upgrade",
+							href: "#",
+							icon: IconsSolid.ChartPie
+						},
+						"Upgrade to Pro"
+					),
+					createElement(
+						FlowbiteSidebar.Item,
+						{
+							key: "documentation",
+							href: "#",
+							icon: IconsSolid.VideoCamera
+						},
+						"Documentation"
+					),
+					createElement(
+						FlowbiteSidebar.Item,
+						{
+							key: "help",
+							href: "#",
+							icon: IconsSolid.QuestionCircle
+						},
+						"Help"
+					)
+				])
+			)
+		)
+	}
+};
+
+export const WithButton: Story = {
+	args: {
+		items: [
+			{ label: "Dashboard", icon: IconsSolid.Home, href: "#" },
+			{ label: "Projects", icon: IconsSolid.ChartPie, href: "#" },
+			{ label: "Team", icon: IconsSolid.User, href: "#" }
+		],
+		CTA: createElement(
+			"div",
+			{ className: "mt-auto" },
+			createElement(Button, { color: "primary" }, "Custom action")
+		)
+	}
+};
+
+export const WithLogo: Story = {
+	args: {
+		logo: {
+			img: "https://assets.weforum.org/sites/a0eTG000008PHKPYA4/3LI3Z9COsps.jpg",
+			imgAlt: "Twin Logo",
+			label: "TWIN",
+			href: "https://www.twin.org"
+		},
+		items: [
+			{ label: "Dashboard", icon: IconsSolid.Home, href: "#" },
+			{ label: "Projects", icon: IconsSolid.ChartPie, href: "#" },
+			{ label: "Team", icon: IconsSolid.User, href: "#" }
 		]
 	}
 };
@@ -87,5 +207,40 @@ export const WithCTA: Story = {
 				"Turn new navigation off"
 			)
 		)
+	}
+};
+
+export const WithLabels: Story = {
+	args: {
+		items: [
+			{
+				label: "Inbox",
+				icon: IconsSolid.Image,
+				href: "#",
+				badge: "3",
+				badgeColor: "information"
+			},
+			{
+				label: "Spam",
+				icon: IconsSolid.ExclamationCircle,
+				href: "#",
+				badge: "42",
+				badgeColor: "warning"
+			},
+			{
+				label: "Updates",
+				icon: IconsSolid.ArrowRightAlt,
+				href: "#",
+				badge: "New",
+				badgeColor: "success"
+			},
+			{
+				label: "Forums",
+				icon: IconsSolid.UserEdit,
+				href: "#",
+				badge: "99+",
+				badgeColor: "error"
+			}
+		]
 	}
 };
