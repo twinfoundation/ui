@@ -23,10 +23,14 @@ const meta = {
 		popup: {
 			options: Object.values([true, false]),
 			control: { type: "inline-radio" }
+		},
+		initialFocus: {
+			control: false
 		}
 	},
 	args: {
-		body: "Modal Body"
+		body: "Modal Body",
+		show: true
 	}
 } satisfies Meta<typeof Modal>;
 
