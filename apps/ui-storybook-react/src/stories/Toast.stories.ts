@@ -7,7 +7,21 @@ import { createElement } from "react";
 const meta = {
 	title: "Components/Toast",
 	component: Toast,
-	argTypes: {},
+	argTypes: {
+		duration: {
+			control: { type: "number" },
+			description: "Duration in milliseconds before auto-dismissing",
+			table: {
+				defaultValue: { summary: "undefined" },
+				type: { summary: "number" }
+			}
+		},
+		onDismiss: { action: "dismissed" },
+		role: {
+			control: { type: "radio" },
+			options: ["alert", "status"]
+		}
+	},
 	args: {
 		className: "max-w-lg"
 	}
@@ -43,9 +57,17 @@ export const Default: Story = {
 	}
 };
 
+export const AutoDismiss: Story = {
+	args: {
+		duration: 3000,
+		children: "This toast will auto-dismiss after 3 seconds"
+	}
+};
+
 export const CustomStyle: Story = {
 	args: {
 		className: "max-w-xl bg-cyan-100 text-cyan-500 dark:bg-cyan-800 dark:text-cyan-200",
+		role: "status",
 		children: createElement(
 			"div",
 			{ className: "flex items-center max-w-sm" },
@@ -53,20 +75,11 @@ export const CustomStyle: Story = {
 				"div",
 				{
 					className:
-						"inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-cyan-100 text-cyan-500 dark:bg-cyan-800 dark:text-cyan-200"
+						"inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-cyan-100 text-cyan-500"
 				},
-				createElement(IconsSolid.Fire, { className: "h-5 w-5" })
+				createElement(IconsSolid.CheckCircle, { className: "h-5 w-5" })
 			),
-			createElement("div", { className: "ml-3 text-sm font-normal" }, "Set yourself free."),
-			createElement(
-				"a",
-				{
-					className:
-						"text-sm text-cyan-900 underline hover:text-cyan-800 dark:text-gray-400 dark:hover:text-gray-300",
-					href: "#"
-				},
-				"Turn new navigation off"
-			)
+			createElement("div", { className: "ml-3 text-sm font-normal" }, "Changes saved successfully.")
 		)
 	}
 };

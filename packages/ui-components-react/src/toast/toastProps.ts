@@ -1,16 +1,28 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import type { ToastProps as FlowbiteToastProps } from "flowbite-react";
-import PropTypes, { type InferProps } from "prop-types";
-import type { PropsWithChildren } from "react";
-
-export const ToastPropTypes = {
-	className: PropTypes.string
-};
 
 /**
- * Toast props.
+ * Props for the Toast component.
  */
-export type ToastProps = PropsWithChildren<
-	InferProps<typeof ToastPropTypes> & Omit<FlowbiteToastProps, "color" | "label">
->;
+export interface ToastProps extends Omit<FlowbiteToastProps, "color" | "label" | "duration"> {
+	/**
+	 * Additional CSS class names
+	 */
+	className?: string;
+
+	/**
+	 * Duration in milliseconds before auto-dismissing the toast. If not provided, toast will not auto-dismiss
+	 */
+	duration?: number;
+
+	/**
+	 * Callback function when toast is dismissed either manually or automatically
+	 */
+	onDismiss?: () => void;
+
+	/**
+	 * ARIA role for the toast. Defaults to "alert"
+	 */
+	role?: "alert" | "status";
+}
