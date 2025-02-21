@@ -36,8 +36,9 @@ export class Tabs extends React.Component<TabsProps> {
 		return (
 			<FlowbiteTabs aria-label="Default tabs" variant={variant || "default"}>
 				{items && items.length > 0 ? (
-					items.map(item => (
+					items.map((item, index) => (
 						<FlowbiteTabs.Item
+							key={index}
 							title={item?.title ?? ""}
 							icon={item?.icon ?? undefined}
 							disabled={item?.disabled ?? false}
