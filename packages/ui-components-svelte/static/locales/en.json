@@ -1,179 +1,176 @@
 {
-	"error": {
-		"validation": {
-			"beEmpty": "{fieldName} must be empty",
-			"beNotEmpty": "{fieldName} must not be empty",
-			"beText": "{fieldName} must be text",
-			"beTextValue": "{fieldName} must contain some text",
-			"beTextMinMax": "{fieldName} must be longer than {minLength} and shorter than {maxLength} characters",
-			"beTextMin": "{fieldName} must be longer than {minLength} characters",
-			"beTextMax": "{fieldName} must be shorter than {maxLength} characters",
-			"beTextBase58": "{fieldName} must be text formatted using Base58 characters",
-			"beTextBase64": "{fieldName} must be text formatted using Base64 characters",
-			"beTextHex": "{fieldName} must be text formatted using Hex characters",
-			"beTextRegExp": "{fieldName} must be text formatted using the matching pattern {format}",
-			"beNumber": "{fieldName} must be a number",
-			"beNumberMinMax": "{fieldName} must be >= {minValue} and <= {maxValue}",
-			"beNumberMin": "{fieldName} must be >= {minValue}",
-			"beNumberMax": "{fieldName} must be <= {maxValue}",
-			"beWholeNumber": "{fieldName} must be a whole number",
-			"beWholeNumberMinMax": "{fieldName} must be a whole number >= {minValue} and <= {maxValue}",
-			"beWholeNumberMin": "{fieldName} must be a whole number >= {minValue}",
-			"beWholeNumberMax": "{fieldName} must be a whole number <= {maxValue}",
-			"beBigInteger": "{fieldName} must be a bigint",
-			"beBigIntegerMinMax": "{fieldName} must be a bigint >= {minValue} and <= {maxValue}",
-			"beBigIntegerMin": "{fieldName} must be a bigint >= {minValue}",
-			"beBigIntegerMax": "{fieldName} must be a bigint <= {maxValue}",
-			"beBoolean": "{fieldName} must be true or false",
-			"beDate": "{fieldName} must be a date",
-			"beDateTime": "{fieldName} must be a date/time",
-			"beTime": "{fieldName} must be a time",
-			"beTimestampMilliseconds": "{fieldName} must be a timestamp in milliseconds",
-			"beTimestampSeconds": "{fieldName} must be a timestamp in seconds",
-			"beObject": "{fieldName} must be an object",
-			"beArray": "{fieldName} must be an array",
-			"beArrayValue": "{fieldName} must be an array with at least one item",
-			"beIncluded": "{fieldName} is unrecognised",
-			"beByteArray": "{fieldName} must be a byte array",
-			"beUrn": "{fieldName} must be a correctly formatted urn",
-			"beUrl": "{fieldName} must be a correctly formatted url",
-			"beJSON": "{fieldName} must be correctly formatted JSON",
-			"beEmail": "{fieldName} must be a correctly formatted e-mail address",
-			"failed": "Validation failed",
-			"failedObject": "Validation of \"{objectName}\" failed"
-		},
-		"guard": {
-			"undefined": "Property \"{property}\" must be defined, it is \"{value}\"",
-			"string": "Property \"{property}\" must be a string, it is \"{value}\"",
-			"stringEmpty": "Property \"{property}\" must have a value, it is empty",
-			"stringBase64": "Property \"{property}\" must be a base64 encoded string, it is \"{value}\"",
-			"stringBase64Url": "Property \"{property}\" must be a base64 url encoded string, it is \"{value}\"",
-			"stringBase58": "Property \"{property}\" must be a base58 encoded string, it is \"{value}\"",
-			"stringHex": "Property \"{property}\" must be a hex string, it is \"{value}\"",
-			"stringHexLength": "Property \"{property}\" must be a hex string of length \"{options}\", it is \"{value}\"",
-			"stringJson": "Property \"{property}\" must be a JSON string",
-			"number": "Property \"{property}\" must be a number, it is \"{value}\"",
-			"integer": "Property \"{property}\" must be an integer, it is \"{value}\"",
-			"bigint": "Property \"{property}\" must be a bigint, it is \"{value}\"",
-			"boolean": "Property \"{property}\" must be a boolean, it is \"{value}\"",
-			"date": "Property \"{property}\" must be a date, it is \"{value}\"",
-			"timestampMilliseconds": "Property \"{property}\" must be a timestamp in milliseconds, it is \"{value}\"",
-			"timestampSeconds": "Property \"{property}\" must be a timestamp in seconds, it is \"{value}\"",
-			"objectUndefined": "Property \"{property}\" must be an object, it is \"undefined\"",
-			"object": "Property \"{property}\" must be an object, it is \"{value}\"",
-			"objectValue": "Property \"{property}\" must be an object, with at least one property, it is \"{value}\"",
-			"array": "Property \"{property}\" must be an array, it is \"{value}\"",
-			"arrayValue": "Property \"{property}\" must be an array with at least one item",
-			"arrayOneOf": "Property \"{property}\" must be one of [{options}], it is \"{value}\"",
-			"uint8Array": "Property \"{property}\" must be a Uint8Array, it is \"{value}\"",
-			"function": "Property \"{property}\" must be a function, it is \"{value}\"",
-			"urn": "Property \"{property}\" must be a Urn formatted string, it is \"{value}\"",
-			"url": "Property \"{property}\" must be a Url formatted string, it is \"{value}\"",
-			"email": "Property \"{property}\" must be string in e-mail format, it is \"{value}\""
-		},
-		"objectHelper": {
-			"failedBytesToJSON": "Failed converting bytes to JSON",
-			"cannotSetArrayIndex": "Cannot set property \"{property}\" using index \"{index}\" as it is not an array",
-			"cannotSetProperty": "Cannot set property \"{property}\" when the target is not an object"
-		},
-		"common": {
-			"notImplementedMethod": "The method \"{method}\" has not been implemented",
-			"validation": "Validation failed"
-		},
-		"factory": {
-			"noUnregister": "There is no {typeName} registered with the name \"{name}\"",
-			"noGet": "The requested {typeName} \"{name}\" does not exist in the factory"
-		},
-		"bitString": {
-			"outOfRange": "The index should be >= 0 and less than the length of the bit string"
-		},
-		"base32": {
-			"invalidCharacter": "Data contains a character \"{invalidCharacter}\" which is not in the charset"
-		},
-		"base64": {
-			"length4Multiple": "Invalid length should be a multiple of 4, it is \"{value}\""
-		},
-		"base58": {
-			"invalidCharacter": "Data contains a character \"{invalidCharacter}\" which is not in the charset"
-		},
-		"qr": {
-			"typeNumberRange": "The typeNumber parameter should be a number >= 0 and <= 40, it is {typeNumber}",
-			"dataOverflow": "There is not enough space in the QR code to store the data, {lengthInBits} > {totalDataCount}, try increasing the typeNumber from {typeNumber}, or use 0 for auto detect",
-			"typeNumberOverflow": "There is not enough space in the QR code to store the data, {lengthInBits} > {totalDataCount}, typeNumber cannot be greater than 40"
-		},
-		"rendererOptions": {
-			"cellSizeZero": "The cellSize must be a number > 0, it is \"{cellSize}\"",
-			"marginSizeZero": "The marginSize must be a number >= 0, it is \"{marginSize}\""
-		},
-		"qRAlphaNumeric": {
-			"illegalCharacter ": "Illegal character in string \"{value}\""
-		},
-		"qRNumber": {
-			"illegalCharacter ": "Illegal character in string \"{value}\""
-		},
-		"mathHelper": {
-			"lessThanOne ": "The value can not be less than 1, it is \"{value}\""
-		},
-		"qrHelper": {
-			"correctionLevelRange ": "The errorCorrectLevel parameter should be one of the following: \"L\", \"M\", \"Q\", \"H\", it is \"{errorCorrectLevel}\"",
-			"modeRange ": "The mode parameter should be one of the following: \"Byte\", \"Numeric\", \"Alphanumeric\", it is \"{mode}\"",
-			"maskPatternRange ": "The maskPattern parameter should be a number >= 0 and <= 7, it is \"{maskPattern}\""
-		},
-		"rSBlock": {
-			"correctionLevelRange ": "The errorCorrectLevel parameter should be one of the following: \"L\", \"M\", \"Q\", \"H\", it is \"{errorCorrectLevel}\""
-		},
-		"qRDataBase": {
-			"invalidMode": "Invalid mode {mode} for typeNumber {typeNumber}",
-			"invalidTypeNumber": "Invalid typeNumber {typeNumber}, it should be less than <= 40"
-		},
-		"jpegEncoder": {
-			"invalidQuality": "Quality must be between 1 and 100, it is \"{value}\""
-		}
-	},
-	"errorNames": {
-		"error": "Error",
-		"generalError": "General",
-		"guardError": "Guard",
-		"conflictError": "Conflict",
-		"notFoundError": "Not Found",
-		"notSupportedError": "Not Supported",
-		"alreadyExistsError": "Already Exists",
-		"notImplementedError": "Not Implemented",
-		"validationError": "Validation",
-		"unprocessableError": "Unprocessable"
-	},
-	"validation": {
-		"defaultFieldName": "The field"
-	},
-	"pages": {
-		"error": {
-			"title": "Error",
-			"notFound": "The requested page could not be found"
-		}
-	},
-	"actions": {
-		"save": "Save",
-		"saveSuccess": "Saved successfully",
-		"open": "Open",
-		"close": "Close",
-		"back": "Back",
-		"yes": "Yes",
-		"no": "No",
-		"ok": "OK",
-		"cancel": "Cancel",
-		"modify": "Modify",
-		"delete": "Delete",
-		"view": "View"
-	},
-	"components": {
-		"serverStatus": {
-			"api": "API",
-			"notConnected": "Not connected"
-		},
-		"appFooter": {
-			"language": "Language",
-			"colorTheme": "Color theme",
-			"selectLanguage": "Select language"
-		}
-	}
+  "error": {
+    "validation": {
+      "beEmpty": "{fieldName} must be empty",
+      "beNotEmpty": "{fieldName} must not be empty",
+      "beText": "{fieldName} must be text",
+      "beTextValue": "{fieldName} must contain some text",
+      "beTextMinMax": "{fieldName} must be longer than {minLength} and shorter than {maxLength} characters",
+      "beTextMin": "{fieldName} must be longer than {minLength} characters",
+      "beTextMax": "{fieldName} must be shorter than {maxLength} characters",
+      "beTextBase58": "{fieldName} must be text formatted using Base58 characters",
+      "beTextBase64": "{fieldName} must be text formatted using Base64 characters",
+      "beTextHex": "{fieldName} must be text formatted using Hex characters",
+      "beTextRegExp": "{fieldName} must be text formatted using the matching pattern {format}",
+      "beNumber": "{fieldName} must be a number",
+      "beNumberMinMax": "{fieldName} must be >= {minValue} and <= {maxValue}",
+      "beNumberMin": "{fieldName} must be >= {minValue}",
+      "beNumberMax": "{fieldName} must be <= {maxValue}",
+      "beWholeNumber": "{fieldName} must be a whole number",
+      "beWholeNumberMinMax": "{fieldName} must be a whole number >= {minValue} and <= {maxValue}",
+      "beWholeNumberMin": "{fieldName} must be a whole number >= {minValue}",
+      "beWholeNumberMax": "{fieldName} must be a whole number <= {maxValue}",
+      "beBigInteger": "{fieldName} must be a bigint",
+      "beBigIntegerMinMax": "{fieldName} must be a bigint >= {minValue} and <= {maxValue}",
+      "beBigIntegerMin": "{fieldName} must be a bigint >= {minValue}",
+      "beBigIntegerMax": "{fieldName} must be a bigint <= {maxValue}",
+      "beBoolean": "{fieldName} must be true or false",
+      "beDate": "{fieldName} must be a date",
+      "beDateTime": "{fieldName} must be a date/time",
+      "beTime": "{fieldName} must be a time",
+      "beTimestampMilliseconds": "{fieldName} must be a timestamp in milliseconds",
+      "beTimestampSeconds": "{fieldName} must be a timestamp in seconds",
+      "beObject": "{fieldName} must be an object",
+      "beArray": "{fieldName} must be an array",
+      "beArrayValue": "{fieldName} must be an array with at least one item",
+      "beIncluded": "{fieldName} is unrecognised",
+      "beByteArray": "{fieldName} must be a byte array",
+      "beUrn": "{fieldName} must be a correctly formatted urn",
+      "beUrl": "{fieldName} must be a correctly formatted url",
+      "beJSON": "{fieldName} must be correctly formatted JSON",
+      "beEmail": "{fieldName} must be a correctly formatted e-mail address",
+      "failed": "Validation failed",
+      "failedObject": "Validation of \"{objectName}\" failed"
+    },
+    "guard": {
+      "undefined": "Property \"{property}\" must be defined, it is \"{value}\"",
+      "string": "Property \"{property}\" must be a string, it is \"{value}\"",
+      "stringEmpty": "Property \"{property}\" must have a value, it is empty",
+      "stringBase64": "Property \"{property}\" must be a base64 encoded string, it is \"{value}\"",
+      "stringBase64Url": "Property \"{property}\" must be a base64 url encoded string, it is \"{value}\"",
+      "stringBase58": "Property \"{property}\" must be a base58 encoded string, it is \"{value}\"",
+      "stringHex": "Property \"{property}\" must be a hex string, it is \"{value}\"",
+      "stringHexLength": "Property \"{property}\" must be a hex string of length \"{options}\", it is \"{value}\"",
+      "number": "Property \"{property}\" must be a number, it is \"{value}\"",
+      "integer": "Property \"{property}\" must be an integer, it is \"{value}\"",
+      "bigint": "Property \"{property}\" must be a bigint, it is \"{value}\"",
+      "boolean": "Property \"{property}\" must be a boolean, it is \"{value}\"",
+      "date": "Property \"{property}\" must be a date, it is \"{value}\"",
+      "timestampMilliseconds": "Property \"{property}\" must be a timestamp in milliseconds, it is \"{value}\"",
+      "timestampSeconds": "Property \"{property}\" must be a timestamp in seconds, it is \"{value}\"",
+      "objectUndefined": "Property \"{property}\" must be an object, it is \"undefined\"",
+      "object": "Property \"{property}\" must be an object, it is \"{value}\"",
+      "objectValue": "Property \"{property}\" must be an object, with at least one property, it is \"{value}\"",
+      "array": "Property \"{property}\" must be an array, it is \"{value}\"",
+      "arrayValue": "Property \"{property}\" must be an array with at least one item",
+      "arrayOneOf": "Property \"{property}\" must be one of [{options}], it is \"{value}\"",
+      "uint8Array": "Property \"{property}\" must be a Uint8Array, it is \"{value}\"",
+      "function": "Property \"{property}\" must be a function, it is \"{value}\"",
+      "urn": "Property \"{property}\" must be a Urn formatted string, it is \"{value}\"",
+      "url": "Property \"{property}\" must be a Url formatted string, it is \"{value}\"",
+      "email": "Property \"{property}\" must be string in e-mail format, it is \"{value}\""
+    },
+    "objectHelper": {
+      "failedBytesToJSON": "Failed converting bytes to JSON"
+    },
+    "common": {
+      "notImplementedMethod": "The method \"{method}\" has not been implemented",
+      "validation": "Validation failed"
+    },
+    "factory": {
+      "noUnregister": "There is no {typeName} registered with the name \"{name}\"",
+      "noGet": "The requested {typeName} \"{name}\" does not exist in the factory"
+    },
+    "bitString": {
+      "outOfRange": "The index should be >= 0 and less than the length of the bit string"
+    },
+    "base32": {
+      "invalidCharacter": "Data contains a character \"{invalidCharacter}\" which is not in the charset"
+    },
+    "base64": {
+      "length4Multiple": "Invalid length should be a multiple of 4, it is \"{value}\""
+    },
+    "base58": {
+      "invalidCharacter": "Data contains a character \"{invalidCharacter}\" which is not in the charset"
+    },
+    "qr": {
+      "typeNumberRange": "The typeNumber parameter should be a number >= 0 and <= 40, it is {typeNumber}",
+      "dataOverflow": "There is not enough space in the QR code to store the data, {lengthInBits} > {totalDataCount}, try increasing the typeNumber from {typeNumber}, or use 0 for auto detect",
+      "typeNumberOverflow": "There is not enough space in the QR code to store the data, {lengthInBits} > {totalDataCount}, typeNumber cannot be greater than 40"
+    },
+    "rendererOptions": {
+      "cellSizeZero": "The cellSize must be a number > 0, it is \"{cellSize}\"",
+      "marginSizeZero": "The marginSize must be a number >= 0, it is \"{marginSize}\""
+    },
+    "qRAlphaNumeric": {
+      "illegalCharacter ": "Illegal character in string \"{value}\""
+    },
+    "qRNumber": {
+      "illegalCharacter ": "Illegal character in string \"{value}\""
+    },
+    "mathHelper": {
+      "lessThanOne ": "The value can not be less than 1, it is \"{value}\""
+    },
+    "qrHelper": {
+      "correctionLevelRange ": "The errorCorrectLevel parameter should be one of the following: \"L\", \"M\", \"Q\", \"H\", it is \"{errorCorrectLevel}\"",
+      "modeRange ": "The mode parameter should be one of the following: \"Byte\", \"Numeric\", \"Alphanumeric\", it is \"{mode}\"",
+      "maskPatternRange ": "The maskPattern parameter should be a number >= 0 and <= 7, it is \"{maskPattern}\""
+    },
+    "rSBlock": {
+      "correctionLevelRange ": "The errorCorrectLevel parameter should be one of the following: \"L\", \"M\", \"Q\", \"H\", it is \"{errorCorrectLevel}\""
+    },
+    "qRDataBase": {
+      "invalidMode": "Invalid mode {mode} for typeNumber {typeNumber}",
+      "invalidTypeNumber": "Invalid typeNumber {typeNumber}, it should be less than <= 40"
+    },
+    "jpegEncoder": {
+      "invalidQuality": "Quality must be between 1 and 100, it is \"{value}\""
+    }
+  },
+  "errorNames": {
+    "error": "Error",
+    "generalError": "General",
+    "guardError": "Guard",
+    "conflictError": "Conflict",
+    "notFoundError": "Not Found",
+    "notSupportedError": "Not Supported",
+    "alreadyExistsError": "Already Exists",
+    "notImplementedError": "Not Implemented",
+    "validationError": "Validation",
+    "unprocessableError": "Unprocessable"
+  },
+  "validation": {
+    "defaultFieldName": "The field"
+  },
+  "pages": {
+    "error": {
+      "title": "Error",
+      "notFound": "The requested page could not be found"
+    }
+  },
+  "actions": {
+    "save": "Save",
+    "saveSuccess": "Saved successfully",
+    "open": "Open",
+    "close": "Close",
+    "back": "Back",
+    "yes": "Yes",
+    "no": "No",
+    "ok": "OK",
+    "cancel": "Cancel",
+    "modify": "Modify",
+    "delete": "Delete",
+    "view": "View"
+  },
+  "components": {
+    "serverStatus": {
+      "api": "API",
+      "notConnected": "Not connected"
+    },
+    "appFooter": {
+      "language": "Language",
+      "colorTheme": "Color theme",
+      "selectLanguage": "Select language"
+    }
+  }
 }
