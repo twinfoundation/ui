@@ -6,332 +6,152 @@ This document outlines the structure and usage of the TWIN color system, designe
 
 Our color system is organized in three distinct layers:
 
-### 1. Base Colors (`colors.ts`)
+### 1. Base Colors and Tints
 
-Base colors are our single source of truth for all color values. They are organized in semantic scales from 25 to 975.
+Base colors and their tint variations are our single source of truth for all color values. They are organized in semantic scales from 25 to 975.
 
 ```typescript
-baseColors.orange[500]  // Primary brand color: #FF7C15
-baseColors.blue[500]    // Secondary brand color: #1568E4
-baseColors.neutral[950] // Dark surface: #272D35
+// Brand Colors
+"brand-primary-tints-500"  // Primary brand color: #FF7C15
+"brand-secondary-tints-500" // Secondary brand color: #1568E4
+
+// System Colors
+"system-success-tints-500"  // Success color: #23BD12
+"system-error-tints-500"    // Error color: #DB3614
+"system-warning-tints-500"  // Warning color: #F5A623
+"system-information-tints-500" // Information color: #1780C1
+
+// Neutral Colors
+"neutral-950" // Dark surface: #272D35
 ```
 
-**When to use**: Never use base colors directly in components. They should only be referenced by semantic tokens.
+**When to use**: Never use tint colors directly in components. They should only be referenced by semantic tokens.
 
-### 2. Semantic Colors (`semantic.ts`)
+### 2. Semantic Colors
 
 Semantic colors provide context-specific color assignments that reference base colors.
 
 ```typescript
-semanticColors.brand.primary        // Brand primary color
-semanticColors.surface.main.light   // Main surface color in light mode
-semanticColors.text.primary.dark    // Primary text color in dark mode
+"surface-main"      // Main surface color
+"surface-second"    // Secondary surface color
+"surface-third"     // Tertiary surface color
+"primary"          // Primary text color
+"secondary"        // Secondary text color
+"tertiary"         // Tertiary text color
+"success"          // Success status color
+"error"            // Error status color
+"warning"          // Warning status color
+"information"      // Information status color
 ```
 
 **When to use**: For general UI purposes like backgrounds, text, and common patterns.
 
-### 3. Component Tokens (`components.ts`)
+### 3. Component-Specific Colors
 
-Component tokens provide specific styling for UI components, ensuring consistent component appearance.
+Component-specific colors provide styling for UI components, ensuring consistent appearance.
 
 ```typescript
-componentTokens.button.primary.background.default  // Primary button background
-componentTokens.input.border.focus                 // Input border color when focused
+// Button Colors
+"surface-button"              // Primary button background
+"surface-button-hover"        // Primary button hover state
+"surface-button-pressed"      // Primary button pressed state
+"surface-button-disabled"     // Primary button disabled state
+"surface-button-text"         // Primary button text
+"surface-button-text-hover"   // Primary button text hover state
+
+// Alternative Button Colors
+"surface-button-alt"          // Secondary button background
+"surface-button-alt-hover"    // Secondary button hover state
+"surface-button-alt-pressed"  // Secondary button pressed state
+"surface-button-alt-disabled" // Secondary button disabled state
+"surface-button-text-alt"     // Secondary button text
 ```
 
 **When to use**: When styling specific UI components.
 
-## Usage in Tailwind
+## Usage in Components
 
-### Basic Usage
-
-```tsx
-// Using semantic colors
-<div className="bg-surface-main text-text-primary">
-  <h1 className="text-brand-primary">Title</h1>
-</div>
-
-// Using component tokens
-<button className="bg-button-primary-background">
-  Click me
-</button>
-```
-
-### Dark Mode
-
-Dark mode is handled automatically through semantic mapping:
-
-```tsx
-<div className="bg-surface-main dark:bg-surface-dark-main">
-  Content
-</div>
-```
-
-### State Variations
-
-Component states are handled through consistent modifiers:
-
-```tsx
-<button className="
-  bg-button-primary-background
-  hover:bg-button-primary-background-hover
-  active:bg-button-primary-background-pressed
-  disabled:bg-button-primary-background-disabled
-">
-  Button
-</button>
-```
-
-## Component Examples
-
-### Button Component
+### Button Component Example
 
 ```tsx
 // Primary Button
 <button className="
-  bg-button-primary-background-default
-  hover:bg-button-primary-background-hover
-  active:bg-button-primary-background-pressed
-  disabled:bg-button-primary-background-disabled
-  text-button-primary-text-default
-  disabled:text-button-primary-text-disabled
+  bg-surface-button
+  hover:enabled:bg-surface-button-hover
+  active:bg-surface-button-pressed
+  disabled:bg-surface-button-disabled
+  text-surface-button-text
+  hover:enabled:text-surface-button-text-hover
+  active:text-surface-button-text-pressed
 ">
   Primary Button
 </button>
 
 // Secondary Button
 <button className="
-  bg-button-secondary-background-default
-  hover:bg-button-secondary-background-hover
-  active:bg-button-secondary-background-pressed
-  disabled:bg-button-secondary-background-disabled
-  text-button-secondary-text-default
-  disabled:text-button-secondary-text-disabled
+  bg-surface-button-alt
+  hover:enabled:bg-surface-button-alt-hover
+  active:bg-surface-button-alt-pressed
+  disabled:bg-surface-button-alt-disabled
+  text-surface-button-text-alt
+  hover:enabled:text-surface-button-text-alt-hover
+  active:text-surface-button-text-alt-pressed
 ">
   Secondary Button
 </button>
 
 // Ghost Button
 <button className="
-  bg-button-ghost-background-default
-  hover:bg-button-ghost-background-hover
-  active:bg-button-ghost-background-pressed
-  disabled:bg-button-ghost-background-disabled
-  text-button-ghost-text-default
-  disabled:text-button-ghost-text-disabled
+  bg-transparent
+  hover:enabled:bg-neutral-100
+  active:bg-neutral-200
+  disabled:bg-transparent
+  text-primary
+  hover:enabled:text-primary
+  active:text-primary
+  disabled:text-neutral-500
 ">
   Ghost Button
 </button>
-```
 
-### Link Component
-
-```tsx
-// Default Link
-<a href="#" className="
-  text-link-text-default
-  hover:text-link-text-hover
-  visited:text-link-text-visited
+// Status Buttons
+<button className="
+  bg-error
+  hover:enabled:bg-system-error-tints-600
+  active:bg-system-error-tints-400
+  text-neutral-50
+  disabled:bg-neutral-400
+  disabled:text-neutral-500
 ">
-  Default Link
-</a>
+  Error Button
+</button>
 ```
 
-### Input Component
+### Dark Mode
+
+Dark mode values are handled through the theme configuration:
 
 ```tsx
-// Default Input
-<input
-  className="
-    bg-input-background-default
-    disabled:bg-input-background-disabled
-    border-input-border-default
-    focus:border-input-border-focus
-    text-input-text-default
-    placeholder:text-input-text-placeholder
-    disabled:text-input-text-disabled
-  "
-  placeholder="Enter text..."
-/>
-
-// Error State Input
-<input
-  className="
-    bg-input-background-default
-    border-input-border-error
-    text-input-text-default
-  "
-  placeholder="Error state..."
-/>
-```
-
-### Card Component Example
-
-```tsx
-<div className="
-  bg-surface-main
-  dark:bg-surface-dark-main
-  text-text-primary
-  dark:text-text-dark-primary
-">
-  <h2 className="text-text-primary dark:text-text-dark-primary">
-    Card Title
-  </h2>
-  <p className="text-text-secondary dark:text-text-dark-secondary">
-    Card content with secondary text
-  </p>
-  <span className="text-text-tertiary dark:text-text-dark-tertiary">
-    Additional information
-  </span>
+<div className="bg-surface-main dark:bg-surface-main">
+  Content
 </div>
 ```
 
-### Alert Component Example
+### State Variations
 
-```tsx
-// Success Alert
-<div className="
-  bg-background-success
-  border-l-4 border-status-success
-  text-text-primary
-">
-  Success message
-</div>
+Component states follow this pattern:
 
-// Error Alert
-<div className="
-  bg-background-error
-  border-l-4 border-status-error
-  text-text-primary
-">
-  Error message
-</div>
-
-// Warning Alert
-<div className="
-  bg-background-warning
-  border-l-4 border-status-warning
-  text-text-primary
-">
-  Warning message
-</div>
-
-// Info Alert
-<div className="
-  bg-background-info
-  border-l-4 border-status-info
-  text-text-primary
-">
-  Information message
-</div>
-```
-
-### Navigation Component Example
-
-```tsx
-<nav className="bg-surface-main dark:bg-surface-dark-main">
-  <a className="
-    text-text-primary
-    hover:text-brand-primary
-    dark:text-text-dark-primary
-    dark:hover:text-brand-primary
-  ">
-    Home
-  </a>
-  <a className="
-    text-text-secondary
-    hover:text-text-primary
-    dark:text-text-dark-secondary
-    dark:hover:text-text-dark-primary
-  ">
-    About
-  </a>
-</nav>
-```
-
-### Form Label Example
-
-```tsx
-<div className="group">
-  <label className="
-    text-text-secondary
-    group-focus-within:text-brand-primary
-    dark:text-text-dark-secondary
-    dark:group-focus-within:text-brand-primary
-  ">
-    Form Label
-  </label>
-  <input className="
-    border-input-border-default
-    focus:border-input-border-focus
-    group-focus-within:border-brand-primary
-  "/>
-</div>
-```
-
-These examples demonstrate:
-- Consistent use of color tokens
-- Proper dark mode handling
-- State management (hover, focus, active, disabled)
-- Component-specific styling
-- Semantic color usage
-- Accessibility considerations
+- Default: Base token (e.g., `bg-surface-button`)
+- Hover: Hover token (e.g., `hover:enabled:bg-surface-button-hover`)
+- Active/Pressed: Pressed token (e.g., `active:bg-surface-button-pressed`)
+- Disabled: Disabled token (e.g., `disabled:bg-surface-button-disabled`)
 
 ## Best Practices
 
-1. **Use the Right Level**
-   - `bg-orange-500`
-   - `bg-brand-primary`
-   - `bg-button-primary-background`
-
-2. **Component Consistency**
-   - Use component tokens for reusable UI components
-   - Keep component-specific styles in component tokens
-
-3. **Dark Mode**
-   - Always consider dark mode when adding new colors
-   - Use semantic color tokens that include dark variants
-
-4. **State Management**
-   - Use provided state variations (hover, active, disabled)
-   - Don't create custom state colors
-
-## Benefits
-
-- **Maintainability**: Change a base color once, updates everywhere
-- **Consistency**: Predefined tokens ensure consistent usage
-- **Developer Experience**: Clear naming and purpose for each token
-- **Dark Mode**: Built-in support for light/dark themes
-- **Scalability**: Easy to extend with new components or variations
-
-## Migration Guide
-
-When migrating from the old color system:
-
-1. Replace direct color values with semantic tokens:
-   ```diff
-   - bg-[#FF7C15]
-   + bg-brand-primary
-   ```
-
-2. Use component tokens for specific components:
-   ```diff
-   - bg-surface-brand-primary-1-light
-   + bg-button-primary-background
-   ```
-
-3. Update dark mode usage:
-   ```diff
-   - dark:bg-surface-main-dark
-   + dark:bg-surface-dark-main
-   ```
-
-## Contributing
-
-When adding new colors:
-
-1. Add base colors to `colors.ts` if needed
-2. Create semantic tokens in `semantic.ts`
-3. Add component-specific tokens in `components.ts`
-4. Update documentation
-5. Create examples in Storybook
+1. Always use semantic or component-specific tokens instead of direct color values
+2. Follow the established naming pattern for states (default, hover, pressed, disabled)
+3. Use the appropriate color token level based on the use case:
+   - Use semantic colors for general UI elements
+   - Use component-specific colors for components
+   - Never use base tint colors directly
+4. Consider dark mode by using the appropriate dark mode variants when necessary

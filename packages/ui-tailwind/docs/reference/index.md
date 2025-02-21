@@ -12,3 +12,9 @@
 - [IFigmaVariableCollection](interfaces/IFigmaVariableCollection.md)
 - [IFigmaVariableCollectionMode](interfaces/IFigmaVariableCollectionMode.md)
 - [IFigmaVariableCollections](interfaces/IFigmaVariableCollections.md)
+
+## Variables
+
+- [baseColors](variables/baseColors.md)
+- [componentTokens](variables/componentTokens.md)
+- [semanticColors](variables/semanticColors.md)

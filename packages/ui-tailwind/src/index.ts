@@ -7,3 +7,4 @@ export * from "./models/IFigmaVariableCollection";
 export * from "./models/IFigmaVariableCollectionMode";
 export * from "./models/IFigmaVariableCollections";
 export * from "./tailwindConfig";
+export * from "./tokens";

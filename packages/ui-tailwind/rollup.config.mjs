@@ -3,12 +3,27 @@
 import packageDetails from './package.json' with { type: 'json' };
 import copy from 'rollup-plugin-copy';
 import json from '@rollup/plugin-json';
+import { nodeResolve } from '@rollup/plugin-node-resolve';
+import typescript from '@rollup/plugin-typescript';
 
 const isEsm = process.env.MODULE === 'esm';
+const outputDir = isEsm ? 'dist/esm' : 'dist/cjs';
 
 const plugins = [
 	copy({
-		targets: [{ src: 'src/css', dest: 'dist/' }]
+		targets: [
+			{ src: 'src/css', dest: 'dist/' }
+		]
+	}),
+	nodeResolve({
+		extensions: ['.js', '.ts']
+	}),
+	typescript({
+		tsconfig: './tsconfig.json',
+		sourceMap: true,
+		declarationDir: `${outputDir}/types`,
+		outDir: outputDir,
+		module: 'ESNext'
 	}),
 	json()
 ];
@@ -31,9 +46,9 @@ if (packageDetails.devDependencies) {
 }
 
 export default {
-	input: `./dist/es/index.js`,
+	input: `./src/index.ts`,
 	output: {
-		file: isEsm ? `dist/esm/index.mjs` : `dist/cjs/index.cjs`,
+		file: isEsm ? `${outputDir}/index.mjs` : `${outputDir}/index.cjs`,
 		format: isEsm ? 'esm' : 'cjs',
 		name: packageDetails.name
 			.split('-')
@@ -41,7 +56,8 @@ export default {
 			.join(''),
 		compact: false,
 		exports: 'named',
-		globals: globs
+		globals: globs,
+		sourcemap: true
 	},
 	external: [/^node:.*/].concat(Object.keys(globs).map(g => new RegExp(`^${g}`))),
 	onwarn: message => {

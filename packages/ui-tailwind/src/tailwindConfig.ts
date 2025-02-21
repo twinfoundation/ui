@@ -3,6 +3,25 @@
 import { Is, StringHelper } from "@twin.org/core";
 import type { Config } from "tailwindcss";
 import type { IFigmaVariableCollection } from "./models/IFigmaVariableCollection";
+import { baseColors, semanticColors, componentTokens } from "./tokens";
+
+/**
+ * Type definition for color configuration in Tailwind.
+ * Can be either a string (direct color value),
+ * a nested ColorConfig object (for grouped colors),
+ * or an object mapping modes to color values.
+ */
+interface ColorConfig {
+	[key: string]: string | ColorConfig | { [key: string]: string };
+}
+
+/**
+ * Type for a section of colors in the configuration.
+ * Maps color names to their values or mode configurations.
+ */
+interface ColorSection {
+	[key: string]: string | { [mode: string]: string };
+}
 
 /**
  * The tailwind config.
@@ -22,9 +41,60 @@ export class TailwindConfig {
 		flattenSections: string[] = TailwindConfig.getDefaultFlattenSections(),
 		removeSections: string[] = TailwindConfig.getDefaultRemoveSections()
 	): Config["theme"] {
-		const colors: { [color: string]: { [section: string]: { [mode: string]: string } | string } } =
-			{};
+		const colors: ColorConfig = {
+			// Base colors and tints
+			neutral: baseColors.neutral,
+			"brand-primary-tints": baseColors.orange,
+			"brand-secondary-tints": baseColors.blue,
+			"system-success-tints": baseColors.success,
+			"system-error-tints": baseColors.error,
+			"system-warning-tints": baseColors.warning,
+			"system-information-tints": baseColors.information,
 
+			// Semantic colors
+			brand: {
+				primary: semanticColors.brand.primary,
+				"primary-hover": semanticColors.brand.primaryHover,
+				secondary: semanticColors.brand.secondary,
+				"secondary-hover": semanticColors.brand.secondaryHover
+			},
+			surface: {
+				main: semanticColors.surface.main,
+				second: semanticColors.surface.second,
+				third: semanticColors.surface.third
+			},
+			primary: semanticColors.primary,
+			secondary: semanticColors.secondary,
+			tertiary: semanticColors.tertiary,
+			success: semanticColors.success,
+			error: semanticColors.error,
+			warning: semanticColors.warning,
+			information: semanticColors.information,
+
+			// Component-specific colors
+			"surface-button": componentTokens.surface.button.default,
+			"surface-button-hover": componentTokens.surface.button.hover,
+			"surface-button-pressed": componentTokens.surface.button.pressed,
+			"surface-button-disabled": componentTokens.surface.button.disabled,
+			"surface-button-text": componentTokens.surface.button.text,
+			"surface-button-text-hover": componentTokens.surface.button.textHover,
+			"surface-button-text-pressed": componentTokens.surface.button.textPressed,
+			"surface-button-text-disabled": componentTokens.surface.button.textDisabled,
+
+			"surface-button-alt": componentTokens.surface.buttonAlt.default,
+			"surface-button-alt-hover": componentTokens.surface.buttonAlt.hover,
+			"surface-button-alt-pressed": componentTokens.surface.buttonAlt.pressed,
+			"surface-button-alt-disabled": componentTokens.surface.buttonAlt.disabled,
+			"surface-button-text-alt": componentTokens.surface.buttonAlt.text,
+			"surface-button-text-alt-hover": componentTokens.surface.buttonAlt.textHover,
+			"surface-button-text-alt-pressed": componentTokens.surface.buttonAlt.textPressed,
+			"surface-button-text-alt-disabled": componentTokens.surface.buttonAlt.textDisabled,
+
+			// Special values
+			transparent: "transparent"
+		};
+
+		// Process Figma variables
 		for (const figmaVariablesCollection of figmaVariablesCollections) {
 			for (let i = 0; i < figmaVariablesCollection.modes.length; i++) {
 				const figmaVariableMode = figmaVariablesCollection.modes[i];
@@ -47,13 +117,21 @@ export class TailwindConfig {
 								variableName = StringHelper.kebabCase(variableName).toLowerCase();
 
 								if (flattenSections.includes(section)) {
-									colors[variableName] ??= {};
-									colors[variableName][modeName] = figmaVariable.value;
+									colors[variableName] = colors[variableName] || {};
+									if (typeof colors[variableName] === "object") {
+										(colors[variableName] as { [key: string]: string })[modeName] =
+											figmaVariable.value;
+									}
 								} else {
-									colors[section] ??= {};
-									colors[section][variableName] ??= {};
-									(colors[section][variableName] as { [mode: string]: string })[modeName] =
-										figmaVariable.value;
+									colors[section] = colors[section] || {};
+									if (typeof colors[section] === "object") {
+										const sectionObj = colors[section] as ColorSection;
+										sectionObj[variableName] = sectionObj[variableName] || {};
+										if (typeof sectionObj[variableName] === "object") {
+											(sectionObj[variableName] as { [key: string]: string })[modeName] =
+												figmaVariable.value;
+										}
+									}
 								}
 							}
 						}
@@ -103,52 +181,23 @@ export class TailwindConfig {
 	 * Get the default theme replacements.
 	 * @returns The default theme replacements.
 	 */
-	public static getDefaultThemeReplacements(): { from: RegExp; to: string }[] {
-		return [
-			{
-				from: /^text-/g,
-				to: ""
-			},
-			{
-				from: /^border-/g,
-				to: ""
-			},
-			{
-				from: /^bg-/g,
-				to: ""
-			},
-			{
-				from: /^surface-text-/g,
-				to: "surface-"
-			},
-			{
-				from: /^surface-border-/g,
-				to: "surface-"
-			},
-			{
-				from: /^surface-bg-/g,
-				to: "surface-"
-			},
-			{
-				from: /_/g,
-				to: "-"
-			}
-		];
+	private static getDefaultThemeReplacements(): { from: RegExp; to: string }[] {
+		return [];
 	}
 
 	/**
-	 * Strip the sections from the variables.
-	 * @returns The sections to strip from variables.
+	 * Get the default flatten sections.
+	 * @returns The default flatten sections.
 	 */
-	public static getDefaultFlattenSections(): string[] {
-		return ["surface", "text", "buttons"];
+	private static getDefaultFlattenSections(): string[] {
+		return [];
 	}
 
 	/**
-	 * Remove the specified sections.
-	 * @returns The sections to remove from variables.
+	 * Get the default remove sections.
+	 * @returns The default remove sections.
 	 */
-	public static getDefaultRemoveSections(): string[] {
-		return ["brand-primary", "brand-secondary", "base"];
+	private static getDefaultRemoveSections(): string[] {
+		return [];
 	}
 }
