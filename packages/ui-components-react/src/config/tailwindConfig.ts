@@ -21,15 +21,21 @@ export class TailwindConfig {
 		collections: string[] = ["Twin Brand Color", "Twin Tokens"]
 	): Config["theme"] {
 		const defaultFigmaVariables = FigmaVariables.loadDefaultVariables();
+		console.log('Loaded Figma variables:', JSON.stringify(defaultFigmaVariables, null, 2));
 
 		const figmaVariablesCollections: IFigmaVariableCollection[] = [];
 		for (const collection of collections) {
 			const col = FigmaVariables.getVariableCollection(defaultFigmaVariables, collection);
 			if (col) {
 				figmaVariablesCollections.push(col);
+				console.log(`Found collection ${collection}:`, JSON.stringify(col, null, 2));
+			} else {
+				console.log(`Collection not found: ${collection}`);
 			}
 		}
-		return TailwindConfigTwinOrg.generateTheme(figmaVariablesCollections);
+		const theme = TailwindConfigTwinOrg.generateTheme(figmaVariablesCollections);
+		console.log('Generated theme:', JSON.stringify(theme, null, 2));
+		return theme;
 	}
 
 	/**

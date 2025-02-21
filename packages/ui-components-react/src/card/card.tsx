@@ -14,14 +14,47 @@ import { CardPropTypes, type CardProps } from "./cardProps";
 const BASE_CLASSES = "border-2 border-transparent focus:outline-none focus:ring-2";
 
 const colorClasses = {
-	primary: `${BASE_CLASSES} text-white bg-surface-button dark:bg-surface-button hover:enabled:bg-surface-button-hover  dark:hover:enabled:bg-surface-button-hover focus:ring-surface-button-pressed`,
-	secondary: `${BASE_CLASSES} text-white bg-surface-button-alt dark:bg-surface-button-alt hover:enabled:bg-surface-button-alt-hover focus:ring-surface-button-alt-pressed`,
-	error: `${BASE_CLASSES} text-white bg-error dark-bg-error hover:enabled:bg-system-error-tints-600 focus:ring-system-error-tints-200`,
-	warning: `${BASE_CLASSES} text-white bg-warning dark-bg-warning hover:enabled:bg-system-warning-tints-600 focus:ring-system-warning-tints-200`,
-	success: `${BASE_CLASSES} text-white bg-success dark-bg-success hover:enabled:bg-system-success-tints-600 focus:ring-system-success-tints-200`,
-	info: `${BASE_CLASSES} text-white bg-information dark:bg-information hover:enabled:bg-system-information-tints-600 focus:ring-system-information-tints-200`,
-	plain: `${BASE_CLASSES} text-black dark:text-invert bg-surface-second dark:bg-surface-third-dark hover:enabled:bg-surface-third focus:ring-surface-button-pressed   dark:hover:enabled:bg-surface-second-dark dark:focus:ring-surface-button-pressed`,
-	dark: `${BASE_CLASSES} text-white dark:text-black bg-gray-800 dark:bg-surface-second hover:bg-gray-700 focus:outline-none focus:ring-gray-300 dark:hover:bg-gray-600 dark:focus:ring-gray-700`
+	primary: `${BASE_CLASSES} 
+		bg-button-primary-background-default 
+		hover:enabled:bg-button-primary-background-hover 
+		active:bg-button-primary-background-pressed 
+		disabled:bg-button-primary-background-disabled
+		text-button-primary-text-default
+		disabled:text-button-primary-text-disabled`,
+	secondary: `${BASE_CLASSES} 
+		bg-button-secondary-background-default 
+		hover:enabled:bg-button-secondary-background-hover 
+		active:bg-button-secondary-background-pressed 
+		disabled:bg-button-secondary-background-disabled
+		text-button-secondary-text-default
+		disabled:text-button-secondary-text-disabled`,
+	ghost: `${BASE_CLASSES} 
+		bg-button-ghost-background-default 
+		hover:enabled:bg-button-ghost-background-hover 
+		active:bg-button-ghost-background-pressed 
+		disabled:bg-button-ghost-background-disabled
+		text-button-ghost-text-default
+		disabled:text-button-ghost-text-disabled`,
+	error: `${BASE_CLASSES} 
+		bg-status-error 
+		hover:enabled:bg-error-600
+		active:bg-error-400 
+		text-neutral-50`,
+	warning: `${BASE_CLASSES} 
+		bg-status-warning 
+		hover:enabled:bg-warning-600
+		active:bg-warning-400 
+		text-neutral-50`,
+	success: `${BASE_CLASSES} 
+		bg-status-success 
+		hover:enabled:bg-success-600
+		active:bg-success-400 
+		text-neutral-50`,
+	info: `${BASE_CLASSES} 
+		bg-status-info 
+		hover:enabled:bg-information-600
+		active:bg-information-400 
+		text-neutral-50`
 };
 
 /**
@@ -103,7 +136,7 @@ export class Card extends React.Component<CardProps> {
 						{buttons.map(button => (
 							<FlowbiteButton
 								href={button?.href ?? "#"}
-								className={`w-full ${colorClasses[button?.color ?? "secondary"]}`}
+								className={`w-full ${colorClasses[button?.color as keyof typeof colorClasses] ?? colorClasses.secondary}`}
 							>
 								{button?.label}
 								{button?.icon && typeof button?.icon === "function" && (
@@ -171,7 +204,7 @@ export class Card extends React.Component<CardProps> {
 							{buttons.map(button => (
 								<FlowbiteButton
 									href={button?.href ?? "#"}
-									className={`w-full ${colorClasses[button?.color ?? "secondary"]}`}
+									className={`w-full ${colorClasses[button?.color as keyof typeof colorClasses] ?? colorClasses.secondary}`}
 								>
 									{button?.label}
 									{button?.icon && typeof button?.icon === "function" && (
@@ -222,7 +255,7 @@ export class Card extends React.Component<CardProps> {
 					) : (
 						<></>
 					)}
-					<span className="ml-3 mr-2 rounded bg-cyan-100 px-2.5 py-0.5 text-xs font-semibold text-cyan-800 dark:bg-cyan-200 dark:text-cyan-800">
+					<span className="ml-3 rounded bg-cyan-100 px-2.5 py-0.5 text-xs font-semibold text-cyan-800 dark:bg-cyan-200 dark:text-cyan-800">
 						{eCommerce?.stars}
 					</span>
 				</div>
@@ -234,7 +267,7 @@ export class Card extends React.Component<CardProps> {
 						buttons.map(button => (
 							<FlowbiteButton
 								href={button?.href ?? "#"}
-								className={`${colorClasses[button?.color ?? "secondary"]}`}
+								className={`${colorClasses[button?.color as keyof typeof colorClasses] ?? colorClasses.secondary}`}
 							>
 								{button?.label}
 								{button?.icon && typeof button?.icon === "function" && (
@@ -272,7 +305,7 @@ export class Card extends React.Component<CardProps> {
 						buttons.map(button => (
 							<a
 								href={button?.href ?? "#"}
-								className={`inline-flex w-full items-center justify-center rounded-lg px-4 py-2.5 focus:outline-none focus:ring-4 sm:w-auto ${colorClasses[button?.color ?? "dark"]}`}
+								className={`inline-flex w-full items-center justify-center rounded-lg px-4 py-2.5 focus:outline-none focus:ring-4 sm:w-auto ${colorClasses[button?.color as keyof typeof colorClasses] ?? colorClasses.secondary}`}
 							>
 								{button?.icon && typeof button?.icon === "function" && (
 									<div className="mr-3">{button?.icon()}</div>
@@ -464,7 +497,9 @@ export class Card extends React.Component<CardProps> {
 								clipRule="evenodd"
 							/>
 						</svg>
-						<span className="text-base font-normal leading-tight text-gray-500">Sketch Files</span>
+						<span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">
+							Sketch Files
+						</span>
 					</li>
 					<li className="flex space-x-3 line-through decoration-gray-500">
 						<svg
@@ -479,7 +514,9 @@ export class Card extends React.Component<CardProps> {
 								clipRule="evenodd"
 							/>
 						</svg>
-						<span className="text-base font-normal leading-tight text-gray-500">API Access</span>
+						<span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">
+							API Access
+						</span>
 					</li>
 					<li className="flex space-x-3 line-through decoration-gray-500">
 						<svg
@@ -494,7 +531,7 @@ export class Card extends React.Component<CardProps> {
 								clipRule="evenodd"
 							/>
 						</svg>
-						<span className="text-base font-normal leading-tight text-gray-500">
+						<span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">
 							Complete documentation
 						</span>
 					</li>
@@ -511,7 +548,7 @@ export class Card extends React.Component<CardProps> {
 								clipRule="evenodd"
 							/>
 						</svg>
-						<span className="text-base font-normal leading-tight text-gray-500">
+						<span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">
 							24×7 phone & email support
 						</span>
 					</li>
@@ -645,30 +682,6 @@ export class Card extends React.Component<CardProps> {
 									fill="#F5841F"
 								/>
 								<path
-									d="M10.4717 32.6338L16.5236 35.5013L16.4979 34.2768L17.0043 33.8323H22.994L23.5187 34.2753L23.48 35.4989L29.4935 32.641L26.5673 35.0591L23.0289 37.4894H16.9558L13.4197 35.0492L10.4717 32.6338Z"
-									fill="#C0AC9D"
-								/>
-								<path
-									d="M22.2191 30.231L23.0748 30.8354L23.5763 34.8361L22.8506 34.2234H17.1513L16.4395 34.8485L16.9244 30.8357L17.7804 30.231H22.2191Z"
-									fill="#161616"
-								/>
-								<path
-									d="M37.9395 0.351562L39.9998 6.53242L38.7131 12.7819L39.6293 13.4887L38.3895 14.4346L39.3213 15.1542L38.0875 16.2779L38.8449 16.8264L36.8347 19.1742L28.5894 16.7735L28.5179 16.7352L22.5762 11.723L37.9395 0.351562Z"
-									fill="#763E1A"
-								/>
-								<path
-									d="M2.06031 0.351562L17.4237 11.723L11.4819 16.7352L11.4105 16.7735L3.16512 19.1742L1.15488 16.8264L1.91176 16.2783L0.678517 15.1542L1.60852 14.4354L0.350209 13.4868L1.30098 12.7795L0 6.53265L2.06031 0.351562Z"
-									fill="#763E1A"
-								/>
-								<path
-									d="M28.1861 16.2485L36.9226 18.7921L39.7609 27.5398L32.2728 27.5398L27.1133 27.6049L30.8655 20.2912L28.1861 16.2485Z"
-									fill="#F5841F"
-								/>
-								<path
-									d="M11.8139 16.2485L9.13399 20.2912L12.8867 27.6049L7.72971 27.5398H0.254883L3.07728 18.7922L11.8139 16.2485Z"
-									fill="#F5841F"
-								/>
-								<path
 									d="M25.5283 5.17383L23.0847 11.7736L22.5661 20.6894L22.3677 23.4839L22.352 30.6225H17.6471L17.6318 23.4973L17.4327 20.6869L16.9139 11.7736L14.4707 5.17383H25.5283Z"
 									fill="#F5841F"
 								/>
@@ -754,47 +767,6 @@ export class Card extends React.Component<CardProps> {
 							className="group flex items-center rounded-lg bg-gray-50 p-3 text-base font-bold text-gray-900 hover:bg-gray-100 hover:shadow dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500"
 						>
 							<svg
-								className="h-5"
-								viewBox="0 0 512 512"
-								version="1.1"
-								xmlns="http://www.w3.org/2000/svg"
-								xmlnsXlink="http://www.w3.org/1999/xlink"
-							>
-								<defs>
-									<radialGradient cx="0%" cy="50%" fx="0%" fy="50%" r="100%" id="radialGradient-1">
-										<stop stopColor="#5D9DF6" offset="0%" />
-										<stop stopColor="#006FFF" offset="100%" />
-									</radialGradient>
-								</defs>
-								<g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-									<g id="logo">
-										<rect
-											id="base"
-											fill="url(#radialGradient-1)"
-											x="0"
-											y="0"
-											width="512"
-											height="512"
-											rx="256"
-										/>
-										<path
-											d="M169.209772,184.531136 C217.142772,137.600733 294.857519,137.600733 342.790517,184.531136 L348.559331,190.179285 C350.955981,192.525805 350.955981,196.330266 348.559331,198.676787 L328.82537,217.99798 C327.627045,219.171241 325.684176,219.171241 324.485851,217.99798 L316.547278,210.225455 C283.10802,177.485633 228.89227,177.485633 195.453011,210.225455 L186.951456,218.549188 C185.75313,219.722448 183.810261,219.722448 182.611937,218.549188 L162.877976,199.227995 C160.481326,196.881474 160.481326,193.077013 162.877976,190.730493 L169.209772,184.531136 Z M383.602212,224.489406 L401.165475,241.685365 C403.562113,244.031874 403.562127,247.836312 401.165506,250.182837 L321.971538,327.721548 C319.574905,330.068086 315.689168,330.068112 313.292501,327.721609 C313.292491,327.721599 313.29248,327.721588 313.29247,327.721578 L257.08541,272.690097 C256.486248,272.103467 255.514813,272.103467 254.915651,272.690097 C254.915647,272.690101 254.915644,272.690105 254.91564,272.690108 L198.709777,327.721548 C196.313151,330.068092 192.427413,330.068131 190.030739,327.721634 C190.030725,327.72162 190.03071,327.721606 190.030695,327.721591 L110.834524,250.181849 C108.437875,247.835329 108.437875,244.030868 110.834524,241.684348 L128.397819,224.488418 C130.794468,222.141898 134.680206,222.141898 137.076856,224.488418 L193.284734,279.520668 C193.883897,280.107298 194.85533,280.107298 195.454493,279.520668 C195.454502,279.520659 195.45451,279.520651 195.454519,279.520644 L251.65958,224.488418 C254.056175,222.141844 257.941913,222.141756 260.338618,224.488222 C260.338651,224.488255 260.338684,224.488288 260.338717,224.488321 L316.546521,279.520644 C317.145683,280.107273 318.117118,280.107273 318.71628,279.520644 L374.923175,224.489406 C377.319825,222.142885 381.205562,222.142885 383.602212,224.489406 Z"
-											id="WalletConnect"
-											fill="#FFFFFF"
-											fillRule="nonzero"
-										/>
-									</g>
-								</g>
-							</svg>
-							<span className="ml-3 flex-1 whitespace-nowrap">WalletConnect</span>
-						</a>
-					</li>
-					<li>
-						<a
-							href="#"
-							className="group flex items-center rounded-lg bg-gray-50 p-3 text-base font-bold text-gray-900 hover:bg-gray-100 hover:shadow dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500"
-						>
-							<svg
 								className="h-4"
 								viewBox="0 0 96 96"
 								fill="none"
@@ -805,7 +777,7 @@ export class Card extends React.Component<CardProps> {
 									fill="#617BFF"
 								/>
 								<path
-									d="M48.5 71.8002H72.1V95.6002H73C79.1 95.6002 84.9 93.2002 89.2 88.9002C93.5 84.6002 95.9 78.8002 95.9 72.7002V48.2002H48.5V71.8002Z"
+									d="M195.94 155.5C191.49 179.08 170.8 196.91 145.93 196.91C117.81 196.91 95.0204 174.12 95.0204 146C95.0204 117.88 117.81 95.0897 145.93 95.0897C170.8 95.0897 191.49 112.93 195.94 136.5H247.31C242.52 84.7197 198.96 44.1797 145.93 44.1797C89.6904 44.1797 44.1104 89.7697 44.1104 146C44.1104 202.24 89.7004 247.82 145.93 247.82C198.96 247.82 242.52 207.28 247.31 155.5H195.94Z"
 									fill="#617BFF"
 								/>
 							</svg>

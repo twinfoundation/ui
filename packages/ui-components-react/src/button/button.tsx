@@ -7,14 +7,59 @@ import { ButtonPropTypes, type ButtonProps } from "./buttonProps";
 const BASE_CLASSES = "border-2 border-transparent focus:outline-none focus:ring-2";
 
 const colorClasses = {
-	primary: `${BASE_CLASSES} text-white bg-surface-button dark:bg-surface-button hover:enabled:bg-surface-button-hover dark:hover:enabled:bg-surface-button-hover focus:ring-surface-button-pressed`,
-	secondary: `${BASE_CLASSES} text-white bg-surface-button-alt dark:bg-surface-button-alt hover:enabled:bg-surface-button-alt-hover dark:hover:enabled:bg-surface-button-alt-hover focus:ring-surface-button-alt-pressed`,
-	error: `${BASE_CLASSES} text-white bg-error dark:bg-error hover:enabled:bg-system-error-tints-600 dark:hover:enabled:bg-system-error-tints-600 focus:ring-system-error-tints-200`,
-	warning: `${BASE_CLASSES} text-white bg-warning dark:bg-warning hover:enabled:bg-system-warning-tints-600 dark:hover:enabled:bg-system-warning-tints-600 focus:ring-system-warning-tints-200`,
-	success: `${BASE_CLASSES} text-white bg-success dark:bg-success hover:enabled:bg-system-success-tints-600 dark:hover:enabled:bg-system-success-tints-600 focus:ring-system-success-tints-200`,
-	info: `${BASE_CLASSES} text-white bg-information dark:bg-information hover:enabled:bg-system-information-tints-600 dark:hover:enabled:bg-system-information-tints-600 focus:ring-system-information-tints-200`,
-	plain: `${BASE_CLASSES} text-black dark:text-invert bg-surface-second dark:bg-surface-third-dark hover:enabled:bg-surface-third focus:ring-gray-200 dark:hover:enabled:bg-surface-second-dark dark:focus:ring-surface-button-pressed`,
-	dark: `${BASE_CLASSES} text-white dark:text-black bg-gray-800 dark:bg-surface-second hover:enabled:bg-gray-700 focus:ring-gray-200 dark:hover:enabled:bg-gray-600 dark:focus:ring-gray-700`
+	primary: `${BASE_CLASSES} 
+		bg-surface-button
+		hover:enabled:bg-surface-button-hover 
+		active:bg-surface-button-pressed 
+		disabled:bg-surface-button-disabled
+		text-surface-button-text
+		hover:enabled:text-surface-button-text-hover
+		active:text-surface-button-text-pressed`,
+	secondary: `${BASE_CLASSES} 
+		bg-surface-button-alt
+		hover:enabled:bg-surface-button-alt-hover 
+		active:bg-surface-button-alt-pressed 
+		disabled:bg-surface-button-alt-disabled
+		text-surface-button-text-alt
+		hover:enabled:text-surface-button-text-alt-hover
+		active:text-surface-button-text-alt-pressed`,
+	ghost: `${BASE_CLASSES} 
+		bg-transparent
+		hover:enabled:bg-neutral-100
+		active:bg-neutral-200
+		disabled:bg-transparent
+		text-primary
+		hover:enabled:text-primary
+		active:text-primary
+		disabled:text-neutral-500`,
+	error: `${BASE_CLASSES} 
+		bg-error
+		hover:enabled:bg-system-error-tints-600
+		active:bg-system-error-tints-400 
+		text-neutral-50
+		disabled:bg-neutral-400
+		disabled:text-neutral-500`,
+	warning: `${BASE_CLASSES} 
+		bg-warning
+		hover:enabled:bg-system-warning-tints-600
+		active:bg-system-warning-tints-400 
+		text-neutral-50
+		disabled:bg-neutral-400
+		disabled:text-neutral-500`,
+	success: `${BASE_CLASSES} 
+		bg-success
+		hover:enabled:bg-system-success-tints-600
+		active:bg-system-success-tints-400 
+		text-neutral-50
+		disabled:bg-neutral-400
+		disabled:text-neutral-500`,
+	info: `${BASE_CLASSES} 
+		bg-information
+		hover:enabled:bg-system-information-tints-600
+		active:bg-system-information-tints-400 
+		text-neutral-50
+		disabled:bg-neutral-400
+		disabled:text-neutral-500`
 };
 
 const buttonSizes = {
@@ -38,7 +83,7 @@ const iconSizes = {
  */
 export class Button extends React.Component<ButtonProps> {
 	/**
-	 * The prop types of the component.
+	 * The prop types for the component.
 	 */
 	public static propTypes = ButtonPropTypes;
 
@@ -99,7 +144,9 @@ export class Button extends React.Component<ButtonProps> {
 				size={size}
 				outline={outline}
 				disabled={disabled}
-				className={`${colorClasses[color ?? "primary"]} ${iconOnlyClasses} ${className ?? ""}`}
+				className={`group relative flex items-stretch justify-center p-0.5 text-center font-medium transition-[color,background-color,border-color,text-decoration-color,fill,stroke,box-shadow] focus:z-10 ${
+					colorClasses[color as keyof typeof colorClasses]
+				} ${iconOnlyClasses} ${className ?? ""} rounded-lg`}
 				{...rest}
 			>
 				{iconOnly ? iconContent : buttonContent}

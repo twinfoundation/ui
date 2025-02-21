@@ -4,50 +4,44 @@
 /**
  * Button colors.
  */
-// eslint-disable-next-line @typescript-eslint/naming-convention
 export const ButtonColors = {
 	/**
-	 * Primary.
+	 * Primary button - Used for primary actions
 	 */
 	Primary: "primary",
 
 	/**
-	 * Secondary.
+	 * Secondary button - Used for secondary actions
 	 */
 	Secondary: "secondary",
 
 	/**
-	 * Plain.
+	 * Ghost button - Used for tertiary actions
 	 */
-	Plain: "plain",
+	Ghost: "ghost",
 
 	/**
-	 * Error.
-	 */
-	Error: "error",
-
-	/**
-	 * Warning.
-	 */
-	Warning: "warning",
-
-	/**
-	 * Success.
+	 * Success button - Used for success states
 	 */
 	Success: "success",
 
 	/**
-	 * Info.
+	 * Error button - Used for error states
 	 */
-	Info: "info",
+	Error: "error",
 
 	/**
-	 * Dark.
+	 * Warning button - Used for warning states
 	 */
-	Dark: "dark"
+	Warning: "warning",
+
+	/**
+	 * Info button - Used for informational states
+	 */
+	Info: "info"
 } as const;
 
 /**
- * Button colors.
+ * Type for button colors
  */
-export type ButtonColors = (typeof ButtonColors)[keyof typeof ButtonColors];
+export type ButtonColor = (typeof ButtonColors)[keyof typeof ButtonColors];

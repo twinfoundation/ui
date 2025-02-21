@@ -3,3 +3,4 @@
 @import 'tailwindcss/utilities';
 
 @import '@twin.org/ui-components-react/css/index.css';
+@import '@twin.org/ui-tailwind/css/index.css';
