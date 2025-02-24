@@ -72,6 +72,8 @@ export * from "./radio/radioProps";
 export * from "./rangeSlider/rangeSlider";
 export * from "./rangeSlider/rangeSliderProps";
 export * from "./rangeSlider/rangeSliderSizes";
+export * from "./rangeSlider/advancedRangeSlider";
+export * from "./rangeSlider/advancedRangeSliderProps";
 export * from "./select/select";
 export * from "./select/selectProps";
 export * from "./select/selectSizes";
