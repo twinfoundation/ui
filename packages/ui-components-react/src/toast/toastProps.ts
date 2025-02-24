@@ -25,4 +25,9 @@ export interface ToastProps extends Omit<FlowbiteToastProps, "color" | "label" |
 	 * ARIA role for the toast. Defaults to "alert"
 	 */
 	role?: "alert" | "status";
+
+	/**
+	 * Label for the close button. Defaults to "Close notification"
+	 */
+	closeLabel?: string;
 }

@@ -11,6 +11,7 @@ import type { ToastProps } from "./toastProps";
  * @param props.duration Optional duration in milliseconds before auto-dismissing the toast.
  * @param props.onDismiss Optional callback function when toast is dismissed.
  * @param props.role Optional ARIA role for the toast, defaults to "alert".
+ * @param props.closeLabel Optional label for the close button, defaults to "Close notification".
  * @returns The rendered Toast component.
  */
 export const Toast: React.FC<ToastProps> = ({
@@ -18,6 +19,7 @@ export const Toast: React.FC<ToastProps> = ({
 	duration,
 	onDismiss,
 	role = "alert",
+	closeLabel = "Close notification",
 	...rest
 }) => {
 	const [show, setShow] = useState(true);
@@ -42,13 +44,13 @@ export const Toast: React.FC<ToastProps> = ({
 	}
 
 	return (
-		<div>
+		<>
 			{show && (
 				<FlowbiteToast {...rest} role={role} aria-live="polite">
 					{children}
-					<FlowbiteToast.Toggle onClick={handleDismiss} aria-label="Close notification" />
+					<FlowbiteToast.Toggle onClick={handleDismiss} aria-label={closeLabel} />
 				</FlowbiteToast>
 			)}
-		</div>
+		</>
 	);
 };

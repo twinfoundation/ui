@@ -83,3 +83,10 @@ export const CustomStyle: Story = {
 		)
 	}
 };
+
+export const CustomCloseLabel: Story = {
+	args: {
+		children: "Toast message with custom close label",
+		closeLabel: "Dismiss notification"
+	}
+};
