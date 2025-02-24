@@ -1,8 +1,9 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
-import { Tooltip as FlowbiteTooltip, Button as FlowbiteButton } from "flowbite-react";
+import { Tooltip as FlowbiteTooltip } from "flowbite-react";
 import React, { type ReactNode } from "react";
 import { TooltipPropTypes, type TooltipProps } from "./tooltipProps";
+import { Button } from "../button/button";
 
 /**
  * Tooltip component.
@@ -32,12 +33,10 @@ export class Tooltip extends React.Component<TooltipProps> {
 	 * @returns The component to render.
 	 */
 	public render(): ReactNode {
-		const { children, ...rest } = this._props;
+		const { children, color, ...rest } = this._props;
 		return (
 			<FlowbiteTooltip {...rest}>
-				<FlowbiteButton className="text-invert bg-surface-button hover:enabled:bg-surface-button-hover dark:bg-surface-button dark:hover:enabled:bg-surface-button-hover focus:ring-surface-button-pressed border-2 border-transparent focus:ring">
-					{children}
-				</FlowbiteButton>
+				<Button color={color ?? "primary"}>{children}</Button>
 			</FlowbiteTooltip>
 		);
 	}
