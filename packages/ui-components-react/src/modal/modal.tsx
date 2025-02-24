@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0.
 import { Modal as FlowbiteModal, Button as FlowbiteButton } from "flowbite-react";
 import React, { type ReactNode } from "react";
-import { ModalPropTypes, type ModalProps } from "./modalProps";
+import { ModalPropTypes, ModalDefaultProps, type ModalProps } from "./modalProps";
 
 /**
  * Modal component.
@@ -12,6 +12,11 @@ export class Modal extends React.Component<ModalProps> {
 	 * The prop types of the component.
 	 */
 	public static propTypes = ModalPropTypes;
+
+	/**
+	 * The default props of the component.
+	 */
+	public static defaultProps = ModalDefaultProps;
 
 	/**
 	 * The props of the component.
@@ -32,9 +37,9 @@ export class Modal extends React.Component<ModalProps> {
 	 * @returns The component to render.
 	 */
 	public render(): ReactNode {
-		const { header, body, footerButtons, ...rest } = this._props;
+		const { header, body, footerButtons, show = false, onClose, ...rest } = this._props;
 		return (
-			<FlowbiteModal {...rest} show={true}>
+			<FlowbiteModal {...rest} show={show} onClose={onClose}>
 				{header && <FlowbiteModal.Header>{header}</FlowbiteModal.Header>}
 
 				{body && <FlowbiteModal.Body>{body}</FlowbiteModal.Body>}
@@ -42,8 +47,9 @@ export class Modal extends React.Component<ModalProps> {
 				{footerButtons && (
 					<FlowbiteModal.Footer>
 						{footerButtons && footerButtons?.length > 0 ? (
-							footerButtons.map(button => (
+							footerButtons.map((button, index) => (
 								<FlowbiteButton
+									key={`modal-button-${index}`}
 									className={button?.className ?? ""}
 									onClick={button?.onClick ?? undefined}
 								>

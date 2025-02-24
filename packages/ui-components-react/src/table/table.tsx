@@ -32,36 +32,60 @@ export class Table extends React.Component<TableProps> {
 	 * @returns The component to render.
 	 */
 	public render(): ReactNode {
-		const { head, body, ...rest } = this._props;
+		const { header, body, footer, ...rest } = this._props;
 		return (
 			<div className="overflow-x-auto">
 				<FlowbiteTable {...rest}>
 					<FlowbiteTable.Head>
-						{head && head.length > 0 ? (
-							head.map(item => (
-								<FlowbiteTable.HeadCell className={item?.className ?? ""}>
+						{header && header.length > 0 ? (
+							header.map((item, index) => (
+								<FlowbiteTable.HeadCell
+									key={`header-${index}-${String(item.content)}`}
+									className={item?.className ?? ""}
+								>
 									{item?.content}
 								</FlowbiteTable.HeadCell>
 							))
 						) : (
-							<></>
+							<FlowbiteTable.HeadCell>No header data</FlowbiteTable.HeadCell>
 						)}
 					</FlowbiteTable.Head>
 					<FlowbiteTable.Body className="divide-y">
 						{body && body.length > 0 ? (
-							body.map(row => (
-								<FlowbiteTable.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-									{row?.map(cell => (
-										<FlowbiteTable.Cell className={cell?.className ?? ""}>
+							body?.map((row, rowIndex) => (
+								<FlowbiteTable.Row key={`row-${rowIndex}`}>
+									{row.map((cell, cellIndex) => (
+										<FlowbiteTable.Cell
+											key={`cell-${rowIndex}-${cellIndex}`}
+											className={cell?.className ?? ""}
+										>
 											{cell?.content}
 										</FlowbiteTable.Cell>
 									))}
 								</FlowbiteTable.Row>
 							))
 						) : (
-							<></>
+							<FlowbiteTable.Row>
+								<FlowbiteTable.Cell>No data available</FlowbiteTable.Cell>
+							</FlowbiteTable.Row>
 						)}
 					</FlowbiteTable.Body>
+					{footer && footer.length > 0 && (
+						<FlowbiteTable.Body>
+							{footer.map((row, rowIndex) => (
+								<FlowbiteTable.Row key={`footer-row-${rowIndex}`} className={row.className ?? ""}>
+									{row.cells.map((cell, cellIndex) => (
+										<FlowbiteTable.Cell
+											key={`footer-cell-${rowIndex}-${cellIndex}`}
+											className={`font-medium ${cell?.className ?? ""}`}
+										>
+											{cell.content}
+										</FlowbiteTable.Cell>
+									))}
+								</FlowbiteTable.Row>
+							))}
+						</FlowbiteTable.Body>
+					)}
 				</FlowbiteTable>
 			</div>
 		);

@@ -1,7 +1,7 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
-import { Tabs, TabsVariants } from "@twin.org/ui-components-react";
+import { Tabs, TabsVariants, IconsSolid } from "@twin.org/ui-components-react";
 import { createElement } from "react";
 
 const meta = {
@@ -52,5 +52,42 @@ export const Pills: Story = {
 export const FullWidth: Story = {
 	args: {
 		variant: TabsVariants.FullWidth
+	}
+};
+
+export const WithIconsFullWidth: Story = {
+	args: {
+		variant: TabsVariants.FullWidth,
+		items: [
+			{
+				title: "Profile",
+				content: createElement(
+					"div",
+					{ className: "m-4 p-4 text-center" },
+					"Profile settings and information"
+				),
+				icon: IconsSolid.ProfileCard
+			},
+			{
+				title: "Settings",
+				content: createElement("div", { className: "m-4 p-4 text-center" }, "Application settings"),
+				icon: IconsSolid.UserSettings,
+				active: true
+			},
+			{
+				title: "Notifications",
+				content: createElement(
+					"div",
+					{ className: "m-4 p-4 text-center" },
+					"Notification preferences"
+				),
+				icon: IconsSolid.Bell
+			},
+			{
+				title: "Messages",
+				content: createElement("div", { className: "m-4 p-4 text-center" }, "Your messages"),
+				icon: IconsSolid.Envelope
+			}
+		]
 	}
 };

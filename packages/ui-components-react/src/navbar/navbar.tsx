@@ -1,59 +1,66 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import { Navbar as FlowbiteNavbar } from "flowbite-react";
-import React, { type ReactNode } from "react";
-import { NavbarPropTypes, type NavbarProps } from "./navbarProps";
+import type { JSX, NamedExoticComponent } from "react";
+import { memo } from "react";
+import type { NavbarProps } from "./navbarProps";
 
 /**
- * Navbar component.
+ * A responsive navigation bar component that adapts to different screen sizes.
+ * Provides a flexible container for branding, navigation links, and other content.
+ * @example
+ * ```tsx
+ * <Navbar fluid rounded>
+ *   <Navbar.Brand href="https://example.com">
+ *     <img src="/logo.svg" className="mr-3 h-6 sm:h-9" alt="Logo" />
+ *     <span className="self-center whitespace-nowrap text-xl font-semibold">Brand</span>
+ *   </Navbar.Brand>
+ *   <Navbar.Toggle />
+ *   <Navbar.Collapse>
+ *     <Navbar.Link href="#" active>Home</Navbar.Link>
+ *     <Navbar.Link href="#">About</Navbar.Link>
+ *     <Navbar.Link href="#">Services</Navbar.Link>
+ *   </Navbar.Collapse>
+ * </Navbar>
+ * ```
  */
-export class Navbar extends React.Component<NavbarProps> {
-	/**
-	 * The prop types of the component.
-	 */
-	public static propTypes = NavbarPropTypes;
+const NavbarBase = ({
+	children,
+	fluid = false,
+	rounded = false,
+	...props
+}: NavbarProps): JSX.Element => (
+	<FlowbiteNavbar fluid={fluid} rounded={rounded} {...props}>
+		{children}
+	</FlowbiteNavbar>
+);
 
-	/**
-	 * The props of the component.
-	 */
-	private readonly _props: NavbarProps;
+NavbarBase.displayName = "Navbar";
 
-	/**
-	 * Create a new instance of Navbar.
-	 * @param props The props of the component.
-	 */
-	constructor(props: NavbarProps) {
-		super(props);
-		this._props = props;
-	}
+const MemoizedNavbar: NamedExoticComponent<NavbarProps> = memo(NavbarBase);
 
+/**
+ * Navbar component with subcomponents for building navigation interfaces.
+ */
+export const Navbar = Object.assign(MemoizedNavbar, {
 	/**
-	 * Render the component.
-	 * @returns The component to render.
+	 * Brand component for displaying logo and brand name
+	 * @see {@link FlowbiteNavbar.Brand}
 	 */
-	public render(): ReactNode {
-		const { brand, content, links, fluid, rounded } = this._props;
-		return (
-			<FlowbiteNavbar fluid={fluid ?? undefined} rounded={rounded ?? undefined}>
-				<FlowbiteNavbar.Brand href={brand.href ?? "#"}>{brand.content}</FlowbiteNavbar.Brand>
-				{content}
-				<FlowbiteNavbar.Collapse>
-					{links && links.length > 0 ? (
-						links.map(link => {
-							if (link) {
-								return (
-									<FlowbiteNavbar.Link href={link.href ?? "#"} active={link.active ?? false}>
-										{link.label}
-									</FlowbiteNavbar.Link>
-								);
-							}
-							return null;
-						})
-					) : (
-						<></>
-					)}
-				</FlowbiteNavbar.Collapse>
-			</FlowbiteNavbar>
-		);
-	}
-}
+	Brand: FlowbiteNavbar.Brand,
+	/**
+	 * Collapse component for responsive navigation menu
+	 * @see {@link FlowbiteNavbar.Collapse}
+	 */
+	Collapse: FlowbiteNavbar.Collapse,
+	/**
+	 * Link component for navigation items
+	 * @see {@link FlowbiteNavbar.Link}
+	 */
+	Link: FlowbiteNavbar.Link,
+	/**
+	 * Toggle component for mobile menu
+	 * @see {@link FlowbiteNavbar.Toggle}
+	 */
+	Toggle: FlowbiteNavbar.Toggle
+});
