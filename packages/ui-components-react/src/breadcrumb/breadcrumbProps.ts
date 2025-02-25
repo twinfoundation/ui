@@ -1,23 +1,41 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import type { BreadcrumbComponentProps as FlowbiteBreadcrumbProps } from "flowbite-react";
-import PropTypes, { type InferProps } from "prop-types";
-import type { PropsWithChildren } from "react";
+import type { PropsWithChildren, FC, SVGProps } from "react";
 
-export const BreadcrumbPropTypes = {
-	className: PropTypes.string,
-	items: PropTypes.arrayOf(
-		PropTypes.shape({
-			label: PropTypes.string.isRequired,
-			href: PropTypes.string,
-			icon: PropTypes.func
-		})
-	)
-};
+/**
+ * Breadcrumb item props.
+ */
+export interface BreadcrumbItem {
+	/**
+	 * Breadcrumb item label.
+	 */
+	label: string;
+	/**
+	 * Breadcrumb item href.
+	 */
+	href?: string;
+	/**
+	 * Breadcrumb item icon.
+	 */
+	icon?: FC<SVGProps<SVGSVGElement>>;
+}
 
 /**
  * Breadcrumb props.
  */
-export type BreadcrumbProps = PropsWithChildren<
-	InferProps<typeof BreadcrumbPropTypes> & Omit<FlowbiteBreadcrumbProps, "color" | "label">
->;
+export interface BreadcrumbProps
+	extends PropsWithChildren<Omit<FlowbiteBreadcrumbProps, "color" | "label">> {
+	/**
+	 * Breadcrumb item aria label.
+	 */
+	ariaLabel?: string;
+	/**
+	 * Breadcrumb component class name.
+	 */
+	className?: string;
+	/**
+	 * Breadcrumb items.
+	 */
+	items?: BreadcrumbItem[];
+}
