@@ -5,7 +5,7 @@ import type { PropsWithChildren } from "react";
 import type { AlertColors } from "./alertColors";
 
 /**
- *
+ * Alert colors.
  */
 export type AlertColor = Lowercase<keyof typeof AlertColors>;
 
