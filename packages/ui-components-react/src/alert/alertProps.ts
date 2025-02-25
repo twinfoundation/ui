@@ -1,21 +1,26 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import type { AlertProps as FlowbiteAlertProps } from "flowbite-react";
-import PropTypes, { type InferProps } from "prop-types";
 import type { PropsWithChildren } from "react";
-import { AlertColors } from "./alertColors";
-
-export const AlertPropTypes = {
-	color: PropTypes.oneOf(Object.values(AlertColors)),
-	onDismiss: PropTypes.func,
-	rounded: PropTypes.bool,
-	additionalContent: PropTypes.node,
-	withBorderAccent: PropTypes.bool
-};
+import type { AlertColors } from "./alertColors";
 
 /**
- * Alert props.
+ * Alert colors.
  */
-export type AlertProps = PropsWithChildren<
-	InferProps<typeof AlertPropTypes> & Omit<FlowbiteAlertProps, "color" | "label">
->;
+export type AlertColor = Lowercase<keyof typeof AlertColors>;
+
+/**
+ * Props for the Alert component.
+ * Extends Flowbite's Alert props with custom color options.
+ */
+export interface AlertProps extends PropsWithChildren<Omit<FlowbiteAlertProps, "color" | "label">> {
+	/**
+	 * The color variant of the alert
+	 * @default "info"
+	 */
+	color?: AlertColor;
+	/**
+	 * Additional CSS classes to apply
+	 */
+	className?: string;
+}
