@@ -10,10 +10,7 @@ import type { SelectProps } from "./selectProps";
 const Select: FC<SelectProps> = memo(({ options, ...rest }) => (
 	<FlowbiteSelect {...rest}>
 		{options?.map((option, index) => (
-			<option
-				key={index}
-				value={option?.value}
-			>
+			<option key={index} value={option?.value}>
 				{option?.label}
 			</option>
 		))}
