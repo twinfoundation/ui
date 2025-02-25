@@ -1,8 +1,8 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import { Button as FlowbiteButton } from "flowbite-react";
-import React, { type ReactNode } from "react";
-import { ButtonPropTypes, type ButtonProps } from "./buttonProps";
+import { memo, type FC } from "react";
+import type { ButtonProps } from "./buttonProps";
 
 const BASE_CLASSES = "border-2 border-transparent focus:outline-none focus:ring-2";
 
@@ -15,7 +15,7 @@ const colorClasses = {
 	info: `${BASE_CLASSES} text-white bg-information dark:bg-information hover:enabled:bg-system-information-tints-600 dark:hover:enabled:bg-system-information-tints-600 focus:ring-system-information-tints-200`,
 	plain: `${BASE_CLASSES} text-black dark:text-invert bg-surface-second dark:bg-surface-third-dark hover:enabled:bg-surface-third focus:ring-gray-200 dark:hover:enabled:bg-surface-second-dark dark:focus:ring-surface-button-pressed`,
 	dark: `${BASE_CLASSES} text-white dark:text-black bg-gray-800 dark:bg-surface-second hover:enabled:bg-gray-700 focus:ring-gray-200 dark:hover:enabled:bg-gray-600 dark:focus:ring-gray-700`
-};
+} as const;
 
 const buttonSizes = {
 	xs: "!h-7 !w-7",
@@ -36,35 +36,24 @@ const iconSizes = {
 /**
  * Button component.
  */
-export class Button extends React.Component<ButtonProps> {
-	/**
-	 * The prop types of the component.
-	 */
-	public static propTypes = ButtonPropTypes;
-
-	/**
-	 * Render the component.
-	 * @returns The component to render.
-	 */
-	public render(): ReactNode {
-		const {
-			color = "primary",
-			size = "md",
-			outline = false,
-			iconOnly = false,
-			showButtonText = true,
-			buttonText = "",
-			showLeftIcon = true,
-			leftIcon: LeftIcon,
-			rightIcon: RightIcon,
-			showRightIcon = true,
-			icon: Icon,
-			disabled = false,
-			className,
-			children,
-			...rest
-		} = this.props;
-
+export const Button: FC<ButtonProps> = memo(
+	({
+		color = "primary",
+		size = "md",
+		outline = false,
+		iconOnly = false,
+		showButtonText = true,
+		buttonText = "",
+		showLeftIcon = true,
+		leftIcon: LeftIcon,
+		rightIcon: RightIcon,
+		showRightIcon = true,
+		icon: Icon,
+		disabled = false,
+		className,
+		children,
+		...rest
+	}) => {
 		const iconSize = iconSizes[size];
 
 		const buttonContent = (
@@ -99,11 +88,13 @@ export class Button extends React.Component<ButtonProps> {
 				size={size}
 				outline={outline}
 				disabled={disabled}
-				className={`${colorClasses[color ?? "primary"]} ${iconOnlyClasses} ${className ?? ""}`}
+				className={`${colorClasses[color as keyof typeof colorClasses]} ${iconOnlyClasses} ${className ?? ""}`}
 				{...rest}
 			>
 				{iconOnly ? iconContent : buttonContent}
 			</FlowbiteButton>
 		);
 	}
-}
+);
+
+Button.displayName = "Button";

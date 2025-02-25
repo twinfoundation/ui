@@ -1,30 +1,76 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import type { ButtonProps as FlowbiteButtonProps } from "flowbite-react";
-import PropTypes, { type InferProps } from "prop-types";
-import type { PropsWithChildren } from "react";
-import { ButtonColors } from "./buttonColors";
-import { ButtonSizes } from "./buttonSizes";
-
-export const ButtonPropTypes = {
-	color: PropTypes.oneOf(Object.values(ButtonColors)),
-	size: PropTypes.oneOf(Object.values(ButtonSizes)),
-	outline: PropTypes.bool,
-	iconOnly: PropTypes.bool,
-	showButtonText: PropTypes.bool,
-	buttonText: PropTypes.string,
-	showLeftIcon: PropTypes.bool,
-	leftIcon: PropTypes.elementType,
-	rightIcon: PropTypes.elementType,
-	showRightIcon: PropTypes.bool,
-	icon: PropTypes.elementType,
-	disabled: PropTypes.bool,
-	className: PropTypes.string
-};
+import type { ElementType } from "react";
+import type { ButtonColors } from "./buttonColors";
+import type { ButtonSizes } from "./buttonSizes";
 
 /**
- * Button props.
+ * Button component props interface
  */
-export type ButtonProps = PropsWithChildren<
-	InferProps<typeof ButtonPropTypes> & Omit<FlowbiteButtonProps, "color" | "label">
->;
+export interface ButtonProps extends Omit<FlowbiteButtonProps, "color" | "label"> {
+	/**
+	 * The color variant of the button
+	 */
+	color?: ButtonColors;
+
+	/**
+	 * The size variant of the button
+	 */
+	size?: keyof typeof ButtonSizes;
+
+	/**
+	 * Whether to show the button in outline style
+	 */
+	outline?: boolean;
+
+	/**
+	 * Whether to show only the icon without text
+	 */
+	iconOnly?: boolean;
+
+	/**
+	 * Whether to show the button text
+	 */
+	showButtonText?: boolean;
+
+	/**
+	 * The text content of the button
+	 */
+	buttonText?: string;
+
+	/**
+	 * Whether to show the left icon
+	 */
+	showLeftIcon?: boolean;
+
+	/**
+	 * The component type for the left icon
+	 */
+	leftIcon?: ElementType;
+
+	/**
+	 * The component type for the right icon
+	 */
+	rightIcon?: ElementType;
+
+	/**
+	 * Whether to show the right icon
+	 */
+	showRightIcon?: boolean;
+
+	/**
+	 * The component type for the icon (when using iconOnly)
+	 */
+	icon?: ElementType;
+
+	/**
+	 * Whether the button is disabled
+	 */
+	disabled?: boolean;
+
+	/**
+	 * Additional CSS class names
+	 */
+	className?: string;
+}
