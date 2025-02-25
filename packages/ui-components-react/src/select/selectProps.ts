@@ -1,29 +1,32 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import type { SelectProps as FlowbiteSelectProps } from "flowbite-react";
-import PropTypes, { type InferProps } from "prop-types";
-import type { PropsWithChildren } from "react";
-import { SelectSizes } from "./selectSizes";
+import type { SelectSizes } from "./selectSizes";
 
-export const SelectPropTypes = {
-	sizing: PropTypes.oneOf(Object.values(SelectSizes)),
-	id: PropTypes.string,
-	disabled: PropTypes.bool,
-	required: PropTypes.bool,
-	name: PropTypes.string,
-	value: PropTypes.string,
-	options: PropTypes.arrayOf(
-		PropTypes.shape({
-			value: PropTypes.string,
-			label: PropTypes.string,
-			selected: PropTypes.bool
-		})
-	).isRequired
-};
+/**
+ * Option type for the Select component.
+ */
+export interface SelectOption {
+	/**
+	 * The value of the option.
+	 */
+	value?: string;
+	/**
+	 * The label to display for the option.
+	 */
+	label?: string;
+}
 
 /**
  * Select props.
  */
-export type SelectProps = PropsWithChildren<
-	InferProps<typeof SelectPropTypes> & Omit<FlowbiteSelectProps, "color" | "label">
->;
+export interface SelectProps extends Omit<FlowbiteSelectProps, "color" | "label"> {
+	/**
+	 * The size of the select component.
+	 */
+	sizing?: SelectSizes;
+	/**
+	 * The options to display in the select component.
+	 */
+	options: SelectOption[];
+}

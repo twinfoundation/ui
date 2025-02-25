@@ -2,53 +2,26 @@
 // SPDX-License-Identifier: Apache-2.0.
 import { Banner as FlowbiteBanner } from "flowbite-react";
 import { Close } from "flowbite-react-icons/outline";
-import React, { type ReactNode } from "react";
-import { BannerPropTypes, type BannerProps } from "./bannerProps";
+import { memo } from "react";
+import type { BannerProps } from "./bannerProps";
 
 /**
  * Banner component.
  */
-export class Banner extends React.Component<BannerProps> {
-	/**
-	 * The prop types of the component.
-	 */
-	public static propTypes = BannerPropTypes;
+export const Banner = memo<BannerProps>(({ children, bottom = false }) => {
+	const bannerClassName = `fixed ${bottom ? "bottom-0" : "top-0"} left-0 z-50 flex w-full justify-between border-gray-200 bg-gray-50 p-4 dark:border-gray-600 dark:bg-gray-700 ${bottom ? "border-t" : "border-b"}`;
 
-	/**
-	 * The props of the component.
-	 */
-	private readonly _props: BannerProps;
-
-	/**
-	 * Create a new instance of Banner.
-	 * @param props The props of the component.
-	 */
-	constructor(props: BannerProps) {
-		super(props);
-		this._props = props;
-	}
-
-	/**
-	 * Render the component.
-	 * @returns The component to render.
-	 */
-	public render(): ReactNode {
-		const { children, bottom } = this._props;
-
-		return (
-			<FlowbiteBanner>
-				<div
-					className={`fixed ${bottom ? "bottom-0" : "top-0"} left-0 z-50 flex w-full justify-between border-gray-200 bg-gray-50 p-4 dark:border-gray-600 dark:bg-gray-700 ${bottom ? "border-t" : "border-b"}`}
+	return (
+		<FlowbiteBanner>
+			<div className={bannerClassName}>
+				{children}
+				<FlowbiteBanner.CollapseButton
+					color="gray"
+					className="border-0 bg-transparent text-gray-500 dark:text-gray-400"
 				>
-					{children}
-					<FlowbiteBanner.CollapseButton
-						color="gray"
-						className="border-0 bg-transparent text-gray-500 dark:text-gray-400"
-					>
-						<Close className="h-4 w-4" />
-					</FlowbiteBanner.CollapseButton>
-				</div>
-			</FlowbiteBanner>
-		);
-	}
-}
+					<Close className="h-4 w-4" />
+				</FlowbiteBanner.CollapseButton>
+			</div>
+		</FlowbiteBanner>
+	);
+});
