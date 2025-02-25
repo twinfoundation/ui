@@ -25,6 +25,11 @@ const buttonSizes = {
 	xl: "!h-16 !w-16"
 } as const;
 
+/**
+ * Button icon size.
+ */
+export type IconSize = keyof typeof iconSizes;
+
 const iconSizes = {
 	xs: "h-3.5 w-3.5",
 	sm: "h-4 w-4",
@@ -54,7 +59,7 @@ export const Button: FC<ButtonProps> = memo(
 		children,
 		...rest
 	}) => {
-		const iconSize = iconSizes[size];
+		const iconSize = iconSizes[size as IconSize];
 
 		const buttonContent = (
 			<div className="inline-flex items-center justify-center">
@@ -63,7 +68,7 @@ export const Button: FC<ButtonProps> = memo(
 						<LeftIcon className={`mr-1.5 ${iconSize}`} />
 					</div>
 				)}
-				{showButtonText && <span>{buttonText || children}</span>}
+				{showButtonText && (buttonText || children)}
 				{showRightIcon && RightIcon && (
 					<div className="flex items-center">
 						<RightIcon className={`ml-1.5 ${iconSize}`} />
@@ -79,12 +84,12 @@ export const Button: FC<ButtonProps> = memo(
 		);
 
 		const iconOnlyClasses = iconOnly
-			? `!aspect-square !rounded-full !p-0 ${buttonSizes[size]} [&>span]:!p-0 [&>span]:!m-0`
+			? `!aspect-square !rounded-full !p-0 ${buttonSizes[size as IconSize]} [&>span]:!p-0 [&>span]:!m-0`
 			: "rounded-lg";
 
 		return (
 			<FlowbiteButton
-				color="primary"
+				color={color}
 				size={size}
 				outline={outline}
 				disabled={disabled}

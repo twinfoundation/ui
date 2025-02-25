@@ -3,7 +3,7 @@
 import type { ButtonProps as FlowbiteButtonProps } from "flowbite-react";
 import type { ElementType } from "react";
 import type { ButtonColors } from "./buttonColors";
-import type { ButtonSizes } from "./buttonSizes";
+import type { ButtonSize } from "./buttonSizes";
 
 /**
  * Button component props interface
@@ -17,7 +17,7 @@ export interface ButtonProps extends Omit<FlowbiteButtonProps, "color" | "label"
 	/**
 	 * The size variant of the button
 	 */
-	size?: keyof typeof ButtonSizes;
+	size?: ButtonSize;
 
 	/**
 	 * Whether to show the button in outline style
