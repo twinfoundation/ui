@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import type { RefObject, ReactNode } from "react";
 import { ModalPositions } from "./modalPositions";
 import { ModalSizes } from "./modalSizes";
+import { ButtonColors } from "../button/buttonColors";
 
 /**
  *
@@ -16,10 +17,11 @@ export interface FooterButton {
 	 */
 	label: string;
 	/**
-	 * Optional CSS class name(s) to apply to the button.
-	 * Use this to customize the button's appearance.
+	 * Optional variant for the button's style.
+	 * Uses the design system's button variants.
+	 * @default "primary"
 	 */
-	className?: string;
+	variant?: ButtonColors;
 	/**
 	 * Optional callback function triggered when the button is clicked.
 	 * The function takes no parameters and returns void.
@@ -53,7 +55,7 @@ export const ModalPropTypes = {
 	footerButtons: PropTypes.arrayOf(
 		PropTypes.shape({
 			label: PropTypes.string.isRequired,
-			className: PropTypes.string,
+			variant: PropTypes.oneOf(Object.values(ButtonColors)),
 			onClick: PropTypes.func
 		})
 	)

@@ -77,6 +77,7 @@ export const Default: Story = {
 export const Primary: Story = {
 	args: {
 		children: "Primary Button",
+		size: "xs",
 		color: ButtonColors.Primary
 	}
 };
@@ -84,6 +85,7 @@ export const Primary: Story = {
 export const Secondary: Story = {
 	args: {
 		children: "Secondary Button",
+		size: "xs",
 		color: ButtonColors.Secondary
 	}
 };
@@ -91,6 +93,7 @@ export const Secondary: Story = {
 export const Plain: Story = {
 	args: {
 		children: "Plain Button",
+		size: "xs",
 		color: ButtonColors.Plain
 	}
 };
@@ -98,6 +101,7 @@ export const Plain: Story = {
 export const Error: Story = {
 	args: {
 		children: "Error Button",
+		size: "xs",
 		color: ButtonColors.Error
 	}
 };
@@ -105,6 +109,7 @@ export const Error: Story = {
 export const Warning: Story = {
 	args: {
 		children: "Warning Button",
+		size: "xs",
 		color: ButtonColors.Warning
 	}
 };
@@ -112,6 +117,7 @@ export const Warning: Story = {
 export const Success: Story = {
 	args: {
 		children: "Success Button",
+		size: "xs",
 		color: ButtonColors.Success
 	}
 };
@@ -119,6 +125,7 @@ export const Success: Story = {
 export const Info: Story = {
 	args: {
 		children: "Info Button",
+		size: "xs",
 		color: ButtonColors.Info
 	}
 };
@@ -126,6 +133,7 @@ export const Info: Story = {
 export const Dark: Story = {
 	args: {
 		children: "Dark Button",
+		size: "xs",
 		color: ButtonColors.Dark
 	}
 };
