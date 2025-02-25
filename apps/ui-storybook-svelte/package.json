@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/ui-storybook-svelte",
-	"version": "0.0.1-next.30",
+	"version": "0.0.1-next.31",
 	"description": "Demonstrate the Svelte UI Components",
 	"repository": {
 		"type": "git",
@@ -23,7 +23,7 @@
 	},
 	"dependencies": {
 		"@sveltejs/kit": "^2.17.1",
-		"@twin.org/ui-components-svelte": "0.0.1-next.30",
+		"@twin.org/ui-components-svelte": "0.0.1-next.31",
 		"svelte": "^5.19.10"
 	},
 	"devDependencies": {
