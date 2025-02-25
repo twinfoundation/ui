@@ -1,21 +1,31 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import type { BadgeProps as FlowbiteBadgeProps } from "flowbite-react";
-import PropTypes, { type InferProps } from "prop-types";
-import type { PropsWithChildren } from "react";
-import { BadgeColors } from "./badgeColors";
-import { BadgeSizes } from "./badgeSizes";
-
-export const BadgePropTypes = {
-	color: PropTypes.oneOf(Object.values(BadgeColors)),
-	size: PropTypes.oneOf(Object.values(BadgeSizes)),
-	dismiss: PropTypes.bool,
-	onlyIcon: PropTypes.bool
-};
+import type { BadgeColors } from "./badgeColors";
+import type { BadgeSizes } from "./badgeSizes";
 
 /**
- * Badge props.
+ * Badge props interface.
  */
-export type BadgeProps = PropsWithChildren<
-	InferProps<typeof BadgePropTypes> & Omit<FlowbiteBadgeProps, "color" | "label">
->;
+export interface BadgeProps extends Omit<FlowbiteBadgeProps, "color" | "label"> {
+	/**
+	 * The color variant of the badge
+	 */
+	color?: BadgeColors;
+	/**
+	 * The size variant of the badge
+	 */
+	size?: BadgeSizes;
+	/**
+	 * Whether the badge can be dismissed
+	 */
+	dismiss?: boolean;
+	/**
+	 * Whether to show only the icon
+	 */
+	onlyIcon?: boolean;
+	/**
+	 * Children elements
+	 */
+	children?: React.ReactNode;
+}
