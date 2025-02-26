@@ -51,3 +51,5 @@ export const Card: FC<CardProps> = memo(
 		);
 	}
 );
+
+Card.displayName = "Card";

@@ -86,3 +86,5 @@ export const Badge = memo(
 		);
 	}
 );
+
+Badge.displayName = "Badge";

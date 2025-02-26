@@ -25,3 +25,5 @@ export const Banner = memo<BannerProps>(({ children, bottom = false }) => {
 		</FlowbiteBanner>
 	);
 });
+
+Banner.displayName = "Banner";
