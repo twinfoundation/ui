@@ -1,21 +1,36 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import type { CheckboxProps as FlowbiteCheckboxProps } from "flowbite-react";
-import PropTypes, { type InferProps } from "prop-types";
 import type { PropsWithChildren } from "react";
-
-export const CheckboxPropTypes = {
-	id: PropTypes.string,
-	disabled: PropTypes.bool,
-	required: PropTypes.bool,
-	checked: PropTypes.bool,
-	name: PropTypes.string,
-	value: PropTypes.string
-};
 
 /**
  * Checkbox props.
  */
 export type CheckboxProps = PropsWithChildren<
-	InferProps<typeof CheckboxPropTypes> & Omit<FlowbiteCheckboxProps, "color" | "label">
+	{
+		/**
+		 * The ID of the checkbox.
+		 */
+		id?: string;
+		/**
+		 * Whether the checkbox is disabled.
+		 */
+		disabled?: boolean;
+		/**
+		 * Whether the checkbox is required.
+		 */
+		required?: boolean;
+		/**
+		 * Whether the checkbox is checked.
+		 */
+		checked?: boolean;
+		/**
+		 * The name attribute of the checkbox.
+		 */
+		name?: string;
+		/**
+		 * The value attribute of the checkbox.
+		 */
+		value?: string;
+	} & Omit<FlowbiteCheckboxProps, "color" | "label">
 >;
