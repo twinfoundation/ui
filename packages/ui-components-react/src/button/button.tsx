@@ -1,7 +1,7 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import { Button as FlowbiteButton } from "flowbite-react";
-import { memo, type FC } from "react";
+import { memo, type JSX } from "react";
 import type { ButtonProps } from "./buttonProps";
 
 const BASE_CLASSES = "border-2 border-transparent focus:outline-none focus:ring-2";
@@ -41,7 +41,7 @@ const iconSizes = {
 /**
  * Button component.
  */
-export const Button: FC<ButtonProps> = memo(
+export const Button = memo(
 	({
 		color = "primary",
 		size = "md",
@@ -58,7 +58,7 @@ export const Button: FC<ButtonProps> = memo(
 		className,
 		children,
 		...rest
-	}) => {
+	}: ButtonProps): JSX.Element => {
 		const iconSize = iconSizes[size as IconSize];
 
 		const buttonContent = (

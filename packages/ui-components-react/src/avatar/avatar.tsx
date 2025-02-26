@@ -1,7 +1,7 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import { Avatar as FlowbiteAvatar } from "flowbite-react";
-import { forwardRef, memo, useMemo } from "react";
+import { forwardRef, memo, useMemo, type JSX } from "react";
 import type { AvatarProps } from "./avatarProps";
 
 /**
@@ -22,9 +22,9 @@ export const Avatar = memo(
 				statusPosition = "bottom-right",
 				className,
 				...rest
-			},
+			}: AvatarProps,
 			ref
-		) => {
+		): JSX.Element => {
 			const sanitizedAlt = useMemo(() => alt?.replace(/[<>]/g, ""), [alt]);
 			const sanitizedImg = useMemo(() => {
 				if (!img) {

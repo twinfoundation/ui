@@ -2,7 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0.
 import type { SidebarProps as FlowbiteSidebarProps } from "flowbite-react";
 import PropTypes from "prop-types";
-import type { FC, PropsWithChildren, SVGProps } from "react";
+import type { PropsWithChildren } from "react";
+import type { IconComponent } from "../types/iconTypes";
 
 const colorsTypes = ["primary", "success", "warning", "error", "information"] as const;
 
@@ -14,7 +15,7 @@ export type BadgeColor = (typeof colorsTypes)[number];
 /**
  * Icon type for sidebar items that matches Flowbite's requirements
  */
-export type SidebarIconType = FC<SVGProps<SVGSVGElement>>;
+export type SidebarIconType = IconComponent;
 
 /**
  * Type for sidebar items

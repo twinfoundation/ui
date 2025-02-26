@@ -1,14 +1,14 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import { Carousel as FlowbiteCarousel } from "flowbite-react";
-import { memo, type FC, type JSX } from "react";
+import { memo, type JSX } from "react";
 import type { CarouselProps } from "./carouselProps";
 
 /**
  * Carousel component.
  */
-export const Carousel: FC<CarouselProps> = memo(
-	({ items, className, ...rest }): JSX.Element => (
+export const Carousel = memo(
+	({ items, className, ...rest }: CarouselProps): JSX.Element => (
 		<div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
 			<FlowbiteCarousel {...rest}>
 				{items && items?.length > 0 ? (

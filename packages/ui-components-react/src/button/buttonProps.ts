@@ -1,7 +1,7 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import type { ButtonProps as FlowbiteButtonProps } from "flowbite-react";
-import type { ElementType } from "react";
+import type { ElementType, ReactNode } from "react";
 import type { ButtonColors } from "./buttonColors";
 import type { ButtonSize } from "./buttonSizes";
 
@@ -9,6 +9,11 @@ import type { ButtonSize } from "./buttonSizes";
  * Button component props interface
  */
 export interface ButtonProps extends Omit<FlowbiteButtonProps, "color" | "label"> {
+	/**
+	 * Children elements
+	 */
+	children?: ReactNode;
+
 	/**
 	 * The color variant of the button
 	 */

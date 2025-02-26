@@ -2,17 +2,12 @@
 // SPDX-License-Identifier: Apache-2.0.
 import { Tabs as FlowbiteTabs } from "flowbite-react";
 import React, { type ReactNode } from "react";
-import { TabsPropTypes, type TabsProps } from "./tabsProps";
+import type { TabsProps } from "./tabsProps";
 
 /**
  * Tabs component.
  */
 export class Tabs extends React.Component<TabsProps> {
-	/**
-	 * The prop types of the component.
-	 */
-	public static propTypes = TabsPropTypes;
-
 	/**
 	 * The props of the component.
 	 */

@@ -1,15 +1,15 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import { Card as FlowbiteCard } from "flowbite-react";
-import { useMemo, memo, type FC } from "react";
+import { useMemo, memo, type JSX } from "react";
 import type { CardProps } from "./cardProps";
 import { Button } from "../button/button";
 
 /**
  * Card component.
  */
-export const Card: FC<CardProps> = memo(
-	({ children, content, href, horizontal, buttons, image }) => {
+export const Card = memo(
+	({ children, content, href, horizontal, buttons, image }: CardProps): JSX.Element => {
 		const renderButtons = useMemo(() => {
 			if (!buttons?.length) {
 				return null;

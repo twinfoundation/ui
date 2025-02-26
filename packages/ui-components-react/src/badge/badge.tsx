@@ -1,7 +1,7 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import { Badge as FlowbiteBadge } from "flowbite-react";
-import { type ReactNode, useCallback, useMemo, memo } from "react";
+import { useCallback, useMemo, memo, type JSX } from "react";
 import type { ColorClasses } from "./badgeColors";
 import { BadgeColors } from "./badgeColors";
 import type { BadgeProps } from "./badgeProps";
@@ -25,7 +25,7 @@ export const Badge = memo(
 		size = "xs",
 		icon,
 		...rest
-	}: BadgeProps): ReactNode => {
+	}: BadgeProps): JSX.Element => {
 		const badgeId = useMemo(() => `badge-${Math.random().toString(36).slice(2, 11)}`, []);
 
 		const handleDismiss = useCallback(() => {

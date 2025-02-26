@@ -1,22 +1,40 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import type { DrawerProps as FlowbiteDrawerProps } from "flowbite-react";
-import PropTypes, { type InferProps } from "prop-types";
-import type { PropsWithChildren } from "react";
-import { DrawerPositions } from "./drawerPositions";
-
-export const DrawerPropTypes = {
-	title: PropTypes.string.isRequired,
-	bodyScrolling: PropTypes.bool,
-	backdrop: PropTypes.bool,
-	edge: PropTypes.bool,
-	position: PropTypes.oneOf(Object.values(DrawerPositions)),
-	items: PropTypes.arrayOf(PropTypes.node)
-};
+import type { ReactNode } from "react";
+import type { DrawerPositions } from "./drawerPositions";
 
 /**
  * Drawer props.
  */
-export type DrawerProps = PropsWithChildren<
-	InferProps<typeof DrawerPropTypes> & Omit<FlowbiteDrawerProps, "color" | "label">
->;
+export interface DrawerProps extends Omit<FlowbiteDrawerProps, "color" | "label"> {
+	/**
+	 * The title of the drawer.
+	 */
+	title: string;
+
+	/**
+	 * Whether the body should scroll when the drawer is open.
+	 */
+	bodyScrolling?: boolean;
+
+	/**
+	 * Whether to show a backdrop when the drawer is open.
+	 */
+	backdrop?: boolean;
+
+	/**
+	 * Whether the drawer should be positioned at the edge of the screen.
+	 */
+	edge?: boolean;
+
+	/**
+	 * The position of the drawer.
+	 */
+	position?: DrawerPositions;
+
+	/**
+	 * The items to display in the drawer.
+	 */
+	items?: ReactNode[];
+}

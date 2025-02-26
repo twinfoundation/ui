@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0.
 import type { ReactNode } from "react";
 import type { ButtonColors } from "../button/buttonColors";
+import type { IconComponent } from "../types/iconTypes";
 
 /**
  * The prop types for the CardImage component.
@@ -11,6 +12,7 @@ export interface CardImage {
 	 * The source of the image.
 	 */
 	imgSrc: string;
+
 	/**
 	 * The alternative text for the image.
 	 */
@@ -25,10 +27,12 @@ export interface CardButton {
 	 * The label for the button.
 	 */
 	label: string;
+
 	/**
 	 * The SVG icon for the button.
 	 */
-	svg?: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+	svg?: IconComponent;
+
 	/**
 	 * The color of the button.
 	 */

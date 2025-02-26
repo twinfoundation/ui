@@ -2,20 +2,18 @@
 // SPDX-License-Identifier: Apache-2.0.
 import { Drawer as FlowbiteDrawer, Button as FlowbiteButton } from "flowbite-react";
 import { Bars } from "flowbite-react-icons/outline";
-import React, { useState } from "react";
-import { DrawerPropTypes, type DrawerProps } from "./drawerProps";
+import { useState, memo, type JSX } from "react";
+import type { DrawerProps } from "./drawerProps";
 
 /**
  * Drawer component.
  */
-export const Drawer: React.FC<DrawerProps> = (props: DrawerProps) => {
+export const Drawer = memo(({ title, items, ...rest }: DrawerProps): JSX.Element => {
 	const [isOpen, setIsOpen] = useState(true);
 
 	const handleClose = (): void => {
 		setIsOpen(false);
 	};
-
-	const { title, items, ...rest } = props;
 
 	return (
 		<>
@@ -35,13 +33,15 @@ export const Drawer: React.FC<DrawerProps> = (props: DrawerProps) => {
 			>
 				<FlowbiteDrawer.Header title={title} closeIcon={Bars} />
 				{items && items?.length > 0 ? (
-					items.map(item => <FlowbiteDrawer.Items>{item}</FlowbiteDrawer.Items>)
+					items.map((item, index) => (
+						<FlowbiteDrawer.Items key={`drawer-item-${index}`}>{item}</FlowbiteDrawer.Items>
+					))
 				) : (
 					<></>
 				)}
 			</FlowbiteDrawer>
 		</>
 	);
-};
+});
 
-Drawer.propTypes = DrawerPropTypes;
+Drawer.displayName = "Drawer";

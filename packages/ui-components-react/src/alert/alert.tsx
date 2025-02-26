@@ -1,7 +1,7 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import { Alert as FlowbiteAlert } from "flowbite-react";
-import { forwardRef, useMemo } from "react";
+import { forwardRef, memo, useMemo, type JSX } from "react";
 import type { AlertProps, AlertColor } from "./alertProps";
 
 const colorClasses: { readonly [K in AlertColor]: string } = {
@@ -17,27 +17,29 @@ const colorClasses: { readonly [K in AlertColor]: string } = {
  * Alert component for displaying important messages or notifications.
  * Extends Flowbite's Alert component with custom styling and theme support.
  */
-export const Alert = forwardRef<HTMLDivElement, AlertProps>(
-	({ children, color = "info", className = "", ...rest }, ref) => {
-		const combinedClassName = useMemo(
-			() => `${colorClasses[color]} ${className}`.trim(),
-			[color, className]
-		);
+export const Alert = memo(
+	forwardRef<HTMLDivElement, AlertProps>(
+		({ children, color = "info", className = "", ...rest }: AlertProps, ref): JSX.Element => {
+			const combinedClassName = useMemo(
+				() => `${colorClasses[color]} ${className}`.trim(),
+				[color, className]
+			);
 
-		const themeConfig = useMemo(() => ({ closeButton: { color: colorClasses } }), []);
+			const themeConfig = useMemo(() => ({ closeButton: { color: colorClasses } }), []);
 
-		return (
-			<FlowbiteAlert
-				ref={ref}
-				{...rest}
-				className={combinedClassName}
-				color={color}
-				theme={themeConfig}
-			>
-				<span>{children}</span>
-			</FlowbiteAlert>
-		);
-	}
+			return (
+				<FlowbiteAlert
+					ref={ref}
+					{...rest}
+					className={combinedClassName}
+					color={color}
+					theme={themeConfig}
+				>
+					<span>{children}</span>
+				</FlowbiteAlert>
+			);
+		}
+	)
 );
 
 Alert.displayName = "Alert";

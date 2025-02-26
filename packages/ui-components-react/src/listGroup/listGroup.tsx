@@ -2,17 +2,12 @@
 // SPDX-License-Identifier: Apache-2.0.
 import { ListGroup as FlowbiteListGroup } from "flowbite-react";
 import React, { type ReactNode } from "react";
-import { ListGroupPropTypes, type ListGroupProps } from "./listGroupProps";
+import type { ListGroupProps } from "./listGroupProps";
 
 /**
  * ListGroup component.
  */
 export class ListGroup extends React.Component<ListGroupProps> {
-	/**
-	 * The prop types of the component.
-	 */
-	public static propTypes = ListGroupPropTypes;
-
 	/**
 	 * The props of the component.
 	 */

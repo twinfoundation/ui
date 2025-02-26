@@ -2,13 +2,13 @@
 // SPDX-License-Identifier: Apache-2.0.
 import { Banner as FlowbiteBanner } from "flowbite-react";
 import { Close } from "flowbite-react-icons/outline";
-import { memo } from "react";
+import { memo, type JSX } from "react";
 import type { BannerProps } from "./bannerProps";
 
 /**
  * Banner component.
  */
-export const Banner = memo<BannerProps>(({ children, bottom = false }) => {
+export const Banner = memo(({ children, bottom = false }: BannerProps): JSX.Element => {
 	const bannerClassName = `fixed ${bottom ? "bottom-0" : "top-0"} left-0 z-50 flex w-full justify-between border-gray-200 bg-gray-50 p-4 dark:border-gray-600 dark:bg-gray-700 ${bottom ? "border-t" : "border-b"}`;
 
 	return (
