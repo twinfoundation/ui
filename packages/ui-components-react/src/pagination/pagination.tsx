@@ -1,8 +1,8 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import { Pagination as FlowbitePagination, type CustomFlowbiteTheme } from "flowbite-react";
-import React, { type ReactNode } from "react";
-import { PaginationPropTypes, type PaginationProps } from "./paginationProps";
+import { memo, useCallback, type JSX } from "react";
+import type { PaginationProps } from "./paginationProps";
 
 const customTheme: CustomFlowbiteTheme["pagination"] = {
 	pages: {
@@ -26,32 +26,15 @@ const customTheme: CustomFlowbiteTheme["pagination"] = {
 /**
  * Pagination component.
  */
-export class Pagination extends React.Component<PaginationProps> {
-	/**
-	 * The prop types of the component.
-	 */
-	public static propTypes = PaginationPropTypes;
+export const Pagination = memo(({ ...rest }: PaginationProps): JSX.Element => {
+	const handlePageChange = useCallback(
+		(page: number) => {
+			rest.onPageChange(page);
+		},
+		[rest.onPageChange]
+	);
 
-	/**
-	 * The props of the component.
-	 */
-	private readonly _props: PaginationProps;
+	return <FlowbitePagination theme={customTheme} {...rest} onPageChange={handlePageChange} />;
+});
 
-	/**
-	 * Create a new instance of Pagination.
-	 * @param props The props of the component.
-	 */
-	constructor(props: PaginationProps) {
-		super(props);
-		this._props = props;
-	}
-
-	/**
-	 * Render the component.
-	 * @returns The component to render.
-	 */
-	public render(): ReactNode {
-		const { ...rest } = this._props;
-		return <FlowbitePagination theme={customTheme} {...rest} />;
-	}
-}
+Pagination.displayName = "Pagination";

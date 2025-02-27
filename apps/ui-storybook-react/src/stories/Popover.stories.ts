@@ -51,7 +51,9 @@ export const Default: Story = {
 	args: {
 		content: "This is a default popover",
 		ariaLabel: "Default popover",
-		ariaDescription: "Shows basic popover functionality"
+		ariaDescription: "Shows basic popover functionality",
+		placement: PopoverPositions.Top,
+		trigger: PopoverTriggers.Click
 	}
 };
 
@@ -59,6 +61,7 @@ export const CustomPosition: Story = {
 	args: {
 		content: "This popover appears on the right",
 		placement: PopoverPositions.Right,
+		trigger: PopoverTriggers.Click,
 		ariaLabel: "Right-positioned popover",
 		ariaDescription: "A popover that appears to the right of the trigger"
 	}
@@ -68,6 +71,7 @@ export const HoverTrigger: Story = {
 	args: {
 		content: "This popover appears on hover",
 		trigger: PopoverTriggers.Hover,
+		placement: PopoverPositions.Top,
 		ariaLabel: "Hover popover",
 		ariaDescription: "A popover that appears when you hover over the trigger"
 	}
@@ -78,13 +82,17 @@ export const NoArrow: Story = {
 		content: "This popover has no arrow pointer",
 		arrow: false,
 		ariaLabel: "No arrow popover",
-		ariaDescription: "A popover without an arrow pointer"
+		ariaDescription: "A popover without an arrow pointer",
+		placement: PopoverPositions.Top,
+		trigger: PopoverTriggers.Click
 	}
 };
 
 export const CustomStyles: Story = {
 	args: {
 		content: "This popover has custom styling",
+		placement: PopoverPositions.Top,
+		trigger: PopoverTriggers.Click,
 		className: "custom-popover bg-surface-primary text-white p-4 rounded-lg",
 		ariaLabel: "Styled popover",
 		ariaDescription: "A popover with custom styling applied"
@@ -98,6 +106,8 @@ export const CustomTrigger: Story = {
 			className: "cursor-pointer p-2 bg-surface-primary text-white rounded-md",
 			children: "Custom Trigger Element"
 		}),
+		placement: PopoverPositions.Top,
+		trigger: PopoverTriggers.Click,
 		ariaLabel: "Custom trigger popover",
 		ariaDescription: "A popover with a custom trigger element"
 	}
@@ -109,6 +119,7 @@ export const AccessiblePopover: Story = {
 		ariaLabel: "Accessible demo popover",
 		ariaDescription: "This popover showcases proper ARIA labeling and description",
 		placement: PopoverPositions.Bottom,
+		trigger: PopoverTriggers.Click,
 		className: "accessible-popover"
 	}
 };

@@ -1,11 +1,10 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import type { ModalProps as FlowbiteModalProps } from "flowbite-react";
-import PropTypes from "prop-types";
 import type { RefObject, ReactNode } from "react";
 import { ModalPositions } from "./modalPositions";
 import { ModalSizes } from "./modalSizes";
-import { ButtonColors } from "../button/buttonColors";
+import type { ButtonColors } from "../button/buttonColors";
 
 /**
  *
@@ -35,30 +34,6 @@ export const ModalDefaultProps = {
 	popup: false,
 	position: ModalPositions.Center,
 	size: ModalSizes.Medium
-};
-
-export const ModalPropTypes = {
-	position: PropTypes.oneOf(Object.values(ModalPositions)),
-	size: PropTypes.oneOf(Object.values(ModalSizes)),
-	dismissible: PropTypes.bool,
-	popup: PropTypes.bool,
-	initialFocus: PropTypes.oneOfType([
-		PropTypes.number,
-		PropTypes.shape({
-			current: PropTypes.object
-		})
-	]),
-	show: PropTypes.bool,
-	onClose: PropTypes.func,
-	header: PropTypes.node,
-	body: PropTypes.node,
-	footerButtons: PropTypes.arrayOf(
-		PropTypes.shape({
-			label: PropTypes.string.isRequired,
-			variant: PropTypes.oneOf(Object.values(ButtonColors)),
-			onClick: PropTypes.func
-		})
-	)
 };
 
 /**

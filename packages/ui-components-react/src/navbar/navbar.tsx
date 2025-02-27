@@ -1,8 +1,7 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import { Navbar as FlowbiteNavbar } from "flowbite-react";
-import type { JSX, NamedExoticComponent } from "react";
-import { memo } from "react";
+import { memo, type JSX } from "react";
 import type { NavbarProps } from "./navbarProps";
 
 /**
@@ -24,43 +23,19 @@ import type { NavbarProps } from "./navbarProps";
  * </Navbar>
  * ```
  */
-const NavbarBase = ({
-	children,
-	fluid = false,
-	rounded = false,
-	...props
-}: NavbarProps): JSX.Element => (
-	<FlowbiteNavbar fluid={fluid} rounded={rounded} {...props}>
-		{children}
-	</FlowbiteNavbar>
+const NavbarComponent = memo(
+	({ children, fluid = false, rounded = false, ...props }: NavbarProps): JSX.Element => (
+		<FlowbiteNavbar fluid={fluid} rounded={rounded} {...props}>
+			{children}
+		</FlowbiteNavbar>
+	)
 );
 
-NavbarBase.displayName = "Navbar";
+NavbarComponent.displayName = "Navbar";
 
-const MemoizedNavbar: NamedExoticComponent<NavbarProps> = memo(NavbarBase);
-
-/**
- * Navbar component with subcomponents for building navigation interfaces.
- */
-export const Navbar = Object.assign(MemoizedNavbar, {
-	/**
-	 * Brand component for displaying logo and brand name
-	 * @see {@link FlowbiteNavbar.Brand}
-	 */
+export const Navbar = Object.assign(NavbarComponent, {
 	Brand: FlowbiteNavbar.Brand,
-	/**
-	 * Collapse component for responsive navigation menu
-	 * @see {@link FlowbiteNavbar.Collapse}
-	 */
 	Collapse: FlowbiteNavbar.Collapse,
-	/**
-	 * Link component for navigation items
-	 * @see {@link FlowbiteNavbar.Link}
-	 */
 	Link: FlowbiteNavbar.Link,
-	/**
-	 * Toggle component for mobile menu
-	 * @see {@link FlowbiteNavbar.Toggle}
-	 */
 	Toggle: FlowbiteNavbar.Toggle
 });

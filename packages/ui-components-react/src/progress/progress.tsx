@@ -1,8 +1,8 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import { Progress as FlowbiteProgress, type CustomFlowbiteTheme } from "flowbite-react";
-import React, { type ReactNode } from "react";
-import { ProgressPropTypes, type ProgressProps } from "./progressProps";
+import { type JSX, memo, useMemo } from "react";
+import type { ProgressProps } from "./progressProps";
 
 const customTheme: CustomFlowbiteTheme["progress"] = {
 	bar: "flex items-center justify-center space-x-2 rounded-full text-center font-medium leading-none text-cyan-300 dark:text-cyan-100",
@@ -22,32 +22,9 @@ const customTheme: CustomFlowbiteTheme["progress"] = {
 /**
  * Progress component.
  */
-export class Progress extends React.Component<ProgressProps> {
-	/**
-	 * The prop types of the component.
-	 */
-	public static propTypes = ProgressPropTypes;
+export const Progress = memo(({ ...rest }: ProgressProps): JSX.Element => {
+	const theme = useMemo(() => customTheme, []);
+	return <FlowbiteProgress theme={theme} {...rest} />;
+});
 
-	/**
-	 * The props of the component.
-	 */
-	private readonly _props: ProgressProps;
-
-	/**
-	 * Create a new instance of Progress.
-	 * @param props The props of the component.
-	 */
-	constructor(props: ProgressProps) {
-		super(props);
-		this._props = props;
-	}
-
-	/**
-	 * Render the component.
-	 * @returns The component to render.
-	 */
-	public render(): ReactNode {
-		const { ...rest } = this._props;
-		return <FlowbiteProgress theme={customTheme} {...rest} />;
-	}
-}
+Progress.displayName = "Progress";
