@@ -85,7 +85,7 @@ const [data, setData] = useState<DataType | null>(null);
 ```tsx
 useEffect(() => {
   // componentDidMount logic
-  
+
   return () => {
     // componentWillUnmount logic
   };
@@ -98,9 +98,12 @@ useEffect(() => {
 - Type event parameters explicitly
 
 ```tsx
-const handleClick = useCallback((event: React.MouseEvent<HTMLButtonElement>) => {
-  // Handler logic
-}, [dependencies]);
+const handleClick = useCallback(
+  (event: React.MouseEvent<HTMLButtonElement>) => {
+    // Handler logic
+  },
+  [dependencies]
+);
 ```
 
 ## Performance Optimization
@@ -177,10 +180,7 @@ const user = data as User;
 - Use default parameter values instead of defaultProps
 
 ```tsx
-export const MyComponent = ({ 
-  prop1 = 'default',
-  prop2 = 0 
-}: MyComponentProps): JSX.Element => {
+export const MyComponent = ({ prop1 = 'default', prop2 = 0 }: MyComponentProps): JSX.Element => {
   // Component logic
 };
 ```
@@ -211,39 +211,38 @@ import type { ComponentProps } from './componentProps';
 export const ComponentName = memo(({ prop1, prop2, onEvent }: ComponentProps): JSX.Element => {
   // State hooks
   const [stateVar, setStateVar] = useState<StateType | null>(null);
-  
+
   // Refs
   const refVar = useRef<RefType | null>(null);
-  
+
   // Effects
   useEffect(() => {
     // Setup code
-    
+
     return () => {
       // Cleanup code
     };
   }, []);
-  
+
   // Event handlers
-  const handleEvent = useCallback((event: EventType) => {
-    // Handler logic
-    if (onEvent) {
-      onEvent(someValue);
-    }
-  }, [onEvent]);
-  
+  const handleEvent = useCallback(
+    (event: EventType) => {
+      // Handler logic
+      if (onEvent) {
+        onEvent(someValue);
+      }
+    },
+    [onEvent]
+  );
+
   // Memoized calculations
   const computedValue = useMemo(() => {
     // Computation
     return result;
   }, [dependencies]);
-  
+
   // Render JSX
-  return (
-    <div>
-      {/* Component JSX */}
-    </div>
-  );
+  return <div>{/* Component JSX */}</div>;
 });
 
 // Set display name for debugging
@@ -255,16 +254,19 @@ ComponentName.displayName = 'ComponentName';
 When converting class components to functional components, follow this checklist:
 
 1. **Props**:
+
    - Define a clear interface for props
    - Use specific types, not any/unknown
    - Make optional props explicit with ?
 
 2. **State**:
+
    - Convert this.state to useState hooks
    - Split complex state into multiple useState calls or use useReducer
    - Initialize state with proper types
 
 3. **Lifecycle Methods**:
+
    - componentDidMount → useEffect with empty dependency array
    - componentDidUpdate → useEffect with dependencies
    - componentWillUnmount → useEffect return function
@@ -272,29 +274,35 @@ When converting class components to functional components, follow this checklist
    - getSnapshotBeforeUpdate → useLayoutEffect (rare cases)
 
 4. **Instance Variables**:
+
    - Convert to useRef hooks with proper typing
    - Access via .current property
 
 5. **Event Handlers**:
+
    - Wrap with useCallback to prevent unnecessary re-renders
    - Include dependencies in dependency array
    - Type event parameters explicitly
 
 6. **Performance Optimization**:
+
    - Wrap component with memo for shallow prop comparison
    - Use useMemo for expensive computations
    - Properly manage dependencies in useCallback and useMemo
 
 7. **Context**:
+
    - Replace this.context with useContext hook
    - Type context properly
 
 8. **Security**:
+
    - Sanitize any HTML content before using dangerouslySetInnerHTML
    - Validate external data with type guards
    - Use TypeScript's strict mode
 
 9. **Cleanup**:
+
    - Remove all class-specific code (this, bind, constructor)
    - Set displayName for debugging
    - Ensure no PropTypes are used
@@ -326,60 +334,62 @@ export interface TooltipProps {
 import { memo, useCallback, useEffect, useRef, useState, type JSX } from 'react';
 import type { TooltipProps } from './tooltipProps';
 
-export const Tooltip = memo(({
-  content,
-  children,
-  placement = 'top',
-  animation = 'fade',
-  style = 'dark',
-  trigger = 'hover',
-  arrow = true,
-  className,
-  onOpen,
-  onClose
-}: TooltipProps): JSX.Element => {
-  const [isVisible, setIsVisible] = useState<boolean>(false);
-  const tooltipRef = useRef<HTMLDivElement>(null);
-  
-  const handleOpen = useCallback(() => {
-    setIsVisible(true);
-    if (onOpen) {
-      onOpen();
-    }
-  }, [onOpen]);
-  
-  const handleClose = useCallback(() => {
-    setIsVisible(false);
-    if (onClose) {
-      onClose();
-    }
-  }, [onClose]);
-  
-  // Event handlers based on trigger type
-  useEffect(() => {
-    const tooltipElement = tooltipRef.current;
-    if (!tooltipElement) return;
-    
-    // Add event listeners based on trigger type
-    
-    return () => {
-      // Clean up event listeners
-    };
-  }, [trigger, handleOpen, handleClose]);
-  
-  return (
-    <div className={`tooltip-wrapper ${className || ''}`} ref={tooltipRef}>
-      {children}
-      {isVisible && (
-        <div 
-          className={`tooltip tooltip-${style} tooltip-${placement} animation-${animation} ${arrow ? 'tooltip-arrow' : ''}`}
-        >
-          {content}
-        </div>
-      )}
-    </div>
-  );
-});
+export const Tooltip = memo(
+  ({
+    content,
+    children,
+    placement = 'top',
+    animation = 'fade',
+    style = 'dark',
+    trigger = 'hover',
+    arrow = true,
+    className,
+    onOpen,
+    onClose
+  }: TooltipProps): JSX.Element => {
+    const [isVisible, setIsVisible] = useState<boolean>(false);
+    const tooltipRef = useRef<HTMLDivElement>(null);
+
+    const handleOpen = useCallback(() => {
+      setIsVisible(true);
+      if (onOpen) {
+        onOpen();
+      }
+    }, [onOpen]);
+
+    const handleClose = useCallback(() => {
+      setIsVisible(false);
+      if (onClose) {
+        onClose();
+      }
+    }, [onClose]);
+
+    // Event handlers based on trigger type
+    useEffect(() => {
+      const tooltipElement = tooltipRef.current;
+      if (!tooltipElement) return;
+
+      // Add event listeners based on trigger type
+
+      return () => {
+        // Clean up event listeners
+      };
+    }, [trigger, handleOpen, handleClose]);
+
+    return (
+      <div className={`tooltip-wrapper ${className || ''}`} ref={tooltipRef}>
+        {children}
+        {isVisible && (
+          <div
+            className={`tooltip tooltip-${style} tooltip-${placement} animation-${animation} ${arrow ? 'tooltip-arrow' : ''}`}
+          >
+            {content}
+          </div>
+        )}
+      </div>
+    );
+  }
+);
 
 Tooltip.displayName = 'Tooltip';
 ```

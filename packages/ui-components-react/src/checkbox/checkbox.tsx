@@ -7,6 +7,8 @@ import type { CheckboxProps } from "./checkboxProps";
 /**
  * Checkbox component.
  */
-export const Checkbox = memo((props: CheckboxProps): JSX.Element => <FlowbiteCheckbox {...props} />);
+export const Checkbox = memo(
+	(props: CheckboxProps): JSX.Element => <FlowbiteCheckbox {...props} />
+);
 
 Checkbox.displayName = "Checkbox";

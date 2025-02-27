@@ -7,18 +7,18 @@ import type { ComponentProps, ReactNode } from "react";
  * Props for the Navbar component.
  */
 export interface NavbarProps extends ComponentProps<typeof FlowbiteNavbar> {
-    /**
-     * The content to be rendered within the navbar.
-     */
-    children?: ReactNode;
+	/**
+	 * The content to be rendered within the navbar.
+	 */
+	children?: ReactNode;
 
-    /**
-     * Make the navbar full width.
-     */
-    fluid?: boolean;
+	/**
+	 * Make the navbar full width.
+	 */
+	fluid?: boolean;
 
-    /**
-     * Apply rounded corners to the navbar.
-     */
-    rounded?: boolean;
+	/**
+	 * Apply rounded corners to the navbar.
+	 */
+	rounded?: boolean;
 }

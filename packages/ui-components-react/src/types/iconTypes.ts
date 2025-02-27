@@ -8,5 +8,5 @@ import type { SVGProps, JSX, ForwardRefExoticComponent, RefAttributes } from "re
  * to be compatible with various icon libraries including flowbite-react-icons.
  */
 export type IconComponent =
-  | ((props: SVGProps<SVGSVGElement>) => JSX.Element)
-  | ForwardRefExoticComponent<Omit<SVGProps<SVGSVGElement>, "ref"> & RefAttributes<SVGSVGElement>>;
+	| ((props: SVGProps<SVGSVGElement>) => JSX.Element)
+	| ForwardRefExoticComponent<Omit<SVGProps<SVGSVGElement>, "ref"> & RefAttributes<SVGSVGElement>>;

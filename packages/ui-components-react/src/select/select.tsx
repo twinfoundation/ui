@@ -7,14 +7,16 @@ import type { SelectProps } from "./selectProps";
 /**
  * Select component.
  */
-export const Select = memo(({ options, ...rest }: SelectProps): JSX.Element => (
-	<FlowbiteSelect {...rest}>
-		{options?.map((option, index) => (
-			<option key={index} value={option?.value}>
-				{option?.label}
-			</option>
-		))}
-	</FlowbiteSelect>
-));
+export const Select = memo(
+	({ options, ...rest }: SelectProps): JSX.Element => (
+		<FlowbiteSelect {...rest}>
+			{options?.map((option, index) => (
+				<option key={index} value={option?.value}>
+					{option?.label}
+				</option>
+			))}
+		</FlowbiteSelect>
+	)
+);
 
 Select.displayName = "Select";

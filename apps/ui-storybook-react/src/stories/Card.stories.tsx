@@ -87,7 +87,7 @@ export const WithAbsoluteIcon: Story = {
 		title: "Card with Absolute Positioned Icon",
 		content: "This card displays an icon with absolute positioning in the top left corner.",
 		icon: {
-			component: IconsSolid.Star, 
+			component: IconsSolid.Star,
 			size: "lg",
 			className: "text-yellow-500"
 		},
