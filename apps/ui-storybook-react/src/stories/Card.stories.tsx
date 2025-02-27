@@ -25,6 +25,10 @@ const meta = {
 } satisfies Meta<typeof Card>;
 
 export default meta;
+
+/**
+ * Type for Card component stories.
+ */
 type Story = StoryObj<typeof meta>;
 
 /**
