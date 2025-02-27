@@ -8,10 +8,9 @@ This package contains the react UI components.
 npm install @twin.org/ui-components-react
 ```
 
-## Examples
+## Documentation
 
-Usage of the APIs is shown in the examples [docs/examples.md](docs/examples.md)
-
-## Changelog
-
-The changes between each version can be found in [docs/changelog.md](docs/changelog.md)
+- [TypeScript React Best Practices](docs/typescript-react-best-practices.md) - Guidelines for TypeScript React component development
+- [Component Template Example](docs/component-template-example.md) - Complete example of a component following best practices
+- [Examples](docs/examples.md) - Usage examples of the components
+- [Changelog](docs/changelog.md) - Changes between each version
