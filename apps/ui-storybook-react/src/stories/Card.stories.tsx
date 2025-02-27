@@ -27,6 +27,9 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/**
+ * Default Card component story
+ */
 export const Default: Story = {
 	args: {
 		children: "Card Component",
@@ -146,7 +149,11 @@ export const WithButton: Story = {
 				label: "Learn More",
 				icon: IconsSolid.ShoppingBag,
 				color: "primary",
-				onClick: () => alert("Button clicked!")
+
+				onClick: () => {
+					// eslint-disable-next-line no-console
+					console.log("Button clicked!");
+				}
 			}
 		]
 	}
@@ -223,7 +230,11 @@ export const FullFeatured: Story = {
 				label: "Primary Action",
 				icon: IconsSolid.ArrowRightAlt,
 				color: "primary",
-				onClick: () => alert("Primary action clicked!")
+
+				onClick: () => {
+					// eslint-disable-next-line no-console
+					console.log("Primary action clicked!");
+				}
 			},
 			{
 				label: "Secondary Action",
@@ -254,7 +265,11 @@ export const OptimizedLayout: Story = {
 				label: "Learn More",
 				icon: IconsSolid.ArrowRightAlt,
 				color: "primary",
-				onClick: () => alert("Button clicked!")
+
+				onClick: () => {
+					// eslint-disable-next-line no-console
+					console.log("Button clicked!");
+				}
 			}
 		]
 	}
@@ -279,7 +294,11 @@ export const CleanLayout: Story = {
 				label: "Learn More",
 				icon: IconsSolid.ArrowRightAlt,
 				color: "primary",
-				onClick: () => alert("Button clicked!")
+
+				onClick: () => {
+					// eslint-disable-next-line no-console
+					console.log("Button clicked!");
+				}
 			}
 		]
 	}
