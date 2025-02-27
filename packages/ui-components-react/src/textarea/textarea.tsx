@@ -1,38 +1,23 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import { Textarea as FlowbiteTextarea } from "flowbite-react";
-import React, { type ReactNode } from "react";
-import { TextareaPropTypes, type TextareaProps } from "./textareaProps";
+import { memo, useCallback, type JSX } from "react";
+import type { TextareaProps } from "./textareaProps";
 
 /**
  * Textarea component.
  */
-export class Textarea extends React.Component<TextareaProps> {
-	/**
-	 * The prop types of the component.
-	 */
-	public static propTypes = TextareaPropTypes;
+export const Textarea = memo(({ onChange, ...rest }: TextareaProps): JSX.Element => {
+	const handleChange = useCallback(
+		(event: React.ChangeEvent<HTMLTextAreaElement>) => {
+			if (onChange) {
+				onChange(event);
+			}
+		},
+		[onChange]
+	);
 
-	/**
-	 * The props of the component.
-	 */
-	private readonly _props: TextareaProps;
+	return <FlowbiteTextarea {...rest} onChange={handleChange} />;
+});
 
-	/**
-	 * Create a new instance of Textarea.
-	 * @param props The props of the component.
-	 */
-	constructor(props: TextareaProps) {
-		super(props);
-		this._props = props;
-	}
-
-	/**
-	 * Render the component.
-	 * @returns The component to render.
-	 */
-	public render(): ReactNode {
-		const { ...rest } = this._props;
-		return <FlowbiteTextarea {...rest} />;
-	}
-}
+Textarea.displayName = "Textarea";

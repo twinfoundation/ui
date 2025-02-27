@@ -1,11 +1,17 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import type { ToastProps as FlowbiteToastProps } from "flowbite-react";
+import type { ReactNode } from "react";
 
 /**
  * Props for the Toast component.
  */
 export interface ToastProps extends Omit<FlowbiteToastProps, "color" | "label" | "duration"> {
+	/**
+	 * The content to be displayed within the toast.
+	 */
+	children?: ReactNode;
+
 	/**
 	 * Additional CSS class names
 	 */

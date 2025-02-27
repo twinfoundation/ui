@@ -48,9 +48,4 @@ export interface TabsProps extends Omit<FlowbiteTabsProps, "color" | "label"> {
 	 * The tab items
 	 */
 	items?: TabItem[];
-
-	/**
-	 * Children elements
-	 */
-	children?: ReactNode;
 }

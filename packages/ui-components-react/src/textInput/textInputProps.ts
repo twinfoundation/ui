@@ -1,32 +1,77 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import type { TextInputProps as FlowbiteTextInputProps } from "flowbite-react";
-import PropTypes, { type InferProps } from "prop-types";
 import type { PropsWithChildren } from "react";
-import { TextInputColors } from "./textInputColors";
-import { TextInputSizes } from "./textInputSizes";
-
-export const TextInputPropTypes = {
-	color: PropTypes.oneOf(Object.values(TextInputColors)),
-	sizing: PropTypes.oneOf(Object.values(TextInputSizes)),
-	id: PropTypes.string,
-	disabled: PropTypes.bool,
-	required: PropTypes.bool,
-	readOnly: PropTypes.bool,
-	name: PropTypes.string,
-	value: PropTypes.string,
-	placeholder: PropTypes.string,
-	className: PropTypes.string,
-	type: PropTypes.string,
-	helperText: PropTypes.node,
-	icon: PropTypes.func,
-	rightIcon: PropTypes.func,
-	addon: PropTypes.string
-};
+import type { TextInputColors } from "./textInputColors";
+import type { TextInputSizes } from "./textInputSizes";
+import type { IconComponent } from "../types/iconTypes";
 
 /**
- * TextInput props.
+ * TextInput component props interface.
  */
-export type TextInputProps = PropsWithChildren<
-	InferProps<typeof TextInputPropTypes> & Omit<FlowbiteTextInputProps, "label">
->;
+export interface TextInputProps extends PropsWithChildren<Omit<FlowbiteTextInputProps, "label">> {
+	/**
+	 * TextInput color.
+	 */
+	color?: TextInputColors;
+	/**
+	 * TextInput sizing.
+	 */
+	sizing?: TextInputSizes;
+	/**
+	 * TextInput id.
+	 */
+	id?: string;
+	/**
+	 * TextInput disabled state.
+	 */
+	disabled?: boolean;
+	/**
+	 * TextInput required state.
+	 */
+	required?: boolean;
+	/**
+	 * TextInput read-only state.
+	 */
+	readOnly?: boolean;
+	/**
+	 * TextInput name.
+	 */
+	name?: string;
+	/**
+	 * TextInput value.
+	 */
+	value?: string;
+	/**
+	 * TextInput placeholder.
+	 */
+	placeholder?: string;
+	/**
+	 * TextInput class name.
+	 */
+	className?: string;
+	/**
+	 * TextInput type.
+	 */
+	type?: string;
+	/**
+	 * TextInput helper text.
+	 */
+	helperText?: React.ReactNode;
+	/**
+	 * TextInput label.
+	 */
+	label?: string;
+	/**
+	 * TextInput icon.
+	 */
+	icon?: IconComponent;
+	/**
+	 * TextInput right icon.
+	 */
+	rightIcon?: IconComponent;
+	/**
+	 * TextInput addon.
+	 */
+	addon?: string;
+}
