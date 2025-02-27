@@ -1,5 +1,6 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
+// cspell:ignore centered autodocs
 import type { Meta, StoryObj } from "@storybook/react";
 import { Card, IconsSolid, BadgeColors } from "@twin.org/ui-components-react";
 

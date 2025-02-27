@@ -1,3 +1,5 @@
+<!-- cspell:ignore Cleanup -->
+
 # TypeScript React Best Practices
 
 This document outlines the agreed-upon best practices for TypeScript React components in the TWIN UI Components React package. Following these guidelines ensures consistency across the codebase and promotes maintainable, type-safe code.

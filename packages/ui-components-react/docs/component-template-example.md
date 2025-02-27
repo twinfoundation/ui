@@ -1,3 +1,5 @@
+<!-- cspell:ignore Cleanup -->
+
 # Component Template Example
 
 This document provides a complete example of a React component following our TypeScript best practices. Use this as a reference when creating new components or refactoring existing ones.
