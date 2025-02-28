@@ -33,7 +33,9 @@ export const Avatar = memo(
 				try {
 					const url = new URL(img);
 					return url.toString();
-				} catch {}
+				} catch (error) {
+					// If URL is invalid, we'll return undefined and let the component handle it
+				}
 			}, [img]);
 
 			const composedClassName = useMemo(
