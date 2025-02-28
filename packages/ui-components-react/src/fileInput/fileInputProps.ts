@@ -1,22 +1,40 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import type { FileInputProps as FlowbiteFileInputProps } from "flowbite-react";
-import PropTypes, { type InferProps } from "prop-types";
-import type { PropsWithChildren } from "react";
-import { FileInputSizes } from "./fileInputSizes";
-
-export const FileInputPropTypes = {
-	sizing: PropTypes.oneOf(Object.values(FileInputSizes)),
-	disabled: PropTypes.bool,
-	required: PropTypes.bool,
-	id: PropTypes.string,
-	name: PropTypes.string,
-	helperText: PropTypes.node
-};
+import type { ReactNode } from "react";
+import type { FileInputSizes } from "./fileInputSizes";
 
 /**
  * FileInput props.
  */
-export type FileInputProps = PropsWithChildren<
-	InferProps<typeof FileInputPropTypes> & Omit<FlowbiteFileInputProps, "color" | "label">
->;
+export interface FileInputProps extends Omit<FlowbiteFileInputProps, "color" | "label"> {
+	/**
+	 * The size of the file input
+	 */
+	sizing?: FileInputSizes;
+
+	/**
+	 * Whether the file input is disabled
+	 */
+	disabled?: boolean;
+
+	/**
+	 * Whether the file input is required
+	 */
+	required?: boolean;
+
+	/**
+	 * The id of the file input
+	 */
+	id?: string;
+
+	/**
+	 * The name of the file input
+	 */
+	name?: string;
+
+	/**
+	 * Helper text to display below the file input
+	 */
+	helperText?: ReactNode;
+}

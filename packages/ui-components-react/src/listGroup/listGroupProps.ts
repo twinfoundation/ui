@@ -1,20 +1,7 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
-import PropTypes from "prop-types";
-import type { FC, SVGProps } from "react";
-
-export const ListGroupPropTypes = {
-	items: PropTypes.arrayOf(
-		PropTypes.shape({
-			title: PropTypes.string.isRequired,
-			icon: PropTypes.func,
-			active: PropTypes.bool,
-			disabled: PropTypes.bool,
-			href: PropTypes.string
-		})
-	).isRequired,
-	className: PropTypes.string
-};
+import type { ReactNode } from "react";
+import type { IconComponent } from "../types/iconTypes";
 
 /**
  * Props for a single list group item
@@ -27,7 +14,7 @@ export interface ListGroupItem {
 	/**
 	 * Optional icon component to display
 	 */
-	icon?: FC<SVGProps<SVGSVGElement>>;
+	icon?: IconComponent;
 	/**
 	 * Whether the item is active
 	 */
@@ -51,7 +38,11 @@ export interface ListGroupProps {
 	 */
 	items: ListGroupItem[];
 	/**
-	 * Additional CSS classes
+	 * Additional CSS class names
 	 */
 	className?: string;
+	/**
+	 * Children elements
+	 */
+	children?: ReactNode;
 }

@@ -1,38 +1,35 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import type { TableProps as FlowbiteTableProps } from "flowbite-react";
-import PropTypes, { type InferProps } from "prop-types";
-import type { PropsWithChildren, ReactNode } from "react";
+import type { ReactNode } from "react";
 
-export const TablePropTypes = {
-	striped: PropTypes.bool,
-	hoverable: PropTypes.bool,
-	header: PropTypes.arrayOf(
-		PropTypes.shape({
-			content: PropTypes.node.isRequired,
-			className: PropTypes.string
-		})
-	),
-	body: PropTypes.arrayOf(
-		PropTypes.arrayOf(
-			PropTypes.shape({
-				content: PropTypes.node.isRequired,
-				className: PropTypes.string
-			})
-		)
-	),
-	footer: PropTypes.arrayOf(
-		PropTypes.shape({
-			className: PropTypes.string,
-			cells: PropTypes.arrayOf(
-				PropTypes.shape({
-					content: PropTypes.node.isRequired,
-					className: PropTypes.string
-				})
-			)
-		})
-	)
-};
+/**
+ * Cell configuration interface
+ */
+interface TableCell {
+	/**
+	 * The content to display in the cell
+	 */
+	content: ReactNode;
+	/**
+	 * Optional CSS class for styling the cell
+	 */
+	className?: string;
+}
+
+/**
+ * Footer row configuration interface
+ */
+export interface TableFooterRow {
+	/**
+	 * Optional CSS class for styling the footer row
+	 */
+	className?: string;
+	/**
+	 * Footer row cells
+	 */
+	cells: TableCell[];
+}
 
 /**
  * Table props.
@@ -41,56 +38,13 @@ export interface TableProps extends FlowbiteTableProps {
 	/**
 	 * Configuration for table header cells
 	 */
-	header?: {
-		/**
-		 * The content to display in the header cell
-		 */
-		content: ReactNode;
-		/**
-		 * Optional CSS class for styling the header cell
-		 */
-		className?: string;
-	}[];
+	header?: TableCell[];
 	/**
 	 * Configuration for table body cells
 	 */
-	body?: {
-		/**
-		 * The content to display in the table cell
-		 */
-		content: ReactNode;
-		/**
-		 * Optional CSS class for styling the cell
-		 */
-		className?: string;
-	}[][];
+	body?: TableCell[][];
 	/**
 	 * Configuration for table footer
 	 */
-	footer?: {
-		/**
-		 * Optional CSS class for styling the footer row
-		 */
-		className?: string;
-		/**
-		 * Footer row cells
-		 */
-		cells: {
-			/**
-			 * The content to display in the footer cell
-			 */
-			content: ReactNode;
-			/**
-			 * Optional CSS class for styling the cell
-			 */
-			className?: string;
-		}[];
-	}[];
+	footer?: TableFooterRow[];
 }
-
-/**
- *
- */
-export type TablePropsType = PropsWithChildren<
-	InferProps<typeof TablePropTypes> & Omit<TableProps, "container" | "striped" | "hoverable">
->;

@@ -1,25 +1,54 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import type { TextareaProps as FlowbiteTextareaProps } from "flowbite-react";
-import PropTypes, { type InferProps } from "prop-types";
 import type { PropsWithChildren } from "react";
-
-export const TextareaPropTypes = {
-	id: PropTypes.string,
-	disabled: PropTypes.bool,
-	required: PropTypes.bool,
-	readOnly: PropTypes.bool,
-	name: PropTypes.string,
-	value: PropTypes.string,
-	placeholder: PropTypes.string,
-	rows: PropTypes.number,
-	cols: PropTypes.number,
-	className: PropTypes.string
-};
 
 /**
  * Textarea props.
  */
-export type TextareaProps = PropsWithChildren<
-	InferProps<typeof TextareaPropTypes> & Omit<FlowbiteTextareaProps, "color" | "label">
->;
+export interface TextareaProps extends PropsWithChildren<FlowbiteTextareaProps> {
+	/**
+	 * The textarea id.
+	 */
+	id?: string;
+	/**
+	 * The textarea name.
+	 */
+	disabled?: boolean;
+	/**
+	 * The textarea value.
+	 */
+	required?: boolean;
+	/**
+	 * The textarea read only state.
+	 */
+	readOnly?: boolean;
+	/**
+	 * The textarea name.
+	 */
+	name?: string;
+	/**
+	 * The textarea placeholder.
+	 */
+	placeholder?: string;
+	/**
+	 * The textarea value.
+	 */
+	value?: string;
+	/**
+	 * The textarea change event.
+	 */
+	onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
+	/**
+	 * The textarea rows.
+	 */
+	rows?: number;
+	/**
+	 * The textarea columns.
+	 */
+	cols?: number;
+	/**
+	 * The textarea class name.
+	 */
+	className?: string;
+}

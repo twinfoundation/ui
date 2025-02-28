@@ -31,24 +31,29 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
 	args: {
-		value: "2"
+		value: "2",
+		label: "Radio"
 	}
 };
 
 export const DefaultChecked: Story = {
 	args: {
-		defaultChecked: true
+		defaultChecked: true,
+		value: "2",
+		label: "Radio"
 	}
 };
 
 export const Disabled: Story = {
 	args: {
-		disabled: true
+		disabled: true,
+		label: "Radio"
 	}
 };
 
 export const Required: Story = {
 	args: {
-		required: true
+		required: true,
+		label: "Radio"
 	}
 };

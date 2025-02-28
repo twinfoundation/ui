@@ -9,11 +9,11 @@ const meta = {
 	argTypes: {
 		layout: {
 			options: Object.values(PaginationLayouts),
-			control: { type: "inline-radio" }
+			control: { type: "inline-radio", options: Object.values(PaginationLayouts) }
 		},
 		showIcons: {
-			options: Object.values([true, false]),
-			control: { type: "inline-radio" }
+			options: [true, false],
+			control: { type: "inline-radio", options: [true, false] }
 		}
 	},
 	args: {}

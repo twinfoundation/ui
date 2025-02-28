@@ -1,21 +1,50 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import type { RadioProps as FlowbiteRadioProps } from "flowbite-react";
-import PropTypes, { type InferProps } from "prop-types";
-import type { PropsWithChildren } from "react";
-
-export const RadioPropTypes = {
-	id: PropTypes.string,
-	disabled: PropTypes.bool,
-	required: PropTypes.bool,
-	defaultChecked: PropTypes.bool,
-	name: PropTypes.string,
-	value: PropTypes.string
-};
+import type { ReactNode } from "react";
 
 /**
  * Radio props.
  */
-export type RadioProps = PropsWithChildren<
-	InferProps<typeof RadioPropTypes> & Omit<FlowbiteRadioProps, "color" | "label">
->;
+export interface RadioProps extends Omit<FlowbiteRadioProps, "color" | "label"> {
+	/**
+	 * Radio id.
+	 */
+	id?: string;
+	/**
+	 * Disabled state.
+	 */
+	disabled?: boolean;
+	/**
+	 * Required state.
+	 */
+	required?: boolean;
+	/**
+	 * Default checked state.
+	 */
+	defaultChecked?: boolean;
+	/**
+	 * Radio name.
+	 */
+	name?: string;
+	/**
+	 * Radio label.
+	 */
+	label: string;
+	/**
+	 * Radio value.
+	 */
+	value: string;
+	/**
+	 * Checked state.
+	 */
+	checked?: boolean;
+	/**
+	 * Radio onChange event.
+	 */
+	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+	/**
+	 * Radio children.
+	 */
+	children?: ReactNode;
+}

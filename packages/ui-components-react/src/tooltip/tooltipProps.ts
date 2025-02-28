@@ -1,34 +1,50 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import type { TooltipProps as FlowbiteTooltipProps } from "flowbite-react";
-import PropTypes from "prop-types";
-import type { PropsWithChildren } from "react";
-import { TooltipAnimations } from "./tooltipAnimations";
-import { TooltipColors } from "./tooltipColors";
-import { TooltipPlacements } from "./tooltipPlacements";
-import { TooltipStyles } from "./tooltipStyles";
-import { TooltipTriggers } from "./tooltipTriggers";
-
-export const TooltipPropTypes = {
-	style: PropTypes.oneOf(Object.values(TooltipStyles)),
-	animation: PropTypes.oneOf(Object.values(TooltipAnimations)),
-	placement: PropTypes.oneOf(Object.values(TooltipPlacements)),
-	trigger: PropTypes.oneOf(Object.values(TooltipTriggers)),
-	color: PropTypes.oneOf(Object.values(TooltipColors)),
-	arrow: PropTypes.bool,
-	content: PropTypes.string
-};
+import type { ReactNode } from "react";
+import type { TooltipAnimations } from "./tooltipAnimations";
+import type { TooltipColors } from "./tooltipColors";
+import type { TooltipPlacements } from "./tooltipPlacements";
+import type { TooltipStyles } from "./tooltipStyles";
+import type { TooltipTriggers } from "./tooltipTriggers";
 
 /**
  * Tooltip props.
  */
-export type TooltipProps = PropsWithChildren<{
+export interface TooltipProps
+	extends Omit<FlowbiteTooltipProps, "color" | "style" | "animation" | "placement" | "trigger"> {
+	/**
+	 * The style of the tooltip.
+	 */
 	style?: (typeof TooltipStyles)[keyof typeof TooltipStyles];
+
+	/**
+	 * The animation of the tooltip.
+	 */
 	animation?: (typeof TooltipAnimations)[keyof typeof TooltipAnimations];
+
+	/**
+	 * The placement of the tooltip.
+	 */
 	placement?: (typeof TooltipPlacements)[keyof typeof TooltipPlacements];
+
+	/**
+	 * The trigger of the tooltip.
+	 */
 	trigger?: (typeof TooltipTriggers)[keyof typeof TooltipTriggers];
+
+	/**
+	 * The color of the tooltip.
+	 */
 	color?: (typeof TooltipColors)[keyof typeof TooltipColors];
-	arrow?: boolean;
-	content?: string;
-}> &
-	Omit<FlowbiteTooltipProps, "color" | "label">;
+
+	/**
+	 * The content of the tooltip.
+	 */
+	content: ReactNode;
+
+	/**
+	 * The children of the tooltip.
+	 */
+	children?: ReactNode;
+}

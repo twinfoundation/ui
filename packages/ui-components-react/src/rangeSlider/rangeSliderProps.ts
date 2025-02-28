@@ -1,24 +1,49 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import type { RangeSliderProps as FlowbiteRangeSliderProps } from "flowbite-react";
-import PropTypes, { type InferProps } from "prop-types";
-import type { PropsWithChildren } from "react";
-import { RangeSliderSizes } from "./rangeSliderSizes";
-
-export const RangeSliderPropTypes = {
-	sizing: PropTypes.oneOf(Object.values(RangeSliderSizes)),
-	id: PropTypes.string,
-	disabled: PropTypes.bool,
-	required: PropTypes.bool,
-	name: PropTypes.string,
-	value: PropTypes.string,
-	min: PropTypes.number,
-	max: PropTypes.number
-};
+import type { RangeSliderSizes } from "./rangeSliderSizes";
 
 /**
- * RangeSlider props.
+ * RangeSlider props interface.
  */
-export type RangeSliderProps = PropsWithChildren<
-	InferProps<typeof RangeSliderPropTypes> & Omit<FlowbiteRangeSliderProps, "color" | "label">
->;
+export interface RangeSliderProps extends Omit<FlowbiteRangeSliderProps, "color" | "label"> {
+	/**
+	 * The size of the range slider.
+	 */
+	sizing?: RangeSliderSizes;
+
+	/**
+	 * The ID of the range slider.
+	 */
+	id?: string;
+
+	/**
+	 * Whether the range slider is disabled.
+	 */
+	disabled?: boolean;
+
+	/**
+	 * Whether the range slider is required.
+	 */
+	required?: boolean;
+
+	/**
+	 * The name of the range slider.
+	 */
+	name?: string;
+
+	/**
+	 * The value of the range slider.
+	 */
+	value?: string;
+
+	/**
+	 * The minimum value of the range slider.
+	 */
+	min?: number;
+
+	/**
+	 * The maximum value of the range slider.
+	 */
+	max?: number;
+}

@@ -1,23 +1,41 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import type { PaginationProps as FlowbitePaginationProps } from "flowbite-react";
-import PropTypes, { type InferProps } from "prop-types";
 import type { PropsWithChildren } from "react";
-import { PaginationLayouts } from "./paginationLayouts";
-
-export const PaginationPropTypes = {
-	layout: PropTypes.oneOf(Object.values(PaginationLayouts)),
-	showIcons: PropTypes.bool,
-	previousLabel: PropTypes.string,
-	nextLabel: PropTypes.string,
-	currentPage: PropTypes.number.isRequired,
-	totalPages: PropTypes.number.isRequired,
-	onPageChange: PropTypes.func.isRequired
-};
+import type { PaginationLayouts } from "./paginationLayouts";
 
 /**
  * Pagination props.
  */
 export type PaginationProps = PropsWithChildren<
-	InferProps<typeof PaginationPropTypes> & Omit<FlowbitePaginationProps, "color" | "label">
+	Omit<FlowbitePaginationProps, "color" | "label"> & {
+		/**
+		 * The layout of the pagination.
+		 */
+		layout?: PaginationLayouts;
+		/**
+		 * Whether to show icons.
+		 */
+		showIcons?: boolean;
+		/*
+		 * The label to show for the previous page.
+		 */
+		previousLabel?: string;
+		/*
+		 * The label to show for the next page.
+		 */
+		nextLabel?: string;
+		/**
+		 * The current page.
+		 */
+		currentPage: number;
+		/**
+		 * The total number of pages.
+		 */
+		totalPages: number;
+		/**
+		 * Callback function to handle page changes.
+		 */
+		onPageChange: (page: number) => void;
+	}
 >;

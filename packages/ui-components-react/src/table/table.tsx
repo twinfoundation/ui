@@ -1,93 +1,85 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import { Table as FlowbiteTable } from "flowbite-react";
-import React, { type ReactNode } from "react";
-import { TablePropTypes, type TableProps } from "./tableProps";
+import { memo, useCallback, useMemo, type JSX } from "react";
+import type { TableFooterRow, TableProps } from "./tableProps";
 
 /**
  * Table component.
  */
-export class Table extends React.Component<TableProps> {
-	/**
-	 * The prop types of the component.
-	 */
-	public static propTypes = TablePropTypes;
+export const Table = memo(({ header, body, footer, ...rest }: TableProps): JSX.Element => {
+	const renderHeader = useMemo(() => {
+		if (!header || header.length === 0) {
+			return <FlowbiteTable.HeadCell>No header data</FlowbiteTable.HeadCell>;
+		}
 
-	/**
-	 * The props of the component.
-	 */
-	private readonly _props: TableProps;
+		return header.map((item, index) => (
+			<FlowbiteTable.HeadCell key={`header-${index}`} className={item?.className ?? ""}>
+				{item?.content}
+			</FlowbiteTable.HeadCell>
+		));
+	}, [header]);
 
-	/**
-	 * Create a new instance of Table.
-	 * @param props The props of the component.
-	 */
-	constructor(props: TableProps) {
-		super(props);
-		this._props = props;
-	}
+	const renderBody = useMemo(() => {
+		if (!body || body.length === 0) {
+			return (
+				<FlowbiteTable.Row>
+					<FlowbiteTable.Cell>No data available</FlowbiteTable.Cell>
+				</FlowbiteTable.Row>
+			);
+		}
 
-	/**
-	 * Render the component.
-	 * @returns The component to render.
-	 */
-	public render(): ReactNode {
-		const { header, body, footer, ...rest } = this._props;
+		return body.map((row, rowIndex) => (
+			<FlowbiteTable.Row key={`row-${rowIndex}`}>
+				{row.map((cell, cellIndex) => (
+					<FlowbiteTable.Cell
+						key={`cell-${rowIndex}-${cellIndex}`}
+						className={cell?.className ?? ""}
+					>
+						{cell?.content}
+					</FlowbiteTable.Cell>
+				))}
+			</FlowbiteTable.Row>
+		));
+	}, [body]);
+
+	const renderFooterRow = useCallback(
+		(row: TableFooterRow, rowIndex: number) => (
+			<FlowbiteTable.Row key={`footer-row-${rowIndex}`} className={row.className ?? ""}>
+				{row.cells.map((cell, cellIndex) => (
+					<FlowbiteTable.Cell
+						key={`footer-cell-${rowIndex}-${cellIndex}`}
+						className={`font-medium ${cell?.className ?? ""}`}
+					>
+						{cell.content}
+					</FlowbiteTable.Cell>
+				))}
+			</FlowbiteTable.Row>
+		),
+		[]
+	);
+
+	const renderFooter = useMemo(() => {
+		if (!footer || footer.length === 0) {
+			return null;
+		}
+
 		return (
-			<div className="overflow-x-auto">
-				<FlowbiteTable {...rest}>
-					<FlowbiteTable.Head>
-						{header && header.length > 0 ? (
-							header.map((item, index) => (
-								<FlowbiteTable.HeadCell
-									key={`header-${index}-${String(item.content)}`}
-									className={item?.className ?? ""}
-								>
-									{item?.content}
-								</FlowbiteTable.HeadCell>
-							))
-						) : (
-							<FlowbiteTable.HeadCell>No header data</FlowbiteTable.HeadCell>
-						)}
-					</FlowbiteTable.Head>
-					<FlowbiteTable.Body className="divide-y">
-						{body && body.length > 0 ? (
-							body?.map((row, rowIndex) => (
-								<FlowbiteTable.Row key={`row-${rowIndex}`}>
-									{row.map((cell, cellIndex) => (
-										<FlowbiteTable.Cell
-											key={`cell-${rowIndex}-${cellIndex}`}
-											className={cell?.className ?? ""}
-										>
-											{cell?.content}
-										</FlowbiteTable.Cell>
-									))}
-								</FlowbiteTable.Row>
-							))
-						) : (
-							<FlowbiteTable.Row>
-								<FlowbiteTable.Cell>No data available</FlowbiteTable.Cell>
-							</FlowbiteTable.Row>
-						)}
-					</FlowbiteTable.Body>
-					{footer && footer.length > 0 && (
-						<FlowbiteTable.Body>
-							{footer.map((row, rowIndex) => (
-								<FlowbiteTable.Row key={`footer-row-${rowIndex}`} className={row.className ?? ""}>
-									{row.cells.map((cell, cellIndex) => (
-										<FlowbiteTable.Cell
-											key={`footer-cell-${rowIndex}-${cellIndex}`}
-											className={`font-medium ${cell?.className ?? ""}`}
-										>
-											{cell.content}
-										</FlowbiteTable.Cell>
-									))}
-								</FlowbiteTable.Row>
-							))}
-						</FlowbiteTable.Body>
-					)}
-				</FlowbiteTable>
-			</div>
+			<FlowbiteTable.Body>
+				{footer.map((row, rowIndex) => renderFooterRow(row, rowIndex))}
+			</FlowbiteTable.Body>
 		);
-	}
-}
+	}, [footer, renderFooterRow]);
+
+	return (
+		<div className="overflow-x-auto">
+			<FlowbiteTable {...rest}>
+				<FlowbiteTable.Head>{renderHeader}</FlowbiteTable.Head>
+				<FlowbiteTable.Body className="divide-y">{renderBody}</FlowbiteTable.Body>
+				{renderFooter}
+			</FlowbiteTable>
+		</div>
+	);
+});
+
+Table.displayName = "Table";

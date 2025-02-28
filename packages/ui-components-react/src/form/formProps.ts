@@ -1,14 +1,18 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
-import PropTypes, { type InferProps } from "prop-types";
-import type { PropsWithChildren } from "react";
-
-export const FormPropTypes = {
-	content: PropTypes.node.isRequired,
-	className: PropTypes.string
-};
+import type { ReactNode } from "react";
 
 /**
  * Form props.
  */
-export type FormProps = PropsWithChildren<InferProps<typeof FormPropTypes>>;
+export interface FormProps {
+	/**
+	 * The content of the form
+	 */
+	content: ReactNode;
+
+	/**
+	 * The CSS class name for the form
+	 */
+	className?: string;
+}
