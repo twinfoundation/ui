@@ -24,22 +24,25 @@ export default tseslint.config(
 
 			// TypeScript-specific rules
 			'@typescript-eslint/no-explicit-any': 'error', // Disallow usage of the any type
-			'@typescript-eslint/no-unused-vars': ['error', { 
-				argsIgnorePattern: '^_', 
-				varsIgnorePattern: '^_' 
-			}], // Disallow unused variables (except those prefixed with _)
-			
+			'@typescript-eslint/no-unused-vars': [
+				'error',
+				{
+					argsIgnorePattern: '^_',
+					varsIgnorePattern: '^_'
+				}
+			], // Disallow unused variables (except those prefixed with _)
+
 			// React Component rules
 			'no-empty': ['error', { allowEmptyCatch: false }], // Disallow empty block statements
 			'no-nested-ternary': 'warn', // Disallow nested ternary expressions for better readability
 			'prefer-const': 'error', // Require const declarations for variables that are never reassigned after declared
 			'no-console': ['warn', { allow: ['warn', 'error'] }], // Disallow console.log but allow console.warn and console.error
-			
+
 			// Best practices
-			'eqeqeq': ['error', 'always'], // Require the use of === and !==
+			eqeqeq: ['error', 'always'], // Require the use of === and !==
 			'no-var': 'error', // Require let or const instead of var
 			'prefer-template': 'warn', // Suggest using template literals instead of string concatenation
-			'object-shorthand': 'warn', // Suggest using shorthand syntax for object literals
+			'object-shorthand': 'warn' // Suggest using shorthand syntax for object literals
 		}
 	}
 );
