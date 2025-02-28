@@ -33,8 +33,8 @@ export const Avatar = memo(
 				try {
 					const url = new URL(img);
 					return url.toString();
-				} catch (error) {
-					// If URL is invalid, we'll return undefined and let the component handle it
+				} catch {
+					// If URL is invalid, return undefined to let the component handle it
 				}
 			}, [img]);
 
