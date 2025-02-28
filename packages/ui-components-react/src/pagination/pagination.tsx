@@ -26,12 +26,12 @@ const customTheme: CustomFlowbiteTheme["pagination"] = {
 /**
  * Pagination component.
  */
-export const Pagination = memo(({ ...rest }: PaginationProps): JSX.Element => {
+export const Pagination = memo(({ onPageChange, ...rest }: PaginationProps): JSX.Element => {
 	const handlePageChange = useCallback(
 		(page: number) => {
-			rest.onPageChange(page);
+			onPageChange(page);
 		},
-		[rest.onPageChange]
+		[onPageChange]
 	);
 
 	return <FlowbitePagination theme={customTheme} {...rest} onPageChange={handlePageChange} />;

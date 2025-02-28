@@ -33,13 +33,8 @@ export const Sidebar = memo(
 		 */
 		const renderItem = useCallback((item: SidebarItem): ReactNode => {
 			const { label, href, icon, active, disabled, badge, badgeColor, items: subItems } = item;
-
-			const badgeColorClass = useMemo(
-				() => (badge ? getBadgeColorClass(badgeColor) : ""),
-				[badge, badgeColor]
-			);
-
-			const itemKey = useMemo(() => `${href}-${label}`, [href, label]);
+			const badgeColorClass = badge ? getBadgeColorClass(badgeColor) : "";
+			const itemKey = `${href}-${label}`;
 
 			if (subItems && subItems.length > 0) {
 				return (

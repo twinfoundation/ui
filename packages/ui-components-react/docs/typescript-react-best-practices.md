@@ -15,6 +15,7 @@ This document outlines the agreed-upon best practices for TypeScript React compo
 - [Refs](#refs)
 - [Context](#context)
 - [Custom Hooks](#custom-hooks)
+- [React's Rules of Hooks](#reacts-rules-of-hooks)
 - [Security Best Practices](#security-best-practices)
 - [Type Assertions](#type-assertions)
 - [Default Props](#default-props)
@@ -148,6 +149,48 @@ const themeContext = useContext<Theme>(ThemeContext);
 function useCustomHook<T>(param: T): [T, (newValue: T) => void] {
   // Hook logic
 }
+```
+
+## React's Rules of Hooks
+
+Always follow React's Rules of Hooks to ensure components work correctly:
+
+- Only call hooks at the top level of your component or custom hooks
+- Never call hooks inside loops, conditions, or nested functions
+- Never call hooks inside callback functions (like useCallback or event handlers)
+- Always use the same order of hook calls between renders
+
+```tsx
+// ❌ INCORRECT: Calling a hook inside another hook
+const handleEvent = useCallback(() => {
+  const value = useMemo(() => computeValue(), []); // This will cause errors!
+  // ...
+}, []);
+
+// ✅ CORRECT: Move the hook to the component level
+const value = useMemo(() => computeValue(), []);
+const handleEvent = useCallback(() => {
+  // Use the pre-computed value here
+  // ...
+}, [value]);
+```
+
+### ESLint Enforcement
+
+The project uses ESLint with the `react-hooks/rules-of-hooks` rule (set to "error") to automatically catch violations of React's Rules of Hooks. This helps prevent runtime errors by identifying hook usage issues during development.
+
+The `react-hooks/exhaustive-deps` rule (set to "warn") is also enabled to help identify missing dependencies in hooks like `useEffect` and `useCallback`.
+
+To run the linter and check for hook-related issues:
+
+```bash
+npm run lint
+```
+
+To automatically fix issues where possible:
+
+```bash
+npm run lint:fix
 ```
 
 ## Security Best Practices

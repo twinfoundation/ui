@@ -16,6 +16,7 @@
 		"tsconfig.json",
 		"typedoc.json",
 		".eslintrc.cjs",
+		"eslint.config.js",
 		"**/wordlists/**",
 		"**/storybook-static/**",
 		"figma.json"
@@ -51,6 +52,7 @@
 		"TWIN",
 		"unrevoke",
 		"Unrevoking",
+		"vars",
 		"whereis",
 		"WORKDIR"
 	],
