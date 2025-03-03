@@ -40,16 +40,16 @@
 	}
 
 	input[type='file']::file-selector-button {
-		@apply bg-surface-button;
-		@apply dark:bg-surface-button-dark;
+		@apply bg-surface-button-alt;
+		@apply dark:bg-surface-button-alt-dark;
 	}
 	input[type='file']::file-selector-button:hover {
-		@apply bg-surface-button-hover;
-		@apply dark:bg-surface-button-hover-dark;
+		@apply bg-surface-button-alt-hover;
+		@apply dark:bg-surface-button-alt-hover-dark;
 	}
 	input[type='file']:disabled::file-selector-button {
-		@apply bg-surface-button;
-		@apply dark:bg-surface-button-dark;
+		@apply bg-surface-button-alt;
+		@apply dark:bg-surface-button-alt-dark;
 		cursor: not-allowed;
 	}
 	input[type='file']::file-selector-button:focus {
