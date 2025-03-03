@@ -65,7 +65,7 @@ export interface DrawerProps extends Omit<FlowbiteDrawerProps, "color" | "label"
 	 * Additional props to pass to the button component.
 	 * This allows for complete customization of the button.
 	 */
-	buttonProps?: Omit<ButtonProps, 'buttonText' | 'color' | 'onClick'>;
+	buttonProps?: Omit<ButtonProps, "buttonText" | "color" | "onClick">;
 
 	/**
 	 * Custom icon to use for the button.
