@@ -1,47 +1,86 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
-import { Drawer as FlowbiteDrawer, Button as FlowbiteButton } from "flowbite-react";
+import { Drawer as FlowbiteDrawer } from "flowbite-react";
 import { Bars } from "flowbite-react-icons/outline";
-import { useState, memo, type JSX } from "react";
+import { useCallback, useEffect, useState, memo, type JSX } from "react";
+import { Button } from "../button/button";
 import type { DrawerProps } from "./drawerProps";
 
 /**
  * Drawer component.
+ *
+ * A sliding panel that appears from the edge of the screen.
+ * Can be triggered by a button or controlled programmatically.
  */
-export const Drawer = memo(({ title, items, ...rest }: DrawerProps): JSX.Element => {
-	const [isOpen, setIsOpen] = useState(true);
+export const Drawer = memo(
+	({
+		title,
+		items,
+		buttonText = "Show drawer",
+		buttonColor = "primary",
+		showButton = true,
+		defaultOpen = false,
+		buttonProps,
+		buttonIcon,
+		onOpenChange,
+		...rest
+	}: DrawerProps): JSX.Element => {
+		const [isOpen, setIsOpen] = useState(defaultOpen);
 
-	const handleClose = (): void => {
-		setIsOpen(false);
-	};
+		const handleOpenChange = useCallback(
+			(open: boolean): void => {
+				setIsOpen(open);
+				onOpenChange?.(open);
+			},
+			[onOpenChange]
+		);
 
-	return (
-		<>
-			<div className="block text-center">
-				<FlowbiteButton
-					className="text-invert bg-surface-button hover:enabled:bg-surface-button-hover dark:bg-surface-button dark:hover:enabled:bg-surface-button-hover focus:ring-surface-button-pressed m-auto border-2 border-transparent focus:ring"
-					onClick={() => setIsOpen(true)}
-				>
-					Show drawer
-				</FlowbiteButton>
-			</div>
-			<FlowbiteDrawer
-				{...rest}
-				open={isOpen}
-				onClose={handleClose}
-				onClick={() => setIsOpen(!isOpen)}
-			>
-				<FlowbiteDrawer.Header title={title} closeIcon={Bars} />
-				{items && items?.length > 0 ? (
-					items.map((item, index) => (
-						<FlowbiteDrawer.Items key={`drawer-item-${index}`}>{item}</FlowbiteDrawer.Items>
-					))
-				) : (
-					<></>
+		const handleOpen = useCallback((): void => {
+			handleOpenChange(true);
+		}, [handleOpenChange]);
+
+		const handleClose = useCallback((): void => {
+			handleOpenChange(false);
+		}, [handleOpenChange]);
+
+		// Sync with controlled state if provided externally
+		useEffect(() => {
+			if (rest.open !== undefined && rest.open !== isOpen) {
+				setIsOpen(rest.open);
+			}
+		}, [rest.open, isOpen]);
+
+		return (
+			<>
+				{showButton && (
+					<div className="block text-center">
+						<Button
+							color={buttonColor}
+							buttonText={buttonText}
+							onClick={handleOpen}
+							leftIcon={buttonIcon}
+							{...buttonProps}
+						/>
+					</div>
 				)}
-			</FlowbiteDrawer>
-		</>
-	);
-});
+				<FlowbiteDrawer
+					{...rest}
+					open={isOpen}
+					onClose={handleClose}
+					aria-labelledby="drawer-title"
+				>
+					<FlowbiteDrawer.Header title={title} closeIcon={Bars} id="drawer-title" />
+					{items && items?.length > 0 ? (
+						items.map((item, index) => (
+							<FlowbiteDrawer.Items key={`drawer-item-${index}`}>{item}</FlowbiteDrawer.Items>
+						))
+					) : (
+						<></>
+					)}
+				</FlowbiteDrawer>
+			</>
+		);
+	}
+);
 
 Drawer.displayName = "Drawer";
