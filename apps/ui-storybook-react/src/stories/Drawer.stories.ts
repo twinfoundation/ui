@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
-import { Drawer, DrawerPositions } from "@twin.org/ui-components-react";
+import { Drawer, DrawerPositions, ButtonColors, IconsSolid } from "@twin.org/ui-components-react";
 import { createElement } from "react";
 
 const meta = {
@@ -24,11 +24,24 @@ const meta = {
 		edge: {
 			options: Object.values([true, false]),
 			control: { type: "inline-radio" }
+		},
+		buttonColor: {
+			options: Object.values(ButtonColors),
+			control: { type: "select" }
+		},
+		showButton: {
+			options: Object.values([true, false]),
+			control: { type: "boolean" }
+		},
+		defaultOpen: {
+			options: Object.values([true, false]),
+			control: { type: "boolean" }
 		}
 	},
 	args: {
 		onClick: fn(),
 		onClose: fn(),
+		onOpenChange: fn(),
 		items: [
 			createElement(
 				"p",
@@ -186,5 +199,65 @@ export const Edge: Story = {
 		title: "Drawer",
 		position: DrawerPositions.Bottom,
 		edge: true
+	}
+};
+
+export const CustomButtonText: Story = {
+	args: {
+		title: "Custom Button Text Drawer",
+		buttonText: "Open Menu"
+	}
+};
+
+export const CustomButtonColor: Story = {
+	args: {
+		title: "Custom Button Color Drawer",
+		buttonText: "Open Drawer",
+		buttonColor: "secondary"
+	}
+};
+
+export const WithButtonIcon: Story = {
+	args: {
+		title: "Drawer with Icon Button",
+		buttonText: "Menu",
+		buttonIcon: IconsSolid.MessageCaption
+	}
+};
+
+export const InitiallyOpen: Story = {
+	args: {
+		title: "Initially Open Drawer",
+		defaultOpen: true
+	}
+};
+
+export const CustomButtonProps: Story = {
+	args: {
+		title: "Custom Button Props Drawer",
+		buttonText: "Settings",
+		buttonProps: {
+			size: "lg",
+			outline: true
+		}
+	}
+};
+
+export const IconOnlyButton: Story = {
+	args: {
+		title: "Icon Only Button Drawer",
+		buttonProps: {
+			iconOnly: true,
+			icon: IconsSolid.Brain,
+			size: "lg"
+		}
+	}
+};
+
+export const ProgrammaticControl: Story = {
+	args: {
+		title: "Programmatically Controlled Drawer",
+		showButton: false,
+		defaultOpen: true
 	}
 };
