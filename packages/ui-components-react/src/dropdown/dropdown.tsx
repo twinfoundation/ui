@@ -1,38 +1,41 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
-import { Dropdown as FlowbiteDropdown, Button as FlowbiteButton } from "flowbite-react";
-import { ArrowDown, ArrowUp, ArrowLeft, ArrowRight } from "flowbite-react-icons/outline";
+import { Dropdown as FlowbiteDropdown } from "flowbite-react";
 import { memo, type JSX } from "react";
 import type { DropdownProps } from "./dropdownProps";
+import { Button } from "../button/button";
 
 /**
  * Dropdown component.
  */
 export const Dropdown = memo(
-	({ title, header, size, placement, items, ...rest }: DropdownProps): JSX.Element => (
+	({
+		title,
+		header,
+		size = "md",
+		placement = "bottom",
+		items = [],
+		icon,
+		...rest
+	}: DropdownProps): JSX.Element => (
 		<FlowbiteDropdown
 			label={title}
 			dismissOnClick={false}
-			placement={placement ?? "bottom"}
+			placement={placement}
 			{...rest}
 			renderTrigger={() => (
-				<FlowbiteButton
-					size={size ?? "md"}
-					className="text-invert bg-surface-button hover:enabled:bg-surface-button-hover dark:bg-surface-button dark:hover:enabled:bg-surface-button-hover focus:ring-surface-button-pressed border-2 border-transparent focus:ring"
+				<Button
+					size={size}
+					color="primary"
+					buttonText={title}
+					rightIcon={icon}
+					showRightIcon={Boolean(icon)}
 					aria-label={`${title} dropdown menu`}
-				>
-					<span className="inline-flex items-center gap-2">
-						{title}
-						{placement === "top" && <ArrowUp className="h-5 w-5" />}
-						{placement === "right" && <ArrowRight className="h-5 w-5" />}
-						{placement === "left" && <ArrowLeft className="h-5 w-5" />}
-						{(placement === "bottom" || !placement) && <ArrowDown className="h-5 w-5" />}
-					</span>
-				</FlowbiteButton>
+				/>
 			)}
 		>
 			{header && <FlowbiteDropdown.Header>{header}</FlowbiteDropdown.Header>}
-			{items && items?.length > 0
+			{items.length > 0
 				? items.map((item, index) => {
 						if (item?.divider) {
 							return <FlowbiteDropdown.Divider key={`divider-${index}`} />;
@@ -40,9 +43,9 @@ export const Dropdown = memo(
 						return (
 							<FlowbiteDropdown.Item
 								key={`item-${index}`}
-								className={item?.className ?? undefined}
-								onClick={item?.onClick ?? undefined}
-								icon={item?.icon ?? undefined}
+								className={item?.className}
+								onClick={item?.onClick}
+								icon={item?.icon}
 								disabled={item?.disabled ?? false}
 							>
 								{item?.checkbox ? (

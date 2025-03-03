@@ -84,4 +84,10 @@ export interface DropdownProps extends Omit<FlowbiteDropdownProps, "color" | "la
 	 * Array of items to display in the dropdown menu.
 	 */
 	items?: DropdownItem[];
+
+	/**
+	 * Icon component to display in the dropdown button.
+	 * If not provided, no icon will be shown.
+	 */
+	icon?: IconComponent;
 }
