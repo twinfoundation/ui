@@ -12,7 +12,16 @@ export const Accordion = memo(({ items, ...rest }: AccordionProps): JSX.Element 
 
 		return items.map((item, index) => (
 			<FlowbiteAccordion.Panel key={`accordion-panel-${index}`}>
-				<FlowbiteAccordion.Title>{item?.title}</FlowbiteAccordion.Title>
+				<FlowbiteAccordion.Title>
+					<div className="flex items-center">
+						{item?.icon && (
+							<span className="mr-2 inline-flex items-center">
+								<item.icon className="h-5 w-5" />
+							</span>
+						)}
+						{item?.title}
+					</div>
+				</FlowbiteAccordion.Title>
 				<FlowbiteAccordion.Content>{item?.content}</FlowbiteAccordion.Content>
 			</FlowbiteAccordion.Panel>
 		));

@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
-import { Accordion } from "@twin.org/ui-components-react";
+import { Accordion, IconsSolid } from "@twin.org/ui-components-react";
 import { createElement } from "react";
 
 const meta = {
@@ -143,8 +143,8 @@ export const Default: Story = {
 
 export const AlwaysOpen: Story = {
 	args: {
-		children: [],
-		alwaysOpen: true
+		alwaysOpen: true,
+		children: []
 	}
 };
 
@@ -158,6 +158,53 @@ export const CollapseAll: Story = {
 export const Flush: Story = {
 	args: {
 		flush: true,
+		children: []
+	}
+};
+
+export const WithIcons: Story = {
+	args: {
+		items: [
+			{
+				title: "Accordion with Info Icon",
+				content: createElement(
+					"div",
+					null,
+					createElement(
+						"p",
+						{ className: "mb-2 text-gray-500 dark:text-gray-400" },
+						"This accordion item uses the InformationCircle icon from IconsSolid."
+					)
+				),
+				icon: IconsSolid.InboxFull
+			},
+			{
+				title: "Accordion with Question Icon",
+				content: createElement(
+					"div",
+					null,
+					createElement(
+						"p",
+						{ className: "mb-2 text-gray-500 dark:text-gray-400" },
+						"This accordion item uses the QuestionMarkCircle icon from IconsSolid."
+					)
+				),
+				icon: IconsSolid.QuestionCircle
+			},
+			{
+				title: "Accordion with Settings Icon",
+				content: createElement(
+					"div",
+					null,
+					createElement(
+						"p",
+						{ className: "mb-2 text-gray-500 dark:text-gray-400" },
+						"This accordion item uses the Cog icon from IconsSolid."
+					)
+				),
+				icon: IconsSolid.CalendarMonth
+			}
+		],
 		children: []
 	}
 };
