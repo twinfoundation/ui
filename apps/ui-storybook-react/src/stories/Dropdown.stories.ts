@@ -10,6 +10,15 @@ import {
 } from "@twin.org/ui-components-react";
 import { createElement } from "react";
 
+// Common dropdown items to reduce repetition
+const standardItems = [
+	{ label: "Dashboard" },
+	{ label: "Settings" },
+	{ label: "Earnings" },
+	{ divider: true },
+	{ label: "Sign out" }
+];
+
 const meta = {
 	title: "Components/Dropdown",
 	component: Dropdown,
@@ -27,47 +36,29 @@ const meta = {
 			control: { type: "inline-radio" }
 		}
 	},
-	args: { onClick: fn() }
+	args: {
+		onClick: fn(),
+		title: "Dropdown",
+		items: standardItems
+	}
 } satisfies Meta<typeof Dropdown>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+// Basic examples
+export const Default: Story = {};
+
+export const WithIcon: Story = {
 	args: {
-		title: "Dropdown",
-		items: [
-			{ label: "Dashboard" },
-			{ label: "Settings" },
-			{ label: "Earnings" },
-			{ label: "Sign out" }
-		]
+		icon: IconsSolid.CaretDown
 	}
 };
 
-export const WithDivider: Story = {
-	args: {
-		title: "Dropdown",
-		items: [
-			{ label: "Dashboard" },
-			{ label: "Settings" },
-			{ label: "Earnings" },
-			{ divider: true },
-			{ label: "Sign out" }
-		]
-	}
-};
-
+// Layout variations
 export const WithHeader: Story = {
 	args: {
-		title: "Dropdown",
-		items: [
-			{ label: "Dashboard" },
-			{ label: "Settings" },
-			{ label: "Earnings" },
-			{ divider: true },
-			{ label: "Sign out" }
-		],
+		icon: IconsSolid.CaretDown,
 		header: createElement(
 			"div",
 			null,
@@ -87,49 +78,30 @@ export const WithHeader: Story = {
 
 export const Inline: Story = {
 	args: {
-		title: "Dropdown",
-		items: [
-			{ label: "Dashboard" },
-			{ label: "Settings" },
-			{ label: "Earnings" },
-			{ divider: true },
-			{ label: "Sign out" }
-		],
+		icon: IconsSolid.CaretDown,
 		inline: true
 	}
 };
 
+// Size variations
 export const Small: Story = {
 	args: {
-		title: "Dropdown",
-		items: [
-			{ label: "Dashboard" },
-			{ label: "Settings" },
-			{ label: "Earnings" },
-			{ divider: true },
-			{ label: "Sign out" }
-		],
+		icon: IconsSolid.CaretDown,
 		size: DropdownSizes.Small
 	}
 };
 
 export const Large: Story = {
 	args: {
-		title: "Dropdown",
-		items: [
-			{ label: "Dashboard" },
-			{ label: "Settings" },
-			{ label: "Earnings" },
-			{ divider: true },
-			{ label: "Sign out" }
-		],
+		icon: IconsSolid.CaretDown,
 		size: DropdownSizes.Large
 	}
 };
 
-export const WithIcon: Story = {
+// Item customization examples
+export const WithItemIcon: Story = {
 	args: {
-		title: "Dropdown",
+		icon: IconsSolid.CaretDown,
 		items: [
 			{ label: "Dashboard" },
 			{ label: "Settings" },
@@ -140,15 +112,14 @@ export const WithIcon: Story = {
 	}
 };
 
-export const OnClick: Story = {
+export const WithInteractiveItems: Story = {
 	args: {
-		title: "Dropdown",
+		icon: IconsSolid.CaretDown,
 		items: [
 			{
 				label: "Dashboard",
 				onClick: () => {
-					// eslint-disable-next-line no-console
-					console.log("Dashboard clicked");
+					// Handle Dashboard click action
 				}
 			},
 			{ label: "Settings" },
@@ -159,9 +130,9 @@ export const OnClick: Story = {
 	}
 };
 
-export const CustomItem: Story = {
+export const WithStyledItems: Story = {
 	args: {
-		title: "Dropdown",
+		icon: IconsSolid.CaretDown,
 		items: [
 			{ label: "Dashboard", className: "text-red-500" },
 			{ label: "Settings", className: "text-gray-800 bg-gray-100" },
@@ -172,48 +143,7 @@ export const CustomItem: Story = {
 	}
 };
 
-export const RightPlacement: Story = {
-	args: {
-		title: "Dropdown",
-		items: [
-			{ label: "Dashboard" },
-			{ label: "Settings" },
-			{ label: "Earnings" },
-			{ divider: true },
-			{ label: "Sign out", icon: IconsSolid.CloseCircle }
-		],
-		placement: DropdownPositions.Right
-	}
-};
-
-export const LeftPlacement: Story = {
-	args: {
-		title: "Dropdown",
-		items: [
-			{ label: "Dashboard" },
-			{ label: "Settings" },
-			{ label: "Earnings" },
-			{ divider: true },
-			{ label: "Sign out", icon: IconsSolid.CloseCircle }
-		],
-		placement: DropdownPositions.Left
-	}
-};
-
-export const TopPlacement: Story = {
-	args: {
-		title: "Dropdown",
-		items: [
-			{ label: "Dashboard" },
-			{ label: "Settings" },
-			{ label: "Earnings" },
-			{ divider: true },
-			{ label: "Sign out", icon: IconsSolid.CloseCircle }
-		],
-		placement: DropdownPositions.Top
-	}
-};
-
+// Checkbox items
 export const WithCheckboxItems: Story = {
 	args: {
 		title: "Options",
