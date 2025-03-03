@@ -2,9 +2,9 @@
 // SPDX-License-Identifier: Apache-2.0.
 import type { DrawerProps as FlowbiteDrawerProps } from "flowbite-react";
 import type { ElementType, ReactNode } from "react";
+import type { DrawerPositions } from "./drawerPositions";
 import type { ButtonColors } from "../button/buttonColors";
 import type { ButtonProps } from "../button/buttonProps";
-import type { DrawerPositions } from "./drawerPositions";
 
 /**
  * Drawer props.

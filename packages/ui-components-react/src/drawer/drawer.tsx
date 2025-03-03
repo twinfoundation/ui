@@ -3,8 +3,8 @@
 import { Drawer as FlowbiteDrawer } from "flowbite-react";
 import { Bars } from "flowbite-react-icons/outline";
 import { useCallback, useEffect, useState, memo, type JSX } from "react";
-import { Button } from "../button/button";
 import type { DrawerProps } from "./drawerProps";
+import { Button } from "../button/button";
 
 /**
  * Drawer component.
