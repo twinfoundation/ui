@@ -17,7 +17,7 @@ export default tseslint.config(
 		},
 		plugins: {
 			'react-hooks': reactHooks,
-			'import': importPlugin
+			import: importPlugin
 		},
 		rules: {
 			'react-hooks/rules-of-hooks': 'error',

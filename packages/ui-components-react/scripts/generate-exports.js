@@ -212,35 +212,37 @@ function generateExports() {
 function updatePackageJson() {
 	try {
 		const newExports = generateExports();
-		
+
 		// Read the current file as a string to preserve exact formatting
 		const currentContent = fs.readFileSync(PACKAGE_JSON_PATH, 'utf8');
-		
+
 		// Parse the current content
 		const originalPackageJson = JSON.parse(currentContent);
-		
+
 		// Compare the existing exports with new exports
 		// If they're functionally equivalent (same structure, different formatting),
 		// we don't need to update the file at all
 		const currentExports = originalPackageJson.exports || {};
 		const currentPaths = Object.keys(currentExports).sort();
 		const newPaths = Object.keys(newExports).sort();
-		
+
 		// Only update if the exports have actually changed in content (not just formatting)
 		if (JSON.stringify(currentPaths) !== JSON.stringify(newPaths)) {
 			// Only modify the exports field and keep everything else intact
 			packageJson.exports = newExports;
-			
+
 			// Use tabs as the default indentation
 			fs.writeFileSync(PACKAGE_JSON_PATH, JSON.stringify(packageJson, null, '\t') + '\n', 'utf8');
-			
+
 			const componentsCount = Object.keys(newExports).length - 5;
 			// eslint-disable-next-line no-console
 			console.log(`✅ Updated "exports" field in package.json with ${componentsCount} components`);
 		} else {
 			// No changes needed
 			// eslint-disable-next-line no-console
-			console.log(`✅ "exports" field in package.json is already up-to-date with ${newPaths.length - 5} components`);
+			console.log(
+				`✅ "exports" field in package.json is already up-to-date with ${newPaths.length - 5} components`
+			);
 		}
 	} catch (error) {
 		// eslint-disable-next-line no-console
