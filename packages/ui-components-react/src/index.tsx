@@ -1,106 +1,148 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
-export * as IconsOutline from "flowbite-react-icons/outline";
-export * as IconsSolid from "flowbite-react-icons/solid";
-export * from "./button/button";
-export * from "./button/buttonColors";
-export * from "./button/buttonProps";
-export * from "./button/buttonSizes";
-export * from "./alert/alert";
-export * from "./alert/alertColors";
-export * from "./alert/alertProps";
-export * from "./avatar/avatar";
-export * from "./avatar/avatarProps";
-export * from "./accordion/accordion";
-export * from "./accordion/accordionProps";
-export * from "./banner/banner";
-export * from "./banner/bannerProps";
-export * from "./badge/badge";
-export * from "./badge/badgeColors";
-export * from "./badge/badgeProps";
-export * from "./badge/badgeSizes";
-export * from "./breadcrumb/breadcrumb";
-export * from "./breadcrumb/breadcrumbProps";
-export * from "./card/card";
-export * from "./card/cardProps";
+
+// Export all components individually to enable tree-shaking
+export { Accordion } from "./accordion/accordion";
+export type { AccordionProps } from "./accordion/accordionProps";
+
+export { Alert } from "./alert/alert";
+export { AlertColors } from "./alert/alertColors";
+export type { AlertProps } from "./alert/alertProps";
+
+export { Avatar } from "./avatar/avatar";
+export type { AvatarProps } from "./avatar/avatarProps";
+
+export { Badge } from "./badge/badge";
+export { BadgeColors } from "./badge/badgeColors";
+export { BadgeSizes } from "./badge/badgeSizes";
+export type { BadgeProps } from "./badge/badgeProps";
+
+export { Banner } from "./banner/banner";
+export type { BannerProps } from "./banner/bannerProps";
+
+export { Breadcrumb } from "./breadcrumb/breadcrumb";
+export type { BreadcrumbProps } from "./breadcrumb/breadcrumbProps";
+
+export { Button } from "./button/button";
+export type { ButtonProps } from "./button/buttonProps";
+export { ButtonColors } from "./button/buttonColors";
+export { ButtonSizes } from "./button/buttonSizes";
+export type { ButtonSize } from "./button/buttonSizes";
+
+export { Card } from "./card/card";
+export type { CardProps } from "./card/cardProps";
+
+export { Carousel } from "./carousel/carousel";
+export type { CarouselProps } from "./carousel/carouselProps";
+
+export { Checkbox } from "./checkbox/checkbox";
+export type { CheckboxProps } from "./checkbox/checkboxProps";
+
+export { Datepicker } from "./datepicker/datepicker";
+export type { DatepickerProps } from "./datepicker/datepickerProps";
+
+export { Drawer } from "./drawer/drawer";
+export type { DrawerProps } from "./drawer/drawerProps";
+
+export { Dropdown } from "./dropdown/dropdown";
+export type { DropdownProps } from "./dropdown/dropdownProps";
+
+export { FileInput } from "./fileInput/fileInput";
+export type { FileInputProps } from "./fileInput/fileInputProps";
+
+export { Footer } from "./footer/footer";
+export type { FooterProps } from "./footer/footerProps";
+
+export { Form } from "./form/form";
+export type { FormProps } from "./form/formProps";
+
+export { Label } from "./label/label";
+export type { LabelProps } from "./label/labelProps";
+
+export { ListGroup } from "./listGroup/listGroup";
+export type { ListGroupProps } from "./listGroup/listGroupProps";
+
+export { Modal } from "./modal/modal";
+export type { ModalProps } from "./modal/modalProps";
+
+export { Navbar } from "./navbar/navbar";
+export type { NavbarProps } from "./navbar/navbarProps";
+
+export { Pagination } from "./pagination/pagination";
+export type { PaginationProps } from "./pagination/paginationProps";
+
+export { Popover } from "./popover/popover";
+export type { PopoverProps } from "./popover/popoverProps";
+
+export { Progress } from "./progress/progress";
+export type { ProgressProps } from "./progress/progressProps";
+
+export { Radio } from "./radio/radio";
+export type { RadioProps } from "./radio/radioProps";
+
+export { RangeSlider } from "./rangeSlider/rangeSlider";
+export type { RangeSliderProps } from "./rangeSlider/rangeSliderProps";
+
+export { Select } from "./select/select";
+export type { SelectProps } from "./select/selectProps";
+
+export { Sidebar } from "./sidebar/sidebar";
+export type { SidebarProps } from "./sidebar/sidebarProps";
+
+export { Spinner } from "./spinner/spinner";
+export type { SpinnerProps } from "./spinner/spinnerProps";
+
+export { Table } from "./table/table";
+export type { TableProps } from "./table/tableProps";
+
+export { Tabs } from "./tabs/tabs";
+export type { TabsProps } from "./tabs/tabsProps";
+
+export { TextInput } from "./textInput/textInput";
+export type { TextInputProps } from "./textInput/textInputProps";
+
+export { Textarea } from "./textarea/textarea";
+export type { TextareaProps } from "./textarea/textareaProps";
+
+export { Toast } from "./toast/toast";
+export type { ToastProps } from "./toast/toastProps";
+
+export { ToggleSwitch } from "./toggleSwitch/toggleSwitch";
+export type { ToggleSwitchProps } from "./toggleSwitch/toggleSwitchProps";
+
+export { Tooltip } from "./tooltip/tooltip";
+export type { TooltipProps } from "./tooltip/tooltipProps";
+
+// Icons should be imported lazily by consumers
+export * as IconsOutline from "./icons/iconsOutline";
+export * as IconsSolid from "./icons/iconsSolid";
+
+// Export individual components with proper paths
 export * from "./card/cardTypes";
-export * from "./carousel/carousel";
-export * from "./carousel/carouselProps";
-export * from "./checkbox/checkbox";
-export * from "./checkbox/checkboxProps";
-export * from "./datepicker/datepicker";
-export * from "./datepicker/datepickerProps";
 export * from "./datepicker/datepickerDays";
-export * from "./drawer/drawer";
-export * from "./drawer/drawerProps";
 export * from "./drawer/drawerPositions";
-export * from "./dropdown/dropdown";
-export * from "./dropdown/dropdownProps";
 export * from "./dropdown/dropdownPositions";
 export * from "./dropdown/dropdownSizes";
-export * from "./fileInput/fileInput";
-export * from "./fileInput/fileInputProps";
 export * from "./fileInput/fileInputSizes";
-export * from "./form/form";
-export * from "./form/formProps";
-export * from "./footer/footer";
-export * from "./footer/footerProps";
-export * from "./label/label";
-export * from "./label/labelProps";
-export * from "./listGroup/listGroup";
-export * from "./listGroup/listGroupProps";
-export * from "./modal/modal";
-export * from "./modal/modalProps";
 export * from "./modal/modalPositions";
 export * from "./modal/modalSizes";
-export * from "./navbar/navbar";
-export * from "./navbar/navbarProps";
-export * from "./pagination/pagination";
-export * from "./pagination/paginationProps";
 export * from "./pagination/paginationLayouts";
-export * from "./popover/popover";
-export * from "./popover/popoverProps";
 export * from "./popover/popoverPositions";
 export * from "./popover/popoverTriggers";
-export * from "./progress/progress";
-export * from "./progress/progressProps";
 export * from "./progress/progressPositions";
 export * from "./progress/progressSizes";
 export * from "./progress/progressColors";
-export * from "./radio/radio";
-export * from "./radio/radioProps";
-export * from "./rangeSlider/rangeSlider";
-export * from "./rangeSlider/rangeSliderProps";
 export * from "./rangeSlider/rangeSliderSizes";
-export * from "./select/select";
-export * from "./select/selectProps";
 export * from "./select/selectSizes";
-export * from "./sidebar/sidebar";
-export * from "./sidebar/sidebarProps";
-export * from "./spinner/spinner";
-export * from "./spinner/spinnerProps";
 export * from "./spinner/spinnerSizes";
-export * from "./table/table";
-export * from "./table/tableProps";
-export * from "./tabs/tabs";
-export * from "./tabs/tabsProps";
 export * from "./tabs/tabsVariants";
-export * from "./textarea/textarea";
-export * from "./textarea/textareaProps";
-export * from "./textInput/textInput";
-export * from "./textInput/textInputProps";
 export * from "./textInput/textInputColors";
 export * from "./textInput/textInputSizes";
-export * from "./toast/toast";
-export * from "./toast/toastProps";
-export * from "./toggleSwitch/toggleSwitch";
-export * from "./toggleSwitch/toggleSwitchProps";
 export * from "./toggleSwitch/toggleSwitchColors";
 export * from "./toggleSwitch/toggleSwitchSizes";
-export * from "./tooltip/tooltip";
-export * from "./tooltip/tooltipProps";
 export * from "./tooltip/tooltipAnimations";
 export * from "./tooltip/tooltipPlacements";
 export * from "./tooltip/tooltipStyles";
 export * from "./tooltip/tooltipTriggers";
-export * from "./config/tailwindConfig";
+
+export { TailwindConfig } from "./config/tailwindConfig";

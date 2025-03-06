@@ -16,6 +16,7 @@
 		"dist": "node ./scripts/workspaces.mjs dist",
 		"format": "prettier --config .prettierrc --write .",
 		"lint:format": "prettier --config .prettierrc --check .",
+		"lint:fix": "prettier --config .prettierrc --write .",
 		"lint:code": "eslint . --ext .js,.mjs,.ts,.tsx,.svelte",
 		"lint:markdown": "markdownlint **/*.md --ignore **/node_modules/** --ignore **/docs/reference/**",
 		"lint:spell": "cspell ** --no-progress",
