@@ -21,8 +21,10 @@ import { glob } from 'glob';
 import path from 'path';
 
 const isEsm = process.env.MODULE === 'esm';
-const format = isEsm ? 'esm' : 'cjs';
-const extension = isEsm ? 'mjs' : 'cjs';
+// Get the format from the environment variable
+const format = isEsm ? 'es' : 'cjs';
+// Set the file extension based on the format
+const extension = format === 'es' ? 'mjs' : 'cjs';
 
 const globals = {
 	react: 'React',
@@ -104,16 +106,31 @@ const mainBundle = {
 	...baseConfig,
 	input: './dist/es/index.js',
 	output: isEsm
-		? {
-				format,
-				name: 'TwinUIComponents',
-				exports: 'named',
-				globals,
-				sourcemap: true,
-				preserveModules: true,
-				preserveModulesRoot: 'dist/es',
-				dir: `dist/${format}`
-			}
+		? [
+				{
+					format,
+					name: 'TwinUIComponents',
+					exports: 'named',
+					globals,
+					sourcemap: true,
+					preserveModules: true,
+					preserveModulesRoot: 'dist/es',
+					dir: `dist/${format}`,
+					entryFileNames: '[name].mjs'
+				},
+				// Add backward compatibility output to esm directory for existing imports
+				{
+					format,
+					name: 'TwinUIComponents',
+					exports: 'named',
+					globals,
+					sourcemap: true,
+					preserveModules: true,
+					preserveModulesRoot: 'dist/es',
+					dir: 'dist/esm',
+					entryFileNames: '[name].mjs'
+				}
+			]
 		: {
 				file: `dist/${format}/index.${extension}`,
 				format,

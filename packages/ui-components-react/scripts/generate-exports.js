@@ -32,26 +32,26 @@ try {
 	process.exit(1);
 }
 
-// Default exports that should always be included
+// Base exports configuration
 const baseExports = {
 	'.': {
 		types: './dist/types/index.d.ts',
-		import: './dist/esm/index.mjs',
+		import: './dist/es/index.mjs',
 		require: './dist/cjs/index.cjs'
 	},
 	'./IconsSolid': {
 		types: './dist/types/icons/iconsSolid.d.ts',
-		import: './dist/esm/icons/iconsSolid.js',
+		import: './dist/es/icons/iconsSolid.mjs',
 		require: './dist/cjs/icons/iconsSolid.js'
 	},
 	'./IconsOutline': {
 		types: './dist/types/icons/iconsOutline.d.ts',
-		import: './dist/esm/icons/iconsOutline.js',
+		import: './dist/es/icons/iconsOutline.mjs',
 		require: './dist/cjs/icons/iconsOutline.js'
 	},
 	'./icons': {
 		types: './dist/types/icons/index.d.ts',
-		import: './dist/esm/icons/index.js',
+		import: './dist/es/icons/index.mjs',
 		require: './dist/cjs/icons/index.js'
 	},
 	'./css/*.css': './dist/css/*.css',
@@ -197,7 +197,7 @@ function generateExports() {
 		} else {
 			exports[`./${component}`] = {
 				types: `./dist/types/${component}/${component}.d.ts`,
-				import: `./dist/esm/${component}/${component}.js`,
+				import: `./dist/es/${component}/${component}.mjs`,
 				require: `./dist/cjs/${component}/${component}.js`
 			};
 		}
@@ -219,15 +219,21 @@ function updatePackageJson() {
 		// Parse the current content
 		const originalPackageJson = JSON.parse(currentContent);
 
-		// Compare the existing exports with new exports
-		// If they're functionally equivalent (same structure, different formatting),
-		// we don't need to update the file at all
+		// Get the current exports
 		const currentExports = originalPackageJson.exports || {};
-		const currentPaths = Object.keys(currentExports).sort();
-		const newPaths = Object.keys(newExports).sort();
 
-		// Only update if the exports have actually changed in content (not just formatting)
-		if (JSON.stringify(currentPaths) !== JSON.stringify(newPaths)) {
+		// Compare the component paths (ignoring directory differences)
+		const currentComponents = Object.keys(currentExports).filter(
+			key => key !== '.' && !key.includes('*')
+		);
+		const newComponents = Object.keys(newExports).filter(key => key !== '.' && !key.includes('*'));
+
+		// Check if the components list has changed
+		const componentsChanged =
+			currentComponents.length !== newComponents.length ||
+			!currentComponents.every(comp => newComponents.includes(comp));
+
+		if (componentsChanged) {
 			// Only modify the exports field and keep everything else intact
 			packageJson.exports = newExports;
 
@@ -241,7 +247,7 @@ function updatePackageJson() {
 			// No changes needed
 			// eslint-disable-next-line no-console
 			console.log(
-				`✅ "exports" field in package.json is already up-to-date with ${newPaths.length - 5} components`
+				`✅ "exports" field in package.json is already up-to-date with ${Object.keys(newExports).length - 5} components`
 			);
 		}
 	} catch (error) {
