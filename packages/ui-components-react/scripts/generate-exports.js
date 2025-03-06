@@ -232,7 +232,7 @@ function updatePackageJson() {
 			packageJson.exports = newExports;
 
 			// Use tabs as the default indentation
-			fs.writeFileSync(PACKAGE_JSON_PATH, JSON.stringify(packageJson, null, '\t') + '\n', 'utf8');
+			fs.writeFileSync(PACKAGE_JSON_PATH, `${JSON.stringify(packageJson, null, '\t')}\n`, 'utf8');
 
 			const componentsCount = Object.keys(newExports).length - 5;
 			// eslint-disable-next-line no-console
