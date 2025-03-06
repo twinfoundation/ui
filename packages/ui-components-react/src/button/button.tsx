@@ -99,13 +99,12 @@ export const Button = memo(
 			[Icon, iconSize]
 		);
 
-		const iconOnlyClasses = useMemo(
-			() =>
-				iconOnly
-					? `!aspect-square !rounded-full !p-0 ${buttonSizes[size as IconSize]} [&>span]:!p-0 [&>span]:!m-0`
-					: "rounded-lg",
-			[iconOnly, size]
-		);
+		const iconOnlyClasses = useMemo(() => {
+			if (iconOnly) {
+				return `!aspect-square !rounded-full !p-0 ${buttonSizes[size as IconSize]} [&>span]:!p-0 [&>span]:!m-0`;
+			}
+			return "rounded-lg";
+		}, [iconOnly, size]);
 
 		const buttonColorClasses = useMemo(
 			() => colorClasses[color as keyof typeof colorClasses],

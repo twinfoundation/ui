@@ -15,9 +15,6 @@
  * const MyComponent = () => <AcademicCap />;
  */
 
-// Import and re-export as namespaces to avoid naming collisions
-import * as OutlineIcons from "flowbite-react-icons/outline";
-import * as SolidIcons from "flowbite-react-icons/solid";
-
-export const Outline = OutlineIcons;
-export const Solid = SolidIcons;
+// Re-export icons using the preferred export syntax
+export * as Outline from "flowbite-react-icons/outline";
+export * as Solid from "flowbite-react-icons/solid";

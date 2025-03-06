@@ -167,7 +167,7 @@ import { Card } from '@twin.org/ui-components-react/card';
 import { Badge } from '@twin.org/ui-components-react/badge';
 ```
 
-## Analyzing Impact with Bundle Analyzers
+## Examining Impact with Bundle Tools
 
 To verify the effectiveness of your tree-shaking:
 
