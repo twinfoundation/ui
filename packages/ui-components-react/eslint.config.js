@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0.
 import js from '@eslint/js';
 import reactHooks from 'eslint-plugin-react-hooks';
+import importPlugin from 'eslint-plugin-import';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
@@ -15,7 +16,8 @@ export default tseslint.config(
 			globals: globals.browser
 		},
 		plugins: {
-			'react-hooks': reactHooks
+			'react-hooks': reactHooks,
+			'import': importPlugin
 		},
 		rules: {
 			'react-hooks/rules-of-hooks': 'error',

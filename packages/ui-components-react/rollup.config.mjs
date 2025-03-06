@@ -103,21 +103,25 @@ const baseConfig = {
 const mainBundle = {
 	...baseConfig,
 	input: './dist/es/index.js',
-	output: {
-		file: `dist/${format}/index.${extension}`,
-		format,
-		name: 'TwinUIComponents',
-		exports: 'named',
-		globals,
-		sourcemap: true,
-		...(isEsm
-			? {
-					preserveModules: true,
-					preserveModulesRoot: 'dist/es',
-					dir: `dist/${format}`
-				}
-			: {})
-	}
+	output: isEsm
+		? {
+				format,
+				name: 'TwinUIComponents',
+				exports: 'named',
+				globals,
+				sourcemap: true,
+				preserveModules: true,
+				preserveModulesRoot: 'dist/es',
+				dir: `dist/${format}`
+			}
+		: {
+				file: `dist/${format}/index.${extension}`,
+				format,
+				name: 'TwinUIComponents',
+				exports: 'named',
+				globals,
+				sourcemap: true
+			}
 };
 
 // Only use this when you want to build individual components as well
