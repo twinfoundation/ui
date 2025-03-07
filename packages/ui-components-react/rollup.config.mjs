@@ -106,31 +106,17 @@ const mainBundle = {
 	...baseConfig,
 	input: './dist/es/index.js',
 	output: isEsm
-		? [
-				{
-					format,
-					name: 'TwinUIComponents',
-					exports: 'named',
-					globals,
-					sourcemap: true,
-					preserveModules: true,
-					preserveModulesRoot: 'dist/es',
-					dir: `dist/${format}`,
-					entryFileNames: '[name].mjs'
-				},
-				// Add backward compatibility output to esm directory for existing imports
-				{
-					format,
-					name: 'TwinUIComponents',
-					exports: 'named',
-					globals,
-					sourcemap: true,
-					preserveModules: true,
-					preserveModulesRoot: 'dist/es',
-					dir: 'dist/esm',
-					entryFileNames: '[name].mjs'
-				}
-			]
+		? {
+				format,
+				name: 'TwinUIComponents',
+				exports: 'named',
+				globals,
+				sourcemap: true,
+				preserveModules: true,
+				preserveModulesRoot: 'dist/es',
+				dir: `dist/${format}`,
+				entryFileNames: '[name].mjs'
+			}
 		: {
 				file: `dist/${format}/index.${extension}`,
 				format,
@@ -138,31 +124,12 @@ const mainBundle = {
 				exports: 'named',
 				globals,
 				sourcemap: true
-			}
+			},
+	// Prevent watching the output directory to avoid infinite build loops
+	watch: {
+		exclude: ['dist/**', 'node_modules/**']
+	}
 };
 
-// Only use this when you want to build individual components as well
-// const createIndividualComponentConfigs = () => {
-//   const componentEntryPoints = glob.sync('./dist/es/*/index.js');
-//
-//   return componentEntryPoints.map(input => {
-//     const componentName = path.basename(path.dirname(input));
-//     return {
-//       ...baseConfig,
-//       input,
-//       output: {
-//         file: `dist/${format}/${componentName}.${extension}`,
-//         format,
-//         name: `TwinUIComponents${componentName.charAt(0).toUpperCase() + componentName.slice(1)}`,
-//         exports: 'named',
-//         globals,
-//         sourcemap: true
-//       }
-//     };
-//   });
-// };
-
-// Export only the main bundle configuration for now
-// If you want to build individual components as well, uncomment this:
-// export default [mainBundle, ...createIndividualComponentConfigs()];
+// Export only the main bundle configuration
 export default mainBundle;
