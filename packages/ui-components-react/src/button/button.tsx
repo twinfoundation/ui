@@ -1,7 +1,7 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import { Button as FlowbiteButton } from "flowbite-react";
-import { memo, type JSX } from "react";
+import { memo, useMemo, type JSX } from "react";
 import type { ButtonProps } from "./buttonProps";
 
 const BASE_CLASSES = "border-2 border-transparent focus:outline-none focus:ring-2";
@@ -61,31 +61,55 @@ export const Button = memo(
 	}: ButtonProps): JSX.Element => {
 		const iconSize = iconSizes[size as IconSize];
 
-		const buttonContent = (
-			<div className="inline-flex items-center justify-center">
-				{showLeftIcon && LeftIcon && (
-					<div className="flex items-center">
-						<LeftIcon className={`mr-1.5 ${iconSize}`} />
-					</div>
-				)}
-				{showButtonText && (buttonText || children)}
-				{showRightIcon && RightIcon && (
-					<div className="flex items-center">
-						<RightIcon className={`ml-1.5 ${iconSize}`} />
-					</div>
-				)}
-			</div>
+		const buttonContent = useMemo(
+			() => (
+				<div className="inline-flex items-center justify-center">
+					{showLeftIcon && LeftIcon && (
+						<div className="flex items-center">
+							<LeftIcon className={`mr-1.5 ${iconSize}`} />
+						</div>
+					)}
+					{showButtonText && (buttonText || children)}
+					{showRightIcon && RightIcon && (
+						<div className="flex items-center">
+							<RightIcon className={`ml-1.5 ${iconSize}`} />
+						</div>
+					)}
+				</div>
+			),
+			[
+				children,
+				LeftIcon,
+				RightIcon,
+				buttonText,
+				iconSize,
+				showButtonText,
+				showLeftIcon,
+				showRightIcon
+			]
 		);
 
-		const iconContent = Icon && (
-			<div className="flex h-full w-full items-center justify-center">
-				<Icon className={iconSize} />
-			</div>
+		const iconContent = useMemo(
+			() =>
+				Icon && (
+					<div className="flex h-full w-full items-center justify-center">
+						<Icon className={iconSize} />
+					</div>
+				),
+			[Icon, iconSize]
 		);
 
-		const iconOnlyClasses = iconOnly
-			? `!aspect-square !rounded-full !p-0 ${buttonSizes[size as IconSize]} [&>span]:!p-0 [&>span]:!m-0`
-			: "rounded-lg";
+		const iconOnlyClasses = useMemo(() => {
+			if (iconOnly) {
+				return `!aspect-square !rounded-full !p-0 ${buttonSizes[size as IconSize]} [&>span]:!p-0 [&>span]:!m-0`;
+			}
+			return "rounded-lg";
+		}, [iconOnly, size]);
+
+		const buttonColorClasses = useMemo(
+			() => colorClasses[color as keyof typeof colorClasses],
+			[color]
+		);
 
 		return (
 			<FlowbiteButton
@@ -93,7 +117,7 @@ export const Button = memo(
 				size={size}
 				outline={outline}
 				disabled={disabled}
-				className={`${colorClasses[color as keyof typeof colorClasses]} ${iconOnlyClasses} ${className ?? ""}`}
+				className={`${buttonColorClasses} ${iconOnlyClasses} ${className ?? ""}`}
 				{...rest}
 			>
 				{iconOnly ? iconContent : buttonContent}

@@ -88,7 +88,8 @@ export class TailwindConfig {
 	 * @returns The content path.
 	 */
 	public static buildContentPath(npmRoot: string, pkg: string, extensions: string[]): string {
-		return `${npmRoot}/${pkg}/**/*.{${extensions.join(",")}}`;
+		// Use a more specific path to avoid warning about matching all of node_modules
+		return `${npmRoot}/${pkg}/dist/**/*.{${extensions.join(",")}}`;
 	}
 
 	/**
