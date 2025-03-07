@@ -116,7 +116,7 @@ const mainBundle = {
 				preserveModulesRoot: 'dist/es',
 				dir: `dist/${format}`,
 				entryFileNames: '[name].mjs'
-		  }
+			}
 		: {
 				file: `dist/${format}/index.${extension}`,
 				format,
@@ -124,11 +124,11 @@ const mainBundle = {
 				exports: 'named',
 				globals,
 				sourcemap: true
-		  },
-    // Prevent watching the output directory to avoid infinite build loops
-    watch: {
-        exclude: ['dist/**', 'node_modules/**']
-    }
+			},
+	// Prevent watching the output directory to avoid infinite build loops
+	watch: {
+		exclude: ['dist/**', 'node_modules/**']
+	}
 };
 
 // Export only the main bundle configuration
