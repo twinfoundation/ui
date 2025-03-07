@@ -1,23 +1,28 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 
+import { EXTRA_SMALL, SMALL } from "../constants/sizes";
+
 /**
  * Badge sizes.
  */
 // eslint-disable-next-line @typescript-eslint/naming-convention
 export const BadgeSizes = {
 	/**
-	 * Extras Small.
+	 * Extra small.
 	 */
-	ExtraSmall: "xs",
+	ExtraSmall: EXTRA_SMALL,
 
 	/**
 	 * Small.
 	 */
-	Small: "sm"
+	Small: SMALL
 } as const;
 
 /**
  * Badge sizes.
  */
-export type BadgeSizes = (typeof BadgeSizes)[keyof typeof BadgeSizes];
+export type BadgeSize = typeof BadgeSizes[keyof typeof BadgeSizes];
+
+// Re-export size constants for backward compatibility
+export { EXTRA_SMALL, SMALL };

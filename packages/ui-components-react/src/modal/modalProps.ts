@@ -2,9 +2,9 @@
 // SPDX-License-Identifier: Apache-2.0.
 import type { ModalProps as FlowbiteModalProps } from "flowbite-react";
 import type { RefObject, ReactNode } from "react";
-import { ModalPositions } from "./modalPositions";
-import { ModalSizes } from "./modalSizes";
-import type { ButtonColors } from "../button/buttonColors";
+import { ModalPosition, ModalPositions } from "./modalPositions";
+import { ModalSize, ModalSizes } from "./modalSizes";
+import type { ButtonColor } from "../button/buttonColors";
 
 /**
  *
@@ -20,7 +20,7 @@ export interface FooterButton {
 	 * Uses the design system's button variants.
 	 * @default "primary"
 	 */
-	variant?: ButtonColors;
+	variant?: ButtonColor;
 	/**
 	 * Optional callback function triggered when the button is clicked.
 	 * The function takes no parameters and returns void.
@@ -43,11 +43,11 @@ export interface ModalProps extends Pick<FlowbiteModalProps, "theme" | "classNam
 	/**
 	 * Position of the modal
 	 */
-	position?: ModalPositions;
+	position?: ModalPosition;
 	/**
 	 * Size of the modal
 	 */
-	size?: ModalSizes;
+	size?: ModalSize;
 	/**
 	 * Whether the modal can be dismissed
 	 * @default true

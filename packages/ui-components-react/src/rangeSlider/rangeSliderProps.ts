@@ -1,7 +1,7 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import type { RangeSliderProps as FlowbiteRangeSliderProps } from "flowbite-react";
-import type { RangeSliderSizes } from "./rangeSliderSizes";
+import type { RangeSliderSize } from "./rangeSliderSizes";
 
 /**
  * RangeSlider props interface.
@@ -10,7 +10,7 @@ export interface RangeSliderProps extends Omit<FlowbiteRangeSliderProps, "color"
 	/**
 	 * The size of the range slider.
 	 */
-	sizing?: RangeSliderSizes;
+	sizing?: RangeSliderSize;
 
 	/**
 	 * The ID of the range slider.

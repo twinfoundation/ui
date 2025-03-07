@@ -2,7 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
-import { Drawer, DrawerPositions, ButtonColors, IconsSolid } from "@twin.org/ui-components-react";
+import { Drawer, DrawerPositions, ButtonColors } from "@twin.org/ui-components-react";
+import { MessageCaption, Brain } from "@twin.org/ui-components-react/icons/solid";
 import { createElement } from "react";
 
 const meta = {
@@ -221,7 +222,7 @@ export const WithButtonIcon: Story = {
 	args: {
 		title: "Drawer with Icon Button",
 		buttonText: "Menu",
-		buttonIcon: IconsSolid.MessageCaption
+		buttonIcon: MessageCaption
 	}
 };
 
@@ -248,7 +249,7 @@ export const IconOnlyButton: Story = {
 		title: "Icon Only Button Drawer",
 		buttonProps: {
 			iconOnly: true,
-			icon: IconsSolid.Brain,
+			icon: Brain,
 			size: "lg"
 		}
 	}

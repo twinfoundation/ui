@@ -1,6 +1,8 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 
+import { DARK, LIGHT } from "../constants/colors";
+
 /**
  * Tooltip styles.
  */
@@ -9,12 +11,12 @@ export const TooltipStyles = {
 	/**
 	 * Dark.
 	 */
-	Dark: "dark",
+	Dark: DARK,
 
 	/**
 	 * Light.
 	 */
-	Light: "light"
+	Light: LIGHT
 } as const;
 
 /**

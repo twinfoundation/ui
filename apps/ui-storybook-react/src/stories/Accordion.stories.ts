@@ -2,7 +2,12 @@
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
-import { Accordion, IconsSolid } from "@twin.org/ui-components-react";
+import { Accordion } from "@twin.org/ui-components-react";
+import {
+	InboxFull,
+	QuestionCircle,
+	CalendarMonth
+} from "@twin.org/ui-components-react/icons/solid";
 import { createElement } from "react";
 
 const meta = {
@@ -176,7 +181,7 @@ export const WithIcons: Story = {
 						"This accordion item uses the InformationCircle icon from IconsSolid."
 					)
 				),
-				icon: IconsSolid.InboxFull
+				icon: InboxFull
 			},
 			{
 				title: "Accordion with Question Icon",
@@ -189,7 +194,7 @@ export const WithIcons: Story = {
 						"This accordion item uses the QuestionMarkCircle icon from IconsSolid."
 					)
 				),
-				icon: IconsSolid.QuestionCircle
+				icon: QuestionCircle
 			},
 			{
 				title: "Accordion with Settings Icon",
@@ -202,7 +207,7 @@ export const WithIcons: Story = {
 						"This accordion item uses the Cog icon from IconsSolid."
 					)
 				),
-				icon: IconsSolid.CalendarMonth
+				icon: CalendarMonth
 			}
 		],
 		children: []

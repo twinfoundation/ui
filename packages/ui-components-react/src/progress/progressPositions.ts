@@ -1,6 +1,8 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 
+import { INSIDE, OUTSIDE } from "../constants/positions";
+
 /**
  * Progress positions.
  */
@@ -8,15 +10,15 @@ export const ProgressPositions = {
 	/**
 	 * Inside.
 	 */
-	Inside: "inside",
+	Inside: INSIDE,
 
 	/**
 	 * Outside.
 	 */
-	Outside: "outside"
+	Outside: OUTSIDE
 } as const;
 
 /**
  * Progress positions.
  */
-export type ProgressPositions = (typeof ProgressPositions)[keyof typeof ProgressPositions];
+export type ProgressPosition = (typeof ProgressPositions)[keyof typeof ProgressPositions];

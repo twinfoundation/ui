@@ -1,7 +1,8 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
-import { Toast, IconsSolid } from "@twin.org/ui-components-react";
+import { Toast } from "@twin.org/ui-components-react";
+import { CheckCircle, Fire } from "@twin.org/ui-components-react/icons/solid";
 import { createElement } from "react";
 
 const meta = {
@@ -41,7 +42,7 @@ export const Default: Story = {
 					className:
 						"inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-cyan-100 text-cyan-500 dark:bg-cyan-800 dark:text-cyan-200"
 				},
-				createElement(IconsSolid.Fire, { className: "h-5 w-5" })
+				createElement(Fire, { className: "h-5 w-5" })
 			),
 			createElement("div", { className: "ml-3 text-sm font-normal" }, "Set yourself free."),
 			createElement(
@@ -77,7 +78,7 @@ export const CustomStyle: Story = {
 					className:
 						"inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-cyan-100 text-cyan-500"
 				},
-				createElement(IconsSolid.CheckCircle, { className: "h-5 w-5" })
+				createElement(CheckCircle, { className: "h-5 w-5" })
 			),
 			createElement("div", { className: "ml-3 text-sm font-normal" }, "Changes saved successfully.")
 		)

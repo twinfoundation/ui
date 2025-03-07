@@ -1,6 +1,8 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 
+import { PAGINATION, NAVIGATION, TABLE } from "../constants/layouts";
+
 /**
  * Pagination layouts.
  */
@@ -9,20 +11,20 @@ export const PaginationLayouts = {
 	/**
 	 * Pagination.
 	 */
-	Pagination: "pagination",
+	Pagination: PAGINATION,
 
 	/**
 	 * Navigation.
 	 */
-	Navigation: "navigation",
+	Navigation: NAVIGATION,
 
 	/**
 	 * Table.
 	 */
-	Table: "table"
+	Table: TABLE
 } as const;
 
 /**
  * Pagination layouts.
  */
-export type PaginationLayouts = (typeof PaginationLayouts)[keyof typeof PaginationLayouts];
+export type PaginationLayout = (typeof PaginationLayouts)[keyof typeof PaginationLayouts];

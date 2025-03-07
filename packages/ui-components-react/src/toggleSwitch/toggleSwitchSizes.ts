@@ -1,6 +1,8 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 
+import { SMALL, MEDIUM, LARGE } from "../constants/sizes";
+
 /**
  * ToggleSwitch sizes.
  */
@@ -9,20 +11,20 @@ export const ToggleSwitchSizes = {
 	/**
 	 * Small.
 	 */
-	Small: "sm",
+	Small: SMALL,
 
 	/**
 	 * Medium.
 	 */
-	Medium: "md",
+	Medium: MEDIUM,
 
 	/**
 	 * Large.
 	 */
-	Large: "lg"
+	Large: LARGE
 } as const;
 
 /**
  * ToggleSwitch sizes.
  */
-export type ToggleSwitchSizes = (typeof ToggleSwitchSizes)[keyof typeof ToggleSwitchSizes];
+export type ToggleSwitchSize = (typeof ToggleSwitchSizes)[keyof typeof ToggleSwitchSizes];

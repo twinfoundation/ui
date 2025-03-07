@@ -1,6 +1,19 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 
+import {
+	SMALL,
+	MEDIUM,
+	LARGE,
+	EXTRA_LARGE_MODAL,
+	XL2,
+	XL3,
+	XL4,
+	XL5,
+	XL6,
+	XL7
+} from "../constants/sizes";
+
 /**
  * Modal sizes.
  */
@@ -9,55 +22,55 @@ export const ModalSizes = {
 	/**
 	 * Small.
 	 */
-	Small: "sm",
+	Small: SMALL,
 
 	/**
 	 * Medium.
 	 */
-	Medium: "md",
+	Medium: MEDIUM,
 
 	/**
 	 * Large.
 	 */
-	Large: "lg",
+	Large: LARGE,
 
 	/**
 	 * Extra Large.
 	 */
-	ExtraLarge: "xlg",
+	ExtraLarge: EXTRA_LARGE_MODAL,
 
 	/**
 	 * 2 XL.
 	 */
-	XL2: "2xl",
+	XL2,
 
 	/**
 	 * 3 XL.
 	 */
-	XL3: "3xl",
+	XL3,
 
 	/**
 	 * 4 XL.
 	 */
-	XL4: "4xl",
+	XL4,
 
 	/**
 	 * 5 XL.
 	 */
-	XL5: "5xl",
+	XL5,
 
 	/**
 	 * 6 XL.
 	 */
-	XL6: "6xl",
+	XL6,
 
 	/**
 	 * 7 XL.
 	 */
-	XL7: "7xl"
+	XL7
 } as const;
 
 /**
  * Modal sizes.
  */
-export type ModalSizes = (typeof ModalSizes)[keyof typeof ModalSizes];
+export type ModalSize = (typeof ModalSizes)[keyof typeof ModalSizes];

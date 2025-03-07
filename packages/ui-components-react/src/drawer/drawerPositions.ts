@@ -1,6 +1,8 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 
+import { TOP, BOTTOM, LEFT, RIGHT } from "../constants/positions";
+
 /**
  * Drawer positions.
  */
@@ -9,25 +11,25 @@ export const DrawerPositions = {
 	/**
 	 * Top.
 	 */
-	Top: "top",
+	Top: TOP,
 
 	/**
 	 * Bottom.
 	 */
-	Bottom: "bottom",
+	Bottom: BOTTOM,
 
 	/**
 	 * Left.
 	 */
-	Left: "left",
+	Left: LEFT,
 
 	/**
 	 * Right.
 	 */
-	Right: "right"
+	Right: RIGHT
 } as const;
 
 /**
  * Drawer positions.
  */
-export type DrawerPositions = (typeof DrawerPositions)[keyof typeof DrawerPositions];
+export type DrawerPosition = (typeof DrawerPositions)[keyof typeof DrawerPositions];

@@ -1,38 +1,43 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 
+import { EXTRA_SMALL, SMALL, MEDIUM, LARGE, EXTRA_LARGE } from "../constants/sizes";
+
 /**
  * Button sizes.
  */
 // eslint-disable-next-line @typescript-eslint/naming-convention
 export const ButtonSizes = {
 	/**
-	 * Extra Small.
+	 * Extra small.
 	 */
-	ExtraSmall: "xs",
+	ExtraSmall: EXTRA_SMALL,
 
 	/**
 	 * Small.
 	 */
-	Small: "sm",
+	Small: SMALL,
 
 	/**
 	 * Medium.
 	 */
-	Medium: "md",
+	Medium: MEDIUM,
 
 	/**
 	 * Large.
 	 */
-	Large: "lg",
-
+	Large: LARGE,
+	
 	/**
-	 * Extra Large.
+	 * Extra large.
 	 */
-	ExtraLarge: "xl"
+	ExtraLarge: EXTRA_LARGE
 } as const;
 
 /**
  * Button sizes type.
  */
-export type ButtonSize = (typeof ButtonSizes)[keyof typeof ButtonSizes];
+export type ButtonSize = typeof ButtonSizes[keyof typeof ButtonSizes];
+
+// Re-export size constants for backward compatibility
+export { EXTRA_SMALL, SMALL, MEDIUM, LARGE, EXTRA_LARGE };

@@ -1,6 +1,8 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 
+import { PRIMARY, SECONDARY, PLAIN, ERROR, WARNING, SUCCESS, INFO, DARK } from "../constants/colors";
+
 /**
  * Button colors.
  */
@@ -9,45 +11,48 @@ export const ButtonColors = {
 	/**
 	 * Primary.
 	 */
-	Primary: "primary",
+	Primary: PRIMARY,
 
 	/**
 	 * Secondary.
 	 */
-	Secondary: "secondary",
+	Secondary: SECONDARY,
 
 	/**
 	 * Plain.
 	 */
-	Plain: "plain",
+	Plain: PLAIN,
 
 	/**
 	 * Error.
 	 */
-	Error: "error",
+	Error: ERROR,
 
 	/**
 	 * Warning.
 	 */
-	Warning: "warning",
+	Warning: WARNING,
 
 	/**
 	 * Success.
 	 */
-	Success: "success",
+	Success: SUCCESS,
 
 	/**
 	 * Info.
 	 */
-	Info: "info",
+	Info: INFO,
 
 	/**
 	 * Dark.
 	 */
-	Dark: "dark"
+	Dark: DARK
 } as const;
 
 /**
  * Button colors.
  */
-export type ButtonColors = (typeof ButtonColors)[keyof typeof ButtonColors];
+export type ButtonColor = typeof ButtonColors[keyof typeof ButtonColors];
+
+// Re-export color constants for backward compatibility
+export { PRIMARY, SECONDARY, PLAIN, ERROR, WARNING, SUCCESS, INFO, DARK };

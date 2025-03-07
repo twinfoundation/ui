@@ -1,6 +1,8 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 
+import { FAILURE, WARNING, SUCCESS, INFO, GRAY } from "../constants/colors";
+
 /**
  * TextInput colors.
  */
@@ -14,30 +16,30 @@ export const TextInputColors = {
 	/**
 	 * Failure.
 	 */
-	Failure: "failure",
+	Failure: FAILURE,
 
 	/**
 	 * Warning.
 	 */
-	Warning: "warning",
+	Warning: WARNING,
 
 	/**
 	 * Success.
 	 */
-	Success: "success",
+	Success: SUCCESS,
 
 	/**
 	 * Info.
 	 */
-	Info: "info",
+	Info: INFO,
 
 	/**
 	 * Gray.
 	 */
-	Gray: "gray"
+	Gray: GRAY
 } as const;
 
 /**
  * TextInput colors.
  */
-export type TextInputColors = (typeof TextInputColors)[keyof typeof TextInputColors];
+export type TextInputColor = (typeof TextInputColors)[keyof typeof TextInputColors];
