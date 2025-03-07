@@ -37,14 +37,11 @@ export const BadgeColors = {
 /**
  * Badge colors.
  */
-export type BadgeColor = typeof BadgeColors[keyof typeof BadgeColors];
+export type BadgeColor = (typeof BadgeColors)[keyof typeof BadgeColors];
 
 /**
  * CSS classes for badge colors.
  */
-export type ColorClasses = {
+export interface ColorClasses {
 	[key: string]: string;
-};
-
-// Re-export color constants for backward compatibility
-export { GRAY, FAILURE, WARNING, SUCCESS, INFO };
+}

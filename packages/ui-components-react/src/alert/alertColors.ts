@@ -37,7 +37,4 @@ export const AlertColors = {
 /**
  * Alert colors.
  */
-export type AlertColor = typeof AlertColors[keyof typeof AlertColors];
-
-// Re-export color constants for backward compatibility
-export { INFO, ERROR, WARNING, SUCCESS, GRAY };
+export type AlertColor = (typeof AlertColors)[keyof typeof AlertColors];

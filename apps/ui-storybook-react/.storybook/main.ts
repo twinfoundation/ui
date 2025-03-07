@@ -22,8 +22,16 @@ const config: StorybookConfig = {
 				alias: {
 					...config.resolve?.alias,
 					// Add aliases for the icon paths to ensure they resolve correctly
-					"@twin.org/ui-components-react/icons/solid": resolve(__dirname, "../../..", "packages/ui-components-react/src/icons/solid"),
-					"@twin.org/ui-components-react/icons/outline": resolve(__dirname, "../../..", "packages/ui-components-react/src/icons/outline")
+					"@twin.org/ui-components-react/icons/solid": resolve(
+						__dirname,
+						"../../..",
+						"packages/ui-components-react/src/icons/solid"
+					),
+					"@twin.org/ui-components-react/icons/outline": resolve(
+						__dirname,
+						"../../..",
+						"packages/ui-components-react/src/icons/outline"
+					)
 				}
 			}
 		};

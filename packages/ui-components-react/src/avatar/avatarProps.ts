@@ -2,19 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0.
 import type { AvatarProps as FlowbiteAvatarProps } from "flowbite-react";
 import type { ReactNode } from "react";
-import { 
-	EXTRA_SMALL, 
-	SMALL, 
-	MEDIUM, 
-	LARGE, 
-	EXTRA_LARGE 
-} from "../constants/sizes";
-import { 
-	TOP_LEFT, 
-	TOP_RIGHT, 
-	BOTTOM_LEFT, 
-	BOTTOM_RIGHT 
-} from "../constants/positions";
+import type { TOP_LEFT, TOP_RIGHT, BOTTOM_LEFT, BOTTOM_RIGHT } from "../constants/positions";
+import type { EXTRA_SMALL, SMALL, MEDIUM, LARGE, EXTRA_LARGE } from "../constants/sizes";
 
 /**
  * Props for the Avatar component.

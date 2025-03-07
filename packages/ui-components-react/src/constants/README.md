@@ -50,12 +50,18 @@ Each component has updated type definitions that use the centralized constants:
 
 ```typescript
 // Before
-type ButtonColor = "primary" | "secondary" | "info" | "success" | "warning" | "error";
+type ButtonColor = 'primary' | 'secondary' | 'info' | 'success' | 'warning' | 'error';
 
 // After
-import { PRIMARY, SECONDARY, INFO, SUCCESS, WARNING, ERROR } from "../constants/colors";
+import { PRIMARY, SECONDARY, INFO, SUCCESS, WARNING, ERROR } from '../constants/colors';
 
-type ButtonColor = typeof PRIMARY | typeof SECONDARY | typeof INFO | typeof SUCCESS | typeof WARNING | typeof ERROR;
+type ButtonColor =
+  | typeof PRIMARY
+  | typeof SECONDARY
+  | typeof INFO
+  | typeof SUCCESS
+  | typeof WARNING
+  | typeof ERROR;
 ```
 
 ## Benefits

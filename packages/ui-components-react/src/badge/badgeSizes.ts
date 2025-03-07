@@ -22,7 +22,4 @@ export const BadgeSizes = {
 /**
  * Badge sizes.
  */
-export type BadgeSize = typeof BadgeSizes[keyof typeof BadgeSizes];
-
-// Re-export size constants for backward compatibility
-export { EXTRA_SMALL, SMALL };
+export type BadgeSize = (typeof BadgeSizes)[keyof typeof BadgeSizes];

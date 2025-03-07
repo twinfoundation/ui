@@ -164,6 +164,7 @@ export const WithButton: Story = {
 				color: "primary",
 
 				onClick: () => {
+					// eslint-disable-next-line no-console
 					console.log("Button clicked!");
 				}
 			}
@@ -244,6 +245,7 @@ export const FullFeatured: Story = {
 				color: "primary",
 
 				onClick: () => {
+					// eslint-disable-next-line no-console
 					console.log("Primary action clicked!");
 				}
 			},
@@ -278,6 +280,7 @@ export const OptimizedLayout: Story = {
 				color: "primary",
 
 				onClick: () => {
+					// eslint-disable-next-line no-console
 					console.log("Button clicked!");
 				}
 			}
@@ -306,6 +309,7 @@ export const CleanLayout: Story = {
 				color: "primary",
 
 				onClick: () => {
+					// eslint-disable-next-line no-console
 					console.log("Button clicked!");
 				}
 			}

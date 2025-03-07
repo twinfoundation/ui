@@ -2,8 +2,10 @@
 // SPDX-License-Identifier: Apache-2.0.
 import type { ModalProps as FlowbiteModalProps } from "flowbite-react";
 import type { RefObject, ReactNode } from "react";
-import { ModalPosition, ModalPositions } from "./modalPositions";
-import { ModalSize, ModalSizes } from "./modalSizes";
+import { ModalPositions } from "./modalPositions";
+import type { ModalPosition } from "./modalPositions";
+import { ModalSizes } from "./modalSizes";
+import type { ModalSize } from "./modalSizes";
 import type { ButtonColor } from "../button/buttonColors";
 
 /**

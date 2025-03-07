@@ -3,7 +3,13 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 import { Alert, AlertColors } from "@twin.org/ui-components-react";
-import { CheckCircle, InfoCircle, CloseCircle, ExclamationCircle, Eye } from "@twin.org/ui-components-react/icons/solid";
+import {
+	CheckCircle,
+	InfoCircle,
+	CloseCircle,
+	ExclamationCircle,
+	Eye
+} from "@twin.org/ui-components-react/icons/solid";
 import { type ReactNode, createElement } from "react";
 
 const meta = {

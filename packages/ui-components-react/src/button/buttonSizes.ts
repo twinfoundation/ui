@@ -27,7 +27,7 @@ export const ButtonSizes = {
 	 * Large.
 	 */
 	Large: LARGE,
-	
+
 	/**
 	 * Extra large.
 	 */
@@ -37,7 +37,4 @@ export const ButtonSizes = {
 /**
  * Button sizes type.
  */
-export type ButtonSize = typeof ButtonSizes[keyof typeof ButtonSizes];
-
-// Re-export size constants for backward compatibility
-export { EXTRA_SMALL, SMALL, MEDIUM, LARGE, EXTRA_LARGE };
+export type ButtonSize = (typeof ButtonSizes)[keyof typeof ButtonSizes];
