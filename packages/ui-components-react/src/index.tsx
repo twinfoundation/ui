@@ -60,7 +60,7 @@ export { Label } from "./label/label";
 export type { LabelProps } from "./label/labelProps";
 
 export { ListGroup } from "./listGroup/listGroup";
-export type { ListGroupProps } from "./listGroup/listGroupProps";
+export type { ListGroupProps, ListGroupItem } from "./listGroup/listGroupProps";
 
 export { Modal } from "./modal/modal";
 export type { ModalProps } from "./modal/modalProps";
@@ -87,7 +87,12 @@ export { Select } from "./select/select";
 export type { SelectProps } from "./select/selectProps";
 
 export { Sidebar } from "./sidebar/sidebar";
-export type { SidebarProps } from "./sidebar/sidebarProps";
+export type {
+	SidebarProps,
+	SidebarItem,
+	SidebarIconType,
+	BadgeColor
+} from "./sidebar/sidebarProps";
 
 export { Spinner } from "./spinner/spinner";
 export type { SpinnerProps } from "./spinner/spinnerProps";
