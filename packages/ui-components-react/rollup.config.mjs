@@ -115,7 +115,8 @@ const mainBundle = {
 				preserveModules: true,
 				preserveModulesRoot: 'dist/es',
 				dir: `dist/${format}`,
-				entryFileNames: '[name].mjs'
+				entryFileNames: '[name].mjs',
+				chunkFileNames: '[name].mjs'
 			}
 		: {
 				file: `dist/${format}/index.${extension}`,

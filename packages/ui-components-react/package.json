@@ -72,12 +72,12 @@
 		},
 		"./icons/outline": {
 			"types": "./dist/types/icons/outline.d.ts",
-			"import": "./dist/es/icons/outline.mjs",
+			"import": "./dist/es/icons/outline.js",
 			"require": "./dist/cjs/icons/outline.js"
 		},
 		"./icons/solid": {
 			"types": "./dist/types/icons/solid.d.ts",
-			"import": "./dist/es/icons/solid.mjs",
+			"import": "./dist/es/icons/solid.js",
 			"require": "./dist/cjs/icons/solid.js"
 		},
 		"./css/*.css": "./dist/css/*.css",
