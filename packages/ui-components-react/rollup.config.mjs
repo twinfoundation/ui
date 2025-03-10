@@ -16,9 +16,10 @@ import json from '@rollup/plugin-json';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import terser from '@rollup/plugin-terser';
+import dynamicImportVars from '@rollup/plugin-dynamic-import-vars';
 import copy from 'rollup-plugin-copy';
-import { glob } from 'glob';
-import path from 'path';
+import postcss from 'rollup-plugin-postcss';
+import svgr from '@svgr/rollup';
 
 const isEsm = process.env.MODULE === 'esm';
 // Get the format from the environment variable
@@ -69,11 +70,36 @@ const createPlugins = () => [
 	// Handle JSON files
 	json(),
 
+	// Handle PostCSS
+	postcss({
+		minimize: true,
+		extract: false,
+		modules: false,
+		inject: false
+	}),
+
 	// Minify the output
 	terser({
 		format: {
 			comments: false
 		}
+	}),
+
+	// Handle SVG files
+	svgr({
+		svgoConfig: {
+			plugins: [
+				{
+					name: 'removeViewBox',
+					active: false
+				}
+			]
+		}
+	}),
+
+	// Handle dynamic imports
+	dynamicImportVars({
+		warnOnError: true
 	})
 ];
 
@@ -111,12 +137,16 @@ const mainBundle = {
 				name: 'TwinUIComponents',
 				exports: 'named',
 				globals,
-				sourcemap: true,
+				sourcemap: process.env.NODE_ENV !== 'production',
 				preserveModules: true,
 				preserveModulesRoot: 'dist/es',
 				dir: `dist/${format}`,
-				entryFileNames: '[name].mjs',
-				chunkFileNames: '[name].mjs'
+				entryFileNames: chunkInfo => {
+					if (chunkInfo.name.includes('icons/')) {
+						return '[name].js';
+					}
+					return '[name].mjs';
+				}
 			}
 		: {
 				file: `dist/${format}/index.${extension}`,
@@ -124,7 +154,7 @@ const mainBundle = {
 				name: 'TwinUIComponents',
 				exports: 'named',
 				globals,
-				sourcemap: true
+				sourcemap: process.env.NODE_ENV !== 'production'
 			},
 	// Prevent watching the output directory to avoid infinite build loops
 	watch: {

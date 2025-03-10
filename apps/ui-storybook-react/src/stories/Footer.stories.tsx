@@ -3,7 +3,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Footer } from "@twin.org/ui-components-react";
 import { Home, MailBox, Music, File } from "@twin.org/ui-components-react/icons/solid";
-import React from "react";
 
 /**
  * Storybook metadata for Footer component
