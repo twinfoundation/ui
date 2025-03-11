@@ -86,7 +86,7 @@ export interface ButtonProps {
 
 If you're updating existing code to use the new centralized constants:
 
-1.  Use component objects (e.g., `ButtonColors`) for compatibility.
+1. Use component objects (e.g., `ButtonColors`) for compatibility.
 
 ## Implementation Details for Contributors
 
