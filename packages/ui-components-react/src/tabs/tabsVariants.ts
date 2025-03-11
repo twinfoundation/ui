@@ -1,6 +1,8 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 
+import { DEFAULT, UNDERLINE, PILLS, FULL_WIDTH } from "../constants/variants";
+
 /**
  * Tabs variants.
  */
@@ -9,25 +11,25 @@ export const TabsVariants = {
 	/**
 	 * Default.
 	 */
-	Default: "default",
+	Default: DEFAULT,
 
 	/**
 	 * Underline.
 	 */
-	Underline: "underline",
+	Underline: UNDERLINE,
 
 	/**
 	 * Pills.
 	 */
-	Pills: "pills",
+	Pills: PILLS,
 
 	/**
-	 * FullWidth.
+	 * Full width.
 	 */
-	FullWidth: "fullWidth"
+	FullWidth: FULL_WIDTH
 } as const;
 
 /**
  * Tabs variants.
  */
-export type TabsVariants = (typeof TabsVariants)[keyof typeof TabsVariants];
+export type TabsVariant = (typeof TabsVariants)[keyof typeof TabsVariants];

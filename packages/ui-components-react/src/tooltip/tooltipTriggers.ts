@@ -1,6 +1,8 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 
+import { HOVER, CLICK } from "../constants/triggers";
+
 /**
  * Tooltip triggers.
  */
@@ -9,12 +11,12 @@ export const TooltipTriggers = {
 	/**
 	 * Hover.
 	 */
-	Hover: "hover",
+	Hover: HOVER,
 
 	/**
 	 * Click.
 	 */
-	Click: "click"
+	Click: CLICK
 } as const;
 
 /**

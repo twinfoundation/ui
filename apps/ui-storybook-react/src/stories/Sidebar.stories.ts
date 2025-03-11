@@ -1,7 +1,21 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
-import { Sidebar, IconsSolid, Badge, Button } from "@twin.org/ui-components-react";
+import { Sidebar, Badge, Button, BadgeColors } from "@twin.org/ui-components-react";
+import {
+	ChartPie,
+	VideoCamera,
+	Image,
+	User,
+	UserSettings,
+	Home,
+	ShoppingBag,
+	ArrowRightAlt,
+	UserCircle,
+	QuestionCircle,
+	ExclamationCircle,
+	UserEdit
+} from "@twin.org/ui-components-react/icons/solid";
 import { Sidebar as FlowbiteSidebar } from "flowbite-react";
 import { createElement } from "react";
 
@@ -18,10 +32,10 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
 	args: {
 		items: [
-			{ label: "Dashboard", icon: IconsSolid.ChartPie, href: "#" },
-			{ label: "Projects", icon: IconsSolid.ChartPie, href: "#", active: true },
-			{ label: "Team", icon: IconsSolid.User, href: "#" },
-			{ label: "Settings", icon: IconsSolid.UserSettings, href: "#" }
+			{ label: "Dashboard", icon: ChartPie, href: "#" },
+			{ label: "Projects", icon: ChartPie, href: "#", active: true },
+			{ label: "Team", icon: User, href: "#" },
+			{ label: "Settings", icon: UserSettings, href: "#" }
 		]
 	}
 };
@@ -29,10 +43,10 @@ export const Default: Story = {
 export const MultiLevelDropdown: Story = {
 	args: {
 		items: [
-			{ label: "Dashboard", icon: IconsSolid.Home, href: "#" },
+			{ label: "Dashboard", icon: Home, href: "#" },
 			{
 				label: "E-commerce",
-				icon: IconsSolid.ShoppingBag,
+				icon: ShoppingBag,
 				href: "#",
 				items: [
 					{ label: "Products", href: "#" },
@@ -41,7 +55,7 @@ export const MultiLevelDropdown: Story = {
 			},
 			{
 				label: "Users",
-				icon: IconsSolid.User,
+				icon: User,
 				href: "#",
 				items: [
 					{ label: "Add user", href: "#" },
@@ -55,10 +69,10 @@ export const MultiLevelDropdown: Story = {
 export const WithCustomChevron: Story = {
 	args: {
 		items: [
-			{ label: "Dashboard", icon: IconsSolid.Home, href: "#" },
+			{ label: "Dashboard", icon: Home, href: "#" },
 			{
 				label: "E-commerce",
-				icon: IconsSolid.ShoppingBag,
+				icon: ShoppingBag,
 				href: "#",
 				items: [
 					{ label: "Products", href: "#" },
@@ -72,13 +86,13 @@ export const WithCustomChevron: Story = {
 export const WithContentSeparator: Story = {
 	args: {
 		items: [
-			{ label: "Dashboard", icon: IconsSolid.ChartPie, href: "#" },
-			{ label: "Kanban", icon: IconsSolid.VideoCamera, href: "#" },
-			{ label: "Inbox", icon: IconsSolid.Image, href: "#" },
-			{ label: "Users", icon: IconsSolid.User, href: "#" },
-			{ label: "Products", icon: IconsSolid.ShoppingBag, href: "#" },
-			{ label: "Sign In", icon: IconsSolid.ArrowRightAlt, href: "#" },
-			{ label: "Sign Up", icon: IconsSolid.UserCircle, href: "#" }
+			{ label: "Dashboard", icon: ChartPie, href: "#" },
+			{ label: "Kanban", icon: VideoCamera, href: "#" },
+			{ label: "Inbox", icon: Image, href: "#" },
+			{ label: "Users", icon: User, href: "#" },
+			{ label: "Products", icon: ShoppingBag, href: "#" },
+			{ label: "Sign In", icon: ArrowRightAlt, href: "#" },
+			{ label: "Sign Up", icon: UserCircle, href: "#" }
 		],
 		CTA: createElement(
 			"div",
@@ -93,7 +107,7 @@ export const WithContentSeparator: Story = {
 						{
 							key: "upgrade",
 							href: "#",
-							icon: IconsSolid.ChartPie
+							icon: ChartPie
 						},
 						"Upgrade to Pro"
 					),
@@ -102,7 +116,7 @@ export const WithContentSeparator: Story = {
 						{
 							key: "documentation",
 							href: "#",
-							icon: IconsSolid.VideoCamera
+							icon: VideoCamera
 						},
 						"Documentation"
 					),
@@ -111,7 +125,7 @@ export const WithContentSeparator: Story = {
 						{
 							key: "help",
 							href: "#",
-							icon: IconsSolid.QuestionCircle
+							icon: QuestionCircle
 						},
 						"Help"
 					)
@@ -124,9 +138,9 @@ export const WithContentSeparator: Story = {
 export const WithButton: Story = {
 	args: {
 		items: [
-			{ label: "Dashboard", icon: IconsSolid.Home, href: "#" },
-			{ label: "Projects", icon: IconsSolid.ChartPie, href: "#" },
-			{ label: "Team", icon: IconsSolid.User, href: "#" }
+			{ label: "Dashboard", icon: Home, href: "#" },
+			{ label: "Projects", icon: ChartPie, href: "#" },
+			{ label: "Team", icon: User, href: "#" }
 		],
 		CTA: createElement(
 			"div",
@@ -145,9 +159,9 @@ export const WithLogo: Story = {
 			href: "https://www.twin.org"
 		},
 		items: [
-			{ label: "Dashboard", icon: IconsSolid.Home, href: "#" },
-			{ label: "Projects", icon: IconsSolid.ChartPie, href: "#" },
-			{ label: "Team", icon: IconsSolid.User, href: "#" }
+			{ label: "Dashboard", icon: Home, href: "#" },
+			{ label: "Projects", icon: ChartPie, href: "#" },
+			{ label: "Team", icon: User, href: "#" }
 		]
 	}
 };
@@ -155,10 +169,10 @@ export const WithLogo: Story = {
 export const WithCTA: Story = {
 	args: {
 		items: [
-			{ label: "Dashboard", icon: IconsSolid.Home, href: "#" },
-			{ label: "Projects", icon: IconsSolid.ChartPie, href: "#", active: true },
-			{ label: "Team", icon: IconsSolid.User, href: "#" },
-			{ label: "Settings", icon: IconsSolid.UserSettings, href: "#" }
+			{ label: "Dashboard", icon: Home, href: "#" },
+			{ label: "Projects", icon: ChartPie, href: "#", active: true },
+			{ label: "Team", icon: User, href: "#" },
+			{ label: "Settings", icon: UserSettings, href: "#" }
 		],
 		CTA: createElement(
 			"div",
@@ -215,31 +229,31 @@ export const WithLabels: Story = {
 		items: [
 			{
 				label: "Inbox",
-				icon: IconsSolid.Image,
+				icon: Image,
 				href: "#",
 				badge: "3",
-				badgeColor: "information"
+				badgeColor: BadgeColors.Info
 			},
 			{
 				label: "Spam",
-				icon: IconsSolid.ExclamationCircle,
+				icon: ExclamationCircle,
 				href: "#",
 				badge: "42",
-				badgeColor: "warning"
+				badgeColor: BadgeColors.Warning
 			},
 			{
 				label: "Updates",
-				icon: IconsSolid.ArrowRightAlt,
+				icon: ArrowRightAlt,
 				href: "#",
 				badge: "New",
-				badgeColor: "success"
+				badgeColor: BadgeColors.Success
 			},
 			{
 				label: "Forums",
-				icon: IconsSolid.UserEdit,
+				icon: UserEdit,
 				href: "#",
 				badge: "99+",
-				badgeColor: "error"
+				badgeColor: BadgeColors.Failure
 			}
 		]
 	}

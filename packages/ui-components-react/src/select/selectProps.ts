@@ -1,7 +1,7 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import type { SelectProps as FlowbiteSelectProps } from "flowbite-react";
-import type { SelectSizes } from "./selectSizes";
+import type { SelectSize } from "./selectSizes";
 
 /**
  * Option type for the Select component.
@@ -24,7 +24,7 @@ export interface SelectProps extends Omit<FlowbiteSelectProps, "color" | "label"
 	/**
 	 * The size of the select component.
 	 */
-	sizing?: SelectSizes;
+	sizing?: SelectSize;
 	/**
 	 * The options to display in the select component.
 	 */

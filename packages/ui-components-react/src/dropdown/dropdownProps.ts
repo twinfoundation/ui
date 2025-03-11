@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0.
 import type { DropdownProps as FlowbiteDropdownProps } from "flowbite-react";
 import type { ReactNode } from "react";
-import type { DropdownPositions } from "./dropdownPositions";
-import type { DropdownSizes } from "./dropdownSizes";
+import type { DropdownPosition } from "./dropdownPositions";
+import type { DropdownSize } from "./dropdownSizes";
 import type { IconComponent } from "../types/iconTypes";
 
 /**
@@ -58,12 +58,12 @@ export interface DropdownProps extends Omit<FlowbiteDropdownProps, "color" | "la
 	/**
 	 * The position of the dropdown.
 	 */
-	placement?: DropdownPositions;
+	placement?: DropdownPosition;
 
 	/**
 	 * The size of the dropdown button.
 	 */
-	size?: DropdownSizes;
+	size?: DropdownSize;
 
 	/**
 	 * The title text for the dropdown button.

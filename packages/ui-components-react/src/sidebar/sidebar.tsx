@@ -3,18 +3,19 @@
 import { Sidebar as FlowbiteSidebar } from "flowbite-react";
 import { memo, useCallback, useMemo, type JSX, type ReactNode } from "react";
 import type { SidebarProps, SidebarItem, BadgeColor } from "./sidebarProps";
+import { PRIMARY, SUCCESS, WARNING, FAILURE, INFO } from "../constants/colors";
 
 const getBadgeColorClass = (color?: BadgeColor): string => {
 	switch (color) {
-		case "primary":
+		case PRIMARY:
 			return "bg-surface-brand-secondary-1 !text-surface-brand-secondary-1";
-		case "success":
+		case SUCCESS:
 			return "bg-surface-success !text-success";
-		case "warning":
+		case WARNING:
 			return "bg-surface-warning !text-warning";
-		case "error":
+		case FAILURE:
 			return "bg-surface-error !text-error";
-		case "information":
+		case INFO:
 			return "bg-surface-information !text-information";
 		default:
 			return "bg-surface-gray-100 !text-gray-100";

@@ -1,6 +1,8 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 
+import { SMALL, MEDIUM, LARGE } from "../constants/sizes";
+
 /**
  * TextInput sizes.
  */
@@ -9,20 +11,20 @@ export const TextInputSizes = {
 	/**
 	 * Small.
 	 */
-	Small: "sm",
+	Small: SMALL,
 
 	/**
 	 * Medium.
 	 */
-	Medium: "md",
+	Medium: MEDIUM,
 
 	/**
 	 * Large.
 	 */
-	Large: "lg"
+	Large: LARGE
 } as const;
 
 /**
  * TextInput sizes.
  */
-export type TextInputSizes = (typeof TextInputSizes)[keyof typeof TextInputSizes];
+export type TextInputSize = (typeof TextInputSizes)[keyof typeof TextInputSizes];

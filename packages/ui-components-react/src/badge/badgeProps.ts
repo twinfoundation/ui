@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0.
 import type { BadgeProps as FlowbiteBadgeProps } from "flowbite-react";
 import type { ReactNode } from "react";
-import type { BadgeColors } from "./badgeColors";
-import type { BadgeSizes } from "./badgeSizes";
+import type { BadgeColor } from "./badgeColors";
+import type { BadgeSize } from "./badgeSizes";
 
 /**
  * Badge props interface.
@@ -12,12 +12,12 @@ export interface BadgeProps extends Omit<FlowbiteBadgeProps, "color" | "label"> 
 	/**
 	 * The color variant of the badge
 	 */
-	color?: BadgeColors;
+	color?: BadgeColor;
 
 	/**
 	 * The size variant of the badge
 	 */
-	size?: BadgeSizes;
+	size?: BadgeSize;
 
 	/**
 	 * Whether the badge can be dismissed
@@ -30,7 +30,7 @@ export interface BadgeProps extends Omit<FlowbiteBadgeProps, "color" | "label"> 
 	onlyIcon?: boolean;
 
 	/**
-	 * Children elements
+	 * The content of the badge
 	 */
 	children?: ReactNode;
 }

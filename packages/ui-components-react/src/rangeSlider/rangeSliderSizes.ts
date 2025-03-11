@@ -1,6 +1,8 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 
+import { SMALL, MEDIUM, LARGE } from "../constants/sizes";
+
 /**
  * RangeSlider sizes.
  */
@@ -9,20 +11,20 @@ export const RangeSliderSizes = {
 	/**
 	 * Small.
 	 */
-	Small: "sm",
+	Small: SMALL,
 
 	/**
 	 * Medium.
 	 */
-	Medium: "md",
+	Medium: MEDIUM,
 
 	/**
 	 * Large.
 	 */
-	Large: "lg"
+	Large: LARGE
 } as const;
 
 /**
  * RangeSlider sizes.
  */
-export type RangeSliderSizes = (typeof RangeSliderSizes)[keyof typeof RangeSliderSizes];
+export type RangeSliderSize = (typeof RangeSliderSizes)[keyof typeof RangeSliderSizes];

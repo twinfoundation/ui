@@ -1,6 +1,18 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 
+import {
+	ORANGE,
+	PRIMARY,
+	GREEN,
+	PURPLE,
+	YELLOW,
+	PINK,
+	INDIGO,
+	DARK,
+	BLUE
+} from "../constants/colors";
+
 /**
  * Progress colors.
  */
@@ -8,50 +20,50 @@ export const ProgressColors = {
 	/**
 	 * Orange.
 	 */
-	Orange: "orange",
+	Orange: ORANGE,
 
 	/**
 	 * Primary.
 	 */
-	Primary: "primary",
+	Primary: PRIMARY,
 
 	/**
 	 * Green.
 	 */
-	Green: "green",
+	Green: GREEN,
 
 	/**
 	 * Purple.
 	 */
-	Purple: "purple",
+	Purple: PURPLE,
 
 	/**
 	 * Yellow.
 	 */
-	Yellow: "yellow",
+	Yellow: YELLOW,
 
 	/**
 	 * Pink.
 	 */
-	Pink: "pink",
+	Pink: PINK,
 
 	/**
 	 * Indigo.
 	 */
-	Indigo: "indigo",
+	Indigo: INDIGO,
 
 	/**
 	 * Dark.
 	 */
-	Dark: "dark",
+	Dark: DARK,
 
 	/**
 	 * Blue.
 	 */
-	Blue: "blue"
+	Blue: BLUE
 } as const;
 
 /**
  * Progress colors.
  */
-export type ProgressColors = (typeof ProgressColors)[keyof typeof ProgressColors];
+export type ProgressColor = (typeof ProgressColors)[keyof typeof ProgressColors];

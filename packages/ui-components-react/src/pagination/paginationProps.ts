@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0.
 import type { PaginationProps as FlowbitePaginationProps } from "flowbite-react";
 import type { PropsWithChildren } from "react";
-import type { PaginationLayouts } from "./paginationLayouts";
+import type { PaginationLayout } from "./paginationLayouts";
 
 /**
  * Pagination props.
@@ -12,7 +12,7 @@ export type PaginationProps = PropsWithChildren<
 		/**
 		 * The layout of the pagination.
 		 */
-		layout?: PaginationLayouts;
+		layout?: PaginationLayout;
 		/**
 		 * Whether to show icons.
 		 */

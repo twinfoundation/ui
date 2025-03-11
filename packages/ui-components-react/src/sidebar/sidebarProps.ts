@@ -2,14 +2,18 @@
 // SPDX-License-Identifier: Apache-2.0.
 import type { SidebarProps as FlowbiteSidebarProps } from "flowbite-react";
 import type { ReactNode } from "react";
+import type { PRIMARY, SUCCESS, WARNING, FAILURE, INFO } from "../constants/colors";
 import type { IconComponent } from "../types/iconTypes";
-
-const colorsTypes = ["primary", "success", "warning", "error", "information"] as const;
 
 /**
  * Type for the badge colors
  */
-export type BadgeColor = (typeof colorsTypes)[number];
+export type BadgeColor =
+	| typeof PRIMARY
+	| typeof SUCCESS
+	| typeof WARNING
+	| typeof FAILURE
+	| typeof INFO;
 
 /**
  * Icon type for sidebar items that matches Flowbite's requirements

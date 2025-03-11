@@ -1,6 +1,8 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 
+import { EXTRA_SMALL, SMALL, MEDIUM, LARGE, EXTRA_LARGE } from "../constants/sizes";
+
 /**
  * Spinner sizes.
  */
@@ -9,30 +11,30 @@ export const SpinnerSizes = {
 	/**
 	 * Extra Small.
 	 */
-	ExtraSmall: "xs",
+	ExtraSmall: EXTRA_SMALL,
 
 	/**
 	 * Small.
 	 */
-	Small: "sm",
+	Small: SMALL,
 
 	/**
 	 * Medium.
 	 */
-	Medium: "md",
+	Medium: MEDIUM,
 
 	/**
 	 * Large.
 	 */
-	Large: "lg",
+	Large: LARGE,
 
 	/**
 	 * Extra Large.
 	 */
-	ExtraLarge: "xl"
+	ExtraLarge: EXTRA_LARGE
 } as const;
 
 /**
  * Spinner sizes.
  */
-export type SpinnerSizes = (typeof SpinnerSizes)[keyof typeof SpinnerSizes];
+export type SpinnerSize = (typeof SpinnerSizes)[keyof typeof SpinnerSizes];

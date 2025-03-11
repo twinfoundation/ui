@@ -1,6 +1,8 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 
+import { TOP, BOTTOM, LEFT, RIGHT } from "../constants/positions";
+
 /**
  * Dropdown positions.
  */
@@ -9,25 +11,25 @@ export const DropdownPositions = {
 	/**
 	 * Top.
 	 */
-	Top: "top",
+	Top: TOP,
 
 	/**
 	 * Bottom.
 	 */
-	Bottom: "bottom",
+	Bottom: BOTTOM,
 
 	/**
 	 * Left.
 	 */
-	Left: "left",
+	Left: LEFT,
 
 	/**
 	 * Right.
 	 */
-	Right: "right"
+	Right: RIGHT
 } as const;
 
 /**
  * Dropdown positions.
  */
-export type DropdownPositions = (typeof DropdownPositions)[keyof typeof DropdownPositions];
+export type DropdownPosition = (typeof DropdownPositions)[keyof typeof DropdownPositions];

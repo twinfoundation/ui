@@ -1,6 +1,8 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 
+import { INFO, ERROR, WARNING, SUCCESS, GRAY } from "../constants/colors";
+
 /**
  * Alert colors.
  */
@@ -9,30 +11,30 @@ export const AlertColors = {
 	/**
 	 * Info.
 	 */
-	Info: "info",
+	Info: INFO,
 
 	/**
 	 * Error.
 	 */
-	Error: "error",
+	Error: ERROR,
 
 	/**
 	 * Warning.
 	 */
-	Warning: "warning",
+	Warning: WARNING,
 
 	/**
 	 * Success.
 	 */
-	Success: "success",
+	Success: SUCCESS,
 
 	/**
 	 * Gray.
 	 */
-	Gray: "gray"
+	Gray: GRAY
 } as const;
 
 /**
  * Alert colors.
  */
-export type AlertColors = (typeof AlertColors)[keyof typeof AlertColors];
+export type AlertColor = (typeof AlertColors)[keyof typeof AlertColors];

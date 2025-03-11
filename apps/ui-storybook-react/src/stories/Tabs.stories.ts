@@ -1,7 +1,13 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
-import { Tabs, TabsVariants, IconsSolid } from "@twin.org/ui-components-react";
+import { Tabs, TabsVariants } from "@twin.org/ui-components-react";
+import {
+	ProfileCard,
+	UserSettings,
+	Bell,
+	Envelope
+} from "@twin.org/ui-components-react/icons/solid";
 import { createElement } from "react";
 
 const meta = {
@@ -66,12 +72,12 @@ export const WithIconsFullWidth: Story = {
 					{ className: "m-4 p-4 text-center" },
 					"Profile settings and information"
 				),
-				icon: IconsSolid.ProfileCard
+				icon: ProfileCard
 			},
 			{
 				title: "Settings",
 				content: createElement("div", { className: "m-4 p-4 text-center" }, "Application settings"),
-				icon: IconsSolid.UserSettings,
+				icon: UserSettings,
 				active: true
 			},
 			{
@@ -81,12 +87,12 @@ export const WithIconsFullWidth: Story = {
 					{ className: "m-4 p-4 text-center" },
 					"Notification preferences"
 				),
-				icon: IconsSolid.Bell
+				icon: Bell
 			},
 			{
 				title: "Messages",
 				content: createElement("div", { className: "m-4 p-4 text-center" }, "Your messages"),
-				icon: IconsSolid.Envelope
+				icon: Envelope
 			}
 		]
 	}

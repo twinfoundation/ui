@@ -50,9 +50,9 @@ export const Badge = memo(
 				<FlowbiteBadge
 					id={badgeId}
 					className={badgeClassName}
-					color={color as keyof ColorClasses}
+					color={color as keyof typeof BadgeColors}
 					size={size}
-					icon={typeof icon === "function" ? icon : undefined}
+					icon={icon}
 					{...rest}
 				>
 					{!onlyIcon && <span className={`font-medium ${icon ? "" : ""}`}>{children}</span>}

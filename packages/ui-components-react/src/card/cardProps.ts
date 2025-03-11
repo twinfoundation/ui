@@ -3,12 +3,21 @@
 import type { ReactNode } from "react";
 import type { BadgeProps } from "../badge/badgeProps";
 import type { ButtonProps } from "../button/buttonProps";
+import type {
+	TOP,
+	LEFT,
+	TOP_RIGHT,
+	TOP_LEFT,
+	BOTTOM_RIGHT,
+	BOTTOM_LEFT
+} from "../constants/positions";
+import type { SMALL, MEDIUM, LARGE, EXTRA_LARGE } from "../constants/sizes";
 import type { IconComponent } from "../types/iconTypes";
 
 /**
  * Icon size options for the card icon.
  */
-type CardIconSize = "sm" | "md" | "lg" | "xl";
+type CardIconSize = typeof SMALL | typeof MEDIUM | typeof LARGE | typeof EXTRA_LARGE;
 
 /**
  * The prop types for the CardImage component.
@@ -58,12 +67,17 @@ export interface CardButton extends Omit<ButtonProps, "buttonText"> {
 /**
  * Badge position options.
  */
-export type BadgePosition = "top-right" | "top-left" | "bottom-right" | "bottom-left" | "inline";
+export type BadgePosition =
+	| typeof TOP_RIGHT
+	| typeof TOP_LEFT
+	| typeof BOTTOM_RIGHT
+	| typeof BOTTOM_LEFT
+	| "inline";
 
 /**
  * Icon position options.
  */
-export type IconPosition = "top" | "left" | "top-absolute";
+export type IconPosition = typeof TOP | typeof LEFT | "top-absolute";
 
 /**
  * The props for the Card component.

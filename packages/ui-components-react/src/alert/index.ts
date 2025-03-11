@@ -2,5 +2,6 @@
 // SPDX-License-Identifier: Apache-2.0.
 
 export { Alert } from "./alert";
-export type * from "./alertColors";
-export type * from "./alertProps";
+export { AlertColors } from "./alertColors";
+export type { AlertColor } from "./alertColors";
+export type { AlertProps } from "./alertProps";

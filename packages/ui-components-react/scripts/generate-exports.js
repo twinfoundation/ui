@@ -39,20 +39,15 @@ const baseExports = {
 		import: './dist/es/index.mjs',
 		require: './dist/cjs/index.cjs'
 	},
-	'./IconsSolid': {
-		types: './dist/types/icons/iconsSolid.d.ts',
-		import: './dist/es/icons/iconsSolid.mjs',
-		require: './dist/cjs/icons/iconsSolid.js'
+	'./icons/outline': {
+		types: './dist/types/icons/outline.d.ts',
+		import: './dist/es/icons/outline.mjs',
+		require: './dist/cjs/icons/outline.js'
 	},
-	'./IconsOutline': {
-		types: './dist/types/icons/iconsOutline.d.ts',
-		import: './dist/es/icons/iconsOutline.mjs',
-		require: './dist/cjs/icons/iconsOutline.js'
-	},
-	'./icons': {
-		types: './dist/types/icons/index.d.ts',
-		import: './dist/es/icons/index.mjs',
-		require: './dist/cjs/icons/index.js'
+	'./icons/solid': {
+		types: './dist/types/icons/solid.d.ts',
+		import: './dist/es/icons/solid.mjs',
+		require: './dist/cjs/icons/solid.js'
 	},
 	'./css/*.css': './dist/css/*.css',
 	'./config/*.mjs': './dist/config/*.js'

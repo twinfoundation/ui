@@ -1,6 +1,7 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 
+import { SMALL, MEDIUM, LARGE } from "../constants/sizes";
 /**
  * Select sizes.
  */
@@ -9,20 +10,20 @@ export const SelectSizes = {
 	/**
 	 * Small.
 	 */
-	Small: "sm",
+	Small: SMALL,
 
 	/**
 	 * Medium.
 	 */
-	Medium: "md",
+	Medium: MEDIUM,
 
 	/**
 	 * Large.
 	 */
-	Large: "lg"
+	Large: LARGE
 } as const;
 
 /**
  * Select sizes.
  */
-export type SelectSizes = (typeof SelectSizes)[keyof typeof SelectSizes];
+export type SelectSize = (typeof SelectSizes)[keyof typeof SelectSizes];

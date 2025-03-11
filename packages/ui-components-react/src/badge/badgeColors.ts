@@ -1,31 +1,7 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 
-/**
- * Color classes mapping for badge styles
- */
-export interface ColorClasses {
-	/**
-	 * Gray color style
-	 */
-	gray: string;
-	/**
-	 * Failure color style
-	 */
-	failure: string;
-	/**
-	 * Warning color style
-	 */
-	warning: string;
-	/**
-	 * Success color style
-	 */
-	success: string;
-	/**
-	 * Info color style
-	 */
-	info: string;
-}
+import { GRAY, WARNING, SUCCESS, INFO, FAILURE } from "../constants/colors";
 
 /**
  * Badge colors.
@@ -35,30 +11,37 @@ export const BadgeColors = {
 	/**
 	 * Gray.
 	 */
-	Gray: "gray",
+	Gray: GRAY,
 
 	/**
 	 * Failure.
 	 */
-	Failure: "failure",
+	Failure: FAILURE,
 
 	/**
 	 * Warning.
 	 */
-	Warning: "warning",
+	Warning: WARNING,
 
 	/**
 	 * Success.
 	 */
-	Success: "success",
+	Success: SUCCESS,
 
 	/**
 	 * Info.
 	 */
-	Info: "info"
+	Info: INFO
 } as const;
 
 /**
  * Badge colors.
  */
-export type BadgeColors = (typeof BadgeColors)[keyof typeof BadgeColors];
+export type BadgeColor = (typeof BadgeColors)[keyof typeof BadgeColors];
+
+/**
+ * CSS classes for badge colors.
+ */
+export interface ColorClasses {
+	[key: string]: string;
+}

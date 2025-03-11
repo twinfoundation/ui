@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0.
 import type { TextInputProps as FlowbiteTextInputProps } from "flowbite-react";
 import type { PropsWithChildren } from "react";
-import type { TextInputColors } from "./textInputColors";
-import type { TextInputSizes } from "./textInputSizes";
+import type { TextInputColor } from "./textInputColors";
+import type { TextInputSize } from "./textInputSizes";
 import type { IconComponent } from "../types/iconTypes";
 
 /**
@@ -13,11 +13,11 @@ export interface TextInputProps extends PropsWithChildren<Omit<FlowbiteTextInput
 	/**
 	 * TextInput color.
 	 */
-	color?: TextInputColors;
+	color?: TextInputColor;
 	/**
 	 * TextInput sizing.
 	 */
-	sizing?: TextInputSizes;
+	sizing?: TextInputSize;
 	/**
 	 * TextInput id.
 	 */

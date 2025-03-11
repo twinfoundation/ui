@@ -2,7 +2,14 @@
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
-import { Alert, AlertColors, IconsSolid } from "@twin.org/ui-components-react";
+import { Alert, AlertColors } from "@twin.org/ui-components-react";
+import {
+	CheckCircle,
+	InfoCircle,
+	CloseCircle,
+	ExclamationCircle,
+	Eye
+} from "@twin.org/ui-components-react/icons/solid";
 import { type ReactNode, createElement } from "react";
 
 const meta = {
@@ -23,7 +30,7 @@ const meta = {
 			control: { type: "inline-radio" }
 		},
 		icon: {
-			options: Object.values(IconsSolid),
+			options: [CheckCircle, InfoCircle, CloseCircle, ExclamationCircle],
 			control: { type: "inline-radio" }
 		}
 	},
@@ -44,14 +51,14 @@ export const Success: Story = {
 	args: {
 		children: "Alert",
 		color: "success",
-		icon: IconsSolid.CheckCircle
+		icon: CheckCircle
 	}
 };
 
 export const Warn: Story = {
 	args: {
 		children: "Alert",
-		icon: IconsSolid.InfoCircle,
+		icon: InfoCircle,
 		color: "warning"
 	}
 };
@@ -59,7 +66,7 @@ export const Warn: Story = {
 export const Error: Story = {
 	args: {
 		children: "Alert",
-		icon: IconsSolid.CloseCircle,
+		icon: CloseCircle,
 		color: "error"
 	}
 };
@@ -83,7 +90,7 @@ export const GrayBordered: Story = {
 export const AdditionalContent: Story = {
 	args: {
 		children: "Alert",
-		icon: IconsSolid.ExclamationCircle,
+		icon: ExclamationCircle,
 		color: "info",
 		additionalContent: additionalContent()
 	}
@@ -92,7 +99,7 @@ export const AdditionalContent: Story = {
 export const WithDismissable: Story = {
 	args: {
 		children: "Alert",
-		icon: IconsSolid.ExclamationCircle,
+		icon: ExclamationCircle,
 		color: "gray",
 		onDismiss: handleDismiss
 	}
@@ -119,7 +126,7 @@ function additionalContent(): ReactNode {
 					className:
 						"mr-2 inline-flex items-center rounded-lg bg-cyan-700 px-3 py-1.5 text-center text-xs font-medium text-white hover:bg-cyan-800 focus:ring-4 focus:ring-cyan-300 dark:bg-cyan-800 dark:hover:bg-cyan-900"
 				},
-				createElement(IconsSolid.Eye, { className: "-ml-0.5 mr-2 h-4 w-4" }),
+				createElement(Eye, { className: "-ml-0.5 mr-2 h-4 w-4" }),
 				"View more"
 			),
 			createElement(

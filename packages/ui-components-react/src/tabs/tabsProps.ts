@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0.
 import type { TabsProps as FlowbiteTabsProps } from "flowbite-react";
 import type { ReactNode } from "react";
-import type { TabsVariants } from "./tabsVariants";
+import type { TabsVariant } from "./tabsVariants";
 import type { IconComponent } from "../types/iconTypes";
 
 /**
@@ -42,7 +42,7 @@ export interface TabsProps extends Omit<FlowbiteTabsProps, "color" | "label"> {
 	/**
 	 * The variant of the tabs
 	 */
-	variant?: TabsVariants;
+	variant?: TabsVariant;
 
 	/**
 	 * The tab items

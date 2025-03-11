@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0.
 import type { ButtonProps as FlowbiteButtonProps } from "flowbite-react";
 import type { ElementType, ReactNode } from "react";
-import type { ButtonColors } from "./buttonColors";
+import type { ButtonColor } from "./buttonColors";
 import type { ButtonSize } from "./buttonSizes";
 
 /**
@@ -17,7 +17,7 @@ export interface ButtonProps extends Omit<FlowbiteButtonProps, "color" | "label"
 	/**
 	 * The color variant of the button
 	 */
-	color?: ButtonColors;
+	color?: ButtonColor;
 
 	/**
 	 * The size variant of the button

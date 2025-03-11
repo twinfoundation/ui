@@ -1,6 +1,18 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 
+import {
+	CENTER,
+	CENTER_LEFT,
+	CENTER_RIGHT,
+	TOP_CENTER,
+	TOP_LEFT,
+	TOP_RIGHT,
+	BOTTOM_CENTER,
+	BOTTOM_LEFT,
+	BOTTOM_RIGHT
+} from "../constants/positions";
+
 /**
  * Modal positions.
  */
@@ -9,51 +21,50 @@ export const ModalPositions = {
 	/**
 	 * Center.
 	 */
-	Center: "center",
+	Center: CENTER,
 
 	/**
 	 * Center Left.
 	 */
-
-	CenterLeft: "center-left",
+	CenterLeft: CENTER_LEFT,
 
 	/**
 	 * Center Right.
 	 */
-	CenterRight: "center-right",
+	CenterRight: CENTER_RIGHT,
 
 	/**
 	 * Top Center.
 	 */
-	TopCenter: "top-center",
+	TopCenter: TOP_CENTER,
 
 	/**
 	 * Top Left.
 	 */
-	TopLeft: "top-left",
+	TopLeft: TOP_LEFT,
 
 	/**
 	 * Top Right.
 	 */
-	TopRight: "top-right",
+	TopRight: TOP_RIGHT,
 
 	/**
 	 * Bottom Center.
 	 */
-	BottomCenter: "bottom-center",
+	BottomCenter: BOTTOM_CENTER,
 
 	/**
 	 * Bottom Left.
 	 */
-	BottomLeft: "bottom-left",
+	BottomLeft: BOTTOM_LEFT,
 
 	/**
 	 * Bottom Right.
 	 */
-	BottomRight: "bottom-right"
+	BottomRight: BOTTOM_RIGHT
 } as const;
 
 /**
  * Modal positions.
  */
-export type ModalPositions = (typeof ModalPositions)[keyof typeof ModalPositions];
+export type ModalPosition = (typeof ModalPositions)[keyof typeof ModalPositions];

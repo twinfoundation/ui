@@ -3,7 +3,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 import { Badge, BadgeColors, BadgeSizes } from "@twin.org/ui-components-react";
-import { HiCheck, HiEye } from "react-icons/hi";
+import { Cart, Eye } from "@twin.org/ui-components-react/icons/solid";
 
 const meta = {
 	title: "Components/Badge",
@@ -65,14 +65,14 @@ export const Dismissable: Story = {
 export const WithIcon: Story = {
 	args: {
 		children: "Badge",
-		icon: HiEye
+		icon: Eye
 	}
 };
 
 export const OnlyIcon: Story = {
 	args: {
 		children: "Badge",
-		icon: HiCheck,
+		icon: Cart,
 		onlyIcon: true
 	}
 };

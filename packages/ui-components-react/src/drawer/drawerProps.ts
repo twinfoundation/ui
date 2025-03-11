@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0.
 import type { DrawerProps as FlowbiteDrawerProps } from "flowbite-react";
 import type { ElementType, ReactNode } from "react";
-import type { DrawerPositions } from "./drawerPositions";
-import type { ButtonColors } from "../button/buttonColors";
+import type { DrawerPosition } from "./drawerPositions";
+import type { ButtonColor } from "../button/buttonColors";
 import type { ButtonProps } from "../button/buttonProps";
 
 /**
@@ -33,7 +33,7 @@ export interface DrawerProps extends Omit<FlowbiteDrawerProps, "color" | "label"
 	/**
 	 * The position of the drawer.
 	 */
-	position?: DrawerPositions;
+	position?: DrawerPosition;
 
 	/**
 	 * The items to display in the drawer.
@@ -48,7 +48,7 @@ export interface DrawerProps extends Omit<FlowbiteDrawerProps, "color" | "label"
 	/**
 	 * The color variant of the button.
 	 */
-	buttonColor?: ButtonColors;
+	buttonColor?: ButtonColor;
 
 	/**
 	 * Whether to show the trigger button.

@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0.
 import type { FileInputProps as FlowbiteFileInputProps } from "flowbite-react";
 import type { ReactNode } from "react";
-import type { FileInputSizes } from "./fileInputSizes";
+import type { FileInputSize } from "./fileInputSizes";
 
 /**
  * FileInput props.
@@ -11,7 +11,7 @@ export interface FileInputProps extends Omit<FlowbiteFileInputProps, "color" | "
 	/**
 	 * The size of the file input
 	 */
-	sizing?: FileInputSizes;
+	sizing?: FileInputSize;
 
 	/**
 	 * Whether the file input is disabled

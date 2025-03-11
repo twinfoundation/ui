@@ -1,6 +1,27 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 
+import {
+	PRIMARY,
+	BLUE,
+	DARK,
+	FAILURE,
+	WARNING,
+	SUCCESS,
+	INFO,
+	GRAY,
+	GREEN,
+	LIGHT,
+	RED,
+	PURPLE,
+	YELLOW,
+	CYAN,
+	LIME,
+	INDIGO,
+	TEAL,
+	PINK
+} from "../constants/colors";
+
 /**
  * ToggleSwitch colors.
  */
@@ -9,95 +30,95 @@ export const ToggleSwitchColors = {
 	/**
 	 * Primary.
 	 */
-	Primary: "primary",
+	Primary: PRIMARY,
 
 	/**
 	 * Blue.
 	 */
-	Blue: "blue",
+	Blue: BLUE,
 
 	/**
 	 * Dark.
 	 */
-	Dark: "dark",
+	Dark: DARK,
 
 	/**
 	 * Failure.
 	 */
-	Failure: "failure",
+	Failure: FAILURE,
 
 	/**
 	 * Warning.
 	 */
-	Warning: "warning",
+	Warning: WARNING,
 
 	/**
 	 * Success.
 	 */
-	Success: "success",
+	Success: SUCCESS,
 
 	/**
 	 * Info.
 	 */
-	Info: "info",
+	Info: INFO,
 
 	/**
 	 * Gray.
 	 */
-	Gray: "gray",
+	Gray: GRAY,
 
 	/**
 	 * Green.
 	 */
-	Green: "green",
+	Green: GREEN,
 
 	/**
 	 * Light.
 	 */
-	Light: "light",
+	Light: LIGHT,
 
 	/**
 	 * Red.
 	 */
-	Red: "red",
+	Red: RED,
 
 	/**
 	 * Purple.
 	 */
-	Purple: "purple",
+	Purple: PURPLE,
 
 	/**
 	 * Yellow.
 	 */
-	Yellow: "yellow",
+	Yellow: YELLOW,
 
 	/**
 	 * Cyan.
 	 */
-	Cyan: "cyan",
+	Cyan: CYAN,
 
 	/**
 	 * Lime.
 	 */
-	Lime: "lime",
+	Lime: LIME,
 
 	/**
 	 * Indigo.
 	 */
-	Indigo: "indigo",
+	Indigo: INDIGO,
 
 	/**
 	 * Teal.
 	 */
-	Teal: "teal",
+	Teal: TEAL,
 
 	/**
 	 * Pink.
 	 */
-	Pink: "pink"
+	Pink: PINK
 } as const;
 
 /**
  * ToggleSwitch colors.
  */
-export type ToggleSwitchColors = (typeof ToggleSwitchColors)[keyof typeof ToggleSwitchColors];
+export type ToggleSwitchColor = (typeof ToggleSwitchColors)[keyof typeof ToggleSwitchColors];

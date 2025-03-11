@@ -1,6 +1,8 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 
+import { TOP, RIGHT, BOTTOM, LEFT } from "../constants/positions";
+
 /**
  * Tooltip placements.
  */
@@ -9,25 +11,25 @@ export const TooltipPlacements = {
 	/**
 	 * Top.
 	 */
-	Top: "top",
+	Top: TOP,
 
 	/**
 	 * Right.
 	 */
-	Right: "right",
+	Right: RIGHT,
 
 	/**
 	 * Bottom.
 	 */
-	Bottom: "bottom",
+	Bottom: BOTTOM,
 
 	/**
 	 * Left.
 	 */
-	Left: "left"
+	Left: LEFT
 } as const;
 
 /**
  * Tooltip placements.
  */
-export type TooltipPlacements = (typeof TooltipPlacements)[keyof typeof TooltipPlacements];
+export type TooltipPlacement = (typeof TooltipPlacements)[keyof typeof TooltipPlacements];

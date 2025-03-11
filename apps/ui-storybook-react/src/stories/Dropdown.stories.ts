@@ -2,12 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
-import {
-	Dropdown,
-	DropdownPositions,
-	DropdownSizes,
-	IconsSolid
-} from "@twin.org/ui-components-react";
+import { Dropdown, DropdownPositions, DropdownSizes } from "@twin.org/ui-components-react";
+import { CaretDown, CloseCircle } from "@twin.org/ui-components-react/icons/solid";
 import { createElement } from "react";
 
 // Common dropdown items to reduce repetition
@@ -51,14 +47,14 @@ export const Default: Story = {};
 
 export const WithIcon: Story = {
 	args: {
-		icon: IconsSolid.CaretDown
+		icon: CaretDown
 	}
 };
 
 // Layout variations
 export const WithHeader: Story = {
 	args: {
-		icon: IconsSolid.CaretDown,
+		icon: CaretDown,
 		header: createElement(
 			"div",
 			null,
@@ -78,7 +74,7 @@ export const WithHeader: Story = {
 
 export const Inline: Story = {
 	args: {
-		icon: IconsSolid.CaretDown,
+		icon: CaretDown,
 		inline: true
 	}
 };
@@ -86,14 +82,14 @@ export const Inline: Story = {
 // Size variations
 export const Small: Story = {
 	args: {
-		icon: IconsSolid.CaretDown,
+		icon: CaretDown,
 		size: DropdownSizes.Small
 	}
 };
 
 export const Large: Story = {
 	args: {
-		icon: IconsSolid.CaretDown,
+		icon: CaretDown,
 		size: DropdownSizes.Large
 	}
 };
@@ -101,20 +97,20 @@ export const Large: Story = {
 // Item customization examples
 export const WithItemIcon: Story = {
 	args: {
-		icon: IconsSolid.CaretDown,
+		icon: CaretDown,
 		items: [
 			{ label: "Dashboard" },
 			{ label: "Settings" },
 			{ label: "Earnings" },
 			{ divider: true },
-			{ label: "Sign out", icon: IconsSolid.CloseCircle }
+			{ label: "Sign out", icon: CloseCircle }
 		]
 	}
 };
 
 export const WithInteractiveItems: Story = {
 	args: {
-		icon: IconsSolid.CaretDown,
+		icon: CaretDown,
 		items: [
 			{
 				label: "Dashboard",
@@ -125,20 +121,20 @@ export const WithInteractiveItems: Story = {
 			{ label: "Settings" },
 			{ label: "Earnings" },
 			{ divider: true },
-			{ label: "Sign out", icon: IconsSolid.CloseCircle }
+			{ label: "Sign out", icon: CloseCircle }
 		]
 	}
 };
 
 export const WithStyledItems: Story = {
 	args: {
-		icon: IconsSolid.CaretDown,
+		icon: CaretDown,
 		items: [
 			{ label: "Dashboard", className: "text-red-500" },
 			{ label: "Settings", className: "text-gray-800 bg-gray-100" },
 			{ label: "Earnings" },
 			{ divider: true },
-			{ label: "Sign out", icon: IconsSolid.CloseCircle, className: "text-red-500" }
+			{ label: "Sign out", icon: CloseCircle, className: "text-red-500" }
 		]
 	}
 };

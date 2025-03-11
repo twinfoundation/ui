@@ -2,7 +2,15 @@
 // SPDX-License-Identifier: Apache-2.0.
 // cspell:ignore centered autodocs
 import type { Meta, StoryObj } from "@storybook/react";
-import { Card, IconsSolid, BadgeColors } from "@twin.org/ui-components-react";
+import { Card, BadgeColors } from "@twin.org/ui-components-react";
+import {
+	Star,
+	Fire,
+	SalePercent,
+	ArrowRightAlt,
+	ShoppingBag,
+	CartPlus
+} from "@twin.org/ui-components-react/icons/solid";
 
 const meta = {
 	title: "Components/Card",
@@ -70,7 +78,7 @@ export const WithIcon: Story = {
 		title: "Card with Icon",
 		content: "This card displays an icon at the top.",
 		icon: {
-			component: IconsSolid.Star,
+			component: Star,
 			size: "lg",
 			className: "text-yellow-500"
 		}
@@ -82,7 +90,7 @@ export const WithIconLeft: Story = {
 		title: "Card with Left-aligned Icon",
 		content: "This card displays an icon aligned to the left of the title.",
 		icon: {
-			component: IconsSolid.Star,
+			component: Star,
 			size: "lg",
 			className: "text-yellow-500"
 		},
@@ -95,7 +103,7 @@ export const WithAbsoluteIcon: Story = {
 		title: "Card with Absolute Positioned Icon",
 		content: "This card displays an icon with absolute positioning in the top left corner.",
 		icon: {
-			component: IconsSolid.Star,
+			component: Star,
 			size: "lg",
 			className: "text-yellow-500"
 		},
@@ -137,7 +145,7 @@ export const WithInlineBadge: Story = {
 		},
 		badgePosition: "inline",
 		icon: {
-			component: IconsSolid.Fire,
+			component: Fire,
 			size: "md",
 			className: "text-red-500"
 		},
@@ -152,7 +160,7 @@ export const WithButton: Story = {
 		buttons: [
 			{
 				label: "Learn More",
-				icon: IconsSolid.ShoppingBag,
+				icon: ShoppingBag,
 				color: "primary",
 
 				onClick: () => {
@@ -171,12 +179,12 @@ export const WithMultipleButtons: Story = {
 		buttons: [
 			{
 				label: "Primary",
-				icon: IconsSolid.ArrowRightAlt,
+				icon: ArrowRightAlt,
 				color: "primary"
 			},
 			{
 				label: "Secondary",
-				icon: IconsSolid.CartPlus,
+				icon: CartPlus,
 				color: "secondary"
 			}
 		]
@@ -222,7 +230,7 @@ export const FullFeatured: Story = {
 			</div>
 		),
 		icon: {
-			component: IconsSolid.SalePercent,
+			component: SalePercent,
 			size: "xl",
 			className: "text-purple-500"
 		},
@@ -233,7 +241,7 @@ export const FullFeatured: Story = {
 		buttons: [
 			{
 				label: "Primary Action",
-				icon: IconsSolid.ArrowRightAlt,
+				icon: ArrowRightAlt,
 				color: "primary",
 
 				onClick: () => {
@@ -243,7 +251,7 @@ export const FullFeatured: Story = {
 			},
 			{
 				label: "Secondary Action",
-				icon: IconsSolid.CartPlus,
+				icon: CartPlus,
 				color: "secondary"
 			}
 		]
@@ -255,7 +263,7 @@ export const OptimizedLayout: Story = {
 		title: "Optimized Layout Example",
 		content: "This card uses the improved layout options with left-aligned icon and inline badge.",
 		icon: {
-			component: IconsSolid.SalePercent,
+			component: SalePercent,
 			size: "md",
 			className: "text-purple-500"
 		},
@@ -268,7 +276,7 @@ export const OptimizedLayout: Story = {
 		buttons: [
 			{
 				label: "Learn More",
-				icon: IconsSolid.ArrowRightAlt,
+				icon: ArrowRightAlt,
 				color: "primary",
 
 				onClick: () => {
@@ -285,7 +293,7 @@ export const CleanLayout: Story = {
 		title: "Clean Layout Example",
 		content: "This card uses absolute positioning for the icon to create a cleaner layout.",
 		icon: {
-			component: IconsSolid.SalePercent,
+			component: SalePercent,
 			size: "md",
 			className: "text-purple-500"
 		},
@@ -297,7 +305,7 @@ export const CleanLayout: Story = {
 		buttons: [
 			{
 				label: "Learn More",
-				icon: IconsSolid.ArrowRightAlt,
+				icon: ArrowRightAlt,
 				color: "primary",
 
 				onClick: () => {
