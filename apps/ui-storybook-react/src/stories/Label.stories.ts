@@ -7,20 +7,27 @@ const meta = {
 	title: "Components/Label",
 	component: Label,
 	argTypes: {},
-	args: {
-		value: "Label"
-	}
+	args: {}
 } satisfies Meta<typeof Label>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-	args: {}
+	args: {
+		value: "Label"
+	}
 };
 
 export const CustomStyle: Story = {
 	args: {
-		className: "text-red-500"
+		className: "text-red-500",
+		value: "Label"
+	}
+};
+
+export const WithChildren: Story = {
+	args: {
+		children: "Label Text from Children"
 	}
 };

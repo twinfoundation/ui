@@ -18,5 +18,5 @@ export interface LabelProps extends PropsWithChildren<Omit<FlowbiteLabelProps, "
 	/**
 	 * The value of the label.
 	 */
-	value: string;
+	value?: string;
 }
