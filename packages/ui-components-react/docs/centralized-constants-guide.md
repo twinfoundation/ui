@@ -4,9 +4,9 @@ This guide explains how to use the centralized constants system in the TWIN UI C
 
 ## Overview
 
-We've refactored the UI component library to use centralized constants for common values like colors, sizes, positions, and more. This approach offers several benefits:
+We've refactored the UI component library to use centralized constants for common values like colors, sizes, positions, and more. To use these constants with components, it is recommended to import the component objects (e.g., `ButtonColors`, `ButtonSizes`, `AlertColors`). This approach offers several benefits:
 
-1. **Improved Tree-Shaking**: Direct imports of individual constants allow bundlers to eliminate unused code more effectively
+1. **Improved Tree-Shaking**: Using component objects allows bundlers to eliminate unused code more effectively
 2. **Reduced Duplication**: Common values are defined once and reused across components
 3. **Better Maintainability**: Changes to constant values only need to be made in one place
 4. **Type Safety**: TypeScript type definitions ensure type safety while using string constants
@@ -25,27 +25,9 @@ Constants are organized by category in the `/src/constants` directory:
 | `animations.ts` | Animation constants | DURATION_150, DURATION_300      |
 | `triggers.ts`   | Trigger constants   | HOVER, CLICK                    |
 
-## Usage Examples
+## Usage Example
 
-### Direct Imports (Recommended for Tree-Shaking)
-
-```typescript
-// Import only the constants you need
-import { PRIMARY, SUCCESS } from "@twin.org/ui-components-react/src/constants/colors";
-import { MEDIUM } from "@twin.org/ui-components-react/src/constants/sizes";
-
-// Use in your component
-function MyComponent() {
-  return (
-    <div>
-      <Button color={PRIMARY} size={MEDIUM}>Primary Button</Button>
-      <Alert color={SUCCESS}>Success Alert</Alert>
-    </div>
-  );
-}
-```
-
-### Component Objects (Backward Compatibility)
+To use the centralized constants with components, import the component objects (e.g., `ButtonColors`, `ButtonSizes`, `AlertColors`) and then access the desired constant as a property of the object.
 
 ```typescript
 // Import component objects
@@ -55,7 +37,7 @@ import { ButtonColors, ButtonSizes, AlertColors } from "@twin.org/ui-components-
 function MyComponent() {
   return (
     <div>
-      <Button color={ButtonColors.Primary} size={ButtonSizes.Medium}>Primary Button</Button>
+      <Button color={ButtonColors.Secondary} size={ButtonSizes.Medium}>Secondary Button</Button>
       <Alert color={AlertColors.Success}>Success Alert</Alert>
     </div>
   );
@@ -104,19 +86,7 @@ export interface ButtonProps {
 
 If you're updating existing code to use the new centralized constants:
 
-1. **For New Projects**: Use direct imports of constants for optimal tree-shaking
-
-   ```typescript
-   import { PRIMARY } from '@twin.org/ui-components-react/src/constants/colors';
-   ```
-
-2. **For Existing Projects**: You can continue using component objects for backward compatibility
-
-   ```typescript
-   import { ButtonColors } from '@twin.org/ui-components-react';
-   ```
-
-3. **Gradual Migration**: Consider gradually migrating to direct imports for better tree-shaking
+1.  Use component objects (e.g., `ButtonColors`) for compatibility.
 
 ## Implementation Details for Contributors
 
