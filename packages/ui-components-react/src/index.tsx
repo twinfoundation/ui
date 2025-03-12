@@ -138,29 +138,6 @@ export {
 	OUTSIDE
 } from "./constants/positions";
 
-// Colors
-export {
-	INFO,
-	ERROR,
-	WARNING,
-	SUCCESS,
-	GRAY,
-	PRIMARY,
-	SECONDARY,
-	PLAIN,
-	DARK,
-	FAILURE,
-	ORANGE,
-	GREEN,
-	PURPLE,
-	YELLOW,
-	PINK,
-	INDIGO
-} from "./constants/colors";
-
-// Sizes
-export { EXTRA_SMALL, SMALL, MEDIUM, LARGE, EXTRA_LARGE } from "./constants/sizes";
-
 // Layouts
 export { NAVIGATION, PAGINATION, TABLE } from "./constants/layouts";
 
