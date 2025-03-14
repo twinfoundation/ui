@@ -139,7 +139,7 @@ export const Sidebar = memo(
 						)}
 						{children}
 					</div>
-					{(footerContent || footerItems) && (
+					{(footerContent ?? footerItems) && (
 						<div className="flex-shrink-0" data-testid="sidebar-footer">
 							{footerContent}
 							{footerItems && (

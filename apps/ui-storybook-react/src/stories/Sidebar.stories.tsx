@@ -26,6 +26,9 @@ const meta = {
 } satisfies Meta<typeof Sidebar>;
 
 export default meta;
+/**
+ * Type for Sidebar component stories.
+ */
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {

@@ -87,15 +87,15 @@ export interface SidebarProps extends Omit<FlowbiteSidebarProps, "label"> {
 	 * Children elements
 	 */
 	children?: ReactNode;
-	/*
+	/**
 	 * Footer content of the item
 	 */
 	footerContent?: ReactNode;
-	/*
+	/**
 	 * Footer items of the item
 	 */
 	footerItems?: SidebarItem[];
-	/*
+	/**
 	 * Header content of the item
 	 */
 	header?: ReactNode;
