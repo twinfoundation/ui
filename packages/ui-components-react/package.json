@@ -22,7 +22,7 @@
 		"bundle:cjs": "rollup --config rollup.config.mjs --environment MODULE:cjs",
 		"bundle": "npm run bundle:esm && npm run bundle:cjs",
 		"dist": "npm run clean && npm run build && npm run bundle",
-		"dev:watch": "concurrently \"npm run build -- --watch\" \"nodemon --ignore dist/ --watch src/ --exec \\\"npm run bundle\\\"\"",
+		"dev:watch": "concurrently \"npm run build -- --watch\" \"nodemon --watch src --ext ts,tsx --ignore dist/ --exec \\\"npm run bundle\\\"\"",
 		"dev": "npm run clean && npm run build && npm run dev:watch",
 		"dist:no-test": "npm run clean && npm run build && npm run bundle",
 		"lint": "eslint .",
