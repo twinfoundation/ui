@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/ui-components-react",
-	"version": "0.0.1-next.38",
+	"version": "0.0.1-next.39",
 	"description": "UI components for react",
 	"repository": {
 		"type": "git",
@@ -30,7 +30,7 @@
 		"postbundle": "node scripts/copy-compatibility.js"
 	},
 	"dependencies": {
-		"@twin.org/ui-tailwind": "0.0.1-next.38",
+		"@twin.org/ui-tailwind": "0.0.1-next.39",
 		"flowbite-react-icons": "1.2.0",
 		"prop-types": "15.8.1"
 	},
@@ -42,8 +42,8 @@
 		"@rollup/plugin-terser": "0.4.4",
 		"@svgr/rollup": "8.1.0",
 		"@types/prop-types": "15.7.14",
-		"@types/react": "19.0.8",
-		"@types/react-dom": "19.0.3",
+		"@types/react": "19.0.10",
+		"@types/react-dom": "19.0.4",
 		"autoprefixer": "10.4.20",
 		"concurrently": "7.6.0",
 		"eslint": "8.57.0",
