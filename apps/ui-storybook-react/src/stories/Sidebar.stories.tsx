@@ -272,7 +272,7 @@ export const WithFullHeightParent: Story = {
 		),
 		header: (
 			<div className="p-2">
-				<h1 className="text-xl font-bold">ASDA UK</h1>
+				<h1 className="text-xl font-bold">AS DA UK</h1>
 				<h2 className="text-tertiary">Organization</h2>
 			</div>
 		)
