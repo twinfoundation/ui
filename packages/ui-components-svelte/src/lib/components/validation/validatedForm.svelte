@@ -20,6 +20,7 @@
 		resultTimeout?: number;
 		fields?: Snippet;
 		afterAction?: Snippet;
+		class?: string;
 	}
 
 	let {
@@ -36,7 +37,8 @@
 		resultIsError = $bindable(false),
 		resultTimeout = $bindable(5000),
 		fields,
-		afterAction
+		afterAction,
+		...rest
 	}: Props = $props();
 
 	let timerId: NodeJS.Timeout | undefined;
@@ -91,7 +93,7 @@
 	}
 </script>
 
-<Card class="w-96">
+<Card class={rest.class ?? 'w-96'}>
 	<form class="flex flex-col gap-4">
 		<div class="flex flex-row justify-between gap-5">
 			<Heading tag="h5">{title}</Heading>
