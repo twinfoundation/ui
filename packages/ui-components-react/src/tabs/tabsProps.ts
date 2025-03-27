@@ -47,5 +47,20 @@ export interface TabsProps extends Omit<FlowbiteTabsProps, "color" | "label"> {
 	/**
 	 * The tab items
 	 */
-	items?: TabItem[];
+	items: TabItem[];
+
+	/**
+	 * The active tab index
+	 */
+	activeTab?: number;
+
+	/**
+	 * The callback function to handle the active tab change
+	 */
+	onActiveTabChange?: (index: number) => void;
+
+	/**
+	 * Aria label for the tabs navigation
+	 */
+	"aria-label"?: string;
 }
