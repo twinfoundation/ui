@@ -16,8 +16,9 @@ export interface TabItem {
 
 	/**
 	 * Content of the tab
+	 * Can be null for inactive tabs to prevent unnecessary rendering
 	 */
-	content: ReactNode;
+	content: ReactNode | null;
 
 	/**
 	 * Icon component for the tab
@@ -33,6 +34,18 @@ export interface TabItem {
 	 * Whether the tab is disabled
 	 */
 	disabled?: boolean;
+
+	/**
+	 * Whether the tab content is loading
+	 * Used to show loading state when content is being fetched
+	 */
+	isLoading?: boolean;
+
+	/**
+	 * Optional loading placeholder
+	 * If not provided, no placeholder will be shown during loading
+	 */
+	loadingPlaceholder?: ReactNode;
 }
 
 /**

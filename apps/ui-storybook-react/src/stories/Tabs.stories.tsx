@@ -238,3 +238,103 @@ export const Auth: Story = {
 	},
 	render: args => <TabStory args={args} />
 };
+
+/**
+ * Story showcasing loading states when switching between tabs.
+ */
+export const WithLoadingStates: Story = {
+	args: {
+		variant: TabsVariants.Underline,
+		items: []
+	},
+	render: (args): JSX.Element => {
+		const WithLoadingStatesStory = (): JSX.Element => {
+			const [activeTab, setActiveTab] = useState(0);
+			const [isLoading, setIsLoading] = useState(false);
+			const [loadingTabIndex, setLoadingTabIndex] = useState<number | null>(null);
+
+			// Sample loading placeholder that can be customized
+			const loadingPlaceholder = (
+				<div className="animate-pulse space-y-4 p-4">
+					<div className="mb-4 h-8 w-3/4 rounded bg-gray-200" />
+					<div className="space-y-3">
+						<div className="h-4 w-full rounded bg-gray-200" />
+						<div className="h-4 w-5/6 rounded bg-gray-200" />
+						<div className="h-4 w-4/6 rounded bg-gray-200" />
+					</div>
+					<div className="mt-4 h-12 w-1/2 rounded bg-gray-200" />
+				</div>
+			);
+
+			// Create tab items with loading states
+			const tabItemsWithLoading: TabItem[] = [
+				{
+					title: "Dashboard",
+					content: (
+						<div className="m-4 p-4 text-center">Dashboard content with stats and charts</div>
+					),
+					isLoading: loadingTabIndex === 0 && isLoading,
+					loadingPlaceholder
+				},
+				{
+					title: "User Profile",
+					content: <div className="m-4 p-4 text-center">User profile information and settings</div>,
+					isLoading: loadingTabIndex === 1 && isLoading,
+					loadingPlaceholder
+				},
+				{
+					title: "Analytics",
+					content: <div className="m-4 p-4 text-center">Analytics data and reports</div>,
+					isLoading: loadingTabIndex === 2 && isLoading,
+					loadingPlaceholder
+				}
+			];
+
+			const handleTabChange = (index: number): void => {
+				// Simulate content loading when changing tabs
+				setLoadingTabIndex(index);
+				setIsLoading(true);
+				setActiveTab(index);
+
+				// Simulate API request completion after a delay
+				setTimeout(() => {
+					setIsLoading(false);
+				}, 500);
+			};
+
+			return (
+				<div className="flex flex-col gap-6">
+					<div className="flex items-center gap-4">
+						<div className="text-sm text-gray-500">Current tab: {activeTab}</div>
+						<div className="text-sm text-gray-500">
+							Status: {isLoading ? "Loading..." : "Content loaded"}
+						</div>
+						<button
+							onClick={() => handleTabChange(activeTab)}
+							className="rounded bg-gray-200 px-4 py-2 text-sm hover:bg-gray-300"
+						>
+							Reload Current Tab
+						</button>
+					</div>
+					<Tabs
+						{...args}
+						items={tabItemsWithLoading}
+						activeTab={activeTab}
+						onActiveTabChange={handleTabChange}
+					/>
+					<div className="mt-4 text-sm text-gray-500">
+						<p>This example demonstrates loading states in tabs:</p>
+						<ul className="mt-2 list-disc pl-5">
+							<li>Click on a tab to see the loading placeholder</li>
+							<li>Content will load after a 0.5 second delay</li>
+							<li>Only the active tab is rendered in the DOM</li>
+							<li>Click "Reload Current Tab" to simulate reloading the current tab</li>
+						</ul>
+					</div>
+				</div>
+			);
+		};
+
+		return <WithLoadingStatesStory />;
+	}
+};
