@@ -157,7 +157,7 @@ export type { TableProps } from "./table/tableProps";
 // Tabs
 export { Tabs } from "./tabs/tabs";
 export { TabsVariants } from "./tabs/tabsVariants";
-export type { TabsProps } from "./tabs/tabsProps";
+export type { TabsProps, TabItem } from "./tabs/tabsProps";
 
 // TextInput
 export { TextInput } from "./textInput/textInput";
