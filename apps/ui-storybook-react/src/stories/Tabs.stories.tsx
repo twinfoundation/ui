@@ -9,7 +9,7 @@ import {
 	Bell,
 	Envelope
 } from "@twin.org/ui-components-react/icons/solid";
-import { useState } from "react";
+import { useState, type JSX } from "react";
 
 const defaultItems: TabItem[] = [
 	{
@@ -31,7 +31,7 @@ const defaultItems: TabItem[] = [
 	}
 ];
 
-const LoginForm = () => (
+const LoginForm = (): JSX.Element => (
 	<div className="flex flex-col gap-8">
 		<div>
 			<h1 className="text-brand-primary mb-4 text-6xl font-normal">Empowering</h1>
@@ -68,7 +68,7 @@ const LoginForm = () => (
 	</div>
 );
 
-const RegisterForm = () => (
+const RegisterForm = (): JSX.Element => (
 	<div className="flex min-h-[400px] items-center justify-center">
 		<h2 className="text-2xl font-normal text-gray-500">Register Form Content</h2>
 	</div>
@@ -105,14 +105,24 @@ const meta = {
 } satisfies Meta<typeof Tabs>;
 
 export default meta;
+
+/**
+ * Represents a Storybook story object for the Tabs component.
+ */
 type Story = StoryObj<typeof meta>;
 
-const TabStory = ({ args }: { args: TabsProps }) => {
+/**
+ * Renders a story wrapper component that handles tab state.
+ */
+const TabStory = ({ args }: { args: TabsProps }): JSX.Element => {
 	const [activeTab, setActiveTab] = useState(args.activeTab ?? 1);
 
 	return <Tabs {...args} activeTab={activeTab} onActiveTabChange={setActiveTab} />;
 };
 
+/**
+ * Default story for the Tabs component.
+ */
 export const Default: Story = {
 	args: {
 		variant: TabsVariants.Default,
@@ -121,6 +131,9 @@ export const Default: Story = {
 	render: args => <TabStory args={args} />
 };
 
+/**
+ * Story showcasing the underline variant of the Tabs component.
+ */
 export const Underline: Story = {
 	args: {
 		variant: TabsVariants.Underline,
@@ -129,6 +142,9 @@ export const Underline: Story = {
 	render: args => <TabStory args={args} />
 };
 
+/**
+ * Story showcasing the pills variant of the Tabs component.
+ */
 export const Pills: Story = {
 	args: {
 		variant: TabsVariants.Pills,
@@ -137,6 +153,9 @@ export const Pills: Story = {
 	render: args => <TabStory args={args} />
 };
 
+/**
+ * Story showcasing the full width variant of the Tabs component.
+ */
 export const FullWidth: Story = {
 	args: {
 		variant: TabsVariants.FullWidth,
@@ -168,6 +187,9 @@ const iconItems: TabItem[] = [
 	}
 ];
 
+/**
+ * Story showcasing tabs with icons in full width variant.
+ */
 export const WithIconsFullWidth: Story = {
 	args: {
 		variant: TabsVariants.FullWidth,
@@ -177,28 +199,37 @@ export const WithIconsFullWidth: Story = {
 	render: args => <TabStory args={args} />
 };
 
+/**
+ * Story demonstrating controlled tabs behavior with state management.
+ */
 export const ControlledTabs: Story = {
 	args: {
 		variant: TabsVariants.Underline,
 		items: iconItems.slice(0, 3)
 	},
-	render: function ControlledTabsStory(args) {
-		const [activeTab, setActiveTab] = useState(0);
+	render: (args): JSX.Element => {
+		const ControlledTabsStory = (): JSX.Element => {
+			const [activeTab, setActiveTab] = useState(0);
 
-		const handleTabChange = (index: number) => {
-			setActiveTab(index);
-			console.log(`Tab changed to index: ${index}`);
+			const handleTabChange = (index: number): void => {
+				setActiveTab(index);
+			};
+
+			return (
+				<div className="flex flex-col gap-4">
+					<div className="text-sm text-gray-500">Current active tab index: {activeTab}</div>
+					<Tabs {...args} activeTab={activeTab} onActiveTabChange={handleTabChange} />
+				</div>
+			);
 		};
 
-		return (
-			<div className="flex flex-col gap-4">
-				<div className="text-sm text-gray-500">Current active tab index: {activeTab}</div>
-				<Tabs {...args} activeTab={activeTab} onActiveTabChange={handleTabChange} />
-			</div>
-		);
+		return <ControlledTabsStory />;
 	}
 };
 
+/**
+ * Story showcasing authentication tabs with register and login forms.
+ */
 export const Auth: Story = {
 	args: {
 		variant: TabsVariants.Underline,
