@@ -96,6 +96,9 @@
 		"base58": {
 			"invalidCharacter": "Data contains a character \"{invalidCharacter}\" which is not in the charset"
 		},
+		"jsonHelper": {
+			"failedPatch": "Failed to patch the JSON object, patch index \"{index}\" failed"
+		},
 		"qr": {
 			"typeNumberRange": "The typeNumber parameter should be a number >= 0 and <= 40, it is {typeNumber}",
 			"dataOverflow": "There is not enough space in the QR code to store the data, {lengthInBits} > {totalDataCount}, try increasing the typeNumber from {typeNumber}, or use 0 for auto detect",
