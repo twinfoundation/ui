@@ -5,13 +5,22 @@ import fs from 'node:fs/promises';
 
 /**
  * Load a JSON file.
- * @param filePath The path th load as JSON.
+ * @param filePath The path to load as JSON.
  * @returns The loaded JSON.
  */
 export async function loadJson(filePath) {
 	const content = await fs.readFile(filePath, 'utf8');
 
 	return JSON.parse(content);
+}
+
+/**
+ * Save a JSON file.
+ * @param filePath The path to save the object as JSON.
+ * @param obj The object to save as JSON.
+ */
+export async function saveJson(filePath, obj) {
+	await fs.writeFile(filePath, `${JSON.stringify(obj, undefined, '\t')}\n`, 'utf8');
 }
 
 /**

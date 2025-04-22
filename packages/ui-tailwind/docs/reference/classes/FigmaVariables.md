@@ -4,13 +4,13 @@ The figma variable processing.
 
 ## Constructors
 
-### new FigmaVariables()
+### Constructor
 
-> **new FigmaVariables**(): [`FigmaVariables`](FigmaVariables.md)
+> **new FigmaVariables**(): `FigmaVariables`
 
 #### Returns
 
-[`FigmaVariables`](FigmaVariables.md)
+`FigmaVariables`
 
 ## Methods
 

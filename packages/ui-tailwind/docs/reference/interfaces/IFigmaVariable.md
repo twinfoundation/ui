@@ -30,6 +30,6 @@ Is the variable an alias.
 
 ### value
 
-> **value**: `string` \| `number` \| [`IFigmaVariableAlias`](IFigmaVariableAlias.md) \| \{\}
+> **value**: `string` \| `number` \| [`IFigmaVariableAlias`](IFigmaVariableAlias.md) \| \{[`id`: `string`]: `unknown`; \}
 
 The value of the variable.

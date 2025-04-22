@@ -1,0 +1,6 @@
+{
+	"packages/ui-tailwind": "0.0.1",
+	"packages/ui-components-react": "0.0.1",
+	"packages/ui-components-svelte": "0.0.1",
+	"apps/ui-storybook-react": "0.0.1"
+}

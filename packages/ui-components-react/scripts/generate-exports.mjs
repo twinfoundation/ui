@@ -27,8 +27,7 @@ let packageJson;
 try {
 	packageJson = JSON.parse(fs.readFileSync(PACKAGE_JSON_PATH, 'utf8'));
 } catch (error) {
-	// eslint-disable-next-line no-console
-	console.error(`❌ Failed to read package.json: ${error.message}`);
+	process.stderr.write(`❌ Failed to read package.json: ${error.message}\n`);
 	process.exit(1);
 }
 
@@ -86,8 +85,7 @@ function getComponentDirs(dirPath, excludeDirs = ['util', 'css']) {
 			}
 		});
 	} catch (error) {
-		// eslint-disable-next-line no-console
-		console.error(`❌ Failed to scan directory ${dirPath}: ${error.message}`);
+		process.stderr.write(`❌ Failed to scan directory ${dirPath}: ${error.message}\n`);
 		return [];
 	}
 }
@@ -102,8 +100,7 @@ function scanStorybookComponents() {
 
 	try {
 		if (!fs.existsSync(STORYBOOK_DIR)) {
-			// eslint-disable-next-line no-console
-			console.warn(`⚠️ Storybook directory not found at ${STORYBOOK_DIR}`);
+			process.stdout.write(`⚠️ Storybook directory not found at ${STORYBOOK_DIR}\n`);
 			return [];
 		}
 
@@ -152,8 +149,7 @@ function scanStorybookComponents() {
 		scanDir(STORYBOOK_DIR);
 		return Array.from(components);
 	} catch (error) {
-		// eslint-disable-next-line no-console
-		console.error(`❌ Failed to scan storybook: ${error.message}`);
+		process.stderr.write(`❌ Failed to scan storybook: ${error.message}\n`);
 		return [];
 	}
 }
@@ -165,18 +161,17 @@ function scanStorybookComponents() {
 function generateExports() {
 	// Get components from src directory
 	const srcComponents = getComponentDirs(SRC_DIR);
-	// eslint-disable-next-line no-console
-	console.log(`📦 Found ${srcComponents.length} components in src directory`);
+	process.stdout.write(`📦 Found ${srcComponents.length} components in src directory\n`);
 
 	// Get components from storybook
 	const storybookComponents = scanStorybookComponents();
-	// eslint-disable-next-line no-console
-	console.log(`📚 Found ${storybookComponents.length} components referenced in storybook`);
+	process.stdout.write(
+		`📚 Found ${storybookComponents.length} components referenced in storybook\n`
+	);
 
 	// Combine both sets of components
 	const allComponents = new Set([...srcComponents, ...storybookComponents]);
-	// eslint-disable-next-line no-console
-	console.log(`🔄 Total unique components: ${allComponents.size}`);
+	process.stdout.write(`🔄 Total unique components: ${allComponents.size}\n`);
 
 	// Generate exports for each component
 	const exports = { ...baseExports };
@@ -185,9 +180,8 @@ function generateExports() {
 		// Check if component directory exists
 		const componentDir = path.join(SRC_DIR, component);
 		if (!fs.existsSync(componentDir)) {
-			// eslint-disable-next-line no-console
-			console.warn(
-				`⚠️ Component "${component}" referenced in storybook but directory not found in src`
+			process.stdout.write(
+				`⚠️ Component "${component}" referenced in storybook but directory not found in src\n`
 			);
 		} else {
 			exports[`./${component}`] = {
@@ -236,18 +230,17 @@ function updatePackageJson() {
 			fs.writeFileSync(PACKAGE_JSON_PATH, `${JSON.stringify(packageJson, null, '\t')}\n`, 'utf8');
 
 			const componentsCount = Object.keys(newExports).length - 5;
-			// eslint-disable-next-line no-console
-			console.log(`✅ Updated "exports" field in package.json with ${componentsCount} components`);
+			process.stdout.write(
+				`✅ Updated "exports" field in package.json with ${componentsCount} components\n`
+			);
 		} else {
 			// No changes needed
-			// eslint-disable-next-line no-console
-			console.log(
-				`✅ "exports" field in package.json is already up-to-date with ${Object.keys(newExports).length - 5} components`
+			process.stdout.write(
+				`✅ "exports" field in package.json is already up-to-date with ${Object.keys(newExports).length - 5} components\n`
 			);
 		}
 	} catch (error) {
-		// eslint-disable-next-line no-console
-		console.error(`❌ Failed to update package.json: ${error.message}`);
+		process.stderr.write(`❌ Failed to update package.json: ${error.message}\n`);
 		process.exit(1);
 	}
 }

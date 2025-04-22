@@ -31,9 +31,9 @@
 		"@twin.org/core": "next",
 		"@twin.org/qr": "next",
 		"@twin.org/ui-tailwind": "0.0.1-next.43",
-		"flowbite-svelte": "0.47.4",
+		"flowbite-svelte": "0.48.6",
 		"flowbite-svelte-blocks": "1.1.4",
-		"flowbite-svelte-icons": "2.0.2",
+		"flowbite-svelte-icons": "2.1.1",
 		"flowbite-typography": "1.0.5"
 	},
 	"peerDependencies": {
@@ -41,20 +41,20 @@
 		"svelte": "^4.0.0 || ^5.0.0"
 	},
 	"devDependencies": {
-		"@sveltejs/package": "2.3.10",
-		"@sveltejs/adapter-auto": "4.0.0",
+		"@sveltejs/package": "2.3.11",
+		"@sveltejs/adapter-auto": "6.0.0",
 		"@tailwindcss/typography": "0.5.16",
 		"@twin.org/merge-locales": "next",
-		"autoprefixer": "10.4.20",
-		"globals": "15.14.0",
-		"postcss": "8.5.2",
+		"autoprefixer": "10.4.21",
+		"globals": "16.0.0",
+		"postcss": "8.5.3",
 		"rimraf": "6.0.1",
 		"rollup-plugin-copy": "3.5.0",
-		"svelte-check": "4.1.4",
+		"svelte-check": "4.1.6",
 		"tailwindcss": "3.4.17",
-		"typescript": "5.7.3",
-		"vite": "6.1.0",
-		"vitest": "3.0.5"
+		"typescript": "5.8.3",
+		"vite": "6.3.2",
+		"vitest": "3.1.2"
 	},
 	"exports": {
 		".": {

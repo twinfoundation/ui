@@ -10,7 +10,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { glob } from 'glob';
+import FastGlob from 'fast-glob';
 
 // Get __dirname equivalent in ESM
 const __filename = fileURLToPath(import.meta.url);
@@ -26,8 +26,7 @@ const ESM_DIR = path.resolve(ROOT_DIR, 'dist/esm');
  * This ensures backward compatibility with tools like Storybook.
  */
 async function createCompatibilityLayer() {
-	// eslint-disable-next-line no-console
-	console.log('Creating compatibility layer for Storybook...');
+	process.stdout.write('Creating compatibility layer for Storybook...\n');
 
 	// Ensure ESM directory exists
 	if (!fs.existsSync(ESM_DIR)) {
@@ -36,21 +35,19 @@ async function createCompatibilityLayer() {
 
 	try {
 		// Find all .mjs files in the ES directory
-		const files = await glob('**/*.mjs', { cwd: ES_DIR });
+		const files = await FastGlob(path.join(ES_DIR, `**/*.mjs`).replace(/\\/g, '/'));
 
 		if (files.length === 0) {
-			// eslint-disable-next-line no-console
-			console.log('No .mjs files found in ES directory. Check your build process.');
+			process.stdout.write('No .mjs files found in ES directory. Check your build process.\n');
 			return;
 		}
 
-		// eslint-disable-next-line no-console
-		console.log(`Found ${files.length} files to copy for compatibility...`);
+		process.stdout.write(`Found ${files.length} files to copy for compatibility...\n`);
 
 		// Copy each file from ES to ESM
 		for (const file of files) {
-			const sourceFile = path.join(ES_DIR, file);
-			const targetFile = path.join(ESM_DIR, file);
+			const sourceFile = file;
+			const targetFile = path.join(ESM_DIR, path.basename(file));
 			const targetDir = path.dirname(targetFile);
 
 			// Ensure the target directory exists
@@ -63,10 +60,10 @@ async function createCompatibilityLayer() {
 		}
 
 		// Also copy map files if they exist
-		const mapFiles = await glob('**/*.mjs.map', { cwd: ES_DIR });
+		const mapFiles = await FastGlob(path.join(ES_DIR, `**/*.mjs.map`).replace(/\\/g, '/'));
 		for (const file of mapFiles) {
-			const sourceFile = path.join(ES_DIR, file);
-			const targetFile = path.join(ESM_DIR, file);
+			const sourceFile = file;
+			const targetFile = path.join(ESM_DIR, path.basename(file));
 			const targetDir = path.dirname(targetFile);
 
 			// Ensure the target directory exists
@@ -78,11 +75,11 @@ async function createCompatibilityLayer() {
 			fs.copyFileSync(sourceFile, targetFile);
 		}
 
-		// eslint-disable-next-line no-console
-		console.log(`✅ Successfully copied ${files.length} files to ESM directory for compatibility`);
+		process.stdout.write(
+			`✅ Successfully copied ${files.length} files to ESM directory for compatibility\n`
+		);
 	} catch (error) {
-		// eslint-disable-next-line no-console
-		console.error(`❌ Error creating compatibility layer: ${error.message}`);
+		process.stderr.write(`❌ Error creating compatibility layer: ${error.message}\n`);
 		process.exit(1);
 	}
 }

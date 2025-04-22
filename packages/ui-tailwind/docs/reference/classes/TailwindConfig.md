@@ -4,13 +4,13 @@ The tailwind config.
 
 ## Constructors
 
-### new TailwindConfig()
+### Constructor
 
-> **new TailwindConfig**(): [`TailwindConfig`](TailwindConfig.md)
+> **new TailwindConfig**(): `TailwindConfig`
 
 #### Returns
 
-[`TailwindConfig`](TailwindConfig.md)
+`TailwindConfig`
 
 ## Methods
 
@@ -90,13 +90,13 @@ The content path.
 
 ### getPlugins()
 
-> `static` **getPlugins**(): `undefined` \| (`undefined` \| `PluginCreator` \| \{\} \| (`options`) => `object`)[]
+> `static` **getPlugins**(): `undefined` \| (`undefined` \| `PluginCreator` \| \{ \} \| (`options`) => `object`)[]
 
 Get the plugins.
 
 #### Returns
 
-`undefined` \| (`undefined` \| `PluginCreator` \| \{\} \| (`options`) => `object`)[]
+`undefined` \| (`undefined` \| `PluginCreator` \| \{ \} \| (`options`) => `object`)[]
 
 The plugins.
 
