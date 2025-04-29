@@ -31,6 +31,9 @@ const meta = {
 		size: {
 			options: Object.values(DropdownSizes),
 			control: { type: "inline-radio" }
+		},
+		disabled: {
+			control: { type: "boolean" }
 		}
 	},
 	args: {
@@ -52,12 +55,12 @@ export const WithIcon: Story = {
 	}
 };
 
-export const WithDotsVerticalIcon: Story = {
+export const OnlyWithDotsVerticalIcon: Story = {
 	args: {
 		icon: DotsVertical,
-		color: "bg-neutral-050",
-		iconColor: "text-neutral-900",
-		iconBackgroundColor: "bg-neutral-200"
+		iconOnly: true,
+		title: "",
+		color: "plain"
 	}
 };
 

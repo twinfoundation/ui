@@ -98,12 +98,7 @@ export interface DropdownProps extends Omit<FlowbiteDropdownProps, "color" | "la
 	icon?: IconComponent;
 
 	/**
-	 * The background color class of the icon
+	 * Whether this item should only display an icon.
 	 */
-	iconBackgroundColor?: string;
-
-	/**
-	 * The color class of the icon
-	 */
-	iconColor?: string;
+	iconOnly?: boolean;
 }

@@ -70,16 +70,6 @@ export interface ButtonProps extends Omit<FlowbiteButtonProps, "color" | "label"
 	icon?: ElementType;
 
 	/**
-	 * The color class of the right or left icon
-	 */
-	iconColor?: string;
-
-	/**
-	 * The background color class of the right or left icon
-	 */
-	iconBackgroundColor?: string;
-
-	/**
 	 * Whether the button is disabled
 	 */
 	disabled?: boolean;

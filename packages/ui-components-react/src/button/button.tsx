@@ -54,8 +54,6 @@ export const Button = memo(
 		rightIcon: RightIcon,
 		showRightIcon = true,
 		icon: Icon,
-		iconColor = "",
-		iconBackgroundColor = "",
 		disabled = false,
 		className,
 		children,
@@ -68,17 +66,13 @@ export const Button = memo(
 				<div className="inline-flex items-center justify-center">
 					{showLeftIcon && LeftIcon && (
 						<div className="flex items-center">
-							<LeftIcon
-								className={`mr-1.5 ${iconSize} ${iconBackgroundColor} ${iconColor} rounded-full`}
-							/>
+							<LeftIcon className={`mr-1.5 ${iconSize}`} />
 						</div>
 					)}
 					{showButtonText && (buttonText || children)}
 					{showRightIcon && RightIcon && (
 						<div className="flex items-center">
-							<RightIcon
-								className={`ml-1.5 ${iconSize} ${iconBackgroundColor} ${iconColor} rounded-full`}
-							/>
+							<RightIcon className={`ml-1.5 ${iconSize}`} />
 						</div>
 					)}
 				</div>
