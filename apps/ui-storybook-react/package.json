@@ -2,6 +2,7 @@
 	"name": "@twin.org/ui-storybook-react",
 	"version": "0.0.1-next.44",
 	"description": "Demonstrate the React UI Components",
+	"private": true,
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/twinfoundation/ui.git",

@@ -2,6 +2,7 @@
 	"name": "@twin.org/ui-storybook-svelte",
 	"version": "0.0.1-next.43",
 	"description": "Demonstrate the Svelte UI Components",
+	"private": true,
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/twinfoundation/ui.git",
