@@ -15,7 +15,10 @@ export const Dropdown = memo(
 		size = "md",
 		placement = "bottom",
 		items = [],
+		color = "primary",
 		icon,
+		iconColor,
+		iconBackgroundColor,
 		...rest
 	}: DropdownProps): JSX.Element => (
 		<FlowbiteDropdown
@@ -26,9 +29,11 @@ export const Dropdown = memo(
 			renderTrigger={() => (
 				<Button
 					size={size}
-					color="primary"
+					color={color}
 					buttonText={title}
 					rightIcon={icon}
+					iconBackgroundColor={iconBackgroundColor}
+					iconColor={iconColor}
 					showRightIcon={Boolean(icon)}
 					aria-label={`${title} dropdown menu`}
 				/>

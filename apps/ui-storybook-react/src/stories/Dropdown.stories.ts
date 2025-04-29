@@ -4,6 +4,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 import { Dropdown, DropdownPositions, DropdownSizes } from "@twin.org/ui-components-react";
 import { CaretDown, CloseCircle } from "@twin.org/ui-components-react/icons/solid";
+import { DotsVertical } from "@twin.org/ui-components-react/icons/outline";
 import { createElement } from "react";
 
 // Common dropdown items to reduce repetition
@@ -48,6 +49,15 @@ export const Default: Story = {};
 export const WithIcon: Story = {
 	args: {
 		icon: CaretDown
+	}
+};
+
+export const WithDotsVerticalIcon: Story = {
+	args: {
+		icon: DotsVertical,
+		color: "bg-neutral-050",
+		iconColor: "text-neutral-900",
+		iconBackgroundColor: "bg-neutral-200"
 	}
 };
 
