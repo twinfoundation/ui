@@ -15,6 +15,8 @@ export const Dropdown = memo(
 		size = "md",
 		placement = "bottom",
 		items = [],
+		color = "primary",
+		iconOnly = false,
 		icon,
 		...rest
 	}: DropdownProps): JSX.Element => (
@@ -26,10 +28,12 @@ export const Dropdown = memo(
 			renderTrigger={() => (
 				<Button
 					size={size}
-					color="primary"
+					color={color}
 					buttonText={title}
 					rightIcon={icon}
-					showRightIcon={Boolean(icon)}
+					showRightIcon={!iconOnly && Boolean(icon)}
+					iconOnly={iconOnly}
+					icon={icon}
 					aria-label={`${title} dropdown menu`}
 				/>
 			)}

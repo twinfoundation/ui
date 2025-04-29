@@ -3,6 +3,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 import { Dropdown, DropdownPositions, DropdownSizes } from "@twin.org/ui-components-react";
+import { DotsVertical } from "@twin.org/ui-components-react/icons/outline";
 import { CaretDown, CloseCircle } from "@twin.org/ui-components-react/icons/solid";
 import { createElement } from "react";
 
@@ -30,6 +31,9 @@ const meta = {
 		size: {
 			options: Object.values(DropdownSizes),
 			control: { type: "inline-radio" }
+		},
+		disabled: {
+			control: { type: "boolean" }
 		}
 	},
 	args: {
@@ -48,6 +52,15 @@ export const Default: Story = {};
 export const WithIcon: Story = {
 	args: {
 		icon: CaretDown
+	}
+};
+
+export const OnlyWithDotsVerticalIcon: Story = {
+	args: {
+		icon: DotsVertical,
+		iconOnly: true,
+		title: "",
+		color: "plain"
 	}
 };
 

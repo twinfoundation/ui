@@ -4,6 +4,7 @@ import type { DropdownProps as FlowbiteDropdownProps } from "flowbite-react";
 import type { ReactNode } from "react";
 import type { DropdownPosition } from "./dropdownPositions";
 import type { DropdownSize } from "./dropdownSizes";
+import type { ButtonColor } from "../button";
 import type { IconComponent } from "../types/iconTypes";
 
 /**
@@ -81,6 +82,11 @@ export interface DropdownProps extends Omit<FlowbiteDropdownProps, "color" | "la
 	inline?: boolean;
 
 	/**
+	 * The color of the dropdown button.
+	 */
+	color?: ButtonColor;
+
+	/**
 	 * Array of items to display in the dropdown menu.
 	 */
 	items?: DropdownItem[];
@@ -90,4 +96,9 @@ export interface DropdownProps extends Omit<FlowbiteDropdownProps, "color" | "la
 	 * If not provided, no icon will be shown.
 	 */
 	icon?: IconComponent;
+
+	/**
+	 * Whether this item should only display an icon.
+	 */
+	iconOnly?: boolean;
 }
