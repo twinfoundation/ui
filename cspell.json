@@ -3,6 +3,7 @@
 	"ignorePaths": [
 		"**/node_modules/**",
 		"LICENSE",
+		"changelog.md",
 		"**/coverage/**",
 		"**/dist/**",
 		"**/docs/reference/**",

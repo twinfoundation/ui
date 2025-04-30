@@ -19,7 +19,7 @@
 		"lint:fix": "prettier --config .prettierrc --write .",
 		"lint:code": "eslint . --ext .js,.mjs,.ts,.tsx,.svelte",
 		"lint:markdown": "markdownlint **/*.md --ignore **/node_modules/** --ignore **/docs/reference/**",
-		"lint:spell": "cspell ** --no-progress --exclude changelog.md",
+		"lint:spell": "cspell ** --no-progress",
 		"lint": "npm run lint:format && npm run lint:code && npm run lint:markdown && npm run lint:spell",
 		"local-link": "node ./scripts/local-link.mjs",
 		"commitlint": "commitlint --edit",
