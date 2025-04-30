@@ -1,5 +1,19 @@
 # @twin.org/ui-components-react - Changelog
 
+## [0.0.1-next.45](https://github.com/twinfoundation/ui/compare/ui-storybook-react-v0.0.1-next.44...ui-storybook-react-v0.0.1-next.45) (2025-04-30)
+
+
+### Bug Fixes
+
+* add private flag for app repos ([418622b](https://github.com/twinfoundation/ui/commit/418622bacfd973c8e31467bd73801b81e3fbd582))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/ui-components-react bumped from 0.0.1-next.44 to 0.0.1-next.45
+
 ## [0.0.1-next.44](https://github.com/twinfoundation/ui/compare/ui-storybook-react-v0.0.1-next.43...ui-storybook-react-v0.0.1-next.44) (2025-04-29)
 
 
