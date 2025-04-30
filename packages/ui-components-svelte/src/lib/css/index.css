@@ -1,1 +1,5 @@
 @import '@twin.org/ui-tailwind/css/index.css';
+
+input[type='file']::file-selector-button {
+	font-size: inherit;
+}

@@ -41,8 +41,8 @@
 		"svelte": "^4.0.0 || ^5.0.0"
 	},
 	"devDependencies": {
-		"@sveltejs/package": "2.3.11",
 		"@sveltejs/adapter-auto": "6.0.0",
+		"@sveltejs/package": "2.3.11",
 		"@tailwindcss/typography": "0.5.16",
 		"@twin.org/merge-locales": "next",
 		"autoprefixer": "10.4.21",
