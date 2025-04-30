@@ -1,5 +1,19 @@
 # @twin.org/ui-components-react - Changelog
 
+## [0.0.1-next.45](https://github.com/twinfoundation/ui/compare/ui-components-react-v0.0.1-next.44...ui-components-react-v0.0.1-next.45) (2025-04-30)
+
+
+### Miscellaneous Chores
+
+* **ui-components-react:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/ui-tailwind bumped from 0.0.1-next.44 to 0.0.1-next.45
+
 ## [0.0.1-next.44](https://github.com/twinfoundation/ui/compare/ui-components-react-v0.0.1-next.43...ui-components-react-v0.0.1-next.44) (2025-04-29)
 
 
