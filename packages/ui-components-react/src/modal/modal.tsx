@@ -22,17 +22,21 @@ export const Modal = memo(
 				{body && <FlowbiteModal.Body>{body}</FlowbiteModal.Body>}
 				{footerButtons && footerButtons.length > 0 && (
 					<FlowbiteModal.Footer>
-						{footerButtons.map((button, index) => (
-							<Button
-								key={`modal-button-${index}`}
-								color={button?.variant ?? "primary"}
-								onClick={() => handleButtonClick(button?.onClick)}
-								buttonText={button?.label}
-								showButtonText
-							>
-								{button?.label}
-							</Button>
-						))}
+						{footerButtons.map((button, index) => {
+							const { onClick, variant, label, ...buttonProps } = button;
+							return (
+								<Button
+									key={`modal-button-${index}`}
+									color={variant ?? "primary"}
+									onClick={() => handleButtonClick(onClick)}
+									buttonText={label}
+									showButtonText
+									{...buttonProps}
+								>
+									{label}
+								</Button>
+							);
+						})}
 					</FlowbiteModal.Footer>
 				)}
 			</FlowbiteModal>
