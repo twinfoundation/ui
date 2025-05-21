@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
 import { Footer } from "@twin.org/ui-components-react";
-import { Home, MailBox, Music, File } from "@twin.org/ui-components-react/icons/solid";
+import { House, Envelope,  PlayStop, File } from "@twin.org/ui-components-react/icons";
 
 /**
  * Storybook metadata for Footer component
@@ -71,9 +71,9 @@ export const Default: Story = {
 				<div className="sm:flex sm:items-center sm:justify-between">
 					<Footer.Copyright href="https://www.twin.org" by="TWIN™" year={2025} />
 					<div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
-						<Footer.Icon href="#" icon={Home} ariaLabel="Visit our homepage" />
-						<Footer.Icon href="#" icon={MailBox} ariaLabel="Contact us" />
-						<Footer.Icon href="#" icon={Music} ariaLabel="Listen to updates" />
+						<Footer.Icon href="#" icon={House} ariaLabel="Visit our homepage" />
+						<Footer.Icon href="#" icon={Envelope} ariaLabel="Contact us" />
+						<Footer.Icon href="#" icon={PlayStop} ariaLabel="Listen to updates" />
 						<Footer.Icon href="#" icon={File} ariaLabel="View documentation" />
 					</div>
 				</div>

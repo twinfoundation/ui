@@ -20,8 +20,36 @@ import dynamicImportVars from '@rollup/plugin-dynamic-import-vars';
 import copy from 'rollup-plugin-copy';
 import postcss from 'rollup-plugin-postcss';
 import svgr from '@svgr/rollup';
+import image from '@rollup/plugin-image';
 
 const isEsm = process.env.MODULE === 'esm';
+
+// SVG to React component plugin
+const svgToComponent = {
+  name: 'svg-to-component',
+  transform(code, id) {
+    if (!id.endsWith('.svg')) return null;
+    
+    const componentName = path.basename(id, '.svg')
+      .split('-')
+      .map(part => part.charAt(0).toUpperCase() + part.slice(1))
+      .join('');
+    
+    const svgContent = code
+      .replace(/<svg[^>]*>|<\/svg>|\n|\r/g, '')
+      .replace(/<\?xml[^>]+>/, '')
+      .trim();
+    
+    return {
+      code: `import React from 'react';
+        const ${componentName} = (props) => (
+          <svg {...props} dangerouslySetInnerHTML={{ __html: '${svgContent}' }} />
+        );
+        export default ${componentName};`,
+      map: null
+    };
+  }
+};
 // Get the format from the environment variable
 const format = isEsm ? 'es' : 'cjs';
 // Set the file extension based on the format
@@ -42,8 +70,6 @@ const externalDeps = [
 	'react',
 	'react-dom',
 	'flowbite-react/tailwind',
-	'flowbite-react-icons/outline',
-	'flowbite-react-icons/solid',
 	'rfc6902',
 	'intl-messageformat',
 	'@twin.org/core',
@@ -53,7 +79,10 @@ const externalDeps = [
 
 // Common plugins used for all bundles
 const createPlugins = () => [
-	// Extract peer dependencies
+  // Handle SVG files
+  image(),
+  svgToComponent,
+  // Extract peer dependencies
 	peerDepsExternal(),
 
 	// Copy CSS files

@@ -3,7 +3,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 import { Drawer, DrawerPositions, ButtonColors } from "@twin.org/ui-components-react";
-import { MessageCaption, Brain } from "@twin.org/ui-components-react/icons/solid";
+import { Envelope, Plus } from "@twin.org/ui-components-react/icons";
 import { createElement } from "react";
 
 const meta = {
@@ -222,7 +222,7 @@ export const WithButtonIcon: Story = {
 	args: {
 		title: "Drawer with Icon Button",
 		buttonText: "Menu",
-		buttonIcon: MessageCaption
+		buttonIcon: Envelope
 	}
 };
 
@@ -249,7 +249,7 @@ export const IconOnlyButton: Story = {
 		title: "Icon Only Button Drawer",
 		buttonProps: {
 			iconOnly: true,
-			icon: Brain,
+			icon: Plus,
 			size: "lg"
 		}
 	}

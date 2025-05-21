@@ -64,12 +64,14 @@ export type { DrawerProps } from "./drawer/drawerProps";
 // Dropdown
 export { Dropdown } from "./dropdown/dropdown";
 export { DropdownPositions } from "./dropdown/dropdownPositions";
-export { DropdownSizes, DropdownSize } from "./dropdown/dropdownSizes";
+export { DropdownSizes } from "./dropdown/dropdownSizes";
+export type { DropdownSize } from "./dropdown/dropdownSizes";
 export type { DropdownProps } from "./dropdown/dropdownProps";
 
 // FileInput
 export { FileInput } from "./fileInput/fileInput";
-export { FileInputSizes, FileInputSize } from "./fileInput/fileInputSizes";
+export { FileInputSizes } from "./fileInput/fileInputSizes";
+export type { FileInputSize } from "./fileInput/fileInputSizes";
 export type { FileInputProps } from "./fileInput/fileInputProps";
 
 // Footer
@@ -79,6 +81,9 @@ export type { FooterProps } from "./footer/footerProps";
 // Form
 export { Form } from "./form/form";
 export type { FormProps } from "./form/formProps";
+
+// Icons - Re-exported from icons for backward compatibility
+//export * from "./icons";
 
 // Label
 export { Label } from "./label/label";
@@ -91,7 +96,8 @@ export type { ListGroupProps, ListGroupItem } from "./listGroup/listGroupProps";
 // Modal
 export { Modal } from "./modal/modal";
 export { ModalPositions } from "./modal/modalPositions";
-export { ModalSizes, ModalSize } from "./modal/modalSizes";
+export { ModalSizes } from "./modal/modalSizes";
+export type { ModalSize } from "./modal/modalSizes";
 export type { ModalProps } from "./modal/modalProps";
 
 // Navbar

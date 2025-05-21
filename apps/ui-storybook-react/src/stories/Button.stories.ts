@@ -3,8 +3,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 import { Button, ButtonColors, ButtonSizes } from "@twin.org/ui-components-react";
-import { Plus } from "@twin.org/ui-components-react/icons/outline";
-import { ShoppingBag, ArrowRightAlt } from "@twin.org/ui-components-react/icons/solid";
+import { Plus, ShoppingCart, ArrowRight } from "@twin.org/ui-components-react/icons";
 
 const meta = {
 	title: "Components/Button",
@@ -63,9 +62,9 @@ export const Default: Story = {
 		outline: false,
 		showButtonText: true,
 		showLeftIcon: true,
-		leftIcon: ShoppingBag,
+		leftIcon: ShoppingCart,
 		showRightIcon: true,
-		rightIcon: ArrowRightAlt,
+		rightIcon: ArrowRight,
 		disabled: false
 	}
 };
@@ -91,6 +90,14 @@ export const Plain: Story = {
 		children: "Plain Button",
 		size: "xs",
 		color: ButtonColors.Plain
+	}
+};
+
+export const Ghost: Story = {
+	args: {
+		children: "Ghost Button",
+		size: "xs",
+		color: ButtonColors.Ghost
 	}
 };
 
@@ -149,7 +156,7 @@ export const WithLeftIcon: Story = {
 		size: "xs",
 		color: ButtonColors.Primary,
 		showLeftIcon: true,
-		leftIcon: ShoppingBag,
+		leftIcon: ShoppingCart,
 		showRightIcon: false
 	}
 };
@@ -161,7 +168,7 @@ export const WithRightIcon: Story = {
 		color: ButtonColors.Primary,
 		showLeftIcon: false,
 		showRightIcon: true,
-		rightIcon: ArrowRightAlt
+		rightIcon: ArrowRight
 	}
 };
 
