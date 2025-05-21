@@ -71,6 +71,14 @@ export const Plain: Story = {
 	}
 };
 
+export const Ghost: Story = {
+	args: {
+		children: "Button",
+		size: "sm",
+		color: "ghost"
+	}
+};
+
 export const Error: Story = {
 	args: {
 		children: "Button",
