@@ -1,5 +1,19 @@
 # @twin.org/ui-components-react - Changelog
 
+## [0.0.1-next.47](https://github.com/twinfoundation/ui/compare/ui-storybook-react-v0.0.1-next.46...ui-storybook-react-v0.0.1-next.47) (2025-05-22)
+
+
+### Features
+
+* button - add ghost color/variant to the component ([#58](https://github.com/twinfoundation/ui/issues/58)) ([ed2ad38](https://github.com/twinfoundation/ui/commit/ed2ad38fac00617004be5c7b15dab73cf818ecc5))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/ui-components-react bumped from 0.0.1-next.46 to 0.0.1-next.47
+
 ## [0.0.1-next.46](https://github.com/twinfoundation/ui/compare/ui-storybook-react-v0.0.1-next.45...ui-storybook-react-v0.0.1-next.46) (2025-05-21)
 
 
