@@ -94,6 +94,14 @@ export const Plain: Story = {
 	}
 };
 
+export const Ghost: Story = {
+	args: {
+		children: "Ghost Button",
+		size: "xs",
+		color: ButtonColors.Ghost
+	}
+};
+
 export const Error: Story = {
 	args: {
 		children: "Error Button",

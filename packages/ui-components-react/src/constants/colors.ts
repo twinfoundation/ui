@@ -17,6 +17,7 @@ export const GRAY = "gray";
 export const PRIMARY = "primary";
 export const SECONDARY = "secondary";
 export const PLAIN = "plain";
+export const GHOST = "ghost";
 export const DARK = "dark";
 
 // Badge-specific colors
