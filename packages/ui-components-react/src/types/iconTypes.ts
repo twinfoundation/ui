@@ -1,12 +1,48 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
-import type { SVGProps, JSX, ForwardRefExoticComponent, RefAttributes } from "react";
 
 /**
  * Type for SVG icon components.
  * This type supports both direct function components and ForwardRefExoticComponent
  * to be compatible with various icon libraries including flowbite-react-icons.
  */
-export type IconComponent =
-	| ((props: SVGProps<SVGSVGElement>) => JSX.Element)
-	| ForwardRefExoticComponent<Omit<SVGProps<SVGSVGElement>, "ref"> & RefAttributes<SVGSVGElement>>;
+export type IconComponent = React.ForwardRefExoticComponent<
+	React.PropsWithoutRef<React.SVGProps<SVGSVGElement>> & {
+		title?: string;
+		titleId?: string;
+	} & React.RefAttributes<SVGSVGElement>
+> & {
+	displayName?: string;
+};
+
+/**
+ * Props for icon components
+ */
+export interface IconsProps extends Omit<React.SVGProps<SVGSVGElement>, "type"> {
+	/**
+	 * The color of the icon
+	 */
+	color?: string;
+
+	/**
+	 * Type of the icon variant
+	 */
+	type?: "bold" | "regular" | "light" | string;
+
+	/**
+	 * Size of the icon (can be used as a shorthand for width/height)
+	 */
+	size?: number | string;
+}
+
+/**
+ * Type for a function component that renders an icon
+ */
+export type IconFC = React.FC<IconsProps>;
+
+/**
+ * Type for a ref-forwarding icon component
+ */
+export type ForwardRefIcon = React.ForwardRefExoticComponent<
+	IconsProps & React.RefAttributes<SVGSVGElement>
+>;

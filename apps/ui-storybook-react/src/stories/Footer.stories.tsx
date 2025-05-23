@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
 import { Footer } from "@twin.org/ui-components-react";
-import { House, Envelope,  PlayStop, File } from "@twin.org/ui-components-react/icons";
+import { House, Envelope, PlayStop, File } from "@twin.org/ui-components-react/icons";
 
 /**
  * Storybook metadata for Footer component

@@ -1,9 +1,9 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import { Banner as FlowbiteBanner } from "flowbite-react";
-import { X } from "../icons/x";
 import { memo, type JSX } from "react";
 import type { BannerProps } from "./bannerProps";
+import { X } from "../icons/x";
 
 /**
  * Banner component.

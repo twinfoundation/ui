@@ -26,29 +26,30 @@ const isEsm = process.env.MODULE === 'esm';
 
 // SVG to React component plugin
 const svgToComponent = {
-  name: 'svg-to-component',
-  transform(code, id) {
-    if (!id.endsWith('.svg')) return null;
-    
-    const componentName = path.basename(id, '.svg')
-      .split('-')
-      .map(part => part.charAt(0).toUpperCase() + part.slice(1))
-      .join('');
-    
-    const svgContent = code
-      .replace(/<svg[^>]*>|<\/svg>|\n|\r/g, '')
-      .replace(/<\?xml[^>]+>/, '')
-      .trim();
-    
-    return {
-      code: `import React from 'react';
+	name: 'svg-to-component',
+	transform(code, id) {
+		if (!id.endsWith('.svg')) return null;
+
+		const componentName = path
+			.basename(id, '.svg')
+			.split('-')
+			.map(part => part.charAt(0).toUpperCase() + part.slice(1))
+			.join('');
+
+		const svgContent = code
+			.replace(/<svg[^>]*>|<\/svg>|\n|\r/g, '')
+			.replace(/<\?xml[^>]+>/, '')
+			.trim();
+
+		return {
+			code: `import React from 'react';
         const ${componentName} = (props) => (
           <svg {...props} dangerouslySetInnerHTML={{ __html: '${svgContent}' }} />
         );
         export default ${componentName};`,
-      map: null
-    };
-  }
+			map: null
+		};
+	}
 };
 // Get the format from the environment variable
 const format = isEsm ? 'es' : 'cjs';
@@ -79,10 +80,10 @@ const externalDeps = [
 
 // Common plugins used for all bundles
 const createPlugins = () => [
-  // Handle SVG files
-  image(),
-  svgToComponent,
-  // Extract peer dependencies
+	// Handle SVG files
+	image(),
+	svgToComponent,
+	// Extract peer dependencies
 	peerDepsExternal(),
 
 	// Copy CSS files

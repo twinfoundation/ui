@@ -3,42 +3,8 @@
 import React from "react";
 import type { IconsProps } from "./iconsProps";
 
-const UserCircleLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" {...props}>
-		<rect width="256" height="256" fill="none" />
-		<circle
-			cx="128"
-			cy="128"
-			r="96"
-			fill="none"
-			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="16"
-		/>
-		<circle
-			cx="128"
-			cy="120"
-			r="40"
-			fill="none"
-			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="16"
-		/>
-		<path
-			d="M63.8,199.4a72,72,0,0,1,128.4,0"
-			fill="none"
-			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="16"
-		/>
-	</svg>
-);
-
-const UserCircleRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" {...props}>
+const GlobeLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
+	<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
 		<rect width="256" height="256" fill="none" />
 		<circle
 			cx="128"
@@ -50,18 +16,30 @@ const UserCircleRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			strokeLinejoin="round"
 			strokeWidth="24"
 		/>
-		<circle
-			cx="128"
-			cy="120"
-			r="40"
+		<path
+			d="M168,128c0,64-40,96-40,96s-40-32-40-96,40-96,40-96S168,64,168,128Z"
 			fill="none"
 			stroke="currentColor"
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="24"
 		/>
-		<path
-			d="M63.8,199.4a72,72,0,0,1,128.4,0"
+		<line
+			x1="37.46"
+			y1="96"
+			x2="218.54"
+			y2="96"
+			fill="none"
+			stroke="currentColor"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="24"
+		/>
+		<line
+			x1="37.46"
+			y1="160"
+			x2="218.54"
+			y2="160"
 			fill="none"
 			stroke="currentColor"
 			strokeLinecap="round"
@@ -71,10 +49,9 @@ const UserCircleRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 	</svg>
 );
 
-const UserCircleBold: React.FC<React.SVGProps<SVGSVGElement>> = props => (
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" {...props}>
+const GlobeRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
+	<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
 		<rect width="256" height="256" fill="none" />
-		<circle cx="128" cy="128" r="96" fill="currentColor" opacity="0.2" />
 		<circle
 			cx="128"
 			cy="128"
@@ -85,18 +62,30 @@ const UserCircleBold: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			strokeLinejoin="round"
 			strokeWidth="24"
 		/>
-		<circle
-			cx="128"
-			cy="120"
-			r="40"
+		<path
+			d="M168,128c0,64-40,96-40,96s-40-32-40-96,40-96,40-96S168,64,168,128Z"
 			fill="none"
 			stroke="currentColor"
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="24"
 		/>
-		<path
-			d="M63.8,199.4a72,72,0,0,1,128.4,0"
+		<line
+			x1="37.46"
+			y1="96"
+			x2="218.54"
+			y2="96"
+			fill="none"
+			stroke="currentColor"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="24"
+		/>
+		<line
+			x1="37.46"
+			y1="160"
+			x2="218.54"
+			y2="160"
 			fill="none"
 			stroke="currentColor"
 			strokeLinecap="round"
@@ -106,7 +95,53 @@ const UserCircleBold: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 	</svg>
 );
 
-export const UserCircle: React.FC<IconsProps> = ({
+const GlobeBold: React.FC<React.SVGProps<SVGSVGElement>> = props => (
+	<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+		<rect width="256" height="256" fill="none" />
+		<circle
+			cx="128"
+			cy="128"
+			r="96"
+			fill="none"
+			stroke="currentColor"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="24"
+		/>
+		<path
+			d="M168,128c0,64-40,96-40,96s-40-32-40-96,40-96,40-96S168,64,168,128Z"
+			fill="none"
+			stroke="currentColor"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="24"
+		/>
+		<line
+			x1="37.46"
+			y1="96"
+			x2="218.54"
+			y2="96"
+			fill="none"
+			stroke="currentColor"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="24"
+		/>
+		<line
+			x1="37.46"
+			y1="160"
+			x2="218.54"
+			y2="160"
+			fill="none"
+			stroke="currentColor"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="24"
+		/>
+	</svg>
+);
+
+export const Globe: React.FC<IconsProps> = ({
 	color = "currentColor",
 	width = 24,
 	height = width,
@@ -122,14 +157,14 @@ export const UserCircle: React.FC<IconsProps> = ({
 
 	switch (type) {
 		case "light":
-			return <UserCircleLight {...props} />;
+			return <GlobeLight {...props} />;
 		case "bold":
-			return <UserCircleBold {...props} />;
+			return <GlobeBold {...props} />;
 		default:
-			return <UserCircleRegular {...props} />;
+			return <GlobeRegular {...props} />;
 	}
 };
 
-UserCircle.displayName = "UserCircle";
+Globe.displayName = "Globe";
 
-export default UserCircle;
+export default Globe;

@@ -1,10 +1,10 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import { Drawer as FlowbiteDrawer } from "flowbite-react";
-import { List } from "../icons/list";
 import { useCallback, useEffect, useState, memo, type JSX } from "react";
 import type { DrawerProps } from "./drawerProps";
 import { Button } from "../button/button";
+import { List } from "../icons/list";
 
 /**
  * Drawer component.

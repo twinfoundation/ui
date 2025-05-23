@@ -3,7 +3,14 @@
 // cspell:ignore centered autodocs
 import type { Meta, StoryObj } from "@storybook/react";
 import { Card, BadgeColors } from "@twin.org/ui-components-react";
-import { SealPercent, ShoppingCart, Star, Fire, Bag, ArrowRightFat } from "@twin.org/ui-components-react/icons";
+import {
+	SealPercent,
+	ShoppingCart,
+	Star,
+	Fire,
+	Bag,
+	ArrowRightFat
+} from "@twin.org/ui-components-react/icons";
 
 const meta = {
 	title: "Components/Card",

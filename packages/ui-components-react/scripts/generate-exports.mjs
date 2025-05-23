@@ -49,31 +49,32 @@ const baseExports = {
 
 // Add individual icon exports for direct imports
 const ICONS_DIR = path.resolve(__dirname, '../src/icons');
-const iconFiles = fs.readdirSync(ICONS_DIR)
-  .filter(file => file.endsWith('.tsx') && file !== 'index.ts' && file !== 'iconsProps.ts')
-  .map(file => path.basename(file, '.tsx'));
+const iconFiles = fs
+	.readdirSync(ICONS_DIR)
+	.filter(file => file.endsWith('.tsx') && file !== 'index.ts' && file !== 'iconsProps.ts')
+	.map(file => path.basename(file, '.tsx'));
 
 // Add exports for individual icons
-iconFiles.forEach(iconName => {
-  baseExports[`./icons/${iconName}`] = {
-    types: `./dist/types/icons/${iconName}.d.ts`,
-    import: `./dist/es/icons/${iconName}.js`,
-    require: `./dist/cjs/icons/${iconName}.js`
-  };
-});
+for (const iconName of iconFiles) {
+	baseExports[`./icons/${iconName}`] = {
+		types: `./dist/types/icons/${iconName}.d.ts`,
+		import: `./dist/es/icons/${iconName}.js`,
+		require: `./dist/cjs/icons/${iconName}.js`
+	};
+}
 
 // Add exports for the icons index
 baseExports['./icons'] = {
-  types: './dist/types/icons/index.d.ts',
-  import: './dist/es/icons/index.js',
-  require: './dist/cjs/icons/index.js'
+	types: './dist/types/icons/index.d.ts',
+	import: './dist/es/icons/index.js',
+	require: './dist/cjs/icons/index.js'
 };
 
 // Add wildcard export for icons
 baseExports['./icons/*'] = {
-  types: './dist/types/icons/*.d.ts',
-  import: './dist/es/icons/*.js',
-  require: './dist/cjs/icons/*.js'
+	types: './dist/types/icons/*.d.ts',
+	import: './dist/es/icons/*.js',
+	require: './dist/cjs/icons/*.js'
 };
 
 /**

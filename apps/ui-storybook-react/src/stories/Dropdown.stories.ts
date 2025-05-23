@@ -3,7 +3,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 import { Dropdown, DropdownPositions, DropdownSizes } from "@twin.org/ui-components-react";
-import { DotsThreeVertical, CaretDown, X, } from "@twin.org/ui-components-react/icons";
+import { DotsThreeVertical, CaretDown, X } from "@twin.org/ui-components-react/icons";
 import { createElement } from "react";
 
 // Common dropdown items to reduce repetition

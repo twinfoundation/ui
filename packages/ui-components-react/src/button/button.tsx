@@ -5,6 +5,7 @@ import { memo, useMemo, type JSX } from "react";
 import type { ButtonProps } from "./buttonProps";
 
 const BASE_CLASSES = "border-2 border-transparent focus:outline-none focus:ring-2";
+const GHOST_BASE_CLASSES = "border-[1px] focus:outline-none focus:ring-1";
 
 const colorClasses = {
 	primary: `${BASE_CLASSES} text-white bg-surface-button dark:bg-surface-button hover:enabled:bg-surface-button-hover dark:hover:enabled:bg-surface-button-hover focus:ring-surface-button-pressed`,
@@ -14,6 +15,7 @@ const colorClasses = {
 	success: `${BASE_CLASSES} text-white bg-success dark:bg-success hover:enabled:bg-system-success-tints-600 dark:hover:enabled:bg-system-success-tints-600 focus:ring-system-success-tints-200`,
 	info: `${BASE_CLASSES} text-white bg-information dark:bg-information hover:enabled:bg-system-information-tints-600 dark:hover:enabled:bg-system-information-tints-600 focus:ring-system-information-tints-200`,
 	plain: `${BASE_CLASSES} text-black dark:text-invert bg-surface-second dark:bg-surface-third-dark hover:enabled:bg-surface-third focus:ring-gray-200 dark:hover:enabled:bg-surface-second-dark dark:focus:ring-surface-button-pressed`,
+	ghost: `${GHOST_BASE_CLASSES} text-black dark:text-invert hover:enabled:bg-gray-50 focus:bg-gray-100 focus:ring-gray-200 dark:hover:enabled:bg-surface-second-dark dark:focus:ring-surface-button-pressed`,
 	dark: `${BASE_CLASSES} text-white dark:text-black bg-gray-800 dark:bg-surface-second hover:enabled:bg-gray-700 focus:ring-gray-200 dark:hover:enabled:bg-gray-600 dark:focus:ring-gray-700`
 } as const;
 

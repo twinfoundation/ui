@@ -83,7 +83,7 @@ export { Form } from "./form/form";
 export type { FormProps } from "./form/formProps";
 
 // Icons - Re-exported from icons for backward compatibility
-//export * from "./icons";
+// export * from "./icons";
 
 // Label
 export { Label } from "./label/label";

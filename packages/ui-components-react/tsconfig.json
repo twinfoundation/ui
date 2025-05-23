@@ -26,10 +26,5 @@
 			"@twin.org/ui-components-react/*": ["./src/*"]
 		}
 	},
-	"include": [
-		"src/**/*.ts*",
-		"src/**/*.d.ts",
-		"src/types/*.d.ts",
-		"src/**/*.svg"
-	]
+	"include": ["src/**/*.ts*", "src/**/*.d.ts", "src/types/*.d.ts", "src/**/*.svg"]
 }

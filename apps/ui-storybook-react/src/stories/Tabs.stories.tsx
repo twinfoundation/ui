@@ -3,12 +3,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Tabs, TabsVariants } from "@twin.org/ui-components-react";
 import type { TabsProps, TabItem } from "@twin.org/ui-components-react";
-import {
-	IdentificationCard,
-	Gear,
-	Bell,
-	Envelope
-} from "@twin.org/ui-components-react/icons";
+import { IdentificationCard, Gear, Bell, Envelope } from "@twin.org/ui-components-react/icons";
 import { useState, type JSX } from "react";
 
 const defaultItems: TabItem[] = [

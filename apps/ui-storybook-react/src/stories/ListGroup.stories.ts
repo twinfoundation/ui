@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
 import { ListGroup } from "@twin.org/ui-components-react";
-import { IdentificationCard, Plus, X, } from "@twin.org/ui-components-react/icons";
+import { IdentificationCard, Plus } from "@twin.org/ui-components-react/icons";
 
 const meta = {
 	title: "Components/ListGroup",

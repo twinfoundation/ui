@@ -5,6 +5,7 @@ import {
 	PRIMARY,
 	SECONDARY,
 	PLAIN,
+	GHOST,
 	ERROR,
 	WARNING,
 	SUCCESS,
@@ -31,6 +32,11 @@ export const ButtonColors = {
 	 * Plain.
 	 */
 	Plain: PLAIN,
+
+	/**
+	 * Ghost.
+	 */
+	Ghost: GHOST,
 
 	/**
 	 * Error.
