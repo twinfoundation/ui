@@ -50,6 +50,8 @@ The icon system has been refactored for both React and Svelte components:
 
 See the respective package README for more details.
 
+> **Note:** The icon structure was updated in May 2025 to improve modularity and usage clarity.
+
 #### For React Components
 
 To work on React components with hot reloading:
