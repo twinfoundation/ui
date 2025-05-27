@@ -12,7 +12,7 @@ This mono-repository contains the UI components for building TWIN apps.
 
 ## Packages
 
-- [ui-tailwind](packages/ui-tailwind/README.md) - A package containing tailwind style definitions.
+- [ui-tailwind](packages/ui-tailwind/README.md) - A package containing tailwind style definitions. 
 - [ui-components-svelte](packages/ui-components-svelte/README.md) - A package containing the svelte versions of the UI components.
 - [ui-components-react](packages/ui-components-react/README.md) - A package containing the react versions of the UI components.
 
