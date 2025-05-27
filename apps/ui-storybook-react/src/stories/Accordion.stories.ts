@@ -3,11 +3,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 import { Accordion } from "@twin.org/ui-components-react";
-import {
-	InboxFull,
-	QuestionCircle,
-	CalendarMonth
-} from "@twin.org/ui-components-react/icons/solid";
+import { Question, Envelope, CalendarDots } from "@twin.org/ui-components-react/icons";
+
 import { createElement } from "react";
 
 const meta = {
@@ -181,7 +178,7 @@ export const WithIcons: Story = {
 						"This accordion item uses the InformationCircle icon from IconsSolid."
 					)
 				),
-				icon: InboxFull
+				icon: Envelope
 			},
 			{
 				title: "Accordion with Question Icon",
@@ -194,7 +191,7 @@ export const WithIcons: Story = {
 						"This accordion item uses the QuestionMarkCircle icon from IconsSolid."
 					)
 				),
-				icon: QuestionCircle
+				icon: Question
 			},
 			{
 				title: "Accordion with Settings Icon",
@@ -207,7 +204,7 @@ export const WithIcons: Story = {
 						"This accordion item uses the Cog icon from IconsSolid."
 					)
 				),
-				icon: CalendarMonth
+				icon: CalendarDots
 			}
 		],
 		children: []

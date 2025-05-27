@@ -3,19 +3,18 @@
 import type { Meta, StoryObj, Decorator } from "@storybook/react";
 import { Sidebar, Badge, Button, BadgeColors } from "@twin.org/ui-components-react";
 import {
-	ChartPie,
-	VideoCamera,
+	ChartBar,
+	Camera,
 	Image,
-	User,
-	UserSettings,
-	Home,
-	ShoppingBag,
-	ArrowRightAlt,
 	UserCircle,
-	QuestionCircle,
-	ExclamationCircle,
-	UserEdit
-} from "@twin.org/ui-components-react/icons/solid";
+	Gear,
+	House,
+	Bag,
+	ArrowRightFat,
+	Question,
+	WarningCircle,
+	PencilLine
+} from "@twin.org/ui-components-react/icons";
 import { Sidebar as FlowbiteSidebar } from "flowbite-react";
 
 const meta = {
@@ -34,10 +33,10 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
 	args: {
 		items: [
-			{ label: "Dashboard", icon: ChartPie, href: "#" },
-			{ label: "Projects", icon: ChartPie, href: "#", active: true },
-			{ label: "Team", icon: User, href: "#" },
-			{ label: "Settings", icon: UserSettings, href: "#" }
+			{ label: "Dashboard", icon: ChartBar, href: "#" },
+			{ label: "Projects", icon: ChartBar, href: "#", active: true },
+			{ label: "Team", icon: UserCircle, href: "#" },
+			{ label: "Settings", icon: Gear, href: "#" }
 		]
 	}
 };
@@ -45,10 +44,10 @@ export const Default: Story = {
 export const MultiLevelDropdown: Story = {
 	args: {
 		items: [
-			{ label: "Dashboard", icon: Home, href: "#" },
+			{ label: "Dashboard", icon: House, href: "#" },
 			{
 				label: "E-commerce",
-				icon: ShoppingBag,
+				icon: Bag,
 				href: "#",
 				items: [
 					{ label: "Products", href: "#" },
@@ -56,11 +55,11 @@ export const MultiLevelDropdown: Story = {
 				]
 			},
 			{
-				label: "Users",
-				icon: User,
+				label: "UserCircles",
+				icon: UserCircle,
 				href: "#",
 				items: [
-					{ label: "Add user", href: "#" },
+					{ label: "Add UserCircle", href: "#" },
 					{ label: "List", href: "#" }
 				]
 			}
@@ -71,10 +70,10 @@ export const MultiLevelDropdown: Story = {
 export const WithCustomChevron: Story = {
 	args: {
 		items: [
-			{ label: "Dashboard", icon: Home, href: "#" },
+			{ label: "Dashboard", icon: House, href: "#" },
 			{
 				label: "E-commerce",
-				icon: ShoppingBag,
+				icon: Bag,
 				href: "#",
 				items: [
 					{ label: "Products", href: "#" },
@@ -88,12 +87,12 @@ export const WithCustomChevron: Story = {
 export const WithContentSeparator: Story = {
 	args: {
 		items: [
-			{ label: "Dashboard", icon: ChartPie, href: "#" },
-			{ label: "Kanban", icon: VideoCamera, href: "#" },
+			{ label: "Dashboard", icon: ChartBar, href: "#" },
+			{ label: "Kanban", icon: Camera, href: "#" },
 			{ label: "Inbox", icon: Image, href: "#" },
-			{ label: "Users", icon: User, href: "#" },
-			{ label: "Products", icon: ShoppingBag, href: "#" },
-			{ label: "Sign In", icon: ArrowRightAlt, href: "#" },
+			{ label: "UserCircles", icon: UserCircle, href: "#" },
+			{ label: "Products", icon: Bag, href: "#" },
+			{ label: "Sign In", icon: ArrowRightFat, href: "#" },
 			{ label: "Sign Up", icon: UserCircle, href: "#" }
 		],
 		CTA: (
@@ -101,13 +100,13 @@ export const WithContentSeparator: Story = {
 				<hr className="my-3 border-gray-200 dark:border-gray-700" />
 				<FlowbiteSidebar.Items>
 					<FlowbiteSidebar.ItemGroup className="space-y-2">
-						<FlowbiteSidebar.Item href="#" icon={ChartPie}>
+						<FlowbiteSidebar.Item href="#" icon={ChartBar}>
 							Upgrade to Pro
 						</FlowbiteSidebar.Item>
-						<FlowbiteSidebar.Item href="#" icon={VideoCamera}>
+						<FlowbiteSidebar.Item href="#" icon={Camera}>
 							Documentation
 						</FlowbiteSidebar.Item>
-						<FlowbiteSidebar.Item href="#" icon={QuestionCircle}>
+						<FlowbiteSidebar.Item href="#" icon={Question}>
 							Help
 						</FlowbiteSidebar.Item>
 					</FlowbiteSidebar.ItemGroup>
@@ -120,9 +119,9 @@ export const WithContentSeparator: Story = {
 export const WithButton: Story = {
 	args: {
 		items: [
-			{ label: "Dashboard", icon: Home, href: "#" },
-			{ label: "Projects", icon: ChartPie, href: "#" },
-			{ label: "Team", icon: User, href: "#" }
+			{ label: "Dashboard", icon: House, href: "#" },
+			{ label: "Projects", icon: ChartBar, href: "#" },
+			{ label: "Team", icon: UserCircle, href: "#" }
 		],
 		CTA: (
 			<div className="mt-auto">
@@ -141,9 +140,9 @@ export const WithLogo: Story = {
 			href: "https://www.twin.org"
 		},
 		items: [
-			{ label: "Dashboard", icon: Home, href: "#" },
-			{ label: "Projects", icon: ChartPie, href: "#" },
-			{ label: "Team", icon: User, href: "#" }
+			{ label: "Dashboard", icon: House, href: "#" },
+			{ label: "Projects", icon: ChartBar, href: "#" },
+			{ label: "Team", icon: UserCircle, href: "#" }
 		]
 	}
 };
@@ -151,15 +150,15 @@ export const WithLogo: Story = {
 export const WithCTA: Story = {
 	args: {
 		items: [
-			{ label: "Dashboard", icon: Home, href: "#" },
-			{ label: "Projects", icon: ChartPie, href: "#", active: true },
-			{ label: "Team", icon: User, href: "#" },
-			{ label: "Settings", icon: UserSettings, href: "#" }
+			{ label: "Dashboard", icon: House, href: "#" },
+			{ label: "Projects", icon: ChartBar, href: "#", active: true },
+			{ label: "Team", icon: UserCircle, href: "#" },
+			{ label: "Settings", icon: Gear, href: "#" }
 		],
 		CTA: (
 			<div>
 				<div className="mb-3 flex items-center">
-					<Badge color="warning">Beta</Badge>
+					<Badge color="WarningCircle">Beta</Badge>
 					<button
 						aria-label="Close"
 						className="-m-1.5 ml-auto inline-flex h-6 w-6 rounded-lg bg-gray-100 p-1 text-cyan-900 hover:bg-gray-200 focus:ring-2 focus:ring-gray-400 dark:bg-gray-700 dark:text-gray-400 dark:hover:bg-gray-600"
@@ -207,21 +206,21 @@ export const WithLabels: Story = {
 			},
 			{
 				label: "Spam",
-				icon: ExclamationCircle,
+				icon: WarningCircle,
 				href: "#",
 				badge: "42",
-				badgeColor: BadgeColors.Warning
+				badgeColor: BadgeColors.WarningCircle
 			},
 			{
 				label: "Updates",
-				icon: ArrowRightAlt,
+				icon: ArrowRightFat,
 				href: "#",
 				badge: "New",
 				badgeColor: BadgeColors.Success
 			},
 			{
 				label: "Forums",
-				icon: UserEdit,
+				icon: PencilLine,
 				href: "#",
 				badge: "99+",
 				badgeColor: BadgeColors.Failure
@@ -233,8 +232,8 @@ export const WithLabels: Story = {
 export const WithFooterContent: Story = {
 	args: {
 		items: [
-			{ label: "Dashboard", icon: Home, href: "#" },
-			{ label: "Team", icon: User, href: "#" }
+			{ label: "Dashboard", icon: House, href: "#" },
+			{ label: "Team", icon: UserCircle, href: "#" }
 		],
 		footerContent: <div className="p-4 text-sm text-gray-500">Custom footer content</div>
 	}
@@ -258,12 +257,12 @@ export const WithFullHeightParent: Story = {
 	decorators: [FullHeightDecorator],
 	args: {
 		items: [
-			{ label: "Dashboard", icon: Home, href: "#", active: true },
-			{ label: "Settings", icon: UserSettings, href: "#" },
-			{ label: "Projects", icon: ChartPie, href: "#" },
-			{ label: "Team", icon: User, href: "#" }
+			{ label: "Dashboard", icon: House, href: "#", active: true },
+			{ label: "Settings", icon: Gear, href: "#" },
+			{ label: "Projects", icon: ChartBar, href: "#" },
+			{ label: "Team", icon: UserCircle, href: "#" }
 		],
-		footerItems: [{ label: "Help", icon: QuestionCircle, href: "#" }],
+		footerItems: [{ label: "Help", icon: Question, href: "#" }],
 		footerContent: (
 			<div className="p-4 text-sm text-gray-500">
 				<div className="text-primary mb-2 text-base font-bold">Kate Johnson</div>
@@ -285,9 +284,9 @@ export const WithFullHeightParent: Story = {
 export const WithHeader: Story = {
 	args: {
 		items: [
-			{ label: "Dashboard", icon: Home, href: "#" },
-			{ label: "Projects", icon: ChartPie, href: "#" },
-			{ label: "Team", icon: User, href: "#" }
+			{ label: "Dashboard", icon: House, href: "#" },
+			{ label: "Projects", icon: ChartBar, href: "#" },
+			{ label: "Team", icon: UserCircle, href: "#" }
 		],
 		header: (
 			<div className="">

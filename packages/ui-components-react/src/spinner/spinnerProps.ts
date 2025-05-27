@@ -3,12 +3,16 @@
 import type { SpinnerProps as FlowbiteSpinnerProps } from "flowbite-react";
 import type { SpinnerSize } from "./spinnerSizes";
 
-const colorsTypes = ["primary", "success", "warning", "error", "information"] as const;
+/**
+ * Type definition for the allowed spinner color values.
+ * @private
+ */
+type _ColorsType = ["primary", "success", "warning", "error", "information"];
 
 /**
- * Type for the badge colors
+ * Type for the spinner colors
  */
-export type SpinnerColor = (typeof colorsTypes)[number];
+export type SpinnerColor = _ColorsType[number];
 
 /**
  * Spinner props.

@@ -1,10 +1,18 @@
 # TWIN UI
 
+## Icon Structure Update (May 2025)
+
+:warning: **The icon system for all UI packages was refactored in May 2025.**
+
+- All icons are now in each package's `src/icons/` folder.
+- Each icon is a separate file for better modularity and tree-shaking.
+- See package READMEs for usage examples and more info.
+
 This mono-repository contains the UI components for building TWIN apps.
 
 ## Packages
 
-- [ui-tailwind](packages/ui-tailwind/README.md) - A package containing tailwind style definitions.
+- [ui-tailwind](packages/ui-tailwind/README.md) - A package containing tailwind style definitions. 
 - [ui-components-svelte](packages/ui-components-svelte/README.md) - A package containing the svelte versions of the UI components.
 - [ui-components-react](packages/ui-components-react/README.md) - A package containing the react versions of the UI components.
 
@@ -36,6 +44,21 @@ npm install
 ```
 
 ### Development Workflow
+
+#### Icon Structure
+
+The icon system has been refactored for both React and Svelte components:
+- All icons are now located in the `src/icons/` directory of each component package.
+- Each icon is its own TypeScript file for better tree-shaking and modularity.
+- To use an icon, simply import it from the respective package, e.g.:
+  ```js
+  import { Star } from 'ui-components-react/icons';
+  ```
+- The icon index file exports all available icons for easy access.
+
+See the respective package README for more details.
+
+> **Note:** The icon structure was updated in May 2025 to improve modularity and usage clarity.
 
 #### For React Components
 
