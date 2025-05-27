@@ -12,7 +12,7 @@ This mono-repository contains the UI components for building TWIN apps.
 
 ## Packages
 
-- [ui-tailwind](packages/ui-tailwind/README.md) - A package containing tailwind style definitions. 
+- [ui-tailwind](packages/ui-tailwind/README.md) - A package containing tailwind style definitions.
 - [ui-components-svelte](packages/ui-components-svelte/README.md) - A package containing the svelte versions of the UI components.
 - [ui-components-react](packages/ui-components-react/README.md) - A package containing the react versions of the UI components.
 
@@ -48,6 +48,7 @@ npm install
 #### Icon Structure
 
 The icon system has been refactored for both React and Svelte components:
+
 - All icons are now located in the `src/icons/` directory of each component package.
 - Each icon is its own TypeScript file for better tree-shaking and modularity.
 - To use an icon, simply import it from the respective package, e.g.:
