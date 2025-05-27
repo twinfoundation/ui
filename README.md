@@ -1,5 +1,13 @@
 # TWIN UI
 
+## Icon Structure Update (May 2025)
+
+:warning: **The icon system for all UI packages was refactored in May 2025.**
+
+- All icons are now in each package's `src/icons/` folder.
+- Each icon is a separate file for better modularity and tree-shaking.
+- See package READMEs for usage examples and more info.
+
 This mono-repository contains the UI components for building TWIN apps.
 
 ## Packages
