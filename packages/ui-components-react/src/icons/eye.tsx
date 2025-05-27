@@ -12,17 +12,17 @@ const EyeLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			stroke="currentColor"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			stroke-width="24"
+			stroke-width="12"
 		/>
 		<circle
 			cx="128"
 			cy="128"
-			r="32"
+			r="40"
 			fill="none"
 			stroke="currentColor"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			stroke-width="24"
+			stroke-width="12"
 		/>
 	</svg>
 );
@@ -36,17 +36,17 @@ const EyeRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			stroke="currentColor"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			stroke-width="24"
+			stroke-width="16"
 		/>
 		<circle
 			cx="128"
 			cy="128"
-			r="32"
+			r="40"
 			fill="none"
 			stroke="currentColor"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			stroke-width="24"
+			stroke-width="16"
 		/>
 	</svg>
 );

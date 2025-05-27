@@ -12,7 +12,7 @@ const ChartBarLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			stroke="currentColor"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			stroke-width="24"
+			stroke-width="12"
 		/>
 		<line
 			x1="224"
@@ -23,7 +23,7 @@ const ChartBarLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			stroke="currentColor"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			stroke-width="24"
+			stroke-width="12"
 		/>
 		<polyline
 			points="96 208 96 88 152 88"
@@ -31,7 +31,7 @@ const ChartBarLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			stroke="currentColor"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			stroke-width="24"
+			stroke-width="12"
 		/>
 		<polyline
 			points="152 208 152 40 208 40 208 208"
@@ -39,7 +39,7 @@ const ChartBarLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			stroke="currentColor"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			stroke-width="24"
+			stroke-width="12"
 		/>
 	</svg>
 );
@@ -53,7 +53,7 @@ const ChartBarRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			stroke="currentColor"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			stroke-width="24"
+			stroke-width="16"
 		/>
 		<line
 			x1="224"
@@ -64,7 +64,7 @@ const ChartBarRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			stroke="currentColor"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			stroke-width="24"
+			stroke-width="16"
 		/>
 		<polyline
 			points="96 208 96 88 152 88"
@@ -72,7 +72,7 @@ const ChartBarRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			stroke="currentColor"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			stroke-width="24"
+			stroke-width="16"
 		/>
 		<polyline
 			points="152 208 152 40 208 40 208 208"
@@ -80,7 +80,7 @@ const ChartBarRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			stroke="currentColor"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			stroke-width="24"
+			stroke-width="16"
 		/>
 	</svg>
 );

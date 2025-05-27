@@ -4,19 +4,8 @@ import React from "react";
 import type { IconsProps } from "./iconsProps";
 
 const ListLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" {...props}>
+	<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
 		<rect width="256" height="256" fill="none" />
-		<line
-			x1="40"
-			y1="64"
-			x2="216"
-			y2="64"
-			fill="none"
-			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="16"
-		/>
 		<line
 			x1="40"
 			y1="128"
@@ -26,36 +15,36 @@ const ListLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			stroke="currentColor"
 			strokeLinecap="round"
 			strokeLinejoin="round"
-			strokeWidth="16"
+			strokeWidth="12"
+		/>
+		<line
+			x1="40"
+			y1="64"
+			x2="216"
+			y2="64"
+			fill="none"
+			stroke="currentColor"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="12"
 		/>
 		<line
 			x1="40"
 			y1="192"
-			x2="144"
+			x2="216"
 			y2="192"
 			fill="none"
 			stroke="currentColor"
 			strokeLinecap="round"
 			strokeLinejoin="round"
-			strokeWidth="16"
+			strokeWidth="12"
 		/>
 	</svg>
 );
 
 const ListRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" {...props}>
+	<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
 		<rect width="256" height="256" fill="none" />
-		<line
-			x1="40"
-			y1="64"
-			x2="216"
-			y2="64"
-			fill="none"
-			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="24"
-		/>
 		<line
 			x1="40"
 			y1="128"
@@ -65,18 +54,29 @@ const ListRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			stroke="currentColor"
 			strokeLinecap="round"
 			strokeLinejoin="round"
-			strokeWidth="24"
+			strokeWidth="16"
+		/>
+		<line
+			x1="40"
+			y1="64"
+			x2="216"
+			y2="64"
+			fill="none"
+			stroke="currentColor"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="16"
 		/>
 		<line
 			x1="40"
 			y1="192"
-			x2="144"
+			x2="216"
 			y2="192"
 			fill="none"
 			stroke="currentColor"
 			strokeLinecap="round"
 			strokeLinejoin="round"
-			strokeWidth="24"
+			strokeWidth="16"
 		/>
 	</svg>
 );

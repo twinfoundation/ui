@@ -12,10 +12,28 @@ const SealPercentLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			stroke="currentColor"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			stroke-width="24"
+			stroke-width="12"
 		/>
-		<circle cx="96" cy="96" r="16" />
-		<circle cx="160" cy="160" r="16" />
+		<circle
+			cx="96"
+			cy="96"
+			r="16"
+			fill="none"
+			stroke="currentColor"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="12"
+		/>
+		<circle
+			cx="160"
+			cy="160"
+			r="16"
+			fill="none"
+			stroke="currentColor"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="12"
+		/>
 		<line
 			x1="88"
 			y1="168"
@@ -25,7 +43,7 @@ const SealPercentLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			stroke="currentColor"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			stroke-width="24"
+			stroke-width="12"
 		/>
 	</svg>
 );
@@ -39,10 +57,28 @@ const SealPercentRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			stroke="currentColor"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			stroke-width="24"
+			stroke-width="16"
 		/>
-		<circle cx="96" cy="96" r="16" />
-		<circle cx="160" cy="160" r="16" />
+		<circle
+			cx="96"
+			cy="96"
+			r="16"
+			fill="none"
+			stroke="currentColor"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
+		/>
+		<circle
+			cx="160"
+			cy="160"
+			r="16"
+			fill="none"
+			stroke="currentColor"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
+		/>
 		<line
 			x1="88"
 			y1="168"
@@ -52,7 +88,7 @@ const SealPercentRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			stroke="currentColor"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			stroke-width="24"
+			stroke-width="16"
 		/>
 	</svg>
 );

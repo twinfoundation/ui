@@ -12,7 +12,7 @@ const ShoppingCartLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			stroke="currentColor"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			stroke-width="24"
+			stroke-width="12"
 		/>
 		<circle
 			cx="92"
@@ -22,7 +22,7 @@ const ShoppingCartLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			stroke="currentColor"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			stroke-width="24"
+			stroke-width="12"
 		/>
 		<circle
 			cx="188"
@@ -32,7 +32,7 @@ const ShoppingCartLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			stroke="currentColor"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			stroke-width="24"
+			stroke-width="12"
 		/>
 		<path
 			d="M70.55,144H196.1a16,16,0,0,0,15.74-13.14L224,64H56"
@@ -40,7 +40,7 @@ const ShoppingCartLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			stroke="currentColor"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			stroke-width="24"
+			stroke-width="12"
 		/>
 	</svg>
 );
@@ -54,7 +54,7 @@ const ShoppingCartRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			stroke="currentColor"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			stroke-width="24"
+			stroke-width="16"
 		/>
 		<circle
 			cx="92"
@@ -64,7 +64,7 @@ const ShoppingCartRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			stroke="currentColor"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			stroke-width="24"
+			stroke-width="16"
 		/>
 		<circle
 			cx="188"
@@ -74,7 +74,7 @@ const ShoppingCartRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			stroke="currentColor"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			stroke-width="24"
+			stroke-width="16"
 		/>
 		<path
 			d="M70.55,144H196.1a16,16,0,0,0,15.74-13.14L224,64H56"
@@ -82,7 +82,7 @@ const ShoppingCartRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			stroke="currentColor"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			stroke-width="24"
+			stroke-width="16"
 		/>
 	</svg>
 );

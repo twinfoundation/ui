@@ -4,20 +4,20 @@ import React from "react";
 import type { IconsProps } from "./iconsProps";
 
 const DotsThreeVerticalLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" {...props}>
+	<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
 		<rect width="256" height="256" fill="none" />
-		<circle cx="128" cy="60" r="16" />
-		<circle cx="128" cy="128" r="16" />
-		<circle cx="128" cy="196" r="16" />
+		<circle cx="128" cy="60" r="10" />
+		<circle cx="128" cy="128" r="10" />
+		<circle cx="128" cy="196" r="10" />
 	</svg>
 );
 
 const DotsThreeVerticalRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" {...props}>
+	<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
 		<rect width="256" height="256" fill="none" />
-		<circle cx="128" cy="60" r="16" />
-		<circle cx="128" cy="128" r="16" />
-		<circle cx="128" cy="196" r="16" />
+		<circle cx="128" cy="128" r="12" fill="currentColor" />
+		<circle cx="128" cy="60" r="12" fill="currentColor" />
+		<circle cx="128" cy="196" r="12" fill="currentColor" />
 	</svg>
 );
 

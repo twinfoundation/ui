@@ -4,49 +4,49 @@ import React from "react";
 import type { IconsProps } from "./iconsProps";
 
 const MapPinLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" {...props}>
+	<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
 		<rect width="256" height="256" fill="none" />
-		<path
-			d="M54.5,201.5c9.2-8.2,24.1-11.5,38.3-14.8,9-2.1,18.1-4.2,25.8-9.6a42,42,0,0,0,4.4-3.8c16.7-16.7,35.9-35.9,45.9-70.1,3.2-11,4.9-24.9,2.3-34.9s-10.5-19.7-20.5-24.6-22.8-5.3-34.9,2.3c-21.9,13.6-32.4,27.6-45.9,45.9-15.7,21.1-33.5,45.1-33.5,83.6"
-			fill="none"
-			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="16"
-		/>
 		<circle
 			cx="128"
 			cy="104"
-			r="24"
+			r="32"
 			fill="none"
 			stroke="currentColor"
 			strokeLinecap="round"
 			strokeLinejoin="round"
-			strokeWidth="16"
+			strokeWidth="12"
+		/>
+		<path
+			d="M208,104c0,72-80,128-80,128S48,176,48,104a80,80,0,0,1,160,0Z"
+			fill="none"
+			stroke="currentColor"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="12"
 		/>
 	</svg>
 );
 
 const MapPinRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" {...props}>
+	<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
 		<rect width="256" height="256" fill="none" />
-		<path
-			d="M54.5,201.5c9.2-8.2,24.1-11.5,38.3-14.8,9-2.1,18.1-4.2,25.8-9.6a42,42,0,0,0,4.4-3.8c16.7-16.7,35.9-35.9,45.9-70.1,3.2-11,4.9-24.9,2.3-34.9s-10.5-19.7-20.5-24.6-22.8-5.3-34.9,2.3c-21.9,13.6-32.4,27.6-45.9,45.9-15.7,21.1-33.5,45.1-33.5,83.6"
-			fill="none"
-			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="24"
-		/>
 		<circle
 			cx="128"
 			cy="104"
-			r="24"
+			r="32"
 			fill="none"
 			stroke="currentColor"
 			strokeLinecap="round"
 			strokeLinejoin="round"
-			strokeWidth="24"
+			strokeWidth="16"
+		/>
+		<path
+			d="M208,104c0,72-80,128-80,128S48,176,48,104a80,80,0,0,1,160,0Z"
+			fill="none"
+			stroke="currentColor"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="16"
 		/>
 	</svg>
 );

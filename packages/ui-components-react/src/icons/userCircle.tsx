@@ -4,17 +4,25 @@ import React from "react";
 import type { IconsProps } from "./iconsProps";
 
 const UserCircleLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" {...props}>
+	<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
 		<rect width="256" height="256" fill="none" />
+		<path
+			d="M63.8,199.37a72,72,0,0,1,128.4,0"
+			fill="none"
+			stroke="currentColor"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="12"
+		/>
 		<circle
 			cx="128"
 			cy="128"
 			r="96"
 			fill="none"
 			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="16"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="12"
 		/>
 		<circle
 			cx="128"
@@ -22,23 +30,15 @@ const UserCircleLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			r="40"
 			fill="none"
 			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="16"
-		/>
-		<path
-			d="M63.8,199.4a72,72,0,0,1,128.4,0"
-			fill="none"
-			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="16"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="12"
 		/>
 	</svg>
 );
 
 const UserCircleRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" {...props}>
+	<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
 		<rect width="256" height="256" fill="none" />
 		<circle
 			cx="128"
@@ -46,9 +46,9 @@ const UserCircleRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			r="96"
 			fill="none"
 			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="24"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
 		/>
 		<circle
 			cx="128"
@@ -56,17 +56,17 @@ const UserCircleRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			r="40"
 			fill="none"
 			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="24"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
 		/>
 		<path
-			d="M63.8,199.4a72,72,0,0,1,128.4,0"
+			d="M63.8,199.37a72,72,0,0,1,128.4,0"
 			fill="none"
 			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="24"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
 		/>
 	</svg>
 );

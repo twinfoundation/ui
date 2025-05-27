@@ -14,7 +14,7 @@ const MagnifyingGlassLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			stroke="currentColor"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			stroke-width="24"
+			stroke-width="12"
 		/>
 		<line
 			x1="168.57"
@@ -25,7 +25,7 @@ const MagnifyingGlassLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			stroke="currentColor"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			stroke-width="24"
+			stroke-width="12"
 		/>
 	</svg>
 );
@@ -41,7 +41,7 @@ const MagnifyingGlassRegular: React.FC<React.SVGProps<SVGSVGElement>> = props =>
 			stroke="currentColor"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			stroke-width="24"
+			stroke-width="16"
 		/>
 		<line
 			x1="168.57"
@@ -52,7 +52,7 @@ const MagnifyingGlassRegular: React.FC<React.SVGProps<SVGSVGElement>> = props =>
 			stroke="currentColor"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			stroke-width="24"
+			stroke-width="16"
 		/>
 	</svg>
 );

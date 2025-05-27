@@ -12,17 +12,17 @@ const GlobeLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			r="96"
 			fill="none"
 			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="24"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="12"
 		/>
 		<path
 			d="M168,128c0,64-40,96-40,96s-40-32-40-96,40-96,40-96S168,64,168,128Z"
 			fill="none"
 			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="24"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="12"
 		/>
 		<line
 			x1="37.46"
@@ -31,9 +31,9 @@ const GlobeLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="96"
 			fill="none"
 			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="24"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="12"
 		/>
 		<line
 			x1="37.46"
@@ -42,9 +42,9 @@ const GlobeLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="160"
 			fill="none"
 			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="24"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="12"
 		/>
 	</svg>
 );
@@ -58,17 +58,17 @@ const GlobeRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			r="96"
 			fill="none"
 			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="24"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
 		/>
 		<path
 			d="M168,128c0,64-40,96-40,96s-40-32-40-96,40-96,40-96S168,64,168,128Z"
 			fill="none"
 			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="24"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
 		/>
 		<line
 			x1="37.46"
@@ -77,9 +77,9 @@ const GlobeRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="96"
 			fill="none"
 			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="24"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
 		/>
 		<line
 			x1="37.46"
@@ -88,9 +88,9 @@ const GlobeRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="160"
 			fill="none"
 			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="24"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
 		/>
 	</svg>
 );

@@ -6,7 +6,15 @@ import type { IconsProps } from "./iconsProps";
 const InfoLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 	<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
 		<rect width="256" height="256" fill="none" />
-		<circle cx="124" cy="84" r="16" />
+		<path
+			d="M120,120a8,8,0,0,1,8,8v40a8,8,0,0,0,8,8"
+			fill="none"
+			stroke="currentColor"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="12"
+		/>
+		<circle cx="124" cy="84" r="10" />
 		<circle
 			cx="128"
 			cy="128"
@@ -15,15 +23,7 @@ const InfoLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			stroke="currentColor"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			stroke-width="24"
-		/>
-		<path
-			d="M120,124a8,8,0,0,1,8,8v36a8,8,0,0,0,8,8"
-			fill="none"
-			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="24"
+			stroke-width="12"
 		/>
 	</svg>
 );
@@ -31,7 +31,6 @@ const InfoLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 const InfoRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 	<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
 		<rect width="256" height="256" fill="none" />
-		<circle cx="124" cy="84" r="16" />
 		<circle
 			cx="128"
 			cy="128"
@@ -40,16 +39,17 @@ const InfoRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			stroke="currentColor"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			stroke-width="24"
+			stroke-width="16"
 		/>
 		<path
-			d="M120,124a8,8,0,0,1,8,8v36a8,8,0,0,0,8,8"
+			d="M120,120a8,8,0,0,1,8,8v40a8,8,0,0,0,8,8"
 			fill="none"
 			stroke="currentColor"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			stroke-width="24"
+			stroke-width="16"
 		/>
+		<circle cx="124" cy="84" r="12" />
 	</svg>
 );
 

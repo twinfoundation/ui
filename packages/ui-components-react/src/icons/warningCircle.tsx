@@ -14,20 +14,20 @@ const WarningCircleLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			stroke="currentColor"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			stroke-width="24"
+			stroke-width="12"
 		/>
 		<line
 			x1="128"
-			y1="132"
+			y1="136"
 			x2="128"
 			y2="80"
 			fill="none"
 			stroke="currentColor"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			stroke-width="24"
+			stroke-width="12"
 		/>
-		<circle cx="128" cy="172" r="16" />
+		<circle cx="128" cy="172" r="10" />
 	</svg>
 );
 
@@ -40,22 +40,21 @@ const WarningCircleRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			r="96"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="24"
+			stroke-miterlimit="10"
+			stroke-width="16"
 		/>
 		<line
 			x1="128"
-			y1="132"
+			y1="136"
 			x2="128"
 			y2="80"
 			fill="none"
 			stroke="currentColor"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			stroke-width="24"
+			stroke-width="16"
 		/>
-		<circle cx="128" cy="172" r="16" />
+		<circle cx="128" cy="172" r="12" />
 	</svg>
 );
 

@@ -4,7 +4,7 @@ import React from "react";
 import type { IconsProps } from "./iconsProps";
 
 const KeyboardLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" {...props}>
+	<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
 		<rect width="256" height="256" fill="none" />
 		<rect
 			x="24"
@@ -14,45 +14,70 @@ const KeyboardLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			rx="8"
 			fill="none"
 			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="16"
-		/>
-		<circle cx="68" cy="128" r="12" />
-		<circle cx="128" cy="128" r="12" />
-		<circle cx="188" cy="128" r="12" />
-		<circle cx="68" cy="88" r="12" />
-		<circle cx="128" cy="88" r="12" />
-		<circle cx="188" cy="88" r="12" />
-		<circle cx="68" cy="168" r="12" />
-		<circle cx="98" cy="168" r="12" />
-		<line
-			x1="128"
-			y1="168"
-			x2="148"
-			y2="168"
-			fill="none"
-			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="16"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="12"
 		/>
 		<line
-			x1="188"
-			y1="168"
-			x2="188"
-			y2="168"
+			x1="56"
+			y1="128"
+			x2="200"
+			y2="128"
 			fill="none"
 			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="16"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="12"
+		/>
+		<line
+			x1="56"
+			y1="96"
+			x2="200"
+			y2="96"
+			fill="none"
+			stroke="currentColor"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="12"
+		/>
+		<line
+			x1="56"
+			y1="160"
+			x2="64"
+			y2="160"
+			fill="none"
+			stroke="currentColor"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="12"
+		/>
+		<line
+			x1="96"
+			y1="160"
+			x2="160"
+			y2="160"
+			fill="none"
+			stroke="currentColor"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="12"
+		/>
+		<line
+			x1="192"
+			y1="160"
+			x2="200"
+			y2="160"
+			fill="none"
+			stroke="currentColor"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="12"
 		/>
 	</svg>
 );
 
 const KeyboardRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" {...props}>
+	<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
 		<rect width="256" height="256" fill="none" />
 		<rect
 			x="24"
@@ -62,39 +87,64 @@ const KeyboardRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			rx="8"
 			fill="none"
 			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="24"
-		/>
-		<circle cx="68" cy="128" r="16" />
-		<circle cx="128" cy="128" r="16" />
-		<circle cx="188" cy="128" r="16" />
-		<circle cx="68" cy="88" r="16" />
-		<circle cx="128" cy="88" r="16" />
-		<circle cx="188" cy="88" r="16" />
-		<circle cx="68" cy="168" r="16" />
-		<circle cx="98" cy="168" r="16" />
-		<line
-			x1="128"
-			y1="168"
-			x2="148"
-			y2="168"
-			fill="none"
-			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="24"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
 		/>
 		<line
-			x1="188"
-			y1="168"
-			x2="188"
-			y2="168"
+			x1="56"
+			y1="128"
+			x2="200"
+			y2="128"
 			fill="none"
 			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="24"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
+		/>
+		<line
+			x1="56"
+			y1="96"
+			x2="200"
+			y2="96"
+			fill="none"
+			stroke="currentColor"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
+		/>
+		<line
+			x1="56"
+			y1="160"
+			x2="64"
+			y2="160"
+			fill="none"
+			stroke="currentColor"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
+		/>
+		<line
+			x1="96"
+			y1="160"
+			x2="160"
+			y2="160"
+			fill="none"
+			stroke="currentColor"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
+		/>
+		<line
+			x1="192"
+			y1="160"
+			x2="200"
+			y2="160"
+			fill="none"
+			stroke="currentColor"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
 		/>
 	</svg>
 );

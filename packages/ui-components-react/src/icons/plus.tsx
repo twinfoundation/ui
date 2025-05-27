@@ -4,7 +4,7 @@ import React from "react";
 import type { IconsProps } from "./iconsProps";
 
 const PlusLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" {...props}>
+	<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
 		<rect width="256" height="256" fill="none" />
 		<line
 			x1="40"
@@ -13,9 +13,9 @@ const PlusLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="128"
 			fill="none"
 			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="16"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="12"
 		/>
 		<line
 			x1="128"
@@ -24,15 +24,15 @@ const PlusLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="216"
 			fill="none"
 			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="16"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="12"
 		/>
 	</svg>
 );
 
 const PlusRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" {...props}>
+	<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
 		<rect width="256" height="256" fill="none" />
 		<line
 			x1="40"
@@ -41,9 +41,9 @@ const PlusRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="128"
 			fill="none"
 			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="24"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
 		/>
 		<line
 			x1="128"
@@ -52,9 +52,9 @@ const PlusRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="216"
 			fill="none"
 			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="24"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
 		/>
 	</svg>
 );

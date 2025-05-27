@@ -4,7 +4,7 @@ import React from "react";
 import type { IconsProps } from "./iconsProps";
 
 const LockLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" {...props}>
+	<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
 		<rect width="256" height="256" fill="none" />
 		<rect
 			x="40"
@@ -14,23 +14,24 @@ const LockLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			rx="8"
 			fill="none"
 			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="16"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="12"
 		/>
+		<circle cx="128" cy="152" r="10" />
 		<path
-			d="M92,88V52a36,36,0,0,1,72,0V88"
+			d="M88,88V56a40,40,0,0,1,80,0V88"
 			fill="none"
 			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="16"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="12"
 		/>
 	</svg>
 );
 
 const LockRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" {...props}>
+	<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
 		<rect width="256" height="256" fill="none" />
 		<rect
 			x="40"
@@ -40,17 +41,18 @@ const LockRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			rx="8"
 			fill="none"
 			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="24"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
 		/>
+		<circle cx="128" cy="152" r="12" />
 		<path
-			d="M92,88V52a36,36,0,0,1,72,0V88"
+			d="M88,88V56a40,40,0,0,1,80,0V88"
 			fill="none"
 			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="24"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
 		/>
 	</svg>
 );
