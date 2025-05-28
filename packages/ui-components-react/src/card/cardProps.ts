@@ -12,7 +12,7 @@ import type {
 	BOTTOM_LEFT
 } from "../constants/positions";
 import type { SMALL, MEDIUM, LARGE, EXTRA_LARGE } from "../constants/sizes";
-import type { IconComponent } from "../types/iconTypes";
+import type { IconsProps } from "../types/iconTypes";
 
 /**
  * Icon size options for the card icon.
@@ -41,7 +41,7 @@ export interface CardIcon {
 	/**
 	 * The icon component to display.
 	 */
-	component: IconComponent;
+	component: React.FC<IconsProps>;
 
 	/**
 	 * The size of the icon.

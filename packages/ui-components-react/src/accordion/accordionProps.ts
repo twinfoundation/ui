@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0.
 import type { AccordionProps as FlowbiteAccordionProps } from "flowbite-react";
 import type { ReactNode } from "react";
-import type { IconComponent } from "../types/iconTypes";
+import type { IconsProps } from "../types/iconTypes";
 
 /**
  * Interface for accordion item structure
@@ -19,7 +19,7 @@ export interface AccordionItem {
 	/**
 	 * Optional icon to display before the title
 	 */
-	icon?: IconComponent;
+	icon?: React.FC<IconsProps>;
 }
 
 /**
