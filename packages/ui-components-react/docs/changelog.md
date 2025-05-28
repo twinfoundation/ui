@@ -1,5 +1,19 @@
 # @twin.org/ui-components-react - Changelog
 
+## [0.0.1-next.48](https://github.com/twinfoundation/ui/compare/ui-components-react-v0.0.1-next.47...ui-components-react-v0.0.1-next.48) (2025-05-28)
+
+
+### Features
+
+* migrate icon system and update types ([#62](https://github.com/twinfoundation/ui/issues/62)) ([ab81824](https://github.com/twinfoundation/ui/commit/ab81824e06cf0f03ed1d888f2db9b642574d8b42))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/ui-tailwind bumped from 0.0.1-next.47 to 0.0.1-next.48
+
 ## [0.0.1-next.47](https://github.com/twinfoundation/ui/compare/ui-components-react-v0.0.1-next.46...ui-components-react-v0.0.1-next.47) (2025-05-22)
 
 ### Features
