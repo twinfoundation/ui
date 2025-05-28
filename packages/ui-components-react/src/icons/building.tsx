@@ -13,9 +13,9 @@ const BuildingLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="232"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="12"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="12"
 		/>
 		<line
 			x1="56"
@@ -24,9 +24,9 @@ const BuildingLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="232"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="12"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="12"
 		/>
 		<line
 			x1="200"
@@ -35,9 +35,9 @@ const BuildingLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="24"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="12"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="12"
 		/>
 		<line
 			x1="96"
@@ -46,9 +46,9 @@ const BuildingLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="64"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="12"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="12"
 		/>
 		<line
 			x1="144"
@@ -57,9 +57,9 @@ const BuildingLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="64"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="12"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="12"
 		/>
 		<line
 			x1="96"
@@ -68,9 +68,9 @@ const BuildingLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="104"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="12"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="12"
 		/>
 		<line
 			x1="144"
@@ -79,9 +79,9 @@ const BuildingLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="104"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="12"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="12"
 		/>
 		<line
 			x1="96"
@@ -90,9 +90,9 @@ const BuildingLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="144"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="12"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="12"
 		/>
 		<line
 			x1="144"
@@ -101,17 +101,17 @@ const BuildingLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="144"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="12"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="12"
 		/>
 		<polyline
 			points="104 232 104 184 152 184 152 232"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="12"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="12"
 		/>
 		<line
 			x1="40"
@@ -120,9 +120,9 @@ const BuildingLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="24"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="12"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="12"
 		/>
 	</svg>
 );
@@ -137,9 +137,9 @@ const BuildingRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="232"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="16"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="16"
 		/>
 		<line
 			x1="56"
@@ -148,9 +148,9 @@ const BuildingRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="232"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="16"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="16"
 		/>
 		<line
 			x1="200"
@@ -159,9 +159,9 @@ const BuildingRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="24"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="16"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="16"
 		/>
 		<line
 			x1="96"
@@ -170,9 +170,9 @@ const BuildingRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="64"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="16"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="16"
 		/>
 		<line
 			x1="144"
@@ -181,9 +181,9 @@ const BuildingRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="64"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="16"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="16"
 		/>
 		<line
 			x1="96"
@@ -192,9 +192,9 @@ const BuildingRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="104"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="16"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="16"
 		/>
 		<line
 			x1="144"
@@ -203,9 +203,9 @@ const BuildingRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="104"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="16"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="16"
 		/>
 		<line
 			x1="96"
@@ -214,9 +214,9 @@ const BuildingRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="144"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="16"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="16"
 		/>
 		<line
 			x1="144"
@@ -225,17 +225,17 @@ const BuildingRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="144"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="16"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="16"
 		/>
 		<polyline
 			points="104 232 104 184 152 184 152 232"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="16"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="16"
 		/>
 		<line
 			x1="40"
@@ -244,9 +244,9 @@ const BuildingRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="24"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="16"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="16"
 		/>
 	</svg>
 );
