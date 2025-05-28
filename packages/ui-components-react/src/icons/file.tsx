@@ -10,17 +10,29 @@ const FileLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			d="M200,224H56a8,8,0,0,1-8-8V40a8,8,0,0,1,8-8h96l56,56V216A8,8,0,0,1,200,224Z"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="12"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="12"
+>>>>>>> next
 		/>
 		<polyline
 			points="152 32 152 88 208 88"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="12"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="12"
+>>>>>>> next
 		/>
 	</svg>
 );
@@ -32,17 +44,29 @@ const FileRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			d="M200,224H56a8,8,0,0,1-8-8V40a8,8,0,0,1,8-8h96l56,56V216A8,8,0,0,1,200,224Z"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="16"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
+>>>>>>> next
 		/>
 		<polyline
 			points="152 32 152 88 208 88"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="16"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
+>>>>>>> next
 		/>
 	</svg>
 );

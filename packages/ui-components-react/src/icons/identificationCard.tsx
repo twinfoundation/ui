@@ -13,9 +13,15 @@ const IdentificationCardLight: React.FC<React.SVGProps<SVGSVGElement>> = props =
 			y2="112"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="12"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="12"
+>>>>>>> next
 		/>
 		<line
 			x1="152"
@@ -24,9 +30,15 @@ const IdentificationCardLight: React.FC<React.SVGProps<SVGSVGElement>> = props =
 			y2="144"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="12"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="12"
+>>>>>>> next
 		/>
 		<rect
 			x="32"
@@ -36,9 +48,15 @@ const IdentificationCardLight: React.FC<React.SVGProps<SVGSVGElement>> = props =
 			rx="8"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="12"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="12"
+>>>>>>> next
 		/>
 		<circle
 			cx="96"
@@ -46,17 +64,29 @@ const IdentificationCardLight: React.FC<React.SVGProps<SVGSVGElement>> = props =
 			r="24"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="12"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="12"
+>>>>>>> next
 		/>
 		<path
 			d="M64,168c3.55-13.8,17.09-24,32-24s28.46,10.19,32,24"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="12"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="12"
+>>>>>>> next
 		/>
 	</svg>
 );
@@ -71,9 +101,15 @@ const IdentificationCardRegular: React.FC<React.SVGProps<SVGSVGElement>> = props
 			y2="112"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="16"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
+>>>>>>> next
 		/>
 		<line
 			x1="152"
@@ -82,9 +118,15 @@ const IdentificationCardRegular: React.FC<React.SVGProps<SVGSVGElement>> = props
 			y2="144"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="16"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
+>>>>>>> next
 		/>
 		<rect
 			x="32"
@@ -94,9 +136,15 @@ const IdentificationCardRegular: React.FC<React.SVGProps<SVGSVGElement>> = props
 			rx="8"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="16"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
+>>>>>>> next
 		/>
 		<circle
 			cx="96"
@@ -104,17 +152,29 @@ const IdentificationCardRegular: React.FC<React.SVGProps<SVGSVGElement>> = props
 			r="24"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="16"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
+>>>>>>> next
 		/>
 		<path
 			d="M64,168c3.55-13.8,17.09-24,32-24s28.46,10.19,32,24"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="16"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
+>>>>>>> next
 		/>
 	</svg>
 );

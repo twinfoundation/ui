@@ -10,9 +10,15 @@ const FilePdfLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			points="216 152 184 152 184 208"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="12"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="12"
+>>>>>>> next
 		/>
 		<line
 			x1="208"
@@ -21,41 +27,71 @@ const FilePdfLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="184"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="12"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="12"
+>>>>>>> next
 		/>
 		<path
 			d="M48,192H64a20,20,0,0,0,0-40H48v56"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="12"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="12"
+>>>>>>> next
 		/>
 		<path
 			d="M112,152v56h16a28,28,0,0,0,0-56Z"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="12"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="12"
+>>>>>>> next
 		/>
 		<path
 			d="M48,112V40a8,8,0,0,1,8-8h96l56,56v24"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="12"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="12"
+>>>>>>> next
 		/>
 		<polyline
 			points="152 32 152 88 208 88"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="12"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="12"
+>>>>>>> next
 		/>
 	</svg>
 );
@@ -67,9 +103,15 @@ const FilePdfRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			points="216 152 184 152 184 208"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="16"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
+>>>>>>> next
 		/>
 		<line
 			x1="208"
@@ -78,41 +120,71 @@ const FilePdfRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="184"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="16"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
+>>>>>>> next
 		/>
 		<path
 			d="M48,192H64a20,20,0,0,0,0-40H48v56"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="16"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
+>>>>>>> next
 		/>
 		<path
 			d="M112,152v56h16a28,28,0,0,0,0-56Z"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="16"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
+>>>>>>> next
 		/>
 		<path
 			d="M48,112V40a8,8,0,0,1,8-8h96l56,56v24"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="16"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
+>>>>>>> next
 		/>
 		<polyline
 			points="152 32 152 88 208 88"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="16"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
+>>>>>>> next
 		/>
 	</svg>
 );

@@ -10,17 +10,29 @@ const ClipboardLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			d="M160,40h40a8,8,0,0,1,8,8V216a8,8,0,0,1-8,8H56a8,8,0,0,1-8-8V48a8,8,0,0,1,8-8H96"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="12"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="12"
+>>>>>>> next
 		/>
 		<path
 			d="M88,72V64a40,40,0,0,1,80,0v8Z"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="12"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="12"
+>>>>>>> next
 		/>
 	</svg>
 );
@@ -32,17 +44,29 @@ const ClipboardRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			d="M160,40h40a8,8,0,0,1,8,8V216a8,8,0,0,1-8,8H56a8,8,0,0,1-8-8V48a8,8,0,0,1,8-8H96"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="16"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
+>>>>>>> next
 		/>
 		<path
 			d="M88,72V64a40,40,0,0,1,80,0v8Z"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="16"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
+>>>>>>> next
 		/>
 	</svg>
 );

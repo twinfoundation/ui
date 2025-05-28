@@ -12,9 +12,15 @@ const WarningCircleLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			r="96"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="12"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="12"
+>>>>>>> next
 		/>
 		<line
 			x1="128"
@@ -23,9 +29,15 @@ const WarningCircleLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="80"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="12"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="12"
+>>>>>>> next
 		/>
 		<circle cx="128" cy="172" r="10" />
 	</svg>
@@ -41,7 +53,11 @@ const WarningCircleRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			fill="none"
 			stroke="currentColor"
 			stroke-miterlimit="10"
+<<<<<<< HEAD
 			strokeWidth="16"
+=======
+			stroke-width="16"
+>>>>>>> next
 		/>
 		<line
 			x1="128"
@@ -50,9 +66,15 @@ const WarningCircleRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="80"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="16"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
+>>>>>>> next
 		/>
 		<circle cx="128" cy="172" r="12" />
 	</svg>
@@ -67,9 +89,15 @@ const WarningCircleBold: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			r="96"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="24"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="24"
+>>>>>>> next
 		/>
 		<line
 			x1="128"
@@ -78,9 +106,15 @@ const WarningCircleBold: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="80"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="24"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="24"
+>>>>>>> next
 		/>
 		<circle cx="128" cy="172" r="16" />
 	</svg>

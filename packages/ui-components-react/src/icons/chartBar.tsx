@@ -10,9 +10,15 @@ const ChartBarLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			points="48 208 48 136 96 136"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="12"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="12"
+>>>>>>> next
 		/>
 		<line
 			x1="224"
@@ -21,25 +27,43 @@ const ChartBarLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="208"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="12"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="12"
+>>>>>>> next
 		/>
 		<polyline
 			points="96 208 96 88 152 88"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="12"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="12"
+>>>>>>> next
 		/>
 		<polyline
 			points="152 208 152 40 208 40 208 208"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="12"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="12"
+>>>>>>> next
 		/>
 	</svg>
 );
@@ -51,9 +75,15 @@ const ChartBarRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			points="48 208 48 136 96 136"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="16"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
+>>>>>>> next
 		/>
 		<line
 			x1="224"
@@ -62,25 +92,43 @@ const ChartBarRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="208"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="16"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
+>>>>>>> next
 		/>
 		<polyline
 			points="96 208 96 88 152 88"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="16"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
+>>>>>>> next
 		/>
 		<polyline
 			points="152 208 152 40 208 40 208 208"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="16"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
+>>>>>>> next
 		/>
 	</svg>
 );
@@ -92,9 +140,15 @@ const ChartBarBold: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			points="48 208 48 136 96 136"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="24"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="24"
+>>>>>>> next
 		/>
 		<line
 			x1="224"
@@ -103,25 +157,43 @@ const ChartBarBold: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="208"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="24"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="24"
+>>>>>>> next
 		/>
 		<polyline
 			points="96 208 96 88 152 88"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="24"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="24"
+>>>>>>> next
 		/>
 		<polyline
 			points="152 208 152 40 208 40 208 208"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="24"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="24"
+>>>>>>> next
 		/>
 	</svg>
 );

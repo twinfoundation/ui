@@ -10,9 +10,15 @@ const EyeLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			d="M128,56C48,56,16,128,16,128s32,72,112,72,112-72,112-72S208,56,128,56Z"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="12"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="12"
+>>>>>>> next
 		/>
 		<circle
 			cx="128"
@@ -20,9 +26,15 @@ const EyeLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			r="40"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="12"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="12"
+>>>>>>> next
 		/>
 	</svg>
 );
@@ -34,9 +46,15 @@ const EyeRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			d="M128,56C48,56,16,128,16,128s32,72,112,72,112-72,112-72S208,56,128,56Z"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="16"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
+>>>>>>> next
 		/>
 		<circle
 			cx="128"
@@ -44,9 +62,15 @@ const EyeRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			r="40"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="16"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
+>>>>>>> next
 		/>
 	</svg>
 );
@@ -58,9 +82,15 @@ const EyeBold: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			d="M128,56C48,56,16,128,16,128s32,72,112,72,112-72,112-72S208,56,128,56Z"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="24"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="24"
+>>>>>>> next
 		/>
 		<circle
 			cx="128"
@@ -68,9 +98,15 @@ const EyeBold: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			r="32"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="24"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="24"
+>>>>>>> next
 		/>
 	</svg>
 );

@@ -12,9 +12,15 @@ const MagnifyingGlassLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			r="80"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="12"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="12"
+>>>>>>> next
 		/>
 		<line
 			x1="168.57"
@@ -23,9 +29,15 @@ const MagnifyingGlassLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="224"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="12"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="12"
+>>>>>>> next
 		/>
 	</svg>
 );
@@ -39,9 +51,15 @@ const MagnifyingGlassRegular: React.FC<React.SVGProps<SVGSVGElement>> = props =>
 			r="80"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="16"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
+>>>>>>> next
 		/>
 		<line
 			x1="168.57"
@@ -50,9 +68,15 @@ const MagnifyingGlassRegular: React.FC<React.SVGProps<SVGSVGElement>> = props =>
 			y2="224"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="16"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
+>>>>>>> next
 		/>
 	</svg>
 );
@@ -66,9 +90,15 @@ const MagnifyingGlassBold: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			r="80"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="24"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="24"
+>>>>>>> next
 		/>
 		<line
 			x1="168.57"
@@ -77,9 +107,15 @@ const MagnifyingGlassBold: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="224"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="24"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="24"
+>>>>>>> next
 		/>
 	</svg>
 );

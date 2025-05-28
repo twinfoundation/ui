@@ -10,9 +10,15 @@ const CheckLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			points="40 144 96 200 224 72"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="12"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="12"
+>>>>>>> next
 		/>
 	</svg>
 );
@@ -24,9 +30,15 @@ const CheckRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			points="40 144 96 200 224 72"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="16"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
+>>>>>>> next
 		/>
 	</svg>
 );

@@ -10,9 +10,15 @@ const CaretDownLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			points="208 96 128 176 48 96"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="12"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="12"
+>>>>>>> next
 		/>
 	</svg>
 );
@@ -24,9 +30,15 @@ const CaretDownRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			points="208 96 128 176 48 96"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="16"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
+>>>>>>> next
 		/>
 	</svg>
 );
@@ -38,9 +50,15 @@ const CaretDownBold: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			points="208 96 128 176 48 96"
 			fill="none"
 			stroke="currentColor"
+<<<<<<< HEAD
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="24"
+=======
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="24"
+>>>>>>> next
 		/>
 	</svg>
 );

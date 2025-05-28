@@ -1,5 +1,19 @@
 # @twin.org/ui-components-svelte - Changelog
 
+## [0.0.1-next.48](https://github.com/twinfoundation/ui/compare/ui-components-svelte-v0.0.1-next.47...ui-components-svelte-v0.0.1-next.48) (2025-05-28)
+
+
+### Miscellaneous Chores
+
+* **ui-components-svelte:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/ui-tailwind bumped from 0.0.1-next.47 to 0.0.1-next.48
+
 ## [0.0.1-next.47](https://github.com/twinfoundation/ui/compare/ui-components-svelte-v0.0.1-next.46...ui-components-svelte-v0.0.1-next.47) (2025-05-22)
 
 
