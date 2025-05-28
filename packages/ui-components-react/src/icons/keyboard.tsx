@@ -14,9 +14,9 @@ const KeyboardLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			rx="8"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="12"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="12"
 		/>
 		<line
 			x1="56"
@@ -25,9 +25,9 @@ const KeyboardLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="128"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="12"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="12"
 		/>
 		<line
 			x1="56"
@@ -36,9 +36,9 @@ const KeyboardLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="96"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="12"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="12"
 		/>
 		<line
 			x1="56"
@@ -47,9 +47,9 @@ const KeyboardLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="160"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="12"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="12"
 		/>
 		<line
 			x1="96"
@@ -58,9 +58,9 @@ const KeyboardLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="160"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="12"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="12"
 		/>
 		<line
 			x1="192"
@@ -69,9 +69,9 @@ const KeyboardLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="160"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="12"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="12"
 		/>
 	</svg>
 );
@@ -87,9 +87,9 @@ const KeyboardRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			rx="8"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="16"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="16"
 		/>
 		<line
 			x1="56"
@@ -98,9 +98,9 @@ const KeyboardRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="128"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="16"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="16"
 		/>
 		<line
 			x1="56"
@@ -109,9 +109,9 @@ const KeyboardRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="96"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="16"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="16"
 		/>
 		<line
 			x1="56"
@@ -120,9 +120,9 @@ const KeyboardRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="160"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="16"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="16"
 		/>
 		<line
 			x1="96"
@@ -131,9 +131,9 @@ const KeyboardRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="160"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="16"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="16"
 		/>
 		<line
 			x1="192"
@@ -142,9 +142,9 @@ const KeyboardRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="160"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="16"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="16"
 		/>
 	</svg>
 );

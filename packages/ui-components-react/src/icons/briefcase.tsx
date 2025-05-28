@@ -13,9 +13,9 @@ const BriefcaseLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="112"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="12"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="12"
 		/>
 		<rect
 			x="32"
@@ -25,25 +25,25 @@ const BriefcaseLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			rx="8"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="12"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="12"
 		/>
 		<path
 			d="M168,64V48a16,16,0,0,0-16-16H104A16,16,0,0,0,88,48V64"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="12"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="12"
 		/>
 		<path
 			d="M224,118.31A191.09,191.09,0,0,1,128,144a191.14,191.14,0,0,1-96-25.68"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="12"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="12"
 		/>
 	</svg>
 );
@@ -59,25 +59,25 @@ const BriefcaseRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			rx="8"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="16"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="16"
 		/>
 		<path
 			d="M168,64V48a16,16,0,0,0-16-16H104A16,16,0,0,0,88,48V64"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="16"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="16"
 		/>
 		<path
 			d="M224,118.31A191.09,191.09,0,0,1,128,144a191.14,191.14,0,0,1-96-25.68"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="16"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="16"
 		/>
 		<line
 			x1="112"
@@ -86,9 +86,9 @@ const BriefcaseRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="112"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="16"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="16"
 		/>
 	</svg>
 );

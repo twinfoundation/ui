@@ -11,9 +11,9 @@ const QuestionLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			d="M128,144v-8c17.67,0,32-12.54,32-28s-14.33-28-32-28S96,92.54,96,108v4"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="12"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="12"
 		/>
 		<circle
 			cx="128"
@@ -21,9 +21,9 @@ const QuestionLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			r="96"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="12"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="12"
 		/>
 	</svg>
 );
@@ -36,9 +36,9 @@ const QuestionRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			d="M128,144v-8c17.67,0,32-12.54,32-28s-14.33-28-32-28S96,92.54,96,108v4"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="16"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="16"
 		/>
 		<circle
 			cx="128"
@@ -46,9 +46,9 @@ const QuestionRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			r="96"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="16"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="16"
 		/>
 	</svg>
 );

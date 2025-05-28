@@ -10,9 +10,9 @@ const InfoLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			d="M120,120a8,8,0,0,1,8,8v40a8,8,0,0,0,8,8"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="12"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="12"
 		/>
 		<circle cx="124" cy="84" r="10" />
 		<circle
@@ -21,9 +21,9 @@ const InfoLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			r="96"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="12"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="12"
 		/>
 	</svg>
 );
@@ -37,17 +37,17 @@ const InfoRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			r="96"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="16"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="16"
 		/>
 		<path
 			d="M120,120a8,8,0,0,1,8,8v40a8,8,0,0,0,8,8"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="16"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="16"
 		/>
 		<circle cx="124" cy="84" r="12" />
 	</svg>
@@ -63,17 +63,17 @@ const InfoBold: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			r="96"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="24"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="24"
 		/>
 		<path
 			d="M120,124a8,8,0,0,1,8,8v36a8,8,0,0,0,8,8"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="24"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="24"
 		/>
 	</svg>
 );
