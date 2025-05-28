@@ -4,7 +4,7 @@ import type { TextInputProps as FlowbiteTextInputProps } from "flowbite-react";
 import type { PropsWithChildren } from "react";
 import type { TextInputColor } from "./textInputColors";
 import type { TextInputSize } from "./textInputSizes";
-import type { IconComponent } from "../types/iconTypes";
+import type { IconComponent, IconsProps } from "../types/iconTypes";
 
 /**
  * TextInput component props interface.
@@ -65,11 +65,11 @@ export interface TextInputProps extends PropsWithChildren<Omit<FlowbiteTextInput
 	/**
 	 * TextInput icon.
 	 */
-	icon?: IconComponent;
+	icon?: React.FC<IconsProps>;
 	/**
 	 * TextInput right icon.
 	 */
-	rightIcon?: IconComponent;
+	rightIcon?: React.FC<IconsProps>;
 	/**
 	 * TextInput addon.
 	 */

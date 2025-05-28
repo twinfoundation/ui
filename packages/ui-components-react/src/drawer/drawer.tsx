@@ -69,7 +69,6 @@ export const Drawer = memo(
 					onClose={handleClose}
 					aria-labelledby="drawer-title"
 				>
-					{/* @ts-expect-error - Temporary type error suppression */}
 					<FlowbiteDrawer.Header title={title} closeIcon={List} id="drawer-title" />
 					{items && items?.length > 0 ? (
 						items.map((item, index) => (

@@ -20,10 +20,6 @@ export type IconComponent = React.ForwardRefExoticComponent<
  */
 export interface IconsProps extends Omit<React.SVGProps<SVGSVGElement>, "type"> {
 	/**
-	 * Any additional SVG props
-	 */
-	[key: string]: unknown;
-	/**
 	 * The color of the icon
 	 */
 	color?: string;
@@ -41,8 +37,9 @@ export interface IconsProps extends Omit<React.SVGProps<SVGSVGElement>, "type"> 
 	className?: string;
 	/**
 	 * Type of the icon variant
+	 * TODO: remove the string in types once we finish migration of flowbite
 	 */
-	type?: "bold" | "regular" | "light";
+	type?: "bold" | "regular" | "light" | string;
 }
 
 /**
