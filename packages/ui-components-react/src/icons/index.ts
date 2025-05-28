@@ -58,4 +58,4 @@ export { default as WarningCircle } from "./warningCircle";
 export { default as X } from "./x";
 
 // Export the props type
-export type { IconsProps } from "./iconsProps";
+export type { IconsProps } from "../types/iconTypes";

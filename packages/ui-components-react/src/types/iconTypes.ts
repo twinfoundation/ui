@@ -20,19 +20,29 @@ export type IconComponent = React.ForwardRefExoticComponent<
  */
 export interface IconsProps extends Omit<React.SVGProps<SVGSVGElement>, "type"> {
 	/**
+	 * Any additional SVG props
+	 */
+	[key: string]: unknown;
+	/**
 	 * The color of the icon
 	 */
 	color?: string;
-
+	/**
+	 * Width of the icon
+	 */
+	width?: number | string;
+	/**
+	 * Height of the icon (defaults to width if not provided)
+	 */
+	height?: number | string;
+	/**
+	 * Additional class name
+	 */
+	className?: string;
 	/**
 	 * Type of the icon variant
 	 */
-	type?: "bold" | "regular" | "light" | string;
-
-	/**
-	 * Size of the icon (can be used as a shorthand for width/height)
-	 */
-	size?: number | string;
+	type?: "bold" | "regular" | "light";
 }
 
 /**

@@ -1,7 +1,7 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import React from "react";
-import type { IconsProps } from "./iconsProps";
+import type { IconsProps } from "../types/iconTypes";
 
 const CameraLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 	<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">

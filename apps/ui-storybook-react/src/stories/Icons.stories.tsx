@@ -1,13 +1,17 @@
-import React from "react";
+// Copyright 2024 IOTA Stiftung.
+// SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
 import * as Icons from "@twin.org/ui-components-react/icons";
 import type { IconsProps } from "@twin.org/ui-components-react/icons";
+import React from "react";
 
 // Filter out non-component exports (like IconsProps if it's exported alongside components)
 const iconComponents = Object.entries(Icons)
 	.filter(([name, Component]) => {
 		// Exclude 'IconsProps' and any other known non-component exports by name
-		if (name === "IconsProps") return false;
+		if (name === "IconsProps") {
+			return false;
+		}
 		// Check if it's a React component (function or an object with a render method for forwardRef/memo)
 		return (
 			typeof Component === "function" ||
@@ -16,6 +20,9 @@ const iconComponents = Object.entries(Icons)
 	})
 	.map(([name, Component]) => ({ name, Component: Component as React.FC<IconsProps> }));
 
+/**
+ * Storybook metadata for Icons component
+ */
 const meta: Meta = {
 	title: "Components/Icons",
 	decorators: [
@@ -37,10 +44,21 @@ const meta: Meta = {
 	}
 };
 
+/**
+ * Default export for the Icons story.
+ * This is the main entry point for the Icons story in Storybook.
+ */
 export default meta;
 
+/**
+ * Defines the story type for Icon stories.
+ * This type is used to define the shape of the story objects.
+ */
 type Story = StoryObj<typeof meta>;
 
+/**
+ * Displays all icon components in a grid with light, regular, and bold variants.
+ */
 export const AllIcons: Story = {
 	name: "Icon Gallery",
 	render: () => (
