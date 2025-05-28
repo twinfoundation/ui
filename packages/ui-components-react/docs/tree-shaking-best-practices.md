@@ -65,33 +65,29 @@ Problems:
 There are three recommended patterns for importing icons:
 
 ```tsx
-// Method 1: Direct imports from icon namespaces (RECOMMENDED)
+// Method 1: Direct imports (RECOMMENDED)
 // ✅ BEST FOR TREE-SHAKING: Import only the specific icons you need
-import { Outline, Solid } from '@twin.org/ui-components-react/icons';
-const { AcademicCap: OutlineAcademicCap } = Outline;
-const { AcademicCap: SolidAcademicCap } = Solid;
+import { AcademicCap, Bell, Calendar } from '@twin.org/ui-components-react/icons';
 
-// Method 2: Import from main entry point and destructure
+// Method 2: Import from main entry point
 // ✅ ALSO WORKS: Import from main entry point
-import { IconsOutline, IconsSolid } from '@twin.org/ui-components-react';
-const { HiOutlineAcademicCap } = IconsOutline;
-const { HiSolidAcademicCap } = IconsSolid;
+import { AcademicCap, Bell, Calendar } from '@twin.org/ui-components-react';
 
-// Method 3: Using namespace objects directly in JSX
+// Method 3: Using namespace import
 // ⚠️ ACCEPTABLE BUT NOT OPTIMAL: May include more code than needed
-import { Outline, Solid } from '@twin.org/ui-components-react/icons';
-// Then use in JSX: <Outline.AcademicCap />
+import * as Icons from '@twin.org/ui-components-react/icons';
+// Then use in JSX: <Icons.AcademicCap />
 
-// ❌ AVOID: Using entire namespace objects without destructuring from main entry
-import { IconsOutline, IconsSolid } from '@twin.org/ui-components-react';
-// Using IconsOutline.HiOutlineAcademicCap directly in JSX reduces tree-shaking effectiveness
+// ❌ AVOID: Using namespace imports without destructuring
+import * as UI from '@twin.org/ui-components-react';
+// Using UI.AcademicCap directly in JSX reduces tree-shaking effectiveness
 ```
 
 For the optimal bundle size, remember:
 
 - Method 1 ensures only the specific icons you need are included in your bundle
-- Always destructure the icons you need rather than using namespace objects directly
-- Importing from `/icons` path provides a cleaner API with fewer naming collisions
+- Always use named imports rather than namespace imports when possible
+- The new structure provides a flatter and more intuitive API for icon imports
 
 ### Example with TypeScript Best Practices
 
@@ -100,7 +96,7 @@ Here's a complete example of how to use icons with proper TypeScript typing:
 ```tsx
 import { useState, useCallback } from 'react';
 import { Button } from '@twin.org/ui-components-react/button';
-import { Outline } from '@twin.org/ui-components-react/icons';
+import { CheckCircle, XCircle } from '@twin.org/ui-components-react/icons';
 
 interface ToggleButtonProps {
   initialState?: boolean;
@@ -114,7 +110,6 @@ export const ToggleButton = ({
   onChange
 }: ToggleButtonProps): JSX.Element => {
   const [isActive, setIsActive] = useState<boolean>(initialState);
-  const { CheckCircle, XCircle } = Outline;
 
   const handleClick = useCallback(() => {
     const newState = !isActive;
@@ -136,7 +131,7 @@ export const ToggleButton = ({
 This example demonstrates:
 
 - Proper TypeScript types for props
-- Destructuring icons for optimal tree-shaking
+- Direct icon imports for optimal tree-shaking
 - Following React best practices with hooks
 - Explicit return type (JSX.Element)
 

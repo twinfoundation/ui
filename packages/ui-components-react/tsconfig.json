@@ -15,7 +15,16 @@
 		"declarationDir": "dist/types",
 		"types": ["@types/react", "@types/react-dom"],
 		"skipLibCheck": true,
-		"jsx": "react-jsx"
+		"jsx": "react-jsx",
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"baseUrl": ".",
+		"paths": {
+			"@twin.org/ui-components-react/icons/*": ["./src/icons/*"],
+			"@twin.org/ui-components-react/*": ["./src/*"]
+		}
 	},
-	"include": ["src/**/*.ts*"]
+	"include": ["src/**/*.ts*", "src/**/*.d.ts", "src/types/*.d.ts", "src/**/*.svg"]
 }

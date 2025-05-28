@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
 import { Toast } from "@twin.org/ui-components-react";
-import { CheckCircle, Fire } from "@twin.org/ui-components-react/icons/solid";
+import { CheckCircle, Fire } from "@twin.org/ui-components-react/icons";
 import { createElement } from "react";
 
 const meta = {

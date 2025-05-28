@@ -3,12 +3,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Tabs, TabsVariants } from "@twin.org/ui-components-react";
 import type { TabsProps, TabItem } from "@twin.org/ui-components-react";
-import {
-	ProfileCard,
-	UserSettings,
-	Bell,
-	Envelope
-} from "@twin.org/ui-components-react/icons/solid";
+import { IdentificationCard, Gear, Bell, Envelope } from "@twin.org/ui-components-react/icons";
 import { useState, type JSX } from "react";
 
 const defaultItems: TabItem[] = [
@@ -168,12 +163,12 @@ const iconItems: TabItem[] = [
 	{
 		title: "Profile",
 		content: <div className="m-4 p-4 text-center">Profile settings and information</div>,
-		icon: ProfileCard
+		icon: IdentificationCard
 	},
 	{
 		title: "Settings",
 		content: <div className="m-4 p-4 text-center">Application settings</div>,
-		icon: UserSettings
+		icon: Gear
 	},
 	{
 		title: "Notifications",

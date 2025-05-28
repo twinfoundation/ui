@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0.
 import type { FooterProps as FlowbiteFooterProps } from "flowbite-react";
 import type { ReactNode } from "react";
-import type { IconComponent } from "../types/iconTypes";
+import type { IconsProps } from "../types/iconTypes";
 
 /**
  * Footer props.
@@ -65,7 +65,7 @@ export interface FooterIconProps {
 	/**
 	 * The icon component to display
 	 */
-	icon: IconComponent;
+	icon: React.FC<IconsProps>;
 	/**
 	 * Additional class names for the icon
 	 */

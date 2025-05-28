@@ -4,13 +4,13 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Card, BadgeColors } from "@twin.org/ui-components-react";
 import {
+	SealPercent,
+	ShoppingCart,
 	Star,
 	Fire,
-	SalePercent,
-	ArrowRightAlt,
-	ShoppingBag,
-	CartPlus
-} from "@twin.org/ui-components-react/icons/solid";
+	Bag,
+	ArrowRightFat
+} from "@twin.org/ui-components-react/icons";
 
 const meta = {
 	title: "Components/Card",
@@ -160,7 +160,7 @@ export const WithButton: Story = {
 		buttons: [
 			{
 				label: "Learn More",
-				icon: ShoppingBag,
+				icon: Bag,
 				color: "primary",
 
 				onClick: () => {
@@ -179,12 +179,12 @@ export const WithMultipleButtons: Story = {
 		buttons: [
 			{
 				label: "Primary",
-				icon: ArrowRightAlt,
+				icon: ArrowRightFat,
 				color: "primary"
 			},
 			{
 				label: "Secondary",
-				icon: CartPlus,
+				icon: ShoppingCart,
 				color: "secondary"
 			}
 		]
@@ -230,7 +230,7 @@ export const FullFeatured: Story = {
 			</div>
 		),
 		icon: {
-			component: SalePercent,
+			component: SealPercent,
 			size: "xl",
 			className: "text-purple-500"
 		},
@@ -241,7 +241,7 @@ export const FullFeatured: Story = {
 		buttons: [
 			{
 				label: "Primary Action",
-				icon: ArrowRightAlt,
+				icon: ArrowRightFat,
 				color: "primary",
 
 				onClick: () => {
@@ -251,7 +251,7 @@ export const FullFeatured: Story = {
 			},
 			{
 				label: "Secondary Action",
-				icon: CartPlus,
+				icon: ShoppingCart,
 				color: "secondary"
 			}
 		]
@@ -263,7 +263,7 @@ export const OptimizedLayout: Story = {
 		title: "Optimized Layout Example",
 		content: "This card uses the improved layout options with left-aligned icon and inline badge.",
 		icon: {
-			component: SalePercent,
+			component: SealPercent,
 			size: "md",
 			className: "text-purple-500"
 		},
@@ -276,7 +276,7 @@ export const OptimizedLayout: Story = {
 		buttons: [
 			{
 				label: "Learn More",
-				icon: ArrowRightAlt,
+				icon: ArrowRightFat,
 				color: "primary",
 
 				onClick: () => {
@@ -293,7 +293,7 @@ export const CleanLayout: Story = {
 		title: "Clean Layout Example",
 		content: "This card uses absolute positioning for the icon to create a cleaner layout.",
 		icon: {
-			component: SalePercent,
+			component: SealPercent,
 			size: "md",
 			className: "text-purple-500"
 		},
@@ -305,7 +305,7 @@ export const CleanLayout: Story = {
 		buttons: [
 			{
 				label: "Learn More",
-				icon: ArrowRightAlt,
+				icon: ArrowRightFat,
 				color: "primary",
 
 				onClick: () => {

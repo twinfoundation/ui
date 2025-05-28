@@ -3,13 +3,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 import { Alert, AlertColors } from "@twin.org/ui-components-react";
-import {
-	CheckCircle,
-	InfoCircle,
-	CloseCircle,
-	ExclamationCircle,
-	Eye
-} from "@twin.org/ui-components-react/icons/solid";
+import { CheckCircle, Info, X, WarningCircle, Eye } from "@twin.org/ui-components-react/icons";
 import { type ReactNode, createElement } from "react";
 
 const meta = {
@@ -30,7 +24,7 @@ const meta = {
 			control: { type: "inline-radio" }
 		},
 		icon: {
-			options: [CheckCircle, InfoCircle, CloseCircle, ExclamationCircle],
+			options: [CheckCircle, Info, X, WarningCircle],
 			control: { type: "inline-radio" }
 		}
 	},
@@ -58,7 +52,7 @@ export const Success: Story = {
 export const Warn: Story = {
 	args: {
 		children: "Alert",
-		icon: InfoCircle,
+		icon: Info,
 		color: "warning"
 	}
 };
@@ -66,7 +60,7 @@ export const Warn: Story = {
 export const Error: Story = {
 	args: {
 		children: "Alert",
-		icon: CloseCircle,
+		icon: X,
 		color: "error"
 	}
 };
@@ -90,7 +84,7 @@ export const GrayBordered: Story = {
 export const AdditionalContent: Story = {
 	args: {
 		children: "Alert",
-		icon: ExclamationCircle,
+		icon: WarningCircle,
 		color: "info",
 		additionalContent: additionalContent()
 	}
@@ -99,7 +93,7 @@ export const AdditionalContent: Story = {
 export const WithDismissable: Story = {
 	args: {
 		children: "Alert",
-		icon: ExclamationCircle,
+		icon: WarningCircle,
 		color: "gray",
 		onDismiss: handleDismiss
 	}

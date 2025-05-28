@@ -3,7 +3,7 @@
 import type { TabsProps as FlowbiteTabsProps } from "flowbite-react";
 import type { ReactNode } from "react";
 import type { TabsVariant } from "./tabsVariants";
-import type { IconComponent } from "../types/iconTypes";
+import type { IconsProps } from "../types/iconTypes";
 
 /**
  * Tab item interface
@@ -23,7 +23,7 @@ export interface TabItem {
 	/**
 	 * Icon component for the tab
 	 */
-	icon?: IconComponent;
+	icon?: React.FC<IconsProps>;
 
 	/**
 	 * Whether the tab is active

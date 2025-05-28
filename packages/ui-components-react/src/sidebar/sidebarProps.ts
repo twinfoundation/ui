@@ -3,7 +3,7 @@
 import type { SidebarProps as FlowbiteSidebarProps } from "flowbite-react";
 import type { ReactNode } from "react";
 import type { PRIMARY, SUCCESS, WARNING, FAILURE, INFO } from "../constants/colors";
-import type { IconComponent } from "../types/iconTypes";
+import type { IconsProps } from "../types/iconTypes";
 
 /**
  * Type for the badge colors
@@ -18,7 +18,7 @@ export type BadgeColor =
 /**
  * Icon type for sidebar items that matches Flowbite's requirements
  */
-export type SidebarIconType = IconComponent;
+export type SidebarIconType = React.FC<IconsProps>;
 
 /**
  * Type for sidebar items

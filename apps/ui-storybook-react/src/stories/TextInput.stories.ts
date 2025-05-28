@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
 import { TextInput, TextInputColors, TextInputSizes } from "@twin.org/ui-components-react";
-import { Search, Envelope } from "@twin.org/ui-components-react/icons/solid";
+import { MagnifyingGlass, Envelope } from "@twin.org/ui-components-react/icons";
 import { createElement } from "react";
 
 const meta = {
@@ -137,13 +137,13 @@ export const ReadOnly: Story = {
 
 export const WithIcon: Story = {
 	args: {
-		icon: Search
+		icon: MagnifyingGlass
 	}
 };
 
 export const WithRightIcon: Story = {
 	args: {
-		rightIcon: Search
+		rightIcon: MagnifyingGlass
 	}
 };
 

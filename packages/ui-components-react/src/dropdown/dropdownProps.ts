@@ -5,7 +5,7 @@ import type { ReactNode } from "react";
 import type { DropdownPosition } from "./dropdownPositions";
 import type { DropdownSize } from "./dropdownSizes";
 import type { ButtonColor } from "../button";
-import type { IconComponent } from "../types/iconTypes";
+import type { IconsProps } from "../types/iconTypes";
 
 /**
  * Interface defining the structure of each item in the dropdown menu.
@@ -29,7 +29,7 @@ export interface DropdownItem {
 	/**
 	 * Icon component to display alongside the label.
 	 */
-	icon?: IconComponent;
+	icon?: React.FC<IconsProps>;
 
 	/**
 	 * Whether this item should render as a divider.
@@ -95,7 +95,7 @@ export interface DropdownProps extends Omit<FlowbiteDropdownProps, "color" | "la
 	 * Icon component to display in the dropdown button.
 	 * If not provided, no icon will be shown.
 	 */
-	icon?: IconComponent;
+	icon?: React.FC<IconsProps>;
 
 	/**
 	 * Whether this item should only display an icon.

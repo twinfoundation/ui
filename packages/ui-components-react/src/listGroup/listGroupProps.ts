@@ -1,7 +1,7 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import type { ReactNode } from "react";
-import type { IconComponent } from "../types/iconTypes";
+import type { IconsProps } from "../types/iconTypes";
 
 /**
  * Props for a single list group item
@@ -14,7 +14,7 @@ export interface ListGroupItem {
 	/**
 	 * Optional icon component to display
 	 */
-	icon?: IconComponent;
+	icon?: React.FC<IconsProps>;
 	/**
 	 * Whether the item is active
 	 */

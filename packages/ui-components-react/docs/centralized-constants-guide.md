@@ -50,8 +50,7 @@ For optimal tree-shaking with icons, use direct imports from our dedicated icon 
 
 ```typescript
 // Recommended: Direct imports for better tree-shaking
-import { Close } from '@twin.org/ui-components-react/icons/outline';
-import { Upload } from '@twin.org/ui-components-react/icons/solid';
+import { Close } from '@twin.org/ui-components-react/icons';
 ```
 
 This approach ensures that only the icons you actually use are included in your final bundle, significantly reducing bundle size.
