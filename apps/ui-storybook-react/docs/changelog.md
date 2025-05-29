@@ -1,5 +1,19 @@
 # @twin.org/ui-components-react - Changelog
 
+## [0.0.1-next.49](https://github.com/twinfoundation/ui/compare/ui-storybook-react-v0.0.1-next.48...ui-storybook-react-v0.0.1-next.49) (2025-05-29)
+
+
+### Miscellaneous Chores
+
+* **ui-storybook-react:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/ui-components-react bumped from 0.0.1-next.48 to 0.0.1-next.49
+
 ## [0.0.1-next.48](https://github.com/twinfoundation/ui/compare/ui-storybook-react-v0.0.1-next.47...ui-storybook-react-v0.0.1-next.48) (2025-05-28)
 
 
