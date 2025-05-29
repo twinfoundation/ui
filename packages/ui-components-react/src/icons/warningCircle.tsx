@@ -40,7 +40,7 @@ const WarningCircleRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			r="96"
 			fill="none"
 			stroke="currentColor"
-			stroke-miterlimit="10"
+			strokeMiterlimit="10"
 			strokeWidth="16"
 		/>
 		<line
