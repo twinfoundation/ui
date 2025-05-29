@@ -10,9 +10,9 @@ const CameraLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			d="M208,208H48a16,16,0,0,1-16-16V80A16,16,0,0,1,48,64H80L96,40h64l16,24h32a16,16,0,0,1,16,16V192A16,16,0,0,1,208,208Z"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="12"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="12"
 		/>
 		<circle
 			cx="128"
@@ -20,9 +20,9 @@ const CameraLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			r="36"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="12"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="12"
 		/>
 	</svg>
 );
@@ -34,9 +34,9 @@ const CameraRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			d="M208,208H48a16,16,0,0,1-16-16V80A16,16,0,0,1,48,64H80L96,40h64l16,24h32a16,16,0,0,1,16,16V192A16,16,0,0,1,208,208Z"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="16"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="16"
 		/>
 		<circle
 			cx="128"
@@ -44,9 +44,9 @@ const CameraRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			r="36"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="16"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="16"
 		/>
 	</svg>
 );
@@ -58,9 +58,9 @@ const CameraBold: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			d="M208,208H48a16,16,0,0,1-16-16V80A16,16,0,0,1,48,64H80L96,40h64l16,24h32a16,16,0,0,1,16,16V192A16,16,0,0,1,208,208Z"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="24"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="24"
 		/>
 		<circle
 			cx="128"
@@ -68,9 +68,9 @@ const CameraBold: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			r="36"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="24"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="24"
 		/>
 	</svg>
 );

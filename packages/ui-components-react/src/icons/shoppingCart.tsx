@@ -10,9 +10,9 @@ const ShoppingCartLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			d="M188,184H91.17a16,16,0,0,1-15.74-13.14L48.73,24H24"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="12"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="12"
 		/>
 		<circle
 			cx="92"
@@ -20,9 +20,9 @@ const ShoppingCartLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			r="20"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="12"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="12"
 		/>
 		<circle
 			cx="188"
@@ -30,17 +30,17 @@ const ShoppingCartLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			r="20"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="12"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="12"
 		/>
 		<path
 			d="M70.55,144H196.1a16,16,0,0,0,15.74-13.14L224,64H56"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="12"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="12"
 		/>
 	</svg>
 );
@@ -52,9 +52,9 @@ const ShoppingCartRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			d="M188,184H91.17a16,16,0,0,1-15.74-13.14L48.73,24H24"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="16"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="16"
 		/>
 		<circle
 			cx="92"
@@ -62,9 +62,9 @@ const ShoppingCartRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			r="20"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="16"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="16"
 		/>
 		<circle
 			cx="188"
@@ -72,17 +72,17 @@ const ShoppingCartRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			r="20"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="16"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="16"
 		/>
 		<path
 			d="M70.55,144H196.1a16,16,0,0,0,15.74-13.14L224,64H56"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="16"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="16"
 		/>
 	</svg>
 );
@@ -94,9 +94,9 @@ const ShoppingCartBold: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			d="M188,184H91.17a16,16,0,0,1-15.74-13.14L48.73,24H24"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="24"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="24"
 		/>
 		<circle
 			cx="92"
@@ -104,9 +104,9 @@ const ShoppingCartBold: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			r="20"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="24"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="24"
 		/>
 		<circle
 			cx="188"
@@ -114,17 +114,17 @@ const ShoppingCartBold: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			r="20"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="24"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="24"
 		/>
 		<path
 			d="M70.55,144H196.1a16,16,0,0,0,15.74-13.14L224,64H56"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="24"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="24"
 		/>
 	</svg>
 );

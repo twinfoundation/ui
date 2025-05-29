@@ -12,9 +12,9 @@ const WarningCircleLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			r="96"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="12"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="12"
 		/>
 		<line
 			x1="128"
@@ -23,9 +23,9 @@ const WarningCircleLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="80"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="12"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="12"
 		/>
 		<circle cx="128" cy="172" r="10" />
 	</svg>
@@ -40,8 +40,8 @@ const WarningCircleRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			r="96"
 			fill="none"
 			stroke="currentColor"
-			stroke-miterlimit="10"
-			stroke-width="16"
+			strokeMiterlimit="10"
+			strokeWidth="16"
 		/>
 		<line
 			x1="128"
@@ -50,9 +50,9 @@ const WarningCircleRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="80"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="16"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="16"
 		/>
 		<circle cx="128" cy="172" r="12" />
 	</svg>
@@ -67,9 +67,9 @@ const WarningCircleBold: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			r="96"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="24"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="24"
 		/>
 		<line
 			x1="128"
@@ -78,9 +78,9 @@ const WarningCircleBold: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			y2="80"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="24"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="24"
 		/>
 		<circle cx="128" cy="172" r="16" />
 	</svg>

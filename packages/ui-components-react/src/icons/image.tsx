@@ -14,26 +14,26 @@ const ImageLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			rx="8"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="12"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="12"
 		/>
 		<circle cx="156" cy="100" r="10" />
 		<path
 			d="M147.31,164,173,138.34a8,8,0,0,1,11.31,0L224,178.06"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="12"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="12"
 		/>
 		<path
 			d="M32,168.69l54.34-54.35a8,8,0,0,1,11.32,0L191.31,208"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="12"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="12"
 		/>
 	</svg>
 );
@@ -49,26 +49,26 @@ const ImageRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			rx="8"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="16"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="16"
 		/>
 		<circle cx="156" cy="100" r="12" />
 		<path
 			d="M147.31,164,173,138.34a8,8,0,0,1,11.31,0L224,178.06"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="16"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="16"
 		/>
 		<path
 			d="M32,168.69l54.34-54.35a8,8,0,0,1,11.32,0L191.31,208"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="16"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="16"
 		/>
 	</svg>
 );
@@ -85,25 +85,25 @@ const ImageBold: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			rx="8"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="24"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="24"
 		/>
 		<path
 			d="M147.31,164,173,138.34a8,8,0,0,1,11.31,0L224,178.06"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="24"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="24"
 		/>
 		<path
 			d="M32,168.69l54.34-54.35a8,8,0,0,1,11.32,0L191.31,208"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="24"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="24"
 		/>
 	</svg>
 );

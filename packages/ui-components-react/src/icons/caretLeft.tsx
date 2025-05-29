@@ -10,9 +10,9 @@ const CaretLeftLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			points="160 208 80 128 160 48"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="12"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="12"
 		/>
 	</svg>
 );
@@ -24,9 +24,9 @@ const CaretLeftRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 			points="160 208 80 128 160 48"
 			fill="none"
 			stroke="currentColor"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="16"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			strokeWidth="16"
 		/>
 	</svg>
 );
