@@ -29,13 +29,20 @@ const meta: Meta = {
 		Story => (
 			<div
 				style={{
-					display: "grid",
-					gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
-					gap: "20px",
+					height: "calc(100vh - 40px)",
+					overflowY: "auto",
 					padding: "20px"
 				}}
 			>
-				<Story />
+				<div
+					style={{
+						display: "grid",
+						gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
+						gap: "20px"
+					}}
+				>
+					<Story />
+				</div>
 			</div>
 		)
 	],

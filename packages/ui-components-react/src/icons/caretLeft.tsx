@@ -4,44 +4,20 @@ import React from "react";
 import type { IconsProps } from "../types/iconTypes";
 
 const CaretLeftLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
-	<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-		<rect width="256" height="256" fill="none" />
-		<polyline
-			points="160 208 80 128 160 48"
-			fill="none"
-			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="12"
-		/>
+	<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor">
+		<path d="M164.24,203.76a6,6,0,1,1-8.48,8.48l-80-80a6,6,0,0,1,0-8.48l80-80a6,6,0,0,1,8.48,8.48L88.49,128Z" />
 	</svg>
 );
 
 const CaretLeftRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
-	<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-		<rect width="256" height="256" fill="none" />
-		<polyline
-			points="160 208 80 128 160 48"
-			fill="none"
-			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="16"
-		/>
+	<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor">
+		<path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z" />
 	</svg>
 );
 
 const CaretLeftBold: React.FC<React.SVGProps<SVGSVGElement>> = props => (
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" {...props}>
-		<rect width="256" height="256" fill="none" />
-		<polyline
-			points="160 208 80 128 160 48"
-			fill="none"
-			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="24"
-		/>
+	<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor">
+		<path d="M168.49,199.51a12,12,0,0,1-17,17l-80-80a12,12,0,0,1,0-17l80-80a12,12,0,0,1,17,17L97,128Z" />
 	</svg>
 );
 

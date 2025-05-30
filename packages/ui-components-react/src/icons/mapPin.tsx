@@ -4,76 +4,15 @@ import React from "react";
 import type { IconsProps } from "../types/iconTypes";
 
 const MapPinLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
-	<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-		<rect width="256" height="256" fill="none" />
-		<circle
-			cx="128"
-			cy="104"
-			r="32"
-			fill="none"
-			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="12"
-		/>
-		<path
-			d="M208,104c0,72-80,128-80,128S48,176,48,104a80,80,0,0,1,160,0Z"
-			fill="none"
-			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="12"
-		/>
-	</svg>
+	<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M128,66a38,38,0,1,0,38,38A38,38,0,0,0,128,66Zm0,64a26,26,0,1,1,26-26A26,26,0,0,1,128,130Zm0-112a86.1,86.1,0,0,0-86,86c0,30.91,14.34,63.74,41.47,94.94a252.32,252.32,0,0,0,41.09,38,6,6,0,0,0,6.88,0,252.32,252.32,0,0,0,41.09-38c27.13-31.2,41.47-64,41.47-94.94A86.1,86.1,0,0,0,128,18Zm0,206.51C113,212.93,54,163.62,54,104a74,74,0,0,1,148,0C202,163.62,143,212.93,128,224.51Z"/></svg>
 );
 
 const MapPinRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
-	<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-		<rect width="256" height="256" fill="none" />
-		<circle
-			cx="128"
-			cy="104"
-			r="32"
-			fill="none"
-			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="16"
-		/>
-		<path
-			d="M208,104c0,72-80,128-80,128S48,176,48,104a80,80,0,0,1,160,0Z"
-			fill="none"
-			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="16"
-		/>
-	</svg>
+	<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M128,64a40,40,0,1,0,40,40A40,40,0,0,0,128,64Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,128Zm0-112a88.1,88.1,0,0,0-88,88c0,31.4,14.51,64.68,42,96.25a254.19,254.19,0,0,0,41.45,38.3,8,8,0,0,0,9.18,0A254.19,254.19,0,0,0,174,200.25c27.45-31.57,42-64.85,42-96.25A88.1,88.1,0,0,0,128,16Zm0,206c-16.53-13-72-60.75-72-118a72,72,0,0,1,144,0C200,161.23,144.53,209,128,222Z"/></svg>
 );
 
 const MapPinBold: React.FC<React.SVGProps<SVGSVGElement>> = props => (
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" {...props}>
-		<rect width="256" height="256" fill="none" />
-		<path
-			d="M54.5,201.5c9.2-8.2,24.1-11.5,38.3-14.8,9-2.1,18.1-4.2,25.8-9.6a42,42,0,0,0,4.4-3.8c16.7-16.7,35.9-35.9,45.9-70.1,3.2-11,4.9-24.9,2.3-34.9s-10.5-19.7-20.5-24.6-22.8-5.3-34.9,2.3c-21.9,13.6-32.4,27.6-45.9,45.9-15.7,21.1-33.5,45.1-33.5,83.6"
-			fill="none"
-			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="24"
-		/>
-		<circle cx="128" cy="104" r="24" fill="currentColor" opacity="0.2" />
-		<circle
-			cx="128"
-			cy="104"
-			r="24"
-			fill="none"
-			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="24"
-		/>
-	</svg>
+	<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M128,60a44,44,0,1,0,44,44A44.05,44.05,0,0,0,128,60Zm0,64a20,20,0,1,1,20-20A20,20,0,0,1,128,124Zm0-112a92.1,92.1,0,0,0-92,92c0,77.36,81.64,135.4,85.12,137.83a12,12,0,0,0,13.76,0,259,259,0,0,0,42.18-39C205.15,170.57,220,136.37,220,104A92.1,92.1,0,0,0,128,12Zm31.3,174.71A249.35,249.35,0,0,1,128,216.89a249.35,249.35,0,0,1-31.3-30.18C80,167.37,60,137.31,60,104a68,68,0,0,1,136,0C196,137.31,176,167.37,159.3,186.71Z"/></svg>
 );
 
 export const MapPin: React.FC<IconsProps> = ({
