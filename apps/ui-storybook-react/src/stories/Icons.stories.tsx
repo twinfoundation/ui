@@ -120,6 +120,10 @@ export const AllIcons: Story = {
 							<Component type="bold" width={32} height={32} color="#4A4A4A" />
 							<p style={{ fontSize: "12px", marginTop: "10px", color: "#666" }}>Bold</p>
 						</div>
+						<div style={{ textAlign: "center", padding: "10px", flex: 1 }}>
+							<Component type="fill" width={32} height={32} color="#4A4A4A" />
+							<p style={{ fontSize: "12px", marginTop: "10px", color: "#666" }}>Fill</p>
+						</div>
 					</div>
 				</div>
 			))}

@@ -21,6 +21,12 @@ const ClockBold: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 	</svg>
 );
 
+const ClockFill: React.FC<React.SVGProps<SVGSVGElement>> = props => (
+	<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor">
+		<path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm56,112H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48a8,8,0,0,1,0,16Z" />
+	</svg>
+);
+
 export const Clock: React.FC<IconsProps> = ({
 	color = "currentColor",
 	width = 24,
@@ -40,6 +46,8 @@ export const Clock: React.FC<IconsProps> = ({
 			return <ClockLight {...props} />;
 		case "bold":
 			return <ClockBold {...props} />;
+		case "fill":
+			return <ClockFill {...props} />;
 		default:
 			return <ClockRegular {...props} />;
 	}

@@ -21,6 +21,12 @@ const CaretDownBold: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 	</svg>
 );
 
+const CaretDownFill: React.FC<React.SVGProps<SVGSVGElement>> = props => (
+	<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor">
+		<path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,48,88H208a8,8,0,0,1,5.66,13.66Z" />
+	</svg>
+);
+
 export const CaretDown: React.FC<IconsProps> = ({
 	color = "currentColor",
 	width = 24,
@@ -40,6 +46,8 @@ export const CaretDown: React.FC<IconsProps> = ({
 			return <CaretDownLight {...props} />;
 		case "bold":
 			return <CaretDownBold {...props} />;
+		case "fill":
+			return <CaretDownFill {...props} />;
 		default:
 			return <CaretDownRegular {...props} />;
 	}
