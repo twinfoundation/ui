@@ -1,5 +1,8 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
+// Icons from Phosphor Icons (https://phosphoricons.com)
+// Copyright (c) 2020-2024 Phosphor Icons
+// SPDX-License-Identifier: MIT
 import type { Meta, StoryObj } from "@storybook/react";
 import * as Icons from "@twin.org/ui-components-react/icons";
 import type { IconsProps } from "@twin.org/ui-components-react/icons";
