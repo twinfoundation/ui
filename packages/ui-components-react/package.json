@@ -186,6 +186,11 @@
 			"import": "./dist/es/icons/filePdf.js",
 			"require": "./dist/cjs/icons/filePdf.js"
 		},
+		"./icons/fileText": {
+			"types": "./dist/types/icons/fileText.d.ts",
+			"import": "./dist/es/icons/fileText.js",
+			"require": "./dist/cjs/icons/fileText.js"
+		},
 		"./icons/fingerprint": {
 			"types": "./dist/types/icons/fingerprint.d.ts",
 			"import": "./dist/es/icons/fingerprint.js",
@@ -266,6 +271,16 @@
 			"import": "./dist/es/icons/megaphone.js",
 			"require": "./dist/cjs/icons/megaphone.js"
 		},
+		"./icons/notePencil": {
+			"types": "./dist/types/icons/notePencil.d.ts",
+			"import": "./dist/es/icons/notePencil.js",
+			"require": "./dist/cjs/icons/notePencil.js"
+		},
+		"./icons/paperClip": {
+			"types": "./dist/types/icons/paperClip.d.ts",
+			"import": "./dist/es/icons/paperClip.js",
+			"require": "./dist/cjs/icons/paperClip.js"
+		},
 		"./icons/pencilLine": {
 			"types": "./dist/types/icons/pencilLine.d.ts",
 			"import": "./dist/es/icons/pencilLine.js",
@@ -300,6 +315,11 @@
 			"types": "./dist/types/icons/sealPercent.d.ts",
 			"import": "./dist/es/icons/sealPercent.js",
 			"require": "./dist/cjs/icons/sealPercent.js"
+		},
+		"./icons/shieldCheck": {
+			"types": "./dist/types/icons/shieldCheck.d.ts",
+			"import": "./dist/es/icons/shieldCheck.js",
+			"require": "./dist/cjs/icons/shieldCheck.js"
 		},
 		"./icons/shieldWarning": {
 			"types": "./dist/types/icons/shieldWarning.d.ts",
@@ -355,6 +375,11 @@
 			"types": "./dist/types/icons/x.d.ts",
 			"import": "./dist/es/icons/x.js",
 			"require": "./dist/cjs/icons/x.js"
+		},
+		"./icons/xCircle": {
+			"types": "./dist/types/icons/xCircle.d.ts",
+			"import": "./dist/es/icons/xCircle.js",
+			"require": "./dist/cjs/icons/xCircle.js"
 		},
 		"./icons/*": {
 			"types": "./dist/types/icons/*.d.ts",
