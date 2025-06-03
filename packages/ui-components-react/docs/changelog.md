@@ -1,5 +1,19 @@
 # @twin.org/ui-components-react - Changelog
 
+## [0.0.1-next.49](https://github.com/twinfoundation/ui/compare/ui-components-react-v0.0.1-next.48...ui-components-react-v0.0.1-next.49) (2025-05-29)
+
+
+### Features
+
+* svg properties in camelCase ([#64](https://github.com/twinfoundation/ui/issues/64)) ([4183cbe](https://github.com/twinfoundation/ui/commit/4183cbebb5c1a09e04571fc6368c8808ee844ef0))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/ui-tailwind bumped from 0.0.1-next.48 to 0.0.1-next.49
+
 ## [0.0.1-next.48](https://github.com/twinfoundation/ui/compare/ui-components-react-v0.0.1-next.47...ui-components-react-v0.0.1-next.48) (2025-05-28)
 
 
