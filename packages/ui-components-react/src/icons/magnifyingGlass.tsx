@@ -4,83 +4,26 @@ import React from "react";
 import type { IconsProps } from "../types/iconTypes";
 
 const MagnifyingGlassLight: React.FC<React.SVGProps<SVGSVGElement>> = props => (
-	<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-		<rect width="256" height="256" fill="none" />
-		<circle
-			cx="112"
-			cy="112"
-			r="80"
-			fill="none"
-			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="12"
-		/>
-		<line
-			x1="168.57"
-			y1="168.57"
-			x2="224"
-			y2="224"
-			fill="none"
-			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="12"
-		/>
+	<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor">
+		<path d="M228.24,219.76l-51.38-51.38a86.15,86.15,0,1,0-8.48,8.48l51.38,51.38a6,6,0,0,0,8.48-8.48ZM38,112a74,74,0,1,1,74,74A74.09,74.09,0,0,1,38,112Z" />
 	</svg>
 );
 
 const MagnifyingGlassRegular: React.FC<React.SVGProps<SVGSVGElement>> = props => (
-	<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-		<rect width="256" height="256" fill="none" />
-		<circle
-			cx="112"
-			cy="112"
-			r="80"
-			fill="none"
-			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="16"
-		/>
-		<line
-			x1="168.57"
-			y1="168.57"
-			x2="224"
-			y2="224"
-			fill="none"
-			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="16"
-		/>
+	<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor">
+		<path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z" />
 	</svg>
 );
 
 const MagnifyingGlassBold: React.FC<React.SVGProps<SVGSVGElement>> = props => (
-	<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-		<rect width="256" height="256" fill="none" />
-		<circle
-			cx="112"
-			cy="112"
-			r="80"
-			fill="none"
-			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="24"
-		/>
-		<line
-			x1="168.57"
-			y1="168.57"
-			x2="224"
-			y2="224"
-			fill="none"
-			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="24"
-		/>
+	<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor">
+		<path d="M232.49,215.51,185,168a92.12,92.12,0,1,0-17,17l47.53,47.54a12,12,0,0,0,17-17ZM44,112a68,68,0,1,1,68,68A68.07,68.07,0,0,1,44,112Z" />
+	</svg>
+);
+
+const MagnifyingGlassFill: React.FC<React.SVGProps<SVGSVGElement>> = props => (
+	<svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor">
+		<path d="M168,112a56,56,0,1,1-56-56A56,56,0,0,1,168,112Zm61.66,117.66a8,8,0,0,1-11.32,0l-50.06-50.07a88,88,0,1,1,11.32-11.31l50.06,50.06A8,8,0,0,1,229.66,229.66ZM112,184a72,72,0,1,0-72-72A72.08,72.08,0,0,0,112,184Z" />
 	</svg>
 );
 
@@ -103,6 +46,8 @@ export const MagnifyingGlass: React.FC<IconsProps> = ({
 			return <MagnifyingGlassLight {...props} />;
 		case "bold":
 			return <MagnifyingGlassBold {...props} />;
+		case "fill":
+			return <MagnifyingGlassFill {...props} />;
 		default:
 			return <MagnifyingGlassRegular {...props} />;
 	}

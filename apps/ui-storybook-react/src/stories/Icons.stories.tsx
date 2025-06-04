@@ -1,5 +1,8 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
+// Icons from Phosphor Icons (https://phosphoricons.com)
+// Copyright (c) 2020-2024 Phosphor Icons
+// SPDX-License-Identifier: MIT
 import type { Meta, StoryObj } from "@storybook/react";
 import * as Icons from "@twin.org/ui-components-react/icons";
 import type { IconsProps } from "@twin.org/ui-components-react/icons";
@@ -29,13 +32,20 @@ const meta: Meta = {
 		Story => (
 			<div
 				style={{
-					display: "grid",
-					gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
-					gap: "20px",
+					height: "calc(100vh - 40px)",
+					overflowY: "auto",
 					padding: "20px"
 				}}
 			>
-				<Story />
+				<div
+					style={{
+						display: "grid",
+						gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
+						gap: "20px"
+					}}
+				>
+					<Story />
+				</div>
 			</div>
 		)
 	],
@@ -112,6 +122,10 @@ export const AllIcons: Story = {
 						<div style={{ textAlign: "center", padding: "10px", flex: 1 }}>
 							<Component type="bold" width={32} height={32} color="#4A4A4A" />
 							<p style={{ fontSize: "12px", marginTop: "10px", color: "#666" }}>Bold</p>
+						</div>
+						<div style={{ textAlign: "center", padding: "10px", flex: 1 }}>
+							<Component type="fill" width={32} height={32} color="#4A4A4A" />
+							<p style={{ fontSize: "12px", marginTop: "10px", color: "#666" }}>Fill</p>
 						</div>
 					</div>
 				</div>

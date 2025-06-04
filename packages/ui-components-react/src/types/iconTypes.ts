@@ -39,7 +39,7 @@ export interface IconsProps extends Omit<React.SVGProps<SVGSVGElement>, "type"> 
 	 * Type of the icon variant
 	 * TODO: remove the string in types once we finish migration of flowbite
 	 */
-	type?: "bold" | "regular" | "light" | string;
+	type?: "fill" | "bold" | "regular" | "light" | string;
 }
 
 /**
