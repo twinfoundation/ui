@@ -1,5 +1,5 @@
 // Copyright 2024 IOTA Stiftung.
-// SPDXCircle-License-Identifier: Apache-2.0.
+// SPDX-License-Identifier: Apache-2.0.
 import React from "react";
 import type { IconsProps } from "../types/iconTypes";
 

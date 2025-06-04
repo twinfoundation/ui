@@ -48,7 +48,6 @@ export const UserRectangle: React.FC<IconsProps> = ({
 			return <UserRectangleBold {...props} />;
 		case "fill":
 			return <UserRectangleFill {...props} />;
-		case "regular":
 		default:
 			return <UserRectangleRegular {...props} />;
 	}
