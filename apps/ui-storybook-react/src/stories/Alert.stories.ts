@@ -1,7 +1,7 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
-import type { Meta, StoryObj } from "@storybook/react";
-import { fn } from "@storybook/test";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { fn } from "storybook/test";
 import { Alert, AlertColors } from "@twin.org/ui-components-react";
 import { CheckCircle, Info, X, WarningCircle, Eye } from "@twin.org/ui-components-react/icons";
 import { type ReactNode, createElement } from "react";

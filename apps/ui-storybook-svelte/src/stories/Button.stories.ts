@@ -1,7 +1,7 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
-import type { Meta, StoryObj } from "@storybook/svelte";
-import { fn } from "@storybook/test";
+import type { Meta, StoryObj } from "@storybook/sveltekit";
+import { fn } from "storybook/test";
 import { Button } from "@twin.org/ui-components-svelte";
 
 const meta = {

@@ -1,6 +1,6 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { ListGroup } from "@twin.org/ui-components-react";
 import { IdentificationCard, Plus } from "@twin.org/ui-components-react/icons";
 
