@@ -1,5 +1,19 @@
 # @twin.org/ui-components-react - Changelog
 
+## [0.0.1-next.50](https://github.com/twinfoundation/ui/compare/ui-storybook-react-v0.0.1-next.49...ui-storybook-react-v0.0.1-next.50) (2025-06-05)
+
+
+### Features
+
+* icons migration svg flat ([#68](https://github.com/twinfoundation/ui/issues/68)) ([1d4b707](https://github.com/twinfoundation/ui/commit/1d4b7073afe736a0d1b203d0fc079d2d3848760c))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/ui-components-react bumped from 0.0.1-next.49 to 0.0.1-next.50
+
 ## [0.0.1-next.49](https://github.com/twinfoundation/ui/compare/ui-storybook-react-v0.0.1-next.48...ui-storybook-react-v0.0.1-next.49) (2025-05-29)
 
 
