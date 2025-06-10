@@ -20,7 +20,7 @@ export interface SelectOption {
 /**
  * Select props.
  */
-export interface SelectProps extends Omit<FlowbiteSelectProps, "color" | "label"> {
+export interface SelectProps extends Omit<FlowbiteSelectProps, "label"> {
 	/**
 	 * The size of the select component.
 	 */
