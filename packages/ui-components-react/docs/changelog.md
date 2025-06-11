@@ -1,5 +1,19 @@
 # @twin.org/ui-components-react - Changelog
 
+## [0.0.1-next.51](https://github.com/twinfoundation/ui/compare/ui-components-react-v0.0.1-next.50...ui-components-react-v0.0.1-next.51) (2025-06-11)
+
+
+### Features
+
+* select color prop type, Table overflow fix and fix Button ghost outline ([#71](https://github.com/twinfoundation/ui/issues/71)) ([b6c7746](https://github.com/twinfoundation/ui/commit/b6c7746c281892ea10f235046362f97dabfa20d5))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/ui-tailwind bumped from 0.0.1-next.50 to 0.0.1-next.51
+
 ## [0.0.1-next.50](https://github.com/twinfoundation/ui/compare/ui-components-react-v0.0.1-next.49...ui-components-react-v0.0.1-next.50) (2025-06-05)
 
 
