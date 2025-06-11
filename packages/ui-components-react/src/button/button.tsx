@@ -5,7 +5,7 @@ import { memo, useMemo, type JSX } from "react";
 import type { ButtonProps } from "./buttonProps";
 
 const BASE_CLASSES = "border-2 border-transparent focus:outline-none focus:ring-2";
-const GHOST_BASE_CLASSES = "border-[1px] focus:outline-none focus:ring-1";
+const GHOST_BASE_CLASSES = "focus:outline-none focus:ring-1";
 
 const colorClasses = {
 	primary: `${BASE_CLASSES} text-white bg-surface-button dark:bg-surface-button hover:enabled:bg-surface-button-hover dark:hover:enabled:bg-surface-button-hover focus:ring-surface-button-pressed`,
@@ -113,13 +113,18 @@ export const Button = memo(
 			[color]
 		);
 
+		let ghostClasses = "";
+		if (outline && color === "ghost") {
+			ghostClasses = "border-[1px]";
+		}
+
 		return (
 			<FlowbiteButton
 				color={color}
 				size={size}
 				outline={outline}
 				disabled={disabled}
-				className={`${buttonColorClasses} ${iconOnlyClasses} ${className ?? ""}`}
+				className={`${buttonColorClasses} ${iconOnlyClasses} ${className ?? ""} ${ghostClasses}`}
 				{...rest}
 			>
 				{iconOnly ? iconContent : buttonContent}
