@@ -72,13 +72,11 @@ export const Table = memo(({ header, body, footer, ...rest }: TableProps): JSX.E
 	}, [footer, renderFooterRow]);
 
 	return (
-		<div className="overflow-x-auto">
-			<FlowbiteTable {...rest}>
-				<FlowbiteTable.Head>{renderHeader}</FlowbiteTable.Head>
-				<FlowbiteTable.Body className="divide-y">{renderBody}</FlowbiteTable.Body>
-				{renderFooter}
-			</FlowbiteTable>
-		</div>
+		<FlowbiteTable {...rest}>
+			<FlowbiteTable.Head>{renderHeader}</FlowbiteTable.Head>
+			<FlowbiteTable.Body className="divide-y">{renderBody}</FlowbiteTable.Body>
+			{renderFooter}
+		</FlowbiteTable>
 	);
 });
 
