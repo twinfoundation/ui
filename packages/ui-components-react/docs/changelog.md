@@ -1,5 +1,19 @@
 # @twin.org/ui-components-react - Changelog
 
+## [0.0.1-next.52](https://github.com/twinfoundation/ui/compare/ui-components-react-v0.0.1-next.51...ui-components-react-v0.0.1-next.52) (2025-06-23)
+
+
+### Features
+
+* add all ButtonProps to Modal footerButtons array prop ([#73](https://github.com/twinfoundation/ui/issues/73)) ([8a7f649](https://github.com/twinfoundation/ui/commit/8a7f6495c64e4207d04c49f0bc6f026e6ff7202f))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/ui-tailwind bumped from 0.0.1-next.51 to 0.0.1-next.52
+
 ## [0.0.1-next.51](https://github.com/twinfoundation/ui/compare/ui-components-react-v0.0.1-next.50...ui-components-react-v0.0.1-next.51) (2025-06-11)
 
 
