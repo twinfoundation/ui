@@ -7,11 +7,12 @@ import type { ModalPosition } from "./modalPositions";
 import { ModalSizes } from "./modalSizes";
 import type { ModalSize } from "./modalSizes";
 import type { ButtonColor } from "../button/buttonColors";
+import type { ButtonProps } from "../button/buttonProps";
 
 /**
  *
  */
-export interface FooterButton {
+export interface FooterButton extends ButtonProps {
 	/**
 	 * The text to display on the button.
 	 * This will be rendered as the button's content.

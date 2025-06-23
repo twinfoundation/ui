@@ -18,4 +18,3 @@ return new PrereleasePatchVersionUpdate(this.prereleaseType);
 ```shell
 npx patch-package release-please --patch-dir release
 ```
-
