@@ -1,47 +1,260 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
-import { Button as FlowbiteButton } from "flowbite-react";
+import * as stylex from "@stylexjs/stylex";
 import { memo, useMemo, type JSX } from "react";
 import type { ButtonProps } from "./buttonProps";
 
-const BASE_CLASSES = "border-2 border-transparent focus:outline-none focus:ring-2";
-const GHOST_BASE_CLASSES = "focus:outline-none focus:ring-1";
+// StyleX styles - optimized for tree-shaking
+const styles = stylex.create({
+	base: {
+		display: "inline-flex",
+		alignItems: "center",
+		justifyContent: "center",
+		border: "2px solid transparent",
+		borderRadius: "0.5rem",
+		fontWeight: "500",
+		textDecoration: "none",
+		cursor: "pointer",
+		transition: "all 0.2s ease-in-out",
+		outline: "none",
+		":focus": {
+			ring: "2px",
+			ringOffset: "2px"
+		},
+		":disabled": {
+			opacity: 0.6,
+			cursor: "not-allowed"
+		}
+	},
+	// Color variants - optimized for tree-shaking
+	primary: {
+		color: "white",
+		backgroundColor: "var(--surface-button)",
+		":hover:enabled": {
+			backgroundColor: "var(--surface-button-hover)"
+		},
+		":focus": {
+			ringColor: "var(--surface-button-pressed)"
+		}
+	},
+	secondary: {
+		color: "white",
+		backgroundColor: "var(--surface-button-alt)",
+		":hover:enabled": {
+			backgroundColor: "var(--surface-button-alt-hover)"
+		},
+		":focus": {
+			ringColor: "var(--surface-button-alt-pressed)"
+		}
+	},
+	error: {
+		color: "white",
+		backgroundColor: "var(--error)",
+		":hover:enabled": {
+			backgroundColor: "var(--system-error-tints-600)"
+		},
+		":focus": {
+			ringColor: "var(--system-error-tints-200)"
+		}
+	},
+	warning: {
+		color: "white",
+		backgroundColor: "var(--warning)",
+		":hover:enabled": {
+			backgroundColor: "var(--system-warning-tints-600)"
+		},
+		":focus": {
+			ringColor: "var(--system-warning-tints-200)"
+		}
+	},
+	success: {
+		color: "white",
+		backgroundColor: "var(--success)",
+		":hover:enabled": {
+			backgroundColor: "var(--system-success-tints-600)"
+		},
+		":focus": {
+			ringColor: "var(--system-success-tints-200)"
+		}
+	},
+	info: {
+		color: "white",
+		backgroundColor: "var(--information)",
+		":hover:enabled": {
+			backgroundColor: "var(--system-information-tints-600)"
+		},
+		":focus": {
+			ringColor: "var(--system-information-tints-200)"
+		}
+	},
+	plain: {
+		color: "black",
+		backgroundColor: "var(--surface-second)",
+		":hover:enabled": {
+			backgroundColor: "var(--surface-third)"
+		},
+		":focus": {
+			ringColor: "rgb(229 231 235)"
+		},
+		"@media (prefers-color-scheme: dark)": {
+			color: "var(--invert)",
+			backgroundColor: "var(--surface-third-dark)",
+			":hover:enabled": {
+				backgroundColor: "var(--surface-second-dark)"
+			},
+			":focus": {
+				ringColor: "var(--surface-button-pressed)"
+			}
+		}
+	},
+	ghost: {
+		color: "black",
+		":hover:enabled": {
+			backgroundColor: "rgb(249 250 251)"
+		},
+		":focus": {
+			backgroundColor: "rgb(243 244 246)",
+			ringColor: "rgb(229 231 235)"
+		},
+		"@media (prefers-color-scheme: dark)": {
+			color: "var(--invert)",
+			":hover:enabled": {
+				backgroundColor: "var(--surface-second-dark)"
+			},
+			":focus": {
+				ringColor: "var(--surface-button-pressed)"
+			}
+		}
+	},
+	dark: {
+		color: "white",
+		backgroundColor: "rgb(31 41 55)",
+		":hover:enabled": {
+			backgroundColor: "rgb(55 65 81)"
+		},
+		":focus": {
+			ringColor: "rgb(229 231 235)"
+		},
+		"@media (prefers-color-scheme: dark)": {
+			color: "black",
+			backgroundColor: "var(--surface-second)",
+			":hover:enabled": {
+				backgroundColor: "rgb(75 85 99)"
+			},
+			":focus": {
+				ringColor: "rgb(55 65 81)"
+			}
+		}
+	},
+	// Size variants
+	xs: {
+		height: "1.75rem",
+		width: "1.75rem",
+		padding: "0.25rem",
+		fontSize: "0.75rem"
+	},
+	sm: {
+		height: "2.25rem",
+		width: "2.25rem",
+		padding: "0.375rem 0.75rem",
+		fontSize: "0.875rem"
+	},
+	md: {
+		height: "2.75rem",
+		width: "2.75rem",
+		padding: "0.5rem 1rem",
+		fontSize: "1rem"
+	},
+	lg: {
+		height: "3.5rem",
+		width: "3.5rem",
+		padding: "0.75rem 1.5rem",
+		fontSize: "1.125rem"
+	},
+	xl: {
+		height: "4rem",
+		width: "4rem",
+		padding: "1rem 2rem",
+		fontSize: "1.25rem"
+	},
+	// Icon sizes
+	iconXs: {
+		height: "0.875rem",
+		width: "0.875rem"
+	},
+	iconSm: {
+		height: "1rem",
+		width: "1rem"
+	},
+	iconMd: {
+		height: "1.25rem",
+		width: "1.25rem"
+	},
+	iconLg: {
+		height: "1.5rem",
+		width: "1.5rem"
+	},
+	iconXl: {
+		height: "1.75rem",
+		width: "1.75rem"
+	},
+	// Layout
+	content: {
+		display: "inline-flex",
+		alignItems: "center",
+		justifyContent: "center",
+		gap: "0.375rem"
+	},
+	iconContainer: {
+		display: "flex",
+		alignItems: "center"
+	},
+	iconOnly: {
+		aspectRatio: "1",
+		borderRadius: "50%",
+		padding: "0"
+	},
+	ghostOutline: {
+		border: "1px solid currentColor"
+	}
+});
 
-const colorClasses = {
-	primary: `${BASE_CLASSES} text-white bg-surface-button dark:bg-surface-button hover:enabled:bg-surface-button-hover dark:hover:enabled:bg-surface-button-hover focus:ring-surface-button-pressed`,
-	secondary: `${BASE_CLASSES} text-white bg-surface-button-alt dark:bg-surface-button-alt hover:enabled:bg-surface-button-alt-hover dark:hover:enabled:bg-surface-button-alt-hover focus:ring-surface-button-alt-pressed`,
-	error: `${BASE_CLASSES} text-white bg-error dark:bg-error hover:enabled:bg-system-error-tints-600 dark:hover:enabled:bg-system-error-tints-600 focus:ring-system-error-tints-200`,
-	warning: `${BASE_CLASSES} text-white bg-warning dark:bg-warning hover:enabled:bg-system-warning-tints-600 dark:hover:enabled:bg-system-warning-tints-600 focus:ring-system-warning-tints-200`,
-	success: `${BASE_CLASSES} text-white bg-success dark:bg-success hover:enabled:bg-system-success-tints-600 dark:hover:enabled:bg-system-success-tints-600 focus:ring-system-success-tints-200`,
-	info: `${BASE_CLASSES} text-white bg-information dark:bg-information hover:enabled:bg-system-information-tints-600 dark:hover:enabled:bg-system-information-tints-600 focus:ring-system-information-tints-200`,
-	plain: `${BASE_CLASSES} text-black dark:text-invert bg-surface-second dark:bg-surface-third-dark hover:enabled:bg-surface-third focus:ring-gray-200 dark:hover:enabled:bg-surface-second-dark dark:focus:ring-surface-button-pressed`,
-	ghost: `${GHOST_BASE_CLASSES} text-black dark:text-invert hover:enabled:bg-gray-50 focus:bg-gray-100 focus:ring-gray-200 dark:hover:enabled:bg-surface-second-dark dark:focus:ring-surface-button-pressed`,
-	dark: `${BASE_CLASSES} text-white dark:text-black bg-gray-800 dark:bg-surface-second hover:enabled:bg-gray-700 focus:ring-gray-200 dark:hover:enabled:bg-gray-600 dark:focus:ring-gray-700`
+// Pre-computed style maps for better performance
+const COLOR_STYLES = {
+	primary: styles.primary,
+	secondary: styles.secondary,
+	error: styles.error,
+	warning: styles.warning,
+	success: styles.success,
+	info: styles.info,
+	plain: styles.plain,
+	ghost: styles.ghost,
+	dark: styles.dark
 } as const;
 
-const buttonSizes = {
-	xs: "!h-7 !w-7",
-	sm: "!h-9 !w-9",
-	md: "!h-11 !w-11",
-	lg: "!h-14 !w-14",
-	xl: "!h-16 !w-16"
+const SIZE_STYLES = {
+	xs: styles.xs,
+	sm: styles.sm,
+	md: styles.md,
+	lg: styles.lg,
+	xl: styles.xl
+} as const;
+
+const ICON_SIZE_STYLES = {
+	xs: styles.iconXs,
+	sm: styles.iconSm,
+	md: styles.iconMd,
+	lg: styles.iconLg,
+	xl: styles.iconXl
 } as const;
 
 /**
  * Button icon size.
  */
-export type IconSize = keyof typeof iconSizes;
-
-const iconSizes = {
-	xs: "h-3.5 w-3.5",
-	sm: "h-4 w-4",
-	md: "h-5 w-5",
-	lg: "h-6 w-6",
-	xl: "h-7 w-7"
-} as const;
+export type IconSize = keyof typeof ICON_SIZE_STYLES;
 
 /**
- * Button component.
+ * Button component - optimized for tree-shaking and performance.
  */
 export const Button = memo(
 	({
@@ -61,20 +274,22 @@ export const Button = memo(
 		children,
 		...rest
 	}: ButtonProps): JSX.Element => {
-		const iconSize = iconSizes[size as IconSize];
+		// Memoize icon size to prevent unnecessary re-renders
+		const iconSize = ICON_SIZE_STYLES[size as IconSize];
 
+		// Memoize button content to prevent unnecessary re-renders
 		const buttonContent = useMemo(
 			() => (
-				<div className="inline-flex items-center justify-center">
+				<div {...stylex.props(styles.content)}>
 					{showLeftIcon && LeftIcon && (
-						<div className="flex items-center">
-							<LeftIcon className={`mr-1.5 ${iconSize}`} />
+						<div {...stylex.props(styles.iconContainer)}>
+							<LeftIcon {...stylex.props(iconSize)} />
 						</div>
 					)}
 					{showButtonText && (buttonText || children)}
 					{showRightIcon && RightIcon && (
-						<div className="flex items-center">
-							<RightIcon className={`ml-1.5 ${iconSize}`} />
+						<div {...stylex.props(styles.iconContainer)}>
+							<RightIcon {...stylex.props(iconSize)} />
 						</div>
 					)}
 				</div>
@@ -91,44 +306,49 @@ export const Button = memo(
 			]
 		);
 
+		// Memoize icon content to prevent unnecessary re-renders
 		const iconContent = useMemo(
 			() =>
 				Icon && (
-					<div className="flex h-full w-full items-center justify-center">
-						<Icon className={iconSize} />
+					<div {...stylex.props(styles.content)}>
+						<Icon {...stylex.props(iconSize)} />
 					</div>
 				),
 			[Icon, iconSize]
 		);
 
-		const iconOnlyClasses = useMemo(() => {
+		// Memoize button styles to prevent unnecessary re-computations
+		const buttonStyles = useMemo(() => {
+			const colorStyle = COLOR_STYLES[color as keyof typeof COLOR_STYLES];
+			const sizeStyle = SIZE_STYLES[size as keyof typeof SIZE_STYLES];
+			
 			if (iconOnly) {
-				return `!aspect-square !rounded-full !p-0 ${buttonSizes[size as IconSize]} [&>span]:!p-0 [&>span]:!m-0`;
+				return [
+					styles.base,
+					colorStyle,
+					sizeStyle,
+					styles.iconOnly,
+					...(outline && color === "ghost" ? [styles.ghostOutline] : [])
+				];
 			}
-			return "rounded-lg";
-		}, [iconOnly, size]);
 
-		const buttonColorClasses = useMemo(
-			() => colorClasses[color as keyof typeof colorClasses],
-			[color]
-		);
-
-		let ghostClasses = "";
-		if (outline && color === "ghost") {
-			ghostClasses = "border-[1px]";
-		}
+			return [
+				styles.base,
+				colorStyle,
+				sizeStyle,
+				...(outline && color === "ghost" ? [styles.ghostOutline] : [])
+			];
+		}, [color, size, iconOnly, outline]);
 
 		return (
-			<FlowbiteButton
-				color={color}
-				size={size}
-				outline={outline}
+			<button
+				{...stylex.props(buttonStyles)}
 				disabled={disabled}
-				className={`${buttonColorClasses} ${iconOnlyClasses} ${className ?? ""} ${ghostClasses}`}
+				className={className}
 				{...rest}
 			>
 				{iconOnly ? iconContent : buttonContent}
-			</FlowbiteButton>
+			</button>
 		);
 	}
 );
