@@ -1,65 +1,51 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
-import {
-	TailwindConfig as TailwindConfigTwinOrg,
-	FigmaVariables,
-	type IFigmaVariableCollection
-} from "@twin.org/ui-tailwind";
-import * as flowbite from "flowbite-react/tailwind";
-import type { Config } from "tailwindcss";
 
 /**
- * The tailwind config.
+ * Tailwind configuration for the UI components.
+ * This provides the base configuration without Flowbite dependencies.
  */
-export class TailwindConfig {
-	/**
-	 * Generate the tailwind config theme.
-	 * @param collections The collections to include.
-	 * @returns The tailwind config theme.
-	 */
-	public static getTheme(
-		collections: string[] = ["Twin Brand Color", "Twin Tokens"]
-	): Config["theme"] {
-		const defaultFigmaVariables = FigmaVariables.loadDefaultVariables();
-
-		const figmaVariablesCollections: IFigmaVariableCollection[] = [];
-		for (const collection of collections) {
-			const col = FigmaVariables.getVariableCollection(defaultFigmaVariables, collection);
-			if (col) {
-				figmaVariablesCollections.push(col);
+export const TailwindConfig = {
+	content: [
+		"./src/**/*.{js,ts,jsx,tsx}",
+		"./dist/**/*.{js,ts,jsx,tsx}",
+		"./node_modules/@twin.org/ui-components-react/**/*.{js,ts,jsx,tsx}"
+	],
+	theme: {
+		extend: {
+			colors: {
+				// Surface colors
+				"surface-button": "var(--surface-button)",
+				"surface-button-hover": "var(--surface-button-hover)",
+				"surface-button-pressed": "var(--surface-button-pressed)",
+				"surface-button-alt": "var(--surface-button-alt)",
+				"surface-button-alt-hover": "var(--surface-button-alt-hover)",
+				"surface-button-alt-pressed": "var(--surface-button-alt-pressed)",
+				"surface-second": "var(--surface-second)",
+				"surface-third": "var(--surface-third)",
+				"surface-third-dark": "var(--surface-third-dark)",
+				"surface-second-dark": "var(--surface-second-dark)",
+				
+				// System colors
+				"error": "var(--error)",
+				"warning": "var(--warning)",
+				"success": "var(--success)",
+				"information": "var(--information)",
+				
+				// System tints
+				"system-error-tints-200": "var(--system-error-tints-200)",
+				"system-error-tints-600": "var(--system-error-tints-600)",
+				"system-warning-tints-200": "var(--system-warning-tints-200)",
+				"system-warning-tints-600": "var(--system-warning-tints-600)",
+				"system-success-tints-200": "var(--system-success-tints-200)",
+				"system-success-tints-600": "var(--system-success-tints-600)",
+				"system-information-tints-200": "var(--system-information-tints-200)",
+				"system-information-tints-600": "var(--system-information-tints-600)",
+				
+				// Text colors
+				"invert": "var(--invert)"
 			}
 		}
-		return TailwindConfigTwinOrg.generateTheme(figmaVariablesCollections);
-	}
-
-	/**
-	 * Get the content.
-	 * @param npmRoot The root for the node modules.
-	 * @param includePackage Include the package, defaults to true.
-	 * @returns The content.
-	 */
-	public static getContentPaths(npmRoot: string, includePackage = true): string[] {
-		const contentExtensions = ["html", "js", "cjs", "mjs", "ts", "jsx", "tsx"];
-		const content = [flowbite.content({ base: npmRoot.replace("node_modules", "") })];
-
-		if (includePackage) {
-			content.push(
-				TailwindConfigTwinOrg.buildContentPath(
-					npmRoot,
-					"@twin.org/ui-components-react",
-					contentExtensions
-				)
-			);
-		}
-
-		return content;
-	}
-
-	/**
-	 * Get the plugins.
-	 * @returns The plugins.
-	 */
-	public static getPlugins(): Config["plugins"] {
-		return [flowbite.plugin()];
-	}
-}
+	},
+	plugins: []
+};
