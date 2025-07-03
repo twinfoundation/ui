@@ -321,7 +321,7 @@ export const Button = memo(
 		const buttonStyles = useMemo(() => {
 			const colorStyle = COLOR_STYLES[color as keyof typeof COLOR_STYLES];
 			const sizeStyle = SIZE_STYLES[size as keyof typeof SIZE_STYLES];
-			
+
 			if (iconOnly) {
 				return [
 					styles.base,
@@ -341,12 +341,7 @@ export const Button = memo(
 		}, [color, size, iconOnly, outline]);
 
 		return (
-			<button
-				{...stylex.props(buttonStyles)}
-				disabled={disabled}
-				className={className}
-				{...rest}
-			>
+			<button {...stylex.props(buttonStyles)} disabled={disabled} className={className} {...rest}>
 				{iconOnly ? iconContent : buttonContent}
 			</button>
 		);
