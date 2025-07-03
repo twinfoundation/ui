@@ -30,11 +30,18 @@
 		"postbundle": "node scripts/copy-compatibility.mjs"
 	},
 	"dependencies": {
+		"@stylexjs/babel-plugin": "^0.14.0",
+		"@stylexjs/stylex": "^0.14.0",
 		"@twin.org/ui-tailwind": "0.0.1-next.52",
 		"prop-types": "15.8.1"
 	},
 	"devDependencies": {
+		"@babel/core": "^7.28.0",
+		"@babel/preset-env": "^7.28.0",
+		"@babel/preset-react": "^7.27.1",
+		"@babel/preset-typescript": "^7.27.1",
 		"@eslint/js": "9.25.1",
+		"@rollup/plugin-babel": "^6.0.4",
 		"@rollup/plugin-dynamic-import-vars": "2.1.5",
 		"@rollup/plugin-image": "^3.0.3",
 		"@rollup/plugin-json": "6.1.0",
@@ -63,7 +70,6 @@
 	},
 	"peerDependencies": {
 		"flowbite": "2.5.2",
-		"flowbite-react": "0.10.2",
 		"react": ">=18",
 		"react-dom": ">=18",
 		"tailwindcss": "3"

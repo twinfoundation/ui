@@ -18,9 +18,9 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import terser from '@rollup/plugin-terser';
 import dynamicImportVars from '@rollup/plugin-dynamic-import-vars';
 import copy from 'rollup-plugin-copy';
-import postcss from 'rollup-plugin-postcss';
 import svgr from '@svgr/rollup';
 import image from '@rollup/plugin-image';
+import babel from '@rollup/plugin-babel';
 
 const isEsm = process.env.MODULE === 'esm';
 
@@ -51,6 +51,7 @@ const svgToComponent = {
 		};
 	}
 };
+
 // Get the format from the environment variable
 const format = isEsm ? 'es' : 'cjs';
 // Set the file extension based on the format
@@ -59,8 +60,7 @@ const extension = format === 'es' ? 'mjs' : 'cjs';
 const globals = {
 	react: 'React',
 	'react/jsx-runtime': 'jsxRuntime',
-	'react-dom': 'ReactDOM',
-	'@twin.org/ui-tailwind': 'TwinTailwind'
+	'react-dom': 'ReactDOM'
 	// ... add any other globals you need
 };
 
@@ -70,12 +70,9 @@ const externalDeps = [
 	'react/jsx-runtime',
 	'react',
 	'react-dom',
-	'flowbite-react/tailwind',
 	'rfc6902',
 	'intl-messageformat',
-	'@twin.org/core',
-	'@twin.org/ui-tailwind',
-	'tailwindcss'
+	'@twin.org/core'
 ];
 
 // Common plugins used for all bundles
@@ -91,6 +88,14 @@ const createPlugins = () => [
 		targets: [{ src: 'src/css', dest: 'dist/' }]
 	}),
 
+	// Process TypeScript and StyleX with Babel
+	babel({
+		babelHelpers: 'bundled',
+		extensions: ['.js', '.jsx', '.ts', '.tsx'],
+		exclude: 'node_modules/**',
+		configFile: './babel.config.mjs'
+	}),
+
 	// Properly resolve node modules
 	nodeResolve({
 		extensions: ['.js', '.jsx', '.ts', '.tsx'],
@@ -100,18 +105,15 @@ const createPlugins = () => [
 	// Handle JSON files
 	json(),
 
-	// Handle PostCSS
-	postcss({
-		minimize: true,
-		extract: false,
-		modules: false,
-		inject: false
-	}),
-
 	// Minify the output
 	terser({
 		format: {
 			comments: false
+		},
+		compress: {
+			drop_console: process.env.NODE_ENV === 'production',
+			drop_debugger: true,
+			pure_funcs: process.env.NODE_ENV === 'production' ? ['console.log'] : []
 		}
 	}),
 
@@ -153,14 +155,15 @@ const baseConfig = {
 	treeshake: {
 		moduleSideEffects: false,
 		propertyReadSideEffects: false,
-		tryCatchDeoptimization: false
+		tryCatchDeoptimization: false,
+		unknownGlobalSideEffects: false
 	}
 };
 
 // Main bundle configuration (exports everything)
 const mainBundle = {
 	...baseConfig,
-	input: './dist/es/index.js',
+	input: './src/index.tsx',
 	output: isEsm
 		? {
 				format,
@@ -169,7 +172,7 @@ const mainBundle = {
 				globals,
 				sourcemap: process.env.NODE_ENV !== 'production',
 				preserveModules: true,
-				preserveModulesRoot: 'dist/es',
+				preserveModulesRoot: 'src',
 				dir: `dist/${format}`,
 				entryFileNames: chunkInfo => {
 					if (chunkInfo.name.includes('icons/')) {
