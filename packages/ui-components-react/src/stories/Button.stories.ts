@@ -4,9 +4,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 import { Button } from "../button/button";
 import { ButtonColors } from "../button/buttonColors";
-;
 import { ButtonSizes } from "../button/buttonSizes";
-;
 import { Plus, ShoppingCart, ArrowRight } from "../icons";
 
 const meta = {

@@ -4,7 +4,6 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 import { Alert } from "../alert/alert";
 import { AlertColors } from "../alert/alertColors";
-;
 import { CheckCircle, Info, X, WarningCircle, Eye } from "../icons";
 import { type ReactNode, createElement } from "react";
 

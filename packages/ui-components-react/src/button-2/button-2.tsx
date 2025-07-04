@@ -25,28 +25,28 @@ export const Button2: FC<ButtonProps> = memo(
         <span style={{ display: "inline-flex", alignItems: "center", justifyContent: "center" }}>
           {showLeftIcon && LeftIcon && (
             <span style={{ display: "flex", alignItems: "center", marginRight: "0.375rem" }}>
-              <LeftIcon />
+              <LeftIcon className={styles.iconSize[size]} />
             </span>
           )}
           {showButtonText && (buttonText || children)}
           {showRightIcon && RightIcon && (
             <span style={{ display: "flex", alignItems: "center", marginLeft: "0.375rem" }}>
-              <RightIcon />
+              <RightIcon className={styles.iconSize[size]} />
             </span>
           )}
         </span>
       ),
-      [children, LeftIcon, RightIcon, buttonText, showButtonText, showLeftIcon, showRightIcon]
+      [children, LeftIcon, RightIcon, buttonText, showButtonText, showLeftIcon, showRightIcon, size]
     );
 
     const iconContent = useMemo(
       () =>
         Icon && (
           <span style={{ display: "flex", height: "100%", width: "100%", alignItems: "center", justifyContent: "center" }}>
-            <Icon />
+            <Icon className={styles.iconSize[size]} />
           </span>
         ),
-      [Icon]
+      [Icon, size]
     );
 
     const classes = [
