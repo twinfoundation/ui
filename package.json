@@ -23,8 +23,7 @@
 		"lint": "npm run lint:format && npm run lint:code && npm run lint:markdown && npm run lint:spell",
 		"local-link": "node ./scripts/local-link.mjs",
 		"commitlint": "commitlint --edit",
-		"generate-release-configs": "node scripts/generate-release-configs.mjs release",
-		"prepare": "husky"
+		"generate-release-configs": "node scripts/generate-release-configs.mjs release"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "19.8.0",

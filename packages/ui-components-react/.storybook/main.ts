@@ -2,7 +2,7 @@ import type { StorybookConfig } from "@storybook/react-vite";
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
 
 const config: StorybookConfig = {
-	stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
+	stories: ["../src/stories/**/*.mdx", "../src/stories/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
 	addons: [
 		"@storybook/addon-links",
 		"@storybook/addon-essentials",
@@ -14,8 +14,6 @@ const config: StorybookConfig = {
 		options: {}
 	},
 	viteFinal: (config) => {
-		// Remove alias for @twin.org/ui-components-react to force direct relative imports
-		// Only add the vanillaExtractPlugin
 		if (config.plugins) {
 			const vanillaExtractPluginExists = config.plugins.find(plugin => 
 				typeof plugin === 'object' && plugin && 'name' in plugin && plugin.name === 'vanilla-extract'
@@ -27,4 +25,4 @@ const config: StorybookConfig = {
 		return config;
 	}
 };
-export default config;
+export default config; 

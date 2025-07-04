@@ -39,6 +39,7 @@
 		"@storybook/test": "8.6.12",
 		"@types/react": "19.1.2",
 		"@types/react-dom": "19.1.2",
+		"@vanilla-extract/vite-plugin": "^5.1.0",
 		"@vitejs/plugin-react": "4.4.1",
 		"autoprefixer": "10.4.21",
 		"eslint": "9.11.1",

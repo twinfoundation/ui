@@ -86,6 +86,69 @@ const createPlugins = () => [
 	// Extract peer dependencies
 	peerDepsExternal(),
 
+	// Custom plugin to fix cssesc ESM/CJS interop issue
+	{
+		name: 'fix-cssesc',
+		resolveId(source) {
+			if (source === 'cssesc') {
+				return source;
+			}
+			return null;
+		},
+		load(id) {
+			if (id === 'cssesc') {
+				return `
+					import * as cssesc from 'cssesc';
+					export default cssesc.default || cssesc;
+					export * from 'cssesc';
+				`;
+			}
+			return null;
+		}
+	},
+
+	// Custom plugin to fix picocolors ESM/CJS interop issue
+	{
+		name: 'fix-picocolors',
+		resolveId(source) {
+			if (source === 'picocolors') {
+				return source;
+			}
+			return null;
+		},
+		load(id) {
+			if (id === 'picocolors') {
+				return `
+					import * as picocolors from 'picocolors';
+					export default picocolors.default || picocolors;
+					export * from 'picocolors';
+				`;
+			}
+			return null;
+		}
+	},
+
+	// Custom plugin to fix deepmerge ESM/CJS interop issue
+	{
+		name: 'fix-deepmerge',
+		resolveId(source) {
+			if (source === 'deepmerge') {
+				return source;
+			}
+			return null;
+		},
+		load(id) {
+			if (id === 'deepmerge') {
+				return `
+					import * as deepmerge from 'deepmerge';
+					export default deepmerge.default || deepmerge;
+					export * from 'deepmerge';
+				`;
+			}
+			return null;
+		}
+	},
+
 	// Copy CSS files
 	copy({
 		targets: [{ src: 'src/css', dest: 'dist/' }]

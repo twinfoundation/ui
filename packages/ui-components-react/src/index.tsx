@@ -38,6 +38,9 @@ export { ButtonSizes } from "./button/buttonSizes";
 export type { ButtonProps } from "./button/buttonProps";
 export type { ButtonSize } from "./button/buttonSizes";
 
+// Button2
+export { Button2 } from "./button-2/button-2";
+
 // Card
 export { Card } from "./card/card";
 export { CardTypes } from "./card/cardTypes";

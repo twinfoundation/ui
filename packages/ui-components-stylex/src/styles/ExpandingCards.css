@@ -1,0 +1,46 @@
+.container {
+    display: flex;
+    width: 90vw;
+  }
+  
+  .panel {
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 50px;
+    color: white;
+    cursor: pointer;
+    flex: 0.5; /* 0.5 means that each panel will take up half of the width */
+    margin: 10px;
+    position: relative; /* position relative so that the h3 can be positioned absolute */
+    transition: flex 0.7s ease-in; /* transition for the flex property */
+  }
+  
+  .panel h3 {
+    font-size: 24px;
+    position: absolute; /* position absolute so that the h3 is positioned in the bottom left corner */
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+  }
+  
+  .panel.active {
+    flex: 5;
+  }
+  .panel.active h3 {
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      width: 100vw;
+    }
+    .panel:nth-of-type(4),
+    .panel:nth-of-type(5) {
+      display: none;
+    }
+  }
+  
