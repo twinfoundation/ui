@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0.
 // cspell:ignore centered autodocs
 import type { Meta, StoryObj } from "@storybook/react";
-import { Card } from "../";
+import { Card } from "../card/card";
 import { BadgeColors } from "../badge/badgeColors";
 ;
 import {
@@ -47,8 +47,7 @@ type Story = StoryObj<typeof meta>;
  */
 export const Default: Story = {
 	args: {
-		children: "Card Component",
-		content: "This is a basic card component with a title and content."
+		children: "Card content"
 	}
 };
 

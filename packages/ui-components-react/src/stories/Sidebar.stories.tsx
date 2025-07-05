@@ -160,7 +160,7 @@ export const WithCTA: Story = {
 		CTA: (
 			<div>
 				<div className="mb-3 flex items-center">
-					<Badge color="WarningCircle">Beta</Badge>
+					<Badge color="warning">Beta</Badge>
 					<button
 						aria-label="Close"
 						className="-m-1.5 ml-auto inline-flex h-6 w-6 rounded-lg bg-gray-100 p-1 text-cyan-900 hover:bg-gray-200 focus:ring-2 focus:ring-gray-400 dark:bg-gray-700 dark:text-gray-400 dark:hover:bg-gray-600"
@@ -211,7 +211,7 @@ export const WithLabels: Story = {
 				icon: WarningCircle,
 				href: "#",
 				badge: "42",
-				badgeColor: BadgeColors.WarningCircle
+				badgeColor: BadgeColors.Warning
 			},
 			{
 				label: "Updates",

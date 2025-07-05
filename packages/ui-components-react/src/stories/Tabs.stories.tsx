@@ -1,7 +1,7 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
-import { Tabs } from "../";
+import { Tabs } from "../tabs/tabs";
 import { TabsVariants } from "../tabs/tabsVariants";
 ;
 import type { TabsProps, TabItem } from "../";
@@ -122,8 +122,10 @@ const TabStory = ({ args }: { args: TabsProps }): JSX.Element => {
  */
 export const Default: Story = {
 	args: {
-		variant: TabsVariants.Default,
-		items: defaultItems
+		items: [
+			{ title: "Tab 1", content: "Content for tab 1" },
+			{ title: "Tab 2", content: "Content for tab 2" }
+		]
 	},
 	render: args => <TabStory args={args} />
 };
