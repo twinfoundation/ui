@@ -52,5 +52,11 @@
 	"tailwindCSS.experimental.configFile": {
 		"./packages/ui-components-react/tailwind.config.ts": ["./packages/ui-components-react/**"]
 	},
-	"tailwindCSS.classAttributes": ["class", "className", "ngClass", ".*Classes.*"]
+	"tailwindCSS.classAttributes": [
+		"class",
+		"className",
+		"ngClass",
+		".*Classes.*"
+	],
+	"cursor.terminal.usePreviewBox": true
 }

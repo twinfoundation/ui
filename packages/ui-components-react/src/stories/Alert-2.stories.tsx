@@ -26,12 +26,49 @@ const meta: Meta<typeof Alert2> = {
     color: 'info',
     icon: iconMap.info,
   },
+  parameters: {
+    layout: 'centered',
+  },
 };
 export default meta;
-type Story = StoryObj<typeof Alert2>;
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {
+  args: {
+    children: "This is an info alert"
+  }
+};
+
+export const WithTitle: Story = {
+  args: {
+    title: "Info",
+    children: "This is an info alert with title"
+  }
+};
+
+export const Success: Story = {
+  args: {
+    color: "success",
+    title: "Success",
+    children: "This is a success alert"
+  }
+};
+
+export const Warning: Story = {
+  args: {
+    color: "warning",
+    title: "Warning",
+    children: "This is a warning alert"
+  }
+};
+
+export const Error: Story = {
+  args: {
+    color: "error",
+    title: "Error",
+    children: "This is an error alert"
+  }
+};
 
 export const InfoAlert: Story = { args: { color: 'info', children: 'Info alert', icon: iconMap.info } };
-export const Success: Story = { args: { color: 'success', children: 'Success alert', icon: iconMap.success } };
-export const Warning: Story = { args: { color: 'warning', children: 'Warning alert', icon: iconMap.warning } };
-export const Error: Story = { args: { color: 'error', children: 'Error alert', icon: iconMap.error } };
 export const Plain: Story = { args: { color: 'plain', children: 'Plain alert', icon: iconMap.plain } }; 

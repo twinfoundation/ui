@@ -1,9 +1,9 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
-import { Pagination } from "../";
+import { useState } from "react";
+import { Pagination } from "../pagination-2";
 import { PaginationLayouts } from "../pagination/paginationLayouts";
-;
 
 const meta = {
 	title: "Components/Pagination",
@@ -24,45 +24,56 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+const PaginationWrapper = (args: any) => {
+	const [currentPage, setCurrentPage] = useState(args.currentPage || 1);
+	return (
+		<Pagination
+			{...args}
+			currentPage={currentPage}
+			onPageChange={setCurrentPage}
+		/>
+	);
+};
+
 export const Default: Story = {
+	render: (args) => <PaginationWrapper {...args} />,
 	args: {
 		currentPage: 1,
-		onPageChange: () => {},
 		totalPages: 10
 	}
 };
 
 export const NavigationLayout: Story = {
+	render: (args) => <PaginationWrapper {...args} />,
 	args: {
 		currentPage: 1,
-		onPageChange: () => {},
 		totalPages: 10,
 		layout: PaginationLayouts.Navigation
 	}
 };
 
 export const TableLayout: Story = {
+	render: (args) => <PaginationWrapper {...args} />,
 	args: {
 		currentPage: 1,
-		onPageChange: () => {},
 		totalPages: 10,
 		layout: PaginationLayouts.Table
 	}
 };
 
 export const ShowIcons: Story = {
+	render: (args) => <PaginationWrapper {...args} />,
 	args: {
 		currentPage: 1,
-		onPageChange: () => {},
 		totalPages: 10,
 		showIcons: true
 	}
 };
 
 export const CustomLabels: Story = {
+	render: (args) => <PaginationWrapper {...args} />,
 	args: {
 		currentPage: 1,
-		onPageChange: () => {},
 		totalPages: 10,
 		previousLabel: "Go back",
 		nextLabel: "Go forward"
@@ -70,9 +81,9 @@ export const CustomLabels: Story = {
 };
 
 export const IconsOnly: Story = {
+	render: (args) => <PaginationWrapper {...args} />,
 	args: {
 		currentPage: 1,
-		onPageChange: () => {},
 		totalPages: 10,
 		previousLabel: "",
 		nextLabel: "",

@@ -13,15 +13,24 @@ export { Alert } from "./alert/alert";
 export { AlertColors } from "./alert/alertColors";
 export type { AlertProps } from "./alert/alertProps";
 
+// Alert2
+export { Alert2 } from "./alert-2/alert-2";
+
 // Avatar
 export { Avatar } from "./avatar/avatar";
 export type { AvatarProps } from "./avatar/avatarProps";
+
+// Avatar2
+export { Avatar2 } from "./avatar-2/avatar-2";
 
 // Badge
 export { Badge } from "./badge/badge";
 export { BadgeColors } from "./badge/badgeColors";
 export { BadgeSizes } from "./badge/badgeSizes";
 export type { BadgeProps } from "./badge/badgeProps";
+
+// Badge2
+export { Badge2 } from "./badge-2/badge-2";
 
 // Banner
 export { Banner } from "./banner/banner";
@@ -46,6 +55,9 @@ export { Card } from "./card/card";
 export { CardTypes } from "./card/cardTypes";
 export type { CardProps } from "./card/cardProps";
 
+// Card2
+export { Card2 } from "./card-2/card-2";
+
 // Carousel
 export { Carousel } from "./carousel/carousel";
 export type { CarouselProps } from "./carousel/carouselProps";
@@ -53,6 +65,9 @@ export type { CarouselProps } from "./carousel/carouselProps";
 // Checkbox
 export { Checkbox } from "./checkbox/checkbox";
 export type { CheckboxProps } from "./checkbox/checkboxProps";
+
+// Checkbox2
+export { Checkbox2 } from "./checkbox-2/checkbox-2";
 
 // Datepicker
 export { Datepicker } from "./datepicker/datepicker";
@@ -70,6 +85,9 @@ export { DropdownPositions } from "./dropdown/dropdownPositions";
 export { DropdownSizes } from "./dropdown/dropdownSizes";
 export type { DropdownSize } from "./dropdown/dropdownSizes";
 export type { DropdownProps } from "./dropdown/dropdownProps";
+
+// Dropdown2
+export { Dropdown2 } from "./dropdown-2/dropdown-2";
 
 // FileInput
 export { FileInput } from "./fileInput/fileInput";
@@ -103,14 +121,17 @@ export { ModalSizes } from "./modal/modalSizes";
 export type { ModalSize } from "./modal/modalSizes";
 export type { ModalProps } from "./modal/modalProps";
 
+// Modal2
+export { Modal2 } from "./modal-2/modal-2";
+
 // Navbar
 export { Navbar } from "./navbar/navbar";
 export type { NavbarProps } from "./navbar/navbarProps";
 
 // Pagination
-export { Pagination } from "./pagination/pagination";
+export { Pagination } from "./pagination-2";
 export { PaginationLayouts } from "./pagination/paginationLayouts";
-export type { PaginationProps } from "./pagination/paginationProps";
+export type { Pagination2Props as PaginationProps } from "./pagination-2/pagination-2";
 
 // Popover
 export { Popover } from "./popover/popover";
@@ -129,6 +150,9 @@ export type { ProgressProps } from "./progress/progressProps";
 export type { ProgressPosition } from "./progress/progressPositions";
 export type { ProgressSize } from "./progress/progressSizes";
 export type { ProgressColor } from "./progress/progressColors";
+
+// Progress2
+export { Progress2 } from "./progress-2/progress-2";
 
 // Radio
 export { Radio } from "./radio/radio";
@@ -159,6 +183,9 @@ export { Spinner } from "./spinner/spinner";
 export { SpinnerSizes } from "./spinner/spinnerSizes";
 export type { SpinnerProps } from "./spinner/spinnerProps";
 
+// Spinner2
+export { Spinner2 } from "./spinner-2/spinner-2";
+
 // Table
 export { Table } from "./table/table";
 export type { TableProps } from "./table/tableProps";
@@ -167,6 +194,9 @@ export type { TableProps } from "./table/tableProps";
 export { Tabs } from "./tabs/tabs";
 export { TabsVariants } from "./tabs/tabsVariants";
 export type { TabsProps, TabItem } from "./tabs/tabsProps";
+
+// Tabs2
+export { Tabs2 } from "./tabs-2/tabs-2";
 
 // TextInput
 export { TextInput } from "./textInput/textInput";
@@ -179,6 +209,9 @@ export type { TextInputSize } from "./textInput/textInputSizes";
 // Textarea
 export { Textarea } from "./textarea/textarea";
 export type { TextareaProps } from "./textarea/textareaProps";
+
+// Textarea2
+export { Textarea2 } from "./textarea-2/textarea-2";
 
 // Toast
 export { Toast } from "./toast/toast";
@@ -240,3 +273,6 @@ export { HOVER, CLICK } from "./constants/triggers";
 
 // Configuration
 export { TailwindConfig } from "./config/tailwindConfig";
+
+// Input2
+export { Input2 } from "./input-2/input-2";
