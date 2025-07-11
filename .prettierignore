@@ -1,6 +1,8 @@
 package-lock.json
 .svelte-kit
 changelog.md
+changelog.md
+release/**
 **/docs/reference
 **/docs/open-api
 **/static/locales

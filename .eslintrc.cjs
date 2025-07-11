@@ -725,7 +725,8 @@ module.exports = {
 				'header/header': ['off'],
 				'jsdoc/require-jsdoc': ['off'],
 				...typeScriptRules,
-				'@typescript-eslint/quotes': ['error', 'single', { avoidEscape: true }]
+				'@typescript-eslint/quotes': ['error', 'single', { avoidEscape: true }],
+				'svelte/valid-compile': ['off']
 			}
 		},
 		{

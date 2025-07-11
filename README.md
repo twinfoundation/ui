@@ -52,9 +52,11 @@ The icon system has been refactored for both React and Svelte components:
 - All icons are now located in the `src/icons/` directory of each component package.
 - Each icon is its own TypeScript file for better tree-shaking and modularity.
 - To use an icon, simply import it from the respective package, e.g.:
+
   ```js
   import { Star } from 'ui-components-react/icons';
   ```
+
 - The icon index file exports all available icons for easy access.
 
 See the respective package README for more details.

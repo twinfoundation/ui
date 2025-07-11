@@ -34,15 +34,13 @@
 		"flowbite-svelte": "0.48.6",
 		"flowbite-svelte-blocks": "1.1.4",
 		"flowbite-svelte-icons": "2.1.1",
-		"flowbite-typography": "1.0.5"
-	},
-	"peerDependencies": {
-		"@sveltejs/kit": "^2.0.0",
-		"svelte": "^4.0.0 || ^5.0.0"
+		"flowbite-typography": "1.0.5",
+		"@sveltejs/kit": "2.22.5",
+		"svelte": "5.35.6"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "6.0.0",
-		"@sveltejs/package": "2.3.11",
+		"@sveltejs/adapter-auto": "6.0.1",
+		"@sveltejs/package": "2.3.12",
 		"@tailwindcss/typography": "0.5.16",
 		"@twin.org/merge-locales": "next",
 		"autoprefixer": "10.4.21",
