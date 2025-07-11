@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/ui-components-react",
-	"version": "0.0.1",
+	"version": "0.0.2-next.0",
 	"description": "UI components for react",
 	"repository": {
 		"type": "git",
@@ -30,7 +30,7 @@
 		"postbundle": "node scripts/copy-compatibility.mjs"
 	},
 	"dependencies": {
-		"@twin.org/ui-tailwind": "^0.0.1",
+		"@twin.org/ui-tailwind": "0.0.2-next.0",
 		"prop-types": "15.8.1"
 	},
 	"devDependencies": {
