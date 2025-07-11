@@ -1,6 +1,6 @@
 {
-	"packages/ui-tailwind": "0.0.1-next.52",
-	"packages/ui-components-react": "0.0.1-next.52",
-	"packages/ui-components-svelte": "0.0.1-next.52",
-	"apps/ui-storybook-react": "0.0.1-next.52"
+	"packages/ui-tailwind": "0.0.2-next.0",
+	"packages/ui-components-react": "0.0.2-next.0",
+	"packages/ui-components-svelte": "0.0.2-next.0",
+	"apps/ui-storybook-react": "0.0.2-next.0"
 }
