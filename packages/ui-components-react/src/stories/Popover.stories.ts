@@ -3,9 +3,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Avatar, Popover } from "../";
 import { PopoverTriggers } from "../popover/popoverTriggers";
-;
+
 import { PopoverPositions } from "../popover/popoverPositions";
-;
+
 import React from "react";
 
 const meta = {

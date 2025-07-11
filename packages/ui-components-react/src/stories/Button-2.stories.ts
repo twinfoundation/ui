@@ -2,12 +2,12 @@
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
-import { Button2 } from "../button-2/button-2";
 import { ButtonColors } from "../button/buttonColors";
 import { ButtonSizes } from "../button/buttonSizes";
+import { Button2 } from "../button-2/button-2";
+import { ArrowRight } from "../icons/arrowRight";
 import { Plus } from "../icons/plus";
 import { ShoppingCart } from "../icons/shoppingCart";
-import { ArrowRight } from "../icons/arrowRight";
 
 const meta = {
 	title: "Components/Button2",
@@ -183,4 +183,4 @@ export const DisabledState: Story = {
 		color: ButtonColors.Primary,
 		disabled: true
 	}
-}; 
+};

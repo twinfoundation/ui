@@ -17,11 +17,11 @@ export type PaginationProps = PropsWithChildren<
 		 * Whether to show icons.
 		 */
 		showIcons?: boolean;
-		/*
+		/**
 		 * The label to show for the previous page.
 		 */
 		previousLabel?: string;
-		/*
+		/**
 		 * The label to show for the next page.
 		 */
 		nextLabel?: string;

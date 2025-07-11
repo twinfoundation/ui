@@ -1,10 +1,9 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
+import { Pagination as FlowbitePagination, type CustomFlowbiteTheme } from "flowbite-react";
 import { memo, useCallback, type JSX } from "react";
 import type { PaginationProps } from "./paginationProps";
-
-export { Pagination } from '../pagination-2';
-export type { Pagination2Props as PaginationProps } from '../pagination-2/pagination-2';
+export type { PaginationProps } from "./paginationProps";
 
 const customTheme: CustomFlowbiteTheme["pagination"] = {
 	pages: {

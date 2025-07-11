@@ -131,7 +131,7 @@ export type { NavbarProps } from "./navbar/navbarProps";
 // Pagination
 export { Pagination } from "./pagination-2";
 export { PaginationLayouts } from "./pagination/paginationLayouts";
-export type { Pagination2Props as PaginationProps } from "./pagination-2/pagination-2";
+export type { Pagination2Props as PaginationProps } from "./pagination-2/paginationProps";
 
 // Popover
 export { Popover } from "./popover/popover";
