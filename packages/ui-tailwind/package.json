@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/ui-tailwind",
-	"version": "0.0.1-next.52",
+	"version": "0.0.0",
 	"description": "UI package for tailwind",
 	"repository": {
 		"type": "git",
@@ -29,11 +29,11 @@
 		"dist:no-test": "npm run clean && npm run build && npm run bundle && npm run docs"
 	},
 	"dependencies": {
-		"@twin.org/core": "next"
+		"@twin.org/core": "^0.0.1"
 	},
 	"devDependencies": {
 		"@rollup/plugin-json": "6.1.0",
-		"@twin.org/nameof-vitest-plugin": "next",
+		"@twin.org/nameof-vitest-plugin": "^0.0.1",
 		"autoprefixer": "10.4.21",
 		"postcss": "8.5.3",
 		"rimraf": "6.0.1",
