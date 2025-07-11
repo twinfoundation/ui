@@ -24,7 +24,7 @@ export const Button2: FC<ButtonProps> = memo(
 	}) => {
 		const buttonContent = useMemo(
 			() => (
-				<span style={{ display: "inline-flex", alignItems: "center", justifyContent: "center" }}>
+				<div style={{ display: "inline-flex", alignItems: "center", justifyContent: "center" }}>
 					{showLeftIcon && LeftIcon && (
 						<span style={{ display: "flex", alignItems: "center", marginRight: "0.375rem" }}>
 							<LeftIcon className={styles.iconSize[size]} />
@@ -36,7 +36,7 @@ export const Button2: FC<ButtonProps> = memo(
 							<RightIcon className={styles.iconSize[size]} />
 						</span>
 					)}
-				</span>
+				</div>
 			),
 			[children, LeftIcon, RightIcon, buttonText, showButtonText, showLeftIcon, showRightIcon, size]
 		);
@@ -60,8 +60,8 @@ export const Button2: FC<ButtonProps> = memo(
 		);
 
 		const classes = [
-			styles.base,
 			iconOnly ? styles.iconOnly : styles.rounded,
+			iconOnly ? styles.buttonSizes : null,
 			styles.size[size],
 			styles.color[color],
 			outline && color === "ghost" ? styles.ghostOutline : undefined,
@@ -72,7 +72,7 @@ export const Button2: FC<ButtonProps> = memo(
 
 		return (
 			<button type="button" className={classes} disabled={disabled} {...rest}>
-				{iconOnly ? iconContent : buttonContent}
+				<span className={styles.span}>{iconOnly ? iconContent : buttonContent}</span>
 			</button>
 		);
 	}

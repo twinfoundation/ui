@@ -60,7 +60,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
 	args: {
-		children: "Button2 text",
+		children: "Button text",
 		size: "xs",
 		color: ButtonColors.Primary,
 		outline: false,
@@ -75,7 +75,7 @@ export const Default: Story = {
 
 export const Primary: Story = {
 	args: {
-		children: "Primary Button2",
+		children: "Primary Button",
 		size: "xs",
 		color: ButtonColors.Primary
 	}
@@ -83,7 +83,7 @@ export const Primary: Story = {
 
 export const Secondary: Story = {
 	args: {
-		children: "Secondary Button2",
+		children: "Secondary Button",
 		size: "xs",
 		color: ButtonColors.Secondary
 	}
@@ -91,7 +91,7 @@ export const Secondary: Story = {
 
 export const Plain: Story = {
 	args: {
-		children: "Plain Button2",
+		children: "Plain Button",
 		size: "xs",
 		color: ButtonColors.Plain
 	}
@@ -99,7 +99,7 @@ export const Plain: Story = {
 
 export const Ghost: Story = {
 	args: {
-		children: "Ghost Button2",
+		children: "Ghost Button",
 		size: "xs",
 		color: ButtonColors.Ghost
 	}
@@ -107,7 +107,7 @@ export const Ghost: Story = {
 
 export const Error: Story = {
 	args: {
-		children: "Error Button2",
+		children: "Error Button",
 		size: "xs",
 		color: ButtonColors.Error
 	}
@@ -115,7 +115,7 @@ export const Error: Story = {
 
 export const Warning: Story = {
 	args: {
-		children: "Warning Button2",
+		children: "Warning Button",
 		size: "xs",
 		color: ButtonColors.Warning
 	}
@@ -123,7 +123,7 @@ export const Warning: Story = {
 
 export const Success: Story = {
 	args: {
-		children: "Success Button2",
+		children: "Success Button",
 		size: "xs",
 		color: ButtonColors.Success
 	}
@@ -131,7 +131,7 @@ export const Success: Story = {
 
 export const Info: Story = {
 	args: {
-		children: "Info Button2",
+		children: "Info Button",
 		size: "xs",
 		color: ButtonColors.Info
 	}
@@ -139,7 +139,7 @@ export const Info: Story = {
 
 export const Dark: Story = {
 	args: {
-		children: "Dark Button2",
+		children: "Dark Button",
 		size: "xs",
 		color: ButtonColors.Dark
 	}
@@ -178,7 +178,7 @@ export const WithRightIcon: Story = {
 
 export const DisabledState: Story = {
 	args: {
-		children: "Disabled button2",
+		children: "Disabled button",
 		size: "xs",
 		color: ButtonColors.Primary,
 		disabled: true

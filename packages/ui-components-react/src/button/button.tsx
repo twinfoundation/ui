@@ -19,6 +19,7 @@ const colorClasses = {
 	dark: `${BASE_CLASSES} text-white dark:text-black bg-gray-800 dark:bg-surface-second hover:enabled:bg-gray-700 focus:ring-gray-200 dark:hover:enabled:bg-gray-600 dark:focus:ring-gray-700`
 } as const;
 
+// for iconOnly
 const buttonSizes = {
 	xs: "!h-7 !w-7",
 	sm: "!h-9 !w-9",
