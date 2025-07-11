@@ -1,4 +1,5 @@
 import { style } from '@vanilla-extract/css';
+import { colors } from '../tokens/colors.css';
 
 export const badge = style({
   display: 'inline-flex',
@@ -11,36 +12,78 @@ export const badge = style({
 });
 
 export const gray = style({
-  backgroundColor: '#f3f4f6',
-  color: '#374151',
+  backgroundColor: colors.gray100,
+  color: colors.gray700,
+  '@media': {
+    '(prefers-color-scheme: dark)': {
+      backgroundColor: colors.gray700,
+      color: colors.gray300,
+    },
+  },
 });
 
 export const red = style({
-  backgroundColor: '#fef2f2',
-  color: '#dc2626',
+  backgroundColor: colors.red100,
+  color: colors.red700,
+  '@media': {
+    '(prefers-color-scheme: dark)': {
+      backgroundColor: colors.red200,
+      color: colors.red800,
+    },
+  },
 });
 
 export const green = style({
-  backgroundColor: '#f0fdf4',
+  backgroundColor: colors.green100,
   color: '#16a34a',
+  '@media': {
+    '(prefers-color-scheme: dark)': {
+      backgroundColor: colors.green200,
+      color: '#166534',
+    },
+  },
 });
 
 export const yellow = style({
-  backgroundColor: '#fffbeb',
+  backgroundColor: '#fef9c3',
   color: '#d97706',
+  '@media': {
+    '(prefers-color-scheme: dark)': {
+      backgroundColor: '#fef08a',
+      color: '#b45309',
+    },
+  },
 });
 
 export const blue = style({
-  backgroundColor: '#eff6ff',
-  color: '#2563eb',
+  backgroundColor: colors.blue100,
+  color: colors.blue700,
+  '@media': {
+    '(prefers-color-scheme: dark)': {
+      backgroundColor: colors.blue200,
+      color: colors.blue800,
+    },
+  },
 });
 
 export const purple = style({
   backgroundColor: '#faf5ff',
   color: '#7c3aed',
+  '@media': {
+    '(prefers-color-scheme: dark)': {
+      backgroundColor: '#ede9fe',
+      color: '#6d28d9',
+    },
+  },
 });
 
 export const pink = style({
   backgroundColor: '#fdf2f8',
   color: '#ec4899',
+  '@media': {
+    '(prefers-color-scheme: dark)': {
+      backgroundColor: '#fbcfe8',
+      color: '#be185d',
+    },
+  },
 }); 

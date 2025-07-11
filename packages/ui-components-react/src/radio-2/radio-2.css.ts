@@ -1,4 +1,5 @@
 import { style, styleVariants } from '@vanilla-extract/css';
+import { colors } from '../tokens/colors.css';
 
 const baseRadio = style({
   position: 'relative',
@@ -21,9 +22,15 @@ const baseRadioCircle = style({
   position: 'relative',
   display: 'inline-block',
   borderRadius: '50%',
-  border: '2px solid #d1d5db',
-  backgroundColor: '#ffffff',
+  border: `2px solid ${colors.gray300}`,
+  backgroundColor: colors.gray50,
   transition: 'all 0.15s ease-in-out',
+  '@media': {
+    '(prefers-color-scheme: dark)': {
+      border: `2px solid ${colors.gray600}`,
+      backgroundColor: colors.gray800,
+    },
+  },
 });
 
 const baseRadioDot = style({
@@ -32,73 +39,48 @@ const baseRadioDot = style({
   left: '50%',
   transform: 'translate(-50%, -50%) scale(0)',
   borderRadius: '50%',
-  backgroundColor: '#3b82f6',
+  backgroundColor: colors.blue600,
   transition: 'all 0.15s ease-in-out',
+  '@media': {
+    '(prefers-color-scheme: dark)': {
+      backgroundColor: colors.blue400,
+    },
+  },
 });
 
 export const radio = styleVariants({
-  sm: [baseRadio, {
-    width: '1rem',
-    height: '1rem',
-  }],
-  md: [baseRadio, {
-    width: '1.25rem',
-    height: '1.25rem',
-  }],
-  lg: [baseRadio, {
-    width: '1.5rem',
-    height: '1.5rem',
-  }],
+  sm: [baseRadio, { width: '1rem', height: '1rem' }],
+  md: [baseRadio, { width: '1.25rem', height: '1.25rem' }],
+  lg: [baseRadio, { width: '1.5rem', height: '1.5rem' }],
 });
 
 export const radioInput = styleVariants({
-  sm: [baseRadioInput, {
-    width: '1rem',
-    height: '1rem',
-  }],
-  md: [baseRadioInput, {
-    width: '1.25rem',
-    height: '1.25rem',
-  }],
-  lg: [baseRadioInput, {
-    width: '1.5rem',
-    height: '1.5rem',
-  }],
+  sm: [baseRadioInput, { width: '1rem', height: '1rem' }],
+  md: [baseRadioInput, { width: '1.25rem', height: '1.25rem' }],
+  lg: [baseRadioInput, { width: '1.5rem', height: '1.5rem' }],
 });
 
 export const radioCircle = styleVariants({
-  sm: [baseRadioCircle, {
-    width: '1rem',
-    height: '1rem',
-  }],
-  md: [baseRadioCircle, {
-    width: '1.25rem',
-    height: '1.25rem',
-  }],
-  lg: [baseRadioCircle, {
-    width: '1.5rem',
-    height: '1.5rem',
-  }],
+  sm: [baseRadioCircle, { width: '1rem', height: '1rem' }],
+  md: [baseRadioCircle, { width: '1.25rem', height: '1.25rem' }],
+  lg: [baseRadioCircle, { width: '1.5rem', height: '1.5rem' }],
 });
 
 export const radioDot = styleVariants({
-  sm: [baseRadioDot, {
-    width: '0.375rem',
-    height: '0.375rem',
-  }],
-  md: [baseRadioDot, {
-    width: '0.5rem',
-    height: '0.5rem',
-  }],
-  lg: [baseRadioDot, {
-    width: '0.625rem',
-    height: '0.625rem',
-  }],
+  sm: [baseRadioDot, { width: '0.375rem', height: '0.375rem' }],
+  md: [baseRadioDot, { width: '0.5rem', height: '0.5rem' }],
+  lg: [baseRadioDot, { width: '0.625rem', height: '0.625rem' }],
 });
 
 export const checked = style({
-  borderColor: '#3b82f6',
-  backgroundColor: '#ffffff',
+  borderColor: colors.blue600,
+  backgroundColor: colors.gray50,
+  '@media': {
+    '(prefers-color-scheme: dark)': {
+      borderColor: colors.blue400,
+      backgroundColor: colors.gray800,
+    },
+  },
 });
 
 export const checkedDot = style({
@@ -111,37 +93,31 @@ export const disabled = style({
 });
 
 export const disabledCircle = style({
-  borderColor: '#e5e7eb',
-  backgroundColor: '#f9fafb',
+  borderColor: colors.gray200,
+  backgroundColor: colors.gray100,
+  '@media': {
+    '(prefers-color-scheme: dark)': {
+      borderColor: colors.gray700,
+      backgroundColor: colors.gray700,
+    },
+  },
 });
 
 export const disabledDot = style({
-  backgroundColor: '#9ca3af',
+  backgroundColor: colors.gray400,
+  '@media': {
+    '(prefers-color-scheme: dark)': {
+      backgroundColor: colors.gray600,
+    },
+  },
 });
 
-export const success = style({
-  borderColor: '#10b981',
-});
-
-export const successDot = style({
-  backgroundColor: '#10b981',
-});
-
-export const warning = style({
-  borderColor: '#f59e0b',
-});
-
-export const warningDot = style({
-  backgroundColor: '#f59e0b',
-});
-
-export const error = style({
-  borderColor: '#ef4444',
-});
-
-export const errorDot = style({
-  backgroundColor: '#ef4444',
-});
+export const success = style({ borderColor: colors.green600 });
+export const successDot = style({ backgroundColor: colors.green600 });
+export const warning = style({ borderColor: colors.yellow400 });
+export const warningDot = style({ backgroundColor: colors.yellow400 });
+export const error = style({ borderColor: colors.red600 });
+export const errorDot = style({ backgroundColor: colors.red600 });
 
 export const label = style({
   display: 'flex',
@@ -149,8 +125,13 @@ export const label = style({
   gap: '0.5rem',
   cursor: 'pointer',
   fontSize: '0.875rem',
-  color: '#374151',
+  color: colors.gray700,
   userSelect: 'none',
+  '@media': {
+    '(prefers-color-scheme: dark)': {
+      color: colors.gray300,
+    },
+  },
 });
 
 export const labelDisabled = style({
@@ -172,12 +153,22 @@ export const groupHorizontal = style({
 export const groupLabel = style({
   fontSize: '0.875rem',
   fontWeight: '500',
-  color: '#374151',
+  color: colors.gray700,
   marginBottom: '0.5rem',
+  '@media': {
+    '(prefers-color-scheme: dark)': {
+      color: colors.gray300,
+    },
+  },
 });
 
 export const groupDescription = style({
   fontSize: '0.75rem',
-  color: '#6b7280',
+  color: colors.gray500,
   marginTop: '0.25rem',
+  '@media': {
+    '(prefers-color-scheme: dark)': {
+      color: colors.gray400,
+    },
+  },
 }); 

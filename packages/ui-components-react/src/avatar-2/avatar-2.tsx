@@ -5,7 +5,7 @@ export interface Avatar2Props {
   src?: string;
   alt?: string;
   fallback?: string;
-  size?: 'small' | 'medium' | 'large' | 'xlarge';
+  size?: 'xs' | 'small' | 'medium' | 'large' | 'xlarge';
   shape?: 'circular' | 'rounded';
   className?: string;
 }
@@ -20,6 +20,7 @@ export const Avatar2: React.FC<Avatar2Props> = ({
 }) => {
   const getSizeClass = () => {
     switch (size) {
+      case 'xs': return styles.xs;
       case 'small': return styles.small;
       case 'large': return styles.large;
       case 'xlarge': return styles.xlarge;

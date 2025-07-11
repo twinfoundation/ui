@@ -1,4 +1,5 @@
 import { style, styleVariants } from '@vanilla-extract/css';
+import { colors } from '../tokens/colors.css';
 
 const baseSelect = style({
   position: 'relative',
@@ -12,20 +13,27 @@ const baseSelectButton = style({
   justifyContent: 'space-between',
   width: '100%',
   padding: '0.5rem 0.75rem',
-  backgroundColor: '#ffffff',
-  border: '1px solid #d1d5db',
+  backgroundColor: colors.gray50,
+  border: `1px solid ${colors.gray300}`,
   borderRadius: '0.375rem',
   fontSize: '0.875rem',
-  color: '#374151',
+  color: colors.gray700,
   cursor: 'pointer',
   transition: 'all 0.15s ease-in-out',
   outline: 'none',
   ':focus': {
-    borderColor: '#3b82f6',
-    boxShadow: '0 0 0 3px rgba(59, 130, 246, 0.1)',
+    borderColor: colors.blue600,
+    boxShadow: `0 0 0 3px ${colors.blue200}`,
   },
   ':hover': {
-    borderColor: '#9ca3af',
+    borderColor: colors.gray400,
+  },
+  '@media': {
+    '(prefers-color-scheme: dark)': {
+      backgroundColor: colors.gray800,
+      color: colors.gray200,
+      border: `1px solid ${colors.gray600}`,
+    },
   },
 });
 
@@ -33,7 +41,12 @@ const baseSelectIcon = style({
   width: '1rem',
   height: '1rem',
   transition: 'transform 0.15s ease-in-out',
-  color: '#6b7280',
+  color: colors.gray500,
+  '@media': {
+    '(prefers-color-scheme: dark)': {
+      color: colors.gray400,
+    },
+  },
 });
 
 const baseDropdown = style({
@@ -42,8 +55,8 @@ const baseDropdown = style({
   left: 0,
   right: 0,
   zIndex: 50,
-  backgroundColor: '#ffffff',
-  border: '1px solid #d1d5db',
+  backgroundColor: colors.gray50,
+  border: `1px solid ${colors.gray200}`,
   borderRadius: '0.375rem',
   boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
   maxHeight: '12rem',
@@ -52,86 +65,61 @@ const baseDropdown = style({
   visibility: 'hidden',
   transform: 'translateY(-0.5rem)',
   transition: 'all 0.15s ease-in-out',
+  '@media': {
+    '(prefers-color-scheme: dark)': {
+      backgroundColor: colors.gray800,
+      border: `1px solid ${colors.gray700}`,
+    },
+  },
 });
 
 const baseOption = style({
   padding: '0.5rem 0.75rem',
   fontSize: '0.875rem',
-  color: '#374151',
+  color: colors.gray700,
   cursor: 'pointer',
   transition: 'all 0.15s ease-in-out',
   ':hover': {
-    backgroundColor: '#f3f4f6',
+    backgroundColor: colors.gray100,
+  },
+  '@media': {
+    '(prefers-color-scheme: dark)': {
+      color: colors.gray200,
+      ':hover': {
+        backgroundColor: colors.gray700,
+      },
+    },
   },
 });
 
 export const select = styleVariants({
-  sm: [baseSelect, {
-    fontSize: '0.75rem',
-  }],
-  md: [baseSelect, {
-    fontSize: '0.875rem',
-  }],
-  lg: [baseSelect, {
-    fontSize: '1rem',
-  }],
+  sm: [baseSelect, { fontSize: '0.75rem' }],
+  md: [baseSelect, { fontSize: '0.875rem' }],
+  lg: [baseSelect, { fontSize: '1rem' }],
 });
 
 export const selectButton = styleVariants({
-  sm: [baseSelectButton, {
-    padding: '0.375rem 0.5rem',
-    fontSize: '0.75rem',
-  }],
-  md: [baseSelectButton, {
-    padding: '0.5rem 0.75rem',
-    fontSize: '0.875rem',
-  }],
-  lg: [baseSelectButton, {
-    padding: '0.75rem 1rem',
-    fontSize: '1rem',
-  }],
+  sm: [baseSelectButton, { padding: '0.375rem 0.5rem', fontSize: '0.75rem' }],
+  md: [baseSelectButton, { padding: '0.5rem 0.75rem', fontSize: '0.875rem' }],
+  lg: [baseSelectButton, { padding: '0.75rem 1rem', fontSize: '1rem' }],
 });
 
 export const selectIcon = styleVariants({
-  sm: [baseSelectIcon, {
-    width: '0.875rem',
-    height: '0.875rem',
-  }],
-  md: [baseSelectIcon, {
-    width: '1rem',
-    height: '1rem',
-  }],
-  lg: [baseSelectIcon, {
-    width: '1.125rem',
-    height: '1.125rem',
-  }],
+  sm: [baseSelectIcon, { width: '0.875rem', height: '0.875rem' }],
+  md: [baseSelectIcon, { width: '1rem', height: '1rem' }],
+  lg: [baseSelectIcon, { width: '1.125rem', height: '1.125rem' }],
 });
 
 export const dropdown = styleVariants({
-  sm: [baseDropdown, {
-    fontSize: '0.75rem',
-  }],
-  md: [baseDropdown, {
-    fontSize: '0.875rem',
-  }],
-  lg: [baseDropdown, {
-    fontSize: '1rem',
-  }],
+  sm: [baseDropdown, { fontSize: '0.75rem' }],
+  md: [baseDropdown, { fontSize: '0.875rem' }],
+  lg: [baseDropdown, { fontSize: '1rem' }],
 });
 
 export const option = styleVariants({
-  sm: [baseOption, {
-    padding: '0.375rem 0.5rem',
-    fontSize: '0.75rem',
-  }],
-  md: [baseOption, {
-    padding: '0.5rem 0.75rem',
-    fontSize: '0.875rem',
-  }],
-  lg: [baseOption, {
-    padding: '0.75rem 1rem',
-    fontSize: '1rem',
-  }],
+  sm: [baseOption, { padding: '0.375rem 0.5rem', fontSize: '0.75rem' }],
+  md: [baseOption, { padding: '0.5rem 0.75rem', fontSize: '0.875rem' }],
+  lg: [baseOption, { padding: '0.75rem 1rem', fontSize: '1rem' }],
 });
 
 export const open = style({
@@ -147,86 +135,89 @@ export const openIcon = style({
 export const disabled = style({
   opacity: 0.5,
   cursor: 'not-allowed',
-  backgroundColor: '#f9fafb',
+  backgroundColor: colors.gray100,
+  '@media': {
+    '(prefers-color-scheme: dark)': {
+      backgroundColor: colors.gray700,
+    },
+  },
 });
 
 export const disabledButton = style({
   cursor: 'not-allowed',
-  backgroundColor: '#f9fafb',
-  color: '#9ca3af',
+  backgroundColor: colors.gray100,
+  color: colors.gray400,
   ':hover': {
-    borderColor: '#d1d5db',
+    borderColor: colors.gray300,
   },
   ':focus': {
-    borderColor: '#d1d5db',
+    borderColor: colors.gray300,
     boxShadow: 'none',
+  },
+  '@media': {
+    '(prefers-color-scheme: dark)': {
+      backgroundColor: colors.gray700,
+      color: colors.gray600,
+    },
   },
 });
 
 export const error = style({
-  borderColor: '#ef4444',
+  borderColor: colors.red600,
   ':focus': {
-    borderColor: '#ef4444',
-    boxShadow: '0 0 0 3px rgba(239, 68, 68, 0.1)',
+    borderColor: colors.red600,
+    boxShadow: `0 0 0 3px ${colors.red100}`,
   },
 });
 
 export const success = style({
-  borderColor: '#10b981',
+  borderColor: colors.green600,
   ':focus': {
-    borderColor: '#10b981',
-    boxShadow: '0 0 0 3px rgba(16, 185, 129, 0.1)',
+    borderColor: colors.green600,
+    boxShadow: `0 0 0 3px ${colors.green100}`,
   },
 });
 
 export const warning = style({
-  borderColor: '#f59e0b',
+  borderColor: colors.yellow400,
   ':focus': {
-    borderColor: '#f59e0b',
-    boxShadow: '0 0 0 3px rgba(245, 158, 11, 0.1)',
+    borderColor: colors.yellow400,
+    boxShadow: `0 0 0 3px ${colors.yellow100}`,
   },
 });
 
 export const selected = style({
-  backgroundColor: '#3b82f6',
-  color: '#ffffff',
+  backgroundColor: colors.blue600,
+  color: colors.gray50,
   ':hover': {
-    backgroundColor: '#2563eb',
+    backgroundColor: colors.blue700,
+  },
+  '@media': {
+    '(prefers-color-scheme: dark)': {
+      backgroundColor: colors.blue400,
+      color: colors.gray900,
+      ':hover': {
+        backgroundColor: colors.blue500,
+      },
+    },
   },
 });
 
 export const disabledOption = style({
-  color: '#9ca3af',
+  color: colors.gray400,
   cursor: 'not-allowed',
-  backgroundColor: '#f9fafb',
-  ':hover': {
-    backgroundColor: '#f9fafb',
+  backgroundColor: 'transparent',
+  '@media': {
+    '(prefers-color-scheme: dark)': {
+      color: colors.gray600,
+    },
   },
 });
 
-export const placeholder = style({
-  color: '#9ca3af',
-});
-
-export const label = style({
-  display: 'block',
-  fontSize: '0.875rem',
-  fontWeight: '500',
-  color: '#374151',
-  marginBottom: '0.5rem',
-});
-
-export const errorMessage = style({
-  fontSize: '0.75rem',
-  color: '#ef4444',
-  marginTop: '0.25rem',
-});
-
-export const helpText = style({
-  fontSize: '0.75rem',
-  color: '#6b7280',
-  marginTop: '0.25rem',
-});
+export const placeholder = style({ color: colors.gray400, '@media': { '(prefers-color-scheme: dark)': { color: colors.gray600 } } });
+export const label = style({ fontSize: '0.875rem', fontWeight: 500, color: colors.gray700, marginBottom: '0.5rem', '@media': { '(prefers-color-scheme: dark)': { color: colors.gray300 } } });
+export const errorMessage = style({ fontSize: '0.75rem', color: colors.red600, marginTop: '0.25rem', '@media': { '(prefers-color-scheme: dark)': { color: colors.red400 } } });
+export const helpText = style({ fontSize: '0.75rem', color: colors.gray500, marginTop: '0.25rem', '@media': { '(prefers-color-scheme: dark)': { color: colors.gray400 } } });
 
 export const group = style({
   display: 'flex',

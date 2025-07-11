@@ -1,4 +1,5 @@
 import { style, styleVariants } from '@vanilla-extract/css';
+import { colors } from '../tokens/colors.css';
 
 export const banner = style({
   position: 'fixed',
@@ -8,15 +9,15 @@ export const banner = style({
   width: '100%',
   justifyContent: 'space-between',
   padding: 16,
-  backgroundColor: '#f9fafb',
-  borderColor: '#e5e7eb',
+  backgroundColor: colors.gray50,
+  borderColor: colors.gray200,
   borderStyle: 'solid',
   borderWidth: 0,
   borderBottomWidth: 1,
   '@media': {
     '(prefers-color-scheme: dark)': {
-      backgroundColor: '#374151',
-      borderColor: '#4b5563',
+      backgroundColor: colors.gray700,
+      borderColor: colors.gray600,
     },
   },
 });
@@ -35,7 +36,7 @@ export const positionVariants = styleVariants({
 export const closeButton = style({
   border: 0,
   backgroundColor: 'transparent',
-  color: '#6b7280',
+  color: colors.gray500,
   cursor: 'pointer',
   padding: 4,
   borderRadius: 4,
@@ -48,7 +49,7 @@ export const closeButton = style({
   },
   '@media': {
     '(prefers-color-scheme: dark)': {
-      color: '#9ca3af',
+      color: colors.gray400,
       ':hover': {
         backgroundColor: 'rgba(255, 255, 255, 0.05)',
       },

@@ -6,43 +6,33 @@ export const accordion = style({
   flexDirection: 'column',
   border: '1px solid #e5e7eb',
   borderRadius: '0.5rem',
-  backgroundColor: '#ffffff',
-  '@media': {
-    '(prefers-color-scheme: dark)': {
-      borderColor: '#4b5563',
-      backgroundColor: '#1f2937',
-    },
-  },
+  backgroundColor: '#f9fafb',
+  overflow: 'hidden',
+  boxShadow: 'none',
 });
 
 // Flush variant (no borders/background)
 export const flush = style({
   border: 'none',
   backgroundColor: 'transparent',
-  '@media': {
-    '(prefers-color-scheme: dark)': {
-      border: 'none',
-      backgroundColor: 'transparent',
-    },
-  },
+  boxShadow: 'none',
 });
 
 // Accordion panel
 export const panel = style({
   borderBottom: '1px solid #e5e7eb',
+  background: '#f9fafb',
   ':last-child': {
     borderBottom: 'none',
   },
-  '@media': {
-    '(prefers-color-scheme: dark)': {
-      borderBottomColor: '#4b5563',
-    },
-  },
+  paddingTop: '0.25rem',
+  paddingBottom: '0.25rem',
 });
 
 // Flush panel variant
 export const flushPanel = style({
   borderBottom: 'none',
+  background: 'none',
   ':last-child': {
     borderBottom: 'none',
   },
@@ -54,32 +44,24 @@ export const title = style({
   alignItems: 'center',
   justifyContent: 'space-between',
   width: '100%',
-  padding: '1rem',
+  padding: '1.25rem 1.5rem',
   fontSize: '1rem',
-  fontWeight: '500',
+  fontWeight: 500,
   textAlign: 'left',
-  color: '#111827',
-  backgroundColor: 'transparent',
+  color: '#374151',
+  background: 'none',
   border: 'none',
   cursor: 'pointer',
-  transition: 'color 0.2s ease-in-out',
+  transition: 'color 0.2s',
+  outline: 'none',
   ':hover': {
-    color: '#0891b2',
+    color: '#2563eb',
+    background: '#f3f4f6',
   },
   ':focus': {
-    outline: '2px solid #0891b2',
+    outline: '2px solid #2563eb',
     outlineOffset: '2px',
-  },
-  '@media': {
-    '(prefers-color-scheme: dark)': {
-      color: '#f9fafb',
-      ':hover': {
-        color: '#38bdf8',
-      },
-      ':focus': {
-        outlineColor: '#38bdf8',
-      },
-    },
+    background: '#f3f4f6',
   },
 });
 
@@ -87,6 +69,7 @@ export const title = style({
 export const titleContent = style({
   display: 'flex',
   alignItems: 'center',
+  gap: '0.5rem',
 });
 
 // Icon wrapper
@@ -94,19 +77,19 @@ export const iconWrapper = style({
   marginRight: '0.5rem',
   display: 'inline-flex',
   alignItems: 'center',
+  fontSize: '1.25rem',
+  height: '1.25rem',
+  width: '1.25rem',
 });
 
 // Chevron icon
 export const chevron = style({
   width: '1.25rem',
   height: '1.25rem',
-  transition: 'transform 0.2s ease-in-out',
+  marginLeft: '0.5rem',
+  transition: 'transform 0.2s',
   color: '#6b7280',
-  '@media': {
-    '(prefers-color-scheme: dark)': {
-      color: '#9ca3af',
-    },
-  },
+  flexShrink: 0,
 });
 
 // Expanded chevron
@@ -116,15 +99,11 @@ export const chevronExpanded = style({
 
 // Accordion content
 export const content = style({
-  padding: '0 1rem 1rem',
-  color: '#6b7280',
-  fontSize: '0.875rem',
-  lineHeight: '1.5',
-  '@media': {
-    '(prefers-color-scheme: dark)': {
-      color: '#9ca3af',
-    },
-  },
+  padding: '0 1.5rem 1.25rem',
+  color: '#374151',
+  fontSize: '1rem',
+  lineHeight: 1.6,
+  background: '#f9fafb',
 });
 
 // Content animation variants
@@ -140,15 +119,8 @@ export const contentVariants = styleVariants({
 // Focus ring for accessibility
 export const focusRing = style({
   ':focus-visible': {
-    outline: '2px solid #0891b2',
+    outline: '2px solid #2563eb',
     outlineOffset: '2px',
     borderRadius: '0.25rem',
-  },
-  '@media': {
-    '(prefers-color-scheme: dark)': {
-      ':focus-visible': {
-        outlineColor: '#38bdf8',
-      },
-    },
   },
 }); 

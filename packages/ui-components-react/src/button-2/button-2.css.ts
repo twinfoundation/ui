@@ -1,4 +1,5 @@
 import { style, styleVariants } from '@vanilla-extract/css';
+import { colors } from '../tokens/colors.css';
 
 export const base = style({
   display: 'inline-flex',
@@ -19,7 +20,7 @@ export const base = style({
       cursor: 'not-allowed',
     },
     '&:focus': {
-      boxShadow: '0 0 0 2px var(--surface-button-pressed, #1e40af)',
+      boxShadow: `0 0 0 2px ${colors.blue700}`,
     },
   },
 });
@@ -56,75 +57,183 @@ export const iconSize = styleVariants({
 
 export const color = styleVariants({
   primary: {
-    color: 'white',
-    backgroundColor: 'var(--surface-button)',
+    color: colors.gray50,
+    backgroundColor: colors.blue700,
+    borderColor: colors.blue700,
     selectors: {
-      '&:hover:enabled, &:hover:not([disabled])': { backgroundColor: 'var(--surface-button-hover)' },
-      '&:focus': { boxShadow: '0 0 0 2px var(--surface-button-pressed, #1e40af)' },
+      '&:hover:enabled, &:hover:not([disabled])': { backgroundColor: colors.blue800, borderColor: colors.blue800 },
+      '&:focus': { boxShadow: `0 0 0 2px ${colors.blue300}` },
+    },
+    '@media': {
+      '(prefers-color-scheme: dark)': {
+        color: colors.gray50,
+        backgroundColor: colors.blue600,
+        borderColor: colors.blue600,
+        selectors: {
+          '&:hover:enabled, &:hover:not([disabled])': { backgroundColor: colors.blue700, borderColor: colors.blue700 },
+          '&:focus': { boxShadow: `0 0 0 2px ${colors.blue200}` },
+        },
+      },
     },
   },
   secondary: {
-    color: 'white',
-    backgroundColor: 'var(--surface-button-alt)',
+    color: colors.gray50,
+    backgroundColor: colors.gray700,
+    borderColor: colors.gray700,
     selectors: {
-      '&:hover:enabled, &:hover:not([disabled])': { backgroundColor: 'var(--surface-button-alt-hover)' },
-      '&:focus': { boxShadow: '0 0 0 2px var(--surface-button-alt-pressed, #374151)' },
+      '&:hover:enabled, &:hover:not([disabled])': { backgroundColor: colors.gray800, borderColor: colors.gray800 },
+      '&:focus': { boxShadow: `0 0 0 2px ${colors.gray300}` },
+    },
+    '@media': {
+      '(prefers-color-scheme: dark)': {
+        color: colors.gray50,
+        backgroundColor: colors.gray600,
+        borderColor: colors.gray600,
+        selectors: {
+          '&:hover:enabled, &:hover:not([disabled])': { backgroundColor: colors.gray700, borderColor: colors.gray700 },
+          '&:focus': { boxShadow: `0 0 0 2px ${colors.gray200}` },
+        },
+      },
     },
   },
   error: {
-    color: 'white',
-    backgroundColor: 'var(--error)',
+    color: colors.gray50,
+    backgroundColor: colors.red700,
+    borderColor: colors.red700,
     selectors: {
-      '&:hover:enabled, &:hover:not([disabled])': { backgroundColor: 'var(--system-error-tints-600)' },
-      '&:focus': { boxShadow: '0 0 0 2px var(--system-error-tints-200, #fecaca)' },
+      '&:hover:enabled, &:hover:not([disabled])': { backgroundColor: colors.red800, borderColor: colors.red800 },
+      '&:focus': { boxShadow: `0 0 0 2px ${colors.red200}` },
+    },
+    '@media': {
+      '(prefers-color-scheme: dark)': {
+        color: colors.gray50,
+        backgroundColor: colors.red600,
+        borderColor: colors.red600,
+        selectors: {
+          '&:hover:enabled, &:hover:not([disabled])': { backgroundColor: colors.red700, borderColor: colors.red700 },
+          '&:focus': { boxShadow: `0 0 0 2px ${colors.red100}` },
+        },
+      },
     },
   },
   warning: {
-    color: 'white',
-    backgroundColor: 'var(--warning)',
+    color: colors.gray900,
+    backgroundColor: colors.yellow400,
+    borderColor: colors.yellow400,
     selectors: {
-      '&:hover:enabled, &:hover:not([disabled])': { backgroundColor: 'var(--system-warning-tints-600)' },
-      '&:focus': { boxShadow: '0 0 0 2px var(--system-warning-tints-200, #fef3c7)' },
+      '&:hover:enabled, &:hover:not([disabled])': { backgroundColor: colors.yellow500, borderColor: colors.yellow500 },
+      '&:focus': { boxShadow: `0 0 0 2px ${colors.yellow100}` },
+    },
+    '@media': {
+      '(prefers-color-scheme: dark)': {
+        color: colors.gray900,
+        backgroundColor: colors.yellow300,
+        borderColor: colors.yellow300,
+        selectors: {
+          '&:hover:enabled, &:hover:not([disabled])': { backgroundColor: colors.yellow400, borderColor: colors.yellow400 },
+          '&:focus': { boxShadow: `0 0 0 2px ${colors.yellow50}` },
+        },
+      },
     },
   },
   success: {
-    color: 'white',
-    backgroundColor: 'var(--success)',
+    color: colors.gray50,
+    backgroundColor: colors.green600,
+    borderColor: colors.green600,
     selectors: {
-      '&:hover:enabled, &:hover:not([disabled])': { backgroundColor: 'var(--system-success-tints-600)' },
-      '&:focus': { boxShadow: '0 0 0 2px var(--system-success-tints-200, #bbf7d0)' },
+      '&:hover:enabled, &:hover:not([disabled])': { backgroundColor: colors.green700, borderColor: colors.green700 },
+      '&:focus': { boxShadow: `0 0 0 2px ${colors.green200}` },
+    },
+    '@media': {
+      '(prefers-color-scheme: dark)': {
+        color: colors.gray50,
+        backgroundColor: colors.green500,
+        borderColor: colors.green500,
+        selectors: {
+          '&:hover:enabled, &:hover:not([disabled])': { backgroundColor: colors.green600, borderColor: colors.green600 },
+          '&:focus': { boxShadow: `0 0 0 2px ${colors.green100}` },
+        },
+      },
     },
   },
   info: {
-    color: 'white',
-    backgroundColor: 'var(--information)',
+    color: colors.gray50,
+    backgroundColor: colors.cyan600,
+    borderColor: colors.cyan600,
     selectors: {
-      '&:hover:enabled, &:hover:not([disabled])': { backgroundColor: 'var(--system-information-tints-600)' },
-      '&:focus': { boxShadow: '0 0 0 2px var(--system-information-tints-200, #bae6fd)' },
+      '&:hover:enabled, &:hover:not([disabled])': { backgroundColor: colors.cyan700, borderColor: colors.cyan700 },
+      '&:focus': { boxShadow: `0 0 0 2px ${colors.cyan200}` },
+    },
+    '@media': {
+      '(prefers-color-scheme: dark)': {
+        color: colors.gray50,
+        backgroundColor: colors.cyan500,
+        borderColor: colors.cyan500,
+        selectors: {
+          '&:hover:enabled, &:hover:not([disabled])': { backgroundColor: colors.cyan600, borderColor: colors.cyan600 },
+          '&:focus': { boxShadow: `0 0 0 2px ${colors.cyan100}` },
+        },
+      },
     },
   },
   plain: {
-    color: 'black',
-    backgroundColor: 'var(--surface-second)',
+    color: colors.gray900,
+    backgroundColor: colors.gray100,
+    borderColor: colors.gray200,
     selectors: {
-      '&:hover:enabled, &:hover:not([disabled])': { backgroundColor: 'var(--surface-third)' },
-      '&:focus': { boxShadow: '0 0 0 2px #e5e7eb' },
+      '&:hover:enabled, &:hover:not([disabled])': { backgroundColor: colors.gray200, borderColor: colors.gray300 },
+      '&:focus': { boxShadow: `0 0 0 2px ${colors.gray300}` },
+    },
+    '@media': {
+      '(prefers-color-scheme: dark)': {
+        color: colors.gray50,
+        backgroundColor: colors.gray800,
+        borderColor: colors.gray700,
+        selectors: {
+          '&:hover:enabled, &:hover:not([disabled])': { backgroundColor: colors.gray700, borderColor: colors.gray600 },
+          '&:focus': { boxShadow: `0 0 0 2px ${colors.gray600}` },
+        },
+      },
     },
   },
   ghost: {
-    color: 'black',
+    color: colors.gray900,
     backgroundColor: 'transparent',
+    borderColor: 'transparent',
     selectors: {
-      '&:hover:enabled, &:hover:not([disabled])': { backgroundColor: '#f9fafb' },
-      '&:focus': { boxShadow: '0 0 0 1px #e5e7eb', backgroundColor: '#f3f4f6' },
+      '&:hover:enabled, &:hover:not([disabled])': { backgroundColor: colors.gray50, borderColor: colors.gray200 },
+      '&:focus': { boxShadow: `0 0 0 1px ${colors.gray200}`, backgroundColor: colors.gray100 },
+    },
+    '@media': {
+      '(prefers-color-scheme: dark)': {
+        color: colors.gray50,
+        backgroundColor: colors.gray800,
+        borderColor: colors.gray700,
+        selectors: {
+          '&:hover:enabled, &:hover:not([disabled])': { backgroundColor: colors.gray700, borderColor: colors.gray600 },
+          '&:focus': { boxShadow: `0 0 0 1px ${colors.gray700}`, backgroundColor: colors.gray700 },
+        },
+      },
     },
   },
   dark: {
-    color: 'white',
-    backgroundColor: '#1f2937',
+    color: colors.gray50,
+    backgroundColor: colors.gray900,
+    borderColor: colors.gray900,
     selectors: {
-      '&:hover:enabled, &:hover:not([disabled])': { backgroundColor: '#374151' },
-      '&:focus': { boxShadow: '0 0 0 2px #e5e7eb' },
+      '&:hover:enabled, &:hover:not([disabled])': { backgroundColor: colors.gray800, borderColor: colors.gray800 },
+      '&:focus': { boxShadow: `0 0 0 2px ${colors.gray300}` },
+    },
+    '@media': {
+      '(prefers-color-scheme: dark)': {
+        color: colors.gray900,
+        backgroundColor: colors.gray50,
+        borderColor: colors.gray50,
+        selectors: {
+          '&:hover:enabled, &:hover:not([disabled])': { backgroundColor: colors.gray100, borderColor: colors.gray100 },
+          '&:focus': { boxShadow: `0 0 0 2px ${colors.gray700}` },
+        },
+      },
     },
   },
 });

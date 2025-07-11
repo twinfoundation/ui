@@ -71,4 +71,11 @@ export const Error: Story = {
 };
 
 export const InfoAlert: Story = { args: { color: 'info', children: 'Info alert', icon: iconMap.info } };
-export const Plain: Story = { args: { color: 'plain', children: 'Plain alert', icon: iconMap.plain } }; 
+export const Plain: Story = { args: { color: 'plain', children: 'Plain alert', icon: iconMap.plain } };
+export const Gray: Story = {
+  args: {
+    color: 'gray',
+    title: 'Gray',
+    children: 'This is a gray alert',
+  },
+}; 

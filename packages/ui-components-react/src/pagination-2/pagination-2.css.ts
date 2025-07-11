@@ -1,4 +1,5 @@
 import { style, styleVariants } from '@vanilla-extract/css';
+import { colors } from '../tokens/colors.css';
 
 // Base pagination container
 export const pagination = style({
@@ -26,40 +27,40 @@ const baseButton = style({
   fontSize: '0.875rem',
   fontWeight: '500',
   lineHeight: '1.25rem',
-  border: '1px solid #d1d5db',
-  backgroundColor: '#ffffff',
-  color: '#6b7280',
+  border: `1px solid ${colors.gray300}`,
+  backgroundColor: colors.gray50,
+  color: colors.gray500,
   cursor: 'pointer',
   transition: 'all 0.2s ease-in-out',
   textDecoration: 'none',
   minWidth: '2.5rem',
   height: '2.5rem',
   ':hover': {
-    backgroundColor: '#f9fafb',
-    color: '#374151',
+    backgroundColor: colors.gray100,
+    color: colors.gray700,
   },
   ':focus': {
-    outline: '2px solid #0891b2',
+    outline: `2px solid ${colors.cyan600}`,
     outlineOffset: '2px',
   },
   ':disabled': {
     opacity: 0.5,
     cursor: 'not-allowed',
-    backgroundColor: '#f3f4f6',
-    color: '#9ca3af',
+    backgroundColor: colors.gray100,
+    color: colors.gray400,
   },
   '@media': {
     '(prefers-color-scheme: dark)': {
-      borderColor: '#4b5563',
-      backgroundColor: '#1f2937',
-      color: '#9ca3af',
+      borderColor: colors.gray600,
+      backgroundColor: colors.gray800,
+      color: colors.gray400,
       ':hover': {
-        backgroundColor: '#374151',
-        color: '#f9fafb',
+        backgroundColor: colors.gray700,
+        color: colors.gray50,
       },
       ':disabled': {
-        backgroundColor: '#374151',
-        color: '#6b7280',
+        backgroundColor: colors.gray700,
+        color: colors.gray500,
       },
     },
   },
@@ -77,22 +78,22 @@ export const pageButton = style([
 export const activePageButton = style([
   baseButton,
   {
-    borderColor: '#d1d5db',
-    backgroundColor: '#f0f9ff',
-    color: '#0891b2',
+    borderColor: colors.gray300,
+    backgroundColor: colors.cyan100,
+    color: colors.cyan600,
     fontWeight: '600',
     ':hover': {
-      backgroundColor: '#f0f9ff',
-      color: '#0891b2',
+      backgroundColor: colors.cyan100,
+      color: colors.cyan600,
     },
     '@media': {
       '(prefers-color-scheme: dark)': {
-        borderColor: '#4b5563',
-        backgroundColor: '#0c4a6e',
-        color: '#38bdf8',
+        borderColor: colors.gray600,
+        backgroundColor: colors.cyan700,
+        color: colors.cyan300,
         ':hover': {
-          backgroundColor: '#0c4a6e',
-          color: '#38bdf8',
+          backgroundColor: colors.cyan700,
+          color: colors.cyan300,
         },
       },
     },
@@ -147,12 +148,12 @@ export const ellipsis = style({
   justifyContent: 'center',
   padding: '0.5rem 0.75rem',
   fontSize: '0.875rem',
-  color: '#6b7280',
+  color: colors.gray500,
   minWidth: '2.5rem',
   height: '2.5rem',
   '@media': {
     '(prefers-color-scheme: dark)': {
-      color: '#9ca3af',
+      color: colors.gray400,
     },
   },
 });
@@ -160,14 +161,14 @@ export const ellipsis = style({
 // Focus ring for accessibility
 export const focusRing = style({
   ':focus-visible': {
-    outline: '2px solid #0891b2',
+    outline: `2px solid ${colors.cyan600}`,
     outlineOffset: '2px',
     borderRadius: '0.375rem',
   },
   '@media': {
     '(prefers-color-scheme: dark)': {
       ':focus-visible': {
-        outlineColor: '#38bdf8',
+        outlineColor: colors.cyan300,
       },
     },
   },
