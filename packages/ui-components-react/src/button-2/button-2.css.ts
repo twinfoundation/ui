@@ -18,7 +18,7 @@ const base = style({
 	userSelect: "none",
 	borderStyle: "solid",
 	borderWidth: "2px",
-	borderColor: "transparent",
+	borderColor: colors.transparent,
 	position: "relative",
 	selectors: {
 		"&:disabled, &[disabled]": {
@@ -41,8 +41,7 @@ export const iconOnly = style({
 
 export const ghostOutline = style({
 	borderWidth: "1px",
-	borderStyle: "solid",
-	borderColor: "currentColor"
+	borderStyle: "solid"
 });
 
 // for iconOnly
@@ -149,11 +148,11 @@ export const color = styleVariants({
 		{
 			color: colors.gray50,
 			backgroundColor: colors.red700,
-			borderColor: colors.red700,
+			borderColor: colors.transparent,
 			selectors: {
 				"&:hover:enabled, &:hover:not([disabled])": {
 					backgroundColor: colors.red800,
-					borderColor: colors.red800
+					borderColor: colors.transparent
 				},
 				"&:focus": { boxShadow: `0 0 0 2px ${colors.red200}` }
 			},
@@ -161,11 +160,11 @@ export const color = styleVariants({
 				"(prefers-color-scheme: dark)": {
 					color: colors.gray50,
 					backgroundColor: colors.red600,
-					borderColor: colors.red600,
+					borderColor: colors.transparent,
 					selectors: {
 						"&:hover:enabled, &:hover:not([disabled])": {
 							backgroundColor: colors.red700,
-							borderColor: colors.red700
+							borderColor: colors.transparent
 						},
 						"&:focus": { boxShadow: `0 0 0 2px ${colors.red100}` }
 					}
@@ -178,11 +177,11 @@ export const color = styleVariants({
 		{
 			color: colors.gray900,
 			backgroundColor: colors.yellow400,
-			borderColor: colors.yellow400,
+			borderColor: colors.transparent,
 			selectors: {
 				"&:hover:enabled, &:hover:not([disabled])": {
 					backgroundColor: colors.yellow500,
-					borderColor: colors.yellow500
+					borderColor: colors.transparent
 				},
 				"&:focus": { boxShadow: `0 0 0 2px ${colors.yellow100}` }
 			},
@@ -190,11 +189,11 @@ export const color = styleVariants({
 				"(prefers-color-scheme: dark)": {
 					color: colors.gray900,
 					backgroundColor: colors.yellow300,
-					borderColor: colors.yellow300,
+					borderColor: colors.transparent,
 					selectors: {
 						"&:hover:enabled, &:hover:not([disabled])": {
 							backgroundColor: colors.yellow400,
-							borderColor: colors.yellow400
+							borderColor: colors.transparent
 						},
 						"&:focus": { boxShadow: `0 0 0 2px ${colors.yellow50}` }
 					}
@@ -207,11 +206,11 @@ export const color = styleVariants({
 		{
 			color: colors.gray50,
 			backgroundColor: colors.green600,
-			borderColor: colors.green600,
+			borderColor: colors.transparent,
 			selectors: {
 				"&:hover:enabled, &:hover:not([disabled])": {
 					backgroundColor: colors.green700,
-					borderColor: colors.green700
+					borderColor: colors.transparent
 				},
 				"&:focus": { boxShadow: `0 0 0 2px ${colors.green200}` }
 			},
@@ -219,11 +218,11 @@ export const color = styleVariants({
 				"(prefers-color-scheme: dark)": {
 					color: colors.gray50,
 					backgroundColor: colors.green500,
-					borderColor: colors.green500,
+					borderColor: colors.transparent,
 					selectors: {
 						"&:hover:enabled, &:hover:not([disabled])": {
 							backgroundColor: colors.green600,
-							borderColor: colors.green600
+							borderColor: colors.transparent
 						},
 						"&:focus": { boxShadow: `0 0 0 2px ${colors.green100}` }
 					}
@@ -236,11 +235,11 @@ export const color = styleVariants({
 		{
 			color: colors.gray50,
 			backgroundColor: colors.cyan600,
-			borderColor: colors.cyan600,
+			borderColor: colors.transparent,
 			selectors: {
 				"&:hover:enabled, &:hover:not([disabled])": {
 					backgroundColor: colors.cyan700,
-					borderColor: colors.cyan700
+					borderColor: colors.transparent
 				},
 				"&:focus": { boxShadow: `0 0 0 2px ${colors.cyan200}` }
 			},
@@ -248,11 +247,11 @@ export const color = styleVariants({
 				"(prefers-color-scheme: dark)": {
 					color: colors.gray50,
 					backgroundColor: colors.cyan500,
-					borderColor: colors.cyan500,
+					borderColor: colors.transparent,
 					selectors: {
 						"&:hover:enabled, &:hover:not([disabled])": {
 							backgroundColor: colors.cyan600,
-							borderColor: colors.cyan600
+							borderColor: colors.transparent
 						},
 						"&:focus": { boxShadow: `0 0 0 2px ${colors.cyan100}` }
 					}
@@ -292,27 +291,27 @@ export const color = styleVariants({
 	ghost: [
 		base,
 		{
-			color: colors.gray900,
-			backgroundColor: "transparent",
-			borderColor: "transparent",
+			color: colors.black,
+			backgroundColor: colors.transparent,
+			borderColor: colors.transparent,
 			selectors: {
 				"&:hover:enabled, &:hover:not([disabled])": {
 					backgroundColor: colors.gray50,
-					borderColor: colors.gray200
+					borderColor: colors.transparent
 				},
 				"&:focus": { boxShadow: `0 0 0 1px ${colors.gray200}`, backgroundColor: colors.gray100 }
 			},
 			"@media": {
 				"(prefers-color-scheme: dark)": {
-					color: colors.gray50,
+					color: colors.white,
 					backgroundColor: colors.gray800,
-					borderColor: colors.gray700,
+					borderColor: colors.transparent,
 					selectors: {
 						"&:hover:enabled, &:hover:not([disabled])": {
-							backgroundColor: colors.gray700,
-							borderColor: colors.gray600
+							backgroundColor: colors.neutral900,
+							borderColor: colors.transparent
 						},
-						"&:focus": { boxShadow: `0 0 0 1px ${colors.gray700}`, backgroundColor: colors.gray700 }
+						"&:focus": { boxShadow: `0 0 0 1px ${colors.brandPrimaryTints400}` }
 					}
 				}
 			}
@@ -323,11 +322,11 @@ export const color = styleVariants({
 		{
 			color: colors.gray50,
 			backgroundColor: colors.gray900,
-			borderColor: colors.gray900,
+			borderColor: colors.transparent,
 			selectors: {
 				"&:hover:enabled, &:hover:not([disabled])": {
 					backgroundColor: colors.gray800,
-					borderColor: colors.gray800
+					borderColor: colors.transparent
 				},
 				"&:focus": { boxShadow: `0 0 0 2px ${colors.gray300}` }
 			},
@@ -335,11 +334,11 @@ export const color = styleVariants({
 				"(prefers-color-scheme: dark)": {
 					color: colors.gray900,
 					backgroundColor: colors.gray50,
-					borderColor: colors.gray50,
+					borderColor: colors.transparent,
 					selectors: {
 						"&:hover:enabled, &:hover:not([disabled])": {
 							backgroundColor: colors.gray100,
-							borderColor: colors.gray100
+							borderColor: colors.transparent
 						},
 						"&:focus": { boxShadow: `0 0 0 2px ${colors.gray700}` }
 					}
