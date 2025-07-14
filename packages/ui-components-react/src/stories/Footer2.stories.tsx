@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Footer } from '../footer-2';
-import { FaGithub, FaTwitter } from 'react-icons/fa';
+import { House, Envelope, PlayStop, File } from "../icons";
 
 const meta: Meta<typeof Footer> = {
   title: 'Components/Footer2',
@@ -13,48 +13,44 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    body: (
-      <>
-        <Footer.Brand
-          src="https://flowbite.com/docs/images/logo.svg"
-          alt="Flowbite Logo"
-          name="Flowbite"
-          href="https://flowbite.com"
-        />
-        <Footer.LinkGroup>
-          <Footer.Link href="#">About</Footer.Link>
-          <Footer.Link href="#">Privacy Policy</Footer.Link>
-          <Footer.Link href="#">Licensing</Footer.Link>
-          <Footer.Link href="#">Contact</Footer.Link>
-        </Footer.LinkGroup>
-        <Footer.Icon href="https://github.com" icon={FaGithub} ariaLabel="GitHub" />
-        <Footer.Icon href="https://twitter.com" icon={FaTwitter} ariaLabel="Twitter" />
-        <Footer.Divider />
-        <Footer.Copyright by="Flowbite™" year={2024} href="https://flowbite.com" />
-      </>
-    ),
-  },
+    brand: {
+      href: "https://www.twin.org",
+      src: "https://assets.weforum.org/sites/a0eTG000008PHKPYA4/3LI3Z9COsps.jpg",
+      alt: "Twin Logo",
+      name: "TWIN"
+    },
+    columns: [
+      {
+        title: "About",
+        links: [
+          { href: "#", label: "About TWIN" },
+          { href: "#", label: "Documentation" },
+          { href: "#", label: "Resources" }
+        ]
+      },
+      {
+        title: "Follow us",
+        links: [
+          { href: "#", label: "Github" },
+          { href: "#", label: "Discord" },
+          { href: "#", label: "Twitter" }
+        ]
+      },
+      {
+        title: "Legal",
+        links: [
+          { href: "#", label: "Privacy Policy" },
+          { href: "#", label: "Terms & Conditions" },
+          { href: "#", label: "Cookie Policy" }
+        ]
+      }
+    ],
+    iconLinks: [
+      { href: "#", icon: House, ariaLabel: "Visit our homepage" },
+      { href: "#", icon: Envelope, ariaLabel: "Contact us" },
+      { href: "#", icon: PlayStop, ariaLabel: "Listen to updates" },
+      { href: "#", icon: File, ariaLabel: "View documentation" }
+    ],
+    copyright: "© 2025 TWIN™"
+  }
 };
-
-export const ColumnLinks: Story = {
-  args: {
-    body: (
-      <>
-        <Footer.Brand
-          src="https://flowbite.com/docs/images/logo.svg"
-          alt="Flowbite Logo"
-          name="Flowbite"
-          href="https://flowbite.com"
-        />
-        <Footer.LinkGroup col>
-          <Footer.Link href="#">About</Footer.Link>
-          <Footer.Link href="#">Privacy Policy</Footer.Link>
-          <Footer.Link href="#">Licensing</Footer.Link>
-          <Footer.Link href="#">Contact</Footer.Link>
-        </Footer.LinkGroup>
-        <Footer.Divider />
-        <Footer.Copyright by="Flowbite™" year={2024} />
-      </>
-    ),
-  },
-}; 

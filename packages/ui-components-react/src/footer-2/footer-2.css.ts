@@ -1,12 +1,17 @@
-import { style } from '@vanilla-extract/css';
+import { style, globalStyle } from '@vanilla-extract/css';
+import { colors } from '../tokens/colors.css';
 
 export const footer = style({
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  padding: '2rem',
-  background: '#f9fafb',
-  color: '#374151',
+  fontFamily: `ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"`,
+  padding: "1.125rem 1rem",
+  width: "100%",
+  maxWidth: "1280px",
+  margin: "0 auto",
+  '@media': {
+    'screen and (min-width: 768px)': {
+      padding: "1.125rem 1.25rem",
+    },
+  },
 });
 
 export const brand = style({
@@ -30,35 +35,14 @@ export const brandName = style({
 });
 
 export const copyright = style({
-  marginTop: '1rem',
   fontSize: '0.875rem',
-  color: '#6b7280',
-});
-
-export const divider = style({
-  width: '100%',
-  border: 0,
-  borderTop: '1px solid #e5e7eb',
-  margin: '1rem 0',
-});
-
-export const icon = style({
-  display: 'inline-flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  color: '#6b7280',
-  fontSize: '1.25rem',
-  margin: '0 0.25rem',
-  textDecoration: 'none',
-  ':hover': {
-    color: '#111827',
-  },
+  color: colors.gray500,
 });
 
 export const link = style({
-  color: '#2563eb',
+  color: colors.gray500,
+  fontSize: '0.875rem',
   textDecoration: 'none',
-  margin: '0 0.5rem',
   ':hover': {
     textDecoration: 'underline',
   },
@@ -67,7 +51,7 @@ export const link = style({
 export const linkGroupCol = style({
   display: 'flex',
   flexDirection: 'column',
-  gap: '0.5rem',
+  gap: '0.75rem',
 });
 
 export const linkGroupRow = style({
@@ -77,7 +61,64 @@ export const linkGroupRow = style({
 });
 
 export const title = style({
-  fontWeight: 700,
-  fontSize: '1rem',
-  marginBottom: '0.5rem',
+  marginBottom: '1.5rem', // mb-6
+  fontSize: '0.875rem', // text-sm
+  fontWeight: 600, // font-semibold
+  textTransform: 'uppercase',
+  color: colors.gray500,
+});
+
+globalStyle(`[data-theme="dark"] .${title}`, {
+  color: colors.white,
+});
+
+export const topRow = style({
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'space-between',
+  alignItems: 'flex-start',
+  gap: '2rem',
+  flexWrap: 'wrap',
+  marginBottom: '0',
+  paddingBottom: '2rem',
+  borderBottom: `1px solid ${colors.gray200}`,
+  '@media': {
+    'screen and (min-width: 768px)': {
+      marginBottom: '2rem',
+    },
+  },
+});
+
+export const brandCol = style({
+  flex: '0 0 auto',
+  minWidth: '200px',
+  marginBottom: '1.5rem',
+});
+
+export const linksGrid = style({
+  display: 'grid',
+  gridTemplateColumns: 'repeat(3, minmax(120px, 1fr))',
+  gap: '3.5rem',
+});
+
+export const bottomRow = style({
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  backgroundColor: colors.gray100,
+  margin: 0,
+  gap: '1rem',
+  flexWrap: 'wrap',
+});
+
+export const copyrightCol = style({
+  color: colors.gray500,
+  fontSize: '0.875rem',
+});
+
+export const iconsCol = style({
+  display: 'flex',
+  flexDirection: 'row',
+  gap: '1.5rem',
 }); 

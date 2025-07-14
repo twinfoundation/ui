@@ -30,7 +30,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
 	args: {
 		body: (
-			<div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+			<div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8 border-2 border-red-500">
 				<div className="md:flex md:justify-between">
 					<div className="mb-6 md:mb-0">
 						<Footer.Brand
