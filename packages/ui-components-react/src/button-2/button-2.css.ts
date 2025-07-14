@@ -263,27 +263,27 @@ export const color = styleVariants({
 	plain: [
 		base,
 		{
-			color: colors.gray900,
-			backgroundColor: colors.gray100,
-			borderColor: colors.gray200,
+			color: colors.black,
+			backgroundColor: colors.neutral100,
+			borderColor: colors.transparent,
 			selectors: {
 				"&:hover:enabled, &:hover:not([disabled])": {
-					backgroundColor: colors.gray200,
-					borderColor: colors.gray300
+					backgroundColor: colors.neutral300,
+					borderColor: colors.transparent
 				},
-				"&:focus": { boxShadow: `0 0 0 2px ${colors.gray300}` }
+				"&:focus": { boxShadow: `0 0 0 2px ${colors.gray200}` }
 			},
 			"@media": {
 				"(prefers-color-scheme: dark)": {
-					color: colors.gray50,
-					backgroundColor: colors.gray800,
-					borderColor: colors.gray700,
+					color: colors.white,
+					backgroundColor: colors.neutral800,
+					borderColor: colors.transparent,
 					selectors: {
 						"&:hover:enabled, &:hover:not([disabled])": {
-							backgroundColor: colors.gray700,
-							borderColor: colors.gray600
+							backgroundColor: colors.neutral800,
+							borderColor: colors.transparent
 						},
-						"&:focus": { boxShadow: `0 0 0 2px ${colors.gray600}` }
+						"&:focus": { boxShadow: `0 0 0 2px ${colors.brandPrimaryTints400}` }
 					}
 				}
 			}
