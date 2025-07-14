@@ -94,22 +94,22 @@ export const color = styleVariants({
 			borderColor: colors.transparent,
 			selectors: {
 				"&:hover:enabled, &:hover:not([disabled])": {
-					backgroundColor: colors.brandPrmaryTints600,
+					backgroundColor: colors.brandPrimaryTints600,
 					borderColor: colors.transparent
 				},
-				"&:focus": { boxShadow: `0 0 0 2px ${colors.blue300}` }
+				"&:focus": { boxShadow: `0 0 0 2px ${colors.brandPrimaryTints400}` }
 			},
 			"@media": {
 				"(prefers-color-scheme: dark)": {
 					color: colors.gray50,
-					backgroundColor: colors.blue600,
-					borderColor: colors.blue600,
+					backgroundColor: colors.brandPrimaryOrange,
+					borderColor: colors.transparent,
 					selectors: {
 						"&:hover:enabled, &:hover:not([disabled])": {
-							backgroundColor: colors.blue700,
-							borderColor: colors.blue700
+							backgroundColor: colors.brandPrimaryTints600,
+							borderColor: colors.transparent
 						},
-						"&:focus": { boxShadow: `0 0 0 2px ${colors.blue200}` }
+						"&:focus": { boxShadow: `0 0 0 2px ${colors.brandPrimaryTints400}` }
 					}
 				}
 			}
@@ -119,26 +119,26 @@ export const color = styleVariants({
 		base,
 		{
 			color: colors.gray50,
-			backgroundColor: colors.gray700,
-			borderColor: colors.gray700,
+			backgroundColor: colors.brandSecondaryTint500,
+			borderColor: colors.transparent,
 			selectors: {
 				"&:hover:enabled, &:hover:not([disabled])": {
-					backgroundColor: colors.gray800,
-					borderColor: colors.gray800
+					backgroundColor: colors.brandSecondaryTint600,
+					borderColor: colors.transparent
 				},
-				"&:focus": { boxShadow: `0 0 0 2px ${colors.gray300}` }
+				"&:focus": { boxShadow: `0 0 0 2px ${colors.brandSecondaryTint200}` }
 			},
 			"@media": {
 				"(prefers-color-scheme: dark)": {
 					color: colors.gray50,
-					backgroundColor: colors.gray600,
-					borderColor: colors.gray600,
+					backgroundColor: colors.brandSecondaryTint500,
+					borderColor: colors.transparent,
 					selectors: {
 						"&:hover:enabled, &:hover:not([disabled])": {
-							backgroundColor: colors.gray700,
-							borderColor: colors.gray700
+							backgroundColor: colors.brandSecondaryTint600,
+							borderColor: colors.transparent
 						},
-						"&:focus": { boxShadow: `0 0 0 2px ${colors.gray200}` }
+						"&:focus": { boxShadow: `0 0 0 2px ${colors.brandSecondaryTint600}` }
 					}
 				}
 			}

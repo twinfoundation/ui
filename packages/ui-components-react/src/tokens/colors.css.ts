@@ -67,7 +67,13 @@ export const colors = {
 	// Add more as needed
 
 	brandPrimaryOrange: "#FF7C15",
-	brandPrmaryTints600: "#D56711"
+	brandPrimaryTints400: "#FF9643",
+	brandPrimaryTints500: "#1568E4",
+	brandPrimaryTints600: "#D56711",
+
+	brandSecondaryTint200: "#9EC1F4",
+	brandSecondaryTint500: "#1568E4",
+	brandSecondaryTint600: "#1156BD"
 };
 
 // import { createTheme } from "@vanilla-extract/css";
