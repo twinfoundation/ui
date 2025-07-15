@@ -61,7 +61,7 @@ export const Button2: FC<ButtonProps> = memo(
 
 		const classes = [
 			iconOnly ? styles.iconOnly : styles.rounded,
-			iconOnly ? styles.buttonSizes : null,
+			iconOnly ? styles.buttonSizes[size] : null,
 			styles.size[size],
 			styles.color[color],
 			outline && color === "ghost" ? styles.ghostOutline : undefined,

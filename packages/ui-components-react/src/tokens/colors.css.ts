@@ -99,7 +99,13 @@ export const colors = {
 
 	systemSuccessTints200: "#a6e59f",
 	systemSuccessTints500: "#23bd12",
-	systemSuccessTints600: "#1d9b0f"
+	systemSuccessTints600: "#1d9b0f",
+
+	systemInformationTints200: "#8bc5e4",
+	systemInformationTints500: "#1780c1",
+	systemInformationTints600: "#13669a",
+
+	cyan800: "#155e75"
 };
 
 // import { createTheme } from "@vanilla-extract/css";

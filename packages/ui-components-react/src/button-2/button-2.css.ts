@@ -36,7 +36,7 @@ export const rounded = style({ borderRadius: "0.5rem" });
 export const iconOnly = style({
 	aspectRatio: "1",
 	borderRadius: "9999px",
-	padding: 0
+	padding: "0!important"
 });
 
 export const ghostOutline = style({
@@ -46,11 +46,11 @@ export const ghostOutline = style({
 
 // for iconOnly
 export const buttonSizes = styleVariants({
-	xs: { height: "1.75rem", padding: "0.125rem 0.25rem" },
-	sm: { height: "2.25rem", padding: "0.375rem 0.75rem" },
-	md: { height: "2.75rem", padding: "0.5rem 1rem" },
-	lg: { height: "3.5rem", padding: "0.75rem 1.5rem" },
-	xl: { height: "4rem", padding: "1rem 2rem" }
+	xs: { height: "1.75rem", width: "1.75rem" },
+	sm: { height: "2.25rem", width: "2.25rem" },
+	md: { height: "2.75rem", width: "2.75rem" },
+	lg: { height: "3.5rem", width: "3.5rem" },
+	xl: { height: "4rem", width: "4rem" }
 });
 
 export const size = styleVariants({
@@ -234,26 +234,26 @@ export const color = styleVariants({
 		base,
 		{
 			color: colors.gray50,
-			backgroundColor: colors.cyan600,
+			backgroundColor: colors.systemInformationTints500,
 			borderColor: colors.transparent,
 			selectors: {
 				"&:hover:enabled, &:hover:not([disabled])": {
-					backgroundColor: colors.cyan700,
+					backgroundColor: colors.systemInformationTints600,
 					borderColor: colors.transparent
 				},
-				"&:focus": { boxShadow: `0 0 0 2px ${colors.cyan200}` }
+				"&:focus": { boxShadow: `0 0 0 2px ${colors.systemInformationTints200}` }
 			},
 			"@media": {
 				"(prefers-color-scheme: dark)": {
 					color: colors.gray50,
-					backgroundColor: colors.cyan500,
+					backgroundColor: colors.systemInformationTints500,
 					borderColor: colors.transparent,
 					selectors: {
 						"&:hover:enabled, &:hover:not([disabled])": {
-							backgroundColor: colors.cyan600,
+							backgroundColor: colors.systemInformationTints600,
 							borderColor: colors.transparent
 						},
-						"&:focus": { boxShadow: `0 0 0 2px ${colors.cyan100}` }
+						"&:focus": { boxShadow: `0 0 0 2px ${colors.cyan800}` }
 					}
 				}
 			}
@@ -325,19 +325,19 @@ export const color = styleVariants({
 			borderColor: colors.transparent,
 			selectors: {
 				"&:hover:enabled, &:hover:not([disabled])": {
-					backgroundColor: colors.gray800,
+					backgroundColor: colors.gray700,
 					borderColor: colors.transparent
 				},
-				"&:focus": { boxShadow: `0 0 0 2px ${colors.gray300}` }
+				"&:focus": { boxShadow: `0 0 0 2px ${colors.gray200}` }
 			},
 			"@media": {
 				"(prefers-color-scheme: dark)": {
 					color: colors.gray900,
-					backgroundColor: colors.gray50,
+					backgroundColor: colors.neutral100,
 					borderColor: colors.transparent,
 					selectors: {
 						"&:hover:enabled, &:hover:not([disabled])": {
-							backgroundColor: colors.gray100,
+							backgroundColor: colors.gray600,
 							borderColor: colors.transparent
 						},
 						"&:focus": { boxShadow: `0 0 0 2px ${colors.gray700}` }
