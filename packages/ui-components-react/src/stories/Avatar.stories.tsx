@@ -25,7 +25,8 @@ const meta = {
 		statusPosition: {
 			options: ["top-left", "top-right", "bottom-left", "bottom-right"],
 			control: { type: "inline-radio" }
-		}
+		},
+		placeholderInitials: { control: { type: "text" } }
 	},
 	args: { onClick: fn() }
 } satisfies Meta<typeof Avatar>;
