@@ -205,26 +205,26 @@ export const color = styleVariants({
 		base,
 		{
 			color: colors.gray50,
-			backgroundColor: colors.green600,
+			backgroundColor: colors.systemSuccessTints500,
 			borderColor: colors.transparent,
 			selectors: {
 				"&:hover:enabled, &:hover:not([disabled])": {
-					backgroundColor: colors.green700,
+					backgroundColor: colors.systemSuccessTints600,
 					borderColor: colors.transparent
 				},
-				"&:focus": { boxShadow: `0 0 0 2px ${colors.green200}` }
+				"&:focus": { boxShadow: `0 0 0 2px ${colors.systemSuccessTints200}` }
 			},
 			"@media": {
 				"(prefers-color-scheme: dark)": {
 					color: colors.gray50,
-					backgroundColor: colors.green500,
+					backgroundColor: colors.systemSuccessTints500,
 					borderColor: colors.transparent,
 					selectors: {
 						"&:hover:enabled, &:hover:not([disabled])": {
-							backgroundColor: colors.green600,
+							backgroundColor: colors.systemSuccessTints600,
 							borderColor: colors.transparent
 						},
-						"&:focus": { boxShadow: `0 0 0 2px ${colors.green100}` }
+						"&:focus": { boxShadow: `0 0 0 2px ${colors.green800}` }
 					}
 				}
 			}

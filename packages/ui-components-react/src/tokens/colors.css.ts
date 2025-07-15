@@ -63,6 +63,7 @@ export const colors = {
 	green500: "#22c55e",
 	green600: "#16a34a",
 	green700: "#15803d",
+	green800: "#03543f",
 
 	yellow50: "#fefce8",
 	yellow100: "#fef9c3",
@@ -94,7 +95,11 @@ export const colors = {
 
 	systemWarningTints200: "#ffcb5b",
 	systemWarningTints500: "#f5a623",
-	systemWarningTints600: "#c5831c"
+	systemWarningTints600: "#c5831c",
+
+	systemSuccessTints200: "#a6e59f",
+	systemSuccessTints500: "#23bd12",
+	systemSuccessTints600: "#1d9b0f"
 };
 
 // import { createTheme } from "@vanilla-extract/css";
