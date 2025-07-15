@@ -79,6 +79,10 @@ export const colors = {
 	cyan700: "#0e7490",
 	// Add more as needed
 
+	pink500: "#E74694",
+	purple500: "#9061F9",
+	purple600: "#7E3AF2",
+
 	brandPrimaryOrange: "#ff7c15",
 	brandPrimaryTints400: "#ff9643",
 	brandPrimaryTints500: "#1568e4",
