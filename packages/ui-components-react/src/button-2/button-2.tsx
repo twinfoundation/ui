@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0.
 import { type FC, memo, useMemo } from "react";
 import * as styles from "./button-2.css";
-import type { ButtonProps } from "../button/buttonProps";
+import type { ButtonProps } from "./buttonProps";
 
 export const Button2: FC<ButtonProps> = memo(
 	({
@@ -20,6 +20,7 @@ export const Button2: FC<ButtonProps> = memo(
 		disabled = false,
 		className = "",
 		children,
+		fullSized,
 		...rest
 	}) => {
 		const buttonContent = useMemo(
@@ -65,6 +66,7 @@ export const Button2: FC<ButtonProps> = memo(
 			styles.size[size],
 			styles.color[color],
 			outline && color === "ghost" ? styles.ghostOutline : undefined,
+			fullSized ? styles.fullSized : undefined,
 			className
 		]
 			.filter(Boolean)

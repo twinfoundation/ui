@@ -33,6 +33,8 @@ const base = style({
 
 export const rounded = style({ borderRadius: "0.5rem" });
 
+export const fullSized = style({ width: "100%" });
+
 export const iconOnly = style({
 	aspectRatio: "1",
 	borderRadius: "9999px",
