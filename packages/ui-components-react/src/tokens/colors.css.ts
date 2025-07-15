@@ -90,7 +90,11 @@ export const colors = {
 	systemErrorTints50: "#fbe7e3",
 	systemErrorTints200: "#f4ac9e",
 	systemErrorTints500: "#db3614",
-	systemErrorTints600: "#ba2e11"
+	systemErrorTints600: "#ba2e11",
+
+	systemWarningTints200: "#ffcb5b",
+	systemWarningTints500: "#f5a623",
+	systemWarningTints600: "#c5831c"
 };
 
 // import { createTheme } from "@vanilla-extract/css";

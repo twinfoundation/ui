@@ -175,27 +175,27 @@ export const color = styleVariants({
 	warning: [
 		base,
 		{
-			color: colors.gray900,
-			backgroundColor: colors.yellow400,
+			color: colors.white,
+			backgroundColor: colors.systemWarningTints500,
 			borderColor: colors.transparent,
 			selectors: {
 				"&:hover:enabled, &:hover:not([disabled])": {
-					backgroundColor: colors.yellow500,
+					backgroundColor: colors.systemWarningTints600,
 					borderColor: colors.transparent
 				},
-				"&:focus": { boxShadow: `0 0 0 2px ${colors.yellow100}` }
+				"&:focus": { boxShadow: `0 0 0 2px ${colors.systemWarningTints200}` }
 			},
 			"@media": {
 				"(prefers-color-scheme: dark)": {
 					color: colors.gray900,
-					backgroundColor: colors.yellow300,
+					backgroundColor: colors.systemWarningTints500,
 					borderColor: colors.transparent,
 					selectors: {
 						"&:hover:enabled, &:hover:not([disabled])": {
-							backgroundColor: colors.yellow400,
+							backgroundColor: colors.systemWarningTints600,
 							borderColor: colors.transparent
 						},
-						"&:focus": { boxShadow: `0 0 0 2px ${colors.yellow50}` }
+						"&:focus": { boxShadow: `0 0 0 2px ${colors.systemWarningTints200}` }
 					}
 				}
 			}
