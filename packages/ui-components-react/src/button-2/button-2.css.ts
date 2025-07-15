@@ -147,26 +147,26 @@ export const color = styleVariants({
 		base,
 		{
 			color: colors.gray50,
-			backgroundColor: colors.red700,
+			backgroundColor: colors.systemErrorTints500,
 			borderColor: colors.transparent,
 			selectors: {
 				"&:hover:enabled, &:hover:not([disabled])": {
-					backgroundColor: colors.red800,
+					backgroundColor: colors.systemErrorTints600,
 					borderColor: colors.transparent
 				},
-				"&:focus": { boxShadow: `0 0 0 2px ${colors.red200}` }
+				"&:focus": { boxShadow: `0 0 0 2px ${colors.systemErrorTints200}` }
 			},
 			"@media": {
 				"(prefers-color-scheme: dark)": {
 					color: colors.gray50,
-					backgroundColor: colors.red600,
+					backgroundColor: colors.systemErrorTints500,
 					borderColor: colors.transparent,
 					selectors: {
 						"&:hover:enabled, &:hover:not([disabled])": {
-							backgroundColor: colors.red700,
+							backgroundColor: colors.systemErrorTints600,
 							borderColor: colors.transparent
 						},
-						"&:focus": { boxShadow: `0 0 0 2px ${colors.red100}` }
+						"&:focus": { boxShadow: `0 0 0 2px ${colors.systemErrorTints200}` }
 					}
 				}
 			}

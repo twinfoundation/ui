@@ -85,7 +85,12 @@ export const colors = {
 
 	brandSecondaryTint200: "#9ec1f4",
 	brandSecondaryTint500: "#1568e4",
-	brandSecondaryTint600: "#1156bd"
+	brandSecondaryTint600: "#1156bd",
+
+	systemErrorTints50: "#fbe7e3",
+	systemErrorTints200: "#f4ac9e",
+	systemErrorTints500: "#db3614",
+	systemErrorTints600: "#ba2e11"
 };
 
 // import { createTheme } from "@vanilla-extract/css";
