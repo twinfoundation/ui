@@ -1,6 +1,11 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
-import { Accordion as FlowbiteAccordion } from "flowbite-react";
+import {
+	Accordion as FlowbiteAccordion,
+	AccordionPanel,
+	AccordionTitle,
+	AccordionContent
+} from "flowbite-react";
 import { memo, useMemo, type JSX } from "react";
 import type { AccordionProps } from "./accordionProps";
 
@@ -11,8 +16,8 @@ export const Accordion = memo(({ items, ...rest }: AccordionProps): JSX.Element 
 		}
 
 		return items.map((item, index) => (
-			<FlowbiteAccordion.Panel key={`accordion-panel-${index}`}>
-				<FlowbiteAccordion.Title>
+			<AccordionPanel key={`accordion-panel-${index}`}>
+				<AccordionTitle>
 					<div className="flex items-center">
 						{item?.icon && (
 							<span className="mr-2 inline-flex items-center">
@@ -21,9 +26,9 @@ export const Accordion = memo(({ items, ...rest }: AccordionProps): JSX.Element 
 						)}
 						{item?.title}
 					</div>
-				</FlowbiteAccordion.Title>
-				<FlowbiteAccordion.Content>{item?.content}</FlowbiteAccordion.Content>
-			</FlowbiteAccordion.Panel>
+				</AccordionTitle>
+				<AccordionContent>{item?.content}</AccordionContent>
+			</AccordionPanel>
 		));
 	}, [items]);
 

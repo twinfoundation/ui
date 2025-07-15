@@ -1,6 +1,6 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
-import { Banner as FlowbiteBanner } from "flowbite-react";
+import { Banner as FlowbiteBanner, BannerCollapseButton } from "flowbite-react";
 import { memo, type JSX } from "react";
 import type { BannerProps } from "./bannerProps";
 import { X } from "../icons/x";
@@ -15,12 +15,12 @@ export const Banner = memo(({ children, bottom = false }: BannerProps): JSX.Elem
 		<FlowbiteBanner>
 			<div className={bannerClassName}>
 				{children}
-				<FlowbiteBanner.CollapseButton
+				<BannerCollapseButton
 					color="gray"
 					className="border-0 bg-transparent text-gray-500 dark:text-gray-400"
 				>
 					<X width={16} height={16} />
-				</FlowbiteBanner.CollapseButton>
+				</BannerCollapseButton>
 			</div>
 		</FlowbiteBanner>
 	);

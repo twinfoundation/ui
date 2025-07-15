@@ -1,6 +1,6 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
-import { Modal as FlowbiteModal } from "flowbite-react";
+import { Modal as FlowbiteModal, ModalBody, ModalFooter, ModalHeader } from "flowbite-react";
 import { memo, useCallback, type JSX } from "react";
 import type { ModalProps } from "./modalProps";
 import { Button } from "../button/button";
@@ -18,10 +18,10 @@ export const Modal = memo(
 
 		return (
 			<FlowbiteModal {...rest} show={show} onClose={onClose}>
-				{header && <FlowbiteModal.Header>{header}</FlowbiteModal.Header>}
-				{body && <FlowbiteModal.Body>{body}</FlowbiteModal.Body>}
+				{header && <ModalHeader>{header}</ModalHeader>}
+				{body && <ModalBody>{body}</ModalBody>}
 				{footerButtons && footerButtons.length > 0 && (
-					<FlowbiteModal.Footer>
+					<ModalFooter>
 						{footerButtons.map((button, index) => {
 							const { onClick, variant, label, ...buttonProps } = button;
 							return (
@@ -37,7 +37,7 @@ export const Modal = memo(
 								</Button>
 							);
 						})}
-					</FlowbiteModal.Footer>
+					</ModalFooter>
 				)}
 			</FlowbiteModal>
 		);

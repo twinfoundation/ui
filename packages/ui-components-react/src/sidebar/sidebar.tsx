@@ -1,6 +1,13 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
-import { Sidebar as FlowbiteSidebar } from "flowbite-react/components/Sidebar";
+import {
+	Sidebar as FlowbiteSidebar,
+	SidebarCollapse,
+	SidebarItem as FlowbiteSidebarItem,
+	SidebarItemGroup,
+	SidebarItems,
+	SidebarLogo
+} from "flowbite-react/components/Sidebar";
 import { memo, useCallback, useMemo, type JSX, type ReactNode } from "react";
 import type { SidebarProps, SidebarItem, BadgeColor } from "./sidebarProps";
 import { PRIMARY, SUCCESS, WARNING, FAILURE, INFO } from "../constants/colors";
@@ -62,17 +69,17 @@ export const Sidebar = memo(
 
 			if (subItems && subItems.length > 0) {
 				return (
-					<FlowbiteSidebar.Collapse key={itemKey} icon={icon} label={label} disabled={disabled}>
+					<SidebarCollapse key={itemKey} icon={icon} label={label} disabled={disabled}>
 						{subItems.map((subItem: SidebarItem, index: number) => {
 							const subItemKey = `${subItem.href}-${subItem.label}-${index}`;
 							return <div key={subItemKey}>{renderItem(subItem)}</div>;
 						})}
-					</FlowbiteSidebar.Collapse>
+					</SidebarCollapse>
 				);
 			}
 
 			return (
-				<FlowbiteSidebar.Item href={href} icon={icon} active={active} disabled={disabled}>
+				<FlowbiteSidebarItem href={href} icon={icon} active={active}>
 					<div className="flex w-full items-center justify-between">
 						<span>{label}</span>
 						{badge && (
@@ -83,7 +90,7 @@ export const Sidebar = memo(
 							</span>
 						)}
 					</div>
-				</FlowbiteSidebar.Item>
+				</FlowbiteSidebarItem>
 			);
 		}, []);
 
@@ -119,18 +126,14 @@ export const Sidebar = memo(
 							</div>
 						)}
 						{logo && (
-							<FlowbiteSidebar.Logo
-								href={logo.href ?? "#"}
-								img={logo.img}
-								imgAlt={logo.imgAlt ?? ""}
-							>
+							<SidebarLogo href={logo.href ?? "#"} img={logo.img} imgAlt={logo.imgAlt ?? ""}>
 								{logo.label}
-							</FlowbiteSidebar.Logo>
+							</SidebarLogo>
 						)}
 						{items && items.length > 0 && (
-							<FlowbiteSidebar.Items>
-								<FlowbiteSidebar.ItemGroup>{renderedItems}</FlowbiteSidebar.ItemGroup>
-							</FlowbiteSidebar.Items>
+							<SidebarItems>
+								<SidebarItemGroup>{renderedItems}</SidebarItemGroup>
+							</SidebarItems>
 						)}
 						{CTA && (
 							<div className="mt-6" data-testid="sidebar-cta">
@@ -143,9 +146,9 @@ export const Sidebar = memo(
 						<div className="flex-shrink-0" data-testid="sidebar-footer">
 							{footerContent}
 							{footerItems && (
-								<FlowbiteSidebar.Items>
-									<FlowbiteSidebar.ItemGroup>{renderedFooterItems}</FlowbiteSidebar.ItemGroup>
-								</FlowbiteSidebar.Items>
+								<SidebarItems>
+									<SidebarItemGroup>{renderedFooterItems}</SidebarItemGroup>
+								</SidebarItems>
 							)}
 						</div>
 					)}

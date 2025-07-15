@@ -9,9 +9,7 @@ import type { LabelProps } from "./labelProps";
  */
 export const Label = memo(
 	({ children, value, ...rest }: LabelProps): JSX.Element => (
-		<FlowbiteLabel value={value} {...rest}>
-			{value ?? children ?? ""}
-		</FlowbiteLabel>
+		<FlowbiteLabel {...rest}>{value ?? children ?? ""}</FlowbiteLabel>
 	)
 );
 

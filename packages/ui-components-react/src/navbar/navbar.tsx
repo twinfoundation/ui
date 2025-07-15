@@ -1,6 +1,12 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
-import { Navbar as FlowbiteNavbar } from "flowbite-react";
+import {
+	Navbar as FlowbiteNavbar,
+	NavbarBrand,
+	NavbarCollapse,
+	NavbarLink,
+	NavbarToggle
+} from "flowbite-react";
 import { memo, type JSX } from "react";
 import type { NavbarProps } from "./navbarProps";
 
@@ -34,8 +40,8 @@ const NavbarComponent = memo(
 NavbarComponent.displayName = "Navbar";
 
 export const Navbar = Object.assign(NavbarComponent, {
-	Brand: FlowbiteNavbar.Brand,
-	Collapse: FlowbiteNavbar.Collapse,
-	Link: FlowbiteNavbar.Link,
-	Toggle: FlowbiteNavbar.Toggle
+	Brand: NavbarBrand,
+	Collapse: NavbarCollapse,
+	Link: NavbarLink,
+	Toggle: NavbarToggle
 });

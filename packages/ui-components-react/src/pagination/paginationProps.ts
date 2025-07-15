@@ -1,6 +1,6 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
-import type { PaginationProps as FlowbitePaginationProps } from "flowbite-react";
+import type { DefaultPaginationProps as FlowbitePaginationProps } from "flowbite-react";
 import type { PropsWithChildren } from "react";
 import type { PaginationLayout } from "./paginationLayouts";
 
