@@ -26,6 +26,10 @@ export const avatar = style({
 	// }
 });
 
+export const roundedBase = style({
+	borderRadius: "0.25rem"
+});
+
 export const rounded = style({
 	borderRadius: "9999px"
 });
@@ -36,32 +40,27 @@ export const circular = style({
 
 export const xs = style({
 	width: "1.5rem",
-	height: "1.5rem",
-	fontSize: "0.75rem"
+	height: "1.5rem"
 });
 
 export const small = style({
 	width: "2rem",
-	height: "2rem",
-	fontSize: "0.875rem"
+	height: "2rem"
 });
 
 export const medium = style({
 	width: "2.5rem",
-	height: "2.5rem",
-	fontSize: "1rem"
+	height: "2.5rem"
 });
 
 export const large = style({
-	width: "3rem",
-	height: "3rem",
-	fontSize: "1.25rem"
+	width: "5rem",
+	height: "5rem"
 });
 
 export const xlarge = style({
-	width: "4rem",
-	height: "4rem",
-	fontSize: "1.5rem"
+	width: "9rem",
+	height: "9rem"
 });
 
 export const image = style({
@@ -215,5 +214,66 @@ export const initialsText = style({
 		"(prefers-color-scheme: dark)": {
 			color: colors.gray300
 		}
+	}
+});
+
+export const statusBase = style({
+	position: "absolute",
+	height: "0.875rem",
+	width: "0.875rem",
+	borderRadius: "50%",
+	border: "2px solid",
+	borderColor: colors.white,
+	"@media": {
+		"(prefers-color-scheme: dark)": {
+			borderColor: colors.gray800
+		}
+	}
+});
+
+export const status = styleVariants({
+	away: {
+		backgroundColor: colors.yellow400
+	},
+	busy: {
+		backgroundColor: colors.red400
+	},
+	offline: {
+		backgroundColor: colors.gray400
+	},
+	online: {
+		backgroundColor: colors.green400
+	}
+});
+
+export const statusPosition = styleVariants({
+	"bottom-left": {
+		bottom: "-0.25rem",
+		left: "-0.25rem"
+	},
+	"bottom-center": {
+		bottom: "-0.25rem"
+	},
+	"bottom-right": {
+		bottom: "-0.25rem",
+		right: "-0.25rem"
+	},
+	"top-left": {
+		left: "-0.25rem",
+		top: "-0.25rem"
+	},
+	"top-center": {
+		top: "-0.25rem"
+	},
+	"top-right": {
+		right: "-0.25rem",
+		top: "-0.25rem"
+	},
+	"center-right": {
+		right: "-0.25rem"
+	},
+	center: {},
+	"center-left": {
+		left: "-0.25rem"
 	}
 });

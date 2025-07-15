@@ -104,7 +104,7 @@ export const Avatar2: React.FC<Avatar2Props> = ({
 	placeholderInitials,
 	stacked = false,
 	color = "light",
-	className,
+	className = "",
 	...rest
 }) => {
 	const getSizeClass = (): string => {
@@ -122,7 +122,7 @@ export const Avatar2: React.FC<Avatar2Props> = ({
 		}
 	};
 
-	const getShapeClass = (): string => (rounded ? styles.rounded : styles.circular);
+	const getShapeClass = (): string => (rounded ? styles.roundedBase : styles.circular);
 
 	const sanitizedAlt = useMemo(() => alt?.replace(/[<>]/g, ""), [alt]);
 
@@ -181,6 +181,18 @@ export const Avatar2: React.FC<Avatar2Props> = ({
 							/>
 						</svg>
 					</div>
+				)}
+				{status && (
+					<span
+						data-testid="flowbite-avatar-status"
+						className={[
+							styles.statusBase,
+							styles.status[status as keyof typeof styles.status],
+							styles.statusPosition[statusPosition as keyof typeof styles.statusPosition]
+						]
+							.filter(Boolean)
+							.join(" ")}
+					/>
 				)}
 			</div>
 		</div>
