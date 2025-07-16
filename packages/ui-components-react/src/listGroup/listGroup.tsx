@@ -1,6 +1,6 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
-import { ListGroup as FlowbiteListGroup } from "flowbite-react";
+import { ListGroup as FlowbiteListGroup, ListGroupItem } from "flowbite-react";
 import { memo, type JSX } from "react";
 import type { ListGroupProps } from "./listGroupProps";
 
@@ -11,7 +11,7 @@ export const ListGroup = memo(
 	({ items, className }: ListGroupProps): JSX.Element => (
 		<FlowbiteListGroup className={className}>
 			{items.map((item, index) => (
-				<FlowbiteListGroup.Item
+				<ListGroupItem
 					key={`${item.title}-${index}`}
 					icon={item.icon}
 					disabled={item.disabled}
@@ -19,7 +19,7 @@ export const ListGroup = memo(
 					href={item.href}
 				>
 					{item.title}
-				</FlowbiteListGroup.Item>
+				</ListGroupItem>
 			))}
 		</FlowbiteListGroup>
 	)

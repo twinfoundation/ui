@@ -1,6 +1,6 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
-import { Breadcrumb as FlowbiteBreadcrumb } from "flowbite-react";
+import { BreadcrumbItem, Breadcrumb as FlowbiteBreadcrumb } from "flowbite-react";
 import { memo, type JSX } from "react";
 import type { BreadcrumbProps } from "./breadcrumbProps";
 
@@ -12,13 +12,9 @@ export const Breadcrumb = memo(
 		<FlowbiteBreadcrumb aria-label={ariaLabel ?? "Breadcrumb"} className={className ?? ""}>
 			{items && items.length > 0 ? (
 				items.map((item, index) => (
-					<FlowbiteBreadcrumb.Item
-						key={`breadcrumb-item-${index}`}
-						href={item?.href}
-						icon={item?.icon}
-					>
+					<BreadcrumbItem key={`breadcrumb-item-${index}`} href={item?.href} icon={item?.icon}>
 						{item?.label}
-					</FlowbiteBreadcrumb.Item>
+					</BreadcrumbItem>
 				))
 			) : (
 				<></>

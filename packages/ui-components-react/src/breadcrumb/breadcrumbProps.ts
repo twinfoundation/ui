@@ -1,6 +1,6 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
-import type { BreadcrumbComponentProps as FlowbiteBreadcrumbProps } from "flowbite-react";
+import type { BreadcrumbProps as FlowbiteBreadcrumbProps } from "flowbite-react";
 import type { IconsProps } from "../types/iconTypes";
 
 /**

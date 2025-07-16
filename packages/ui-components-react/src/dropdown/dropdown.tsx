@@ -1,6 +1,11 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
-import { Dropdown as FlowbiteDropdown } from "flowbite-react";
+import {
+	DropdownDivider,
+	DropdownHeader,
+	DropdownItem,
+	Dropdown as FlowbiteDropdown
+} from "flowbite-react";
 import { memo, type JSX } from "react";
 import type { DropdownProps } from "./dropdownProps";
 import { Button } from "../button/button";
@@ -38,14 +43,14 @@ export const Dropdown = memo(
 				/>
 			)}
 		>
-			{header && <FlowbiteDropdown.Header>{header}</FlowbiteDropdown.Header>}
+			{header && <DropdownHeader>{header}</DropdownHeader>}
 			{items.length > 0
 				? items.map((item, index) => {
 						if (item?.divider) {
-							return <FlowbiteDropdown.Divider key={`divider-${index}`} />;
+							return <DropdownDivider key={`divider-${index}`} />;
 						}
 						return (
-							<FlowbiteDropdown.Item
+							<DropdownItem
 								key={`item-${index}`}
 								className={item?.className}
 								onClick={item?.onClick}
@@ -71,7 +76,7 @@ export const Dropdown = memo(
 								) : (
 									item?.label
 								)}
-							</FlowbiteDropdown.Item>
+							</DropdownItem>
 						);
 					})
 				: null}

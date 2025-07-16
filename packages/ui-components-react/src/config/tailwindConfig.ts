@@ -5,7 +5,7 @@ import {
 	FigmaVariables,
 	type IFigmaVariableCollection
 } from "@twin.org/ui-tailwind";
-import * as flowbite from "flowbite-react/tailwind";
+import flowbiteReact from "flowbite-react/plugin/tailwindcss";
 import type { Config } from "tailwindcss";
 
 /**
@@ -40,7 +40,12 @@ export class TailwindConfig {
 	 */
 	public static getContentPaths(npmRoot: string, includePackage = true): string[] {
 		const contentExtensions = ["html", "js", "cjs", "mjs", "ts", "jsx", "tsx"];
-		const content = [flowbite.content({ base: npmRoot.replace("node_modules", "") })];
+		const content = [
+			"./app/**/*.{js,jsx,md,mdx,ts,tsx}",
+			"./components/**/*.{js,jsx,md,mdx,ts,tsx}",
+			"./data/**/*.{js,jsx,ts,tsx}",
+			".flowbite-react/class-list.json"
+		];
 
 		if (includePackage) {
 			content.push(
@@ -60,6 +65,7 @@ export class TailwindConfig {
 	 * @returns The plugins.
 	 */
 	public static getPlugins(): Config["plugins"] {
-		return [flowbite.plugin()];
+		// return [flowbite.plugin()];
+		return [flowbiteReact];
 	}
 }

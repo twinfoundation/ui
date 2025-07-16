@@ -70,7 +70,6 @@ const externalDeps = [
 	'react/jsx-runtime',
 	'react',
 	'react-dom',
-	'flowbite-react/tailwind',
 	'rfc6902',
 	'intl-messageformat',
 	'@twin.org/core',

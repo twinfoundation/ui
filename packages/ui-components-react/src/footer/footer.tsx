@@ -1,6 +1,15 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
-import { Footer as FlowbiteFooter } from "flowbite-react";
+import {
+	Footer as FlowbiteFooter,
+	FooterBrand,
+	FooterCopyright,
+	FooterDivider,
+	FooterIcon,
+	FooterLink,
+	FooterLinkGroup,
+	FooterTitle
+} from "flowbite-react";
 import { memo, type JSX, type FC } from "react";
 import type {
 	FooterProps,
@@ -60,7 +69,7 @@ interface FooterComponent extends FC<FooterProps> {
  */
 const Brand = memo(
 	({ alt, href, name, src }: FooterBrandProps): JSX.Element => (
-		<FlowbiteFooter.Brand alt={alt} href={href} name={name} src={src ?? ""} />
+		<FooterBrand alt={alt} href={href} name={name} src={src ?? ""} />
 	)
 );
 
@@ -73,7 +82,7 @@ Brand.displayName = "Footer.Brand";
  */
 const Copyright = memo(
 	({ by, href, year }: FooterCopyrightProps): JSX.Element => (
-		<FlowbiteFooter.Copyright by={by} href={href} year={year} />
+		<FooterCopyright by={by} href={href} year={year} />
 	)
 );
 
@@ -83,7 +92,7 @@ Copyright.displayName = "Footer.Copyright";
  * Footer Divider component.
  * @returns JSX element
  */
-const Divider = memo((): JSX.Element => <FlowbiteFooter.Divider />);
+const Divider = memo((): JSX.Element => <FooterDivider />);
 
 Divider.displayName = "Footer.Divider";
 
@@ -94,7 +103,7 @@ Divider.displayName = "Footer.Divider";
  */
 const Icon = memo(
 	({ href, icon, className, ariaLabel }: FooterIconProps): JSX.Element => (
-		<FlowbiteFooter.Icon
+		<FooterIcon
 			href={href}
 			icon={icon as FC<React.ComponentProps<"svg">>}
 			className={className}
@@ -112,7 +121,7 @@ Icon.displayName = "Footer.Icon";
  */
 const Link = memo(
 	({ href, children }: FooterLinkProps): JSX.Element => (
-		<FlowbiteFooter.Link href={href ?? "#"}>{children}</FlowbiteFooter.Link>
+		<FooterLink href={href ?? "#"}>{children}</FooterLink>
 	)
 );
 
@@ -128,7 +137,7 @@ Link.displayName = "Footer.Link";
  */
 const LinkGroup = memo(
 	({ col, children }: FooterLinkGroupProps): JSX.Element => (
-		<FlowbiteFooter.LinkGroup col={col}>{children}</FlowbiteFooter.LinkGroup>
+		<FooterLinkGroup col={col}>{children}</FooterLinkGroup>
 	)
 );
 
@@ -139,9 +148,7 @@ LinkGroup.displayName = "Footer.LinkGroup";
  * @param props - Component props
  * @returns JSX element
  */
-const Title = memo(
-	({ title }: FooterTitleProps): JSX.Element => <FlowbiteFooter.Title title={title} />
-);
+const Title = memo(({ title }: FooterTitleProps): JSX.Element => <FooterTitle title={title} />);
 
 Title.displayName = "Footer.Title";
 

@@ -1,6 +1,6 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
-import { Toast as FlowbiteToast } from "flowbite-react";
+import { Toast as FlowbiteToast, ToastToggle } from "flowbite-react";
 import { memo, useCallback, useEffect, useState, type JSX } from "react";
 import type { ToastProps } from "./toastProps";
 
@@ -40,7 +40,7 @@ export const Toast = memo(
 		return (
 			<FlowbiteToast {...rest} role={role} aria-live="polite">
 				{children}
-				<FlowbiteToast.Toggle onClick={handleDismiss} aria-label={closeLabel} />
+				<ToastToggle onClick={handleDismiss} aria-label={closeLabel} />
 			</FlowbiteToast>
 		);
 	}
