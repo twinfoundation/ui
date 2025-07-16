@@ -1,6 +1,6 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
-import { style } from "@vanilla-extract/css";
+import { globalStyle, style } from "@vanilla-extract/css";
 import { colors } from "../tokens/colors.css";
 
 export const container = style({
@@ -66,15 +66,6 @@ export const checkmark = style({
 	transform: "translate(-50%, -60%) rotate(45deg)",
 	opacity: 0,
 	transition: "opacity 0.15s ease-in-out",
-	selectors: {
-		// FIXME  & .checkbox-2_checkmark__5c62wc2
-		// Style selectors must target the '&' character (along with any modifiers), e.g. `${parent} &` or `${parent} &:hover`.
-		// This is to ensure that each style block only affects the styling of a single class.
-		// If your selector is targeting another class, you should move it to the style definition for that class, e.g. given we have styles for 'parent' and 'child' elements, instead of adding a selector of `& ${child}`) to 'parent', you should add `${parent} &` to 'child').
-		[`${checkbox}:checked &`]: {
-			opacity: 1
-		}
-	},
 	"@media": {
 		"(prefers-color-scheme: dark)": {
 			border: `2px solid ${colors.gray800}`
@@ -82,46 +73,43 @@ export const checkmark = style({
 	}
 });
 
+globalStyle(`${checkmark} ${checkbox}:checked)`, {
+	opacity: 1
+});
+
 export const label = style({
 	fontSize: "0.875rem",
 	color: colors.gray700,
 	cursor: "pointer",
-	selectors: {
-		[`${container}:has(${checkbox}:disabled) &`]: {
-			color: colors.gray400,
-			cursor: "not-allowed"
-		}
-	},
 	"@media": {
 		"(prefers-color-scheme: dark)": {
-			color: colors.gray300,
-			selectors: {
-				[`${container}:has(${checkbox}:disabled) &`]: {
-					color: colors.gray600
-				}
-			}
+			color: colors.gray300
 		}
 	}
+});
+
+// TODO - the same for dark style (color: colors.gray600)
+globalStyle(`${label} ${container}:has(${checkbox}:disabled)`, {
+	color: colors.gray400,
+	cursor: "not-allowed"
 });
 
 export const large = style({
 	width: "1.25rem",
-	height: "1.25rem",
-	selectors: {
-		[`& ${checkmark}`]: {
-			width: "0.625rem",
-			height: "0.625rem"
-		}
-	}
+	height: "1.25rem"
+});
+
+globalStyle(`${large} ${checkmark}`, {
+	width: "0.625rem",
+	height: "0.625rem"
 });
 
 export const small = style({
 	width: "0.875rem",
-	height: "0.875rem",
-	selectors: {
-		[`& ${checkmark}`]: {
-			width: "0.375rem",
-			height: "0.375rem"
-		}
-	}
+	height: "0.875rem"
+});
+
+globalStyle(`${small} ${checkmark}`, {
+	width: "0.375rem",
+	height: "0.375rem"
 });
