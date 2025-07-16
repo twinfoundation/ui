@@ -33,6 +33,8 @@
 		"serve-storybook": "serve storybook-static"
 	},
 	"dependencies": {
+		"@floating-ui/core": "1.6.6",
+		"@floating-ui/react": "0.26.21",
 		"@twin.org/ui-tailwind": "0.0.1-next.52",
 		"prop-types": "15.8.1"
 	},
