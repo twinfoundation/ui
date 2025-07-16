@@ -1,62 +1,97 @@
 import React, { useState } from "react";
 import * as styles from "./navbar-2.css";
-import type { NavbarProps } from "../navbar/navbarProps";
 
-const Brand: React.FC<{ href?: string; children?: React.ReactNode }> = ({ href = "#", children }) => (
-  <a href={href} className={styles.brand}>
-    {children}
-  </a>
-);
+export interface NavbarBrand {
+  href: string;
+  src: string;
+  alt: string;
+  name: string;
+}
+export interface NavbarLink {
+  href: string;
+  label: string;
+  active?: boolean;
+}
+export interface ProfileLink {
+  href: string;
+  label: string;
+}
+export interface ProfileInfo {
+  thumbnail: string;
+  name: string;
+  email: string;
+  profileLinks: ProfileLink[];
+}
+export type NavbarVariant = "default" | "rounded" | "fluid";
 
-const Link: React.FC<{ href?: string; active?: boolean; children?: React.ReactNode }> = ({ href = "#", active, children }) => (
-  <a href={href} className={`${styles.link} ${active ? styles.active : ''}`.trim()} aria-current={active ? "page" : undefined}>
-    {children}
-  </a>
-);
+export interface NavbarProps {
+  brand: NavbarBrand;
+  links: NavbarLink[];
+  variant?: NavbarVariant;
+  profileInfo?: ProfileInfo;
+}
 
-const Collapse: React.FC<{ children?: React.ReactNode }> = ({ children }) => (
-  <div className={styles.collapse}>{children}</div>
-);
+export const Navbar: React.FC<NavbarProps> = ({ brand, links, variant = "default", profileInfo }) => {
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
 
-const Toggle: React.FC<{ onClick?: () => void }> = ({ onClick }) => (
-  <button className={styles.toggle} onClick={onClick} aria-label="Toggle navigation">
-    <span className={styles.toggleBar} />
-    <span className={styles.toggleBar} />
-    <span className={styles.toggleBar} />
-  </button>
-);
-
-export const Navbar: React.FC<NavbarProps> & {
-  Brand: typeof Brand;
-  Collapse: typeof Collapse;
-  Link: typeof Link;
-  Toggle: typeof Toggle;
-} = ({ children, fluid = false, rounded = false, className, ...props }) => {
-  const [collapsed, setCollapsed] = useState(true);
   return (
     <nav
       className={[
         styles.navbar,
-        fluid ? styles.fluid : '',
-        rounded ? styles.rounded : '',
-        className || '',
-      ].filter(Boolean).join(' ')}
-      {...props}
+        variant === "fluid" ? styles.fluid : "",
+        variant === "rounded" ? styles.rounded : "",
+      ].filter(Boolean).join(" ")}
     >
-      {React.Children.map(children, child => {
-        if (React.isValidElement(child) && child.type === Toggle) {
-          return React.cloneElement(child as React.ReactElement<{ onClick?: () => void }>, { onClick: () => setCollapsed(c => !c) });
-        }
-        if (React.isValidElement(child) && child.type === Collapse) {
-          return collapsed ? null : child;
-        }
-        return child;
-      })}
+      <a href={brand.href} className={styles.brand}>
+        <img src={brand.src} alt={brand.alt} style={{ height: "2rem", width: "auto", marginRight: "0.75rem" }} />
+        <span style={{ fontWeight: 700, fontSize: "1.25rem" }}>{brand.name}</span>
+      </a>
+      <div className={styles.collapse}>
+        {links.map((link, i) => (
+          <a
+            key={i}
+            href={link.href}
+            className={link.active ? `${styles.link} ${styles.active}` : styles.link}
+            aria-current={link.active ? "page" : undefined}
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
+      <div className={styles.right}>
+        {console.log(profileInfo)}
+        {profileInfo ? (
+          <div className={styles.profileContainer}>
+            <button
+              className={styles.profileButton}
+              onClick={() => setIsProfileOpen(!isProfileOpen)}
+              aria-label="Toggle profile menu"
+            >
+              <img src={profileInfo.thumbnail} alt={profileInfo.name} className={styles.profileThumbnail} />
+            </button>
+            {isProfileOpen && (
+              <div className={styles.profileDropdown}>
+                <div className={styles.profileHeader}>
+                  <span className={styles.profileName}>{profileInfo.name}</span>
+                  <span className={styles.profileEmail}>{profileInfo.email}</span>
+                </div>
+                <hr className={styles.profileDivider} />
+                <div className={styles.profileLinks}>
+                  {profileInfo.profileLinks.map((link, i) => (
+                    <a key={i} href={link.href} className={styles.profileLink}>
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
+                <hr className={styles.profileDivider} />
+                <a href="#" className={styles.profileLink}>Sign out</a>
+              </div>
+            )}
+          </div>
+        ) : (
+          <span />
+        )}
+      </div>
     </nav>
   );
-};
-
-Navbar.Brand = Brand;
-Navbar.Collapse = Collapse;
-Navbar.Link = Link;
-Navbar.Toggle = Toggle; 
+}; 
