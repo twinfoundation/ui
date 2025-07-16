@@ -18,6 +18,10 @@ const meta = {
 		readOnly: {
 			options: Object.values([true, false]),
 			control: { type: "inline-radio" }
+		},
+		color: {
+			// options: textareaColorsValues,
+			control: { type: "text" }
 		}
 	},
 	args: {

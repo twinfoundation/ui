@@ -57,19 +57,30 @@ export const colors = {
 	slate700: "#334155",
 	slate800: "#1e293b",
 	slate900: "#0f172a",
-	green100: "#dcfce7",
-	green200: "#bbf7d0",
-	green400: "#4ade80",
-	green500: "#22c55e",
-	green600: "#16a34a",
-	green700: "#15803d",
-	green800: "#03543f",
 
-	yellow50: "#fefce8",
-	yellow100: "#fef9c3",
-	yellow300: "#fde68a",
-	yellow400: "#facc15",
-	yellow500: "#eab308",
+	green50: "#f3faf7",
+	green100: "#def7ec",
+	green200: "#bcf0da",
+	green300: "#84e1bc",
+	green400: "#31c48d",
+	green500: "#0e9f6e",
+	green600: "#057a55",
+	green700: "#046c4e",
+	green800: "#03543f",
+	green900: "#014737",
+
+	yellow50: "#fdfdea",
+	yellow100: "#fdf6b2",
+	yellow200: "#fce96a",
+	yellow300: "#faca15",
+	yellow400: "#e3a008",
+	yellow500: "#c27803",
+	yellow600: "#9f580a",
+	yellow700: "#8e4b10",
+	yellow800: "#723b13",
+	yellow900: "#633112",
+
+	cyan50: "#ecfeff",
 	cyan100: "#cffafe",
 	cyan200: "#a5f3fc",
 	cyan300: "#67e8f9",
@@ -77,11 +88,13 @@ export const colors = {
 	cyan500: "#06b6d4",
 	cyan600: "#0891b2",
 	cyan700: "#0e7490",
+	cyan800: "#005f78",
+	cyan900: "#104e64",
 	// Add more as needed
 
-	pink500: "#E74694",
-	purple500: "#9061F9",
-	purple600: "#7E3AF2",
+	pink500: "#e74694",
+	purple500: "#9061f9",
+	purple600: "#7e3af2",
 
 	brandPrimaryOrange: "#ff7c15",
 	brandPrimaryTints400: "#ff9643",
@@ -107,9 +120,7 @@ export const colors = {
 
 	systemInformationTints200: "#8bc5e4",
 	systemInformationTints500: "#1780c1",
-	systemInformationTints600: "#13669a",
-
-	cyan800: "#155e75"
+	systemInformationTints600: "#13669a"
 };
 
 // import { createTheme } from "@vanilla-extract/css";
