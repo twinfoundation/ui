@@ -45,7 +45,6 @@ export class TailwindConfig {
 			"./components/**/*.{js,jsx,md,mdx,ts,tsx}",
 			"./data/**/*.{js,jsx,ts,tsx}",
 			".flowbite-react/class-list.json"
-			// flowbite.content({ base: npmRoot.replace("node_modules", "") })
 		];
 
 		if (includePackage) {

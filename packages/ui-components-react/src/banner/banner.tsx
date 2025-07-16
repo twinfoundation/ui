@@ -8,11 +8,11 @@ import { X } from "../icons/x";
 /**
  * Banner component.
  */
-export const Banner = memo(({ children, bottom = false }: BannerProps): JSX.Element => {
+export const Banner = memo(({ children, bottom = false, ...rest }: BannerProps): JSX.Element => {
 	const bannerClassName = `fixed ${bottom ? "bottom-0" : "top-0"} left-0 z-50 flex w-full justify-between border-gray-200 bg-gray-50 p-4 dark:border-gray-600 dark:bg-gray-700 ${bottom ? "border-t" : "border-b"}`;
 
 	return (
-		<FlowbiteBanner>
+		<FlowbiteBanner {...rest}>
 			<div className={bannerClassName}>
 				{children}
 				<BannerCollapseButton

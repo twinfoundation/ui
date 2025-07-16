@@ -1,12 +1,12 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
-import type { BannerCollapseButtonProps } from "flowbite-react";
+import type { BannerProps as FlowbiteBannerProps } from "flowbite-react";
 import type { ReactNode } from "react";
 
 /**
  * Banner props.
  */
-export interface BannerProps extends Omit<BannerCollapseButtonProps, "color" | "label"> {
+export interface BannerProps extends Omit<FlowbiteBannerProps, "color" | "label"> {
 	/**
 	 * The content to display inside the banner
 	 */
