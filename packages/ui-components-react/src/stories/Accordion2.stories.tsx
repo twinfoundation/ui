@@ -72,7 +72,7 @@ export const Default: Story = {
       {
         title: 'Accordion 1',
         content: (
-          <div>
+          <div style={{ marginTop: '1rem' }}>
             <p style={{ marginBottom: '0.5rem', color: '#6b7280' }}>
               Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons, dropdowns, modals, navbar, and more.
             </p>
@@ -92,7 +92,7 @@ export const Default: Story = {
       {
         title: 'Is there a Figma file available?',
         content: (
-          <div>
+          <div style={{ marginTop: '1rem' }}>
             <p style={{ marginBottom: '0.5rem', color: '#6b7280' }}>
               Flowbite is first conceptualized and designed using the Figma software so everything you see in the library has a design equivalent in our Figma file.
             </p>
@@ -112,7 +112,7 @@ export const Default: Story = {
       {
         title: 'What are the differences between Flowbite and Tailwind UI?',
         content: (
-          <div>
+          <div style={{ marginTop: '1rem' }}>
             <p style={{ marginBottom: '0.5rem', color: '#6b7280' }}>
               The main difference is that the core components from Flowbite are open source under the MIT license, whereas Tailwind UI is a paid product. Another difference is that Flowbite relies on smaller and standalone components, whereas Tailwind UI offers sections of pages.
             </p>
@@ -154,11 +154,11 @@ export const AlwaysOpen: Story = {
     items: [
       {
         title: 'Always Open Panel 1',
-        content: <p style={{ color: '#6b7280' }}>This panel can stay open while others are opened.</p>,
+        content: <p style={{ color: '#6b7280', marginTop: '1rem' }}>This panel can stay open while others are opened.</p>,
       },
       {
         title: 'Always Open Panel 2',
-        content: <p style={{ color: '#6b7280' }}>Multiple panels can be open at the same time.</p>,
+        content: <p style={{ color: '#6b7280', marginTop: '1rem' }}>Multiple panels can be open at the same time.</p>,
       },
     ],
   },
@@ -170,11 +170,11 @@ export const CollapseAll: Story = {
     items: [
       {
         title: 'Collapsed Panel 1',
-        content: <p style={{ color: '#6b7280' }}>This panel starts collapsed.</p>,
+        content: <p style={{ color: '#6b7280', marginTop: '1rem' }}>This panel starts collapsed.</p>,
       },
       {
         title: 'Collapsed Panel 2',
-        content: <p style={{ color: '#6b7280' }}>This panel also starts collapsed.</p>,
+        content: <p style={{ color: '#6b7280', marginTop: '1rem' }}>This panel also starts collapsed.</p>,
       },
     ],
   },
@@ -186,11 +186,11 @@ export const Flush: Story = {
     items: [
       {
         title: 'Flush Panel 1',
-        content: <p style={{ color: '#6b7280' }}>This panel has no borders or background.</p>,
+        content: <p style={{ color: '#6b7280', marginTop: '1rem' }}>This panel has no borders or background.</p>,
       },
       {
         title: 'Flush Panel 2',
-        content: <p style={{ color: '#6b7280' }}>Clean, minimal appearance.</p>,
+        content: <p style={{ color: '#6b7280', marginTop: '1rem' }}>Clean, minimal appearance.</p>,
       },
     ],
   },
@@ -202,7 +202,7 @@ export const WithIcons: Story = {
       {
         title: 'Accordion with Info Icon',
         content: (
-          <p style={{ color: '#6b7280' }}>
+          <p style={{ color: '#6b7280', marginTop: '1rem' }}>
             This accordion item uses the Envelope icon.
           </p>
         ),
@@ -211,7 +211,7 @@ export const WithIcons: Story = {
       {
         title: 'Accordion with Question Icon',
         content: (
-          <p style={{ color: '#6b7280' }}>
+          <p style={{ color: '#6b7280', marginTop: '1rem' }}>
             This accordion item uses the Question icon.
           </p>
         ),
@@ -220,7 +220,7 @@ export const WithIcons: Story = {
       {
         title: 'Accordion with Settings Icon',
         content: (
-          <p style={{ color: '#6b7280' }}>
+          <p style={{ color: '#6b7280', marginTop: '1rem' }}>
             This accordion item uses the Calendar icon.
           </p>
         ),
