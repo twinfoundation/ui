@@ -299,19 +299,16 @@ ComponentName.displayName = 'ComponentName';
 When converting class components to functional components, follow this checklist:
 
 1. **Props**:
-
    - Define a clear interface for props
    - Use specific types, not any/unknown
    - Make optional props explicit with ?
 
 2. **State**:
-
    - Convert this.state to useState hooks
    - Split complex state into multiple useState calls or use useReducer
    - Initialize state with proper types
 
 3. **Lifecycle Methods**:
-
    - componentDidMount → useEffect with empty dependency array
    - componentDidUpdate → useEffect with dependencies
    - componentWillUnmount → useEffect return function
@@ -319,35 +316,29 @@ When converting class components to functional components, follow this checklist
    - getSnapshotBeforeUpdate → useLayoutEffect (rare cases)
 
 4. **Instance Variables**:
-
    - Convert to useRef hooks with proper typing
    - Access via .current property
 
 5. **Event Handlers**:
-
    - Wrap with useCallback to prevent unnecessary re-renders
    - Include dependencies in dependency array
    - Type event parameters explicitly
 
 6. **Performance Optimization**:
-
    - Wrap component with memo for shallow prop comparison
    - Use useMemo for expensive computations
    - Properly manage dependencies in useCallback and useMemo
 
 7. **Context**:
-
    - Replace this.context with useContext hook
    - Type context properly
 
 8. **Security**:
-
    - Sanitize any HTML content before using dangerouslySetInnerHTML
    - Validate external data with type guards
    - Use TypeScript's strict mode
 
 9. **Cleanup**:
-
    - Remove all class-specific code (this, bind, constructor)
    - Set displayName for debugging
    - Ensure no PropTypes are used

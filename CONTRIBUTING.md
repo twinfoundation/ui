@@ -26,14 +26,14 @@ Thank you for your interest in contributing to this project! This guide will hel
 1. **Fork the repository** and clone your fork:
 
    ```shell
-   git clone https://github.com/your-username/framework.git
-   cd framework
+   git clone https://github.com/twinfoundation/<repo>.git
+   cd <repo>
    ```
 
 2. **Install dependencies**:
 
    ```shell
-   npm ci
+   npm install
    ```
 
 3. **Verify setup** by running a full build:
@@ -69,7 +69,9 @@ Each package will have a `dist` folder containing:
 - **`types/`** - TypeScript declaration files (`.d.ts`)
 - **`docs/`** - Auto-generated API documentation in Markdown format
 
-### Development Commands
+### Development Commands for Repository
+
+These commands are available at the repository level.
 
 ```shell
 # Format code with Prettier
@@ -78,39 +80,46 @@ npm run format
 # Run ESLint checks
 npm run lint
 
-# Run tests only
-npm run test
+# Perform a complete build
+npm run dist
+```
 
-# Build without tests (faster during development)
+### Development Commands for Packages
+
+These command are available in each package.
+
+```shell
+# Build without tests (faster during development, you will also need to run npm run bundle:esm)
 npm run build
 
-# Clean build artifacts
-npm run clean
+# Watch the files and auto build and package when spotting changes
+npm run dev
+
+# Bundle the esm packages
+npm run bundle:esm
+
+# Bundle the cjs packages
+npm run bundle:cjs
+
+# Build the docs
+npm run docs
+
+# Run the tests
+npm run test
+
+# Complete build (build, package, test and docs)
+npm run dist
 ```
 
 ## Code Standards
 
 ### Quality Requirements
 
-Before committing code, ensure it meets our quality standards:
+Before committing code, ensure it meets our quality standards, by running the following combined commands from the repo root:
 
-1. **Format your code:**
-
-   ```shell
-   npm run format
-   ```
-
-2. **Fix linting issues:**
-
-   ```shell
-   npm run lint
-   ```
-
-3. **Run tests:**
-
-   ```shell
-   npm run test
-   ```
+```shell
+npm run format && npm run lint && npm run dist
+```
 
 ### Code Style Guidelines
 
@@ -238,13 +247,11 @@ Before submitting your PR:
 For development/beta releases from the `next` branch:
 
 1. **Prepare Release**:
-
    - Run `Prepare Release` GitHub Action on `next` branch
    - Set semver type to `prerelease`
    - This creates a PR with version bumps and changelog updates
 
 2. **Review & Merge**:
-
    - Review the generated PR carefully
    - Merge the PR to `next` branch
 
@@ -258,27 +265,22 @@ For development/beta releases from the `next` branch:
 For stable releases to the `main` branch:
 
 1. **Prepare Main Branch**:
-
    - Run `Versions Prepare` on `main` branch
    - Set type to `production`
    - Creates PR merging `next` to `main`
 
 2. **Merge to Main**:
-
    - Review and merge the preparation PR
 
 3. **Prepare Release**:
-
    - Run `Prepare Release` GitHub Action on `main` branch
    - Choose semver type: `major`, `minor`, or `patch`
    - Creates PR with version bumps and changelog updates
 
 4. **Merge Release**:
-
    - Review and merge the release PR
 
 5. **Publish**:
-
    - Run `Publish Release` GitHub Action
    - Publishes packages to NPM with `latest` tag
    - Creates stable GitHub releases

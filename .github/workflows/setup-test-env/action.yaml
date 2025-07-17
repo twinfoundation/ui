@@ -1,0 +1,16 @@
+name: 'Setup Testing Environment'
+description: 'Set up the testing environment for running tests from the build workflow.'
+
+inputs:
+  package:
+    description: 'The package to set up the test environment for.'
+    required: true
+    default: 'all'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: No setup
+      shell: bash
+      run: |
+        echo "No setup required for this action. It is a placeholder for the testing environment setup."
