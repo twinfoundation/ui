@@ -448,6 +448,11 @@
 			"import": "./dist/es/footer/footer.mjs",
 			"require": "./dist/cjs/footer/footer.js"
 		},
+		"./footer-2": {
+			"types": "./dist/types/footer-2/footer-2.d.ts",
+			"import": "./dist/es/footer-2/footer-2.mjs",
+			"require": "./dist/cjs/footer-2/footer-2.js"
+		},
 		"./label": {
 			"types": "./dist/types/label/label.d.ts",
 			"import": "./dist/es/label/label.mjs",

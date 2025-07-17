@@ -39,6 +39,8 @@ export { Dropdown2 } from "./dropdown-2/dropdown-2";
 export { Footer } from "./footer/footer";
 export type { FooterProps } from "./footer/footerProps";
 
+// Footer2
+export { Footer as Footer2 } from "./footer-2/footer-2";
 // Icons - Re-exported from icons for backward compatibility
 // export * from "./icons";
 
