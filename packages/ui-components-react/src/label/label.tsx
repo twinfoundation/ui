@@ -7,12 +7,8 @@ import type { LabelProps } from "./labelProps";
 /**
  * Label component.
  */
-export const Label = memo(
-	({ children, value, ...rest }: LabelProps): JSX.Element => (
-		<FlowbiteLabel value={value} {...rest}>
-			{value ?? children ?? ""}
-		</FlowbiteLabel>
-	)
-);
+export const Label = memo(({ children, ...rest }: LabelProps): JSX.Element => (
+	<FlowbiteLabel {...rest}>{children}</FlowbiteLabel>
+));
 
 Label.displayName = "Label";

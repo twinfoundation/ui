@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
 import { Navbar } from "../";
-import { Dropdown as FlowbiteDropdown, Avatar as FlowbiteAvatar } from "flowbite-react";
+import { Dropdown, DropdownHeader, DropdownDivider, DropdownItem, Avatar } from "flowbite-react";
 import { createElement } from "react";
 import type { JSX } from "react";
 
@@ -57,38 +57,17 @@ const createBrand = (): JSX.Element =>
 		)
 	);
 
-const createUserDropdown = (): JSX.Element =>
-	createElement(
-		"div",
-		{ className: "flex md:order-2" },
-		createElement(
-			FlowbiteDropdown,
-			{
-				arrowIcon: false,
-				inline: true,
-				label: createElement(FlowbiteAvatar, {
-					alt: "User settings",
-					img: "https://flowbite.com/docs/images/people/profile-picture-5.jpg",
-					rounded: true
-				})
-			},
-			createElement(
-				FlowbiteDropdown.Header,
-				null,
-				createElement("span", { className: "block text-sm" }, "Bonnie Green"),
-				createElement(
-					"span",
-					{ className: "block truncate text-sm font-medium" },
-					"name@flowbite.com"
-				)
-			),
-			createElement(FlowbiteDropdown.Item, null, "Dashboard"),
-			createElement(FlowbiteDropdown.Item, null, "Settings"),
-			createElement(FlowbiteDropdown.Item, null, "Earnings"),
-			createElement(FlowbiteDropdown.Divider, null),
-			createElement(FlowbiteDropdown.Item, null, "Sign out")
-		)
-	);
+const createUserDropdown = (): JSX.Element => (
+  <div className="flex md:order-2">
+    <Dropdown
+      arrowIcon={false}
+      inline
+      label={<Avatar alt="User settings" img="https://flowbite.com/docs/images/people/profile-picture-5.jpg" rounded />}
+    >
+      {dropdownItems}
+    </Dropdown>
+  </div>
+);
 
 const createNavLinks = (): JSX.Element =>
 	createElement(
@@ -100,6 +79,15 @@ const createNavLinks = (): JSX.Element =>
 		createElement(Navbar.Link, { href: "#" }, "Blog")
 	);
 
+const dropdownItems = [
+	<DropdownHeader key="header">Header</DropdownHeader>,
+	<DropdownItem key="dashboard">Dashboard</DropdownItem>,
+	<DropdownItem key="settings">Settings</DropdownItem>,
+	<DropdownItem key="earnings">Earnings</DropdownItem>,
+	<DropdownDivider key="divider" />,
+	<DropdownItem key="signout">Sign out</DropdownItem>
+];
+
 /**
  * Default navbar with brand, user dropdown, and navigation links.
  */
@@ -108,15 +96,14 @@ export const Default: Story = {
 		fluid: false,
 		rounded: false
 	},
-	render: args =>
-		createElement(
-			Navbar,
-			args,
-			createBrand(),
-			createUserDropdown(),
-			createElement(Navbar.Toggle),
-			createNavLinks()
-		)
+	render: args => (
+		<Navbar {...args}>
+			{createBrand()}
+			{createUserDropdown()}
+			<Navbar.Toggle />
+			{createNavLinks()}
+		</Navbar>
+	)
 };
 
 /**
@@ -126,8 +113,13 @@ export const Rounded: Story = {
 	args: {
 		rounded: true
 	},
-	render: args =>
-		createElement(Navbar, args, createBrand(), createElement(Navbar.Toggle), createNavLinks())
+	render: args => (
+		<Navbar {...args}>
+			{createBrand()}
+			<Navbar.Toggle />
+			{createNavLinks()}
+		</Navbar>
+	)
 };
 
 /**
@@ -137,6 +129,11 @@ export const Fluid: Story = {
 	args: {
 		fluid: true
 	},
-	render: args =>
-		createElement(Navbar, args, createBrand(), createElement(Navbar.Toggle), createNavLinks())
+	render: args => (
+		<Navbar {...args}>
+			{createBrand()}
+			<Navbar.Toggle />
+			{createNavLinks()}
+		</Navbar>
+	)
 };
