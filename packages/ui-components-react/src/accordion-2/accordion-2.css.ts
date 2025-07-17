@@ -9,6 +9,7 @@ export const accordion = style({
   backgroundColor: '#f9fafb',
   overflow: 'hidden',
   boxShadow: 'none',
+  boxSizing: 'border-box',
 });
 
 // Flush variant (no borders/background)
@@ -27,6 +28,7 @@ export const panel = style({
   },
   paddingTop: '0.25rem',
   paddingBottom: '0.25rem',
+  boxSizing: 'border-box',
 });
 
 // Flush panel variant
@@ -36,6 +38,7 @@ export const flushPanel = style({
   ':last-child': {
     borderBottom: 'none',
   },
+  boxSizing: 'border-box',
 });
 
 // Accordion title button
@@ -43,7 +46,6 @@ export const title = style({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
-  width: '100%',
   padding: '1.25rem 1.5rem',
   fontSize: '1rem',
   fontWeight: 500,
@@ -54,6 +56,7 @@ export const title = style({
   cursor: 'pointer',
   transition: 'color 0.2s',
   outline: 'none',
+  boxSizing: 'border-box',
   ':hover': {
     color: '#2563eb',
     background: '#f3f4f6',
@@ -70,6 +73,8 @@ export const titleContent = style({
   display: 'flex',
   alignItems: 'center',
   gap: '0.5rem',
+  flex: 1,
+  minWidth: 0,
 });
 
 // Icon wrapper
@@ -80,6 +85,7 @@ export const iconWrapper = style({
   fontSize: '1.25rem',
   height: '1.25rem',
   width: '1.25rem',
+  flexShrink: 0,
 });
 
 // Chevron icon
@@ -99,11 +105,15 @@ export const chevronExpanded = style({
 
 // Accordion content
 export const content = style({
+  width: '100%',
+  minWidth: '100%',
+  maxWidth: '100%',
   padding: '0 1.5rem 1.25rem',
   color: '#374151',
   fontSize: '1rem',
   lineHeight: 1.6,
   background: '#f9fafb',
+  boxSizing: 'border-box',
 });
 
 // Content animation variants

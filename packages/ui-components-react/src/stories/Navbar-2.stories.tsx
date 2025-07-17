@@ -19,7 +19,7 @@ export const Default: Story = {
   args: {
     brand: {
       href: "#",
-      src: "https://via.placeholder.com/32x32",
+      src: "https://assets.weforum.org/sites/a0eTG000008PHKPYA4/3LI3Z9COsps.jpg",
       alt: "Brand logo",
       name: "Brand Name",
     },
@@ -36,7 +36,7 @@ export const WithProfile: Story = {
   args: {
     brand: {
       href: "#",
-      src: "https://via.placeholder.com/32x32",
+      src: "https://assets.weforum.org/sites/a0eTG000008PHKPYA4/3LI3Z9COsps.jpg",
       alt: "Brand logo",
       name: "Brand Name",
     },
@@ -47,7 +47,7 @@ export const WithProfile: Story = {
       { href: "#", label: "Contact" },
     ],
     profileInfo: {
-      thumbnail: "https://via.placeholder.com/40x40",
+      thumbnail: "https://flowbite.com/docs/images/people/profile-picture-5.jpg",
       name: "John Doe",
       email: "john.doe@example.com",
       profileLinks: [

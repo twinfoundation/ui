@@ -7,8 +7,20 @@ const meta = {
   title: "Components/Accordion2",
   component: Accordion2,
   parameters: {
-    layout: "centered",
+    layout: "fullscreen",
   },
+  decorators: [
+    (Story) => (
+      <div style={{ 
+        width: '100%', 
+        maxWidth: '100%', 
+        padding: '20px',
+        boxSizing: 'border-box'
+      }}>
+        <Story />
+      </div>
+    ),
+  ],
   tags: ["autodocs"],
 } satisfies Meta<typeof Accordion2>;
 
@@ -21,7 +33,7 @@ export const Default: Story = {
       {
         title: 'Accordion 1',
         content: (
-          <div style={{ marginTop: '1rem' }}>
+          <div style={{ marginTop: '1rem', width: '100%' }}>
             <p style={{ marginBottom: '0.5rem', color: '#6b7280' }}>
               This is an open-source library of interactive components built with modern web technologies.
             </p>
@@ -41,7 +53,7 @@ export const Default: Story = {
       {
         title: 'Is there a design file available?',
         content: (
-          <div style={{ marginTop: '1rem' }}>
+          <div style={{ marginTop: '1rem', width: '100%' }}>
             <p style={{ marginBottom: '0.5rem', color: '#6b7280' }}>
               This component library is first conceptualized and designed using modern design software so everything you see in the library has a design equivalent.
             </p>
@@ -61,7 +73,7 @@ export const Default: Story = {
       {
         title: 'What are the differences between this and other UI libraries?',
         content: (
-          <div style={{ marginTop: '1rem' }}>
+          <div style={{ marginTop: '1rem', width: '100%' }}>
             <p style={{ marginBottom: '0.5rem', color: '#6b7280' }}>
               The main difference is that this component library is open source under the MIT license, whereas some other libraries are paid products. Another difference is that this library relies on smaller and standalone components.
             </p>
@@ -103,11 +115,11 @@ export const AlwaysOpen: Story = {
     items: [
       {
         title: 'Always Open Panel 1',
-        content: <p style={{ color: '#6b7280', marginTop: '1rem' }}>This panel can stay open while others are opened.</p>,
+        content: <p style={{ color: '#6b7280', marginTop: '1rem', width: '100%' }}>This panel can stay open while others are opened.</p>,
       },
       {
         title: 'Always Open Panel 2',
-        content: <p style={{ color: '#6b7280', marginTop: '1rem' }}>Multiple panels can be open at the same time.</p>,
+        content: <p style={{ color: '#6b7280', marginTop: '1rem', width: '100%' }}>Multiple panels can be open at the same time.</p>,
       },
     ],
   },
@@ -119,11 +131,11 @@ export const CollapseAll: Story = {
     items: [
       {
         title: 'Collapsed Panel 1',
-        content: <p style={{ color: '#6b7280', marginTop: '1rem' }}>This panel starts collapsed.</p>,
+        content: <p style={{ color: '#6b7280', marginTop: '1rem', width: '100%' }}>This panel starts collapsed.</p>,
       },
       {
         title: 'Collapsed Panel 2',
-        content: <p style={{ color: '#6b7280', marginTop: '1rem' }}>This panel also starts collapsed.</p>,
+        content: <p style={{ color: '#6b7280', marginTop: '1rem', width: '100%' }}>This panel also starts collapsed.</p>,
       },
     ],
   },
@@ -135,11 +147,11 @@ export const Flush: Story = {
     items: [
       {
         title: 'Flush Panel 1',
-        content: <p style={{ color: '#6b7280', marginTop: '1rem' }}>This panel has no borders or background.</p>,
+        content: <p style={{ color: '#6b7280', marginTop: '1rem', width: '100%' }}>This panel has no borders or background.</p>,
       },
       {
         title: 'Flush Panel 2',
-        content: <p style={{ color: '#6b7280', marginTop: '1rem' }}>Clean, minimal appearance.</p>,
+        content: <p style={{ color: '#6b7280', marginTop: '1rem', width: '100%' }}>Clean, minimal appearance.</p>,
       },
     ],
   },

@@ -17,14 +17,14 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    img: "https://via.placeholder.com/150",
+    img: "https://flowbite.com/docs/images/people/profile-picture-5.jpg",
     alt: "User avatar",
   },
 };
 
 export const WithStatus: Story = {
   args: {
-    img: "https://via.placeholder.com/150",
+    img: "https://flowbite.com/docs/images/people/profile-picture-5.jpg",
     alt: "User avatar",
     status: "online",
   },
@@ -32,7 +32,7 @@ export const WithStatus: Story = {
 
 export const WithStatusOffline: Story = {
   args: {
-    img: "https://via.placeholder.com/150",
+    img: "https://flowbite.com/docs/images/people/profile-picture-5.jpg",
     alt: "User avatar",
     status: "offline",
   },
@@ -40,7 +40,7 @@ export const WithStatusOffline: Story = {
 
 export const WithStatusAway: Story = {
   args: {
-    img: "https://via.placeholder.com/150",
+    img: "https://flowbite.com/docs/images/people/profile-picture-5.jpg",
     alt: "User avatar",
     status: "away",
   },
@@ -48,7 +48,7 @@ export const WithStatusAway: Story = {
 
 export const WithStatusBusy: Story = {
   args: {
-    img: "https://via.placeholder.com/150",
+    img: "https://flowbite.com/docs/images/people/profile-picture-5.jpg",
     alt: "User avatar",
     status: "busy",
   },

@@ -54,6 +54,7 @@ export const Accordion: FC<Accordion2Props> = ({
         <div
           key={`accordion-panel-${index}`}
           className={flush ? styles.flushPanel : styles.panel}
+          style={{ width: '100%' }}
         >
           <button
             type="button"
@@ -61,6 +62,7 @@ export const Accordion: FC<Accordion2Props> = ({
             onClick={() => togglePanel(index)}
             aria-expanded={isOpen}
             aria-controls={`accordion-content-${index}`}
+            style={{ width: '100%' }}
           >
             <div className={styles.titleContent}>
               {IconComponent && (
@@ -88,6 +90,7 @@ export const Accordion: FC<Accordion2Props> = ({
             className={`${styles.content} ${styles.contentVariants[isOpen ? 'expanded' : 'collapsed']}`}
             role="region"
             aria-labelledby={`accordion-title-${index}`}
+            style={{ width: '100%' }}
           >
             {item.content}
           </div>
