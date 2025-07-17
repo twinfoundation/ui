@@ -1,65 +1,92 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { Navbar } from '../navbar-2';
+import type { Meta, StoryObj } from "@storybook/react";
+import { Navbar } from "../navbar-2";
 
 const meta: Meta<typeof Navbar> = {
-  title: 'Components/Navbar2',
+  title: "Components/Navbar2",
   component: Navbar,
-  tags: ['autodocs'],
 };
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof Navbar>;
 
 export const Default: Story = {
-  render: () => (
-    <Navbar>
-      <Navbar.Brand href="#">
-        <img src="https://flowbite.com/docs/images/logo.svg" alt="Logo" style={{ height: 32 }} />
-        <span>Brand</span>
-      </Navbar.Brand>
-      <Navbar.Toggle />
-      <Navbar.Collapse>
-        <Navbar.Link href="#" active>Home</Navbar.Link>
-        <Navbar.Link href="#">About</Navbar.Link>
-        <Navbar.Link href="#">Services</Navbar.Link>
-        <Navbar.Link href="#">Contact</Navbar.Link>
-      </Navbar.Collapse>
-    </Navbar>
-  ),
+  args: {
+    brand: {
+      href: "https://www.twin.org",
+      src: "https://assets.weforum.org/sites/a0eTG000008PHKPYA4/3LI3Z9COsps.jpg",
+      alt: "Twin Logo",
+      name: "TWIN"
+    },
+    links: [
+      { href: "#", label: "Home", active: true },
+      { href: "#", label: "Features" },
+      { href: "#", label: "Pricing" },
+      { href: "#", label: "Blog" }
+    ],
+    variant: "default"
+  }
 };
 
 export const Fluid: Story = {
-  render: () => (
-    <Navbar fluid>
-      <Navbar.Brand href="#">
-        <img src="https://flowbite.com/docs/images/logo.svg" alt="Logo" style={{ height: 32 }} />
-        <span>Brand</span>
-      </Navbar.Brand>
-      <Navbar.Toggle />
-      <Navbar.Collapse>
-        <Navbar.Link href="#" active>Home</Navbar.Link>
-        <Navbar.Link href="#">About</Navbar.Link>
-        <Navbar.Link href="#">Services</Navbar.Link>
-        <Navbar.Link href="#">Contact</Navbar.Link>
-      </Navbar.Collapse>
-    </Navbar>
-  ),
+  args: {
+    brand: {
+      href: "https://www.twin.org",
+      src: "https://assets.weforum.org/sites/a0eTG000008PHKPYA4/3LI3Z9COsps.jpg",
+      alt: "Twin Logo",
+      name: "TWIN"
+    },
+    links: [
+      { href: "#", label: "Home", active: true },
+      { href: "#", label: "Features" },
+      { href: "#", label: "Pricing" },
+      { href: "#", label: "Blog" }
+    ],
+    variant: "fluid"
+  }
 };
 
 export const Rounded: Story = {
-  render: () => (
-    <Navbar rounded>
-      <Navbar.Brand href="#">
-        <img src="https://flowbite.com/docs/images/logo.svg" alt="Logo" style={{ height: 32 }} />
-        <span>Brand</span>
-      </Navbar.Brand>
-      <Navbar.Toggle />
-      <Navbar.Collapse>
-        <Navbar.Link href="#" active>Home</Navbar.Link>
-        <Navbar.Link href="#">About</Navbar.Link>
-        <Navbar.Link href="#">Services</Navbar.Link>
-        <Navbar.Link href="#">Contact</Navbar.Link>
-      </Navbar.Collapse>
-    </Navbar>
-  ),
+  args: {
+    brand: {
+      href: "https://www.twin.org",
+      src: "https://assets.weforum.org/sites/a0eTG000008PHKPYA4/3LI3Z9COsps.jpg",
+      alt: "Twin Logo",
+      name: "TWIN"
+    },
+    links: [
+      { href: "#", label: "Home", active: true },
+      { href: "#", label: "Features" },
+      { href: "#", label: "Pricing" },
+      { href: "#", label: "Blog" }
+    ],
+    variant: "rounded"
+  }
+};
+
+export const WithProfile: Story = {
+  args: {
+    brand: {
+      href: "https://www.twin.org",
+      src: "https://assets.weforum.org/sites/a0eTG000008PHKPYA4/3LI3Z9COsps.jpg",
+      alt: "Twin Logo",
+      name: "TWIN"
+    },
+    links: [
+      { href: "#", label: "Home", active: true },
+      { href: "#", label: "Features" },
+      { href: "#", label: "Pricing" },
+      { href: "#", label: "Blog" }
+    ],
+    variant: "default",
+    profileInfo: {
+      thumbnail: "https://flowbite.com/docs/images/people/profile-picture-5.jpg",
+      name: "Bonnie Green",
+      email: "name@flowbite.com",
+      profileLinks: [
+        { href: "#", label: "Dashboard" },
+        { href: "#", label: "Settings" },
+        { href: "#", label: "Earnings" }
+      ]
+    }
+  }
 }; 

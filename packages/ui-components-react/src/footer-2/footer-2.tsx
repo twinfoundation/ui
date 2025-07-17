@@ -1,60 +1,70 @@
-import { FC, ReactNode } from "react";
+import { FC } from "react";
 import * as styles from "./footer-2.css";
-import type {
-  FooterProps,
-  FooterBrandProps,
-  FooterCopyrightProps,
-  FooterIconProps,
-  FooterLinkProps,
-  FooterLinkGroupProps,
-  FooterTitleProps
-} from "../footer/footerProps";
 
-const Brand: FC<FooterBrandProps> = ({ alt, href, name, src }) => (
-  <a href={href} className={styles.brand}>
-    {src && <img src={src} alt={alt} className={styles.brandImg} />}
-    {name && <span className={styles.brandName}>{name}</span>}
-  </a>
-);
+// Types for new props
+export interface FooterBrandData {
+  href: string;
+  src: string;
+  alt: string;
+  name: string;
+}
+export interface FooterLinkData {
+  href: string;
+  label: string;
+}
+export interface FooterColumnData {
+  title: string;
+  links: FooterLinkData[];
+}
+export interface FooterIconLinkData {
+  href: string;
+  icon: FC<React.SVGProps<SVGSVGElement>>;
+  ariaLabel?: string;
+}
+export interface FooterProps {
+  brand: FooterBrandData;
+  columns: FooterColumnData[];
+  iconLinks?: FooterIconLinkData[];
+  copyright?: string;
+}
 
-const Copyright: FC<FooterCopyrightProps> = ({ by, href, year }) => (
-  <div className={styles.copyright}>
-    &copy; {year} {href ? <a href={href}>{by}</a> : by}
-  </div>
-);
-
-const Divider: FC = () => <hr className={styles.divider} />;
-
-const Icon: FC<FooterIconProps> = ({ href, icon: IconComp, className, ariaLabel }) => (
-  <a href={href} className={`${styles.icon} ${className || ""}`} aria-label={ariaLabel}>
-    <IconComp />
-  </a>
-);
-
-const Link: FC<FooterLinkProps> = ({ href, children }) => (
-  <a href={href} className={styles.link}>
-    {children}
-  </a>
-);
-
-const LinkGroup: FC<FooterLinkGroupProps> = ({ col, children }) => (
-  <div className={col ? styles.linkGroupCol : styles.linkGroupRow}>{children}</div>
-);
-
-const Title: FC<FooterTitleProps> = ({ title }) => <span className={styles.title}>{title}</span>;
-
-const FooterBase: FC<FooterProps> = ({ body, ...rest }) => (
-  <footer className={styles.footer} {...rest}>
-    {body}
+export const Footer: FC<FooterProps> = ({ brand, columns, iconLinks, copyright }) => (
+  <footer className={styles.footer}>
+    <div className={styles.topRow}>
+      <div className={styles.brandCol}>
+        <a href={brand.href} className={styles.brand}>
+          <img src={brand.src} alt={brand.alt} className={styles.brandImg} />
+          <span className={styles.brandName}>{brand.name}</span>
+        </a>
+      </div>
+      <div className={styles.linksGrid}>
+        {columns.map((col, i) => (
+          <div key={i}>
+            <h2 className={styles.title}>{col.title}</h2>
+            <div className={styles.linkGroupCol}>
+              {col.links.map((link, j) => (
+                <a key={j} href={link.href} className={styles.link}>
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+    {(copyright || (iconLinks && iconLinks.length > 0)) && (
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <span className={styles.copyright}>{copyright}</span>
+        {iconLinks && iconLinks.length > 0 && (
+          <div className={styles.iconsCol}>
+            {iconLinks.map((icon, i) => (
+              <a key={i} href={icon.href} aria-label={icon.ariaLabel}>
+                <icon.icon />
+              </a>
+            ))}
+          </div>
+        )}
+      </div>
+    )}
   </footer>
-);
-
-export const Footer = Object.assign(FooterBase, {
-  Brand,
-  Copyright,
-  Divider,
-  Icon,
-  Link,
-  LinkGroup,
-  Title
-}); 
+); 
