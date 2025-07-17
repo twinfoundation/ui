@@ -29,7 +29,9 @@ import React, {
 	type ReactElement
 } from "react";
 import * as styles from "./dropdown-2.css";
-import { Button, type ButtonColor, type ButtonProps } from "../button";
+import { Button2 as Button } from "../button-2/button-2";
+import { ButtonProps } from "../button-2/buttonProps";
+import { ButtonColor } from "../button-2/buttonColors";
 import type { IconsProps } from "../icons";
 import { DropdownContext } from "./dropdownContext";
 import { DropdownDivider } from "./dropdownDivider";

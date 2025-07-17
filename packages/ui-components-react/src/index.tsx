@@ -4,57 +4,26 @@
 // Re-export components with their related types, constants and utils
 // This pattern keeps related exports together and improves discoverability
 
-// Accordion
-export { Accordion } from "./accordion/accordion";
-export type { AccordionProps } from "./accordion/accordionProps";
-
-// Avatar
-export { Avatar } from "./avatar/avatar";
-export type { AvatarProps } from "./avatar/avatarProps";
+// Accordion2
+export { Accordion as Accordion2 } from "./accordion-2/accordion-2";
 
 // Avatar2
 export { Avatar2 } from "./avatar-2/avatar-2";
 
-// Button
-export { Button } from "./button/button";
-export { ButtonColors } from "./button/buttonColors";
-export { ButtonSizes } from "./button/buttonSizes";
-export type { ButtonProps } from "./button/buttonProps";
-export type { ButtonSize } from "./button/buttonSizes";
-
 // Button2
 export { Button2 } from "./button-2/button-2";
-
-// Dropdown
-export { Dropdown } from "./dropdown/dropdown";
-export { DropdownPositions } from "./dropdown/dropdownPositions";
-export { DropdownSizes } from "./dropdown/dropdownSizes";
-export type { DropdownSize } from "./dropdown/dropdownSizes";
-export type { DropdownProps } from "./dropdown/dropdownProps";
 
 // Dropdown2
 export { Dropdown2 } from "./dropdown-2/dropdown-2";
 
-// Footer
-export { Footer } from "./footer/footer";
-export type { FooterProps } from "./footer/footerProps";
-
 // Footer2
 export { Footer as Footer2 } from "./footer-2/footer-2";
-// Icons - Re-exported from icons for backward compatibility
-// export * from "./icons";
 
-// Label
-export { Label } from "./label/label";
-export type { LabelProps } from "./label/labelProps";
+// Label2
+export { Label as Label2 } from "./label-2/label-2";
 
-// Navbar
-export { Navbar } from "./navbar/navbar";
-export type { NavbarProps } from "./navbar/navbarProps";
-
-// Textarea
-export { Textarea } from "./textarea/textarea";
-export type { TextareaProps } from "./textarea/textareaProps";
+// Navbar2
+export { Navbar as Navbar2 } from "./navbar-2/navbar-2";
 
 // Textarea2
 export { Textarea2 } from "./textarea-2/textarea-2";

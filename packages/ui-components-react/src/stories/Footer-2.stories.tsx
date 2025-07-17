@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Footer } from '../footer-2';
+import { Footer } from '../footer-2/footer-2';
 import { House, Envelope, PlayStop, File } from "../icons";
 
 const meta: Meta<typeof Footer> = {

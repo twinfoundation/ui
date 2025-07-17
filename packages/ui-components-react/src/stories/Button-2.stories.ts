@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
-import { ButtonColors } from "../button/buttonColors";
-import { ButtonSizes } from "../button/buttonSizes";
+import { ButtonColors } from "../button-2/buttonColors";
+import { ButtonSizes } from "../button-2/buttonSizes";
 import { Button2 } from "../button-2/button-2";
 import { ArrowRight } from "../icons/arrowRight";
 import { Plus } from "../icons/plus";

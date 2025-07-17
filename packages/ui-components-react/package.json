@@ -403,80 +403,40 @@
 			"import": "./dist/es/icons/*.js",
 			"require": "./dist/cjs/icons/*.js"
 		},
-		"./accordion": {
-			"types": "./dist/types/accordion/accordion.d.ts",
-			"import": "./dist/es/accordion/accordion.mjs",
-			"require": "./dist/cjs/accordion/accordion.js"
-		},
 		"./accordion-2": {
 			"types": "./dist/types/accordion-2/accordion-2.d.ts",
 			"import": "./dist/es/accordion-2/accordion-2.mjs",
 			"require": "./dist/cjs/accordion-2/accordion-2.js"
-		},
-		"./avatar": {
-			"types": "./dist/types/avatar/avatar.d.ts",
-			"import": "./dist/es/avatar/avatar.mjs",
-			"require": "./dist/cjs/avatar/avatar.js"
 		},
 		"./avatar-2": {
 			"types": "./dist/types/avatar-2/avatar-2.d.ts",
 			"import": "./dist/es/avatar-2/avatar-2.mjs",
 			"require": "./dist/cjs/avatar-2/avatar-2.js"
 		},
-		"./button": {
-			"types": "./dist/types/button/button.d.ts",
-			"import": "./dist/es/button/button.mjs",
-			"require": "./dist/cjs/button/button.js"
-		},
 		"./button-2": {
 			"types": "./dist/types/button-2/button-2.d.ts",
 			"import": "./dist/es/button-2/button-2.mjs",
 			"require": "./dist/cjs/button-2/button-2.js"
-		},
-		"./dropdown": {
-			"types": "./dist/types/dropdown/dropdown.d.ts",
-			"import": "./dist/es/dropdown/dropdown.mjs",
-			"require": "./dist/cjs/dropdown/dropdown.js"
 		},
 		"./dropdown-2": {
 			"types": "./dist/types/dropdown-2/dropdown-2.d.ts",
 			"import": "./dist/es/dropdown-2/dropdown-2.mjs",
 			"require": "./dist/cjs/dropdown-2/dropdown-2.js"
 		},
-		"./footer": {
-			"types": "./dist/types/footer/footer.d.ts",
-			"import": "./dist/es/footer/footer.mjs",
-			"require": "./dist/cjs/footer/footer.js"
-		},
 		"./footer-2": {
 			"types": "./dist/types/footer-2/footer-2.d.ts",
 			"import": "./dist/es/footer-2/footer-2.mjs",
 			"require": "./dist/cjs/footer-2/footer-2.js"
-		},
-		"./label": {
-			"types": "./dist/types/label/label.d.ts",
-			"import": "./dist/es/label/label.mjs",
-			"require": "./dist/cjs/label/label.js"
 		},
 		"./label-2": {
 			"types": "./dist/types/label-2/label-2.d.ts",
 			"import": "./dist/es/label-2/label-2.mjs",
 			"require": "./dist/cjs/label-2/label-2.js"
 		},
-		"./navbar": {
-			"types": "./dist/types/navbar/navbar.d.ts",
-			"import": "./dist/es/navbar/navbar.mjs",
-			"require": "./dist/cjs/navbar/navbar.js"
-		},
 		"./navbar-2": {
 			"types": "./dist/types/navbar-2/navbar-2.d.ts",
 			"import": "./dist/es/navbar-2/navbar-2.mjs",
 			"require": "./dist/cjs/navbar-2/navbar-2.js"
-		},
-		"./textarea": {
-			"types": "./dist/types/textarea/textarea.d.ts",
-			"import": "./dist/es/textarea/textarea.mjs",
-			"require": "./dist/cjs/textarea/textarea.js"
 		},
 		"./textarea-2": {
 			"types": "./dist/types/textarea-2/textarea-2.d.ts",
