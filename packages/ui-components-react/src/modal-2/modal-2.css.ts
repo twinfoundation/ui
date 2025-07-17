@@ -28,6 +28,7 @@ export const overlay = style({
   justifyContent: 'center',
   zIndex: 1000,
   animation: `${fadeIn} 0.2s ease-out`,
+  cursor: 'pointer', // Add cursor pointer to indicate clickable area
 });
 
 export const modal = style({
@@ -39,6 +40,7 @@ export const modal = style({
   maxHeight: '90vh',
   overflow: 'auto',
   animation: `${slideIn} 0.2s ease-out`,
+  cursor: 'default', // Reset cursor for modal content
 });
 
 export const header = style({

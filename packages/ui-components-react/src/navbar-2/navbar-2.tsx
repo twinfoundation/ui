@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import * as styles from "./navbar-2.css";
 
+// Navbar component interfaces and types
 export interface NavbarBrand {
   href: string;
   src: string;
@@ -33,6 +34,25 @@ export interface NavbarProps {
 
 export const Navbar: React.FC<NavbarProps> = ({ brand, links, variant = "default", profileInfo }) => {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
+  const profileRef = useRef<HTMLDivElement>(null);
+
+  // Handle click outside to close profile dropdown
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (profileRef.current && !profileRef.current.contains(event.target as Node)) {
+        setIsProfileOpen(false);
+      }
+    };
+
+    // Only add event listener if profile dropdown is open
+    if (isProfileOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isProfileOpen]);
 
   return (
     <nav
@@ -59,9 +79,8 @@ export const Navbar: React.FC<NavbarProps> = ({ brand, links, variant = "default
         ))}
       </div>
       <div className={styles.right}>
-        {console.log(profileInfo)}
         {profileInfo ? (
-          <div className={styles.profileContainer}>
+          <div ref={profileRef} className={styles.profileContainer}>
             <button
               className={styles.profileButton}
               onClick={() => setIsProfileOpen(!isProfileOpen)}
@@ -89,7 +108,7 @@ export const Navbar: React.FC<NavbarProps> = ({ brand, links, variant = "default
             )}
           </div>
         ) : (
-          <span />
+          null // Fixed: replaced empty span with null to resolve TypeScript error
         )}
       </div>
     </nav>

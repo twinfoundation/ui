@@ -6,7 +6,6 @@ export const navbar = style({
   alignItems: 'center',
   justifyContent: 'space-between',
   background: colors.white,
-  borderBottom: `1px solid ${colors.gray200}`,
   padding: '0.75rem 1.5rem',
   minHeight: '3.5rem',
   position: 'relative',
@@ -85,13 +84,14 @@ export const profileDropdown = style({
   right: 0,
   background: colors.white,
   borderRadius: '0.5rem',
+  border: `1px solid ${colors.gray200}`,
   boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
   minWidth: '200px',
   zIndex: 1000,
 });
 
 export const profileHeader = style({
-  padding: '0.75rem 1rem',
+  padding: '0.5rem 1rem',
 });
 
 export const profileName = style({
@@ -104,18 +104,18 @@ export const profileName = style({
 
 export const profileEmail = style({
   display: 'block',
-  fontSize: '0.75rem',
-  color: colors.gray500,
+  fontSize: '0.875rem',
+  fontWeight: 500,
+  color: colors.gray200,
 });
 
 export const profileDivider = style({
   border: 'none',
-  borderTop: `1px solid ${colors.gray200}`,
-  margin: '0.5rem 0',
+  borderTop: `1px solid ${colors.gray100}`,
 });
 
 export const profileLinks = style({
-  padding: '0.5rem 0',
+  padding: '0px',
 });
 
 export const profileLink = style({
