@@ -12,6 +12,7 @@
  * Tree-shaking enables consumers to import only the components they need,
  * reducing bundle sizes significantly in production applications.
  */
+import path from 'path';
 import json from '@rollup/plugin-json';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
@@ -21,8 +22,6 @@ import copy from 'rollup-plugin-copy';
 import postcss from 'rollup-plugin-postcss';
 import svgr from '@svgr/rollup';
 import image from '@rollup/plugin-image';
-
-const isEsm = process.env.MODULE === 'esm';
 
 // SVG to React component plugin
 const svgToComponent = {
@@ -51,10 +50,6 @@ const svgToComponent = {
 		};
 	}
 };
-// Get the format from the environment variable
-const format = isEsm ? 'es' : 'cjs';
-// Set the file extension based on the format
-const extension = format === 'es' ? 'mjs' : 'cjs';
 
 const globals = {
 	react: 'React',
@@ -224,31 +219,22 @@ const baseConfig = {
 const mainBundle = {
 	...baseConfig,
 	input: './dist/es/index.js',
-	output: isEsm
-		? {
-				format,
-				name: 'TwinUIComponents',
-				exports: 'named',
-				globals,
-				sourcemap: process.env.NODE_ENV !== 'production',
-				preserveModules: true,
-				preserveModulesRoot: 'dist/es',
-				dir: `dist/${format}`,
-				entryFileNames: chunkInfo => {
-					if (chunkInfo.name.includes('icons/')) {
-						return '[name].js';
-					}
-					return '[name].mjs';
-				}
+	output: {
+		format: 'es',
+		name: 'TwinUIComponents',
+		exports: 'named',
+		globals,
+		sourcemap: process.env.NODE_ENV !== 'production',
+		preserveModules: true,
+		preserveModulesRoot: 'dist/es',
+		dir: 'dist/es',
+		entryFileNames: chunkInfo => {
+			if (chunkInfo.name.includes('icons/')) {
+				return '[name].js';
 			}
-		: {
-				file: `dist/${format}/index.${extension}`,
-				format,
-				name: 'TwinUIComponents',
-				exports: 'named',
-				globals,
-				sourcemap: process.env.NODE_ENV !== 'production'
-			},
+			return '[name].mjs';
+		}
+	},
 	// Prevent watching the output directory to avoid infinite build loops
 	watch: {
 		exclude: ['dist/**', 'node_modules/**']
