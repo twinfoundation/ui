@@ -1,7 +1,7 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 
-import type { ExtendedRefs } from "@floating-ui/react";
+import type { ExtendedRefs, Placement } from "@floating-ui/react";
 import {
 	FloatingFocusManager,
 	FloatingList,
@@ -9,7 +9,14 @@ import {
 	useTypeahead
 } from "@floating-ui/react";
 
-import type { FloatingProps } from "flowbite-react/components/Floating";
+// Custom type definition to replace Flowbite's FloatingProps
+interface FloatingProps {
+	placement?: Placement;
+	open?: boolean;
+	onOpenChange?: (open: boolean) => void;
+	trigger?: "click" | "hover";
+}
+
 import React, {
 	type SetStateAction,
 	type HTMLProps,

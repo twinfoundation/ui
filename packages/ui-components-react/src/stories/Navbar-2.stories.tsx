@@ -1,92 +1,60 @@
+// Copyright 2024 IOTA Stiftung.
+// SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
-import { Navbar } from "../navbar-2/navbar-2";
+import { Navbar as Navbar2 } from "../navbar-2/navbar-2";
 
-const meta: Meta<typeof Navbar> = {
+const meta = {
   title: "Components/Navbar2",
-  component: Navbar,
-};
+  component: Navbar2,
+  parameters: {
+    layout: "fullscreen",
+  },
+  tags: ["autodocs"],
+} satisfies Meta<typeof Navbar2>;
 
 export default meta;
-type Story = StoryObj<typeof Navbar>;
+type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
     brand: {
-      href: "https://www.twin.org",
-      src: "https://assets.weforum.org/sites/a0eTG000008PHKPYA4/3LI3Z9COsps.jpg",
-      alt: "Twin Logo",
-      name: "TWIN"
+      href: "#",
+      src: "https://via.placeholder.com/32x32",
+      alt: "Brand logo",
+      name: "Brand Name",
     },
     links: [
       { href: "#", label: "Home", active: true },
-      { href: "#", label: "Features" },
-      { href: "#", label: "Pricing" },
-      { href: "#", label: "Blog" }
+      { href: "#", label: "About" },
+      { href: "#", label: "Services" },
+      { href: "#", label: "Contact" },
     ],
-    variant: "default"
-  }
-};
-
-export const Fluid: Story = {
-  args: {
-    brand: {
-      href: "https://www.twin.org",
-      src: "https://assets.weforum.org/sites/a0eTG000008PHKPYA4/3LI3Z9COsps.jpg",
-      alt: "Twin Logo",
-      name: "TWIN"
-    },
-    links: [
-      { href: "#", label: "Home", active: true },
-      { href: "#", label: "Features" },
-      { href: "#", label: "Pricing" },
-      { href: "#", label: "Blog" }
-    ],
-    variant: "fluid"
-  }
-};
-
-export const Rounded: Story = {
-  args: {
-    brand: {
-      href: "https://www.twin.org",
-      src: "https://assets.weforum.org/sites/a0eTG000008PHKPYA4/3LI3Z9COsps.jpg",
-      alt: "Twin Logo",
-      name: "TWIN"
-    },
-    links: [
-      { href: "#", label: "Home", active: true },
-      { href: "#", label: "Features" },
-      { href: "#", label: "Pricing" },
-      { href: "#", label: "Blog" }
-    ],
-    variant: "rounded"
-  }
+  },
 };
 
 export const WithProfile: Story = {
   args: {
     brand: {
-      href: "https://www.twin.org",
-      src: "https://assets.weforum.org/sites/a0eTG000008PHKPYA4/3LI3Z9COsps.jpg",
-      alt: "Twin Logo",
-      name: "TWIN"
+      href: "#",
+      src: "https://via.placeholder.com/32x32",
+      alt: "Brand logo",
+      name: "Brand Name",
     },
     links: [
       { href: "#", label: "Home", active: true },
-      { href: "#", label: "Features" },
-      { href: "#", label: "Pricing" },
-      { href: "#", label: "Blog" }
+      { href: "#", label: "About" },
+      { href: "#", label: "Services" },
+      { href: "#", label: "Contact" },
     ],
-    variant: "default",
     profileInfo: {
-      thumbnail: "https://flowbite.com/docs/images/people/profile-picture-5.jpg",
-      name: "Bonnie Green",
-      email: "name@flowbite.com",
+      thumbnail: "https://via.placeholder.com/40x40",
+      name: "John Doe",
+      email: "john.doe@example.com",
       profileLinks: [
-        { href: "#", label: "Dashboard" },
+        { href: "#", label: "Profile" },
         { href: "#", label: "Settings" },
-        { href: "#", label: "Earnings" }
-      ]
-    }
-  }
+        { href: "#", label: "Help" },
+      ],
+    },
+  },
 }; 
