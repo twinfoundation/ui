@@ -5,6 +5,14 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
 	plugins: [react()],
+	optimizeDeps: {
+		exclude: ['tailwindcss/version.js']
+	},
+	resolve: {
+		alias: {
+			'tailwindcss/version.js': 'tailwindcss/version'
+		}
+	},
 	server: {
 		watch: {
 			usePolling: true

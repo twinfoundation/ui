@@ -21,6 +21,25 @@ const config: StorybookConfig = {
 				'tailwindcss/version.js'
 			];
 		}
+
+		// Handle the tailwindcss/version.js issue in dev mode
+		if (!config.optimizeDeps) {
+			config.optimizeDeps = {};
+		}
+		if (!config.optimizeDeps.exclude) {
+			config.optimizeDeps.exclude = [];
+		}
+		config.optimizeDeps.exclude.push('tailwindcss/version.js');
+
+		// Add resolve alias to handle the missing module
+		if (!config.resolve) {
+			config.resolve = {};
+		}
+		if (!config.resolve.alias) {
+			config.resolve.alias = {};
+		}
+		config.resolve.alias['tailwindcss/version.js'] = 'tailwindcss/version';
+
 		return config;
 	}
 };
