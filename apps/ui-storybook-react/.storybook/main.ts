@@ -40,6 +40,21 @@ const config: StorybookConfig = {
 		}
 		config.resolve.alias['tailwindcss/version.js'] = 'tailwindcss/version';
 
+		// Add a custom plugin to handle the tailwindcss/version.js issue
+		if (!config.plugins) {
+			config.plugins = [];
+		}
+		
+		config.plugins.push({
+			name: 'tailwindcss-version-fix',
+			resolveId(id) {
+				if (id === 'tailwindcss/version.js') {
+					return 'tailwindcss/version';
+				}
+				return null;
+			}
+		});
+
 		return config;
 	}
 };

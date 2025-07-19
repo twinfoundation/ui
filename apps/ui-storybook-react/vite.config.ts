@@ -4,7 +4,18 @@ import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 
 export default defineConfig({
-	plugins: [react()],
+	plugins: [
+		react(),
+		{
+			name: 'tailwindcss-version-fix',
+			resolveId(id) {
+				if (id === 'tailwindcss/version.js') {
+					return 'tailwindcss/version';
+				}
+				return null;
+			}
+		}
+	],
 	optimizeDeps: {
 		exclude: ['tailwindcss/version.js']
 	},
