@@ -1,5 +1,7 @@
+/* Temporarily commented out due to custom Tailwind classes compatibility
+@import '@twin.org/ui-components-core/css/index.css';
+*/
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import '@twin.org/ui-components-core/css/index.css';

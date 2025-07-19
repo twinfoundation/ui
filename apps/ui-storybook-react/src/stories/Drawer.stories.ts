@@ -2,7 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
-import { Drawer, DrawerPositions, ButtonColors } from "@twin.org/ui-components-core";
+import { Drawer, DrawerPositions } from "@twin.org/ui-components-core";
+import { ButtonColors } from "@twin.org/ui-components-enterprise";
 import { Envelope, Plus } from "@twin.org/ui-components-core/icons";
 import { createElement } from "react";
 

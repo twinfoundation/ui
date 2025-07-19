@@ -3,7 +3,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 import { Dropdown, DropdownPositions, DropdownSizes } from "@twin.org/ui-components-enterprise";
-import { CaretDown, SignOut } from "@twin.org/ui-components-enterprise/icons";
+import { CaretDown, X } from "@twin.org/ui-components-enterprise/icons";
 import { createElement } from "react";
 
 // Common dropdown items to reduce repetition
@@ -115,7 +115,7 @@ export const WithItemIcon: Story = {
 			{ label: "Settings" },
 			{ label: "Earnings" },
 			{ divider: true },
-			{ label: "Sign out", icon: SignOut }
+			{ label: "Sign out", icon: X }
 		]
 	}
 };
@@ -133,7 +133,7 @@ export const WithInteractiveItems: Story = {
 			{ label: "Settings" },
 			{ label: "Earnings" },
 			{ divider: true },
-			{ label: "Sign out", icon: SignOut }
+			{ label: "Sign out", icon: X }
 		]
 	}
 };
@@ -146,7 +146,7 @@ export const WithStyledItems: Story = {
 			{ label: "Settings", className: "text-gray-800 bg-gray-100" },
 			{ label: "Earnings" },
 			{ divider: true },
-			{ label: "Sign out", icon: SignOut, className: "text-red-500" }
+			{ label: "Sign out", icon: X, className: "text-red-500" }
 		]
 	}
 };

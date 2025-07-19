@@ -11,6 +11,17 @@ const config: StorybookConfig = {
 	framework: {
 		name: "@storybook/react-vite",
 		options: {}
+	},
+	viteFinal: async (config) => {
+		// Add external dependencies to handle flowbite-react compatibility issues
+		if (config.build && config.build.rollupOptions) {
+			const currentExternal = config.build.rollupOptions.external;
+			config.build.rollupOptions.external = [
+				...(Array.isArray(currentExternal) ? currentExternal : []),
+				'tailwindcss/version.js'
+			];
+		}
+		return config;
 	}
 };
 export default config;
