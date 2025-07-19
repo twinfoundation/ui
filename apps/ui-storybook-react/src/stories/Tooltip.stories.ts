@@ -7,7 +7,7 @@ import {
 	TooltipPlacements,
 	TooltipStyles,
 	TooltipTriggers
-} from "@twin.org/ui-components-react";
+} from "@twin.org/ui-components-core";
 
 const meta = {
 	title: "Components/Tooltip",

@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
-import { Accordion } from "@twin.org/ui-components-react";
-import { Question, Envelope, CalendarDots } from "@twin.org/ui-components-react/icons";
+import { Accordion } from "@twin.org/ui-components-core";
+import { Question, Envelope, CalendarDots } from "@twin.org/ui-components-core/icons";
 
 import { createElement } from "react";
 

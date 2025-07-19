@@ -1,7 +1,7 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
-import { Avatar, Popover, PopoverPositions, PopoverTriggers } from "@twin.org/ui-components-react";
+import { Avatar, Popover, PopoverPositions, PopoverTriggers } from "@twin.org/ui-components-core";
 import React from "react";
 
 const meta = {

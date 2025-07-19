@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
-import { Button, ButtonColors, ButtonSizes } from "@twin.org/ui-components-react";
-import { Plus, ShoppingCart, ArrowRight } from "@twin.org/ui-components-react/icons";
+import { Button, ButtonColors, ButtonSizes } from "@twin.org/ui-components-enterprise";
+import { Plus, ShoppingCart, ArrowRight } from "@twin.org/ui-components-enterprise/icons";
 
 const meta = {
 	title: "Components/Button",

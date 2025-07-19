@@ -1,9 +1,9 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
-import { Tabs, TabsVariants } from "@twin.org/ui-components-react";
-import type { TabsProps, TabItem } from "@twin.org/ui-components-react";
-import { IdentificationCard, Gear, Bell, Envelope } from "@twin.org/ui-components-react/icons";
+import { Tabs, TabsVariants } from "@twin.org/ui-components-core";
+import type { TabsProps, TabItem } from "@twin.org/ui-components-core";
+import { IdentificationCard, Gear, Bell, Envelope } from "@twin.org/ui-components-core/icons";
 import { useState, type JSX } from "react";
 
 const defaultItems: TabItem[] = [

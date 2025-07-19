@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
-import { Dropdown, DropdownPositions, DropdownSizes } from "@twin.org/ui-components-react";
-import { DotsThreeVertical, CaretDown, X } from "@twin.org/ui-components-react/icons";
+import { Dropdown, DropdownPositions, DropdownSizes } from "@twin.org/ui-components-enterprise";
+import { CaretDown, SignOut } from "@twin.org/ui-components-enterprise/icons";
 import { createElement } from "react";
 
 // Common dropdown items to reduce repetition
@@ -56,7 +56,7 @@ export const WithIcon: Story = {
 
 export const OnlyWithDotsThreeVerticalIcon: Story = {
 	args: {
-		icon: DotsThreeVertical,
+		icon: CaretDown,
 		iconOnly: true,
 		title: "",
 		color: "plain"
@@ -115,7 +115,7 @@ export const WithItemIcon: Story = {
 			{ label: "Settings" },
 			{ label: "Earnings" },
 			{ divider: true },
-			{ label: "Sign out", icon: X }
+			{ label: "Sign out", icon: SignOut }
 		]
 	}
 };
@@ -133,7 +133,7 @@ export const WithInteractiveItems: Story = {
 			{ label: "Settings" },
 			{ label: "Earnings" },
 			{ divider: true },
-			{ label: "Sign out", icon: X }
+			{ label: "Sign out", icon: SignOut }
 		]
 	}
 };
@@ -146,7 +146,7 @@ export const WithStyledItems: Story = {
 			{ label: "Settings", className: "text-gray-800 bg-gray-100" },
 			{ label: "Earnings" },
 			{ divider: true },
-			{ label: "Sign out", icon: X, className: "text-red-500" }
+			{ label: "Sign out", icon: SignOut, className: "text-red-500" }
 		]
 	}
 };

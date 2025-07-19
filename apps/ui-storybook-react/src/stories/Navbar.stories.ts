@@ -1,7 +1,8 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
-import { Navbar } from "@twin.org/ui-components-react";
+import { Navbar } from "@twin.org/ui-components-enterprise";
+import { House, MagnifyingGlass, Bell, UserCircle } from "@twin.org/ui-components-enterprise/icons";
 import { Dropdown as FlowbiteDropdown, Avatar as FlowbiteAvatar } from "flowbite-react";
 import { createElement } from "react";
 import type { JSX } from "react";

@@ -23,7 +23,8 @@
 		"dist": "npm run build-storybook"
 	},
 	"dependencies": {
-		"@twin.org/ui-components-react": "0.0.2-next.0",
+		"@twin.org/ui-components-core": "file:../../packages/ui-components-core",
+		"@twin.org/ui-components-enterprise": "file:../../packages/ui-components-enterprise",
 		"react": "19.1.0",
 		"react-dom": "19.1.0"
 	},

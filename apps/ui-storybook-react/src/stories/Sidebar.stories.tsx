@@ -1,7 +1,7 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj, Decorator } from "@storybook/react";
-import { Sidebar, Badge, Button, BadgeColors } from "@twin.org/ui-components-react";
+import { Sidebar, Badge, Button, BadgeColors } from "@twin.org/ui-components-core";
 import {
 	ChartBar,
 	Camera,
@@ -14,7 +14,7 @@ import {
 	Question,
 	WarningCircle,
 	PencilLine
-} from "@twin.org/ui-components-react/icons";
+} from "@twin.org/ui-components-core/icons";
 import { Sidebar as FlowbiteSidebar } from "flowbite-react";
 
 const meta = {

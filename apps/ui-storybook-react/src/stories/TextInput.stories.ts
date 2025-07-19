@@ -1,8 +1,8 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
-import { TextInput, TextInputColors, TextInputSizes } from "@twin.org/ui-components-react";
-import { MagnifyingGlass, Envelope } from "@twin.org/ui-components-react/icons";
+import { TextInput, TextInputColors, TextInputSizes } from "@twin.org/ui-components-core";
+import { MagnifyingGlass, Envelope } from "@twin.org/ui-components-core/icons";
 import { createElement } from "react";
 
 const meta = {

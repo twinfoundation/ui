@@ -1,0 +1,30 @@
+{
+	"compilerOptions": {
+		"module": "ESNext",
+		"moduleResolution": "Bundler",
+		"target": "ES2022",
+		"outDir": "dist/es",
+		"strict": true,
+		"forceConsistentCasingInFileNames": true,
+		"stripInternal": true,
+		"noEmitHelpers": true,
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		"sourceMap": true,
+		"declaration": true,
+		"declarationDir": "dist/types",
+		"types": ["@types/react", "@types/react-dom"],
+		"skipLibCheck": true,
+		"jsx": "react-jsx",
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"baseUrl": ".",
+		"paths": {
+			"@twin.org/ui-components-react/icons/*": ["./src/icons/*"],
+			"@twin.org/ui-components-react/*": ["./src/*"]
+		}
+	},
+	"include": ["src/**/*.ts*", "src/**/*.d.ts", "src/types/*.d.ts", "src/**/*.svg"]
+}
