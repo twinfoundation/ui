@@ -5,7 +5,7 @@ import { ListGroup } from "@twin.org/ui-components-core";
 import { IdentificationCard, Plus } from "@twin.org/ui-components-core/icons";
 
 const meta = {
-	title: "Components/ListGroup",
+	title: "core/ListGroup",
 	component: ListGroup,
 	argTypes: {},
 	args: {

@@ -6,7 +6,7 @@ import { Avatar } from "@twin.org/ui-components-core";
 import { createElement } from "react";
 
 const meta = {
-	title: "Components/Avatar",
+	title: "core/Avatar",
 	component: Avatar,
 	argTypes: {
 		img: { control: { type: "text" } },

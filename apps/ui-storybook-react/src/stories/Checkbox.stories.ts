@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Checkbox } from "@twin.org/ui-components-core";
 
 const meta = {
-	title: "Components/Checkbox",
+	title: "core/Checkbox",
 	component: Checkbox,
 	argTypes: {
 		disabled: {

@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Label } from "@twin.org/ui-components-enterprise";
 
 const meta = {
-	title: "Components/Label",
+	title: "enterprise/Label",
 	component: Label,
 	argTypes: {},
 	args: {}

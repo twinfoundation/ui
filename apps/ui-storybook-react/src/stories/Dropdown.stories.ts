@@ -16,7 +16,7 @@ const standardItems = [
 ];
 
 const meta = {
-	title: "Components/Dropdown",
+	title: "enterprise/Dropdown",
 	component: Dropdown,
 	argTypes: {
 		placement: {

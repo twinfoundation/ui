@@ -27,7 +27,7 @@ const iconComponents = Object.entries(Icons)
  * Storybook metadata for Icons component
  */
 const meta: Meta = {
-	title: "Components/Icons",
+	title: "core/Icons",
 	decorators: [
 		Story => (
 			<div

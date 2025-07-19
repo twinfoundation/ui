@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Textarea } from "@twin.org/ui-components-core";
 
 const meta = {
-	title: "Components/Textarea",
+	title: "core/Textarea",
 	component: Textarea,
 	argTypes: {
 		disabled: {

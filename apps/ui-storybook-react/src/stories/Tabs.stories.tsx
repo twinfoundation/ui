@@ -81,7 +81,7 @@ const authItems: TabItem[] = [
 ];
 
 const meta = {
-	title: "Components/Tabs",
+	title: "core/Tabs",
 	component: Tabs,
 	argTypes: {
 		variant: {

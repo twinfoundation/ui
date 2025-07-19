@@ -5,7 +5,7 @@ import { FileInput, FileInputSizes } from "@twin.org/ui-components-core";
 import { createElement } from "react";
 
 const meta = {
-	title: "Components/FileInput",
+	title: "core/FileInput",
 	component: FileInput,
 	argTypes: {
 		disabled: {

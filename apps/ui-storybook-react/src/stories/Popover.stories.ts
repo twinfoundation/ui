@@ -5,7 +5,7 @@ import { Avatar, Popover, PopoverPositions, PopoverTriggers } from "@twin.org/ui
 import React from "react";
 
 const meta = {
-	title: "Components/Popover",
+	title: "core/Popover",
 	component: Popover,
 	argTypes: {
 		placement: {

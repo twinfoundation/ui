@@ -6,7 +6,7 @@ import { Button, ButtonColors, ButtonSizes } from "@twin.org/ui-components-enter
 import { Plus, ShoppingCart, ArrowRight } from "@twin.org/ui-components-enterprise/icons";
 
 const meta = {
-	title: "Components/Button",
+	title: "enterprise/Button",
 	component: Button,
 	argTypes: {
 		color: {

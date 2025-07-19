@@ -5,7 +5,7 @@ import { fn } from "@storybook/test";
 import { Datepicker, DatepickerDays } from "@twin.org/ui-components-core";
 
 const meta = {
-	title: "Components/Datepicker",
+	title: "core/Datepicker",
 	component: Datepicker,
 	argTypes: {
 		weekStart: {

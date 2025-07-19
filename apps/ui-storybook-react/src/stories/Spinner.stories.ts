@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Spinner, SpinnerSizes } from "@twin.org/ui-components-core";
 
 const meta = {
-	title: "Components/Spinner",
+	title: "core/Spinner",
 	component: Spinner,
 	argTypes: {
 		size: {

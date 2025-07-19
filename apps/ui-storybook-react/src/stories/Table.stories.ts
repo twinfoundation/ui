@@ -6,7 +6,7 @@ import { Button } from "@twin.org/ui-components-enterprise";
 import { createElement } from "react";
 
 const meta = {
-	title: "Components/Table",
+	title: "core/Table",
 	component: Table,
 	argTypes: {
 		onClick: {

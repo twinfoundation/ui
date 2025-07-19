@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Select, SelectSizes } from "@twin.org/ui-components-core";
 
 const meta = {
-	title: "Components/Select",
+	title: "core/Select",
 	component: Select,
 	argTypes: {
 		sizing: {

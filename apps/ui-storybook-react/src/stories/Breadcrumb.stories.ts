@@ -6,7 +6,7 @@ import { Breadcrumb } from "@twin.org/ui-components-core";
 import { House } from "@twin.org/ui-components-core/icons";
 
 const meta = {
-	title: "Components/Breadcrumb",
+	title: "core/Breadcrumb",
 	component: Breadcrumb,
 	argTypes: {
 		className: {

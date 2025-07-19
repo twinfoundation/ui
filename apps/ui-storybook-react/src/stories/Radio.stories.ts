@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Radio } from "@twin.org/ui-components-core";
 
 const meta = {
-	title: "Components/Radio",
+	title: "core/Radio",
 	component: Radio,
 	argTypes: {
 		disabled: {

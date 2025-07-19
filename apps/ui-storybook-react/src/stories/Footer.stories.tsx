@@ -8,7 +8,7 @@ import { House, Envelope, PlayStop, File } from "@twin.org/ui-components-enterpr
  * Storybook metadata for Footer component
  */
 const meta: Meta<typeof Footer> = {
-	title: "Components/Footer",
+	title: "enterprise/Footer",
 	component: Footer,
 	parameters: {
 		layout: "fullscreen"

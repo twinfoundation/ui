@@ -8,7 +8,7 @@ import { createElement } from "react";
 import type { JSX } from "react";
 
 const meta = {
-	title: "Components/Navbar",
+	title: "enterprise/Navbar",
 	component: Navbar,
 	parameters: {
 		layout: "fullscreen",

@@ -6,7 +6,7 @@ import { CheckCircle, Fire } from "@twin.org/ui-components-core/icons";
 import { createElement } from "react";
 
 const meta = {
-	title: "Components/Toast",
+	title: "core/Toast",
 	component: Toast,
 	argTypes: {
 		duration: {

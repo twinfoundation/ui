@@ -7,7 +7,7 @@ import { CheckCircle, Info, X, WarningCircle, Eye } from "@twin.org/ui-component
 import { type ReactNode, createElement } from "react";
 
 const meta = {
-	title: "Components/Alert",
+	title: "core/Alert",
 	component: Alert,
 	argTypes: {
 		content: { control: { type: "text" } },

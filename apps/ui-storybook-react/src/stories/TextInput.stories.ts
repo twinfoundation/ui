@@ -6,7 +6,7 @@ import { MagnifyingGlass, Envelope } from "@twin.org/ui-components-core/icons";
 import { createElement } from "react";
 
 const meta = {
-	title: "Components/TextInput",
+	title: "core/TextInput",
 	component: TextInput,
 	argTypes: {
 		color: {

@@ -13,7 +13,7 @@ import {
 } from "@twin.org/ui-components-core/icons";
 
 const meta = {
-	title: "Components/Card",
+	title: "core/Card",
 	component: Card,
 	parameters: {
 		layout: "centered"

@@ -19,7 +19,7 @@ import {
 import { Sidebar as FlowbiteSidebar } from "flowbite-react";
 
 const meta = {
-	title: "Components/Sidebar",
+	title: "core/Sidebar",
 	component: Sidebar,
 	argTypes: {},
 	args: {}

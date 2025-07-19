@@ -9,7 +9,7 @@ import {
 } from "@twin.org/ui-components-core";
 
 const meta = {
-	title: "Components/Progress",
+	title: "core/Progress",
 	component: Progress,
 	argTypes: {
 		progressLabelPosition: {

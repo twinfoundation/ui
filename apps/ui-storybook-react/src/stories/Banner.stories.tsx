@@ -9,7 +9,7 @@ import { Megaphone } from "@twin.org/ui-components-core/icons";
  * @type {Meta<typeof Banner>}
  */
 const meta = {
-	title: "Components/Banner",
+	title: "core/Banner",
 	component: Banner,
 	argTypes: {
 		content: { control: { type: "text" } },

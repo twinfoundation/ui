@@ -6,7 +6,7 @@ import { Label, Button } from "@twin.org/ui-components-enterprise";
 import { createElement } from "react";
 
 const meta = {
-	title: "Components/Form",
+	title: "core/Form",
 	component: Form,
 	argTypes: {},
 	args: {

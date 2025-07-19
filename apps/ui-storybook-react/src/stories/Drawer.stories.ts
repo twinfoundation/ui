@@ -8,7 +8,7 @@ import { Envelope, Plus } from "@twin.org/ui-components-core/icons";
 import { createElement } from "react";
 
 const meta = {
-	title: "Components/Drawer",
+	title: "core/Drawer",
 	component: Drawer,
 	argTypes: {
 		position: {

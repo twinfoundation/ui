@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { ToggleSwitch, ToggleSwitchSizes, ToggleSwitchColors } from "@twin.org/ui-components-core";
 
 const meta = {
-	title: "Components/ToggleSwitch",
+	title: "core/ToggleSwitch",
 	component: ToggleSwitch,
 	argTypes: {
 		disabled: {

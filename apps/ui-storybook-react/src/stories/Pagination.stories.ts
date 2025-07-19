@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Pagination, PaginationLayouts } from "@twin.org/ui-components-core";
 
 const meta = {
-	title: "Components/Pagination",
+	title: "core/Pagination",
 	component: Pagination,
 	argTypes: {
 		layout: {

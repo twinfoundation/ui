@@ -6,7 +6,7 @@ import { Badge, BadgeColors, BadgeSizes } from "@twin.org/ui-components-core";
 import { ShoppingCart, Eye } from "@twin.org/ui-components-core/icons";
 
 const meta = {
-	title: "Components/Badge",
+	title: "core/Badge",
 	component: Badge,
 	argTypes: {
 		color: {

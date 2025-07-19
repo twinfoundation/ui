@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { RangeSlider, RangeSliderSizes } from "@twin.org/ui-components-core";
 
 const meta = {
-	title: "Components/RangeSlider",
+	title: "core/RangeSlider",
 	component: RangeSlider,
 	argTypes: {
 		sizing: {

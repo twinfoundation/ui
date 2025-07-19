@@ -5,7 +5,7 @@ import { Modal, ModalPositions, ModalSizes } from "@twin.org/ui-components-core"
 import { createElement } from "react";
 
 const meta = {
-	title: "Components/Modal",
+	title: "core/Modal",
 	component: Modal,
 	argTypes: {
 		position: {

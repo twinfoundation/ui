@@ -8,7 +8,7 @@ import { Question, Envelope, CalendarDots } from "@twin.org/ui-components-core/i
 import { createElement } from "react";
 
 const meta = {
-	title: "Components/Accordion",
+	title: "core/Accordion",
 	component: Accordion,
 	argTypes: {
 		alwaysOpen: {
