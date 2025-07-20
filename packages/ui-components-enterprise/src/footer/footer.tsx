@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0.
 import { Footer as FlowbiteFooter } from "flowbite-react";
 import { memo, type JSX, type FC } from "react";
+import { checkComponentLicense } from "../utils/packageLicenseGuard";
 import type {
 	FooterProps,
 	FooterBrandProps,
@@ -154,7 +155,12 @@ Title.displayName = "Footer.Title";
  * @returns JSX element
  */
 const FooterBase = memo(
-	({ body, ...rest }: FooterProps): JSX.Element => <FlowbiteFooter {...rest}>{body}</FlowbiteFooter>
+	({ body, ...rest }: FooterProps): JSX.Element => {
+		// Check license when component is actually used
+		checkComponentLicense("Footer");
+
+		return <FlowbiteFooter {...rest}>{body}</FlowbiteFooter>;
+	}
 );
 
 FooterBase.displayName = "Footer";

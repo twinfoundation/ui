@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0.
 import { Button as FlowbiteButton } from "flowbite-react";
 import { memo, useMemo, type JSX } from "react";
+import { checkComponentLicense } from "../utils/packageLicenseGuard";
 import type { ButtonProps } from "./buttonProps";
 
 const BASE_CLASSES = "border-2 border-transparent focus:outline-none focus:ring-2";
@@ -61,6 +62,9 @@ export const Button = memo(
 		children,
 		...rest
 	}: ButtonProps): JSX.Element => {
+		// Check license when component is actually used
+		checkComponentLicense("Button");
+
 		const iconSize = iconSizes[size as IconSize];
 
 		const buttonContent = useMemo(

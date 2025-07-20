@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0.
 import { Navbar as FlowbiteNavbar } from "flowbite-react";
 import { memo, type JSX } from "react";
+import { checkComponentLicense } from "../utils/packageLicenseGuard";
 import type { NavbarProps } from "./navbarProps";
 
 /**
@@ -24,11 +25,16 @@ import type { NavbarProps } from "./navbarProps";
  * ```
  */
 const NavbarComponent = memo(
-	({ children, fluid = false, rounded = false, ...props }: NavbarProps): JSX.Element => (
-		<FlowbiteNavbar fluid={fluid} rounded={rounded} {...props}>
-			{children}
-		</FlowbiteNavbar>
-	)
+	({ children, fluid = false, rounded = false, ...props }: NavbarProps): JSX.Element => {
+		// Check license when component is actually used
+		checkComponentLicense("Navbar");
+
+		return (
+			<FlowbiteNavbar fluid={fluid} rounded={rounded} {...props}>
+				{children}
+			</FlowbiteNavbar>
+		);
+	}
 );
 
 NavbarComponent.displayName = "Navbar";

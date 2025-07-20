@@ -3,7 +3,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 import { Button, ButtonColors, ButtonSizes } from "@twin.org/ui-components-enterprise";
-import { Plus, ShoppingCart, ArrowRight } from "@twin.org/ui-components-enterprise/icons";
+import { Plus, ShoppingCart, ArrowRight } from "@twin.org/ui-components-core/icons";
 
 const meta = {
 	title: "enterprise/Button",

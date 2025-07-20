@@ -1,6 +1,14 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 
+// Export license guard functions for use in individual components
+// Note: License checks are now done at component level, not package level
+export { checkPackageLicense, checkComponentLicense, PackageLicenseStatus } from "./utils/packageLicenseGuard";
+
+// Export license service for getting license keys and information
+export { LicenseService } from "./utils/licenseService";
+export type { LicensePlan, LicenseRequest, LicenseResponse } from "./utils/licenseService";
+
 // Re-export enterprise components with their related types, constants and utils
 // This pattern keeps related exports together and improves discoverability
 
@@ -29,6 +37,10 @@ export type { LabelProps } from "./label/labelProps";
 // Navbar
 export { Navbar } from "./navbar/navbar";
 export type { NavbarProps } from "./navbar/navbarProps";
+
+// Package license utilities
+export { PackageLicenseValidator, usePackageLicense } from "./utils/packageLicense";
+export type { PackageLicenseInfo, LicenseValidationResult } from "./utils/packageLicense";
 
 // Constants
 export {
