@@ -67,7 +67,7 @@
 	"peerDependencies": {
 		"@twin.org/ui-components-core": ">=1.0.0",
 		"flowbite": "3.1.2",
-		"flowbite-react": "0.11.9",
+		"flowbite-react": "0.10.2",
 		"react": ">=18",
 		"react-dom": ">=18",
 		"tailwindcss": "3"

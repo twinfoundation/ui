@@ -25,6 +25,7 @@
 	"dependencies": {
 		"@twin.org/ui-components-core": "file:../../packages/ui-components-core",
 		"@twin.org/ui-components-enterprise": "file:../../packages/ui-components-enterprise",
+		"flowbite-react": "0.10.2",
 		"react": "19.1.0",
 		"react-dom": "19.1.0"
 	},
@@ -42,6 +43,7 @@
 		"@types/react-dom": "19.1.2",
 		"@vitejs/plugin-react": "4.4.1",
 		"autoprefixer": "10.4.21",
+		"chromatic": "^13.1.2",
 		"eslint": "9.11.1",
 		"eslint-plugin-react-hooks": "5.2.0",
 		"eslint-plugin-react-refresh": "0.4.20",
