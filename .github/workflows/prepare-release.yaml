@@ -76,9 +76,7 @@ jobs:
         id: cache
         uses: actions/cache@v4
         with:
-          path: |
-            ~/.npm
-            node_modules
+          path: ~/.npm
           key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
 
       # Install dependencies with retry
