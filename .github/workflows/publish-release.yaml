@@ -44,7 +44,7 @@ jobs:
           echo "branch=$BRANCH" >> $GITHUB_OUTPUT
           echo "Using branch: $BRANCH"
 
-      # Get the code from the repository
+      # Clone the repository to the runner
       - name: Checkout
         uses: actions/checkout@v4
         with:
@@ -88,7 +88,7 @@ jobs:
         package: ${{ fromJson(needs.process-workspaces.outputs.packages) }} # Each pattern becomes a separate job
 
     steps:
-      # Get the code from the repository
+      # Clone the repository to the runner
       - name: Checkout
         uses: actions/checkout@v4
         with:
@@ -99,8 +99,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20 # Use Node.js 20.x
-          registry-url: 'https://registry.npmjs.org' # Set NPM registry URL
+          node-version: 22
 
       # Setup any services required for tests here
       - name: Setup Test Environment
@@ -167,17 +166,18 @@ jobs:
     needs: [process-workspaces, publish-packages]
 
     steps:
+      # Clone the repository to the runner
       - name: Checkout
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }} # Using GITHUB_TOKEN makes actions run as github-actions bot
           ref: ${{ needs.process-workspaces.outputs.branch }} # Checkout the calculated branch
 
+      # Configure Node.js and NPM settings
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          registry-url: 'https://registry.npmjs.org'
+          node-version: 22
 
       # Publish the GitHub releases
       - name: Release Please

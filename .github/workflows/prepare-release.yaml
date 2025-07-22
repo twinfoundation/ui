@@ -69,10 +69,21 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20' # Use Node.js 20.x
+          node-version: 22
+
+      # Cache npm modules
+      - name: Cache npm downloads and node_modules
+        id: cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.npm
+            node_modules
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
 
       # Install dependencies with retry
       - name: Install dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
         run: |
           for i in {1..3}; do
             npm ci && break || {

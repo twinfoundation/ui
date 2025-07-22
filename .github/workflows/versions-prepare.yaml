@@ -91,7 +91,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20' # Use Node.js 20.x
+          node-version: 22
 
       # Create a new branch for the version update
       - name: Create Version Update Branch

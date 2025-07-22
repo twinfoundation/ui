@@ -8,16 +8,33 @@ jobs:
   pr-name-checker:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      # Clone the repository to the runner
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      # Cache npm modules
+      - name: Cache npm downloads and node_modules
+        id: cache
+        uses: actions/cache@v4
         with:
-          node-version: '20'
+          path: |
+            ~/.npm
+            node_modules
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
 
+      # Setup Node
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # Install commitlint globally
       - name: Install dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
         run: |
           npm install @commitlint/config-conventional @commitlint/cli -g
 
+      # Lint the PR title using commitlint
       - name: Lint PR title
         run: |
           echo "${{ github.event.pull_request.title }}" | npx commitlint
