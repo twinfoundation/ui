@@ -71,14 +71,6 @@ jobs:
         with:
           node-version: 22
 
-      # Cache npm modules
-      - name: Cache npm downloads and node_modules
-        id: cache
-        uses: actions/cache@v4
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
-
       # Install dependencies with retry
       - name: Install dependencies
         if: steps.cache.outputs.cache-hit != 'true'
