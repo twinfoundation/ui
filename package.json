@@ -54,7 +54,13 @@
 		"packages/ui-tailwind",
 		"packages/ui-components-react",
 		"packages/ui-components-svelte",
+		"packages/ui-components-enterprise",
+		"packages/ui-components-core",
 		"apps/ui-storybook-react"
 	],
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1"
+	}
 }

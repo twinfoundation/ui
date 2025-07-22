@@ -1,14 +1,14 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
-import { Footer } from "@twin.org/ui-components-react";
-import { House, Envelope, PlayStop, File } from "@twin.org/ui-components-react/icons";
+import { Footer } from "@twin.org/ui-components-enterprise";
+import { House, Envelope, PlayStop, File } from "@twin.org/ui-components-enterprise/icons";
 
 /**
  * Storybook metadata for Footer component
  */
 const meta: Meta<typeof Footer> = {
-	title: "Components/Footer",
+	title: "enterprise/Footer",
 	component: Footer,
 	parameters: {
 		layout: "fullscreen"

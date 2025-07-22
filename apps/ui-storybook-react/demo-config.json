@@ -1,0 +1,11 @@
+{
+  "enterprise": {
+    "enabled": true,
+    "licenseKey": "TWIN-ENT-DEMO-2024",
+    "description": "Demo configuration for enterprise components"
+  },
+  "demo": {
+    "showLicenseInfo": true,
+    "showConsoleLogs": true
+  }
+} 

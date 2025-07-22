@@ -2,11 +2,11 @@
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
-import { Carousel } from "@twin.org/ui-components-react";
+import { Carousel } from "@twin.org/ui-components-core";
 import { createElement } from "react";
 
 const meta = {
-	title: "Components/Carousel",
+	title: "core/Carousel",
 	component: Carousel,
 	argTypes: {
 		slide: {

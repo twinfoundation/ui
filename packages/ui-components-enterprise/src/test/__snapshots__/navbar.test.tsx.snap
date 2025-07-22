@@ -1,0 +1,367 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Navbar > renders basic navbar correctly 1`] = `
+<div>
+  <nav
+    class="bg-white px-2 py-2.5 dark:border-gray-700 dark:bg-gray-800 sm:px-4"
+  >
+    <div
+      class="mx-auto flex flex-wrap items-center justify-between container"
+    >
+      <a
+        class="flex items-center"
+        href="/"
+      >
+        <span>
+          Brand
+        </span>
+      </a>
+    </div>
+  </nav>
+</div>
+`;
+
+exports[`Navbar > renders navbar with active link correctly 1`] = `
+<div>
+  <nav
+    class="bg-white px-2 py-2.5 dark:border-gray-700 dark:bg-gray-800 sm:px-4"
+  >
+    <div
+      class="mx-auto flex flex-wrap items-center justify-between container"
+    >
+      <a
+        class="flex items-center"
+        href="/"
+      >
+        <span>
+          Brand
+        </span>
+      </a>
+      <div
+        class="w-full md:block md:w-auto hidden"
+        data-testid="flowbite-navbar-collapse"
+      >
+        <ul
+          class="mt-4 flex flex-col md:mt-0 md:flex-row md:space-x-8 md:text-sm md:font-medium"
+        >
+          <li>
+            <a
+              class="block py-2 pl-3 pr-4 md:p-0 bg-cyan-700 text-white dark:text-white md:bg-transparent md:text-cyan-700"
+              href="/"
+            >
+              Active Link
+            </a>
+          </li>
+          <li>
+            <a
+              class="block py-2 pl-3 pr-4 md:p-0 border-b border-gray-100 text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:hover:bg-transparent md:hover:text-cyan-700 md:dark:hover:bg-transparent md:dark:hover:text-white"
+              href="/inactive"
+            >
+              Inactive Link
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+`;
+
+exports[`Navbar > renders navbar with both fluid and rounded props correctly 1`] = `
+<div>
+  <nav
+    class="bg-white px-2 py-2.5 dark:border-gray-700 dark:bg-gray-800 sm:px-4 rounded"
+  >
+    <div
+      class="mx-auto flex flex-wrap items-center justify-between"
+    >
+      <a
+        class="flex items-center"
+        href="/"
+      >
+        <span>
+          Fluid Rounded Brand
+        </span>
+      </a>
+    </div>
+  </nav>
+</div>
+`;
+
+exports[`Navbar > renders navbar with brand and links correctly 1`] = `
+<div>
+  <nav
+    class="bg-white px-2 py-2.5 dark:border-gray-700 dark:bg-gray-800 sm:px-4"
+  >
+    <div
+      class="mx-auto flex flex-wrap items-center justify-between container"
+    >
+      <a
+        class="flex items-center"
+        href="/"
+      >
+        <span>
+          Brand
+        </span>
+      </a>
+      <div
+        class="w-full md:block md:w-auto hidden"
+        data-testid="flowbite-navbar-collapse"
+      >
+        <ul
+          class="mt-4 flex flex-col md:mt-0 md:flex-row md:space-x-8 md:text-sm md:font-medium"
+        >
+          <li>
+            <a
+              class="block py-2 pl-3 pr-4 md:p-0 bg-cyan-700 text-white dark:text-white md:bg-transparent md:text-cyan-700"
+              href="/"
+            >
+              Home
+            </a>
+          </li>
+          <li>
+            <a
+              class="block py-2 pl-3 pr-4 md:p-0 border-b border-gray-100 text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:hover:bg-transparent md:hover:text-cyan-700 md:dark:hover:bg-transparent md:dark:hover:text-white"
+              href="/about"
+            >
+              About
+            </a>
+          </li>
+          <li>
+            <a
+              class="block py-2 pl-3 pr-4 md:p-0 border-b border-gray-100 text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:hover:bg-transparent md:hover:text-cyan-700 md:dark:hover:bg-transparent md:dark:hover:text-white"
+              href="/contact"
+            >
+              Contact
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+`;
+
+exports[`Navbar > renders navbar with complex brand content correctly 1`] = `
+<div>
+  <nav
+    class="bg-white px-2 py-2.5 dark:border-gray-700 dark:bg-gray-800 sm:px-4"
+  >
+    <div
+      class="mx-auto flex flex-wrap items-center justify-between container"
+    >
+      <a
+        class="flex items-center"
+        href="/"
+      >
+        <img
+          alt="Logo"
+          class="h-6 w-6"
+          src="/logo.svg"
+        />
+        <span
+          class="ml-2 text-xl font-bold"
+        >
+          Company Name
+        </span>
+      </a>
+    </div>
+  </nav>
+</div>
+`;
+
+exports[`Navbar > renders navbar with custom className correctly 1`] = `
+<div>
+  <nav
+    class="bg-white px-2 py-2.5 dark:border-gray-700 dark:bg-gray-800 sm:px-4 custom-navbar"
+  >
+    <div
+      class="mx-auto flex flex-wrap items-center justify-between container"
+    >
+      <a
+        class="flex items-center"
+        href="/"
+      >
+        <span>
+          Custom Brand
+        </span>
+      </a>
+    </div>
+  </nav>
+</div>
+`;
+
+exports[`Navbar > renders navbar with fluid prop correctly 1`] = `
+<div>
+  <nav
+    class="bg-white px-2 py-2.5 dark:border-gray-700 dark:bg-gray-800 sm:px-4"
+  >
+    <div
+      class="mx-auto flex flex-wrap items-center justify-between"
+    >
+      <a
+        class="flex items-center"
+        href="/"
+      >
+        <span>
+          Fluid Brand
+        </span>
+      </a>
+    </div>
+  </nav>
+</div>
+`;
+
+exports[`Navbar > renders navbar with multiple links correctly 1`] = `
+<div>
+  <nav
+    class="bg-white px-2 py-2.5 dark:border-gray-700 dark:bg-gray-800 sm:px-4"
+  >
+    <div
+      class="mx-auto flex flex-wrap items-center justify-between container"
+    >
+      <a
+        class="flex items-center"
+        href="/"
+      >
+        <span>
+          Brand
+        </span>
+      </a>
+      <div
+        class="w-full md:block md:w-auto hidden"
+        data-testid="flowbite-navbar-collapse"
+      >
+        <ul
+          class="mt-4 flex flex-col md:mt-0 md:flex-row md:space-x-8 md:text-sm md:font-medium"
+        >
+          <li>
+            <a
+              class="block py-2 pl-3 pr-4 md:p-0 border-b border-gray-100 text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:hover:bg-transparent md:hover:text-cyan-700 md:dark:hover:bg-transparent md:dark:hover:text-white"
+              href="/"
+            >
+              Home
+            </a>
+          </li>
+          <li>
+            <a
+              class="block py-2 pl-3 pr-4 md:p-0 border-b border-gray-100 text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:hover:bg-transparent md:hover:text-cyan-700 md:dark:hover:bg-transparent md:dark:hover:text-white"
+              href="/products"
+            >
+              Products
+            </a>
+          </li>
+          <li>
+            <a
+              class="block py-2 pl-3 pr-4 md:p-0 border-b border-gray-100 text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:hover:bg-transparent md:hover:text-cyan-700 md:dark:hover:bg-transparent md:dark:hover:text-white"
+              href="/services"
+            >
+              Services
+            </a>
+          </li>
+          <li>
+            <a
+              class="block py-2 pl-3 pr-4 md:p-0 border-b border-gray-100 text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:hover:bg-transparent md:hover:text-cyan-700 md:dark:hover:bg-transparent md:dark:hover:text-white"
+              href="/about"
+            >
+              About
+            </a>
+          </li>
+          <li>
+            <a
+              class="block py-2 pl-3 pr-4 md:p-0 border-b border-gray-100 text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:hover:bg-transparent md:hover:text-cyan-700 md:dark:hover:bg-transparent md:dark:hover:text-white"
+              href="/contact"
+            >
+              Contact
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+`;
+
+exports[`Navbar > renders navbar with rounded prop correctly 1`] = `
+<div>
+  <nav
+    class="bg-white px-2 py-2.5 dark:border-gray-700 dark:bg-gray-800 sm:px-4 rounded"
+  >
+    <div
+      class="mx-auto flex flex-wrap items-center justify-between container"
+    >
+      <a
+        class="flex items-center"
+        href="/"
+      >
+        <span>
+          Rounded Brand
+        </span>
+      </a>
+    </div>
+  </nav>
+</div>
+`;
+
+exports[`Navbar > renders navbar with toggle button correctly 1`] = `
+<div>
+  <nav
+    class="bg-white px-2 py-2.5 dark:border-gray-700 dark:bg-gray-800 sm:px-4"
+  >
+    <div
+      class="mx-auto flex flex-wrap items-center justify-between container"
+    >
+      <a
+        class="flex items-center"
+        href="/"
+      >
+        <span>
+          Brand
+        </span>
+      </a>
+      <button
+        class="inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 md:hidden"
+        data-testid="flowbite-navbar-toggle"
+      >
+        <span
+          class="sr-only"
+        >
+          Open main menu
+        </span>
+        <svg
+          aria-hidden="true"
+          class="h-6 w-6 shrink-0"
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="0"
+          viewBox="0 0 448 512"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
+          />
+        </svg>
+      </button>
+      <div
+        class="w-full md:block md:w-auto hidden"
+        data-testid="flowbite-navbar-collapse"
+      >
+        <ul
+          class="mt-4 flex flex-col md:mt-0 md:flex-row md:space-x-8 md:text-sm md:font-medium"
+        >
+          <li>
+            <a
+              class="block py-2 pl-3 pr-4 md:p-0 border-b border-gray-100 text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:hover:bg-transparent md:hover:text-cyan-700 md:dark:hover:bg-transparent md:dark:hover:text-white"
+              href="/"
+            >
+              Home
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+`;

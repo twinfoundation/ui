@@ -1,0 +1,126 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Snapshot Testing Examples > Badge Component > renders default badge correctly 1`] = `
+<div>
+  <span
+    class="badge badge-default"
+    data-testid="badge"
+  >
+    Default Badge
+  </span>
+</div>
+`;
+
+exports[`Snapshot Testing Examples > Badge Component > renders error badge correctly 1`] = `
+<div>
+  <span
+    class="badge badge-error"
+    data-testid="badge"
+  >
+    Error
+  </span>
+</div>
+`;
+
+exports[`Snapshot Testing Examples > Badge Component > renders success badge correctly 1`] = `
+<div>
+  <span
+    class="badge badge-success"
+    data-testid="badge"
+  >
+    Success
+  </span>
+</div>
+`;
+
+exports[`Snapshot Testing Examples > Card Component > renders basic card correctly 1`] = `
+<div>
+  <div
+    class="card "
+    data-testid="card"
+  >
+    <h3
+      class="card-title"
+    >
+      Sample Card
+    </h3>
+    <div
+      class="card-content"
+    >
+      <p>
+        This is card content
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Snapshot Testing Examples > Card Component > renders card with custom className correctly 1`] = `
+<div>
+  <div
+    class="card custom-card"
+    data-testid="card"
+  >
+    <h3
+      class="card-title"
+    >
+      Custom Card
+    </h3>
+    <div
+      class="card-content"
+    >
+      <span
+        class="badge badge-success"
+        data-testid="badge"
+      >
+        New
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Snapshot Testing Examples > Complex Component Combinations > renders complex layout correctly 1`] = `
+<div>
+  <div
+    class="dashboard"
+  >
+    <div
+      class="card "
+      data-testid="card"
+    >
+      <h3
+        class="card-title"
+      >
+        User Stats
+      </h3>
+      <div
+        class="card-content"
+      >
+        <div
+          class="stats"
+        >
+          <span
+            class="badge badge-success"
+            data-testid="badge"
+          >
+            Active
+          </span>
+          <span
+            class="badge badge-default"
+            data-testid="badge"
+          >
+            Pending
+          </span>
+          <span
+            class="badge badge-error"
+            data-testid="badge"
+          >
+            Failed
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

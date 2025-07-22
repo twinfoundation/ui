@@ -2,11 +2,11 @@
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
-import { Badge, BadgeColors, BadgeSizes } from "@twin.org/ui-components-react";
-import { ShoppingCart, Eye } from "@twin.org/ui-components-react/icons";
+import { Badge, BadgeColors, BadgeSizes } from "@twin.org/ui-components-core";
+import { ShoppingCart, Eye } from "@twin.org/ui-components-core/icons";
 
 const meta = {
-	title: "Components/Badge",
+	title: "core/Badge",
 	component: Badge,
 	argTypes: {
 		color: {

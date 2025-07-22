@@ -1,0 +1,20 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Button Component > matches snapshot 1`] = `
+<div>
+  <button
+    class="group relative flex items-stretch justify-center p-0.5 text-center font-medium transition-[color,background-color,border-color,text-decoration-color,fill,stroke,box-shadow] focus:z-10 border-2 border-transparent focus:outline-none focus:ring-2 text-white bg-surface-button dark:bg-surface-button hover:enabled:bg-surface-button-hover dark:hover:enabled:bg-surface-button-hover focus:ring-surface-button-pressed rounded-lg"
+    type="button"
+  >
+    <span
+      class="flex items-stretch transition-all duration-200 rounded-md px-4 py-2 text-sm"
+    >
+      <div
+        class="inline-flex items-center justify-center"
+      >
+        Snapshot Test
+      </div>
+    </span>
+  </button>
+</div>
+`;

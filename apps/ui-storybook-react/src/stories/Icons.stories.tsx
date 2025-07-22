@@ -4,8 +4,8 @@
 // Copyright (c) 2020-2024 Phosphor Icons
 // SPDX-License-Identifier: MIT
 import type { Meta, StoryObj } from "@storybook/react";
-import * as Icons from "@twin.org/ui-components-react/icons";
-import type { IconsProps } from "@twin.org/ui-components-react/icons";
+import * as Icons from "@twin.org/ui-components-core/icons";
+import type { IconsProps } from "@twin.org/ui-components-core/icons";
 import React from "react";
 
 // Filter out non-component exports (like IconsProps if it's exported alongside components)
@@ -27,7 +27,7 @@ const iconComponents = Object.entries(Icons)
  * Storybook metadata for Icons component
  */
 const meta: Meta = {
-	title: "Components/Icons",
+	title: "core/Icons",
 	decorators: [
 		Story => (
 			<div

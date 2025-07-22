@@ -1,11 +1,12 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
-import { Form, Label, TextInput, Button } from "@twin.org/ui-components-react";
+import { Form, TextInput } from "@twin.org/ui-components-core";
+import { Label, Button } from "@twin.org/ui-components-enterprise";
 import { createElement } from "react";
 
 const meta = {
-	title: "Components/Form",
+	title: "core/Form",
 	component: Form,
 	argTypes: {},
 	args: {

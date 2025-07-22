@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
-import { Dropdown, DropdownPositions, DropdownSizes } from "@twin.org/ui-components-react";
-import { DotsThreeVertical, CaretDown, X } from "@twin.org/ui-components-react/icons";
+import { Dropdown, DropdownPositions, DropdownSizes } from "@twin.org/ui-components-enterprise";
+import { CaretDown, X } from "@twin.org/ui-components-enterprise/icons";
 import { createElement } from "react";
 
 // Common dropdown items to reduce repetition
@@ -16,7 +16,7 @@ const standardItems = [
 ];
 
 const meta = {
-	title: "Components/Dropdown",
+	title: "enterprise/Dropdown",
 	component: Dropdown,
 	argTypes: {
 		placement: {
@@ -56,7 +56,7 @@ export const WithIcon: Story = {
 
 export const OnlyWithDotsThreeVerticalIcon: Story = {
 	args: {
-		icon: DotsThreeVertical,
+		icon: CaretDown,
 		iconOnly: true,
 		title: "",
 		color: "plain"

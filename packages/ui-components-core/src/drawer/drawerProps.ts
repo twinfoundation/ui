@@ -1,0 +1,112 @@
+// Copyright 2024 IOTA Stiftung.
+// SPDX-License-Identifier: Apache-2.0.
+import type { DrawerProps as FlowbiteDrawerProps } from "flowbite-react";
+import type { ElementType, ReactNode } from "react";
+import type { DrawerPosition } from "./drawerPositions";
+
+/**
+ * Button color options for the drawer trigger button.
+ */
+export type DrawerButtonColor = "primary" | "secondary" | "success" | "danger" | "warning" | "info";
+
+/**
+ * Simplified button props for the drawer trigger button.
+ */
+export interface DrawerButtonProps {
+	/**
+	 * The color variant of the button.
+	 */
+	color?: DrawerButtonColor;
+
+	/**
+	 * The size of the button.
+	 */
+	size?: string;
+
+	/**
+	 * Whether the button is outlined.
+	 */
+	outline?: boolean;
+
+	/**
+	 * Whether the button is disabled.
+	 */
+	disabled?: boolean;
+
+	/**
+	 * Additional CSS classes for the button.
+	 */
+	className?: string;
+}
+
+/**
+ * Drawer props.
+ */
+export interface DrawerProps extends Omit<FlowbiteDrawerProps, "color" | "label"> {
+	/**
+	 * The title of the drawer.
+	 */
+	title: string;
+
+	/**
+	 * Whether the body should scroll when the drawer is open.
+	 */
+	bodyScrolling?: boolean;
+
+	/**
+	 * Whether to show a backdrop when the drawer is open.
+	 */
+	backdrop?: boolean;
+
+	/**
+	 * Whether the drawer should be positioned at the edge of the screen.
+	 */
+	edge?: boolean;
+
+	/**
+	 * The position of the drawer.
+	 */
+	position?: DrawerPosition;
+
+	/**
+	 * The items to display in the drawer.
+	 */
+	items?: ReactNode[];
+
+	/**
+	 * The text to display on the button that opens the drawer.
+	 */
+	buttonText?: string;
+
+	/**
+	 * The color variant of the button.
+	 */
+	buttonColor?: DrawerButtonColor;
+
+	/**
+	 * Whether to show the trigger button.
+	 * If false, the drawer can only be controlled programmatically.
+	 */
+	showButton?: boolean;
+
+	/**
+	 * Whether the drawer should be open by default.
+	 */
+	defaultOpen?: boolean;
+
+	/**
+	 * Additional props to pass to the button component.
+	 * This allows for complete customization of the button.
+	 */
+	buttonProps?: Omit<DrawerButtonProps, "color" | "onClick">;
+
+	/**
+	 * Custom icon to use for the button.
+	 */
+	buttonIcon?: ElementType;
+
+	/**
+	 * Callback fired when the drawer open state changes.
+	 */
+	onOpenChange?: (isOpen: boolean) => void;
+}

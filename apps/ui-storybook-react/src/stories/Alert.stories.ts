@@ -2,12 +2,12 @@
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
-import { Alert, AlertColors } from "@twin.org/ui-components-react";
-import { CheckCircle, Info, X, WarningCircle, Eye } from "@twin.org/ui-components-react/icons";
+import { Alert, AlertColors } from "@twin.org/ui-components-core";
+import { CheckCircle, Info, X, WarningCircle, Eye } from "@twin.org/ui-components-core/icons";
 import { type ReactNode, createElement } from "react";
 
 const meta = {
-	title: "Components/Alert",
+	title: "core/Alert",
 	component: Alert,
 	argTypes: {
 		content: { control: { type: "text" } },
