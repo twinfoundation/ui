@@ -100,6 +100,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
+          registry-url: 'https://registry.npmjs.org' # Required for npm publish
 
       # Setup any services required for tests here
       - name: Setup Test Environment
@@ -178,6 +179,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
+          registry-url: 'https://registry.npmjs.org' # Required for npm publish
 
       # Publish the GitHub releases
       - name: Release Please
