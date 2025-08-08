@@ -129,6 +129,12 @@ jobs:
             }
           done
 
+      # Setup any prerequisites for the publish process
+      - name: Perform Publish Prerequisites
+        uses: ./.github/workflows/publish-prerequisites
+        with:
+          package: ${{ matrix.package }} # Pass the current package to the publish prerequisites script
+
       # Now we run the dist command for the specific package
       - name: Run Dist
         run: |

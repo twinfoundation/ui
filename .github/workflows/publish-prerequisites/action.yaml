@@ -1,0 +1,16 @@
+name: 'Publish Prerequisites'
+description: 'Perform any operations that are required when the packages are being published.'
+
+inputs:
+  package:
+    description: 'The package to publish prerequisites for.'
+    required: true
+    default: 'all'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: No action
+      shell: bash
+      run: |
+        echo "No prerequisites required for this action. It is a placeholder for the publish prerequisites."
