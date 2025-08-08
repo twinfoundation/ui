@@ -2,11 +2,11 @@
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
-import { Breadcrumb } from "@twin.org/ui-components-react";
-import { House } from "@twin.org/ui-components-react/icons";
+import { Breadcrumb } from "@twin.org/ui-components-core";
+import { House } from "@twin.org/ui-components-core/icons";
 
 const meta = {
-	title: "Components/Breadcrumb",
+	title: "core/Breadcrumb",
 	component: Breadcrumb,
 	argTypes: {
 		className: {

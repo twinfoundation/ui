@@ -1,10 +1,10 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
-import { RangeSlider, RangeSliderSizes } from "@twin.org/ui-components-react";
+import { RangeSlider, RangeSliderSizes } from "@twin.org/ui-components-core";
 
 const meta = {
-	title: "Components/RangeSlider",
+	title: "core/RangeSlider",
 	component: RangeSlider,
 	argTypes: {
 		sizing: {

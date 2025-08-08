@@ -1,15 +1,15 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
-import { Banner } from "@twin.org/ui-components-react";
-import { Megaphone } from "@twin.org/ui-components-react/icons";
+import { Banner } from "@twin.org/ui-components-core";
+import { Megaphone } from "@twin.org/ui-components-core/icons";
 
 /**
  * Storybook component configuration for the Banner component.
  * @type {Meta<typeof Banner>}
  */
 const meta = {
-	title: "Components/Banner",
+	title: "core/Banner",
 	component: Banner,
 	argTypes: {
 		content: { control: { type: "text" } },

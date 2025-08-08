@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0.
 // cspell:ignore centered autodocs
 import type { Meta, StoryObj } from "@storybook/react";
-import { Card, BadgeColors } from "@twin.org/ui-components-react";
+import { Card, BadgeColors } from "@twin.org/ui-components-core";
 import {
 	SealPercent,
 	ShoppingCart,
@@ -10,10 +10,10 @@ import {
 	Fire,
 	Bag,
 	ArrowRightFat
-} from "@twin.org/ui-components-react/icons";
+} from "@twin.org/ui-components-core/icons";
 
 const meta = {
-	title: "Components/Card",
+	title: "core/Card",
 	component: Card,
 	parameters: {
 		layout: "centered"

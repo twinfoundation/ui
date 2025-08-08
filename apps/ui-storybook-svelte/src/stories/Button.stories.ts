@@ -5,7 +5,7 @@ import { fn } from "@storybook/test";
 import { Button } from "@twin.org/ui-components-svelte";
 
 const meta = {
-	title: "Components/Button",
+	title: "core/Button",
 	component: Button,
 	argTypes: {
 		color: {

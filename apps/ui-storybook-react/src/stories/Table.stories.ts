@@ -1,11 +1,12 @@
 // Copyright 2024 IOTA Stiftung.
 // SPDX-License-Identifier: Apache-2.0.
 import type { Meta, StoryObj } from "@storybook/react";
-import { Button, Checkbox, Table } from "@twin.org/ui-components-react";
+import { Checkbox, Table } from "@twin.org/ui-components-core";
+import { Button } from "@twin.org/ui-components-enterprise";
 import { createElement } from "react";
 
 const meta = {
-	title: "Components/Table",
+	title: "core/Table",
 	component: Table,
 	argTypes: {
 		onClick: {
